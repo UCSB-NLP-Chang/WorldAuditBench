@@ -1,0 +1,15 @@
+[
+ {
+  "name": "double-spawned pot",
+  "where": "the same pot is spawned twice almost exactly on top of itself - doubled/shimmering surfaces (z-fighting)",
+  "at": {
+   "scene": "sponza",
+   "spawnOffset": [
+    7.15,
+    -1.47
+   ],
+   "snap": true
+  },
+  "category": "geometry-space"
+ }
+]

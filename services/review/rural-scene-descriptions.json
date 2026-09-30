@@ -1,0 +1,50 @@
+[
+  {
+    "map": "/Game/Auditor/RuralAustralia/RoadBend",
+    "task_ids": [
+      "RB01",
+      "R01",
+      "R02",
+      "R03",
+      "R04",
+      "R05",
+      "R06"
+    ],
+    "description": {
+      "zh": "这是澳大利亚乡间的一段林间弯道，两侧有围栏、植被和袋鼠警示牌。你可以步行探索，靠近标牌并改变观察角度；此区域没有 E 键交互。",
+      "en": "An Australian bush road bend with fences, vegetation and wildlife signs. Explore on foot, approach the signs and change your viewpoint; this area has no E-key interactions."
+    }
+  },
+  {
+    "map": "/Game/Auditor/RuralAustralia/Roadside",
+    "task_ids": [
+      "RB02",
+      "R07",
+      "R08",
+      "R09",
+      "R10",
+      "R11",
+      "R12"
+    ],
+    "description": {
+      "zh": "这是一段澳大利亚乡间直路，路侧有标牌、树木、倒木和围栏。你可以沿路行走、接近路边物体或离开后返回观察；此区域没有 E 键交互。",
+      "en": "A straight Australian country road with signs, trees, fallen logs and fences. Walk along the road, approach roadside objects, or leave and return to inspect them; there are no E-key interactions."
+    }
+  },
+  {
+    "map": "/Game/Auditor/RuralAustralia/Canyon",
+    "task_ids": [
+      "RB03",
+      "R13",
+      "R14",
+      "R15",
+      "R16",
+      "R17",
+      "R18"
+    ],
+    "description": {
+      "zh": "这是一处澳大利亚溪谷林地，包含岩石、倒木、树木和溪水。你可以在小范围内步行探索，从不同距离和角度观察物体；此区域没有 E 键交互。",
+      "en": "An Australian creek canyon with rocks, fallen logs, trees and water. Explore the small area on foot and inspect objects from different distances and angles; there are no E-key interactions."
+    }
+  }
+]

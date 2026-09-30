@@ -1,0 +1,16 @@
+[
+ {
+  "name": "out-of-place gate",
+  "where": "an iron portcullis stands mid-walkway, attached to nothing",
+  "at": {
+   "scene": "sponza",
+   "spawnOffset": [
+    5,
+    0
+   ],
+   "snap": true
+  },
+  "bug": "extra_asset",
+  "level": "L1"
+ }
+]

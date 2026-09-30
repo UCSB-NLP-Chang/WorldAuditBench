@@ -1,0 +1,48 @@
+{
+ "name": "sp01-float-near",
+ "meta": {
+  "title": "sp01-float",
+  "desc": "One floor pot floats in mid-air"
+ },
+ "seed": 5,
+ "scenes": [
+  {
+   "type": "gltf",
+   "id": "sponza",
+   "url": "/assets/sponza/Sponza.gltf"
+  }
+ ],
+ "spawn": {
+  "scene": "sponza",
+  "pos": {
+   "scene": "sponza",
+   "spawnOffset": [
+    -1.52,
+    0.01
+   ],
+   "snap": true
+  },
+  "yawDeg": -117
+ },
+ "objects": [],
+ "bugs": [
+  {
+   "type": "mesh_offset",
+   "meshes": [
+    "mesh_0_87",
+    "mesh_0_88"
+   ],
+   "dy": 0.55
+  }
+ ],
+ "targets": {
+  "zone_far": {
+   "scene": "sponza",
+   "spawnOffset": [
+    9.48,
+    0.01
+   ],
+   "snap": true
+  }
+ }
+}

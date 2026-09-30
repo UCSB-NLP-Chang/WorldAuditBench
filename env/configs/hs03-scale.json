@@ -1,0 +1,74 @@
+{
+ "name": "hs03-scale",
+ "meta": {
+  "title": "hs03-scale",
+  "desc": "The kids-room desk chair upstairs is abnormally oversized"
+ },
+ "seed": 5,
+ "scenes": [
+  {
+   "type": "house",
+   "id": "house"
+  }
+ ],
+ "spawn": {
+  "scene": "house",
+  "pos": [
+   0.55,
+   0.0,
+   3.9
+  ],
+  "yawDeg": 0
+ },
+ "player": {
+  "radius": 0.22
+ },
+ "bounds": {
+  "minX": -6.6,
+  "maxX": 6.6,
+  "minZ": -4.6,
+  "maxZ": 4.6
+ },
+ "notice": [
+  {
+   "x": 0.0,
+   "z": 4.85,
+   "r": 0.8
+  },
+  {
+   "x": 0.7,
+   "z": -4.85,
+   "r": 0.8
+  }
+ ],
+ "objects": [],
+ "bugs": [
+  {
+   "type": "mesh_scale",
+   "meshes": [
+    "CHAIR#1"
+   ],
+   "factor": 1.7,
+   "shift": [
+    0,
+    0.18
+   ]
+  }
+ ],
+ "targets": {
+  "zone_far": [
+   4.4,
+   3.0,
+   3.2
+  ]
+ },
+ "views": [
+  [
+   2.5,
+   3.0,
+   -2.3,
+   -0.857,
+   -0.506
+  ]
+ ]
+}

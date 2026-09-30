@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "release": "/home/ubuntu/unreal-auditor/review-service/releases/rural-20260912-204952",
+  "backup": "/home/ubuntu/unreal-auditor/review-service/backups/rural-20260912-205206",
+  "health": {
+    "ok": true,
+    "mode": "external"
+  },
+  "new_entries": 21,
+  "preserved_entries": 100,
+  "capacity": 3,
+  "protected_tables": [
+    "feedback",
+    "review_history",
+    "evidence",
+    "logins",
+    "events"
+  ],
+  "participants_preserved": true,
+  "build_sha256": "66911b647107047d4f514d13705d2faff513f553dfd748ffbb4035f8d5ebdcae"
+}

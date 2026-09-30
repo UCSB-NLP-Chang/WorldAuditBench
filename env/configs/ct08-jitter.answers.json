@@ -1,0 +1,12 @@
+[
+ {
+  "name": "trembling lantern post",
+  "where": "the small lantern post west of the path (by the pond bank) shakes / trembles in place on its own",
+  "at": [
+   -4.19,
+   -0.6,
+   1.74
+  ],
+  "category": "collision-physics"
+ }
+]

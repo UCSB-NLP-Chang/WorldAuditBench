@@ -1,0 +1,3007 @@
+{
+  "capacity": 6,
+  "allowed_gpus": [
+    2,
+    3
+  ],
+  "slot_gpus": [
+    2,
+    3,
+    2,
+    3,
+    2,
+    3
+  ],
+  "launch_profiles": {
+    "/Shared/review/254868cf1e7bdbf1cb9eb413": {
+      "binary": "/home/ec2-user/unreal-review-releases/concourse-cleanup-20260918/package-v2/Linux/Subway/Binaries/Linux/Subway",
+      "build_sha256": "ffa7b3efdc7e4a03d8e97bb3c3b6c2f5a5d592b3e2188463567bb3b4a72d44f8",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "subway",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Subway/Concourse",
+      "extra_args": [
+        "-AuditorExplorationTask=B01",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/unreal-area-3x-20260918/policy.json"
+      ]
+    },
+    "/Shared/review/afbe2e50cb059f337eacc0e0": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/subway-b63b15524674/Linux/Subway/Binaries/Linux/Subway",
+      "build_sha256": "cc7b5a1be4916d343ba3b05448a4714a205103c157cd2e360414a9ff89b130ca",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "subway",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Subway/Platform",
+      "extra_args": [
+        "-AuditorExplorationTask=B02",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/64f9797a3cf4c534b4f0a047": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/subway-b63b15524674/Linux/Subway/Binaries/Linux/Subway",
+      "build_sha256": "cc7b5a1be4916d343ba3b05448a4714a205103c157cd2e360414a9ff89b130ca",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "subway",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Subway/Trackside",
+      "extra_args": [
+        "-AuditorExplorationTask=B03",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/4c2052553bb9d64b2b8d7ff3": {
+      "binary": "/home/ec2-user/unreal-review-releases/concourse-cleanup-20260918/package-v2/Linux/Subway/Binaries/Linux/Subway",
+      "build_sha256": "ffa7b3efdc7e4a03d8e97bb3c3b6c2f5a5d592b3e2188463567bb3b4a72d44f8",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "subway",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Subway/Concourse?Task=S01",
+      "extra_args": [
+        "-AuditorExplorationTask=S01",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/unreal-area-3x-20260918/policy.json"
+      ]
+    },
+    "/Shared/review/f2c15b3ec575317079133914": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/subway-b63b15524674/Linux/Subway/Binaries/Linux/Subway",
+      "build_sha256": "cc7b5a1be4916d343ba3b05448a4714a205103c157cd2e360414a9ff89b130ca",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "subway",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Subway/Trackside?Task=S02",
+      "extra_args": [
+        "-AuditorExplorationTask=S02",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/0cc53741e43c251c9e9359d2": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/subway-b63b15524674/Linux/Subway/Binaries/Linux/Subway",
+      "build_sha256": "cc7b5a1be4916d343ba3b05448a4714a205103c157cd2e360414a9ff89b130ca",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "subway",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Subway/Trackside?Task=S03",
+      "extra_args": [
+        "-AuditorExplorationTask=S03",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/75c6f9199f1860481770349d": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/subway-b63b15524674/Linux/Subway/Binaries/Linux/Subway",
+      "build_sha256": "cc7b5a1be4916d343ba3b05448a4714a205103c157cd2e360414a9ff89b130ca",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "subway",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Subway/Platform?Task=S04",
+      "extra_args": [
+        "-AuditorExplorationTask=S04",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/744a6f9563a4e5cc74648774": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/subway-b63b15524674/Linux/Subway/Binaries/Linux/Subway",
+      "build_sha256": "cc7b5a1be4916d343ba3b05448a4714a205103c157cd2e360414a9ff89b130ca",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "subway",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Subway/Platform?Task=S06",
+      "extra_args": [
+        "-AuditorExplorationTask=S06",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/a9b9d0deeae4da67a7658b08": {
+      "binary": "/home/ec2-user/unreal-review-releases/concourse-cleanup-20260918/package-v2/Linux/Subway/Binaries/Linux/Subway",
+      "build_sha256": "ffa7b3efdc7e4a03d8e97bb3c3b6c2f5a5d592b3e2188463567bb3b4a72d44f8",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "subway",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Subway/Concourse?Task=S07",
+      "extra_args": [
+        "-AuditorExplorationTask=S07",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/unreal-area-3x-20260918/policy.json"
+      ]
+    },
+    "/Shared/review/fafbc01e9a4cd0bb06c51ec2": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/subway-b63b15524674/Linux/Subway/Binaries/Linux/Subway",
+      "build_sha256": "cc7b5a1be4916d343ba3b05448a4714a205103c157cd2e360414a9ff89b130ca",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "subway",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Subway/Trackside?Task=S08",
+      "extra_args": [
+        "-AuditorExplorationTask=S08",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/64524e83addfb94999396426": {
+      "binary": "/home/ec2-user/unreal-review-releases/concourse-cleanup-20260918/package-v2/Linux/Subway/Binaries/Linux/Subway",
+      "build_sha256": "ffa7b3efdc7e4a03d8e97bb3c3b6c2f5a5d592b3e2188463567bb3b4a72d44f8",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "subway",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Subway/Concourse?Task=S09",
+      "extra_args": [
+        "-AuditorExplorationTask=S09",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/unreal-area-3x-20260918/policy.json"
+      ]
+    },
+    "/Shared/review/29809713bf0276ad31625b1b": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/subway-b63b15524674/Linux/Subway/Binaries/Linux/Subway",
+      "build_sha256": "cc7b5a1be4916d343ba3b05448a4714a205103c157cd2e360414a9ff89b130ca",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "subway",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Subway/Trackside?Task=S10",
+      "extra_args": [
+        "-AuditorExplorationTask=S10",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/6951fc89d805431cd91b3544": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/subway-b63b15524674/Linux/Subway/Binaries/Linux/Subway",
+      "build_sha256": "cc7b5a1be4916d343ba3b05448a4714a205103c157cd2e360414a9ff89b130ca",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "subway",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Subway/Platform?Task=S11",
+      "extra_args": [
+        "-AuditorExplorationTask=S11",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/0a8c71c97d59594b4a8817f4": {
+      "binary": "/home/ec2-user/unreal-review-releases/concourse-cleanup-20260918/package-v2/Linux/Subway/Binaries/Linux/Subway",
+      "build_sha256": "ffa7b3efdc7e4a03d8e97bb3c3b6c2f5a5d592b3e2188463567bb3b4a72d44f8",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "subway",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Subway/Concourse?Task=S12",
+      "extra_args": [
+        "-AuditorExplorationTask=S12",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/unreal-area-3x-20260918/policy.json"
+      ]
+    },
+    "/Shared/review/6eb28dad776445397d70d2a1": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/subway-b63b15524674/Linux/Subway/Binaries/Linux/Subway",
+      "build_sha256": "cc7b5a1be4916d343ba3b05448a4714a205103c157cd2e360414a9ff89b130ca",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "subway",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Subway/Trackside?Task=S13",
+      "extra_args": [
+        "-AuditorExplorationTask=S13",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/70391f87454cd8de7d6375cc": {
+      "binary": "/home/ec2-user/unreal-review-releases/concourse-cleanup-20260918/package-v2/Linux/Subway/Binaries/Linux/Subway",
+      "build_sha256": "ffa7b3efdc7e4a03d8e97bb3c3b6c2f5a5d592b3e2188463567bb3b4a72d44f8",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "subway",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Subway/Concourse?Task=S14",
+      "extra_args": [
+        "-AuditorExplorationTask=S14",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/unreal-area-3x-20260918/policy.json"
+      ]
+    },
+    "/Shared/review/1281ecf5c75ba13704cd2a5e": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/subway-b63b15524674/Linux/Subway/Binaries/Linux/Subway",
+      "build_sha256": "cc7b5a1be4916d343ba3b05448a4714a205103c157cd2e360414a9ff89b130ca",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "subway",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Subway/Platform?Task=S16",
+      "extra_args": [
+        "-AuditorExplorationTask=S16",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/b70f2ae4bb138bc54ff08abd": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/subway-b63b15524674/Linux/Subway/Binaries/Linux/Subway",
+      "build_sha256": "cc7b5a1be4916d343ba3b05448a4714a205103c157cd2e360414a9ff89b130ca",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "subway",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Subway/Platform?Task=S18",
+      "extra_args": [
+        "-AuditorExplorationTask=S18",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/f54433f98d3b52dee97fafd5": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/subway-b63b15524674/Linux/Subway/Binaries/Linux/Subway",
+      "build_sha256": "cc7b5a1be4916d343ba3b05448a4714a205103c157cd2e360414a9ff89b130ca",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "subway",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Subway/Platform?Task=S19",
+      "extra_args": [
+        "-AuditorExplorationTask=S19",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/e6f4c4757484e5c1dbaf4f45": {
+      "binary": "/home/ec2-user/unreal-review-releases/unreal-area-3x-20260918/package/Linux/AtmosphericResidentialHou/Binaries/Linux/AtmosphericResidentialHou",
+      "build_sha256": "09fa7b331005394cd71d087bf4c8374781c1c067ddea5ed4de052d11077dbf9b",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "indoor",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm5",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Regions/LivingRoom",
+      "extra_args": [
+        "-AuditorExplorationTask=HB01",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/unreal-area-3x-20260918/policy.json"
+      ]
+    },
+    "/Shared/review/ca3a583b7767f72d49790020": {
+      "binary": "/home/ec2-user/unreal-review-releases/unreal-area-3x-20260918/package/Linux/AtmosphericResidentialHou/Binaries/Linux/AtmosphericResidentialHou",
+      "build_sha256": "09fa7b331005394cd71d087bf4c8374781c1c067ddea5ed4de052d11077dbf9b",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "indoor",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm5",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Regions/LivingRoom?Task=H01",
+      "extra_args": [
+        "-AuditorExplorationTask=H01",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/unreal-area-3x-20260918/policy.json"
+      ]
+    },
+    "/Shared/review/7e5d485aa9b3bce9537db125": {
+      "binary": "/home/ec2-user/unreal-review-releases/unreal-area-3x-20260918/package/Linux/AtmosphericResidentialHou/Binaries/Linux/AtmosphericResidentialHou",
+      "build_sha256": "09fa7b331005394cd71d087bf4c8374781c1c067ddea5ed4de052d11077dbf9b",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "indoor",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm5",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Regions/LivingRoom?Task=H07",
+      "extra_args": [
+        "-AuditorExplorationTask=H07",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/unreal-area-3x-20260918/policy.json"
+      ]
+    },
+    "/Shared/review/1e9b477c0ea82e995bac48e2": {
+      "binary": "/home/ec2-user/unreal-review-releases/unreal-area-3x-20260918/package/Linux/AtmosphericResidentialHou/Binaries/Linux/AtmosphericResidentialHou",
+      "build_sha256": "09fa7b331005394cd71d087bf4c8374781c1c067ddea5ed4de052d11077dbf9b",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "indoor",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm5",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Regions/LivingRoom?Task=H09",
+      "extra_args": [
+        "-AuditorExplorationTask=H09",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/unreal-area-3x-20260918/policy.json"
+      ]
+    },
+    "/Shared/review/373faea5bbde1143250ca23b": {
+      "binary": "/home/ec2-user/unreal-review-releases/unreal-area-3x-20260918/package/Linux/AtmosphericResidentialHou/Binaries/Linux/AtmosphericResidentialHou",
+      "build_sha256": "09fa7b331005394cd71d087bf4c8374781c1c067ddea5ed4de052d11077dbf9b",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "indoor",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm5",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Regions/LivingRoom?Task=H10",
+      "extra_args": [
+        "-AuditorExplorationTask=H10",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/unreal-area-3x-20260918/policy.json"
+      ]
+    },
+    "/Shared/review/35fa0b8fed0f828ef4f62537": {
+      "binary": "/home/ec2-user/unreal-review-releases/unreal-area-3x-20260918/package/Linux/AtmosphericResidentialHou/Binaries/Linux/AtmosphericResidentialHou",
+      "build_sha256": "09fa7b331005394cd71d087bf4c8374781c1c067ddea5ed4de052d11077dbf9b",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "indoor",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm5",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Regions/KitchenDining",
+      "extra_args": [
+        "-AuditorExplorationTask=HB02",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/unreal-area-3x-20260918/policy.json"
+      ]
+    },
+    "/Shared/review/bd2cfa19d777efa8e41391e6": {
+      "binary": "/home/ec2-user/unreal-review-releases/unreal-area-3x-20260918/package/Linux/AtmosphericResidentialHou/Binaries/Linux/AtmosphericResidentialHou",
+      "build_sha256": "09fa7b331005394cd71d087bf4c8374781c1c067ddea5ed4de052d11077dbf9b",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "indoor",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm5",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Regions/KitchenDining?Task=H02",
+      "extra_args": [
+        "-AuditorExplorationTask=H02",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/unreal-area-3x-20260918/policy.json"
+      ]
+    },
+    "/Shared/review/d39c3125d6af7cb18ee48c96": {
+      "binary": "/home/ec2-user/unreal-review-releases/unreal-area-3x-20260918/package/Linux/AtmosphericResidentialHou/Binaries/Linux/AtmosphericResidentialHou",
+      "build_sha256": "09fa7b331005394cd71d087bf4c8374781c1c067ddea5ed4de052d11077dbf9b",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "indoor",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm5",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Regions/KitchenDining?Task=H03",
+      "extra_args": [
+        "-AuditorExplorationTask=H03",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/unreal-area-3x-20260918/policy.json"
+      ]
+    },
+    "/Shared/review/8371bc11a53582da4ac6843a": {
+      "binary": "/home/ec2-user/unreal-review-releases/unreal-area-3x-20260918/package/Linux/AtmosphericResidentialHou/Binaries/Linux/AtmosphericResidentialHou",
+      "build_sha256": "09fa7b331005394cd71d087bf4c8374781c1c067ddea5ed4de052d11077dbf9b",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "indoor",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm5",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Regions/KitchenDining?Task=H04",
+      "extra_args": [
+        "-AuditorExplorationTask=H04",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/unreal-area-3x-20260918/policy.json"
+      ]
+    },
+    "/Shared/review/06bbec9bd143621abbee09a5": {
+      "binary": "/home/ec2-user/unreal-review-releases/unreal-area-3x-20260918/package/Linux/AtmosphericResidentialHou/Binaries/Linux/AtmosphericResidentialHou",
+      "build_sha256": "09fa7b331005394cd71d087bf4c8374781c1c067ddea5ed4de052d11077dbf9b",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "indoor",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm5",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Regions/KitchenDining?Task=H05",
+      "extra_args": [
+        "-AuditorExplorationTask=H05",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/unreal-area-3x-20260918/policy.json"
+      ]
+    },
+    "/Shared/review/c0ba21d8f7dbb734c105e301": {
+      "binary": "/home/ec2-user/unreal-review-releases/unreal-area-3x-20260918/package/Linux/AtmosphericResidentialHou/Binaries/Linux/AtmosphericResidentialHou",
+      "build_sha256": "09fa7b331005394cd71d087bf4c8374781c1c067ddea5ed4de052d11077dbf9b",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "indoor",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm5",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Regions/KitchenDining?Task=H06",
+      "extra_args": [
+        "-AuditorExplorationTask=H06",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/unreal-area-3x-20260918/policy.json"
+      ]
+    },
+    "/Shared/review/4c61a37105e656c85e4c08a7": {
+      "binary": "/home/ec2-user/unreal-review-releases/unreal-area-3x-20260918/package/Linux/AtmosphericResidentialHou/Binaries/Linux/AtmosphericResidentialHou",
+      "build_sha256": "09fa7b331005394cd71d087bf4c8374781c1c067ddea5ed4de052d11077dbf9b",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "indoor",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm5",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Regions/KitchenDining?Task=H08",
+      "extra_args": [
+        "-AuditorExplorationTask=H08",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/unreal-area-3x-20260918/policy.json"
+      ]
+    },
+    "/Shared/review/3ea308a8b723600e476459e2": {
+      "binary": "/home/ec2-user/unreal-review-releases/unreal-area-3x-20260918/package/Linux/AtmosphericResidentialHou/Binaries/Linux/AtmosphericResidentialHou",
+      "build_sha256": "09fa7b331005394cd71d087bf4c8374781c1c067ddea5ed4de052d11077dbf9b",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "indoor",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm5",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Regions/KitchenDining?Task=H11",
+      "extra_args": [
+        "-AuditorExplorationTask=H11",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/unreal-area-3x-20260918/policy.json"
+      ]
+    },
+    "/Shared/review/e4e1e0d6419666f084628153": {
+      "binary": "/home/ec2-user/unreal-review-releases/unreal-area-3x-20260918/package/Linux/AtmosphericResidentialHou/Binaries/Linux/AtmosphericResidentialHou",
+      "build_sha256": "09fa7b331005394cd71d087bf4c8374781c1c067ddea5ed4de052d11077dbf9b",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "indoor",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm5",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Regions/BedroomSuite",
+      "extra_args": [
+        "-AuditorExplorationTask=HB03",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/unreal-area-3x-20260918/policy.json"
+      ]
+    },
+    "/Shared/review/4db2ddbfa04db7d6f284701b": {
+      "binary": "/home/ec2-user/unreal-review-releases/unreal-area-3x-20260918/package/Linux/AtmosphericResidentialHou/Binaries/Linux/AtmosphericResidentialHou",
+      "build_sha256": "09fa7b331005394cd71d087bf4c8374781c1c067ddea5ed4de052d11077dbf9b",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "indoor",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm5",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Regions/BedroomSuite?Task=H12",
+      "extra_args": [
+        "-AuditorExplorationTask=H12",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/unreal-area-3x-20260918/policy.json"
+      ]
+    },
+    "/Shared/review/0cea4c2dd2d20f1e419e6b12": {
+      "binary": "/home/ec2-user/unreal-review-releases/unreal-area-3x-20260918/package/Linux/AtmosphericResidentialHou/Binaries/Linux/AtmosphericResidentialHou",
+      "build_sha256": "09fa7b331005394cd71d087bf4c8374781c1c067ddea5ed4de052d11077dbf9b",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "indoor",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm5",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Regions/KitchenDining?Task=H13",
+      "extra_args": [
+        "-AuditorExplorationTask=H13",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/unreal-area-3x-20260918/policy.json"
+      ]
+    },
+    "/Shared/review/cbebc08b774cfa63f40947c8": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/urban-ec94cce5d64b/Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
+      "build_sha256": "f9f996a242c44117947427e35749f7c8f8fffe8004a3248f796645540e648e40",
+      "key_filter": "M,One,Two,Three,Four,Tilde,Escape",
+      "family": "urban",
+      "runtime_switch": false,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30,DisableAllScreenMessages",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Tasks/U011/R03/TaskMap",
+      "extra_args": [
+        "-AuditorExplorationTask=U011",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/f14223a74aaa39838d893240": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/urban-c6f314070433/Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
+      "build_sha256": "f9f996a242c44117947427e35749f7c8f8fffe8004a3248f796645540e648e40",
+      "key_filter": "M,One,Two,Three,Four,Tilde,Escape",
+      "family": "urban",
+      "runtime_switch": false,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30,DisableAllScreenMessages",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Migration/UE561/U014/R02/TaskMap_Candidate02",
+      "extra_args": [
+        "-AuditorExplorationTask=U014",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/09df85f5c6900b1e770a08a5": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/urban-c6f314070433/Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
+      "build_sha256": "f9f996a242c44117947427e35749f7c8f8fffe8004a3248f796645540e648e40",
+      "key_filter": "M,One,Two,Three,Four,Tilde,Escape",
+      "family": "urban",
+      "runtime_switch": false,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30,DisableAllScreenMessages",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Migration/UE561/U015/R01/TaskMap_Candidate02",
+      "extra_args": [
+        "-AuditorExplorationTask=U015",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/0bb03bdf2078cc8a00823dd1": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/urban-c6f314070433/Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
+      "build_sha256": "f9f996a242c44117947427e35749f7c8f8fffe8004a3248f796645540e648e40",
+      "key_filter": "M,One,Two,Three,Four,Tilde,Escape",
+      "family": "urban",
+      "runtime_switch": false,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30,DisableAllScreenMessages",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Migration/UE561/U017/R02/TaskMap_Candidate02",
+      "extra_args": [
+        "-AuditorExplorationTask=U017",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/b5bce2b55d0491ff1d118dac": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/urban-e63d0c3c26bd/Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
+      "build_sha256": "f9f996a242c44117947427e35749f7c8f8fffe8004a3248f796645540e648e40",
+      "key_filter": "M,One,Two,Three,Four,Tilde,Escape",
+      "family": "urban",
+      "runtime_switch": false,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30,DisableAllScreenMessages",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Tasks/U018/R03/TaskMap",
+      "extra_args": [
+        "-AuditorExplorationTask=U018",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/f66d172567de2cb9728a43fb": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/urban-c6f314070433/Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
+      "build_sha256": "f9f996a242c44117947427e35749f7c8f8fffe8004a3248f796645540e648e40",
+      "key_filter": "M,One,Two,Three,Four,Tilde,Escape",
+      "family": "urban",
+      "runtime_switch": false,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30,DisableAllScreenMessages",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Migration/UE561/U020/R04/TaskMap_Candidate02",
+      "extra_args": [
+        "-AuditorExplorationTask=U020",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/5ad5649f0b5601bbef0d77cc": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/urban-c6f314070433/Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
+      "build_sha256": "f9f996a242c44117947427e35749f7c8f8fffe8004a3248f796645540e648e40",
+      "key_filter": "M,One,Two,Three,Four,Tilde,Escape",
+      "family": "urban",
+      "runtime_switch": false,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30,DisableAllScreenMessages",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Migration/UE561/U021/R04/TaskMap_Candidate02",
+      "extra_args": [
+        "-AuditorExplorationTask=U021",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/323a025bcb345a07f7dcbd25": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/urban-c6f314070433/Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
+      "build_sha256": "f9f996a242c44117947427e35749f7c8f8fffe8004a3248f796645540e648e40",
+      "key_filter": "M,One,Two,Three,Four,Tilde,Escape",
+      "family": "urban",
+      "runtime_switch": false,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30,DisableAllScreenMessages",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Migration/UE561/U023/R02/TaskMap_Candidate02",
+      "extra_args": [
+        "-AuditorExplorationTask=U023",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/9bcb36691d76e5df1cf5b64c": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/urban-ec94cce5d64b/Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
+      "build_sha256": "f9f996a242c44117947427e35749f7c8f8fffe8004a3248f796645540e648e40",
+      "key_filter": "M,One,Two,Three,Four,Tilde,Escape",
+      "family": "urban",
+      "runtime_switch": false,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30,DisableAllScreenMessages",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Tasks/U024/R02/TaskMap",
+      "extra_args": [
+        "-AuditorExplorationTask=U024",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/33bbaf387538608741712aef": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/urban-c6f314070433/Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
+      "build_sha256": "f9f996a242c44117947427e35749f7c8f8fffe8004a3248f796645540e648e40",
+      "key_filter": "M,One,Two,Three,Four,Tilde,Escape",
+      "family": "urban",
+      "runtime_switch": false,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30,DisableAllScreenMessages",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Migration/UE561/U028/R01/TaskMap_Candidate02",
+      "extra_args": [
+        "-AuditorExplorationTask=U028",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/ddff996b8d1a5b24b05fea75": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/urban-e63d0c3c26bd/Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
+      "build_sha256": "f9f996a242c44117947427e35749f7c8f8fffe8004a3248f796645540e648e40",
+      "key_filter": "M,One,Two,Three,Four,Tilde,Escape",
+      "family": "urban",
+      "runtime_switch": false,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30,DisableAllScreenMessages",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Tasks/U032/R03/TaskMap",
+      "extra_args": [
+        "-AuditorExplorationTask=U032",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/392a5e857f62478f13b710e9": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/urban-c6f314070433/Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
+      "build_sha256": "f9f996a242c44117947427e35749f7c8f8fffe8004a3248f796645540e648e40",
+      "key_filter": "M,One,Two,Three,Four,Tilde,Escape",
+      "family": "urban",
+      "runtime_switch": false,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30,DisableAllScreenMessages",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Migration/UE561/U033/R01/TaskMap_Candidate02",
+      "extra_args": [
+        "-AuditorExplorationTask=U033",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/ae8c9ba22a1243dd5d463bc6": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/urban-c6f314070433/Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
+      "build_sha256": "f9f996a242c44117947427e35749f7c8f8fffe8004a3248f796645540e648e40",
+      "key_filter": "M,One,Two,Three,Four,Tilde,Escape",
+      "family": "urban",
+      "runtime_switch": false,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30,DisableAllScreenMessages",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Migration/UE561/U041/R02/TaskMap_Candidate02",
+      "extra_args": [
+        "-AuditorExplorationTask=U041",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/bddda51492c2defe330b12a7": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/urban-c6f314070433/Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
+      "build_sha256": "f9f996a242c44117947427e35749f7c8f8fffe8004a3248f796645540e648e40",
+      "key_filter": "M,One,Two,Three,Four,Tilde,Escape",
+      "family": "urban",
+      "runtime_switch": false,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30,DisableAllScreenMessages",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Migration/UE561/U043/R03/TaskMap_Candidate02",
+      "extra_args": [
+        "-AuditorExplorationTask=U043",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/597f9eda0e32598caad560d2": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/ancient-74e7762ddff9/Linux/AncientChineseCity/Binaries/Linux/AncientChineseCity",
+      "build_sha256": "6f26bd852961369058e1fb048ad26159f491740c5394ec9e530719032c3d25d1",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "ancient",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30,r.SkinCache.Mode 0,r.OptimizedWPO 1,r.Nanite.AllowWPODistanceDisable 1,r.SkeletalMeshLODBias 1,r.Nanite.MaxPixelsPerEdge 2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.GlobalIlluminationQuality=1",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.ReflectionQuality=1",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.ShadowQuality=2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.EffectsQuality=2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.PostProcessQuality=2",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/AncientCity/Market",
+      "extra_args": [
+        "-AuditorExplorationTask=AB01",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/459b399c63e9615a29b2d1a3": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/ancient-74e7762ddff9/Linux/AncientChineseCity/Binaries/Linux/AncientChineseCity",
+      "build_sha256": "6f26bd852961369058e1fb048ad26159f491740c5394ec9e530719032c3d25d1",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "ancient",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30,r.SkinCache.Mode 0,r.OptimizedWPO 1,r.Nanite.AllowWPODistanceDisable 1,r.SkeletalMeshLODBias 1,r.Nanite.MaxPixelsPerEdge 2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.GlobalIlluminationQuality=1",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.ReflectionQuality=1",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.ShadowQuality=2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.EffectsQuality=2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.PostProcessQuality=2",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/AncientCity/Market?Task=A01",
+      "extra_args": [
+        "-AuditorExplorationTask=A01",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/c563c9cdcd78e2f07f2b1150": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/ancient-74e7762ddff9/Linux/AncientChineseCity/Binaries/Linux/AncientChineseCity",
+      "build_sha256": "6f26bd852961369058e1fb048ad26159f491740c5394ec9e530719032c3d25d1",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "ancient",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30,r.SkinCache.Mode 0,r.OptimizedWPO 1,r.Nanite.AllowWPODistanceDisable 1,r.SkeletalMeshLODBias 1,r.Nanite.MaxPixelsPerEdge 2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.GlobalIlluminationQuality=1",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.ReflectionQuality=1",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.ShadowQuality=2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.EffectsQuality=2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.PostProcessQuality=2",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/AncientCity/Market?Task=A04",
+      "extra_args": [
+        "-AuditorExplorationTask=A04",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/a247d1de452ddf0aff83faa4": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/ancient-74e7762ddff9/Linux/AncientChineseCity/Binaries/Linux/AncientChineseCity",
+      "build_sha256": "6f26bd852961369058e1fb048ad26159f491740c5394ec9e530719032c3d25d1",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "ancient",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30,r.SkinCache.Mode 0,r.OptimizedWPO 1,r.Nanite.AllowWPODistanceDisable 1,r.SkeletalMeshLODBias 1,r.Nanite.MaxPixelsPerEdge 2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.GlobalIlluminationQuality=1",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.ReflectionQuality=1",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.ShadowQuality=2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.EffectsQuality=2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.PostProcessQuality=2",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/AncientCity/Market?Task=A06",
+      "extra_args": [
+        "-AuditorExplorationTask=A06",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/2776edacb1e99af274966101": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/ancient-74e7762ddff9/Linux/AncientChineseCity/Binaries/Linux/AncientChineseCity",
+      "build_sha256": "6f26bd852961369058e1fb048ad26159f491740c5394ec9e530719032c3d25d1",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "ancient",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30,r.SkinCache.Mode 0,r.OptimizedWPO 1,r.Nanite.AllowWPODistanceDisable 1,r.SkeletalMeshLODBias 1,r.Nanite.MaxPixelsPerEdge 2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.GlobalIlluminationQuality=1",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.ReflectionQuality=1",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.ShadowQuality=2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.EffectsQuality=2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.PostProcessQuality=2",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/AncientCity/Market?Task=A07",
+      "extra_args": [
+        "-AuditorExplorationTask=A07",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/982c9ac2c9be848a6ed2f7fa": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/ancient-74e7762ddff9/Linux/AncientChineseCity/Binaries/Linux/AncientChineseCity",
+      "build_sha256": "6f26bd852961369058e1fb048ad26159f491740c5394ec9e530719032c3d25d1",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "ancient",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30,r.SkinCache.Mode 0,r.OptimizedWPO 1,r.Nanite.AllowWPODistanceDisable 1,r.SkeletalMeshLODBias 1,r.Nanite.MaxPixelsPerEdge 2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.GlobalIlluminationQuality=1",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.ReflectionQuality=1",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.ShadowQuality=2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.EffectsQuality=2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.PostProcessQuality=2",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/AncientCity/Market?Task=A09",
+      "extra_args": [
+        "-AuditorExplorationTask=A09",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/770b4bf2490b711ce8e3e59e": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/ancient-74e7762ddff9/Linux/AncientChineseCity/Binaries/Linux/AncientChineseCity",
+      "build_sha256": "6f26bd852961369058e1fb048ad26159f491740c5394ec9e530719032c3d25d1",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "ancient",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30,r.SkinCache.Mode 0,r.OptimizedWPO 1,r.Nanite.AllowWPODistanceDisable 1,r.SkeletalMeshLODBias 1,r.Nanite.MaxPixelsPerEdge 2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.GlobalIlluminationQuality=1",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.ReflectionQuality=1",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.ShadowQuality=2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.EffectsQuality=2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.PostProcessQuality=2",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/AncientCity/Market?Task=A11",
+      "extra_args": [
+        "-AuditorExplorationTask=A11",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/9489e2cc32631399179cc4bd": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/ancient-74e7762ddff9/Linux/AncientChineseCity/Binaries/Linux/AncientChineseCity",
+      "build_sha256": "6f26bd852961369058e1fb048ad26159f491740c5394ec9e530719032c3d25d1",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "ancient",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30,r.SkinCache.Mode 0,r.OptimizedWPO 1,r.Nanite.AllowWPODistanceDisable 1,r.SkeletalMeshLODBias 1,r.Nanite.MaxPixelsPerEdge 2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.GlobalIlluminationQuality=1",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.ReflectionQuality=1",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.ShadowQuality=2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.EffectsQuality=2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.PostProcessQuality=2",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/AncientCity/Market?Task=A14",
+      "extra_args": [
+        "-AuditorExplorationTask=A14",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/e1a8e6dbc8841bb8e68de969": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/ancient-74e7762ddff9/Linux/AncientChineseCity/Binaries/Linux/AncientChineseCity",
+      "build_sha256": "6f26bd852961369058e1fb048ad26159f491740c5394ec9e530719032c3d25d1",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "ancient",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30,r.SkinCache.Mode 0,r.OptimizedWPO 1,r.Nanite.AllowWPODistanceDisable 1,r.SkeletalMeshLODBias 1,r.Nanite.MaxPixelsPerEdge 2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.GlobalIlluminationQuality=1",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.ReflectionQuality=1",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.ShadowQuality=2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.EffectsQuality=2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.PostProcessQuality=2",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/AncientCity/Market?Task=A20",
+      "extra_args": [
+        "-AuditorExplorationTask=A20",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/f5e3a1ecc675b80372b21c15": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/ancient-74e7762ddff9/Linux/AncientChineseCity/Binaries/Linux/AncientChineseCity",
+      "build_sha256": "6f26bd852961369058e1fb048ad26159f491740c5394ec9e530719032c3d25d1",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "ancient",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30,r.SkinCache.Mode 0,r.OptimizedWPO 1,r.Nanite.AllowWPODistanceDisable 1,r.SkeletalMeshLODBias 1,r.Nanite.MaxPixelsPerEdge 2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.GlobalIlluminationQuality=1",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.ReflectionQuality=1",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.ShadowQuality=2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.EffectsQuality=2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.PostProcessQuality=2",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/AncientCity/TeaHouse",
+      "extra_args": [
+        "-AuditorExplorationTask=AB02",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/c0ade76bdb7a2d2ef26844c3": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/ancient-74e7762ddff9/Linux/AncientChineseCity/Binaries/Linux/AncientChineseCity",
+      "build_sha256": "6f26bd852961369058e1fb048ad26159f491740c5394ec9e530719032c3d25d1",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "ancient",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30,r.SkinCache.Mode 0,r.OptimizedWPO 1,r.Nanite.AllowWPODistanceDisable 1,r.SkeletalMeshLODBias 1,r.Nanite.MaxPixelsPerEdge 2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.GlobalIlluminationQuality=1",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.ReflectionQuality=1",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.ShadowQuality=2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.EffectsQuality=2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.PostProcessQuality=2",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/AncientCity/TeaHouse?Task=A03",
+      "extra_args": [
+        "-AuditorExplorationTask=A03",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/71dacc660f78f927d42ac696": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/ancient-74e7762ddff9/Linux/AncientChineseCity/Binaries/Linux/AncientChineseCity",
+      "build_sha256": "6f26bd852961369058e1fb048ad26159f491740c5394ec9e530719032c3d25d1",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "ancient",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30,r.SkinCache.Mode 0,r.OptimizedWPO 1,r.Nanite.AllowWPODistanceDisable 1,r.SkeletalMeshLODBias 1,r.Nanite.MaxPixelsPerEdge 2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.GlobalIlluminationQuality=1",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.ReflectionQuality=1",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.ShadowQuality=2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.EffectsQuality=2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.PostProcessQuality=2",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/AncientCity/TeaHouse?Task=A05",
+      "extra_args": [
+        "-AuditorExplorationTask=A05",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/b643b5edb38f164e8e94a84e": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/ancient-74e7762ddff9/Linux/AncientChineseCity/Binaries/Linux/AncientChineseCity",
+      "build_sha256": "6f26bd852961369058e1fb048ad26159f491740c5394ec9e530719032c3d25d1",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "ancient",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30,r.SkinCache.Mode 0,r.OptimizedWPO 1,r.Nanite.AllowWPODistanceDisable 1,r.SkeletalMeshLODBias 1,r.Nanite.MaxPixelsPerEdge 2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.GlobalIlluminationQuality=1",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.ReflectionQuality=1",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.ShadowQuality=2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.EffectsQuality=2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.PostProcessQuality=2",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/AncientCity/TeaHouse?Task=A08",
+      "extra_args": [
+        "-AuditorExplorationTask=A08",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/bf345d30e37bca816f45c23a": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/ancient-74e7762ddff9/Linux/AncientChineseCity/Binaries/Linux/AncientChineseCity",
+      "build_sha256": "6f26bd852961369058e1fb048ad26159f491740c5394ec9e530719032c3d25d1",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "ancient",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30,r.SkinCache.Mode 0,r.OptimizedWPO 1,r.Nanite.AllowWPODistanceDisable 1,r.SkeletalMeshLODBias 1,r.Nanite.MaxPixelsPerEdge 2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.GlobalIlluminationQuality=1",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.ReflectionQuality=1",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.ShadowQuality=2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.EffectsQuality=2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.PostProcessQuality=2",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/AncientCity/TeaHouse?Task=A12",
+      "extra_args": [
+        "-AuditorExplorationTask=A12",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/b37a1466b1b702f472ff738a": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/ancient-74e7762ddff9/Linux/AncientChineseCity/Binaries/Linux/AncientChineseCity",
+      "build_sha256": "6f26bd852961369058e1fb048ad26159f491740c5394ec9e530719032c3d25d1",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "ancient",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30,r.SkinCache.Mode 0,r.OptimizedWPO 1,r.Nanite.AllowWPODistanceDisable 1,r.SkeletalMeshLODBias 1,r.Nanite.MaxPixelsPerEdge 2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.GlobalIlluminationQuality=1",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.ReflectionQuality=1",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.ShadowQuality=2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.EffectsQuality=2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.PostProcessQuality=2",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/AncientCity/TeaHouse?Task=A15",
+      "extra_args": [
+        "-AuditorExplorationTask=A15",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/0dadc1c249d1dbaa424c2acf": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/ancient-74e7762ddff9/Linux/AncientChineseCity/Binaries/Linux/AncientChineseCity",
+      "build_sha256": "6f26bd852961369058e1fb048ad26159f491740c5394ec9e530719032c3d25d1",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "ancient",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30,r.SkinCache.Mode 0,r.OptimizedWPO 1,r.Nanite.AllowWPODistanceDisable 1,r.SkeletalMeshLODBias 1,r.Nanite.MaxPixelsPerEdge 2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.GlobalIlluminationQuality=1",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.ReflectionQuality=1",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.ShadowQuality=2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.EffectsQuality=2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.PostProcessQuality=2",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/AncientCity/Courtyard?Task=A18",
+      "extra_args": [
+        "-AuditorExplorationTask=A18",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/6d36a7497f81d7187a51c5a7": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/ancient-74e7762ddff9/Linux/AncientChineseCity/Binaries/Linux/AncientChineseCity",
+      "build_sha256": "6f26bd852961369058e1fb048ad26159f491740c5394ec9e530719032c3d25d1",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "ancient",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30,r.SkinCache.Mode 0,r.OptimizedWPO 1,r.Nanite.AllowWPODistanceDisable 1,r.SkeletalMeshLODBias 1,r.Nanite.MaxPixelsPerEdge 2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.GlobalIlluminationQuality=1",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.ReflectionQuality=1",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.ShadowQuality=2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.EffectsQuality=2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.PostProcessQuality=2",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/AncientCity/Courtyard",
+      "extra_args": [
+        "-AuditorExplorationTask=AB03",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/b51a819f8b745fd2b11285a8": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/ancient-74e7762ddff9/Linux/AncientChineseCity/Binaries/Linux/AncientChineseCity",
+      "build_sha256": "6f26bd852961369058e1fb048ad26159f491740c5394ec9e530719032c3d25d1",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "ancient",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30,r.SkinCache.Mode 0,r.OptimizedWPO 1,r.Nanite.AllowWPODistanceDisable 1,r.SkeletalMeshLODBias 1,r.Nanite.MaxPixelsPerEdge 2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.GlobalIlluminationQuality=1",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.ReflectionQuality=1",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.ShadowQuality=2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.EffectsQuality=2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.PostProcessQuality=2",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/AncientCity/Courtyard?Task=A02",
+      "extra_args": [
+        "-AuditorExplorationTask=A02",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/05351bd7fc42c375782dcbb2": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/ancient-74e7762ddff9/Linux/AncientChineseCity/Binaries/Linux/AncientChineseCity",
+      "build_sha256": "6f26bd852961369058e1fb048ad26159f491740c5394ec9e530719032c3d25d1",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "ancient",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30,r.SkinCache.Mode 0,r.OptimizedWPO 1,r.Nanite.AllowWPODistanceDisable 1,r.SkeletalMeshLODBias 1,r.Nanite.MaxPixelsPerEdge 2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.GlobalIlluminationQuality=1",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.ReflectionQuality=1",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.ShadowQuality=2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.EffectsQuality=2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.PostProcessQuality=2",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/AncientCity/Courtyard?Task=A10",
+      "extra_args": [
+        "-AuditorExplorationTask=A10",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/8ac1e8a77a89fa0a84377ae6": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/ancient-74e7762ddff9/Linux/AncientChineseCity/Binaries/Linux/AncientChineseCity",
+      "build_sha256": "6f26bd852961369058e1fb048ad26159f491740c5394ec9e530719032c3d25d1",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "ancient",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30,r.SkinCache.Mode 0,r.OptimizedWPO 1,r.Nanite.AllowWPODistanceDisable 1,r.SkeletalMeshLODBias 1,r.Nanite.MaxPixelsPerEdge 2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.GlobalIlluminationQuality=1",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.ReflectionQuality=1",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.ShadowQuality=2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.EffectsQuality=2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.PostProcessQuality=2",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/AncientCity/Courtyard?Task=A16",
+      "extra_args": [
+        "-AuditorExplorationTask=A16",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/8252828dec91dd276881ed08": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/ancient-74e7762ddff9/Linux/AncientChineseCity/Binaries/Linux/AncientChineseCity",
+      "build_sha256": "6f26bd852961369058e1fb048ad26159f491740c5394ec9e530719032c3d25d1",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "ancient",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30,r.SkinCache.Mode 0,r.OptimizedWPO 1,r.Nanite.AllowWPODistanceDisable 1,r.SkeletalMeshLODBias 1,r.Nanite.MaxPixelsPerEdge 2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.GlobalIlluminationQuality=1",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.ReflectionQuality=1",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.ShadowQuality=2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.EffectsQuality=2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.PostProcessQuality=2",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/AncientCity/Courtyard?Task=A17",
+      "extra_args": [
+        "-AuditorExplorationTask=A17",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/942460185c6b813ea36fbeb2": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/ancient-74e7762ddff9/Linux/AncientChineseCity/Binaries/Linux/AncientChineseCity",
+      "build_sha256": "6f26bd852961369058e1fb048ad26159f491740c5394ec9e530719032c3d25d1",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "ancient",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30,r.SkinCache.Mode 0,r.OptimizedWPO 1,r.Nanite.AllowWPODistanceDisable 1,r.SkeletalMeshLODBias 1,r.Nanite.MaxPixelsPerEdge 2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.GlobalIlluminationQuality=1",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.ReflectionQuality=1",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.ShadowQuality=2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.EffectsQuality=2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.PostProcessQuality=2",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/AncientCity/Courtyard?Task=A19",
+      "extra_args": [
+        "-AuditorExplorationTask=A19",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/29cddd6a4492d876f6acc342": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/industrial-90f7e645b0df/Linux/FactoryEnvironmentCollect/Binaries/Linux/FactoryEnvironmentCollect",
+      "build_sha256": "6aaf25aa9350624835ceca8ee7eccd79a8a2b4e253d424b1e46f2b168b7baa87",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "industrial",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm5",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Industrial/AssemblyHall",
+      "extra_args": [
+        "-AuditorExplorationTask=IB01",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/3727a7431fdbab9642cf4e45": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/industrial-90f7e645b0df/Linux/FactoryEnvironmentCollect/Binaries/Linux/FactoryEnvironmentCollect",
+      "build_sha256": "6aaf25aa9350624835ceca8ee7eccd79a8a2b4e253d424b1e46f2b168b7baa87",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "industrial",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm5",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Industrial/AssemblyHall?Task=I02",
+      "extra_args": [
+        "-AuditorExplorationTask=I02",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/3809df633491e46fc5ec2d7c": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/industrial-90f7e645b0df/Linux/FactoryEnvironmentCollect/Binaries/Linux/FactoryEnvironmentCollect",
+      "build_sha256": "6aaf25aa9350624835ceca8ee7eccd79a8a2b4e253d424b1e46f2b168b7baa87",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "industrial",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm5",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Industrial/AssemblyHall?Task=I03",
+      "extra_args": [
+        "-AuditorExplorationTask=I03",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/f08fa320f7b769fb8cd429e8": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/industrial-90f7e645b0df/Linux/FactoryEnvironmentCollect/Binaries/Linux/FactoryEnvironmentCollect",
+      "build_sha256": "6aaf25aa9350624835ceca8ee7eccd79a8a2b4e253d424b1e46f2b168b7baa87",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "industrial",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm5",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Industrial/AssemblyHall?Task=I04",
+      "extra_args": [
+        "-AuditorExplorationTask=I04",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/458e2797cfc331c80a3b0258": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/industrial-90f7e645b0df/Linux/FactoryEnvironmentCollect/Binaries/Linux/FactoryEnvironmentCollect",
+      "build_sha256": "6aaf25aa9350624835ceca8ee7eccd79a8a2b4e253d424b1e46f2b168b7baa87",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "industrial",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm5",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Industrial/AssemblyHall?Task=I05",
+      "extra_args": [
+        "-AuditorExplorationTask=I05",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/5e94537dde96eefe43ed777b": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/industrial-90f7e645b0df/Linux/FactoryEnvironmentCollect/Binaries/Linux/FactoryEnvironmentCollect",
+      "build_sha256": "6aaf25aa9350624835ceca8ee7eccd79a8a2b4e253d424b1e46f2b168b7baa87",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "industrial",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm5",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Industrial/AssemblyHall?Task=I06",
+      "extra_args": [
+        "-AuditorExplorationTask=I06",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/82c12cbc4b93ce0ec5ad1700": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/industrial-90f7e645b0df/Linux/FactoryEnvironmentCollect/Binaries/Linux/FactoryEnvironmentCollect",
+      "build_sha256": "6aaf25aa9350624835ceca8ee7eccd79a8a2b4e253d424b1e46f2b168b7baa87",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "industrial",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm5",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Industrial/VehicleTest",
+      "extra_args": [
+        "-AuditorExplorationTask=IB02",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/0a2f19f1bdf720a91c55918d": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/industrial-90f7e645b0df/Linux/FactoryEnvironmentCollect/Binaries/Linux/FactoryEnvironmentCollect",
+      "build_sha256": "6aaf25aa9350624835ceca8ee7eccd79a8a2b4e253d424b1e46f2b168b7baa87",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "industrial",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm5",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Industrial/VehicleTest?Task=I07",
+      "extra_args": [
+        "-AuditorExplorationTask=I07",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/c88388d7a4b7a64ce924e764": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/industrial-90f7e645b0df/Linux/FactoryEnvironmentCollect/Binaries/Linux/FactoryEnvironmentCollect",
+      "build_sha256": "6aaf25aa9350624835ceca8ee7eccd79a8a2b4e253d424b1e46f2b168b7baa87",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "industrial",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm5",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Industrial/VehicleTest?Task=I08",
+      "extra_args": [
+        "-AuditorExplorationTask=I08",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/e06d94805a79ceb785b1a461": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/industrial-90f7e645b0df/Linux/FactoryEnvironmentCollect/Binaries/Linux/FactoryEnvironmentCollect",
+      "build_sha256": "6aaf25aa9350624835ceca8ee7eccd79a8a2b4e253d424b1e46f2b168b7baa87",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "industrial",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm5",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Industrial/VehicleTest?Task=I10",
+      "extra_args": [
+        "-AuditorExplorationTask=I10",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/aa6d8e7a378bb91fea55962d": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/industrial-90f7e645b0df/Linux/FactoryEnvironmentCollect/Binaries/Linux/FactoryEnvironmentCollect",
+      "build_sha256": "6aaf25aa9350624835ceca8ee7eccd79a8a2b4e253d424b1e46f2b168b7baa87",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "industrial",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm5",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Industrial/VehicleTest?Task=I11",
+      "extra_args": [
+        "-AuditorExplorationTask=I11",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/88f0b0c1ab112db8bbb92f77": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/industrial-90f7e645b0df/Linux/FactoryEnvironmentCollect/Binaries/Linux/FactoryEnvironmentCollect",
+      "build_sha256": "6aaf25aa9350624835ceca8ee7eccd79a8a2b4e253d424b1e46f2b168b7baa87",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "industrial",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm5",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Industrial/VehicleTest?Task=I12",
+      "extra_args": [
+        "-AuditorExplorationTask=I12",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/ca441c712a782dd27b9bf89f": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/industrial-90f7e645b0df/Linux/FactoryEnvironmentCollect/Binaries/Linux/FactoryEnvironmentCollect",
+      "build_sha256": "6aaf25aa9350624835ceca8ee7eccd79a8a2b4e253d424b1e46f2b168b7baa87",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "industrial",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm5",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Industrial/ControlRoom",
+      "extra_args": [
+        "-AuditorExplorationTask=IB03",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/479270b66e05ce16b66cc1a0": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/industrial-90f7e645b0df/Linux/FactoryEnvironmentCollect/Binaries/Linux/FactoryEnvironmentCollect",
+      "build_sha256": "6aaf25aa9350624835ceca8ee7eccd79a8a2b4e253d424b1e46f2b168b7baa87",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "industrial",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm5",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Industrial/ControlRoom?Task=I13",
+      "extra_args": [
+        "-AuditorExplorationTask=I13",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/7e964242169532347103f5f9": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/industrial-90f7e645b0df/Linux/FactoryEnvironmentCollect/Binaries/Linux/FactoryEnvironmentCollect",
+      "build_sha256": "6aaf25aa9350624835ceca8ee7eccd79a8a2b4e253d424b1e46f2b168b7baa87",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "industrial",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm5",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Industrial/ControlRoom?Task=I14",
+      "extra_args": [
+        "-AuditorExplorationTask=I14",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/0b678e3a71b83e689ca88697": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/industrial-90f7e645b0df/Linux/FactoryEnvironmentCollect/Binaries/Linux/FactoryEnvironmentCollect",
+      "build_sha256": "6aaf25aa9350624835ceca8ee7eccd79a8a2b4e253d424b1e46f2b168b7baa87",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "industrial",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm5",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Industrial/ControlRoom?Task=I15",
+      "extra_args": [
+        "-AuditorExplorationTask=I15",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/7e0abd9f44d8cda64669e82c": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/industrial-90f7e645b0df/Linux/FactoryEnvironmentCollect/Binaries/Linux/FactoryEnvironmentCollect",
+      "build_sha256": "6aaf25aa9350624835ceca8ee7eccd79a8a2b4e253d424b1e46f2b168b7baa87",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "industrial",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm5",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Industrial/ControlRoom?Task=I16",
+      "extra_args": [
+        "-AuditorExplorationTask=I16",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/91d8aa4add2f3912c0d8e7af": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/industrial-90f7e645b0df/Linux/FactoryEnvironmentCollect/Binaries/Linux/FactoryEnvironmentCollect",
+      "build_sha256": "6aaf25aa9350624835ceca8ee7eccd79a8a2b4e253d424b1e46f2b168b7baa87",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "industrial",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm5",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Industrial/ControlRoom?Task=I17",
+      "extra_args": [
+        "-AuditorExplorationTask=I17",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/8c9bbc0dab432158743ae1c4": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/industrial-90f7e645b0df/Linux/FactoryEnvironmentCollect/Binaries/Linux/FactoryEnvironmentCollect",
+      "build_sha256": "6aaf25aa9350624835ceca8ee7eccd79a8a2b4e253d424b1e46f2b168b7baa87",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "industrial",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm5",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Industrial/ControlRoom?Task=I18",
+      "extra_args": [
+        "-AuditorExplorationTask=I18",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/6926873470c771250b8c7def": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/rural-f8c406483da2/Linux/RuralAustralia/Binaries/Linux/RuralAustralia",
+      "build_sha256": "ab452c63fd4e5b1a13f93e6516d04fe6bf682617b942fbee3152f41b8e40957e",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "rural",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm5",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/RuralAustralia/RoadBend",
+      "extra_args": [
+        "-AuditorExplorationTask=RB01",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/8a03985e10ddef4190e9b066": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/rural-f8c406483da2/Linux/RuralAustralia/Binaries/Linux/RuralAustralia",
+      "build_sha256": "ab452c63fd4e5b1a13f93e6516d04fe6bf682617b942fbee3152f41b8e40957e",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "rural",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm5",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/RuralAustralia/RoadBend?Task=R01",
+      "extra_args": [
+        "-AuditorExplorationTask=R01",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/ea0cfeb31625ff1c7f0c94c8": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/rural-f8c406483da2/Linux/RuralAustralia/Binaries/Linux/RuralAustralia",
+      "build_sha256": "ab452c63fd4e5b1a13f93e6516d04fe6bf682617b942fbee3152f41b8e40957e",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "rural",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm5",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/RuralAustralia/RoadBend?Task=R02",
+      "extra_args": [
+        "-AuditorExplorationTask=R02",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/97c49df408b10afd87bb6ae5": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/rural-f8c406483da2/Linux/RuralAustralia/Binaries/Linux/RuralAustralia",
+      "build_sha256": "ab452c63fd4e5b1a13f93e6516d04fe6bf682617b942fbee3152f41b8e40957e",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "rural",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm5",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/RuralAustralia/RoadBend?Task=R03",
+      "extra_args": [
+        "-AuditorExplorationTask=R03",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/292910abd652ee571b1c4efc": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/rural-f8c406483da2/Linux/RuralAustralia/Binaries/Linux/RuralAustralia",
+      "build_sha256": "ab452c63fd4e5b1a13f93e6516d04fe6bf682617b942fbee3152f41b8e40957e",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "rural",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm5",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/RuralAustralia/RoadBend?Task=R05",
+      "extra_args": [
+        "-AuditorExplorationTask=R05",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/b8fa0c5c0a9c3b5762d13901": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/rural-f8c406483da2/Linux/RuralAustralia/Binaries/Linux/RuralAustralia",
+      "build_sha256": "ab452c63fd4e5b1a13f93e6516d04fe6bf682617b942fbee3152f41b8e40957e",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "rural",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm5",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/RuralAustralia/RoadBend?Task=R06",
+      "extra_args": [
+        "-AuditorExplorationTask=R06",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/3af12fb2d55d5f41b3b0d276": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/rural-f8c406483da2/Linux/RuralAustralia/Binaries/Linux/RuralAustralia",
+      "build_sha256": "ab452c63fd4e5b1a13f93e6516d04fe6bf682617b942fbee3152f41b8e40957e",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "rural",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm5",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/RuralAustralia/Roadside",
+      "extra_args": [
+        "-AuditorExplorationTask=RB02",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/e17d9b3e43256eaf293ade31": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/rural-f8c406483da2/Linux/RuralAustralia/Binaries/Linux/RuralAustralia",
+      "build_sha256": "ab452c63fd4e5b1a13f93e6516d04fe6bf682617b942fbee3152f41b8e40957e",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "rural",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm5",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/RuralAustralia/Roadside?Task=R07",
+      "extra_args": [
+        "-AuditorExplorationTask=R07",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/7105f786385d3551aefa72b2": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/rural-f8c406483da2/Linux/RuralAustralia/Binaries/Linux/RuralAustralia",
+      "build_sha256": "ab452c63fd4e5b1a13f93e6516d04fe6bf682617b942fbee3152f41b8e40957e",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "rural",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm5",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/RuralAustralia/Roadside?Task=R08",
+      "extra_args": [
+        "-AuditorExplorationTask=R08",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/dddb25fc1ee5c215671b7e17": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/rural-f8c406483da2/Linux/RuralAustralia/Binaries/Linux/RuralAustralia",
+      "build_sha256": "ab452c63fd4e5b1a13f93e6516d04fe6bf682617b942fbee3152f41b8e40957e",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "rural",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm5",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/RuralAustralia/Roadside?Task=R10",
+      "extra_args": [
+        "-AuditorExplorationTask=R10",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/338f02c1ce4ec34989cf25fe": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/rural-f8c406483da2/Linux/RuralAustralia/Binaries/Linux/RuralAustralia",
+      "build_sha256": "ab452c63fd4e5b1a13f93e6516d04fe6bf682617b942fbee3152f41b8e40957e",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "rural",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm5",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/RuralAustralia/Roadside?Task=R11",
+      "extra_args": [
+        "-AuditorExplorationTask=R11",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/2b98de6afc527e4f9861e6e8": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/rural-f8c406483da2/Linux/RuralAustralia/Binaries/Linux/RuralAustralia",
+      "build_sha256": "ab452c63fd4e5b1a13f93e6516d04fe6bf682617b942fbee3152f41b8e40957e",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "rural",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm5",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/RuralAustralia/Roadside?Task=R12",
+      "extra_args": [
+        "-AuditorExplorationTask=R12",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/82cf43c4bc666689d164bda1": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/rural-f8c406483da2/Linux/RuralAustralia/Binaries/Linux/RuralAustralia",
+      "build_sha256": "ab452c63fd4e5b1a13f93e6516d04fe6bf682617b942fbee3152f41b8e40957e",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "rural",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm5",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/RuralAustralia/Canyon",
+      "extra_args": [
+        "-AuditorExplorationTask=RB03",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/b197a3c2087808f563888c38": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/rural-f8c406483da2/Linux/RuralAustralia/Binaries/Linux/RuralAustralia",
+      "build_sha256": "ab452c63fd4e5b1a13f93e6516d04fe6bf682617b942fbee3152f41b8e40957e",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "rural",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm5",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/RuralAustralia/Canyon?Task=R13",
+      "extra_args": [
+        "-AuditorExplorationTask=R13",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/3ead1f6eb53a4ea87bc5dc20": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/rural-f8c406483da2/Linux/RuralAustralia/Binaries/Linux/RuralAustralia",
+      "build_sha256": "ab452c63fd4e5b1a13f93e6516d04fe6bf682617b942fbee3152f41b8e40957e",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "rural",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm5",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/RuralAustralia/Canyon?Task=R14",
+      "extra_args": [
+        "-AuditorExplorationTask=R14",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/b9219443aad5d28cc615ea03": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/rural-f8c406483da2/Linux/RuralAustralia/Binaries/Linux/RuralAustralia",
+      "build_sha256": "ab452c63fd4e5b1a13f93e6516d04fe6bf682617b942fbee3152f41b8e40957e",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "rural",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm5",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/RuralAustralia/Canyon?Task=R15",
+      "extra_args": [
+        "-AuditorExplorationTask=R15",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/9c60a309f63bee80039972b5": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/rural-f8c406483da2/Linux/RuralAustralia/Binaries/Linux/RuralAustralia",
+      "build_sha256": "ab452c63fd4e5b1a13f93e6516d04fe6bf682617b942fbee3152f41b8e40957e",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "rural",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm5",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/RuralAustralia/Canyon?Task=R16",
+      "extra_args": [
+        "-AuditorExplorationTask=R16",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/ddc0e14841ae5ef7fc6302c1": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/rural-f8c406483da2/Linux/RuralAustralia/Binaries/Linux/RuralAustralia",
+      "build_sha256": "ab452c63fd4e5b1a13f93e6516d04fe6bf682617b942fbee3152f41b8e40957e",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "rural",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm5",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/RuralAustralia/Canyon?Task=R17",
+      "extra_args": [
+        "-AuditorExplorationTask=R17",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/f43c9938627ffec2f0c06d08": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/rural-f8c406483da2/Linux/RuralAustralia/Binaries/Linux/RuralAustralia",
+      "build_sha256": "ab452c63fd4e5b1a13f93e6516d04fe6bf682617b942fbee3152f41b8e40957e",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "rural",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm5",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/RuralAustralia/Canyon?Task=R18",
+      "extra_args": [
+        "-AuditorExplorationTask=R18",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/0645ed3fe277050971b9863b": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-medieval-20260917/package-092c5babf747/Linux/MedievalVillage/Binaries/Linux/MedievalVillage",
+      "build_sha256": "166acf2fcb8c8179de9913f53086fa8998d36eda77309ff962206b3c932e7efa",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "medieval",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/MedievalVillage/Market",
+      "extra_args": [
+        "-AuditorExplorationTask=MVB01",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/bdd61b44271f0d2e27a4b2f5": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-medieval-20260917/package-092c5babf747/Linux/MedievalVillage/Binaries/Linux/MedievalVillage",
+      "build_sha256": "166acf2fcb8c8179de9913f53086fa8998d36eda77309ff962206b3c932e7efa",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "medieval",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/MedievalVillage/Market?Task=MV01",
+      "extra_args": [
+        "-AuditorExplorationTask=MV01",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/2dd1107bc103923d0ef87889": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-medieval-20260917/package-092c5babf747/Linux/MedievalVillage/Binaries/Linux/MedievalVillage",
+      "build_sha256": "166acf2fcb8c8179de9913f53086fa8998d36eda77309ff962206b3c932e7efa",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "medieval",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/MedievalVillage/Market?Task=MV02",
+      "extra_args": [
+        "-AuditorExplorationTask=MV02",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/b535df29b158d50619776a47": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-medieval-20260917/package-092c5babf747/Linux/MedievalVillage/Binaries/Linux/MedievalVillage",
+      "build_sha256": "166acf2fcb8c8179de9913f53086fa8998d36eda77309ff962206b3c932e7efa",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "medieval",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/MedievalVillage/Market?Task=MV03",
+      "extra_args": [
+        "-AuditorExplorationTask=MV03",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/c84a9e33fe92e44f6447c9ef": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-medieval-20260917/package-092c5babf747/Linux/MedievalVillage/Binaries/Linux/MedievalVillage",
+      "build_sha256": "166acf2fcb8c8179de9913f53086fa8998d36eda77309ff962206b3c932e7efa",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "medieval",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/MedievalVillage/Market?Task=MV04",
+      "extra_args": [
+        "-AuditorExplorationTask=MV04",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/d029ab170155ca47a33b9ccd": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-medieval-20260917/package-092c5babf747/Linux/MedievalVillage/Binaries/Linux/MedievalVillage",
+      "build_sha256": "166acf2fcb8c8179de9913f53086fa8998d36eda77309ff962206b3c932e7efa",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "medieval",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/MedievalVillage/Market?Task=MV05",
+      "extra_args": [
+        "-AuditorExplorationTask=MV05",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/5df46138b04072258da7cba5": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-medieval-20260917/package-092c5babf747/Linux/MedievalVillage/Binaries/Linux/MedievalVillage",
+      "build_sha256": "166acf2fcb8c8179de9913f53086fa8998d36eda77309ff962206b3c932e7efa",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "medieval",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/MedievalVillage/Market?Task=MV06",
+      "extra_args": [
+        "-AuditorExplorationTask=MV06",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/e4dfee0b9f2b5830061703d0": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-medieval-20260917/package-092c5babf747/Linux/MedievalVillage/Binaries/Linux/MedievalVillage",
+      "build_sha256": "166acf2fcb8c8179de9913f53086fa8998d36eda77309ff962206b3c932e7efa",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "medieval",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/MedievalVillage/Market?Task=MV07",
+      "extra_args": [
+        "-AuditorExplorationTask=MV07",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/f9bfafa75587c12b9c8a4ed3": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-medieval-20260917/package-092c5babf747/Linux/MedievalVillage/Binaries/Linux/MedievalVillage",
+      "build_sha256": "166acf2fcb8c8179de9913f53086fa8998d36eda77309ff962206b3c932e7efa",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "medieval",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/MedievalVillage/Market?Task=MV08",
+      "extra_args": [
+        "-AuditorExplorationTask=MV08",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/998f495781f3e24cfdca5166": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-medieval-20260917/package-092c5babf747/Linux/MedievalVillage/Binaries/Linux/MedievalVillage",
+      "build_sha256": "166acf2fcb8c8179de9913f53086fa8998d36eda77309ff962206b3c932e7efa",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "medieval",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/MedievalVillage/Market?Task=MV09",
+      "extra_args": [
+        "-AuditorExplorationTask=MV09",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/9ab824d55fbea36557dcff15": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-medieval-20260917/package-092c5babf747/Linux/MedievalVillage/Binaries/Linux/MedievalVillage",
+      "build_sha256": "166acf2fcb8c8179de9913f53086fa8998d36eda77309ff962206b3c932e7efa",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "medieval",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/MedievalVillage/Market?Task=MV10",
+      "extra_args": [
+        "-AuditorExplorationTask=MV10",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/92b7f812dee1f43650d09ed2": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-medieval-20260917/package-092c5babf747/Linux/MedievalVillage/Binaries/Linux/MedievalVillage",
+      "build_sha256": "166acf2fcb8c8179de9913f53086fa8998d36eda77309ff962206b3c932e7efa",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "medieval",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/MedievalVillage/Windmill",
+      "extra_args": [
+        "-AuditorExplorationTask=MVB02",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/f578ab9c9efeb2328c35f93f": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-medieval-20260917/package-092c5babf747/Linux/MedievalVillage/Binaries/Linux/MedievalVillage",
+      "build_sha256": "166acf2fcb8c8179de9913f53086fa8998d36eda77309ff962206b3c932e7efa",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "medieval",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/MedievalVillage/Windmill?Task=MV11",
+      "extra_args": [
+        "-AuditorExplorationTask=MV11",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/be777d0c9de20e67da758184": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-medieval-20260917/package-092c5babf747/Linux/MedievalVillage/Binaries/Linux/MedievalVillage",
+      "build_sha256": "166acf2fcb8c8179de9913f53086fa8998d36eda77309ff962206b3c932e7efa",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "medieval",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/MedievalVillage/Windmill?Task=MV12",
+      "extra_args": [
+        "-AuditorExplorationTask=MV12",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/d0c4fb2ed3efff8571d09915": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-medieval-20260917/package-092c5babf747/Linux/MedievalVillage/Binaries/Linux/MedievalVillage",
+      "build_sha256": "166acf2fcb8c8179de9913f53086fa8998d36eda77309ff962206b3c932e7efa",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "medieval",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/MedievalVillage/Windmill?Task=MV13",
+      "extra_args": [
+        "-AuditorExplorationTask=MV13",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/15f9cd905d871ed9995e9607": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-medieval-20260917/package-092c5babf747/Linux/MedievalVillage/Binaries/Linux/MedievalVillage",
+      "build_sha256": "166acf2fcb8c8179de9913f53086fa8998d36eda77309ff962206b3c932e7efa",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "medieval",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/MedievalVillage/Windmill?Task=MV14",
+      "extra_args": [
+        "-AuditorExplorationTask=MV14",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/290906ad5d1f3b8c7d41cabb": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-medieval-20260917/package-092c5babf747/Linux/MedievalVillage/Binaries/Linux/MedievalVillage",
+      "build_sha256": "166acf2fcb8c8179de9913f53086fa8998d36eda77309ff962206b3c932e7efa",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "medieval",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/MedievalVillage/Windmill?Task=MV15",
+      "extra_args": [
+        "-AuditorExplorationTask=MV15",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/a7c8b868eca2872e8c796544": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-medieval-20260917/package-092c5babf747/Linux/MedievalVillage/Binaries/Linux/MedievalVillage",
+      "build_sha256": "166acf2fcb8c8179de9913f53086fa8998d36eda77309ff962206b3c932e7efa",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "medieval",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/MedievalVillage/Windmill?Task=MV16",
+      "extra_args": [
+        "-AuditorExplorationTask=MV16",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/dd2c0ec2a4ab12fb8b9bf279": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-medieval-20260917/package-092c5babf747/Linux/MedievalVillage/Binaries/Linux/MedievalVillage",
+      "build_sha256": "166acf2fcb8c8179de9913f53086fa8998d36eda77309ff962206b3c932e7efa",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "medieval",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/MedievalVillage/Windmill?Task=MV17",
+      "extra_args": [
+        "-AuditorExplorationTask=MV17",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/04f55c5da29f210712881189": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-medieval-20260917/package-092c5babf747/Linux/MedievalVillage/Binaries/Linux/MedievalVillage",
+      "build_sha256": "166acf2fcb8c8179de9913f53086fa8998d36eda77309ff962206b3c932e7efa",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "medieval",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/MedievalVillage/Windmill?Task=MV18",
+      "extra_args": [
+        "-AuditorExplorationTask=MV18",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/fb35ae26ffe2133db35386e8": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-medieval-20260917/package-092c5babf747/Linux/MedievalVillage/Binaries/Linux/MedievalVillage",
+      "build_sha256": "166acf2fcb8c8179de9913f53086fa8998d36eda77309ff962206b3c932e7efa",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "medieval",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/MedievalVillage/Market?Task=MV19",
+      "extra_args": [
+        "-AuditorExplorationTask=MV19",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/e5bdee94a6dadf432c99d081": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-medieval-20260917/package-092c5babf747/Linux/MedievalVillage/Binaries/Linux/MedievalVillage",
+      "build_sha256": "166acf2fcb8c8179de9913f53086fa8998d36eda77309ff962206b3c932e7efa",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "medieval",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/MedievalVillage/Market?Task=MV20",
+      "extra_args": [
+        "-AuditorExplorationTask=MV20",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/470e6c3c8b374b787578dd55": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-medieval-20260917/package-092c5babf747/Linux/MedievalVillage/Binaries/Linux/MedievalVillage",
+      "build_sha256": "166acf2fcb8c8179de9913f53086fa8998d36eda77309ff962206b3c932e7efa",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "medieval",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/MedievalVillage/Windmill?Task=MV21",
+      "extra_args": [
+        "-AuditorExplorationTask=MV21",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/17b9734e333b433eedc9d159": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/ancient-74e7762ddff9/Linux/AncientChineseCity/Binaries/Linux/AncientChineseCity",
+      "build_sha256": "6f26bd852961369058e1fb048ad26159f491740c5394ec9e530719032c3d25d1",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "ancient",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30,r.SkinCache.Mode 0,r.OptimizedWPO 1,r.Nanite.AllowWPODistanceDisable 1,r.SkeletalMeshLODBias 1,r.Nanite.MaxPixelsPerEdge 2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.GlobalIlluminationQuality=1",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.ReflectionQuality=1",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.ShadowQuality=2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.EffectsQuality=2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.PostProcessQuality=2",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/AncientCity/Market?Task=A22",
+      "extra_args": [
+        "-AuditorExplorationTask=A22",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/c45c81a3f9a608d6d858e474": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/ancient-74e7762ddff9/Linux/AncientChineseCity/Binaries/Linux/AncientChineseCity",
+      "build_sha256": "6f26bd852961369058e1fb048ad26159f491740c5394ec9e530719032c3d25d1",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "ancient",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30,r.SkinCache.Mode 0,r.OptimizedWPO 1,r.Nanite.AllowWPODistanceDisable 1,r.SkeletalMeshLODBias 1,r.Nanite.MaxPixelsPerEdge 2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.GlobalIlluminationQuality=1",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.ReflectionQuality=1",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.ShadowQuality=2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.EffectsQuality=2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.PostProcessQuality=2",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/AncientCity/Courtyard?Task=A23",
+      "extra_args": [
+        "-AuditorExplorationTask=A23",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/e91550f3526fd8a9a9236310": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/ancient-74e7762ddff9/Linux/AncientChineseCity/Binaries/Linux/AncientChineseCity",
+      "build_sha256": "6f26bd852961369058e1fb048ad26159f491740c5394ec9e530719032c3d25d1",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "ancient",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30,r.SkinCache.Mode 0,r.OptimizedWPO 1,r.Nanite.AllowWPODistanceDisable 1,r.SkeletalMeshLODBias 1,r.Nanite.MaxPixelsPerEdge 2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.GlobalIlluminationQuality=1",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.ReflectionQuality=1",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.ShadowQuality=2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.EffectsQuality=2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.PostProcessQuality=2",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/AncientCity/TeaHouse?Task=A24",
+      "extra_args": [
+        "-AuditorExplorationTask=A24",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/5ffa011a189e985186a53165": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/industrial-90f7e645b0df/Linux/FactoryEnvironmentCollect/Binaries/Linux/FactoryEnvironmentCollect",
+      "build_sha256": "6aaf25aa9350624835ceca8ee7eccd79a8a2b4e253d424b1e46f2b168b7baa87",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "industrial",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm5",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Industrial/AssemblyHall?Task=I19",
+      "extra_args": [
+        "-AuditorExplorationTask=I19",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/a4a6af6c534bcdee3d36f56f": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/urban-0bcf6af8a87a/Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
+      "build_sha256": "f9f996a242c44117947427e35749f7c8f8fffe8004a3248f796645540e648e40",
+      "key_filter": "M,One,Two,Three,Four,Tilde,Escape",
+      "family": "urban",
+      "runtime_switch": false,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30,DisableAllScreenMessages",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Migration/UE561/U046/R01/TaskMap_Candidate02",
+      "extra_args": [
+        "-AuditorExplorationTask=U046",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/37cb2dd66ee2fd1d3f3a8bc4": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/industrial-90f7e645b0df/Linux/FactoryEnvironmentCollect/Binaries/Linux/FactoryEnvironmentCollect",
+      "build_sha256": "6aaf25aa9350624835ceca8ee7eccd79a8a2b4e253d424b1e46f2b168b7baa87",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "industrial",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm5",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Industrial/ControlRoom?Task=I20",
+      "extra_args": [
+        "-AuditorExplorationTask=I20",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/4fb239b090333a04702697af": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/industrial-90f7e645b0df/Linux/FactoryEnvironmentCollect/Binaries/Linux/FactoryEnvironmentCollect",
+      "build_sha256": "6aaf25aa9350624835ceca8ee7eccd79a8a2b4e253d424b1e46f2b168b7baa87",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "industrial",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm5",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Industrial/ControlRoom?Task=I21",
+      "extra_args": [
+        "-AuditorExplorationTask=I21",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/d00265b4c5d77dfc8ecbe33c": {
+      "binary": "/home/ec2-user/unreal-review-releases/unreal-area-3x-20260918/package/Linux/AtmosphericResidentialHou/Binaries/Linux/AtmosphericResidentialHou",
+      "build_sha256": "09fa7b331005394cd71d087bf4c8374781c1c067ddea5ed4de052d11077dbf9b",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "indoor",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm5",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Regions/BedroomSuite?Task=H15",
+      "extra_args": [
+        "-AuditorExplorationTask=H15",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/unreal-area-3x-20260918/policy.json"
+      ]
+    },
+    "/Shared/review/708c81be85e43b3169d9d22b": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/ancient-74e7762ddff9/Linux/AncientChineseCity/Binaries/Linux/AncientChineseCity",
+      "build_sha256": "6f26bd852961369058e1fb048ad26159f491740c5394ec9e530719032c3d25d1",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "ancient",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30,r.SkinCache.Mode 0,r.OptimizedWPO 1,r.Nanite.AllowWPODistanceDisable 1,r.SkeletalMeshLODBias 1,r.Nanite.MaxPixelsPerEdge 2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.GlobalIlluminationQuality=1",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.ReflectionQuality=1",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.ShadowQuality=2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.EffectsQuality=2",
+        "-ini:GameUserSettings:[ScalabilityGroups]:sg.PostProcessQuality=2",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/AncientCity/Courtyard?Task=A25",
+      "extra_args": [
+        "-AuditorExplorationTask=A25",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/ca2fc77d120d61e1cb95212b": {
+      "binary": "/home/ec2-user/unreal-review-releases/exploration-v2-medieval-20260917/package-092c5babf747/Linux/MedievalVillage/Binaries/Linux/MedievalVillage",
+      "build_sha256": "166acf2fcb8c8179de9913f53086fa8998d36eda77309ff962206b3c932e7efa",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "medieval",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/MedievalVillage/Market?Task=MV22",
+      "extra_args": [
+        "-AuditorExplorationTask=MV22",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/exploration-v3-20260917/policy.json"
+      ]
+    },
+    "/Shared/review/184020d3449f3163cf0173dd": {
+      "binary": "/home/ec2-user/unreal-review-releases/concourse-cleanup-20260918/package-v2/Linux/Subway/Binaries/Linux/Subway",
+      "build_sha256": "ffa7b3efdc7e4a03d8e97bb3c3b6c2f5a5d592b3e2188463567bb3b4a72d44f8",
+      "key_filter": "M,N,P,F1,F2,F3,F4,Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,NumPadZero,NumPadOne,NumPadTwo,NumPadThree,NumPadFour,NumPadFive,NumPadSix,NumPadSeven,NumPadEight,NumPadNine,Tilde,Escape",
+      "family": "subway",
+      "runtime_switch": true,
+      "game_args": [
+        "-vulkan",
+        "-sm6",
+        "-PixelStreamingWebRTCMaxFps=30",
+        "-ExecCmds=t.MaxFPS 30",
+        "-PixelStreamingWebRTCMaxBitrate=3000000",
+        "-PixelStreamingWebRTCStartBitrate=1000000"
+      ],
+      "runtime_map": "/Game/Auditor/Subway/Concourse?Task=S22",
+      "extra_args": [
+        "-AuditorExplorationTask=S22",
+        "-AuditorExplorationPolicy=/home/ec2-user/unreal-review-releases/unreal-area-3x-20260918/policy.json"
+      ]
+    }
+  }
+}

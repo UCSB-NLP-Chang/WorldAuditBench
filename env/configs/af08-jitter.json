@@ -1,0 +1,30 @@
+{
+ "page": "candidate_environments/03_sketchbook_airfield_constrained.html",
+ "spawn": {
+  "pos": [
+   0.0,
+   15.4,
+   -14.0
+  ],
+  "yawDeg": 0
+ },
+ "targets": {
+  "zone_far": [
+   0.0,
+   14.8,
+   -33.0
+  ]
+ },
+ "bounds": {
+  "minX": -20,
+  "maxX": 20,
+  "minZ": -36,
+  "maxZ": 38
+ },
+ "name": "af08-jitter",
+ "bug": "af08-jitter",
+ "meta": {
+  "title": "af08-jitter",
+  "desc": "the street lamp east of the barrier row shakes / vibrates rapidly in place (physics jitter)"
+ }
+}

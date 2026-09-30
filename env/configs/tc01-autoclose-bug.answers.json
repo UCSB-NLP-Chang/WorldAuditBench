@@ -1,0 +1,15 @@
+[
+ {
+  "name": "auto-closing door",
+  "where": "wooden door closes by itself ~2s after opening",
+  "at": {
+   "scene": "c",
+   "local": [
+    7.2,
+    0
+   ]
+  },
+  "bug": "door_autoclose",
+  "level": "L3"
+ }
+]

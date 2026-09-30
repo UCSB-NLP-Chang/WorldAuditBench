@@ -1,0 +1,252 @@
+{
+  "project_name": "FactoryEnvironmentCollect",
+  "source_map": "/Game/Maps/Demonstration",
+  "default_region": "assembly_hall",
+  "regions": [
+    {
+      "id": "assembly_hall",
+      "name": "Robot assembly hall",
+      "key": "1",
+      "map": "/Game/Auditor/Industrial/AssemblyHall",
+      "bounds_min": [
+        0,
+        1300,
+        -50
+      ],
+      "bounds_max": [
+        4500,
+        2850,
+        900
+      ],
+      "spawn": [
+        1500,
+        2400,
+        120
+      ],
+      "yaw": -55,
+      "floor": 20,
+      "boundary_test_start": [
+        400,
+        2400,
+        120
+      ],
+      "boundary_test_direction": [
+        -1,
+        0,
+        0
+      ],
+      "traversal_points": [
+        [
+          1500,
+          2400,
+          120
+        ],
+        [
+          2800,
+          2400,
+          120
+        ],
+        [
+          4200,
+          2400,
+          120
+        ],
+        [
+          4200,
+          2500,
+          120
+        ],
+        [
+          2800,
+          2500,
+          120
+        ],
+        [
+          1500,
+          2500,
+          120
+        ],
+        [
+          400,
+          2500,
+          120
+        ],
+        [
+          400,
+          2300,
+          120
+        ],
+        [
+          1500,
+          2300,
+          120
+        ],
+        [
+          1500,
+          2400,
+          120
+        ]
+      ]
+    },
+    {
+      "id": "vehicle_test",
+      "name": "Vehicle test and loading bay",
+      "key": "2",
+      "map": "/Game/Auditor/Industrial/VehicleTest",
+      "bounds_min": [
+        -9300,
+        -400,
+        -50
+      ],
+      "bounds_max": [
+        -3700,
+        2800,
+        900
+      ],
+      "spawn": [
+        -6800,
+        2400,
+        120
+      ],
+      "yaw": -60,
+      "floor": 20,
+      "boundary_test_start": [
+        -6000,
+        2400,
+        120
+      ],
+      "boundary_test_direction": [
+        0,
+        1,
+        0
+      ],
+      "traversal_points": [
+        [
+          -6800,
+          2400,
+          120
+        ],
+        [
+          -8200,
+          2400,
+          120
+        ],
+        [
+          -8900,
+          2400,
+          120
+        ],
+        [
+          -8200,
+          2400,
+          120
+        ],
+        [
+          -6800,
+          2400,
+          120
+        ],
+        [
+          -5400,
+          2400,
+          120
+        ],
+        [
+          -4000,
+          2400,
+          120
+        ],
+        [
+          -4000,
+          1900,
+          120
+        ],
+        [
+          -4000,
+          2400,
+          120
+        ],
+        [
+          -5400,
+          2400,
+          120
+        ],
+        [
+          -6800,
+          2400,
+          120
+        ]
+      ]
+    },
+    {
+      "id": "control_room",
+      "name": "Elevated factory control room",
+      "key": "3",
+      "map": "/Game/Auditor/Industrial/ControlRoom",
+      "bounds_min": [
+        -2750,
+        820,
+        1060
+      ],
+      "bounds_max": [
+        -1880,
+        1790,
+        1580
+      ],
+      "spawn": [
+        -2320,
+        1050,
+        1206
+      ],
+      "yaw": 65,
+      "floor": 1106,
+      "boundary_test_start": [
+        -2320,
+        1370,
+        1206
+      ],
+      "boundary_test_direction": [
+        0,
+        1,
+        0
+      ],
+      "traversal_points": [
+        [
+          -2320,
+          1050,
+          1206
+        ],
+        [
+          -2070,
+          1050,
+          1206
+        ],
+        [
+          -2070,
+          1500,
+          1206
+        ],
+        [
+          -2320,
+          1500,
+          1206
+        ],
+        [
+          -2620,
+          1500,
+          1206
+        ],
+        [
+          -2320,
+          1500,
+          1206
+        ],
+        [
+          -2320,
+          1050,
+          1206
+        ]
+      ]
+    }
+  ]
+}

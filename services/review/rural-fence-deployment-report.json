@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "release": "/home/ubuntu/unreal-auditor/review-service/releases/rural-fence-fix-20260912-v1",
+  "backup": "/home/ubuntu/unreal-auditor/review-service/backups/rural-fence-fix-20260912-230629",
+  "health": {
+    "ok": true,
+    "mode": "external"
+  },
+  "revised": [
+    "RB01",
+    "R01",
+    "R02",
+    "R03",
+    "R04",
+    "R05",
+    "R06"
+  ],
+  "changed_scenarios": [
+    "R04",
+    "R03"
+  ],
+  "total_entries": 246,
+  "capacity": 3,
+  "protected_tables": [
+    "feedback",
+    "review_history",
+    "evidence",
+    "logins",
+    "events"
+  ],
+  "participants_preserved": true,
+  "build_sha256": "66911b647107047d4f514d13705d2faff513f553dfd748ffbb4035f8d5ebdcae"
+}

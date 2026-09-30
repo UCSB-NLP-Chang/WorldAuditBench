@@ -1,0 +1,204 @@
+{
+  "A01": {
+    "en": {
+      "criteria": "The market bench floats above the ground without support.",
+      "expected": "Its legs should rest on the ground."
+    },
+    "zh": {
+      "criteria": "集市木凳无支撑地悬在空中。",
+      "expected": "正常情况下，凳脚应落在地面上。"
+    }
+  },
+  "A02": {
+    "en": {
+      "criteria": "The left stone lion floats without support.",
+      "expected": "It should rest on its supporting surface."
+    },
+    "zh": {
+      "criteria": "入口左侧石狮悬空，底部没有支撑。",
+      "expected": "正常情况下，石狮应落在支撑面上。"
+    }
+  },
+  "A03": {
+    "en": {
+      "criteria": "Two tea tables overlap and intersect.",
+      "expected": "Each table should occupy its own space."
+    },
+    "zh": {
+      "criteria": "两张茶桌互相穿插重叠。",
+      "expected": "正常情况下，各张桌子应占据独立空间。"
+    }
+  },
+  "A04": {
+    "en": {
+      "criteria": "Two misaligned canopy frames overlap on one stall.",
+      "expected": "The stall should have one aligned canopy frame."
+    },
+    "zh": {
+      "criteria": "同一摊位的两套棚架错位重叠。",
+      "expected": "正常情况下，摊位应只有一套对齐的棚架。"
+    }
+  },
+  "A05": {
+    "en": {
+      "criteria": "The bench seat is higher than its matching table.",
+      "expected": "It should sit below the tabletop at a usable seating height."
+    },
+    "zh": {
+      "criteria": "木凳凳面高过配套桌面。",
+      "expected": "正常情况下，凳面应低于桌面并适合就座。"
+    }
+  },
+  "A06": {
+    "en": {
+      "criteria": "The market tabletop is lower than the surrounding bench seats.",
+      "expected": "It should be above the seats at a usable dining height."
+    },
+    "zh": {
+      "criteria": "集市木桌桌面低于周围凳面。",
+      "expected": "正常情况下，桌面应高于凳面并适合用餐。"
+    }
+  },
+  "A07": {
+    "en": {
+      "criteria": "The player can walk through the market table.",
+      "expected": "The solid table should block the player."
+    },
+    "zh": {
+      "criteria": "人物可以穿过集市的实体木桌。",
+      "expected": "正常情况下，木桌应阻挡人物。"
+    }
+  },
+  "A08": {
+    "en": {
+      "criteria": "An invisible barrier blocks the clear tea-house passage.",
+      "expected": "The empty passage should be walkable."
+    },
+    "zh": {
+      "criteria": "茶馆的空通道被空气墙挡住。",
+      "expected": "正常情况下，该通道应允许人物通过。"
+    }
+  },
+  "A09": {
+    "en": {
+      "criteria": "After an E push, the basket keeps bouncing on its own.",
+      "expected": "It should move briefly and settle."
+    },
+    "zh": {
+      "criteria": "藤筐被按 E 轻推后持续自行弹跳。",
+      "expected": "正常情况下，它应短暂移动后停稳。"
+    }
+  },
+  "A10": {
+    "en": {
+      "criteria": "When facing the residence entrance from outside, the right-hand stone lion disappears when centered in view and reappears when the camera turns.",
+      "expected": "It should remain visible."
+    },
+    "zh": {
+      "criteria": "面对宅院大门时，右侧石狮在视野中央消失，转动视角后又出现。",
+      "expected": "正常情况下，它应保持可见。"
+    }
+  },
+  "A11": {
+    "en": {
+      "criteria": "The stall canopy disappears a few metres away and returns up close.",
+      "expected": "It should stay visible at these distances."
+    },
+    "zh": {
+      "criteria": "棚架在几米外消失，靠近后又出现。",
+      "expected": "正常情况下，它在这些距离都应可见。"
+    }
+  },
+  "A12": {
+    "en": {
+      "criteria": "The tea-house bench doubles in size at a distance and returns to normal up close.",
+      "expected": "Its size should stay constant."
+    },
+    "zh": {
+      "criteria": "茶馆木凳在远处变大一倍，靠近后恢复。",
+      "expected": "正常情况下，它的尺寸应保持不变。"
+    }
+  },
+  "A13": {
+    "en": {
+      "criteria": "When facing the residence entrance, the right-hand stone lion casts a shadow on open ground far from its base.",
+      "expected": "Its shadow should match its position and the light direction."
+    },
+    "zh": {
+      "criteria": "面对宅院大门时，右侧石狮的阴影出现在远离底座的空地上，与石狮明显分离。",
+      "expected": "正常情况下，阴影应与石狮的位置和光照方向一致。"
+    }
+  },
+  "A14": {
+    "en": {
+      "criteria": "The untouched basket disappears after leaving and returning.",
+      "expected": "It should remain where it was."
+    },
+    "zh": {
+      "criteria": "未被操作的藤筐在离开再返回后消失。",
+      "expected": "正常情况下，它应留在原处。"
+    }
+  },
+  "A15": {
+    "en": {
+      "criteria": "The tea-house bench moves after leaving and returning without anyone moving it.",
+      "expected": "It should stay in its original position."
+    },
+    "zh": {
+      "criteria": "茶馆木凳在离开再返回后无故移位。",
+      "expected": "正常情况下，它应保持原位。"
+    }
+  },
+  "A16": {
+    "en": {
+      "criteria": "The entrance lantern changes from red to blue after leaving and returning.",
+      "expected": "Its colour should stay the same."
+    },
+    "zh": {
+      "criteria": "入口灯笼在离开再返回后由红变蓝。",
+      "expected": "正常情况下，它的颜色应保持不变。"
+    }
+  },
+  "A17": {
+    "zh": {
+      "criteria": "原本打开的宅院门扇在观察过程中未经操作便自行关上。",
+      "expected": "正常情况下，门扇应保持原来的开合状态，直到有人操作。",
+      "steps": "靠近入口，观察打开的门扇约五秒，全程不操作门。"
+    },
+    "en": {
+      "criteria": "The open entrance door closes by itself while being observed, without anyone operating it.",
+      "expected": "The door should retain its open or closed state until someone operates it.",
+      "steps": "Approach the entrance and watch the open door leaf for about five seconds without operating it."
+    }
+  },
+  "A18": {
+    "en": {
+      "criteria": "A table blocks the tea-house passage.",
+      "expected": "Furniture should leave the passage clear."
+    },
+    "zh": {
+      "criteria": "一张木桌堵住了茶馆通道。",
+      "expected": "正常情况下，家具应留出通行空间。"
+    }
+  },
+  "A19": {
+    "en": {
+      "criteria": "A stone lion blocks the open half of the doorway.",
+      "expected": "That passage should remain clear."
+    },
+    "zh": {
+      "criteria": "石狮挡住了打开的一侧门口。",
+      "expected": "正常情况下，该侧门口应保持畅通。"
+    }
+  },
+  "A20": {
+    "en": {
+      "criteria": "A modern vending machine appears in the ancient Chinese market.",
+      "expected": "Objects should fit the ancient setting."
+    },
+    "zh": {
+      "criteria": "中国古代集市中出现了现代自动售货机。",
+      "expected": "正常情况下，物品应符合古代背景。"
+    }
+  }
+}

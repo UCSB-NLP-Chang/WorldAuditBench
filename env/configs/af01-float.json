@@ -1,0 +1,30 @@
+{
+ "page": "candidate_environments/03_sketchbook_airfield_constrained.html",
+ "spawn": {
+  "pos": [
+   0.0,
+   15.4,
+   -14.0
+  ],
+  "yawDeg": 0
+ },
+ "targets": {
+  "zone_far": [
+   0.0,
+   14.8,
+   -33.0
+  ]
+ },
+ "bounds": {
+  "minX": -20,
+  "maxX": 20,
+  "minZ": -36,
+  "maxZ": 38
+ },
+ "name": "af01-float",
+ "bug": "af01-float",
+ "meta": {
+  "title": "af01-float",
+  "desc": "one of the three barrels east of the start hovers about 1.5 m above the tarmac with open air under it"
+ }
+}

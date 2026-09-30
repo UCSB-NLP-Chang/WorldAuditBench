@@ -1,0 +1,12 @@
+[
+ {
+  "name": "no-collision tree",
+  "where": "the big tree east of the front door has no collision - you walk straight through its trunk while everything else is solid",
+  "at": [
+   1.82,
+   0.6,
+   2.47
+  ],
+  "category": "collision-physics"
+ }
+]

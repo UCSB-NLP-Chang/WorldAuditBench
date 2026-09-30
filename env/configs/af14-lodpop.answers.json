@@ -1,0 +1,12 @@
+[
+ {
+  "name": "prop LOD pop",
+  "where": "the generator / tool cart / jerrycan group west of the start shows as crude grey blocks from a few metres away and pops into detailed props only when you get close",
+  "at": [
+   -12.5,
+   15.3,
+   -11.5
+  ],
+  "category": "visual-consistency"
+ }
+]

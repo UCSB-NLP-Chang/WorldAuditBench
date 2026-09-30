@@ -1,0 +1,12 @@
+[
+ {
+  "name": "hole in the ground",
+  "where": "you fall straight through the solid-looking tarmac at one spot about 4 m straight ahead (north) of the start, on the centre line of the strip just before the north barrier row, and drop into darkness, then respawn",
+  "at": [
+   0,
+   14.8,
+   -18
+  ],
+  "category": "collision-physics"
+ }
+]

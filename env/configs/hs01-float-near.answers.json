@@ -1,0 +1,12 @@
+[
+ {
+  "name": "floating chair",
+  "where": "one dining chair hovers ~0.45 m above the floor (its three siblings stand on the floor)",
+  "at": [
+   5.11,
+   0.0,
+   2.91
+  ],
+  "category": "geometry-space"
+ }
+]

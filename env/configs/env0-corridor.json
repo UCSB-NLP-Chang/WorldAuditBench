@@ -1,0 +1,133 @@
+{
+ "name": "env0-corridor",
+ "meta": {
+  "title": "env0 - corridor",
+  "desc": "20m procedural corridor: wooden door (direct interact) -> lever-raised portcullis -> glowing target ring. Zero external assets; smoke-test env."
+ },
+ "seed": 20260823,
+ "scenes": [
+  {
+   "type": "corridor",
+   "id": "corridor",
+   "length": 20,
+   "width": 4,
+   "height": 3,
+   "partitions": [
+    {
+     "x": 8,
+     "openWidth": 2,
+     "openHeight": 3
+    },
+    {
+     "x": 14,
+     "openWidth": 3,
+     "openHeight": 3
+    }
+   ],
+   "lightsX": [
+    3,
+    6.5,
+    11,
+    16,
+    19
+   ]
+  }
+ ],
+ "spawn": {
+  "scene": "corridor",
+  "yawDeg": -90
+ },
+ "objects": [
+  {
+   "type": "door",
+   "id": "door_mid",
+   "at": {
+    "scene": "corridor",
+    "local": [
+     8.2,
+     -1
+    ]
+   },
+   "width": 2,
+   "sign": 1,
+   "target": "door_mid"
+  },
+  {
+   "type": "portcullis",
+   "id": "gate_end",
+   "at": {
+    "scene": "corridor",
+    "local": [
+     14.2,
+     0
+    ]
+   },
+   "width": 3,
+   "height": 3,
+   "target": "gate_end"
+  },
+  {
+   "type": "lever",
+   "id": "lever_gate",
+   "at": {
+    "scene": "corridor",
+    "local": [
+     12.8,
+     1.7
+    ]
+   },
+   "yawDeg": 180,
+   "links": [
+    "gate_end"
+   ]
+  },
+  {
+   "type": "ring",
+   "id": "ring_end",
+   "at": {
+    "scene": "corridor",
+    "local": [
+     18.5,
+     0
+    ]
+   },
+   "color": "#35e0ff",
+   "target": "ring_end"
+  },
+  {
+   "type": "crate",
+   "id": "crate_a",
+   "at": {
+    "scene": "corridor",
+    "local": [
+     4,
+     1.4
+    ]
+   },
+   "solid": true
+  },
+  {
+   "type": "torch",
+   "id": "torch_a",
+   "at": {
+    "scene": "corridor",
+    "local": [
+     10.5,
+     -1.7
+    ]
+   }
+  },
+  {
+   "type": "torch",
+   "id": "torch_b",
+   "at": {
+    "scene": "corridor",
+    "local": [
+     16.5,
+     1.7
+    ]
+   }
+  }
+ ],
+ "bugs": []
+}

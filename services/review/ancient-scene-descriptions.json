@@ -1,0 +1,58 @@
+{
+  "scenes": [
+    {
+      "map": "/Game/Auditor/AncientCity/Market",
+      "task_ids": [
+        "AB01",
+        "A01",
+        "A04",
+        "A06",
+        "A07",
+        "A09",
+        "A11",
+        "A14",
+        "A20",
+        "A22"
+      ],
+      "description": {
+        "en": "A market street in an ancient Chinese city, lined with wooden stalls, tables, benches and paper umbrellas. The furniture is fixed; loose paper umbrellas and the wicker basket can be pushed.",
+        "zh": "这是一条中国古代城市的集市街道，两侧摆有木制摊位、桌椅和纸伞。桌椅为固定陈设，散放的纸伞和藤筐可以推动。"
+      }
+    },
+    {
+      "map": "/Game/Auditor/AncientCity/TeaHouse",
+      "task_ids": [
+        "AB02",
+        "A03",
+        "A05",
+        "A08",
+        "A12",
+        "A15",
+        "A18",
+        "A21",
+        "A24"
+      ],
+      "description": {
+        "en": "A tea house in an ancient Chinese city, furnished with wooden tables, benches and hanging lanterns. Its fixed furnishings surround the room and entrance passage.",
+        "zh": "这是一间中国古代城市的茶馆，摆有木桌、长凳，挂有灯笼。家具与灯笼为固定陈设，室内与入口之间留有通道。"
+      }
+    },
+    {
+      "map": "/Game/Auditor/AncientCity/Courtyard",
+      "task_ids": [
+        "AB03",
+        "A02",
+        "A10",
+        "A13",
+        "A16",
+        "A17",
+        "A19",
+        "A23"
+      ],
+      "description": {
+        "en": "A residence entrance in an ancient Chinese city, with stone lions, hanging lanterns and two wooden door leaves, one open and one closed. The decorations are fixed, and the two door leaves open and close independently.",
+        "zh": "这是中国古代城市的一处宅院入口，设有石狮、悬挂灯笼和两扇木门，初始一开一关。石狮与灯笼为固定陈设，两扇木门可以分别开关。"
+      }
+    }
+  ]
+}

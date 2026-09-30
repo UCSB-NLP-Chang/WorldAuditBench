@@ -1,0 +1,14 @@
+[
+ {
+  "name": "giant grass patch",
+  "where": "one square patch of the meadow south-west of the start is rendered at about four times normal scale - grass blades taller than a person, the patch ending abruptly along straight edges",
+  "at": [
+   -6,
+   4.39,
+   6
+  ],
+  "category": "geometry-space",
+  "extent_x": 10,
+  "extent_z": 10
+ }
+]

@@ -1,0 +1,13 @@
+{
+  "live": false,
+  "checks": [
+    "V4 bilingual overview and seven classifications",
+    "All environment filters and 3 reviewer result comparisons",
+    "Combined status/type/environment/reviewer filtering survives polling",
+    "Overview V4 drilldown clears prior reviewer/environment filters",
+    "SP09 observable rubrics, bilingual task label and mobile layout"
+  ],
+  "sessions_created": 0,
+  "feedback_submitted": false,
+  "result": "PASS"
+}

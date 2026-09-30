@@ -1,0 +1,31 @@
+{
+ "name": "tc08-extra-clean",
+ "meta": {
+  "title": "tc08-extra-clean",
+  "desc": "Sponza walkway: normal"
+ },
+ "seed": 5,
+ "scenes": [
+  {
+   "type": "gltf",
+   "id": "sponza",
+   "url": "/assets/sponza/Sponza.gltf"
+  }
+ ],
+ "spawn": {
+  "scene": "sponza",
+  "yawDeg": -90
+ },
+ "objects": [],
+ "bugs": [],
+ "targets": {
+  "zone_tc": {
+   "scene": "sponza",
+   "spawnOffset": [
+    5,
+    0
+   ],
+   "snap": true
+  }
+ }
+}

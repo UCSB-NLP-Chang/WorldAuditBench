@@ -1,0 +1,12 @@
+[
+ {
+  "name": "floating boulder",
+  "where": "a boulder hovers about 1.6 m above the sand with open water underneath",
+  "at": [
+   5,
+   -3.32,
+   12.5
+  ],
+  "category": "geometry-space"
+ }
+]

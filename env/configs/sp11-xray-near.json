@@ -1,0 +1,47 @@
+{
+ "name": "sp11-xray-near",
+ "meta": {
+  "title": "sp11-xray",
+  "desc": "Pot renders through occluders"
+ },
+ "seed": 5,
+ "scenes": [
+  {
+   "type": "gltf",
+   "id": "sponza",
+   "url": "/assets/sponza/Sponza.gltf"
+  }
+ ],
+ "spawn": {
+  "scene": "sponza",
+  "pos": {
+   "scene": "sponza",
+   "spawnOffset": [
+    -4.42,
+    -0.29
+   ],
+   "snap": true
+  },
+  "yawDeg": -68
+ },
+ "objects": [],
+ "bugs": [
+  {
+   "type": "mesh_xray",
+   "meshes": [
+    "mesh_0_1",
+    "mesh_0_2"
+   ]
+  }
+ ],
+ "targets": {
+  "zone_far": {
+   "scene": "sponza",
+   "spawnOffset": [
+    9.48,
+    0.01
+   ],
+   "snap": true
+  }
+ }
+}

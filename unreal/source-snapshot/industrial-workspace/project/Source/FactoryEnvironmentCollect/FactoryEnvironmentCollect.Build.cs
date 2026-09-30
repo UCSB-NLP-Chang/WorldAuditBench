@@ -1,0 +1,1 @@
+using UnrealBuildTool; public class FactoryEnvironmentCollect : ModuleRules { public FactoryEnvironmentCollect(ReadOnlyTargetRules Target):base(Target) {PCHUsage=PCHUsageMode.UseExplicitOrSharedPCHs; PublicDependencyModuleNames.AddRange(new[]{"Core","CoreUObject","Engine","AuditorRuntime"});}}

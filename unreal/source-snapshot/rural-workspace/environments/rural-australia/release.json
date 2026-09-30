@@ -1,0 +1,72 @@
+{
+  "status": "PASS",
+  "release": "/home/ubuntu/unreal-auditor/review-service/releases/rural-20260912-204952",
+  "backup": "/home/ubuntu/unreal-auditor/review-service/backups/rural-20260912-205206",
+  "health": {
+    "ok": true,
+    "mode": "external"
+  },
+  "new_entries": 21,
+  "preserved_entries": 100,
+  "capacity": 3,
+  "protected_tables": [
+    "feedback",
+    "review_history",
+    "evidence",
+    "logins",
+    "events"
+  ],
+  "participants_preserved": true,
+  "build_sha256": "66911b647107047d4f514d13705d2faff513f553dfd748ffbb4035f8d5ebdcae",
+  "validation": {
+    "status": "PASS",
+    "build_sha256": "66911b647107047d4f514d13705d2faff513f553dfd748ffbb4035f8d5ebdcae",
+    "build": "/home/ubuntu/unreal-auditor/rural-workspace/dist/rural-linux-v3",
+    "engine": "5.6.1",
+    "regions": 3,
+    "bugs": 18,
+    "baselines": 3,
+    "packaged_runtime_checks": 24,
+    "rendered_checks": 24,
+    "render_regression_basis": "All 24 checks rendered in v2; only R08 camera and R15 behavior changed, both rendered again in v3. Executable SHA is unchanged.",
+    "changed_tasks": [
+      "R08",
+      "R15"
+    ],
+    "same_process_reset_checks": 18,
+    "reference_images": 21,
+    "review_service_tests": 119,
+    "browser_ui": "PASS; identical app, index and CSS hashes to browser-tested candidate",
+    "visual_review": "Inspected anomaly contact sheets and clean references. Replaced weak R15 shadow with centered-view disappearance; verified rock absent in R15-hidden.png and present in clean reference.",
+    "containers": {
+      "RuralAustralia-Linux.pak": "6593e192d6f713637bbcc1eaea743f17441e0c49ac1535834fa117f6016d4182",
+      "RuralAustralia-Linux.ucas": "ed4076bb06c791fe5ea4d1bc4536cab92d37f23ce4290e37ff6dc907b70593cb",
+      "global.utoc": "85b1c50fec869ff89de6fb32d39900d2090a561d40d0979ede7fd9a155246f83",
+      "global.ucas": "87ddd7815eba0ee5c9115d6057fe9ebe1eab08d5d996ee641b7cabae03bf8c98",
+      "RuralAustralia-Linux.utoc": "61cadb965f16fbbadac77d462039ea6d081e9ad627fce54f9255f5866ec1b434"
+    }
+  },
+  "public_browser": {
+    "status": "PASS",
+    "mode": "external",
+    "real_game_tested": true,
+    "video": {
+      "width": 1280,
+      "height": 720,
+      "frames": 48
+    },
+    "same_runtime_switch": true,
+    "native_pid": 534732,
+    "generations": [
+      1,
+      2
+    ],
+    "session_id": "cea9e75c39f16eb40b3e5ebff9198764",
+    "task_ids": [
+      "R01",
+      "R15"
+    ],
+    "errors": []
+  },
+  "url": "https://review.150-230-45-149.sslip.io/?case=RB01"
+}

@@ -1,0 +1,25 @@
+{
+  "repository": "https://github.com/KimperYang/game-auditing.git",
+  "revision": "d59b663ddb210414bc0cd5ce66cab0f0fd04f76a",
+  "branch_at_selection": "agent-harness",
+  "role": "Historical source provenance; runtime imports the bundled agent/ package.",
+  "bundled_files": {
+    "agent/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "agent/archive.py": "93fbcf81c73a948a6c37e65577d2662e40ad0863e55c8f4140c31d1e02500d88",
+    "agent/context.py": "620ced27d6b4049a3b863d37822041f1c7db6b261565f79d89e8cbe1901316e5",
+    "agent/dashboard.py": "85c5dff18f5ca34d025e34cf6a7b2c4b39b71fa50c85b05fb3a774f525e15946",
+    "agent/env/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "agent/env/base.py": "fe424d0843611caa166d1f17d549f5a07a893a1ef9de9a0e98f357f5542f80ff",
+    "agent/env/fake.py": "ca3104b7f6b540ebf0775657257815ce442e9de63df1c8c31bf81685cb628891",
+    "agent/env/threejs.py": "ba3243036a878e964c81c1946e983aa0c795cf88f3d81c3b5d66c1fa059c8621",
+    "agent/env/ue.py": "7240a679bdbae8805dbab62ea69fdc3ad4e3919fd95f77d4789dcabf73d855b5",
+    "agent/ledger.py": "9ea618c8ade62bbafbd51dc23ce9dc44a823a96836d8bfa62949e7dfbea59fc8",
+    "agent/llm.py": "0de7a112287c71f3a3a11e05642b10e51207225b386f253095c4cfe6b5773451",
+    "agent/loop.py": "ccad5bbc5f69bb58a616f34b2da5c8a88e91e10a155e59a100be38662321e806",
+    "agent/notes.py": "7371556d72e3bf8beb4a93ea9b2a8e08bc52435edd7ce382c19703ef5c6a9952",
+    "agent/prompts.py": "986ac5f464663c12c2c6ff5a670a1e662938d276269e66dd9baadfffe748632f",
+    "agent/runner.py": "83fcb21a856c6bbd3a8558c610b515b1faa8095ecaffe017ce5ab8341030f78b",
+    "agent/tools.py": "6518b5ba61bf5d1d863d39dccfeaff27ebc5c2d2d1c00c0ec10ceaf72d2d596f",
+    "agent/types.py": "f23c23a5b426b7ffa786595df8490199ecd8361ea860c65044b101e39eef6f05"
+  }
+}

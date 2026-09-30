@@ -1,0 +1,617 @@
+{
+  "schema_version": 1,
+  "rubrics": {
+    "S01": {
+      "zh": {
+        "expected": "落地长椅四脚支撑",
+        "steps": "进入任务后观察；必要时从多个角度或通过接近核验。",
+        "criteria": "与支撑面有 60 cm 明确空隙"
+      },
+      "en": {
+        "expected": "A waiting bench rests on the floor with supported legs.",
+        "steps": "Approach the concourse bench and inspect the gap from several angles.",
+        "criteria": "The entire bench floats about 60 cm above its support surface."
+      }
+    },
+    "S02": {
+      "zh": {
+        "expected": "一张完整长椅",
+        "steps": "进入任务后观察；必要时从多个角度或通过接近核验。",
+        "criteria": "两张实体椅架、座面相互穿插"
+      },
+      "en": {
+        "expected": "A single complete bench occupies the waiting area.",
+        "steps": "Inspect the trackside bench from the front and side.",
+        "criteria": "Two solid bench frames and seats overlap and intersect."
+      }
+    },
+    "S03": {
+      "zh": {
+        "expected": "标准成人椅座高约 45 cm",
+        "steps": "进入任务后观察；必要时从多个角度或通过接近核验。",
+        "criteria": "同款椅纵向拉长三倍，座高约 135 cm，无法正常落座"
+      },
+      "en": {
+        "expected": "An adult waiting seat has a usable seat height, about 45 cm.",
+        "steps": "Compare the trackside bench with nearby normal seating.",
+        "criteria": "The bench is stretched vertically to roughly three times its height; its seat is about 135 cm high."
+      }
+    },
+    "S04": {
+      "zh": {
+        "expected": "长椅支撑在地板上",
+        "steps": "进入任务后观察；必要时从多个角度或通过接近核验。",
+        "criteria": "椅腿及座椅下部埋入实体地板 30 cm"
+      },
+      "en": {
+        "expected": "Bench legs rest on top of the platform floor.",
+        "steps": "Inspect the platform bench where its legs meet the floor.",
+        "criteria": "The legs and lower structure are embedded about 30 cm into the solid floor."
+      }
+    },
+    "S05": {
+      "zh": {
+        "expected": "相同轻碰下，垃圾桶应向侧面倾倒并落稳。",
+        "steps": "走近并碰触空地上的垃圾桶，退开观察它的翻转方向与最终姿态。",
+        "criteria": "垃圾桶受碰撞后绕水平轴纵向翻转约 180 度，最终桶口朝下倒扣；正常对照只倾倒约 90 度并侧躺停稳。"
+      },
+      "en": {
+        "expected": "Under the same gentle contact, the bin should tip onto its side and settle.",
+        "steps": "Walk into the bin in the open area, then step back and observe its rotation and final pose.",
+        "criteria": "Contact makes the bin overturn vertically by about 180 degrees and settle upside down on its rim; the clean control tips about 90 degrees and rests on its side."
+      }
+    },
+    "S06": {
+      "zh": {
+        "expected": "人物被售货机实体阻挡",
+        "steps": "朝站台售货机实体直走，尝试穿过，并与正常基准对照。",
+        "criteria": "实际人物胶囊可以穿过售货机"
+      },
+      "en": {
+        "expected": "The solid vending machine blocks the player.",
+        "steps": "Walk directly toward and through the platform vending machine; compare with the baseline.",
+        "criteria": "The player can pass through the visible machine."
+      }
+    },
+    "S07": {
+      "zh": {
+        "expected": "角色尺寸可以通过的开放通道",
+        "steps": "沿开放通道行走并尝试穿过受阻位置，确认它不位于任务边界。",
+        "criteria": "内部空气墙阻挡，位置不在任务边界"
+      },
+      "en": {
+        "expected": "An open corridor wide enough for the player is traversable.",
+        "steps": "Try to cross the middle of the concourse corridor in both directions.",
+        "criteria": "An invisible obstruction blocks the interior corridor, away from the environment boundary."
+      }
+    },
+    "S08": {
+      "zh": {
+        "expected": "临轨站台开放通道可通行",
+        "steps": "沿开放通道行走并尝试穿过受阻位置，确认它不位于任务边界。",
+        "criteria": "内部空气墙阻挡，与可见几何无对应"
+      },
+      "en": {
+        "expected": "The open trackside walkway is traversable.",
+        "steps": "Walk along the trackside passage and attempt to cross the obstructed area.",
+        "criteria": "An invisible wall blocks movement without matching visible geometry; it is not the task boundary."
+      }
+    },
+    "S09": {
+      "zh": {
+        "expected": "无遮挡长椅随视角保持可见",
+        "steps": "正对长椅，再略转视角。",
+        "criteria": "正对目标时消失，稍转视角恢复"
+      },
+      "en": {
+        "expected": "An unobstructed bench remains visible as the viewing angle changes.",
+        "steps": "Look directly at the concourse bench, then turn slightly aside.",
+        "criteria": "The bench disappears when viewed directly and reappears at a slightly different angle."
+      }
+    },
+    "S10": {
+      "zh": {
+        "expected": "相邻距离下物体轮廓一致",
+        "steps": "与垃圾桶距离跨过 300 cm，再走回来。",
+        "criteria": "跨过 300 cm 阈值时外观尺寸跳变，碰撞形状保持原样"
+      },
+      "en": {
+        "expected": "The bin maintains a consistent shape across nearby viewing distances.",
+        "steps": "Move toward and away from the trackside bin across a distance of about 3 m.",
+        "criteria": "Its visible size jumps abruptly at the distance threshold while its collision shape stays unchanged."
+      }
+    },
+    "S11": {
+      "zh": {
+        "expected": "几米距离内售货机仍应可见",
+        "steps": "与售货机距离跨过 360 cm，再走近。",
+        "criteria": "超过 360 cm 提前裁掉，走近恢复"
+      },
+      "en": {
+        "expected": "A vending machine remains visible from a few metres away.",
+        "steps": "Move beyond about 3.6 m from the platform machine, then approach it again.",
+        "criteria": "The machine disappears prematurely at the threshold and reappears when approached."
+      }
+    },
+    "S12": {
+      "zh": {
+        "expected": "椅子与固定灯源投影对应",
+        "steps": "比较大厅长椅实体与地面投影的位置。",
+        "criteria": "长椅实体位置不变，投影明显错开约 180 cm。"
+      },
+      "en": {
+        "expected": "The bench and its shadow align consistently with the fixed lighting.",
+        "steps": "Compare the concourse bench with its shadow on the floor.",
+        "criteria": "The shadow is displaced by about 180 cm while the physical bench stays in place."
+      }
+    },
+    "S13": {
+      "en": {
+        "criteria": "The trackside bench disappears when you walk away.",
+        "expected": "The bench should remain in place without being removed.",
+        "steps": "You start near and facing the target. Walk more than 4.4 metres away from it and inspect the result from there."
+      },
+      "zh": {
+        "criteria": "走远后，临轨站台长椅消失。",
+        "expected": "无人移除时，长椅应留在原处。",
+        "steps": "开始时已在近处面向目标。走到距离目标超过 4.4 米的位置，在远处观察变化。"
+      }
+    },
+    "S14": {
+      "en": {
+        "criteria": "The concourse bin moves by itself when you walk away.",
+        "expected": "The bin should remain in its original position without being moved.",
+        "steps": "You start near and facing the target. Walk more than 4.5 metres away from it and inspect the result from there."
+      },
+      "zh": {
+        "criteria": "走远后，大厅垃圾桶无故移位。",
+        "expected": "无人搬动时，垃圾桶应保持原位。",
+        "steps": "开始时已在近处面向目标。走到距离目标超过 4.5 米的位置，在远处观察变化。"
+      }
+    },
+    "S16": {
+      "zh": {
+        "criteria": "墙上的一张海报在无人触碰的情况下，过一段时间自行消失。",
+        "expected": "固定在墙上的海报应持续存在。",
+        "steps": "开始时正对两张海报，静止观察约 15 秒，查看其中一张是否消失。"
+      },
+      "en": {
+        "criteria": "One wall poster disappears after a short time without anyone touching it.",
+        "expected": "Posters fixed to the wall should remain present.",
+        "steps": "You start facing both posters. Watch for about 15 seconds to see whether one disappears."
+      }
+    },
+    "S17": {
+      "zh": {
+        "expected": "候车座面用于坐人",
+        "steps": "进入任务后观察；必要时从多个角度或通过接近核验。",
+        "criteria": "固定垃圾桶占据座面，底部仍有支撑"
+      },
+      "en": {
+        "expected": "Waiting-bench seats remain available for passengers to sit on.",
+        "steps": "Inspect the concourse bench and the object occupying its seat.",
+        "criteria": "A supported, fixed bin occupies the seating surface and prevents its intended use."
+      }
+    },
+    "S18": {
+      "zh": {
+        "expected": "售货机操作面朝向可达空间",
+        "steps": "进入任务后观察；必要时从多个角度或通过接近核验。",
+        "criteria": "机体落地且不穿墙，但操作面朝墙不可达"
+      },
+      "en": {
+        "expected": "The vending machine faces an accessible passenger area.",
+        "steps": "Walk around the platform machine and locate its controls and product display.",
+        "criteria": "The machine stands on the floor without intersecting the wall, but its operating face points into the wall and is inaccessible."
+      }
+    },
+    "S19": {
+      "zh": {
+        "expected": "本站扶梯固定成对提供上行和下行通行",
+        "steps": "连续观察扶梯踏步；通过任务选择器切换至站台基准，对比成对反向运行。",
+        "criteria": "8 部扶梯全部上行，不再提供下行通行；需观察连续运动，不能只看静态截图。"
+      },
+      "en": {
+        "expected": "This station uses fixed pairs of up and down escalators.",
+        "steps": "Watch the moving treads; compare with the Platform baseline using the task selector.",
+        "criteria": "All eight escalators run upwards, leaving no down escalator. Check motion over time, not a single still frame."
+      }
+    },
+    "H01": {
+      "zh": {
+        "expected": "单人沙发支撑在客厅地面上。",
+        "steps": "走近沙发，从不同角度检查椅脚与地面的关系。",
+        "criteria": "沙发无支撑地悬空约 45 cm。"
+      },
+      "en": {
+        "expected": "The armchair rests on the living-room floor.",
+        "steps": "Approach the armchair and inspect its feet from different angles.",
+        "criteria": "The armchair floats about 45 cm above the floor without support."
+      }
+    },
+    "H02": {
+      "zh": {
+        "expected": "餐椅与桌面不应相互穿插。",
+        "steps": "从侧面检查餐椅椅背与桌面的交界。",
+        "criteria": "椅背穿过实体桌面。"
+      },
+      "en": {
+        "expected": "The dining chair and tabletop do not intersect.",
+        "steps": "Inspect the chair back and tabletop from the side.",
+        "criteria": "The chair back passes through the solid tabletop."
+      }
+    },
+    "H03": {
+      "zh": {
+        "criteria": "灶上的锅相对于炉位过大，锅身超出单个炉位并侵占相邻炉位的使用空间。",
+        "expected": "正常情况下，锅的尺寸应与炉位匹配，留出相邻炉位的使用空间。",
+        "steps": "靠近灶台，从前方和侧前方比较锅底、炉位与灶台边缘的尺寸关系。"
+      },
+      "en": {
+        "criteria": "The pot is oversized for its stove burner, extending beyond one cooking position and into the space needed by the adjacent burner.",
+        "expected": "The pot should fit its burner and leave room to use the neighboring burner.",
+        "steps": "Approach the stove and compare the pot base with the cooking positions and stove edges from the front and an oblique view."
+      }
+    },
+    "H04": {
+      "zh": {
+        "expected": "冰箱作为实体应阻挡人物。",
+        "steps": "朝冰箱正面行走，并与正常基准对照。",
+        "criteria": "人物可以穿过可见的冰箱实体。"
+      },
+      "en": {
+        "expected": "The refrigerator blocks the player as a solid object.",
+        "steps": "Walk directly into the refrigerator; compare with the clean baseline.",
+        "criteria": "The player passes through the visible refrigerator."
+      }
+    },
+    "H05": {
+      "zh": {
+        "expected": "厨房内部开放通道应可通行。",
+        "steps": "尝试穿过厨房与餐区之间的内部通道。",
+        "criteria": "没有对应可见物体的空气墙阻挡通行，且不位于任务边界。"
+      },
+      "en": {
+        "expected": "The open kitchen passage allows the player through.",
+        "steps": "Attempt to cross the internal kitchen/dining passage.",
+        "criteria": "An invisible wall blocks an otherwise open passage away from the task boundary."
+      }
+    },
+    "H06": {
+      "zh": {
+        "expected": "松手后的杯子落到桌面并稳定下来。",
+        "steps": "走近并瞄准餐桌杯子，按 E 执行抬起再松手。",
+        "criteria": "杯子真实接触桌面后，无后续操作仍反复异常弹跳；正常对照会落稳。"
+      },
+      "en": {
+        "expected": "A released cup lands on the table and settles.",
+        "steps": "Approach and aim at the dining-table cup, then press E to lift and release it.",
+        "criteria": "After actual contact with the table, the cup repeatedly bounces without further input; compare with the cup settling in the clean control."
+      }
+    },
+    "H07": {
+      "zh": {
+        "expected": "无遮挡的电视随相邻视角变化保持可见。",
+        "steps": "正对客厅电视，再略微改变观察角度。",
+        "criteria": "电视在没有遮挡的情况下随角度消失、恢复。"
+      },
+      "en": {
+        "expected": "The unobstructed television stays visible from nearby viewing angles.",
+        "steps": "Face the living-room television, then change the viewing angle slightly.",
+        "criteria": "The television disappears and reappears depending on the angle, without being occluded."
+      }
+    },
+    "H08": {
+      "zh": {
+        "expected": "锅的比例随观察距离变化保持一致。",
+        "steps": "在餐桌附近与厨房远端往返，跨过距锅约 2.6 m 的位置。",
+        "criteria": "锅的外观尺寸在距离阈值处突然改变。"
+      },
+      "en": {
+        "expected": "The pot keeps its physical proportions as viewing distance changes.",
+        "steps": "Walk between the dining-table area and the far end of the kitchen, crossing about 2.6 m from the pot.",
+        "criteria": "The pot abruptly changes visible size at the distance threshold."
+      }
+    },
+    "H09": {
+      "zh": {
+        "expected": "固定照明下，沙发与地板投影的位置应相互对应。",
+        "steps": "比较沙发实体与地面阴影，并略微移动视角核验。",
+        "criteria": "沙发实体位置不变，投影却明显错位。"
+      },
+      "en": {
+        "expected": "The armchair casts a shadow consistent with its position and fixed lighting.",
+        "steps": "Compare the armchair and its floor shadow while moving the viewpoint slightly.",
+        "criteria": "The cast shadow is displaced from the chair; the chair itself stays in place."
+      }
+    },
+    "H10": {
+      "en": {
+        "criteria": "The floor plant disappears when you walk away.",
+        "expected": "The plant should remain in place without being moved.",
+        "steps": "You start near and facing the target. Walk more than 3.1 metres away from it and inspect the result from there."
+      },
+      "zh": {
+        "criteria": "走远后，落地盆栽消失。",
+        "expected": "无人搬动时，盆栽应留在原处。",
+        "steps": "开始时已在近处面向目标。走到距离目标超过 3.1 米的位置，在远处观察变化。"
+      }
+    },
+    "H11": {
+      "en": {
+        "criteria": "The cup changes colour when you walk away.",
+        "expected": "The cup should keep its original colour without repainting or replacement.",
+        "steps": "You start near and facing the target. Walk more than 3.5 metres away from it and inspect the result from there."
+      },
+      "zh": {
+        "criteria": "走远后，杯子的颜色改变。",
+        "expected": "无人涂装或更换时，杯子应保持原来的颜色。",
+        "steps": "开始时已在近处面向目标。走到距离目标超过 3.5 米的位置，在远处观察变化。"
+      }
+    },
+    "H12": {
+      "zh": {
+        "expected": "卧室风扇初始关闭，未操作时应保持关闭。",
+        "steps": "先连续观察扇叶静止，进入浴室，再返回连续观察风扇。",
+        "criteria": "没有风扇控制输入，扇叶却自行开始持续旋转；需观察连续运动。"
+      },
+      "en": {
+        "expected": "The bedroom fan starts switched off and stays off without an operation.",
+        "steps": "Watch the stationary blades, enter the bathroom, then return and observe the fan continuously.",
+        "criteria": "The fan has started rotating without any fan-control input; sustained motion is required as evidence."
+      }
+    },
+    "H13": {
+      "zh": {
+        "expected": "正常家具布局应留出柜门开启空间。",
+        "steps": "走到卧室／浴室连接处的柜子，瞄准柜门按 E，并与正常对照比较。",
+        "criteria": "家具占据柜门开启空间，使柜门无法正常打开。"
+      },
+      "en": {
+        "expected": "The cabinet door has enough clearance to open in the normal layout.",
+        "steps": "Approach the bedroom/bathroom cabinet, aim at its door and press E; compare with the clean control.",
+        "criteria": "Furniture occupies the door swing area and prevents the cabinet door from opening normally."
+      }
+    },
+    "B01": {
+      "zh": {
+        "expected": "地铁站厅为无任务异常注入的正常对照。",
+        "steps": "在规定范围内探索，观察物体与通道；与对应异常任务执行相同检查。",
+        "criteria": "正常对照不应出现相应任务的异常。发现其他问题时记录位置、操作及证据，不自动判定任务通过。"
+      },
+      "en": {
+        "expected": "Subway concourse is a clean control with no task-specific bug injected.",
+        "steps": "Explore within the region and repeat the same observations or interactions used for the matching bug task.",
+        "criteria": "The control should not show the matching injected anomaly. Record any other issue with its location, steps and evidence; do not automatically approve the task."
+      }
+    },
+    "B02": {
+      "zh": {
+        "expected": "地铁站台与扶梯为无任务异常注入的正常对照。",
+        "steps": "在规定范围内探索，观察物体与通道；与对应异常任务执行相同检查。",
+        "criteria": "8 部扶梯应为 4 部上行、4 部下行，成对提供双向通行；对照 S19 观察踏步连续运动。"
+      },
+      "en": {
+        "expected": "Subway platform and escalators is a clean control with no task-specific bug injected.",
+        "steps": "Explore within the region and repeat the same observations or interactions used for the matching bug task.",
+        "criteria": "The eight escalators comprise four up and four down, paired for both directions. Compare continuous tread motion with S19."
+      }
+    },
+    "B03": {
+      "zh": {
+        "expected": "列车旁站台为无任务异常注入的正常对照。",
+        "steps": "在规定范围内探索，观察物体与通道；与对应异常任务执行相同检查。",
+        "criteria": "正常对照不应出现相应任务的异常。发现其他问题时记录位置、操作及证据，不自动判定任务通过。"
+      },
+      "en": {
+        "expected": "Train-side platform is a clean control with no task-specific bug injected.",
+        "steps": "Explore within the region and repeat the same observations or interactions used for the matching bug task.",
+        "criteria": "The control should not show the matching injected anomaly. Record any other issue with its location, steps and evidence; do not automatically approve the task."
+      }
+    },
+    "HB01": {
+      "zh": {
+        "expected": "客厅为无任务异常注入的正常对照。",
+        "steps": "在规定范围内探索，观察物体与通道；与对应异常任务执行相同检查。",
+        "criteria": "正常对照不应出现相应任务的异常。发现其他问题时记录位置、操作及证据，不自动判定任务通过。"
+      },
+      "en": {
+        "expected": "Living room is a clean control with no task-specific bug injected.",
+        "steps": "Explore within the region and repeat the same observations or interactions used for the matching bug task.",
+        "criteria": "The control should not show the matching injected anomaly. Record any other issue with its location, steps and evidence; do not automatically approve the task."
+      }
+    },
+    "HB02": {
+      "zh": {
+        "expected": "厨房与餐区为无任务异常注入的正常对照。",
+        "steps": "在规定范围内探索，观察物体与通道；与对应异常任务执行相同检查。",
+        "criteria": "正常对照不应出现相应任务的异常。发现其他问题时记录位置、操作及证据，不自动判定任务通过。"
+      },
+      "en": {
+        "expected": "Kitchen and dining room is a clean control with no task-specific bug injected.",
+        "steps": "Explore within the region and repeat the same observations or interactions used for the matching bug task.",
+        "criteria": "The control should not show the matching injected anomaly. Record any other issue with its location, steps and evidence; do not automatically approve the task."
+      }
+    },
+    "HB03": {
+      "zh": {
+        "expected": "卧室与浴室为无任务异常注入的正常对照。",
+        "steps": "在规定范围内探索，观察物体与通道；与对应异常任务执行相同检查。",
+        "criteria": "正常对照不应出现相应任务的异常。发现其他问题时记录位置、操作及证据，不自动判定任务通过。"
+      },
+      "en": {
+        "expected": "Bedroom and bathroom is a clean control with no task-specific bug injected.",
+        "steps": "Explore within the region and repeat the same observations or interactions used for the matching bug task.",
+        "criteria": "The control should not show the matching injected anomaly. Record any other issue with its location, steps and evidence; do not automatically approve the task."
+      }
+    },
+    "U018": {
+      "zh": {
+        "criteria": "并排金属垃圾桶中靠北的一只失去了金属纹理，整个表面变成均匀的哑光紫红色。",
+        "expected": "金属垃圾桶应保留金属纹理和表面质感。",
+        "steps": "走到路口东南侧人行道上的两只垃圾桶旁，从东侧和东南侧查看靠北的一只，并与旁边仍有金属纹理的垃圾桶比较。"
+      },
+      "en": {
+        "criteria": "The northern of two adjacent metal wastebins has lost its metal texture and appears uniformly matte magenta.",
+        "expected": "The metal wastebin should retain its metal texture and surface appearance.",
+        "steps": "Approach the two bins on the southeast sidewalk of the junction. Inspect the northern bin from the east and southeast, comparing it with the textured metal bin beside it."
+      }
+    },
+    "U011": {
+      "zh": {
+        "criteria": "两只金属垃圾桶中靠北的一只倾斜，路面斜着穿过桶身下部。",
+        "expected": "垃圾桶可以倾斜，但桶身不应穿入路面。",
+        "steps": "走近后巷院落西侧的一对小垃圾桶，从侧面查看靠北垃圾桶的桶底与路面交界，并与旁边完整的桶底比较。"
+      },
+      "en": {
+        "criteria": "The northern of two metal wastebins is tilted, with the pavement cutting diagonally through its lower body.",
+        "expected": "A bin may lean, but its body should not intersect the pavement.",
+        "steps": "Approach the pair of small bins on the west side of the rear courtyard. Inspect the northern bin from the side and compare its ground intersection with the intact base of its neighbour."
+      }
+    },
+    "U013": {
+      "zh": {
+        "criteria": "两只大型垃圾箱斜向穿插，箱壁和盖板相互重叠。",
+        "expected": "两只垃圾箱应各自占据独立空间。",
+        "steps": "走到后巷院落东南侧的大垃圾箱，在正常站立高度从西侧和西南侧查看箱壁与盖板相互穿过的位置。"
+      },
+      "en": {
+        "criteria": "Two large dumpsters intersect at an angle, with overlapping walls and lids.",
+        "expected": "The dumpsters should occupy separate spaces.",
+        "steps": "Approach the large dumpsters in the southeast of the rear courtyard. From the west and southwest at normal standing height, inspect where their walls and lids pass through each other."
+      }
+    },
+    "U024": {
+      "zh": {
+        "criteria": "纸箱堆在离开再返回后，无人推动便移动了约四米。",
+        "expected": "无人推动时，纸箱堆应保持原位。",
+        "steps": "靠近后巷红色垃圾箱旁的纸箱堆至七米内并看清它，沿巷离开至八米以外，再返回七米内看向纸箱。比较纸箱与红色垃圾箱的位置；重新加载案例可再次测试。"
+      },
+      "en": {
+        "criteria": "The stack of cardboard boxes moves about four metres after you walk away and return, without being touched.",
+        "expected": "The boxes should remain in place when nobody moves them.",
+        "steps": "Look directly at the boxes beside the rear-lane red dumpster from within seven metres. Walk along the lane until more than eight metres away, then return within seven metres and look at the boxes. Compare their position with the dumpster; reload the case to repeat."
+      }
+    },
+    "U032": {
+      "zh": {
+        "criteria": "路口东侧整段施工围栏看起来完好，却可以直接穿过，包括橙色围栏及后面的金属护栏。",
+        "expected": "可见的施工围栏和金属护栏应阻挡玩家通行。",
+        "steps": "走到路口东侧长排施工围栏前，不跳跃，直接向围栏行走。在沿线不同位置及两端重复穿越，检查橙色围栏和后方金属护栏是否阻挡。"
+      },
+      "en": {
+        "criteria": "The entire construction fence on the east side of the junction looks intact, but you can walk straight through its orange panels and the metal barriers behind them.",
+        "expected": "The visible construction fence and metal barriers should block the player.",
+        "steps": "Approach the long construction fence on the east side of the junction. Walk directly into it without jumping. Repeat at several positions and near both ends, checking both the orange panels and the metal barriers behind them."
+      }
+    },
+    "U012": {
+      "zh": {
+        "criteria": "咖啡桌旁的一把椅子被横向压成细条，座面、靠背和椅脚间距异常狭窄，高度却正常。",
+        "expected": "同款餐椅的座面、靠背和椅脚应保持正常比例。",
+        "steps": "沿店面街道走到北侧咖啡桌旁，从正面和侧面查看窄椅，并与附近同款椅子的座面和椅脚间距比较。"
+      },
+      "en": {
+        "criteria": "One chair beside the cafe tables is squeezed horizontally into a narrow strip: its seat, back and leg spacing are unusually narrow, but its height is normal.",
+        "expected": "Matching cafe chairs should retain normal seat, back and leg proportions.",
+        "steps": "Walk north along the shopfront to the cafe tables. Inspect the narrow chair from the front and side, comparing its seat and leg spacing with the matching chairs nearby."
+      }
+    },
+    "U045": {
+      "zh": {
+        "criteria": "店面中间窗格的上半片突然变成浅米黄色木纹，下半片和两侧仍是玻璃，材质交界处没有木板或窗框。",
+        "expected": "同一片完整玻璃应保持玻璃材质，不应无故变成木纹表面。",
+        "steps": "沿后巷向南走到东侧店面的三片玻璃前，查看中间窗格上半片与下半片的交界，并与两侧玻璃比较。"
+      },
+      "en": {
+        "criteria": "The upper half of the middle storefront pane abruptly shows pale cream-yellow wood grain, while its lower half and neighbouring panes remain glass; there is no board or frame at the material boundary.",
+        "expected": "An unbroken glass pane should retain its glass material rather than abruptly becoming a wood surface.",
+        "steps": "Walk south along the rear lane to the three storefront panes on the east side. Inspect the boundary between the upper and lower halves of the middle pane and compare it with the neighbouring glass."
+      }
+    }
+  },
+  "H15": {
+    "en": {
+      "criteria": "Opening the bedroom door makes the door leaf visibly pass through the storage box in its swing path. The box stays in place throughout the overlap.",
+      "expected": "The solid door should stop when it reaches the box; it should not pass through the box.",
+      "steps": "Approach the bedroom door and activate it. Watch the lower part of the door as it swings toward the box. Close and reopen the door if needed."
+    },
+    "zh": {
+      "criteria": "打开卧室门时，门扇明显穿过开门路径上的收纳箱，穿过过程中箱子保持原位。",
+      "expected": "实体门扇碰到箱子后应被挡住，不能直接穿过箱子。",
+      "steps": "走近卧室门并打开，观察门扇下部经过收纳箱的过程。需要时关门后再打开观察。"
+    }
+  },
+  "H09": {
+    "zh": {
+      "criteria": "壁炉旁柜子上的花瓶及插花没有在柜面和身后墙面留下投影。",
+      "expected": "灯光照射下，花瓶及插花应在柜面和墙面投下相应的阴影。",
+      "steps": "走近壁炉旁的柜子，观察花瓶周围的柜面和身后墙面的投影。"
+    },
+    "en": {
+      "criteria": "The vase and foliage on the cabinet beside the fireplace cast no shadow onto the cabinet top or the wall behind them.",
+      "expected": "Under the room light, the vase and foliage should cast corresponding shadows onto the cabinet top and wall.",
+      "steps": "Approach the cabinet beside the fireplace and inspect the cabinet top and the wall behind the vase."
+    }
+  },
+  "A14": {
+    "en": {
+      "criteria": "The untouched wicker basket disappears when you walk away.",
+      "expected": "The basket should remain in place without being moved.",
+      "steps": "You start near and facing the target. Walk more than 5 metres away from it and inspect the result from there."
+    },
+    "zh": {
+      "criteria": "走远后，未被操作的藤筐消失。",
+      "expected": "无人搬动时，藤筐应留在原处。",
+      "steps": "开始时已在近处面向目标。走到距离目标超过 5 米的位置，在远处观察变化。"
+    }
+  },
+  "A15": {
+    "en": {
+      "criteria": "The tea-house bench moves by itself when you walk away.",
+      "expected": "The bench should retain its position when nobody moves it.",
+      "steps": "You start near and facing the target. Walk more than 3 metres away from it and inspect the result from there."
+    },
+    "zh": {
+      "criteria": "走远后，茶馆木凳无故移位。",
+      "expected": "无人搬动时，木凳应保持原位。",
+      "steps": "开始时已在近处面向目标。走到距离目标超过 3 米的位置，在远处观察变化。"
+    }
+  },
+  "A16": {
+    "en": {
+      "criteria": "The entrance lantern changes from red to blue when you walk away.",
+      "expected": "The lantern should keep its original colour.",
+      "steps": "You start near and facing the target. Walk more than 5.5 metres away from it and inspect the result from there."
+    },
+    "zh": {
+      "criteria": "走远后，入口灯笼由红变蓝。",
+      "expected": "灯笼应保持原来的颜色。",
+      "steps": "开始时已在近处面向目标。走到距离目标超过 5.5 米的位置，在远处观察变化。"
+    }
+  },
+  "A19": {
+    "zh": {
+      "criteria": "宅院门前只有两只石狮，其中一只被摆在门口正中央，另一只仍位于门侧。",
+      "expected": "正常情况下，两只石狮应分列大门两侧，留出中央通行空间。",
+      "steps": "从门外观察两只石狮与大门的位置关系，再走近门口中央查看。"
+    },
+    "en": {
+      "criteria": "There are two stone lions at the residence entrance, but one occupies the center of the doorway while the other remains at the side.",
+      "expected": "The pair should flank the entrance, leaving the central passage clear.",
+      "steps": "From outside, compare both lions with the entrance, then approach the middle of the doorway."
+    }
+  },
+  "A25": {
+    "zh": {
+      "criteria": "同一宅院大门的两片门扇分别向院内和院外打开。",
+      "expected": "正常情况下，成对门扇应朝同一侧开启，共同向院内或院外打开。",
+      "steps": "从门外正面及侧面比较两片门扇相对门框的位置；可分别关闭、重新打开，确认开启方向。"
+    },
+    "en": {
+      "criteria": "The two leaves of the same residence entrance open on opposite sides of the doorway: one inward and the other outward.",
+      "expected": "The paired leaves should open to the same side, both inward or both outward.",
+      "steps": "Compare both leaves with the doorframe from outside and from the side. Close and reopen them individually to confirm their swing directions."
+    }
+  }
+}

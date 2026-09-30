@@ -1,0 +1,113 @@
+[
+ {
+  "name": "air wall",
+  "where": "~6m straight ahead of spawn toward the fountain; invisible but impassable",
+  "at": {
+   "scene": "sponza",
+   "spawnOffset": [
+    6,
+    0
+   ]
+  },
+  "bug": "air_wall",
+  "level": "L2"
+ },
+ {
+  "name": "floating crate",
+  "where": "~5m behind-left (west, slightly north) of spawn; crate hovers 0.35m above the floor",
+  "at": {
+   "scene": "sponza",
+   "spawnOffset": [
+    -5,
+    2.5
+   ]
+  },
+  "bug": "float",
+  "level": "L1"
+ },
+ {
+  "name": "portal misroute",
+  "where": "the purple portal in the vault antechamber sends you to the dungeon instead of back to Sponza",
+  "at": {
+   "scene": "vault",
+   "local": [
+    3.5,
+    0
+   ]
+  },
+  "bug": "portal_misroute",
+  "level": "L3"
+ },
+ {
+  "name": "ghost door",
+  "where": "right leaf of the vault double door: looks open but still blocks you (use the left leaf)",
+  "at": {
+   "scene": "vault",
+   "local": [
+    8.2,
+    1.5
+   ]
+  },
+  "bug": "door_ghost",
+  "level": "L3"
+ },
+ {
+  "name": "delayed mechanism",
+  "where": "after pulling the vault lever, the portcullis takes 2 extra seconds to rise",
+  "at": {
+   "scene": "vault",
+   "local": [
+    18.6,
+    3.4
+   ]
+  },
+  "bug": "mechanism_delay",
+  "level": "L3"
+ },
+ {
+  "name": "fake floor",
+  "where": "a black pit in the middle of the vault hall that you cannot fall into - you walk right over it",
+  "at": {
+   "scene": "vault",
+   "local": [
+    14,
+    0
+   ]
+  },
+  "bug": "fake_floor",
+  "level": "L2"
+ },
+ {
+  "name": "missing texture",
+  "where": "a magenta crate on the left side of the vault treasure room",
+  "at": {
+   "scene": "vault",
+   "local": [
+    22.5,
+    -3.4
+   ]
+  },
+  "bug": "missing_tex",
+  "level": "L1"
+ },
+ {
+  "name": "no-clip chest",
+  "where": "the dungeon chest near the portal: you can walk straight through it (it still opens)",
+  "at": {
+   "scene": "dungeon",
+   "floor": 1
+  },
+  "bug": "no_collision",
+  "level": "L2"
+ },
+ {
+  "name": "dead gem",
+  "where": "a gem deep in the dungeon that does not respond to interact at all",
+  "at": {
+   "scene": "dungeon",
+   "floor": 7
+  },
+  "bug": "dead_gem",
+  "level": "L3"
+ }
+]

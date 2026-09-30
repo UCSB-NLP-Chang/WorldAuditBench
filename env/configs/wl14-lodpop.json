@@ -1,0 +1,32 @@
+{
+ "page": "candidate_environments/13_beyond_fable_wilderness_constrained.html",
+ "worldSeed": 7,
+ "spawn": {
+  "pos": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "yawDeg": 0
+ },
+ "targets": {
+  "zone_far": [
+   0.0,
+   0.0,
+   -17.0
+  ]
+ },
+ "bounds": {
+  "minX": -24,
+  "maxX": 28,
+  "minZ": -20,
+  "maxZ": 15
+ },
+ "name": "wl14-lodpop",
+ "bug": "wl14-lodpop",
+ "meta": {
+  "title": "wl14-lodpop",
+  "desc": "the tall pine west of the start (about 12 m away) shows as a crude flat-shaded green cone whenever you are more than ~16 m from it, and pops into a detailed tree only when you come closer"
+ },
+ "view": null
+}

@@ -1,0 +1,27 @@
+{
+  "reason": "These tasks are used as in-context demonstrations. Exclude them and aliases from evaluation.",
+  "task_ids": [
+    "I01",
+    "U013",
+    "U012",
+    "R04",
+    "R09",
+    "S05",
+    "S21",
+    "I09",
+    "A13",
+    "U045",
+    "wl12",
+    "sp13",
+    "ct17",
+    "unreal_urban_bug_19",
+    "unreal_ancient_city_bug_21"
+  ],
+  "additional_aliases": [
+    "JS_WL12",
+    "JS_SP13",
+    "JS_CT17",
+    "U019",
+    "A21"
+  ]
+}

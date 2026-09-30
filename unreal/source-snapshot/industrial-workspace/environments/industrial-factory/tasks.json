@@ -1,0 +1,721 @@
+{
+  "version": "industrial-v1",
+  "taxonomy_version": "user-2026-09-12-scene-semantics",
+  "tasks": [
+    {
+      "id": "I01",
+      "region": "assembly_hall",
+      "map": "/Game/Auditor/Industrial/AssemblyHall",
+      "target": "SM_OfficeChair46",
+      "kind": "offset",
+      "subcategory": "G1",
+      "title": "装配车间椅子悬空",
+      "probe": [
+        2263,
+        2430,
+        120
+      ],
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "储物柜旁的一把椅子悬在地面上方，椅脚没有支撑。",
+          "expected": "椅脚应接触地面。",
+          "steps": "沿装配线旁的通道走到储物柜前，从侧面观察椅脚。"
+        },
+        "en": {
+          "criteria": "A chair beside the lockers floats above the floor with no support beneath its legs.",
+          "expected": "The chair legs should rest on the floor.",
+          "steps": "Walk along the assembly aisle to the lockers and inspect the chair legs from the side."
+        }
+      },
+      "offset": [
+        0,
+        0,
+        90
+      ],
+      "review_aim": [
+        2263.61,
+        2669.99,
+        62.82
+      ]
+    },
+    {
+      "id": "I02",
+      "region": "assembly_hall",
+      "map": "/Game/Auditor/Industrial/AssemblyHall",
+      "target": "SM_OfficeChair46",
+      "kind": "duplicate",
+      "subcategory": "G2",
+      "title": "装配车间椅子重复穿插",
+      "probe": [
+        2263,
+        2430,
+        120
+      ],
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "储物柜旁的两把椅子相互穿插，椅背和座面占据同一空间。",
+          "expected": "两把椅子应占据独立空间。",
+          "steps": "沿通道走到储物柜旁，从正面和侧面检查重叠的椅背与座面。"
+        },
+        "en": {
+          "criteria": "Two chairs beside the lockers intersect through their backs and seats.",
+          "expected": "The chairs should occupy separate spaces.",
+          "steps": "Walk along the aisle to the lockers and inspect the overlapping chair backs and seats from the front and side."
+        }
+      },
+      "offset": [
+        25,
+        -20,
+        0
+      ],
+      "yaw": 20,
+      "review_aim": [
+        2263.61,
+        2669.99,
+        62.82
+      ]
+    },
+    {
+      "id": "I03",
+      "region": "assembly_hall",
+      "map": "/Game/Auditor/Industrial/AssemblyHall",
+      "target": "SM_box_9",
+      "kind": "scale",
+      "subcategory": "G3",
+      "title": "同排储物柜尺寸异常",
+      "probe": [
+        563,
+        2250,
+        120
+      ],
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "同一排中一个储物柜异常放大，与相邻同款柜子的比例明显不一致。",
+          "expected": "同款储物柜应保持相近的尺寸。",
+          "steps": "走到通道一端的储物柜前，比较柜门高度和宽度。"
+        },
+        "en": {
+          "criteria": "One locker is enlarged far beyond the proportions of the matching lockers beside it.",
+          "expected": "Matching lockers should have comparable dimensions.",
+          "steps": "Walk to the lockers at the end of the aisle and compare their door heights and widths."
+        }
+      },
+      "factor": 1.6,
+      "review_aim": [
+        563.61,
+        2683.95,
+        170
+      ]
+    },
+    {
+      "id": "I04",
+      "region": "assembly_hall",
+      "map": "/Game/Auditor/Industrial/AssemblyHall",
+      "target": "SM_box_6",
+      "kind": "no_collision",
+      "subcategory": "C1",
+      "title": "人物穿入实体储物柜",
+      "probe": [
+        683,
+        2440,
+        120
+      ],
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "人物可以走入外观完整的储物柜内部。",
+          "expected": "实体柜门和柜身应阻挡人物。",
+          "steps": "对准该排最右侧储物柜，持续向前走并观察是否进入柜体。"
+        },
+        "en": {
+          "criteria": "The player can walk into a visibly solid locker.",
+          "expected": "The solid locker door and body should block the player.",
+          "steps": "Face the rightmost locker in the row and walk forward to check whether the character enters it."
+        }
+      },
+      "review_aim": [
+        683.61,
+        2683.95,
+        115.13
+      ]
+    },
+    {
+      "id": "I05",
+      "region": "assembly_hall",
+      "map": "/Game/Auditor/Industrial/AssemblyHall",
+      "target": "",
+      "kind": "blocker",
+      "subcategory": "C2",
+      "title": "装配通道存在空气墙",
+      "probe": [
+        1700,
+        2400,
+        120
+      ],
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "装配线旁一段看起来畅通的通道被看不见的障碍阻挡。",
+          "expected": "没有可见障碍的通道应允许正常通过。",
+          "steps": "从起点沿长通道向前行走，检查无法继续前进的位置。"
+        },
+        "en": {
+          "criteria": "An apparently clear section of the assembly aisle is blocked by an invisible obstacle.",
+          "expected": "The unobstructed aisle should allow normal passage.",
+          "steps": "From the starting area, walk along the long aisle and inspect the point where movement stops."
+        }
+      },
+      "position": [
+        1900,
+        2400,
+        120
+      ],
+      "extent": [
+        25,
+        100,
+        100
+      ],
+      "review_aim": [
+        1900,
+        2400,
+        100
+      ]
+    },
+    {
+      "id": "I06",
+      "region": "assembly_hall",
+      "map": "/Game/Auditor/Industrial/AssemblyHall",
+      "target": "SM_OfficeChair47",
+      "kind": "contact_jitter",
+      "subcategory": "C3",
+      "title": "碰触椅子后持续抖动",
+      "probe": [
+        2891,
+        2450,
+        120
+      ],
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "碰到通道旁的椅子后，椅子持续快速左右抖动，离开后仍不停。",
+          "expected": "普通碰触不应使椅子持续自行抖动。",
+          "steps": "走向椅子直到接触，然后后退并观察一秒以上。"
+        },
+        "en": {
+          "criteria": "After the player bumps the chair beside the aisle, it rapidly jitters sideways and continues after contact ends.",
+          "expected": "An ordinary bump should not make a chair jitter indefinitely.",
+          "steps": "Walk into the chair, step back, and observe it for more than a second."
+        }
+      },
+      "review_aim": [
+        2891.4,
+        2669.99,
+        62.82
+      ]
+    },
+    {
+      "id": "I07",
+      "region": "vehicle_test",
+      "map": "/Game/Auditor/Industrial/VehicleTest",
+      "target": "SM_WaterContainer18",
+      "kind": "view_cull",
+      "subcategory": "V1",
+      "title": "正视水箱时消失",
+      "probe": [
+        -5757,
+        2050,
+        120
+      ],
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "水箱移到视野中央时消失，移到视野边缘后又出现。",
+          "expected": "转动视角时，无遮挡的水箱应持续可见。",
+          "steps": "靠近测试区水箱，对准它后再缓慢向侧面转动视角。"
+        },
+        "en": {
+          "criteria": "The water container disappears at the center of the view and reappears toward its edge.",
+          "expected": "An unobstructed container should remain visible as the camera turns.",
+          "steps": "Approach the water container, look directly at it, then slowly turn the camera sideways."
+        }
+      },
+      "threshold": 0.94,
+      "review_aim": [
+        -5757.64,
+        1791.88,
+        85.82
+      ]
+    },
+    {
+      "id": "I08",
+      "region": "vehicle_test",
+      "map": "/Game/Auditor/Industrial/VehicleTest",
+      "target": "SM_Barrel26_84",
+      "kind": "distance_cull",
+      "subcategory": "V1",
+      "title": "金属桶随距离突兀消失",
+      "probe": [
+        -4970,
+        2390,
+        120
+      ],
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "沿畅通的通道稍微后退，前排金属桶就突然消失；靠近时重新出现。",
+          "expected": "这个距离范围内，无遮挡的金属桶应始终可见。",
+          "steps": "面向金属桶，向后走约三米再走回来。"
+        },
+        "en": {
+          "criteria": "A front-row metal drum abruptly disappears when the player backs away along the clear aisle and returns on approach.",
+          "expected": "The unobstructed drum should stay visible over this distance range.",
+          "steps": "Face the drums, back up about three meters, then approach again."
+        }
+      },
+      "far_probe": [
+        -4970,
+        2060,
+        120
+      ],
+      "threshold": 350,
+      "review_aim": [
+        -4970.0,
+        2605.0,
+        60.0
+      ]
+    },
+    {
+      "id": "I09",
+      "region": "vehicle_test",
+      "map": "/Game/Auditor/Industrial/VehicleTest",
+      "target": "SM_MetalBumper10",
+      "kind": "distance_scale",
+      "subcategory": "V2",
+      "title": "防撞设施随距离改变大小",
+      "probe": [
+        -6340,
+        2420,
+        120
+      ],
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "地面防撞设施在远近观察间突然变大或缩小，改变了与周围物体的比例。",
+          "expected": "观察距离不应改变物体的世界尺寸。",
+          "steps": "面向通道边的防撞设施，后退约三米再靠近。"
+        },
+        "en": {
+          "criteria": "The floor-mounted bumper abruptly grows or shrinks with viewing distance, changing its proportions relative to nearby objects.",
+          "expected": "Viewing distance should not change an object’s world dimensions.",
+          "steps": "Face the bumper beside the aisle, back up about three meters, then approach it."
+        }
+      },
+      "far_probe": [
+        -6340,
+        2040,
+        120
+      ],
+      "threshold": 330,
+      "factor": 2.3,
+      "review_aim": [
+        -6340.0,
+        2630.0,
+        52.94
+      ]
+    },
+    {
+      "id": "I10",
+      "region": "vehicle_test",
+      "map": "/Game/Auditor/Industrial/VehicleTest",
+      "target": "SM_Barrel27",
+      "kind": "lookaway_hide",
+      "subcategory": "T1",
+      "title": "回头后金属桶丢失",
+      "probe": [
+        -4910,
+        2400,
+        120
+      ],
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "看过前排右侧金属桶后转身再回来，它无缘无故消失了。",
+          "expected": "无人搬动时，金属桶应留在原处。",
+          "steps": "先看清前排右侧金属桶，转身看向另一边，再回头检查。"
+        },
+        "en": {
+          "criteria": "After the player observes the front-right metal drum and looks away, it is missing on return.",
+          "expected": "The drum should remain in place when nobody moves it.",
+          "steps": "Observe the front-right drum, turn to look away, then look back."
+        }
+      },
+      "review_aim": [
+        -4910.0,
+        2605.0,
+        60.0
+      ]
+    },
+    {
+      "id": "I11",
+      "region": "vehicle_test",
+      "map": "/Game/Auditor/Industrial/VehicleTest",
+      "target": "SM_Barrel26_84",
+      "kind": "lookaway_material",
+      "subcategory": "T2",
+      "title": "回头后金属桶材质改变",
+      "probe": [
+        -4970,
+        2390,
+        120
+      ],
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "转身再回头后，金属桶突然变成紫红色，原有表面细节丢失。",
+          "expected": "没有涂装或更换操作时，桶的外观应保持不变。",
+          "steps": "观察前排左侧金属桶，转身再回头比较它的表面。"
+        },
+        "en": {
+          "criteria": "After the player looks away and back, the metal drum becomes magenta and loses its original surface detail.",
+          "expected": "The drum’s appearance should remain unchanged without repainting or replacement.",
+          "steps": "Observe the front-left drum, turn away, then look back and compare its surface."
+        }
+      },
+      "review_aim": [
+        -4970.0,
+        2605.0,
+        60.0
+      ]
+    },
+    {
+      "id": "I12",
+      "region": "vehicle_test",
+      "map": "/Game/Auditor/Industrial/VehicleTest",
+      "target": "SM_OfficeChair59_106",
+      "kind": "return_move",
+      "subcategory": "T2",
+      "title": "离开返回后椅子移动",
+      "probe": [
+        -6520,
+        2440,
+        120
+      ],
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "离开再返回时，通道旁的椅子自行换了位置。",
+          "expected": "无人推动时，椅子应保持原来的位置。",
+          "steps": "先靠近看清椅子，转身走开至少四米，再沿原路返回。"
+        },
+        "en": {
+          "criteria": "After the player leaves and returns, the chair beside the aisle has moved by itself.",
+          "expected": "The chair should remain in its original position when nobody pushes it.",
+          "steps": "Approach and observe the chair, turn away and walk at least four meters, then return."
+        }
+      },
+      "far_probe": [
+        -6520,
+        2040,
+        120
+      ],
+      "near": 330,
+      "far": 500,
+      "offset": [
+        -150,
+        -80,
+        0
+      ],
+      "review_aim": [
+        -6520.13,
+        2680.84,
+        62.82
+      ]
+    },
+    {
+      "id": "I13",
+      "region": "control_room",
+      "map": "/Game/Auditor/Industrial/ControlRoom",
+      "target": "SM_OfficeChair4_12",
+      "kind": "offset",
+      "subcategory": "G1",
+      "title": "控制室椅子悬空",
+      "probe": [
+        -2310,
+        1320,
+        1206
+      ],
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "控制室中间的一把椅子悬在空中，轮脚与地板之间存在明显空隙。",
+          "expected": "椅子的轮脚应接触地板。",
+          "steps": "走到控制室中间，从侧面观察椅脚与地板之间的空隙。"
+        },
+        "en": {
+          "criteria": "A chair in the middle of the control room floats with a clear gap between its wheels and the floor.",
+          "expected": "The chair wheels should rest on the floor.",
+          "steps": "Walk toward the middle of the control room and inspect the gap beneath the chair."
+        }
+      },
+      "offset": [
+        0,
+        0,
+        80
+      ],
+      "review_aim": [
+        -2506.96,
+        1319.15,
+        1150.28
+      ]
+    },
+    {
+      "id": "I14",
+      "region": "control_room",
+      "map": "/Game/Auditor/Industrial/ControlRoom",
+      "target": "SM_OfficeChair4_12",
+      "kind": "duplicate",
+      "subcategory": "G2",
+      "title": "控制室椅子相互穿插",
+      "probe": [
+        -2300,
+        1320,
+        1206
+      ],
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "两把椅子的椅背、座面和轮脚相互穿插。",
+          "expected": "两把椅子应占据独立空间。",
+          "steps": "靠近控制室中间的椅子，从不同角度观察交叉的座面和椅背。"
+        },
+        "en": {
+          "criteria": "Two chairs intersect through their backs, seats and wheel bases.",
+          "expected": "The chairs should occupy separate spaces.",
+          "steps": "Approach the chair in the middle of the control room and inspect the crossed seats and backs from different angles."
+        }
+      },
+      "offset": [
+        24,
+        18,
+        0
+      ],
+      "yaw": 25,
+      "review_aim": [
+        -2506.96,
+        1319.15,
+        1150.28
+      ]
+    },
+    {
+      "id": "I15",
+      "region": "control_room",
+      "map": "/Game/Auditor/Industrial/ControlRoom",
+      "target": "SM_OfficeSofaTable_14",
+      "kind": "scale",
+      "subcategory": "G3",
+      "title": "控制室茶几比例异常",
+      "probe": [
+        -2300,
+        1065,
+        1206
+      ],
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "茶几相对椅子和杂志异常巨大，尺寸明显失调。",
+          "expected": "茶几应保持与周围家具相称的尺寸。",
+          "steps": "走到控制室休息区，比较茶几与附近椅子和杂志的比例。"
+        },
+        "en": {
+          "criteria": "The coffee table is oversized relative to the chairs and magazines.",
+          "expected": "The coffee table should have proportions consistent with the surrounding furniture.",
+          "steps": "Walk to the control room seating area and compare the table with nearby chairs and magazines."
+        }
+      },
+      "factor": 2.0,
+      "review_aim": [
+        -2606.0,
+        1065.0,
+        1127.38
+      ]
+    },
+    {
+      "id": "I16",
+      "region": "control_room",
+      "map": "/Game/Auditor/Industrial/ControlRoom",
+      "target": "SM_OfficeChair4_12",
+      "kind": "no_collision",
+      "subcategory": "C1",
+      "title": "人物穿过控制室椅子",
+      "probe": [
+        -2310,
+        1320,
+        1206
+      ],
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "人物可以从外观完整的椅子座面和椅背中直接穿过。",
+          "expected": "椅子实体部分应阻挡人物。",
+          "steps": "面向控制室中间的椅子，持续向前走尝试穿过座面。"
+        },
+        "en": {
+          "criteria": "The player can walk straight through the visible chair seat and back.",
+          "expected": "The solid parts of the chair should block the player.",
+          "steps": "Face the chair in the middle of the control room and walk forward through its seat."
+        }
+      },
+      "review_aim": [
+        -2506.96,
+        1319.15,
+        1150.28
+      ]
+    },
+    {
+      "id": "I17",
+      "region": "control_room",
+      "map": "/Game/Auditor/Industrial/ControlRoom",
+      "target": "SM_OfficeChair2",
+      "kind": "view_cull",
+      "subcategory": "V1",
+      "title": "控制室椅子在正视时消失",
+      "probe": [
+        -2180,
+        1500,
+        1206
+      ],
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "墙边椅子移到视野中央时消失，稍微转开视角又出现。",
+          "expected": "无遮挡的椅子应在这些视角下持续可见。",
+          "steps": "靠近墙边椅子，正视后缓慢向左或向右转动视角。"
+        },
+        "en": {
+          "criteria": "The chair beside the wall disappears at the center of the view and reappears when the camera turns slightly.",
+          "expected": "The unobstructed chair should remain visible across these viewpoints.",
+          "steps": "Approach the chair beside the wall, look directly at it, then slowly turn left or right."
+        }
+      },
+      "threshold": 0.94,
+      "review_aim": [
+        -1946.52,
+        1563.84,
+        1176.04
+      ]
+    },
+    {
+      "id": "I18",
+      "region": "control_room",
+      "map": "/Game/Auditor/Industrial/ControlRoom",
+      "target": "SM_OfficeSofaTable_14",
+      "kind": "lookaway_material",
+      "subcategory": "T2",
+      "title": "回头后茶几材质改变",
+      "probe": [
+        -2400,
+        1065,
+        1206
+      ],
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "看向别处再回头后，茶几突然变成紫红色，原有表面外观丢失。",
+          "expected": "无人更换或涂装时，茶几的外观应保持不变。",
+          "steps": "先观察放有杂志的茶几，转身再回头比较桌面与桌腿。"
+        },
+        "en": {
+          "criteria": "After the player looks away and back, the coffee table turns magenta and loses its original surface appearance.",
+          "expected": "The table’s appearance should remain unchanged without replacement or repainting.",
+          "steps": "Observe the coffee table with magazines, turn away, then look back and compare its top and legs."
+        }
+      },
+      "review_aim": [
+        -2606.0,
+        1065.0,
+        1127.38
+      ]
+    },
+    {
+      "id": "I19",
+      "region": "assembly_hall",
+      "map": "/Game/Auditor/Industrial/AssemblyHall",
+      "category": "semantic",
+      "subcategory": "S2",
+      "kind": "robot_configuration",
+      "target": "ConfigurationTray",
+      "title": "机械臂空焊，工件托盘偏离作业位置",
+      "probe": [
+        1600,
+        2260,
+        120
+      ],
+      "review_aim": [
+        2010,
+        1860,
+        150
+      ],
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "工件托盘偏离机械臂的作业位置，机械臂反复在空处执行焊接动作。",
+          "expected": "正常情况下，工件托盘应与机械臂的焊接位置对齐。",
+          "steps": "连续观察机械臂的动作和工件位置，再与正常对照比较。"
+        },
+        "en": {
+          "criteria": "The workpiece tray is displaced from the robot workstation, while the arm repeatedly follows its weld path through empty space.",
+          "expected": "The workpiece tray should align with the robot’s welding path.",
+          "steps": "Watch repeated arm movements and the workpiece position, then compare with the baseline."
+        }
+      }
+    },
+    {
+      "id": "I20",
+      "region": "control_room",
+      "map": "/Game/Auditor/Industrial/ControlRoom",
+      "category": "state",
+      "subcategory": "T3",
+      "kind": "operational_shutdown",
+      "target": "SM_LampSet_49",
+      "title": "Control-room light switches off by itself",
+      "probe": [
+        -2320,
+        1490,
+        1206
+      ],
+      "review_aim": [
+        -2028,
+        1842,
+        1455
+      ],
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "控制室墙上原本亮着的灯在观察过程中突然自行熄灭。",
+          "expected": "正常情况下，照明应持续工作，直到有人关闭开关。",
+          "steps": "靠近目标并连续观察约六秒。"
+        },
+        "en": {
+          "criteria": "The illuminated wall light in the control room suddenly switches off while being observed.",
+          "expected": "The light should keep operating until someone switches it off.",
+          "steps": "Approach the target and watch it continuously for about six seconds."
+        }
+      }
+    },
+    {
+      "id": "I21",
+      "region": "control_room",
+      "map": "/Game/Auditor/Industrial/ControlRoom",
+      "category": "state",
+      "subcategory": "T3",
+      "kind": "operational_shutdown",
+      "target": "SM_DeskControl_4",
+      "title": "Control-console computer shuts down by itself",
+      "probe": [
+        -2110,
+        1470,
+        1206
+      ],
+      "review_aim": [
+        -1840,
+        1520,
+        1260
+      ],
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "控制台原本工作的屏幕和指示灯在观察过程中同时自行熄灭。",
+          "expected": "正常情况下，控制台应持续运行，直到有人关闭电源。",
+          "steps": "靠近目标并连续观察约六秒。"
+        },
+        "en": {
+          "criteria": "The operating control console suddenly loses its screen displays and indicator lights while being observed.",
+          "expected": "The console should remain powered until someone shuts it down.",
+          "steps": "Approach the target and watch it continuously for about six seconds."
+        }
+      }
+    }
+  ]
+}

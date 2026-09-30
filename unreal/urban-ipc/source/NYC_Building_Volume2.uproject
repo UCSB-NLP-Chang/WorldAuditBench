@@ -1,0 +1,27 @@
+{
+  "FileVersion": 3,
+  "EngineAssociation": "5.6",
+  "Category": "",
+  "Description": "",
+  "Plugins": [
+    {
+      "Name": "PythonScriptPlugin",
+      "Enabled": true
+    },
+    {
+      "Name": "AuditorRuntime",
+      "Enabled": true
+    },
+    {
+      "Name": "PixelStreaming2",
+      "Enabled": true
+    }
+  ],
+  "Modules": [
+    {
+      "Name": "NYC_Building_Volume2",
+      "Type": "Runtime",
+      "LoadingPhase": "Default"
+    }
+  ]
+}

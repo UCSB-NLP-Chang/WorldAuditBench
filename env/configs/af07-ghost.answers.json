@@ -1,0 +1,12 @@
+[
+ {
+  "name": "no-collision barrier",
+  "where": "one concrete road barrier in the row north of the start has no collision - you walk straight through it while the others are solid",
+  "at": [
+   2,
+   15.2,
+   -22
+  ],
+  "category": "collision-physics"
+ }
+]

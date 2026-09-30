@@ -1,0 +1,67 @@
+{
+ "name": "hs05-airwall-near",
+ "meta": {
+  "title": "hs05-airwall-near",
+  "desc": "Invisible wall across the hall (L3 near spawn)"
+ },
+ "seed": 5,
+ "scenes": [
+  {
+   "type": "house",
+   "id": "house"
+  }
+ ],
+ "spawn": {
+  "scene": "house",
+  "pos": [
+   0.6,
+   0.0,
+   2.2
+  ],
+  "yawDeg": -0.0
+ },
+ "player": {
+  "radius": 0.22
+ },
+ "bounds": {
+  "minX": -6.6,
+  "maxX": 6.6,
+  "minZ": -4.6,
+  "maxZ": 4.6
+ },
+ "notice": [
+  {
+   "x": 0.0,
+   "z": 4.85,
+   "r": 0.8
+  },
+  {
+   "x": 0.7,
+   "z": -4.85,
+   "r": 0.8
+  }
+ ],
+ "objects": [],
+ "bugs": [
+  {
+   "type": "air_wall",
+   "at": [
+    0.0,
+    0.0,
+    0.9
+   ],
+   "size": [
+    3.4,
+    2.6,
+    0.4
+   ]
+  }
+ ],
+ "targets": {
+  "zone_far": [
+   4.4,
+   3.0,
+   3.2
+  ]
+ }
+}

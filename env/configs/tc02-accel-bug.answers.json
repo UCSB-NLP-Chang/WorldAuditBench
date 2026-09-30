@@ -1,0 +1,15 @@
+[
+ {
+  "name": "instant-open door",
+  "where": "door snaps to fully open with no animation (should swing smoothly)",
+  "at": {
+   "scene": "c",
+   "local": [
+    7.2,
+    0
+   ]
+  },
+  "bug": "anim_accelerated",
+  "level": "L3"
+ }
+]

@@ -1,0 +1,12 @@
+[
+ {
+  "name": "invisible wall",
+  "where": "an invisible barrier right across the sandy lane a few metres north of the start stops the diver although nothing is visible there",
+  "at": [
+   0,
+   -2,
+   7.85
+  ],
+  "category": "collision-physics"
+ }
+]

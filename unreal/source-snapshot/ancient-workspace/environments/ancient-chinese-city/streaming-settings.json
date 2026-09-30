@@ -1,0 +1,18 @@
+{
+  "game_args": [
+    "-vulkan",
+    "-sm6",
+    "-PixelStreamingWebRTCMaxFps=30",
+    "-ExecCmds=t.MaxFPS 30,r.SkinCache.Mode 0,r.OptimizedWPO 1,r.Nanite.AllowWPODistanceDisable 1,r.SkeletalMeshLODBias 1,r.Nanite.MaxPixelsPerEdge 2",
+    "-ini:GameUserSettings:[ScalabilityGroups]:sg.GlobalIlluminationQuality=1",
+    "-ini:GameUserSettings:[ScalabilityGroups]:sg.ReflectionQuality=1",
+    "-ini:GameUserSettings:[ScalabilityGroups]:sg.ShadowQuality=2",
+    "-ini:GameUserSettings:[ScalabilityGroups]:sg.EffectsQuality=2",
+    "-ini:GameUserSettings:[ScalabilityGroups]:sg.PostProcessQuality=2"
+  ],
+  "resolution": [
+    1280,
+    720
+  ],
+  "fps_limit": 30
+}

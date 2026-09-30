@@ -1,0 +1,52 @@
+{
+ "name": "sp04-doublespawn-near",
+ "meta": {
+  "title": "sp04-doublespawn",
+  "desc": "Co-located duplicate pot (double spawn, z-fighting)"
+ },
+ "seed": 5,
+ "scenes": [
+  {
+   "type": "gltf",
+   "id": "sponza",
+   "url": "/assets/sponza/Sponza.gltf"
+  }
+ ],
+ "spawn": {
+  "scene": "sponza",
+  "pos": {
+   "scene": "sponza",
+   "spawnOffset": [
+    4.18,
+    0.61
+   ],
+   "snap": true
+  },
+  "yawDeg": -55
+ },
+ "objects": [],
+ "bugs": [
+  {
+   "type": "mesh_clone",
+   "meshes": [
+    "mesh_0_91",
+    "mesh_0_92"
+   ],
+   "offset": [
+    0.1,
+    0.03,
+    0.08
+   ]
+  }
+ ],
+ "targets": {
+  "zone_far": {
+   "scene": "sponza",
+   "spawnOffset": [
+    9.48,
+    0.01
+   ],
+   "snap": true
+  }
+ }
+}

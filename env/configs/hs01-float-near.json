@@ -1,0 +1,61 @@
+{
+ "name": "hs01-float-near",
+ "meta": {
+  "title": "hs01-float-near",
+  "desc": "One dining chair floats in mid-air (L3 near spawn)"
+ },
+ "seed": 5,
+ "scenes": [
+  {
+   "type": "house",
+   "id": "house"
+  }
+ ],
+ "spawn": {
+  "scene": "house",
+  "pos": [
+   5.0,
+   0.0,
+   4.3
+  ],
+  "yawDeg": -4.5
+ },
+ "player": {
+  "radius": 0.22
+ },
+ "bounds": {
+  "minX": -6.6,
+  "maxX": 6.6,
+  "minZ": -4.6,
+  "maxZ": 4.6
+ },
+ "notice": [
+  {
+   "x": 0.0,
+   "z": 4.85,
+   "r": 0.8
+  },
+  {
+   "x": 0.7,
+   "z": -4.85,
+   "r": 0.8
+  }
+ ],
+ "objects": [],
+ "bugs": [
+  {
+   "type": "mesh_offset",
+   "meshes": [
+    "DINING_CHAIR#1"
+   ],
+   "dy": 0.45
+  }
+ ],
+ "targets": {
+  "zone_far": [
+   4.4,
+   3.0,
+   3.2
+  ]
+ }
+}

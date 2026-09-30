@@ -1,0 +1,38 @@
+{
+ "page": "candidate_environments/01_mistwood_cottage_constrained.html",
+ "spawn": {
+  "pos": [
+   -0.6,
+   0.0,
+   5.0
+  ],
+  "yawDeg": 0
+ },
+ "targets": {
+  "zone_far": [
+   -8.5,
+   2.5,
+   -5.5
+  ]
+ },
+ "bounds": {
+  "minX": -12,
+  "maxX": 7.5,
+  "minZ": -10.5,
+  "maxZ": 8.5
+ },
+ "exclude": [],
+ "name": "ct14-lodpop",
+ "bug": "ct14-lodpop",
+ "meta": {
+  "title": "ct14-lodpop",
+  "desc": "the big tree east of the front door shows as a crude green cone from a few metres away and pops into a detailed tree only when you get close"
+ },
+ "view": {
+  "cam": [
+   -0.6,
+   0,
+   8.0
+  ]
+ }
+}

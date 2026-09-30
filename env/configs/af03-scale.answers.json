@@ -1,0 +1,12 @@
+[
+ {
+  "name": "giant fire hydrant",
+  "where": "the fire hydrant north-east of the start is about three times its normal size - a hydrant taller than a person",
+  "at": [
+   18,
+   16,
+   -20
+  ],
+  "category": "geometry-space"
+ }
+]

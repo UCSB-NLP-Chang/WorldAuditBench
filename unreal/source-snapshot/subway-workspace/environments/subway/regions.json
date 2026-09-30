@@ -1,0 +1,236 @@
+{
+  "environment": "subway",
+  "source_map": "/Game/Subway_Station/Maps/Demonstration",
+  "regions": [
+    {
+      "id": "concourse",
+      "name": "A / ENTRANCE CONCOURSE",
+      "map": "/Game/Auditor/Subway/Concourse",
+      "bounds_min": [
+        -1100,
+        4420,
+        420
+      ],
+      "bounds_max": [
+        1100,
+        5400,
+        1050
+      ],
+      "spawn": [
+        0,
+        4600,
+        520
+      ],
+      "yaw": 90,
+      "boundary_test_start": [
+        500,
+        5250,
+        520
+      ],
+      "boundary_test_direction": [
+        0,
+        1,
+        0
+      ],
+      "traversal_points": [
+        [
+          0,
+          4600,
+          520
+        ],
+        [
+          0,
+          5300,
+          520
+        ],
+        [
+          300,
+          5300,
+          520
+        ],
+        [
+          300,
+          4800,
+          520
+        ],
+        [
+          0,
+          4800,
+          520
+        ],
+        [
+          -250,
+          4800,
+          520
+        ],
+        [
+          -250,
+          5300,
+          520
+        ],
+        [
+          0,
+          5300,
+          520
+        ]
+      ]
+    },
+    {
+      "id": "platform",
+      "name": "B / PLATFORM WAITING AREA",
+      "map": "/Game/Auditor/Subway/Platform",
+      "bounds_min": [
+        -650,
+        600,
+        0
+      ],
+      "bounds_max": [
+        2750,
+        2000,
+        430
+      ],
+      "spawn": [
+        1100,
+        1700,
+        100
+      ],
+      "yaw": 0,
+      "boundary_test_start": [
+        2600,
+        1700,
+        100
+      ],
+      "boundary_test_direction": [
+        1,
+        0,
+        0
+      ],
+      "traversal_points": [
+        [
+          1100,
+          1700,
+          100
+        ],
+        [
+          2400,
+          1700,
+          100
+        ],
+        [
+          2650,
+          1700,
+          100
+        ],
+        [
+          2650,
+          1200,
+          100
+        ],
+        [
+          2000,
+          1200,
+          100
+        ],
+        [
+          1300,
+          1200,
+          100
+        ],
+        [
+          700,
+          1200,
+          100
+        ],
+        [
+          500,
+          1300,
+          100
+        ],
+        [
+          0,
+          1700,
+          100
+        ],
+        [
+          -500,
+          1700,
+          100
+        ],
+        [
+          0,
+          1200,
+          100
+        ]
+      ]
+    },
+    {
+      "id": "trackside",
+      "name": "C / TRAIN-SIDE PLATFORM",
+      "map": "/Game/Auditor/Subway/Trackside",
+      "bounds_min": [
+        -2250,
+        520,
+        0
+      ],
+      "bounds_max": [
+        450,
+        1230,
+        430
+      ],
+      "spawn": [
+        -1450,
+        650,
+        100
+      ],
+      "yaw": -75,
+      "boundary_test_start": [
+        -2100,
+        600,
+        100
+      ],
+      "boundary_test_direction": [
+        -1,
+        0,
+        0
+      ],
+      "traversal_points": [
+        [
+          -1450,
+          650,
+          100
+        ],
+        [
+          -1450,
+          600,
+          100
+        ],
+        [
+          300,
+          600,
+          100
+        ],
+        [
+          300,
+          1150,
+          100
+        ],
+        [
+          -1450,
+          1150,
+          100
+        ],
+        [
+          -2100,
+          1150,
+          100
+        ],
+        [
+          -2100,
+          600,
+          100
+        ]
+      ],
+      "visible_train": "SkeletalMeshActor_2"
+    }
+  ]
+}

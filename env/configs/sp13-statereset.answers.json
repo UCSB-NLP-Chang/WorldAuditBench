@@ -1,0 +1,16 @@
+[
+ {
+  "name": "state-reset pot",
+  "where": "each time you leave the area and return, the pot is at a different position (state not saved)",
+  "at": {
+   "scene": "sponza",
+   "spawnOffset": [
+    7.15,
+    1.54
+   ],
+   "snap": true
+  },
+  "category": "spatiotemporal-state",
+  "extent_z": 1.2
+ }
+]

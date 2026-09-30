@@ -1,0 +1,140 @@
+{
+  "version": "user-2026-09-13-visibility",
+  "source": "Screenshot 2026-09-09 at 16.43.33.png",
+  "categories": [
+    {
+      "id": "geometry",
+      "name": "几何与空间",
+      "subcategories": [
+        {
+          "id": "G1",
+          "name": "缺少支撑／悬空",
+          "name_en": "Missing support / floating"
+        },
+        {
+          "id": "G2",
+          "name": "穿插／重叠／结构错位",
+          "name_en": "Intersection / overlap / structural misalignment"
+        },
+        {
+          "id": "G3",
+          "name": "尺度／比例失调",
+          "name_en": "Scale / proportion mismatch"
+        }
+      ],
+      "name_en": "Geometry & space"
+    },
+    {
+      "id": "collision",
+      "name": "碰撞与物理",
+      "subcategories": [
+        {
+          "id": "C1",
+          "name": "应阻挡而发生穿透",
+          "name_en": "Missing collision"
+        },
+        {
+          "id": "C2",
+          "name": "不应阻挡却被阻挡",
+          "name_en": "Unexpected collision"
+        },
+        {
+          "id": "C3",
+          "name": "交互后物体运动轨迹异常",
+          "name_en": "Abnormal object trajectories after interaction"
+        }
+      ],
+      "name_en": "Collision & physics"
+    },
+    {
+      "id": "visual",
+      "name": "视觉一致性",
+      "subcategories": [
+        {
+          "id": "V1",
+          "name": "可见性异常",
+          "name_en": "Visibility anomalies",
+          "definition": {
+            "en": "Object visibility contradicts the current viewpoint, distance or occlusion: an object that should be visible disappears, or an object fully occluded by an opaque surface remains visible.",
+            "zh": "物体的可见性不符合当前视角、距离或遮挡关系：应可见时消失，或被不透明物体完全遮挡时仍然可见。"
+          }
+        },
+        {
+          "id": "V2",
+          "name": "视角／距离相关的外观异常",
+          "name_en": "View / distance-dependent appearance"
+        },
+        {
+          "id": "V3",
+          "name": "阴影／光照异常",
+          "name_en": "Shadow / lighting anomalies",
+          "definition": {
+            "en": "Light, occlusion or shadow relationships contradict the scene geometry or light sources; darkness or aesthetic preference alone is insufficient.",
+            "zh": "光照、遮挡或阴影关系与场景几何或光源矛盾；仅仅太暗或不好看不算异常。"
+          }
+        }
+      ],
+      "name_en": "Visual consistency",
+      "definition": {
+        "en": "Visibility consistent with viewpoint, distance and occlusion; appearance consistent across viewpoints and distances; and coherent relationships between light sources, occluders and shadows.",
+        "zh": "可见性符合视角、距离和遮挡关系，外观在不同视角和距离下保持一致，光源、遮挡物和阴影之间的关系自洽。"
+      }
+    },
+    {
+      "id": "state",
+      "name": "时间一致性",
+      "subcategories": [
+        {
+          "id": "T1",
+          "name": "存在性变化",
+          "name_en": "Existence changes"
+        },
+        {
+          "id": "T2",
+          "name": "静态属性变化",
+          "name_en": "Static attribute changes"
+        },
+        {
+          "id": "T3",
+          "name": "动态／运行状态变化",
+          "name_en": "Operational state changes"
+        }
+      ],
+      "name_en": "Temporal consistency",
+      "definition": {
+        "en": "Unexplained changes in existence, static attributes or operational state over time, including after leaving and returning.",
+        "zh": "随时间经过或离开再返回，物体的存在、静态属性或运行状态发生无合理原因的变化。"
+      }
+    },
+    {
+      "id": "semantic",
+      "name": "场景语义一致性",
+      "subcategories": [
+        {
+          "id": "S1",
+          "name": "布局冲突",
+          "name_en": "Layout conflict"
+        },
+        {
+          "id": "S2",
+          "name": "用途冲突",
+          "name_en": "Purpose conflict"
+        },
+        {
+          "id": "S3",
+          "name": "时代设定冲突",
+          "name_en": "Historical anachronism",
+          "definition": {
+            "en": "An object or technology conflicts with an explicitly established historical era, without an explanation such as time travel, alternate history or an exhibition.",
+            "zh": "物体或技术与场景明确建立的历史时代不符，且没有穿越、架空或展览等设定解释。"
+          }
+        }
+      ],
+      "name_en": "Scene semantic consistency",
+      "definition": {
+        "en": "Object placement, intended use and historical era agree with the explicit context and constraints of the scene.",
+        "zh": "物体的位置、用途与时代属性符合场景明确建立的语境和约束。"
+      }
+    }
+  ]
+}

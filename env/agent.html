@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<title>agent</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}canvas{display:block}</style>
+</head>
+<body>
+<script type="importmap">
+{
+  "imports": {
+    "three": "/assets/vendor/three/three.module.js",
+    "three/addons/": "/assets/vendor/three/addons/",
+    "three-mesh-bvh": "/assets/vendor/three-mesh-bvh/index.module.js"
+  }
+}
+</script>
+<script type="module">
+import { initEnv } from './core.js';
+const q = new URLSearchParams(location.search);
+const name = q.get('config') || 'env0-corridor';
+const seed = q.get('seed');
+document.title = `agent:${name}`;
+const film = q.get('obs') === 'film' ? {
+  dt: +(q.get('filmDt') || 0.3),
+  maxFrames: +(q.get('filmMax') || 8),
+  w: +(q.get('filmW') || 480),
+  h: +(q.get('filmH') || 300),
+} : null;
+initEnv({
+  configUrl: `./configs/${name}.json`,
+  seed: seed === null ? undefined : +seed,
+  agentMode: true,
+  film,
+}).catch(err => {
+  console.error(err);
+  window.__initError = String(err && err.stack || err);
+});
+</script>
+</body>
+</html>

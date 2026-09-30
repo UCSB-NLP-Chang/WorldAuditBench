@@ -1,0 +1,61 @@
+{
+ "name": "hs08-jitter-near",
+ "meta": {
+  "title": "hs08-jitter-near",
+  "desc": "Living-room floor lamp trembles in place (physics jitter) (L3 near spawn)"
+ },
+ "seed": 5,
+ "scenes": [
+  {
+   "type": "house",
+   "id": "house"
+  }
+ ],
+ "spawn": {
+  "scene": "house",
+  "pos": [
+   -4.6,
+   0.0,
+   0.3
+  ],
+  "yawDeg": 60.4
+ },
+ "player": {
+  "radius": 0.22
+ },
+ "bounds": {
+  "minX": -6.6,
+  "maxX": 6.6,
+  "minZ": -4.6,
+  "maxZ": 4.6
+ },
+ "notice": [
+  {
+   "x": 0.0,
+   "z": 4.85,
+   "r": 0.8
+  },
+  {
+   "x": 0.7,
+   "z": -4.85,
+   "r": 0.8
+  }
+ ],
+ "objects": [],
+ "bugs": [
+  {
+   "type": "mesh_tremble",
+   "meshes": [
+    "FLOOR_LAMP#1"
+   ],
+   "amp": 0.03
+  }
+ ],
+ "targets": {
+  "zone_far": [
+   4.4,
+   3.0,
+   3.2
+  ]
+ }
+}

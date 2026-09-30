@@ -1,0 +1,111 @@
+{
+  "version": "exploration-instructions-v4-concise-report",
+  "zh": {
+    "title": "探索与 bug 报告说明",
+    "intro": "每道自动分配的环境都有已标注的 bug。页面会提供 ground-truth bug 类型及该类型的通用定义，但不提供具体位置、复现步骤或 rubric。请自行探索、验证，提交有证据的 bug 报告；未找到时可放弃本题。",
+    "sections": [
+      {
+        "title": "1. 进入与操作",
+        "items": [
+          "点击 Next 自动领取题目；系统优先分配参与较少且未被其他人领取的题目。切换题目或点击 Next 时会保存草稿、结束环境并释放当前领取，可稍后回来继续。提交或放弃后自动领取下一题；仅 End session 不会放弃题目。",
+          "点击 Start session 申请会话；Unreal 忙碌时会排队，轮到后自动启动。等场景就绪后点击画面捕获鼠标。W/A/S/D 移动，鼠标调整观察方向；仅对支持交互的对象使用 E。并非所有物体都能交互。",
+          "按 F 或点击 Flag 保存当前画面的证据截图。按 Esc 释放鼠标并填写报告；再次点击画面继续探索。",
+          "LLM agent 应使用任务提供的观察和操作工具。若工具不支持某个动作，应注明限制；不要声称执行过未实际执行的操作。",
+          "每个账号同时只能有一个会话（含排队）。完成后点击 End session 释放环境或取消排队；已保存的草稿和截图保留。End session 不会提交答案，请单独完成最终提交。无心跳 3 分钟或会话满 60 分钟会自动结束。"
+        ]
+      },
+      {
+        "title": "2. 系统探索与验证",
+        "items": [
+          "先了解可到达区域、通路、物体和场景用途。按区域检查地面、接缝、支撑点、通行边界和可交互物体，避免只停留在初始视角。",
+          "对可疑现象改变观察角度、距离或接近方向；必要时比较交互前后或离开再返回的状态，确认实际异常。报告只需保留理解 bug 所必需的触发条件，不需要记录完整操作顺序。",
+          "区分事实与推测：说明实际看到的现象、预期依据和仍不确定的部分。偶发网络卡顿、视频压缩、个人审美偏好，以及不明确的时代或场景假设，都不足以单独证明场景 bug。",
+          "只依据当前场景中可见的信息及任务明确提供的设定，不访问隐藏 rubric、私有评测数据或其他探索者答案。不要修改环境资产、注入代码或使用未提供的作弊／调试手段改变环境。"
+        ]
+      },
+      {
+        "title": "3. 本题涉及的 bug 类型",
+        "items": [
+          "右侧报告区域展示本题涉及的 bug 类型及通用描述，名称和定义对应 game-auditing 的 agent system prompt。请参考提示探索，系统会自动填写报告类型，无需手动选择。",
+          "一个独立异常写一条报告。同一异常有多个视角时，可按需关联有帮助的截图，不必使用全部截图，也不要拆成重复报告。",
+          "请如实描述实际观察到的现象及不确定之处，不要仅凭类型提示推测或编造问题。"
+        ]
+      },
+      {
+        "title": "4. 截图与描述",
+        "items": [
+          "每条 bug 报告至少关联一张能帮助辨认对象、位置或异常的已保存截图。按需选择相关图片即可，不要求与参考例子的截图数量、角度或顺序一致，也不要求逐张写说明。",
+          "文字重点描述发现的 bug，而不是探索过程：指出对象和位置、异常现象，以及正常情况下应如何表现。动态或碰撞问题仅在必要时补充触发条件；不要将静态截图未能展示的过程当作图片已经证明的事实。",
+          "可以删除误拍的截图；删除会自动解除所有报告中的引用。如果一条报告因此没有证据，需要补拍并关联后再提交。描述和类别会自动保存，等待保存完成再离开。",
+          "In-context example 中的图片和说明仅供理解 bug 类型参考，不是提交格式或详尽程度的要求。"
+        ]
+      },
+      {
+        "title": "5. 完成探索",
+        "items": [
+          "默认填写 bug 报告：检查每条描述、类别及证据关联，再点击“提交报告并领取下一题”。没有充分依据时不要编造报告。",
+          "未找到已标注的 bug 时，勾选“我没有找到此题的 bug，放弃本题”，再点击“放弃本题并领取下一题”。这会记录放弃并保留草稿和证据，不表示环境没有 bug，也不计为成功提交。",
+          "环境无法启动、持续黑屏或操作工具故障导致无法探索：选择“环境发生技术问题”，记录故障现象、尝试的恢复步骤及未完成的检查，不将其当作已发现的场景 bug。",
+          "提交前完成复核；最终提交后不能修改。本服务最多支持 20 条报告和 30 张截图，每条描述最多 10000 字符。"
+        ]
+      }
+    ],
+    "report_title": "描述建议（无需逐项填写）",
+    "template": "简要描述 bug：哪个对象、在什么位置、出现了什么异常，以及为什么不正常。\n仅在理解异常需要时补充触发条件；不必记录探索过程或逐张解释截图。",
+    "agent_note": "在人类基线网页中，用几句话描述发现的 bug，并关联相关 Flag 截图即可。如果调用方另有输出格式要求，遵循其要求；无需照抄示例叙述或列出完整探索过程。"
+  },
+  "en": {
+    "title": "Exploration and bug reporting instructions",
+    "intro": "Every automatically assigned environment contains an annotated bug. The page provides the ground-truth category and its general definition, but not the exact location, reproduction steps, or rubric. Explore and verify the issue yourself, then submit an evidence-backed report. If you cannot find it, you may give up this task.",
+    "sections": [
+      {
+        "title": "1. Enter and control the environment",
+        "items": [
+          "Select Next for an automatic assignment. The system favors less-explored tasks that are not currently claimed by another tester. Switching tasks or clicking Next saves your draft, ends the environment session, and releases the current claim. You can return to the draft later. Submission or giving up assigns the next task; End session alone does not abandon a task.",
+          "Select Start session to request a session. If Unreal capacity is busy, wait in the queue until your session starts automatically. Once the scene is ready, click it to capture the mouse. Use W/A/S/D to move and the mouse to look around. Use E only on objects that support interaction; not every object is interactive.",
+          "Press F or select Flag to save evidence of the currently displayed frame. Press Esc to release the mouse and write a report. Click the scene again to resume exploration.",
+          "An LLM agent must use the observation and action tools supplied for the task. If a tool cannot perform an action, state that limitation. Never claim to have performed an action that was not actually executed.",
+          "Each account may hold only one session, including a queued session. Select End session when finished to release the environment or leave the queue. Saved drafts and screenshots are retained. End session does not submit your answer; submit your final answer separately. Sessions expire after 3 minutes without a heartbeat or a maximum age of 60 minutes."
+        ]
+      },
+      {
+        "title": "2. Explore systematically and verify",
+        "items": [
+          "First identify accessible areas, routes, objects and scene functions. Inspect regions in turn, including floors, joints, support points, traversal boundaries and available interactions. Do not rely only on the initial view.",
+          "Check a suspected anomaly from another angle, distance or approach. Compare states around an interaction or after leaving and returning when relevant. Include only trigger conditions needed to understand the bug, not a complete action sequence.",
+          "Separate observations from inference. Explain what happened, why a different result is expected, and what remains uncertain. Network stalls, video compression, aesthetic preference, or unsupported assumptions about the era or scene do not independently establish a scene bug.",
+          "Use only visible scene information and context explicitly supplied for the task. Do not access hidden rubrics, private evaluation data or other explorers’ answers. Do not modify assets, inject code, or use unavailable cheat/debug methods to alter the environment."
+        ]
+      },
+      {
+        "title": "3. Bug types involved in this task",
+        "items": [
+          "The report panel shows the bug types involved in this task and their general definitions, aligned with the game-auditing agent system prompt. Use them as exploration hints. The system fills in the report type automatically; no manual selection is needed.",
+          "Write one report per distinct anomaly. Attach useful views as needed; you do not need to use every screenshot or create separate reports for different views of the same issue.",
+          "Describe what you actually observed and any uncertainty. Do not infer or invent a finding from the type hint alone."
+        ]
+      },
+      {
+        "title": "4. Capture evidence and describe the issue",
+        "items": [
+          "Associate at least one saved screenshot that helps identify the object, location or anomaly with each bug report. Select relevant images as needed. You do not need to match the reference example’s image count, angles or order, or explain every image.",
+          "Focus the text on the bug you found: the object and location, the anomaly, and what should normally happen. Add a trigger condition for a motion or collision issue only when needed; do not imply that a still image proves an event it does not show.",
+          "Accidental screenshots may be deleted; deletion also removes their report associations. Replace and associate evidence before submitting any report left without a screenshot. Descriptions save automatically; wait for saving to finish before leaving.",
+          "In-context example images and descriptions are references for understanding the bug type, not requirements for your submission format or level of detail."
+        ]
+      },
+      {
+        "title": "5. Finish the attempt",
+        "items": [
+          "Report submission is the default. Check each description and attached screenshot, then submit the report to receive the next task. Do not invent unsupported findings.",
+          "If you cannot find the annotated bug, select the option to give up this task and confirm using the give-up/next button. Your draft and evidence are retained. Giving up is recorded separately; it does not assert that the environment has no bug and is not a successful report submission.",
+          "If startup failure, persistent black video or broken action tools prevent exploration, choose Technical problem (环境发生技术问题). Record symptoms, attempted recovery and checks that could not be completed; do not present this as a discovered scene bug.",
+          "Review before submitting: final submissions cannot be edited. This service supports up to 20 reports and 30 screenshots per attempt, and 10000 characters per description."
+        ]
+      }
+    ],
+    "report_title": "Suggested description (not a required form)",
+    "template": "Briefly describe the bug: the object and location, what is wrong, and why it is unexpected.\nAdd a trigger condition only if needed to understand the issue. No exploration log or image-by-image explanation is required.",
+    "agent_note": "For the human baseline webpage, describe the bug in a few sentences and attach relevant Flag images. Follow any separate output format requested by the caller; no imitation of the example narrative or full exploration log is required."
+  }
+}

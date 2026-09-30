@@ -1,0 +1,12 @@
+{
+  "source_release": "/home/ubuntu/unreal-auditor/review-service/releases/industrial-20260912",
+  "source_state_sha256": {
+    "tasks.json": "63430ecf9f19642071e78871e22ec12415edd35ba686fb271bc18cdc8a4bdaed",
+    "runtime.json": "5d65fe2626462fa0cd2fef0c99e8d4cad43720c4856ae476a17167b968af2319",
+    "service-env.json": "0e29aebf35f3f88e6e0fedba1bb1d4970723b0a24ccf701b50c59db08b89256a"
+  },
+  "build_sha256": "66911b647107047d4f514d13705d2faff513f553dfd748ffbb4035f8d5ebdcae",
+  "new_entries": 21,
+  "preserved_entries": 100,
+  "stage": "/home/ubuntu/unreal-auditor/review-service/staging/rural-20260912-204952"
+}

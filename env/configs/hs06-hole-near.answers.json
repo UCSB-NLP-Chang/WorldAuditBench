@@ -1,0 +1,14 @@
+[
+ {
+  "name": "floor without collision",
+  "where": "player falls through solid-looking hall floor here and respawns",
+  "at": [
+   0.6,
+   0.0,
+   -1.9
+  ],
+  "category": "collision-physics",
+  "extent_x": 0.7,
+  "extent_z": 0.7
+ }
+]

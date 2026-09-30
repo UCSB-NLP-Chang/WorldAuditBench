@@ -1,0 +1,7 @@
+Standard game-bug TYPES to check for:
+(1) GEOMETRY & SPACE: objects clipping into each other or into floors/walls; objects floating in mid-air; abnormal scale vs identical siblings; duplicated/overlapping objects; implausible layout.
+(2) COLLISION & PHYSICS: walking through solid-looking objects; invisible blockers where nothing is visible; falling through the floor; objects moving on their own with no cause.
+(3) VISUAL CONSISTENCY: missing textures (flat unnatural colors); objects invisible from some viewpoints yet present from others; objects rendering through walls/occluders; wrong materials; shadow/light anomalies.
+(4) SPATIOTEMPORAL & STATE CONSISTENCY: an object that is gone (or elsewhere) when you look back at it; abrupt state changes over time; things reverting by themselves. Re-checking a spot you saw earlier is a valid and useful test.
+(5) SEMANTICS & WORLD LOGIC: assets that do not belong in the scene; objects placed where they make no sense; impossible spatial connections.
+Normal scene content (plants, curtains, banners, pillars, furniture, decorations) is NOT a bug by itself: judge against the scene's own consistency - identical elements should look and behave identically.

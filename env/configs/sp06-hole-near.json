@@ -1,0 +1,55 @@
+{
+ "name": "sp06-hole-near",
+ "meta": {
+  "title": "sp06-hole",
+  "desc": "Floor region without collision (fall-through)"
+ },
+ "seed": 5,
+ "scenes": [
+  {
+   "type": "gltf",
+   "id": "sponza",
+   "url": "/assets/sponza/Sponza.gltf"
+  }
+ ],
+ "spawn": {
+  "scene": "sponza",
+  "pos": {
+   "scene": "sponza",
+   "spawnOffset": [
+    -7.12,
+    0.01
+   ],
+   "snap": true
+  },
+  "yawDeg": -90
+ },
+ "objects": [],
+ "bugs": [
+  {
+   "type": "floor_hole",
+   "at": {
+    "scene": "sponza",
+    "spawnOffset": [
+     -4.02,
+     0.01
+    ],
+    "snap": true
+   },
+   "size": [
+    1.7,
+    1.7
+   ]
+  }
+ ],
+ "targets": {
+  "zone_far": {
+   "scene": "sponza",
+   "spawnOffset": [
+    9.48,
+    0.01
+   ],
+   "snap": true
+  }
+ }
+}

@@ -1,0 +1,62 @@
+{
+ "name": "env2-temporal-bug",
+ "meta": {
+  "title": "env2t - Sponza + frozen torch",
+  "desc": "Sponza plus a pair of standing torches ahead; one has a frozen animation (flame static, constant light). Purely temporal bug for observation-v2 ablations."
+ },
+ "seed": 33,
+ "scenes": [
+  {
+   "type": "gltf",
+   "id": "sponza",
+   "url": "/assets/sponza/Sponza.gltf"
+  }
+ ],
+ "spawn": {
+  "scene": "sponza",
+  "yawDeg": -90
+ },
+ "objects": [
+  {
+   "type": "torch",
+   "id": "torch_l",
+   "at": {
+    "scene": "sponza",
+    "spawnOffset": [
+     4.5,
+     -1.2
+    ],
+    "snap": true
+   },
+   "scale": 1.8
+  },
+  {
+   "type": "torch",
+   "id": "torch_r",
+   "at": {
+    "scene": "sponza",
+    "spawnOffset": [
+     4.5,
+     1.2
+    ],
+    "snap": true
+   },
+   "scale": 1.8
+  }
+ ],
+ "bugs": [
+  {
+   "type": "frozen_anim",
+   "target": "torch_l"
+  }
+ ],
+ "targets": {
+  "zone_torch": {
+   "scene": "sponza",
+   "spawnOffset": [
+    4.5,
+    -1.2
+   ]
+  }
+ }
+}

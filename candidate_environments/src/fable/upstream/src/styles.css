@@ -1,0 +1,535 @@
+/* ============================================================================
+   Beyond Fable — UI theme
+   A spare, weighty fantasy look: Trajan-style display caps, warm gold on
+   near-black, thin hairline rules. All overlay chrome fades in/out so the
+   world stays the hero.
+   ========================================================================== */
+
+:root {
+  --bg: #07070a;
+  --ink: #e8dcc1;
+  --ink-soft: rgba(232, 220, 193, 0.62);
+  --ink-faint: rgba(232, 220, 193, 0.4);
+  --gold: #c9ad73;
+  --gold-bright: #e6cf95;
+  --line: rgba(201, 173, 115, 0.3);
+  --panel: rgba(12, 12, 14, 0.92);
+  --font-body: 'EB Garamond', 'Iowan Old Style', Georgia, 'Times New Roman', serif;
+  --font-display: 'Cinzel', 'Trajan Pro', 'Optima', Georgia, serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--bg);
+  font-family: var(--font-body);
+  color: var(--ink);
+  user-select: none;
+}
+
+#app canvas {
+  display: block;
+}
+
+#hud {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 10;
+}
+
+#hud-overlay.hidden {
+  display: none;
+}
+
+/* HUD chrome (stats + controls) — fades as a group, auto-hidden after 5s. */
+#hud-chrome {
+  position: absolute;
+  inset: 0;
+  opacity: 1;
+  transition: opacity 0.7s ease;
+}
+
+#hud-chrome.hidden {
+  opacity: 0;
+}
+
+#hud-top-left {
+  position: absolute;
+  top: 16px;
+  left: 18px;
+  font-size: 13px;
+  line-height: 1.85;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9);
+}
+
+#hud-top-left #fps {
+  color: var(--gold);
+}
+
+#hud-controls {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9);
+  white-space: nowrap;
+}
+
+#underwater-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(20, 70, 86, 0.18), rgba(8, 40, 52, 0.45));
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+
+#underwater-overlay.visible {
+  opacity: 1;
+}
+
+#interact-prompt {
+  position: absolute;
+  top: 57%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-display);
+  font-size: 15px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold-bright);
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.95);
+  opacity: 0;
+  transition: opacity 0.18s ease;
+}
+
+#interact-prompt.visible {
+  opacity: 1;
+}
+
+#interact-message {
+  position: absolute;
+  top: 21%;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 520px;
+  text-align: center;
+  font-size: 19px;
+  font-style: italic;
+  line-height: 1.55;
+  color: #f6eed8;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.95);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+#interact-message.visible {
+  opacity: 1;
+}
+
+/* ----------------------------------------------------------------------------
+   Atmosphere console (live world editor)
+   -------------------------------------------------------------------------- */
+#hack-menu {
+  position: absolute;
+  top: 50%;
+  right: 24px;
+  width: min(440px, calc(100vw - 32px));
+  max-height: calc(100vh - 32px);
+  overflow: auto;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: linear-gradient(160deg, rgba(14, 13, 12, 0.96), rgba(9, 9, 11, 0.94));
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.6), inset 0 1px rgba(201, 173, 115, 0.08);
+  backdrop-filter: blur(14px);
+  pointer-events: auto;
+  z-index: 3;
+  opacity: 0;
+  transform: translate(24px, -50%) scale(0.98);
+  transition: opacity 0.16s ease, transform 0.16s ease;
+  visibility: hidden;
+}
+
+#hack-menu.visible {
+  opacity: 1;
+  transform: translate(0, -50%) scale(1);
+  visibility: visible;
+}
+
+.hack-header,
+.hack-actions,
+.hack-control span {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.hack-header {
+  margin-bottom: 18px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line);
+}
+
+.hack-kicker {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--gold);
+  font-size: 9px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+}
+
+.hack-header h2 {
+  font-family: var(--font-display);
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--ink);
+}
+
+#hack-close {
+  width: 34px;
+  height: 34px;
+  font-size: 20px;
+  color: var(--gold);
+}
+
+.hack-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px 16px;
+}
+
+.hack-section-title {
+  margin-top: 8px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  color: var(--gold);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.hack-control,
+.hack-toggle {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  color: var(--ink-soft);
+  font-size: 12px;
+  letter-spacing: 0.05em;
+}
+
+.hack-wide,
+.hack-toggle {
+  grid-column: 1 / -1;
+}
+
+.hack-toggle {
+  flex-direction: row;
+  align-items: center;
+}
+
+.hack-control output {
+  color: var(--gold-bright);
+  font-variant-numeric: tabular-nums;
+}
+
+#hack-menu input[type='range'] {
+  width: 100%;
+  accent-color: var(--gold);
+  cursor: pointer;
+}
+
+#hack-menu select,
+#hack-menu button {
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: rgba(201, 173, 115, 0.08);
+  color: var(--ink);
+  font-family: var(--font-body);
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+#hack-menu select:hover,
+#hack-menu button:hover {
+  background: rgba(201, 173, 115, 0.16);
+  border-color: var(--gold);
+}
+
+#hack-menu select {
+  width: 100%;
+  padding: 7px 9px;
+}
+
+.hack-actions {
+  margin-top: 22px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+.hack-actions button {
+  flex: 1;
+  padding: 10px 10px;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ----------------------------------------------------------------------------
+   Resume (pause) overlay — shown when the pointer unlocks mid-play
+   -------------------------------------------------------------------------- */
+#start-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(ellipse at center, rgba(8, 8, 11, 0.5), rgba(4, 4, 6, 0.86));
+  pointer-events: auto;
+  cursor: pointer;
+  transition: opacity 0.4s ease;
+}
+
+#start-overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#start-box {
+  text-align: center;
+  padding: 46px 64px;
+  border: 1px solid var(--line);
+  background: rgba(8, 8, 10, 0.5);
+  backdrop-filter: blur(3px);
+}
+
+#start-box h1 {
+  font-family: var(--font-display);
+  font-size: 34px;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  color: var(--gold-bright);
+}
+
+#start-box p {
+  font-size: 16px;
+  font-style: italic;
+  color: var(--ink-soft);
+  margin-bottom: 8px;
+}
+
+#start-box .controls-hint {
+  margin-top: 14px;
+  letter-spacing: 0.18em;
+  font-size: 11px;
+  font-style: normal;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+#start-box .click-hint {
+  margin-top: 26px;
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-style: normal;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  animation: pulse 2.4s ease-in-out infinite;
+}
+
+/* ----------------------------------------------------------------------------
+   Loading screen — first-load gate while the world is forged
+   -------------------------------------------------------------------------- */
+#loading-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+  cursor: default;
+  transition: opacity 0.9s ease;
+}
+
+#loading-screen.dismissed {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Opaque painted backdrop that lifts to reveal the world once ready. */
+.ls-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 50% 38%, rgba(60, 46, 24, 0.4), rgba(4, 4, 6, 0) 60%),
+    radial-gradient(ellipse at center, #0b0a0c 0%, #050506 70%, #020203 100%);
+  transition: opacity 0.9s ease;
+}
+
+#loading-screen.ready {
+  cursor: pointer;
+}
+
+#loading-screen.ready .ls-bg {
+  opacity: 0.34; /* let the loaded world show through behind the title */
+}
+
+.ls-frame {
+  position: relative;
+  text-align: center;
+  padding: 0 40px;
+}
+
+.ls-emblem {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 26px;
+  border-radius: 50%;
+  border: 1px solid rgba(201, 173, 115, 0.22);
+  position: relative;
+}
+
+.ls-emblem::before,
+.ls-emblem::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+}
+
+.ls-emblem::before {
+  inset: -1px;
+  border: 2px solid transparent;
+  border-top-color: var(--gold-bright);
+  border-right-color: rgba(201, 173, 115, 0.4);
+  animation: ls-spin 3.4s linear infinite;
+}
+
+.ls-emblem::after {
+  inset: 14px;
+  border: 1px solid rgba(201, 173, 115, 0.5);
+  animation: ls-spin 6s linear infinite reverse;
+}
+
+#loading-screen.ready .ls-emblem {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.ls-title {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 8vw, 78px);
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold-bright);
+  text-shadow: 0 2px 30px rgba(180, 140, 70, 0.35), 0 1px 3px rgba(0, 0, 0, 0.9);
+}
+
+.ls-rule {
+  width: min(420px, 60vw);
+  height: 1px;
+  margin: 18px auto 16px;
+  background: linear-gradient(90deg, transparent, var(--gold) 50%, transparent);
+  opacity: 0.7;
+}
+
+.ls-sub {
+  font-size: 17px;
+  font-style: italic;
+  letter-spacing: 0.1em;
+  color: var(--ink-soft);
+}
+
+.ls-bar {
+  width: 240px;
+  height: 2px;
+  margin: 40px auto 16px;
+  background: rgba(201, 173, 115, 0.14);
+  overflow: hidden;
+}
+
+.ls-bar span {
+  display: block;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, var(--gold-bright), transparent);
+  animation: ls-sweep 1.5s ease-in-out infinite;
+  will-change: transform;
+}
+
+.ls-tip {
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  animation: pulse 2.2s ease-in-out infinite;
+}
+
+.ls-enter {
+  display: none;
+  margin-top: 38px;
+  font-family: var(--font-display);
+  font-size: 16px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--gold);
+  animation: pulse 2.2s ease-in-out infinite;
+}
+
+#loading-screen.ready .ls-bar,
+#loading-screen.ready .ls-tip {
+  display: none;
+}
+
+#loading-screen.ready .ls-enter {
+  display: block;
+}
+
+@keyframes ls-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes ls-sweep {
+  0% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(360%);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}

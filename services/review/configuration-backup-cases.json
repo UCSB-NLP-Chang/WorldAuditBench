@@ -1,0 +1,196 @@
+{
+  "status": "backup_candidates",
+  "reason": "Ordinary temporary placement is insufficient evidence of a configuration bug.",
+  "tasks": [
+    {
+      "id": "S17",
+      "revision": 1,
+      "map": "/Game/Auditor/Subway/Concourse?Task=S17",
+      "sha256": "96d39ad8ad6e9835306c394e59a34da5499168513506b22654860f8bff1dc9f1",
+      "environment": "Subway / 站厅",
+      "case_id": "S17",
+      "rubrics": "中文\n正常预期: 候车座面用于坐人\n复现步骤: 进入任务后观察；必要时从多个角度或通过接近核验。\n判定标准: 固定垃圾桶占据座面，底部仍有支撑\nEnglish\nExpected behavior: Waiting-bench seats remain available for passengers to sit on.\nReview steps: Inspect the concourse bench and the object occupying its seat.\nAcceptance criteria: A supported, fixed bin occupies the seating surface and prevents its intended use.",
+      "case_path": "/?case=S17",
+      "case_type": "bug",
+      "title": "垃圾桶占据进站大厅长椅座面",
+      "subcategory": "S2",
+      "family": "subway",
+      "build_sha256": "7544c4148a535e028674792514b991e57c02ef48907fde9e3aa41bb43ced17fd",
+      "rubrics_i18n": {
+        "zh": {
+          "expected": "候车座面用于坐人",
+          "steps": "进入任务后观察；必要时从多个角度或通过接近核验。",
+          "criteria": "固定垃圾桶占据座面，底部仍有支撑"
+        },
+        "en": {
+          "expected": "Waiting-bench seats remain available for passengers to sit on.",
+          "steps": "Inspect the concourse bench and the object occupying its seat.",
+          "criteria": "A supported, fixed bin occupies the seating surface and prevents its intended use."
+        }
+      },
+      "runtime_switch": true,
+      "taxonomy_label": "场景语义一致性 · 用途冲突"
+    },
+    {
+      "id": "U039",
+      "revision": 1,
+      "case_id": "U039-R01-UE561-C02",
+      "case_type": "bug",
+      "family": "urban",
+      "environment": "urban-city / Shopfront / 店面街区",
+      "scene_id": "shopfront",
+      "scene_i18n": {
+        "zh": "店面街区",
+        "en": "Shopfront"
+      },
+      "title": "餐桌上放大垃圾桶",
+      "description": "店铺露天餐桌上放了一只街用垃圾桶，桌椅和遮阳伞仍构成普通用餐区。",
+      "description_i18n": {
+        "zh": "店铺露天餐桌上放了一只街用垃圾桶，桌椅和遮阳伞仍构成普通用餐区。",
+        "en": "A street wastebin sits on an outdoor cafe table, while the table, chairs, and umbrella still form a normal dining area."
+      },
+      "target": {
+        "actor_name": "StaticMeshActor_1",
+        "actor_label": "AUD_U039_R01_Prop",
+        "actor_guid": null,
+        "actor_class": "/Script/Engine.StaticMeshActor",
+        "asset": "/Game/NYCBuildingVolume2/Static_Meshes/Props/SM_Metal_wastebin.SM_Metal_wastebin",
+        "location_cm": [
+          2239.55,
+          744.39,
+          186.952638
+        ],
+        "role": "injected_object",
+        "description_i18n": {
+          "zh": "店铺北侧露天用餐区约 (2238, 796) 的餐桌；垃圾桶位于桌面靠南一侧，约 (2240, 744)。",
+          "en": "The outdoor dining table near (2238, 796) on the north side of the shopfront; the bin sits toward the south side of its tabletop, around (2240, 744)."
+        }
+      },
+      "related_objects": [
+        {
+          "actor_name": "StaticMeshActor_374",
+          "actor_label": "SM_table7",
+          "actor_guid": "227093b6-8aba3cae-88320a8a-a3a9e7b0",
+          "actor_class": "/Script/Engine.StaticMeshActor",
+          "asset": "/Game/NYCBuildingVolume2/Static_Meshes/Props/SM_table.SM_table",
+          "location_cm": [
+            2238.246366,
+            796.369616,
+            106.667236
+          ],
+          "role": "reference_or_support_object"
+        }
+      ],
+      "category": "semantic",
+      "kind": "wrong_context",
+      "trigger": "static",
+      "effect": "spawn_or_restore",
+      "source_taxonomy": {
+        "primary_category": "semantic",
+        "kind": "wrong_context",
+        "trigger": "static",
+        "effect": "spawn_or_restore",
+        "secondary_symptoms": []
+      },
+      "subcategory": "S2",
+      "taxonomy": {
+        "version": "user-2026-09-12-scene-semantics",
+        "category_id": "semantic",
+        "category": {
+          "en": "Scene semantic consistency",
+          "zh": "场景语义一致性"
+        },
+        "code": "S2",
+        "subcategory_id": "semantic.purpose",
+        "subcategory": {
+          "en": "Purpose conflict",
+          "zh": "用途冲突"
+        }
+      },
+      "taxonomy_label": "场景语义一致性 · 用途冲突",
+      "taxonomy_mapping": {
+        "status": "service_category_mapping",
+        "notes": "",
+        "secondary_service_codes": []
+      },
+      "rubrics": "中文\n正常预期: 街用垃圾桶应放在适合收集废物的位置；露天餐桌的桌面应保持为用餐空间。\n复现步骤: 沿店铺街道向北走到露天用餐区，从餐桌南侧道路接近。查看桌面上的垃圾桶，再向东侧斜移，确认它放在桌面上而不是桌后地面。\n判定标准: 确认街用垃圾桶占据餐桌的用餐表面，且原桌椅和伞仍在；主要问题是摆放语境不合常理，不是桶悬空或穿入桌面。\nEnglish\nExpected behavior: A street wastebin should be placed appropriately for waste collection, while an outdoor dining tabletop remains available for dining.\nReview steps: Walk north along the shopfront street to the outdoor dining area and approach the table from the road to its south. Inspect the bin, then move obliquely east to confirm it is on the tabletop rather than on the ground behind it.\nAcceptance criteria: Confirm that the street wastebin occupies the dining surface while the table, chairs, and umbrella remain. The primary issue is inappropriate placement in a dining context, not floating or penetration into the tabletop.",
+      "rubrics_i18n": {
+        "zh": {
+          "expected": "街用垃圾桶应放在适合收集废物的位置；露天餐桌的桌面应保持为用餐空间。",
+          "steps": "沿店铺街道向北走到露天用餐区，从餐桌南侧道路接近。查看桌面上的垃圾桶，再向东侧斜移，确认它放在桌面上而不是桌后地面。",
+          "criteria": "确认街用垃圾桶占据餐桌的用餐表面，且原桌椅和伞仍在；主要问题是摆放语境不合常理，不是桶悬空或穿入桌面。"
+        },
+        "en": {
+          "expected": "A street wastebin should be placed appropriately for waste collection, while an outdoor dining tabletop remains available for dining.",
+          "steps": "Walk north along the shopfront street to the outdoor dining area and approach the table from the road to its south. Inspect the bin, then move obliquely east to confirm it is on the tabletop rather than on the ground behind it.",
+          "criteria": "Confirm that the street wastebin occupies the dining surface while the table, chairs, and umbrella remain. The primary issue is inappropriate placement in a dining context, not floating or penetration into the tabletop."
+        }
+      },
+      "map": "/Game/Auditor/Migration/UE561/U039/R01/TaskMap_Candidate02",
+      "sha256": "98b1b3925cd12987e1feea1555fe93432fe80c1543617cbcebc6a53f6d63cb5f",
+      "case_path": "/?case=U039",
+      "build_sha256": "b054d5e0112410515b6d85029534492868d349ff4ef0b95bf95e5f78f51f051e",
+      "package_id": "202ed1c5db7a93bd303550944886785aa5fed01e7315327dd7fd3a04e850c6fb",
+      "package_archive_sha256": "7f26752180ff9b0f9a088ba562e4b7f63f178e79cebeb3795f272c75b08a0c88",
+      "engine_version": "5.6.1",
+      "runtime_switch": false,
+      "observation_protocol": {
+        "start": [
+          1500.0,
+          -1100.0,
+          201.219
+        ],
+        "bounds": {
+          "min": [
+            600.0,
+            -1750.0,
+            75.0
+          ],
+          "max": [
+            3600.0,
+            850.0,
+            700.0
+          ]
+        },
+        "required_actions": [
+          "Approach cafe table374 from normal road[2300,450], then inspect obliquely from[2500,450].",
+          "Observe a native trash-collection bin on the dining tabletop; original table, umbrella and chairs remain."
+        ],
+        "evidence_mode": "paired_lit_wrong_tabletop_context_fullbase_support_canopy_clearance",
+        "repetitions": 1
+      },
+      "task_configuration": {
+        "region_maps_before": [
+          "/Game/Auditor/Migration/Core18_UE561/Baselines/RearLane_Cropped_Candidate03",
+          "/Game/Auditor/Migration/Core18_UE561/Baselines/ServiceLane_Cropped_Candidate03",
+          "/Game/Auditor/Migration/Core18_UE561/Baselines/Shopfront_Cropped_Candidate03",
+          "/Game/Auditor/Migration/Core18_UE561/Baselines/Junction_Cropped_Candidate03"
+        ],
+        "region_maps_after": [
+          "/Game/Auditor/Migration/UE561/U039/R01/TaskMap_Candidate02"
+        ],
+        "reason": "Isolate candidate navigation; no baseline/review map references"
+      },
+      "baseline_reference": {
+        "map": "/Game/Auditor/Migration/Core18_UE561/Baselines/Shopfront_Cropped_Candidate03",
+        "sha256": "1a5a7ac42627f757e55dc076667d321aceb669b33966f00e11d4c640ea4b93c8"
+      },
+      "verification": {
+        "map_reopen_passed": true,
+        "packaged_runtime_passed": true,
+        "evidence_root": "/home/ubuntu/unreal-auditor/builds/core18-ue561-20260911/audit",
+        "human_acceptance": false,
+        "guided_qa_passed": false
+      },
+      "metadata_provenance": {
+        "source_task_record": "repository/tasks/urban-city/U039/R01/task-private.json",
+        "source_task_record_sha256": "775a96a920ac48a2a10a729d6b8a685eab59c5447bf6031160cd323c73c44e83",
+        "migration_receipt": "/home/ubuntu/unreal-auditor/builds/core18-ue561-20260911/audit/cases/U039/TaskMap_Candidate02/receipt.json",
+        "migration_receipt_sha256": "dad73f82dbb76dce5bae3f1a1f44a6b26cf585545b181b595efd350e5e0871c1",
+        "map_identity_source": "/home/ubuntu/unreal-auditor/builds/core18-ue561-20260911/audit/artifact-manifest.json"
+      },
+      "review_mode": "informed_internal_review",
+      "metadata_schema_version": 1
+    }
+  ]
+}

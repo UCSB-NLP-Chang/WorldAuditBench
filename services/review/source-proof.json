@@ -1,0 +1,15 @@
+{
+  "source_release": "/home/ubuntu/unreal-auditor/review-service/releases/medieval-20260912-v1",
+  "source_files": {
+    "server.py": "935e248070c33971efa0dfaf45a43e1f11c74784c78de794f2a1f8c84e58e520",
+    "static/index.html": "ed08d6c245521027cc1a8e0cadd1da4be2aecc440b20e5255143b9c649d73489",
+    "static/app.js": "9e015a54b0a0110893d52b76e95bf50253e51d481cb53952691f10fce174cc7b",
+    "runtime/mac_supervisor.py": "494ab62aad8c9715c59ee741a31bd1c7db76e1865dd4381f946d98798727e4fc",
+    "taxonomy.py": "6b8dcb8e15dd0db6f279321734b5efd4e9b6c8e51d129b0c507973371f31feec",
+    "taxonomy.json": "6fc24b2e72f4ad87661b198e325f0ceb31784f934f5cd6878a9b4b68a6c6dc0c"
+  },
+  "source_state_sha256": {
+    "tasks.json": "126edb5ce34703d178b56f500f6cab96775ff52dc17f4af04563c0ac85ac00c8",
+    "runtime.json": "cffcf8250e074b18cdf30b1eac909d2352aa3f2cda207324f319b360d338f197"
+  }
+}

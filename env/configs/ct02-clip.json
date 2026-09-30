@@ -1,0 +1,38 @@
+{
+ "page": "candidate_environments/01_mistwood_cottage_constrained.html",
+ "spawn": {
+  "pos": [
+   -0.6,
+   0.0,
+   5.0
+  ],
+  "yawDeg": 0
+ },
+ "targets": {
+  "zone_far": [
+   -8.5,
+   2.5,
+   -5.5
+  ]
+ },
+ "bounds": {
+  "minX": -12,
+  "maxX": 7.5,
+  "minZ": -10.5,
+  "maxZ": 8.5
+ },
+ "exclude": [],
+ "name": "ct02-clip",
+ "bug": "ct02-clip",
+ "meta": {
+  "title": "ct02-clip",
+  "desc": "the stone picnic table in the west garden is tipped over at about 40 degrees and sunk into the lawn - one half of the table top and its bench is under the grass, the other half sticks up into the air"
+ },
+ "view": {
+  "cam": [
+   -3.0,
+   0,
+   -3.5
+  ]
+ }
+}

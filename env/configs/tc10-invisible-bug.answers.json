@@ -1,0 +1,15 @@
+[
+ {
+  "name": "invisible obstacle",
+  "where": "an invisible but solid crate blocks the middle of the corridor",
+  "at": {
+   "scene": "c",
+   "local": [
+    7,
+    0
+   ]
+  },
+  "bug": "invisible_obstacle",
+  "level": "L2"
+ }
+]

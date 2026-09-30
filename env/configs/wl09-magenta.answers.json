@@ -1,0 +1,12 @@
+[
+ {
+  "name": "missing-texture boulder",
+  "where": "the big boulder up the slope north-east of the start (about 25 m away) renders as flat bright MAGENTA (missing texture placeholder)",
+  "at": [
+   22.8,
+   15.83,
+   -8.9
+  ],
+  "category": "visual-consistency"
+ }
+]

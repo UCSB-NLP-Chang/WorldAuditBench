@@ -1,0 +1,56 @@
+{
+ "name": "sp09-magenta",
+ "meta": {
+  "title": "sp09-magenta",
+  "desc": "Missing-texture magenta pot"
+ },
+ "seed": 5,
+ "scenes": [
+  {
+   "type": "gltf",
+   "id": "sponza",
+   "url": "/assets/sponza/Sponza.gltf"
+  }
+ ],
+ "spawn": {
+  "scene": "sponza",
+  "pos": {
+   "scene": "sponza",
+   "spawnOffset": [
+    -8.02,
+    0.01
+   ],
+   "snap": true
+  },
+  "yawDeg": -90
+ },
+ "objects": [],
+ "bugs": [
+  {
+   "type": "mesh_missing_tex",
+   "meshes": [
+    "mesh_0_1",
+    "mesh_0_2"
+   ]
+  }
+ ],
+ "targets": {
+  "zone_far": {
+   "scene": "sponza",
+   "spawnOffset": [
+    9.48,
+    0.01
+   ],
+   "snap": true
+  }
+ },
+ "views": [
+  [
+   -3.9,
+   0.0,
+   0.2,
+   -0.773,
+   -0.436
+  ]
+ ]
+}

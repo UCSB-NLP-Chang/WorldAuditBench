@@ -1,0 +1,32 @@
+{
+ "page": "candidate_environments/13_beyond_fable_wilderness_constrained.html",
+ "worldSeed": 7,
+ "spawn": {
+  "pos": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "yawDeg": 0
+ },
+ "targets": {
+  "zone_far": [
+   0.0,
+   0.0,
+   -17.0
+  ]
+ },
+ "bounds": {
+  "minX": -24,
+  "maxX": 28,
+  "minZ": -20,
+  "maxZ": 15
+ },
+ "name": "wl02-clip",
+ "bug": "wl02-clip",
+ "meta": {
+  "title": "wl02-clip",
+  "desc": "the tall pine west of the start (about 12 m away) is tipped over at about 35 degrees and sunk into the ground - its trunk goes into the meadow and its lower branches stab through the grass, while every other tree stands upright on the ground"
+ },
+ "view": null
+}

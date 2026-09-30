@@ -1,0 +1,30 @@
+{
+ "page": "candidate_environments/10_beautiful_water_clean_constrained.html",
+ "spawn": {
+  "pos": [
+   0.0,
+   -4.4,
+   11.5
+  ],
+  "yawDeg": 0
+ },
+ "targets": {
+  "zone_far": [
+   9.5,
+   -4.0,
+   -8.5
+  ]
+ },
+ "bounds": {
+  "minX": -27,
+  "maxX": 27,
+  "minZ": -27,
+  "maxZ": 27
+ },
+ "name": "wt15-spawnpile",
+ "bug": "wt15-spawnpile",
+ "meta": {
+  "title": "wt15-spawnpile",
+  "desc": "nine IDENTICAL copies of the same staghorn coral, all facing exactly the same way, are stacked into one another in a tight heap on the open sand just north of the start (failed spawns)"
+ }
+}

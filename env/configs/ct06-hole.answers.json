@@ -1,0 +1,12 @@
+[
+ {
+  "name": "hole in the path",
+  "where": "you fall straight through the solid-looking flagstones of the front path at one spot and drop into darkness below the garden, then respawn",
+  "at": [
+   -0.6,
+   -0.5,
+   3.7
+  ],
+  "category": "collision-physics"
+ }
+]

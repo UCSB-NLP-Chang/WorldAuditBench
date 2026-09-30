@@ -1,0 +1,71 @@
+{
+ "name": "tc07-tint-bug",
+ "meta": {
+  "title": "tc07-tint-bug",
+  "desc": "Full-screen red tint"
+ },
+ "seed": 5,
+ "scenes": [
+  {
+   "type": "corridor",
+   "id": "c",
+   "length": 16,
+   "width": 4,
+   "height": 3,
+   "partitions": [],
+   "lightsX": [
+    3,
+    6,
+    9,
+    12,
+    15
+   ]
+  }
+ ],
+ "spawn": {
+  "scene": "c",
+  "yawDeg": -90
+ },
+ "objects": [
+  {
+   "type": "crate",
+   "id": "c1",
+   "at": {
+    "scene": "c",
+    "local": [
+     6,
+     -1.2
+    ]
+   },
+   "solid": true
+  },
+  {
+   "type": "crate",
+   "id": "c2",
+   "at": {
+    "scene": "c",
+    "local": [
+     9,
+     1.2
+    ]
+   },
+   "solid": true
+  }
+ ],
+ "bugs": [
+  {
+   "type": "corrupted_frame",
+   "color": "#ff0033",
+   "opacity": 0.35
+  }
+ ],
+ "targets": {
+  "zone_tc": {
+   "scene": "c",
+   "local": [
+    7,
+    0
+   ]
+  }
+ }
+}

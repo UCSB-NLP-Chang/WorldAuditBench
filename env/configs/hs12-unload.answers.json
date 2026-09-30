@@ -1,0 +1,12 @@
+[
+ {
+  "name": "unloaded plant",
+  "where": "after you visit the living-room corner and walk away, the potted plant is unloaded and is gone when you come back",
+  "at": [
+   -6.35,
+   0.0,
+   4.4
+  ],
+  "category": "spatiotemporal-state"
+ }
+]

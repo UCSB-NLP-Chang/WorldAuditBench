@@ -1,0 +1,856 @@
+{
+  "taxonomy_version": "user-2026-09-12-semantic-compatibility",
+  "tasks": [
+    {
+      "id": "A01",
+      "region": "market",
+      "map": "/Game/Auditor/AncientCity/Market",
+      "kind": "offset",
+      "target": "MarketBench",
+      "subcategory": "G1",
+      "title": "Floating market bench",
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "集市木凳无支撑地悬在空中。",
+          "expected": "正常情况下，凳脚应落在地面上。",
+          "steps": "靠近集市木凳，查看凳脚下方。"
+        },
+        "en": {
+          "criteria": "The market bench floats above the ground without support.",
+          "expected": "Its legs should rest on the ground.",
+          "steps": "Approach the market bench and inspect the space beneath its legs."
+        }
+      },
+      "probe": [
+        -780,
+        5470,
+        88.0
+      ],
+      "offset": [
+        0,
+        0,
+        80
+      ]
+    },
+    {
+      "id": "A02",
+      "region": "courtyard",
+      "map": "/Game/Auditor/AncientCity/Courtyard",
+      "kind": "offset",
+      "target": "CourtLion",
+      "subcategory": "G1",
+      "title": "Floating stone lion",
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "入口左侧石狮悬空，底部没有支撑。",
+          "expected": "正常情况下，石狮应落在支撑面上。",
+          "steps": "靠近宅院入口左侧石狮，查看其底座。"
+        },
+        "en": {
+          "criteria": "The left stone lion floats without support.",
+          "expected": "It should rest on its supporting surface.",
+          "steps": "Approach the stone lion on the left of the residence entrance and inspect its base."
+        }
+      },
+      "probe": [
+        120,
+        6770,
+        88.0
+      ],
+      "offset": [
+        0,
+        0,
+        80
+      ]
+    },
+    {
+      "id": "A03",
+      "region": "tea_house",
+      "map": "/Game/Auditor/AncientCity/TeaHouse",
+      "kind": "duplicate",
+      "target": "TeaTable",
+      "subcategory": "G2",
+      "title": "Intersecting tea tables",
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "两张茶桌互相穿插重叠。",
+          "expected": "正常情况下，各张桌子应占据独立空间。",
+          "steps": "绕茶桌观察桌面和桌腿。"
+        },
+        "en": {
+          "criteria": "Two tea tables overlap and intersect.",
+          "expected": "Each table should occupy its own space.",
+          "steps": "Walk around the tea table and inspect its tabletop and legs."
+        }
+      },
+      "probe": [
+        -1530,
+        5520,
+        120.12500001192092
+      ],
+      "offset": [
+        25,
+        0,
+        0
+      ],
+      "yaw": 18
+    },
+    {
+      "id": "A04",
+      "region": "market",
+      "map": "/Game/Auditor/AncientCity/Market",
+      "kind": "duplicate",
+      "target": "MarketCanopy",
+      "subcategory": "G2",
+      "title": "Overlapping stall frames",
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "同一摊位的两套棚架错位重叠。",
+          "expected": "正常情况下，摊位应只有一套对齐的棚架。",
+          "steps": "靠近集市摊位，查看棚架立柱与顶棚。"
+        },
+        "en": {
+          "criteria": "Two misaligned canopy frames overlap on one stall.",
+          "expected": "The stall should have one aligned canopy frame.",
+          "steps": "Approach the market stall and inspect its canopy posts and roof."
+        }
+      },
+      "probe": [
+        -380,
+        5270,
+        88.0
+      ],
+      "offset": [
+        25,
+        0,
+        0
+      ],
+      "yaw": 8
+    },
+    {
+      "id": "A05",
+      "region": "tea_house",
+      "map": "/Game/Auditor/AncientCity/TeaHouse",
+      "kind": "axis_scale",
+      "target": "TeaBench",
+      "subcategory": "G3",
+      "title": "Bench too tall for its table",
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "木凳凳面高过配套桌面。",
+          "expected": "正常情况下，凳面应低于桌面并适合就座。",
+          "steps": "对比茶馆木凳凳面与配套桌面的高度。"
+        },
+        "en": {
+          "criteria": "The bench seat is higher than its matching table.",
+          "expected": "It should sit below the tabletop at a usable seating height.",
+          "steps": "Compare the tea-house bench seat with its matching table."
+        }
+      },
+      "probe": [
+        -1530,
+        5520,
+        120.12500001192092
+      ],
+      "scale": [
+        1,
+        1,
+        3
+      ]
+    },
+    {
+      "id": "A06",
+      "region": "market",
+      "map": "/Game/Auditor/AncientCity/Market",
+      "kind": "axis_scale",
+      "target": "MarketTable",
+      "subcategory": "G3",
+      "title": "Table below seat height",
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "集市木桌桌面低于周围凳面。",
+          "expected": "正常情况下，桌面应高于凳面并适合用餐。",
+          "steps": "对比集市木桌桌面与周围凳面的高度。"
+        },
+        "en": {
+          "criteria": "The market tabletop is lower than the surrounding bench seats.",
+          "expected": "It should be above the seats at a usable dining height.",
+          "steps": "Compare the market tabletop with the surrounding bench seats."
+        }
+      },
+      "probe": [
+        -780,
+        5470,
+        88.0
+      ],
+      "scale": [
+        1,
+        1,
+        0.25
+      ]
+    },
+    {
+      "id": "A07",
+      "region": "market",
+      "map": "/Game/Auditor/AncientCity/Market",
+      "kind": "no_collision",
+      "target": "MarketTable",
+      "subcategory": "C1",
+      "title": "Walk through a wooden table",
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "人物可以穿过集市的实体木桌。",
+          "expected": "正常情况下，木桌应阻挡人物。",
+          "steps": "朝集市木桌直走，尝试穿过桌子占据的区域。"
+        },
+        "en": {
+          "criteria": "The player can walk through the market table.",
+          "expected": "The solid table should block the player.",
+          "steps": "Walk directly toward the market table and attempt to cross its footprint."
+        }
+      },
+      "probe": [
+        -780,
+        5570,
+        88.0
+      ]
+    },
+    {
+      "id": "A08",
+      "region": "tea_house",
+      "map": "/Game/Auditor/AncientCity/TeaHouse",
+      "kind": "blocker",
+      "target": "",
+      "subcategory": "C2",
+      "title": "Invisible barrier in a clear passage",
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "茶馆的空通道被空气墙挡住。",
+          "expected": "正常情况下，该通道应允许人物通过。",
+          "steps": "沿茶馆入口旁清晰可见的通道行走。"
+        },
+        "en": {
+          "criteria": "An invisible barrier blocks the clear tea-house passage.",
+          "expected": "The empty passage should be walkable.",
+          "steps": "Walk along the clear passage beside the tea-house entrance."
+        }
+      },
+      "probe": [
+        -1530,
+        5520,
+        120.12500001192092
+      ],
+      "position": [
+        -1530,
+        5420,
+        120
+      ],
+      "extent": [
+        90,
+        8,
+        95
+      ]
+    },
+    {
+      "id": "A09",
+      "region": "market",
+      "map": "/Game/Auditor/AncientCity/Market",
+      "kind": "basket_bounce",
+      "target": "InteractiveBasket",
+      "subcategory": "C3",
+      "title": "Basket keeps bouncing after a push",
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "藤筐被按 E 轻推后持续自行弹跳。",
+          "expected": "正常情况下，它应短暂移动后停稳。",
+          "steps": "对准藤筐按一次 E 轻推，然后停止操作并观察。"
+        },
+        "en": {
+          "criteria": "After an E push, the basket keeps bouncing on its own.",
+          "expected": "It should move briefly and settle.",
+          "steps": "Aim at the wicker basket, press E once to push it, then watch without further input."
+        }
+      },
+      "probe": [
+        -180,
+        5570,
+        88.0
+      ]
+    },
+    {
+      "id": "A10",
+      "region": "courtyard",
+      "map": "/Game/Auditor/AncientCity/Courtyard",
+      "kind": "view_cull",
+      "target": "CourtLion",
+      "subcategory": "V1",
+      "title": "Stone lion disappears when centered",
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "左侧石狮在视野中央消失，转动视角后又出现。",
+          "expected": "正常情况下，它应保持可见。",
+          "steps": "把左侧石狮置于视野中央，再稍微左右转动视角。"
+        },
+        "en": {
+          "criteria": "The left stone lion disappears when centered in view and returns when the camera turns.",
+          "expected": "It should remain visible.",
+          "steps": "Center the left stone lion in view, then turn slightly left or right."
+        }
+      },
+      "probe": [
+        120,
+        6770,
+        88.0
+      ],
+      "threshold": 0.99
+    },
+    {
+      "id": "A11",
+      "region": "market",
+      "map": "/Game/Auditor/AncientCity/Market",
+      "kind": "distance_cull",
+      "target": "MarketCanopy",
+      "subcategory": "V1",
+      "title": "Stall canopy disappears at a distance",
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "棚架在几米外消失，靠近后又出现。",
+          "expected": "正常情况下，它在这些距离都应可见。",
+          "steps": "近距离观察摊位棚架，后退几米，再靠近。"
+        },
+        "en": {
+          "criteria": "The stall canopy disappears a few metres away and returns up close.",
+          "expected": "It should stay visible at these distances.",
+          "steps": "Observe the stall canopy nearby, back away several metres, then approach again."
+        }
+      },
+      "probe": [
+        -380,
+        5270,
+        88.0
+      ],
+      "far_probe": [
+        -180,
+        5270,
+        88.0
+      ],
+      "threshold": 350
+    },
+    {
+      "id": "A12",
+      "region": "tea_house",
+      "map": "/Game/Auditor/AncientCity/TeaHouse",
+      "kind": "distance_scale",
+      "target": "TeaBench",
+      "subcategory": "V2",
+      "title": "Bench changes size with distance",
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "茶馆木凳在远处变大一倍，靠近后恢复。",
+          "expected": "正常情况下，它的尺寸应保持不变。",
+          "steps": "近距离观察茶馆木凳，走远一些，再靠近。"
+        },
+        "en": {
+          "criteria": "The tea-house bench doubles in size at a distance and returns to normal up close.",
+          "expected": "Its size should stay constant.",
+          "steps": "Observe the tea-house bench nearby, walk farther away, then approach again."
+        }
+      },
+      "probe": [
+        -1530,
+        5520,
+        120.12500001192092
+      ],
+      "far_probe": [
+        -1530,
+        5320,
+        120.12500001192092
+      ],
+      "threshold": 300,
+      "factor": 2
+    },
+    {
+      "id": "A13",
+      "region": "courtyard",
+      "map": "/Game/Auditor/AncientCity/Courtyard",
+      "kind": "shadow_offset",
+      "target": "CourtLion",
+      "subcategory": "V3",
+      "title": "Detached stone-lion shadow",
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "左侧石狮的阴影与实体错位。",
+          "expected": "正常情况下，阴影应符合石狮的位置和光照方向。",
+          "steps": "从几个角度查看左侧石狮及周围地面的阴影。"
+        },
+        "en": {
+          "criteria": "The left stone lion casts a displaced shadow.",
+          "expected": "Its shadow should match its position and the light direction.",
+          "steps": "Inspect the left stone lion and the surrounding ground shadow from several angles."
+        }
+      },
+      "probe": [
+        120,
+        6770,
+        88.0
+      ],
+      "offset": [
+        0,
+        -180,
+        0
+      ]
+    },
+    {
+      "id": "A14",
+      "region": "market",
+      "map": "/Game/Auditor/AncientCity/Market",
+      "kind": "return_hide",
+      "target": "InteractiveBasket",
+      "subcategory": "T1",
+      "title": "Basket disappears after returning",
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "未被操作的藤筐在离开再返回后消失。",
+          "expected": "正常情况下，它应留在原处。",
+          "steps": "先观察藤筐，不按 E，转身走远几米后再返回。"
+        },
+        "en": {
+          "criteria": "The untouched basket disappears after leaving and returning.",
+          "expected": "It should remain where it was.",
+          "steps": "Observe the basket without pressing E, turn away and walk several metres away, then return."
+        }
+      },
+      "probe": [
+        -180,
+        5570,
+        88.0
+      ],
+      "far_probe": [
+        -480,
+        4870,
+        88.0
+      ],
+      "near": 260,
+      "far": 500
+    },
+    {
+      "id": "A15",
+      "region": "tea_house",
+      "map": "/Game/Auditor/AncientCity/TeaHouse",
+      "kind": "return_move",
+      "target": "TeaBench",
+      "subcategory": "T2",
+      "title": "Bench moves between visits",
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "茶馆木凳在离开再返回后无故移位。",
+          "expected": "正常情况下，它应保持原位。",
+          "steps": "先观察茶馆木凳，转身走到通道远端，再返回。"
+        },
+        "en": {
+          "criteria": "The tea-house bench moves after leaving and returning without anyone moving it.",
+          "expected": "It should stay in its original position.",
+          "steps": "Observe the tea-house bench, turn away and walk to the far end of the passage, then return."
+        }
+      },
+      "probe": [
+        -1530,
+        5520,
+        120.12500001192092
+      ],
+      "far_probe": [
+        -1530,
+        5320,
+        120.12500001192092
+      ],
+      "near": 200,
+      "far": 300,
+      "offset": [
+        0,
+        -80,
+        0
+      ]
+    },
+    {
+      "id": "A16",
+      "region": "courtyard",
+      "map": "/Game/Auditor/AncientCity/Courtyard",
+      "kind": "return_material",
+      "target": "CourtLantern",
+      "subcategory": "T2",
+      "title": "Lantern changes colour between visits",
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "入口灯笼在离开再返回后由红变蓝。",
+          "expected": "正常情况下，它的颜色应保持不变。",
+          "steps": "先观察入口右侧灯笼，背向它走远，再返回。"
+        },
+        "en": {
+          "criteria": "The entrance lantern changes from red to blue after leaving and returning.",
+          "expected": "Its colour should stay the same.",
+          "steps": "Observe the right entrance lantern, walk away while looking away, then return."
+        }
+      },
+      "probe": [
+        620,
+        6970,
+        88.0
+      ],
+      "far_probe": [
+        620,
+        6470,
+        88.0
+      ],
+      "near": 300,
+      "far": 550
+    },
+    {
+      "id": "A17",
+      "region": "courtyard",
+      "map": "/Game/Auditor/AncientCity/Courtyard",
+      "kind": "door_observed_close",
+      "target": "InteractiveDoor",
+      "subcategory": "T3",
+      "title": "Open entrance door closes by itself",
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "原本打开的宅院门扇在观察过程中未经操作便自行关上。",
+          "expected": "正常情况下，门扇应保持原来的开合状态，直到有人操作。",
+          "steps": "靠近入口，观察打开的门扇约五秒，全程不操作门。"
+        },
+        "en": {
+          "criteria": "The open entrance door closes by itself while being observed, without anyone operating it.",
+          "expected": "The door should retain its open or closed state until someone operates it.",
+          "steps": "Approach the entrance and watch the open door leaf for about five seconds without operating it."
+        }
+      },
+      "probe": [
+        520,
+        7045,
+        110.86483764648438
+      ]
+    },
+    {
+      "id": "A18",
+      "region": "courtyard",
+      "map": "/Game/Auditor/AncientCity/Courtyard",
+      "kind": "configuration_pose",
+      "target": "Scenery_SM_doorMain_SM_Door_MainEntrance_01_5",
+      "subcategory": "S2",
+      "title": "Residence name plaque mounted upside down",
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "宅院门上的“陈府”匾额上下倒装，文字整体颠倒。",
+          "expected": "正常情况下，门匾应保持文字正向可读。",
+          "steps": "从门口正前方观察匾额文字，并从侧面确认匾额仍安装在门上。"
+        },
+        "en": {
+          "criteria": "The residence name plaque is mounted upside down, inverting its lettering.",
+          "expected": "The entrance plaque should be mounted with its lettering upright.",
+          "steps": "Inspect the plaque from in front of the entrance, then confirm from the side that it remains mounted above the doorway."
+        }
+      },
+      "probe": [
+        500,
+        6720,
+        100
+      ],
+      "yaw": 0,
+      "review_aim": [
+        479,
+        7094,
+        411
+      ],
+      "configuration_offset": [
+        0,
+        0,
+        0
+      ],
+      "configuration_rotation": [
+        180,
+        0,
+        0
+      ],
+      "configuration_seat": false,
+      "configuration_local_axis": [
+        0,
+        0,
+        1
+      ],
+      "configuration_axis_clean": [
+        -5.474392875769708e-09,
+        -0.22495105434386498,
+        0.9743700647852352
+      ],
+      "configuration_axis_bug": [
+        5.474392998234387e-09,
+        0.22495105434386498,
+        -0.9743700647852349
+      ]
+    },
+    {
+      "id": "A19",
+      "region": "courtyard",
+      "map": "/Game/Auditor/AncientCity/Courtyard",
+      "kind": "semantic_add",
+      "target": "CourtLion",
+      "subcategory": "S2",
+      "title": "Stone lion blocks the doorway",
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "石狮挡住了打开的一侧门口。",
+          "expected": "正常情况下，该侧门口应保持畅通。",
+          "steps": "观察初始打开的一侧门口，并尝试通过。"
+        },
+        "en": {
+          "criteria": "A stone lion blocks the open half of the doorway.",
+          "expected": "That passage should remain clear.",
+          "steps": "Inspect the initially open half of the doorway and try to walk through it."
+        }
+      },
+      "probe": [
+        420,
+        6970,
+        88.0
+      ],
+      "position": [
+        435,
+        7220,
+        65
+      ],
+      "yaw": 180,
+      "review_aim": [
+        435,
+        7220,
+        155
+      ]
+    },
+    {
+      "id": "A20",
+      "region": "market",
+      "map": "/Game/Auditor/AncientCity/Market",
+      "kind": "semantic_add",
+      "target": "ModernVendingSource",
+      "subcategory": "S3",
+      "title": "Modern vending machine in an ancient market",
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "中国古代集市中出现了现代自动售货机。",
+          "expected": "正常情况下，物品应符合古代背景。",
+          "steps": "沿集市摊位行走，观察摊位旁摆放的机器。"
+        },
+        "en": {
+          "criteria": "A modern vending machine appears in the ancient Chinese market.",
+          "expected": "Objects should fit the ancient setting.",
+          "steps": "Explore the market stalls and inspect the machine placed beside them."
+        }
+      },
+      "probe": [
+        -180,
+        5570,
+        88.0
+      ],
+      "position": [
+        -350,
+        5900,
+        -12
+      ],
+      "yaw": 270,
+      "review_aim": [
+        -350,
+        5900,
+        78
+      ]
+    },
+    {
+      "id": "A21",
+      "region": "tea_house",
+      "target": "EraDrinkCan",
+      "yaw": 45,
+      "title": "Three cola bottles on an ancient tea table",
+      "probe": [
+        -1530,
+        5520,
+        120.125
+      ],
+      "map": "/Game/Auditor/AncientCity/TeaHouse",
+      "kind": "semantic_add",
+      "subcategory": "S3",
+      "position": [
+        -1656.0633100985476,
+        5687.936691761613,
+        123.39878694469093
+      ],
+      "review_aim": [
+        -1656,
+        5688,
+        123.0098648071289
+      ],
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "古代茶馆的木桌上摆着三瓶带红色现代标签的可乐。",
+          "expected": "正常情况下，桌上的饮品及其包装应符合古代茶馆的时代背景。",
+          "steps": "靠近并观察物体的外形与标签。"
+        },
+        "en": {
+          "criteria": "Three cola bottles with modern red labels sit on a wooden table in the ancient tea house.",
+          "expected": "Drinks and their packaging should fit the historical era of the tea house.",
+          "steps": "Approach and inspect the object and its details."
+        }
+      },
+      "additional_positions": [
+        [
+          -1671.0633100985476,
+          5681.936691761613,
+          123.39878694469093
+        ],
+        [
+          -1641.0633100985476,
+          5681.936691761613,
+          123.39878694469093
+        ]
+      ]
+    },
+    {
+      "id": "A22",
+      "region": "market",
+      "target": "EraNewspaper",
+      "yaw": 90,
+      "title": "Modern newspaper on an ancient market wall",
+      "probe": [
+        300,
+        5900,
+        88
+      ],
+      "map": "/Game/Auditor/AncientCity/Market",
+      "kind": "semantic_add",
+      "subcategory": "S3",
+      "position": [
+        404.800012952734,
+        5900.000011245776,
+        160.0
+      ],
+      "review_aim": [
+        405.000012952734,
+        5900.000011252621,
+        160.0
+      ],
+      "rubrics_i18n": {
+        "en": {
+          "criteria": "A modern newspaper reporting on smartphones and metro trains is pasted to a wall in the ancient Chinese market.",
+          "expected": "The content of writing and images on the walls should fit the era of the ancient city.",
+          "steps": "Approach and inspect from different viewpoints."
+        },
+        "zh": {
+          "criteria": "古代中国集市的墙上贴着一张刊有智能手机和地铁新闻的现代报纸。",
+          "expected": "正常情况下墙上文字和图像的内容应符合古代城市的时代背景。",
+          "steps": "靠近并从不同角度观察。"
+        }
+      },
+      "roll": 90,
+      "support_point": [
+        405.000012952734,
+        5900.000011252621,
+        160.0
+      ],
+      "support_normal": [
+        -0.9999999999999992,
+        -3.422854295029558e-08,
+        0.0
+      ],
+      "support_gap": 0.2
+    },
+    {
+      "id": "A23",
+      "region": "courtyard",
+      "target": "EraCamera",
+      "yaw": 180,
+      "title": "Video camera at an ancient residence entrance",
+      "probe": [
+        920,
+        6770,
+        88
+      ],
+      "map": "/Game/Auditor/AncientCity/Courtyard",
+      "kind": "semantic_add",
+      "subcategory": "S3",
+      "position": [
+        880.0429763793945,
+        6991.111476898193,
+        -11.93319702148436
+      ],
+      "review_aim": [
+        880,
+        7000,
+        69.19540405273439
+      ],
+      "rubrics_i18n": {
+        "en": {
+          "criteria": "A modern video camera stands beside the entrance to an ancient Chinese residence.",
+          "expected": "Equipment at the entrance should fit the historical era of the residence.",
+          "steps": "Approach and inspect from different viewpoints."
+        },
+        "zh": {
+          "criteria": "古代中国宅院入口旁架着一台现代摄像机。",
+          "expected": "正常情况下宅院门前的设备应符合古代的时代背景。",
+          "steps": "靠近并从不同角度观察。"
+        }
+      }
+    },
+    {
+      "id": "A24",
+      "region": "tea_house",
+      "target": "EraAirConditioner",
+      "yaw": 0,
+      "title": "Wall-mounted indoor air conditioner in an ancient tea house",
+      "probe": [
+        -1530,
+        5520,
+        120.125
+      ],
+      "map": "/Game/Auditor/AncientCity/TeaHouse",
+      "kind": "semantic_add",
+      "subcategory": "S3",
+      "position": [
+        -1907.6661086559295,
+        5243.725314679146,
+        329.7548451349139
+      ],
+      "review_aim": [
+        -1850.0,
+        5242.999999775887,
+        345.0
+      ],
+      "rubrics_i18n": {
+        "en": {
+          "criteria": "A white indoor air conditioner with an air vent and temperature display is mounted on the wall of the ancient tea house.",
+          "expected": "Facilities at the tea house should fit the historical era of the ancient city.",
+          "steps": "Approach and inspect the object and its details."
+        },
+        "zh": {
+          "criteria": "古代茶馆的墙上装着一台白色壁挂式室内空调，带有出风口和温度显示。",
+          "expected": "正常情况下，茶馆的设施应符合古代城市的时代背景。",
+          "steps": "靠近并观察物体的外形与标签。"
+        }
+      },
+      "pitch": 0,
+      "roll": 0,
+      "support_local": [
+        52.42373514175415,
+        -9.56846809387207,
+        13.859231695532799
+      ],
+      "support_point": [
+        -1850.0,
+        5232.999999775887,
+        345.0
+      ],
+      "support_normal": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "support_gap": 0.2
+    }
+  ]
+}

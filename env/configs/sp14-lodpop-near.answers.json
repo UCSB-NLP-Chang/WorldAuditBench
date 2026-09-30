@@ -1,0 +1,15 @@
+[
+ {
+  "name": "texture LOD pop",
+  "where": "beyond ~6m this drape's texture drops to a blocky ultra-low-res version and pops back sharp when you approach",
+  "at": {
+   "scene": "sponza",
+   "spawnOffset": [
+    2.92,
+    1.87
+   ],
+   "snap": true
+  },
+  "category": "visual-consistency"
+ }
+]

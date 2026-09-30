@@ -1,0 +1,39 @@
+{
+  "A09": {
+    "title": "Basket keeps bouncing after a push",
+    "en": {
+      "expected": "It should move briefly and settle.",
+      "steps": "Aim at the wicker basket, press E once to push it, then watch without further input.",
+      "criteria": "After an E push, the basket keeps bouncing on its own."
+    },
+    "zh": {
+      "expected": "正常情况下，它应短暂移动后停稳。",
+      "steps": "对准藤筐按一次 E 轻推，然后停止操作并观察。",
+      "criteria": "藤筐被按 E 轻推后持续自行弹跳。"
+    }
+  },
+  "A17": {
+    "zh": {
+      "criteria": "原本打开的宅院门扇在观察过程中未经操作便自行关上。",
+      "expected": "正常情况下，门扇应保持原来的开合状态，直到有人操作。",
+      "steps": "靠近入口，观察打开的门扇约五秒，全程不操作门。"
+    },
+    "en": {
+      "criteria": "The open entrance door closes by itself while being observed, without anyone operating it.",
+      "expected": "The door should retain its open or closed state until someone operates it.",
+      "steps": "Approach the entrance and watch the open door leaf for about five seconds without operating it."
+    }
+  },
+  "A19": {
+    "en": {
+      "expected": "That passage should remain clear.",
+      "steps": "Inspect the initially open half of the doorway and try to walk through it.",
+      "criteria": "A stone lion blocks the open half of the doorway."
+    },
+    "zh": {
+      "expected": "正常情况下，该侧门口应保持畅通。",
+      "steps": "观察初始打开的一侧门口，并尝试通过。",
+      "criteria": "石狮挡住了打开的一侧门口。"
+    }
+  }
+}

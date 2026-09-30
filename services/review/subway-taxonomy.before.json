@@ -1,0 +1,96 @@
+{
+  "version": "user-2026-09-11-motion",
+  "source": "Screenshot 2026-09-09 at 16.43.33.png",
+  "categories": [
+    {
+      "id": "geometry",
+      "name": "几何与空间",
+      "subcategories": [
+        {
+          "id": "G1",
+          "name": "缺少支撑／悬空"
+        },
+        {
+          "id": "G2",
+          "name": "穿插／重叠／结构错位"
+        },
+        {
+          "id": "G3",
+          "name": "尺度／比例失调"
+        }
+      ]
+    },
+    {
+      "id": "collision",
+      "name": "碰撞与物理",
+      "subcategories": [
+        {
+          "id": "C1",
+          "name": "应阻挡而发生穿透"
+        },
+        {
+          "id": "C2",
+          "name": "不应阻挡却被阻挡"
+        },
+        {
+          "id": "C3",
+          "name": "交互后物体运动轨迹异常"
+        }
+      ]
+    },
+    {
+      "id": "visual",
+      "name": "视觉一致性",
+      "subcategories": [
+        {
+          "id": "V1",
+          "name": "视角／距离相关的可见性异常"
+        },
+        {
+          "id": "V2",
+          "name": "视角／距离相关的外观异常"
+        },
+        {
+          "id": "V3",
+          "name": "阴影／光照异常"
+        }
+      ]
+    },
+    {
+      "id": "state",
+      "name": "时空一致性",
+      "subcategories": [
+        {
+          "id": "T1",
+          "name": "存在性变化"
+        },
+        {
+          "id": "T2",
+          "name": "静态属性变化"
+        },
+        {
+          "id": "T3",
+          "name": "动态／运行状态变化"
+        }
+      ]
+    },
+    {
+      "id": "semantic",
+      "name": "语义与世界逻辑",
+      "subcategories": [
+        {
+          "id": "S1",
+          "name": "布局冲突"
+        },
+        {
+          "id": "S2",
+          "name": "用途冲突"
+        },
+        {
+          "id": "S3",
+          "name": "时代／世界设定冲突"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,6092 @@
+{
+ "generated_from": "gemini-unreal-urban-nomap-20260919/pinned-production (IPC-fixed Urban builds, unreal-urban-ipc-20260919) + ue-aws-profiles-20260918 policies",
+ "tasks": {
+  "U011": {
+   "task": {
+    "id": "U011",
+    "revision": 3,
+    "case_id": "U011-R03-UE561",
+    "case_type": "bug",
+    "family": "urban",
+    "environment": "urban-city / Rear lane courtyard / 后巷庭院",
+    "scene_id": "rear_lane",
+    "scene_i18n": {
+     "zh": "后巷庭院",
+     "en": "Rear lane courtyard"
+    },
+    "title": "垃圾桶嵌地",
+    "description": "两只金属垃圾桶中靠北的一只倾斜，路面斜着穿过桶身下部。",
+    "description_i18n": {
+     "zh": "两只金属垃圾桶中靠北的一只倾斜，路面斜着穿过桶身下部。",
+     "en": "The northern of two metal wastebins is tilted, with the pavement cutting diagonally through its lower body."
+    },
+    "target": {
+     "actor_guid": "2d314935-a5573752-a739f63e-0e704ea3",
+     "actor_name": "StaticMeshActor_4",
+     "actor_label": "RearCourt_Prop_3",
+     "actor_class": "/Script/Engine.StaticMeshActor",
+     "asset": "/Game/NYCBuildingVolume2/Static_Meshes/Props/SM_Metal_wastebin.SM_Metal_wastebin",
+     "location_cm": [
+      1820.0,
+      -5700.0,
+      88.451161
+     ],
+     "rotation_degrees": {
+      "pitch": 0.0,
+      "yaw": 0.0,
+      "roll": 28.0
+     },
+     "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+     },
+     "role": "affected_object"
+    },
+    "related_objects": [],
+    "category": "geometry",
+    "kind": "embedded",
+    "trigger": "static",
+    "effect": "transform",
+    "source_taxonomy": {
+     "primary_category": "geometry",
+     "kind": "embedded",
+     "trigger": "static",
+     "effect": "transform",
+     "secondary_symptoms": []
+    },
+    "subcategory": "G2",
+    "taxonomy": {
+     "version": "user-2026-09-12-scene-semantics",
+     "category_id": "geometry",
+     "category": {
+      "en": "Geometry & space",
+      "zh": "几何与空间"
+     },
+     "code": "G2",
+     "subcategory_id": "geometry.intersection",
+     "subcategory": {
+      "en": "Intersection / overlap / structural misalignment",
+      "zh": "穿插／重叠／结构错位"
+     }
+    },
+    "taxonomy_label": "几何与空间 · 穿插／重叠／结构错位",
+    "taxonomy_mapping": {
+     "status": "service_category_mapping",
+     "notes": "",
+     "secondary_service_codes": []
+    },
+    "rubrics": "The northern of two metal wastebins is tilted, with the pavement cutting diagonally through its lower body.\n两只金属垃圾桶中靠北的一只倾斜，路面斜着穿过桶身下部。",
+    "rubrics_i18n": {
+     "zh": {
+      "criteria": "两只金属垃圾桶中靠北的一只倾斜，路面斜着穿过桶身下部。",
+      "expected": "垃圾桶可以倾斜，但桶身不应穿入路面。",
+      "steps": "走近后巷院落西侧的一对小垃圾桶，从侧面查看靠北垃圾桶的桶底与路面交界，并与旁边完整的桶底比较。"
+     },
+     "en": {
+      "criteria": "The northern of two metal wastebins is tilted, with the pavement cutting diagonally through its lower body.",
+      "expected": "A bin may lean, but its body should not intersect the pavement.",
+      "steps": "Approach the pair of small bins on the west side of the rear courtyard. Inspect the northern bin from the side and compare its ground intersection with the intact base of its neighbour."
+     }
+    },
+    "map": "/Game/Auditor/Tasks/U011/R03/TaskMap",
+    "sha256": "2845bcf2a7ed2a14e0fb1b61a6c47048608b0a0e662f6ef4344f9577495fec86",
+    "case_path": "/?case=U011",
+    "build_sha256": "142b172a2886d116e3777108cfa1cfbc90d2a47ef3183fa0077156434c346f28",
+    "package_id": "91eeaa37a0e2dc944513dd39b535e49c45b701e04cf7a36893a5ed9c7eda7c9c",
+    "package_archive_sha256": "b7756974a5f4765facce21cc8ad00e9746abf22664d879e923c427fd745b7f0d",
+    "engine_version": "5.6.1",
+    "runtime_switch": false,
+    "observation_protocol": {
+     "start": [
+      2050.0,
+      -3950.0,
+      200.0
+     ],
+     "bounds": {
+      "min": [
+       1600.0,
+       -6700.0,
+       75.0
+      ],
+      "max": [
+       3500.0,
+       -3300.0,
+       700.0
+      ]
+     },
+     "required_actions": [
+      "Walk south along the rear courtyard to the two wastebins on the west side.",
+      "From the side at normal standing height, inspect where the pavement cuts diagonally across the lower body of the northern tilted bin. Compare with the intact neighbouring bin."
+     ],
+     "evidence_mode": "paired_view_and_ground_penetration_measurement",
+     "repetitions": 1
+    },
+    "task_configuration": {
+     "region_maps_before": [
+      "/Game/Auditor/Migration/Core18_UE561/Baselines/RearLane_Cropped_Candidate03",
+      "/Game/Auditor/Migration/Core18_UE561/Baselines/ServiceLane_Cropped_Candidate03",
+      "/Game/Auditor/Migration/Core18_UE561/Baselines/Shopfront_Cropped_Candidate03",
+      "/Game/Auditor/Migration/Core18_UE561/Baselines/Junction_Cropped_Candidate03"
+     ],
+     "region_maps_after": [
+      "/Game/Auditor/Tasks/U011/R03/TaskMap"
+     ],
+     "reason": "Isolate candidate navigation; no baseline/review map references"
+    },
+    "baseline_reference": {
+     "map": "/Game/Auditor/Migration/Core18_UE561/Baselines/RearLane_Cropped_Candidate03",
+     "sha256": "85f4619116fab5b8cea8c55af8aadcca20ad596ff7fc5faacd0a8352688d580d",
+     "source_baseline": {
+      "map": "/Game/Auditor/Urban/Cropped/RearLane_Cropped",
+      "sha256": "3076c3bea82578628d205e8eeb6097eb2cd541b8f4d1b00f47a810bb287174bd",
+      "acceptance_report": "project/NYC_Building_Volume2_Cropped/Saved/cropped-map-start-sync.json"
+     }
+    },
+    "verification": {
+     "map_reopen_passed": true,
+     "packaged_runtime_passed": true,
+     "human_acceptance": false,
+     "guided_qa_passed": false,
+     "evidence_root": "/home/ubuntu/unreal-auditor/builds/urban-revisions-20260914/audit",
+     "fresh_verification": "/home/ubuntu/unreal-auditor/builds/urban-revisions-20260914/migration/evidence/U011/fresh-verify.json",
+     "runtime_summary": "/home/ubuntu/unreal-auditor/builds/urban-revisions-20260914/migration/runtime-evidence/summary.json",
+     "runtime_runs": 1,
+     "runtime_method": "staged positions, actual scenario Tick; not navigation evidence",
+     "package_audit": "/home/ubuntu/unreal-auditor/builds/urban-revisions-20260914/audit/package-audit.json"
+    },
+    "metadata_provenance": {
+     "source_task_record": "repository/tasks/urban-city/U011/R03/task-private.json",
+     "source_task_record_sha256": "f73fb89beefea02681af4b03aeb860f8f87c4810c06792cf84ba1134bd825de0",
+     "source_record_snapshot": "/home/ubuntu/unreal-auditor/builds/urban-revisions-20260914/migration/source-records.json",
+     "source_record_canonical_sha256": "1afa5e230bc544e0e1f4348f631aceda0b9b65993c874e501143a6a1030301b4",
+     "migration_receipt": "/home/ubuntu/unreal-auditor/builds/urban-revisions-20260914/migration/evidence/U011/receipt.json",
+     "migration_receipt_sha256": "0c7a82e3dbcdaceec570765d456303b2ca2d3fbbec16737a1927dfec061ada16",
+     "map_identity_source": "/home/ubuntu/unreal-auditor/builds/urban-revisions-20260914/migration/metadata-targets.json",
+     "map_identity_source_sha256": "8ee2a1274c295d7b9383a9559244c75208575b923508094f8b9a54ce501ad00d",
+     "fresh_verification_sha256": "27aecf1c46e9e07ec9821796a1434c8fbffed671a3ec590e168bb5f740353e66",
+     "runtime_summary_sha256": "df20dd97ae849b76e592c818dcbacf221d16b6666ea64fe8d3a2517e9f5b30bc",
+     "package_audit_sha256": "facc10a4efd85c9a85ffe89493a59c36db2249ba032515268c8ed6a73114b916"
+    },
+    "review_mode": "informed_internal_review",
+    "metadata_schema_version": 1,
+    "content_update": {
+     "version": {
+      "revision": 3,
+      "sha256": "2845bcf2a7ed2a14e0fb1b61a6c47048608b0a0e662f6ef4344f9577495fec86",
+      "build_sha256": "b054d5e0112410515b6d85029534492868d349ff4ef0b95bf95e5f78f51f051e"
+     },
+     "published_on": "2026-09-14",
+     "timezone": "America/Los_Angeles",
+     "summary_i18n": {
+      "zh": "正常比例垃圾桶倾斜穿入地面，一侧底圈接地。",
+      "en": "The full-size bin now tilts through the ground, with one side of its base touching the pavement."
+     },
+     "publication": "urban-revisions-20260914-v1"
+    },
+    "exploration_revision": {
+     "version": "unreal-exploration-v3-20260917",
+     "policy_sha256": "e64cd8fdf5e4618587f7c0a41eecbc32f5257243c4d2431dc144d35671ecf6cb",
+     "previous_policy_sha256": "bac9dd9b5a47a7c71acf7d0f001dfe1b198a6f8c4e954894869e521766ca808d"
+    },
+    "review_compatible_versions": [
+     {
+      "revision": 3,
+      "sha256": "2845bcf2a7ed2a14e0fb1b61a6c47048608b0a0e662f6ef4344f9577495fec86",
+      "build_sha256": "b054d5e0112410515b6d85029534492868d349ff4ef0b95bf95e5f78f51f051e"
+     }
+    ]
+   },
+   "family": "urban",
+   "case_type": "bug",
+   "binary": "/home/ec2-user/unreal-urban-ipc-20260919/packages/urban-ec94cce5d64b/Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
+   "build_sha256": "142b172a2886d116e3777108cfa1cfbc90d2a47ef3183fa0077156434c346f28",
+   "aws_binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/urban-ec94cce5d64b/Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
+   "aws_build_sha256": "f9f996a242c44117947427e35749f7c8f8fffe8004a3248f796645540e648e40",
+   "runtime_map": "/Game/Auditor/Tasks/U011/R03/TaskMap",
+   "game_args": [
+    "-vulkan",
+    "-sm6",
+    "-PixelStreamingWebRTCMaxFps=30",
+    "-ExecCmds=t.MaxFPS 30,DisableAllScreenMessages",
+    "-PixelStreamingWebRTCMaxBitrate=3000000",
+    "-PixelStreamingWebRTCStartBitrate=1000000"
+   ],
+   "extra_args": [
+    "-AuditorExplorationTask=U011",
+    "-AuditorExplorationPolicy=/home/ec2-user/gemini-unreal-nomap-20260919/pinned-production/policies/e64cd8fdf5e4618587f7c0a41eecbc32f5257243c4d2431dc144d35671ecf6cb"
+   ],
+   "policy_version": "unreal-exploration-v3-20260917",
+   "policy_path": "/home/ec2-user/gemini-unreal-nomap-20260919/pinned-production/policies/e64cd8fdf5e4618587f7c0a41eecbc32f5257243c4d2431dc144d35671ecf6cb",
+   "policy": {
+    "id": "U011",
+    "family": "urban",
+    "map": "/Game/Auditor/Tasks/U011/R03/TaskMap",
+    "case_type": "bug",
+    "focus": [
+     1819.9087886810303,
+     -5672.916448087146,
+     139.48382741301214
+    ],
+    "focus_source": "current map target actor",
+    "target": "StaticMeshActor_4",
+    "bounds_min": [
+     904.5517328095666,
+     -7944.486372867092,
+     75.0
+    ],
+    "bounds_max": [
+     4195.448267190433,
+     -2055.513627132909,
+     700.0
+    ],
+    "old_bounds_min": [
+     1600.0,
+     -6700.0,
+     75.0
+    ],
+    "old_bounds_max": [
+     3500.0,
+     -3300.0,
+     700.0
+    ],
+    "gain_cm": 1738.2126028237908,
+    "grid_cm": 100,
+    "max_route_cm": 8000,
+    "old_region_spawn": [
+     2050.0,
+     -3950.0,
+     200.0
+    ],
+    "spawn": [
+     2050,
+     -2150,
+     192.2000024172737
+    ],
+    "yaw": 22.26316495191132,
+    "route_to_old_spawn": [
+     [
+      2050,
+      -2150,
+      192.2000024172737
+     ],
+     [
+      2050,
+      -2250,
+      192.2000024172737
+     ],
+     [
+      2050,
+      -2350,
+      192.2000024172737
+     ],
+     [
+      2050,
+      -2450,
+      192.2000024172737
+     ],
+     [
+      2050,
+      -2550,
+      192.2000024172737
+     ],
+     [
+      2050,
+      -2650,
+      192.2000024172737
+     ],
+     [
+      2050,
+      -2750,
+      192.2000024172737
+     ],
+     [
+      2050,
+      -2850,
+      192.2000024172737
+     ],
+     [
+      2050,
+      -2950,
+      192.2000024172737
+     ],
+     [
+      2050,
+      -3050,
+      192.2000024172737
+     ],
+     [
+      2050,
+      -3150,
+      192.2000024172737
+     ],
+     [
+      2050,
+      -3250,
+      192.2000024172737
+     ],
+     [
+      2050,
+      -3350,
+      192.2000024172737
+     ],
+     [
+      2050,
+      -3450,
+      192.2000024172737
+     ],
+     [
+      2050,
+      -3550,
+      192.2000024172737
+     ],
+     [
+      2050,
+      -3650,
+      192.2000024172737
+     ],
+     [
+      2050,
+      -3750,
+      192.2000024172737
+     ],
+     [
+      2050,
+      -3850,
+      192.2000024172737
+     ],
+     [
+      2050,
+      -3950,
+      192.2000024172737
+     ]
+    ],
+    "requested_distance_cm": 3476.4252056475816,
+    "revision_exception": null
+   },
+   "launch_map": "/Game/Auditor/Tasks/U011/R03/TaskMap",
+   "remote_task": "U011"
+  },
+  "U014": {
+   "task": {
+    "id": "U014",
+    "revision": 2,
+    "case_id": "U014-R02-UE561-C02",
+    "case_type": "bug",
+    "family": "urban",
+    "environment": "urban-city / Shopfront / 店面街区",
+    "scene_id": "shopfront",
+    "scene_i18n": {
+     "zh": "店面街区",
+     "en": "Shopfront"
+    },
+    "title": "桌子悬空",
+    "description": "咖啡桌悬在路面上方，桌脚下有明显空隙。",
+    "description_i18n": {
+     "zh": "咖啡桌悬在路面上方，桌脚下有明显空隙。",
+     "en": "The café table floats above the pavement, with visible gaps beneath its feet."
+    },
+    "target": {
+     "actor_name": "StaticMeshActor_340",
+     "actor_label": "SM_table2",
+     "actor_guid": "4122a10e-248d3c57-89e742d9-920b9de4",
+     "actor_class": "/Script/Engine.StaticMeshActor",
+     "asset": "/Game/NYCBuildingVolume2/Static_Meshes/Props/SM_table.SM_table",
+     "location_cm": [
+      1512.997207,
+      -1558.739023,
+      166.667211
+     ],
+     "role": "affected_object",
+     "description_i18n": {
+      "zh": "店面街区出生点附近最近的圆形咖啡桌。",
+      "en": "The nearest round café table to the shopfront spawn."
+     }
+    },
+    "related_objects": [],
+    "category": "geometry",
+    "kind": "floating",
+    "trigger": "static",
+    "effect": "transform",
+    "source_taxonomy": {
+     "primary_category": "geometry",
+     "kind": "floating",
+     "trigger": "static",
+     "effect": "transform",
+     "secondary_symptoms": []
+    },
+    "subcategory": "G1",
+    "taxonomy": {
+     "version": "user-2026-09-12-scene-semantics",
+     "category_id": "geometry",
+     "category": {
+      "en": "Geometry & space",
+      "zh": "几何与空间"
+     },
+     "code": "G1",
+     "subcategory_id": "geometry.unsupported",
+     "subcategory": {
+      "en": "Missing support / floating",
+      "zh": "缺少支撑／悬空"
+     }
+    },
+    "taxonomy_label": "几何与空间 · 缺少支撑／悬空",
+    "taxonomy_mapping": {
+     "status": "service_category_mapping",
+     "notes": "",
+     "secondary_service_codes": []
+    },
+    "rubrics": "The café table floats above the pavement, with visible gaps beneath its feet.\n咖啡桌悬在路面上方，桌脚下有明显空隙。",
+    "rubrics_i18n": {
+     "zh": {
+      "criteria": "咖啡桌悬在路面上方，桌脚下有明显空隙。",
+      "expected": "桌脚应接触路面。",
+      "steps": "找到并走近圆形咖啡桌，从侧面查看桌脚下方。"
+     },
+     "en": {
+      "criteria": "The café table floats above the pavement, with visible gaps beneath its feet.",
+      "expected": "The table’s feet should rest on the pavement.",
+      "steps": "Find and approach the round café table and inspect beneath its feet from the side."
+     }
+    },
+    "map": "/Game/Auditor/Migration/UE561/U014/R02/TaskMap_Candidate02",
+    "sha256": "ff1530087ffea996c9807812fc379ac6ed725ffd9796ff1b440b4ef88eb2f158",
+    "case_path": "/?case=U014",
+    "build_sha256": "142b172a2886d116e3777108cfa1cfbc90d2a47ef3183fa0077156434c346f28",
+    "package_id": "202ed1c5db7a93bd303550944886785aa5fed01e7315327dd7fd3a04e850c6fb",
+    "package_archive_sha256": "7f26752180ff9b0f9a088ba562e4b7f63f178e79cebeb3795f272c75b08a0c88",
+    "engine_version": "5.6.1",
+    "runtime_switch": false,
+    "observation_protocol": {
+     "start": [
+      1500.0,
+      -1100.0,
+      201.219
+     ],
+     "bounds": {
+      "min": [
+       600.0,
+       -1750.0,
+       75.0
+      ],
+      "max": [
+       3600.0,
+       850.0,
+       700.0
+      ]
+     },
+     "required_actions": [
+      "From the unchanged baseline start walk south toward the nearest outdoor dining table, approximately 4.6 metres ahead.",
+      "Observe the full-size table legs hanging above the pavement while all four chairs remain normally grounded; walk around the street side to confirm the open gap beneath multiple feet."
+     ],
+     "evidence_mode": "paired_normal_player_views_and_multi_leg_support_measurement",
+     "repetitions": 1
+    },
+    "task_configuration": {
+     "region_maps_before": [
+      "/Game/Auditor/Migration/Core18_UE561/Baselines/RearLane_Cropped_Candidate03",
+      "/Game/Auditor/Migration/Core18_UE561/Baselines/ServiceLane_Cropped_Candidate03",
+      "/Game/Auditor/Migration/Core18_UE561/Baselines/Shopfront_Cropped_Candidate03",
+      "/Game/Auditor/Migration/Core18_UE561/Baselines/Junction_Cropped_Candidate03"
+     ],
+     "region_maps_after": [
+      "/Game/Auditor/Migration/UE561/U014/R02/TaskMap_Candidate02"
+     ],
+     "reason": "Isolate candidate navigation; no baseline/review map references"
+    },
+    "baseline_reference": {
+     "map": "/Game/Auditor/Migration/Core18_UE561/Baselines/Shopfront_Cropped_Candidate03",
+     "sha256": "1a5a7ac42627f757e55dc076667d321aceb669b33966f00e11d4c640ea4b93c8"
+    },
+    "verification": {
+     "map_reopen_passed": true,
+     "packaged_runtime_passed": true,
+     "evidence_root": "/home/ubuntu/unreal-auditor/builds/core18-ue561-20260911/audit",
+     "human_acceptance": false,
+     "guided_qa_passed": false
+    },
+    "metadata_provenance": {
+     "source_task_record": "repository/tasks/urban-city/U014/R02/task-private.json",
+     "source_task_record_sha256": "554c01ad4c5cd5cb9767bb24bf51cf00c8a81c94d892449081301cd9fc29976f",
+     "migration_receipt": "/home/ubuntu/unreal-auditor/builds/core18-ue561-20260911/audit/cases/U014/TaskMap_Candidate02/receipt.json",
+     "migration_receipt_sha256": "78dfe39ae68eb7fb77039a4918b5d71835af1df5b282999df1359583c87042c2",
+     "map_identity_source": "/home/ubuntu/unreal-auditor/builds/core18-ue561-20260911/audit/artifact-manifest.json"
+    },
+    "review_mode": "informed_internal_review",
+    "metadata_schema_version": 1,
+    "exploration_revision": {
+     "version": "unreal-exploration-v3-20260917",
+     "policy_sha256": "e64cd8fdf5e4618587f7c0a41eecbc32f5257243c4d2431dc144d35671ecf6cb",
+     "previous_policy_sha256": "bac9dd9b5a47a7c71acf7d0f001dfe1b198a6f8c4e954894869e521766ca808d"
+    },
+    "review_compatible_versions": [
+     {
+      "revision": 2,
+      "sha256": "ff1530087ffea996c9807812fc379ac6ed725ffd9796ff1b440b4ef88eb2f158",
+      "build_sha256": "b054d5e0112410515b6d85029534492868d349ff4ef0b95bf95e5f78f51f051e"
+     }
+    ]
+   },
+   "family": "urban",
+   "case_type": "bug",
+   "binary": "/home/ec2-user/unreal-urban-ipc-20260919/packages/urban-c6f314070433/Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
+   "build_sha256": "142b172a2886d116e3777108cfa1cfbc90d2a47ef3183fa0077156434c346f28",
+   "aws_binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/urban-c6f314070433/Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
+   "aws_build_sha256": "f9f996a242c44117947427e35749f7c8f8fffe8004a3248f796645540e648e40",
+   "runtime_map": "/Game/Auditor/Migration/UE561/U014/R02/TaskMap_Candidate02",
+   "game_args": [
+    "-vulkan",
+    "-sm6",
+    "-PixelStreamingWebRTCMaxFps=30",
+    "-ExecCmds=t.MaxFPS 30,DisableAllScreenMessages",
+    "-PixelStreamingWebRTCMaxBitrate=3000000",
+    "-PixelStreamingWebRTCStartBitrate=1000000"
+   ],
+   "extra_args": [
+    "-AuditorExplorationTask=U014",
+    "-AuditorExplorationPolicy=/home/ec2-user/gemini-unreal-nomap-20260919/pinned-production/policies/e64cd8fdf5e4618587f7c0a41eecbc32f5257243c4d2431dc144d35671ecf6cb"
+   ],
+   "policy_version": "unreal-exploration-v3-20260917",
+   "policy_path": "/home/ec2-user/gemini-unreal-nomap-20260919/pinned-production/policies/e64cd8fdf5e4618587f7c0a41eecbc32f5257243c4d2431dc144d35671ecf6cb",
+   "policy": {
+    "id": "U014",
+    "family": "urban",
+    "map": "/Game/Auditor/Migration/UE561/U014/R02/TaskMap_Candidate02",
+    "case_type": "bug",
+    "focus": [
+     1514.3050760538624,
+     -1558.7222959930464,
+     207.16091107813668
+    ],
+    "focus_source": "current map target actor",
+    "target": "StaticMeshActor_340",
+    "bounds_min": [
+     -498.076211353316,
+     -2701.6660498395404,
+     75.0
+    ],
+    "bounds_max": [
+     4698.0762113533165,
+     1801.6660498395404,
+     700.0
+    ],
+    "old_bounds_min": [
+     600.0,
+     -1750.0,
+     75.0
+    ],
+    "old_bounds_max": [
+     3600.0,
+     850.0,
+     700.0
+    ],
+    "gain_cm": 1004.0423113403374,
+    "grid_cm": 100,
+    "max_route_cm": 8000,
+    "old_region_spawn": [
+     1500.0,
+     -1100.0,
+     201.219
+    ],
+    "spawn": [
+     1400,
+     -100,
+     193.41926024002083
+    ],
+    "yaw": -204.51947409196512,
+    "route_to_old_spawn": [
+     [
+      1400,
+      -100,
+      193.41926024002083
+     ],
+     [
+      1400,
+      -200,
+      193.41926024001896
+     ],
+     [
+      1400,
+      -300,
+      193.41926024001702
+     ],
+     [
+      1400,
+      -400,
+      193.41926024001515
+     ],
+     [
+      1400,
+      -500,
+      193.41926024001322
+     ],
+     [
+      1400,
+      -600,
+      193.41926024001128
+     ],
+     [
+      1400,
+      -700,
+      193.4192602400094
+     ],
+     [
+      1400,
+      -800,
+      193.41926024000753
+     ],
+     [
+      1400,
+      -900,
+      193.4192602400056
+     ],
+     [
+      1400,
+      -1000,
+      193.41926024000372
+     ],
+     [
+      1400,
+      -1100,
+      193.4192602400018
+     ],
+     [
+      1500,
+      -1100,
+      193.4192046660035
+     ]
+    ],
+    "requested_distance_cm": 1462.9876022433368,
+    "revision_exception": null
+   },
+   "launch_map": "/Game/Auditor/Migration/UE561/U014/R02/TaskMap_Candidate02",
+   "remote_task": "U014"
+  },
+  "U015": {
+   "task": {
+    "id": "U015",
+    "revision": 1,
+    "case_id": "U015-R01-UE561-C02",
+    "case_type": "bug",
+    "family": "urban",
+    "environment": "urban-city / Junction / 路口",
+    "scene_id": "junction",
+    "scene_i18n": {
+     "zh": "路口",
+     "en": "Junction"
+    },
+    "title": "路障局部碰撞丢失",
+    "description": "人物可以穿过施工路障两端的实体部分，但中部仍会挡人。",
+    "description_i18n": {
+     "zh": "人物可以穿过施工路障两端的实体部分，但中部仍会挡人。",
+     "en": "You can walk through the solid sections at both ends of the construction barrier, while its centre still blocks movement."
+    },
+    "target": {
+     "actor_name": "StaticMeshActor_551",
+     "actor_label": "SM_Road_Barricade_V7",
+     "actor_guid": "3eed2163-b8bf374c-a73b137a-592512fb",
+     "actor_class": "/Script/Engine.StaticMeshActor",
+     "asset": "/Game/Auditor/Migration/UE561/U015/R01/Assets/TaskMap_Candidate02/SM_01.SM_01",
+     "location_cm": [
+      -68.837487,
+      -927.540715,
+      101.4268
+     ],
+     "role": "affected_object",
+     "description_i18n": {
+      "zh": "路口东侧施工路障线中的目标路障。",
+      "en": "The target barrier in the construction line east of the junction."
+     }
+    },
+    "related_objects": [],
+    "category": "collision",
+    "kind": "collision_shape_mismatch",
+    "trigger": "static",
+    "effect": "collision",
+    "source_taxonomy": {
+     "primary_category": "collision",
+     "kind": "collision_shape_mismatch",
+     "trigger": "static",
+     "effect": "collision",
+     "secondary_symptoms": []
+    },
+    "subcategory": "C1",
+    "taxonomy": {
+     "version": "user-2026-09-12-scene-semantics",
+     "category_id": "collision",
+     "category": {
+      "en": "Collision & physics",
+      "zh": "碰撞与物理"
+     },
+     "code": "C1",
+     "subcategory_id": "collision.missing",
+     "subcategory": {
+      "en": "Missing collision",
+      "zh": "应阻挡而发生穿透"
+     }
+    },
+    "taxonomy_label": "碰撞与物理 · 应阻挡而发生穿透",
+    "taxonomy_mapping": {
+     "status": "service_category_mapping",
+     "notes": "",
+     "secondary_service_codes": []
+    },
+    "rubrics": "You can walk through the solid sections at both ends of the construction barrier, while its centre still blocks movement.\n人物可以穿过施工路障两端的实体部分，但中部仍会挡人。",
+    "rubrics_i18n": {
+     "zh": {
+      "criteria": "人物可以穿过施工路障两端的实体部分，但中部仍会挡人。",
+      "expected": "路障的中部和两端实体都应阻挡人物。",
+      "steps": "走到路口东侧的施工路障，分别尝试直穿两端的实体部分和中央，避免绕过最外缘。"
+     },
+     "en": {
+      "criteria": "You can walk through the solid sections at both ends of the construction barrier, while its centre still blocks movement.",
+      "expected": "The barrier’s solid centre and ends should all block movement.",
+      "steps": "Approach the construction barrier east of the junction and try walking through each solid end and the centre, without going around its outer edges."
+     }
+    },
+    "map": "/Game/Auditor/Migration/UE561/U015/R01/TaskMap_Candidate02",
+    "sha256": "6751539a70a9fb3740e5de197ebb9767593069315bd495cd2bea5831affa1e06",
+    "case_path": "/?case=U015",
+    "build_sha256": "142b172a2886d116e3777108cfa1cfbc90d2a47ef3183fa0077156434c346f28",
+    "package_id": "202ed1c5db7a93bd303550944886785aa5fed01e7315327dd7fd3a04e850c6fb",
+    "package_archive_sha256": "7f26752180ff9b0f9a088ba562e4b7f63f178e79cebeb3795f272c75b08a0c88",
+    "engine_version": "5.6.1",
+    "runtime_switch": false,
+    "observation_protocol": {
+     "start": [
+      -2000.0,
+      -850.0,
+      201.635
+     ],
+     "bounds": {
+      "min": [
+       -4100.0,
+       -2200.0,
+       75.0
+      ],
+      "max": [
+       1000.0,
+       1800.0,
+       700.0
+      ]
+     },
+     "required_actions": [
+      "Walk toward the east-side street barricade line.",
+      "Try crossing near an outer end of the middle barricade; then compare blocked movement through its center."
+     ],
+     "evidence_mode": "paired_Pawn_30_90_capsule_sweeps_and_render_parity",
+     "repetitions": 1
+    },
+    "task_configuration": {
+     "region_maps_before": [
+      "/Game/Auditor/Migration/Core18_UE561/Baselines/RearLane_Cropped_Candidate03",
+      "/Game/Auditor/Migration/Core18_UE561/Baselines/ServiceLane_Cropped_Candidate03",
+      "/Game/Auditor/Migration/Core18_UE561/Baselines/Shopfront_Cropped_Candidate03",
+      "/Game/Auditor/Migration/Core18_UE561/Baselines/Junction_Cropped_Candidate03"
+     ],
+     "region_maps_after": [
+      "/Game/Auditor/Migration/UE561/U015/R01/TaskMap_Candidate02"
+     ],
+     "reason": "Isolate candidate navigation; no baseline/review map references"
+    },
+    "baseline_reference": {
+     "map": "/Game/Auditor/Migration/Core18_UE561/Baselines/Junction_Cropped_Candidate03",
+     "sha256": "cc0e6b741203069fb17562a64e86953f94eaef083894c408fa24ada381e80e62"
+    },
+    "verification": {
+     "map_reopen_passed": true,
+     "packaged_runtime_passed": true,
+     "evidence_root": "/home/ubuntu/unreal-auditor/builds/core18-ue561-20260911/audit",
+     "human_acceptance": false,
+     "guided_qa_passed": false
+    },
+    "metadata_provenance": {
+     "source_task_record": "repository/tasks/urban-city/U015/R01/task-private.json",
+     "source_task_record_sha256": "6349e3e913302193c71ad2fffed26e88aca83626f19a7e6046c62d3c73ad3f71",
+     "migration_receipt": "/home/ubuntu/unreal-auditor/builds/core18-ue561-20260911/audit/cases/U015/TaskMap_Candidate02/receipt.json",
+     "migration_receipt_sha256": "405c5e03236127f24d06258bdda5f3eb5edf58bd3ceb1decf269c27415d0b253",
+     "map_identity_source": "/home/ubuntu/unreal-auditor/builds/core18-ue561-20260911/audit/artifact-manifest.json"
+    },
+    "review_mode": "informed_internal_review",
+    "metadata_schema_version": 1,
+    "exploration_revision": {
+     "version": "unreal-exploration-v3-20260917",
+     "policy_sha256": "e64cd8fdf5e4618587f7c0a41eecbc32f5257243c4d2431dc144d35671ecf6cb",
+     "previous_policy_sha256": "bac9dd9b5a47a7c71acf7d0f001dfe1b198a6f8c4e954894869e521766ca808d"
+    },
+    "review_compatible_versions": [
+     {
+      "revision": 1,
+      "sha256": "6751539a70a9fb3740e5de197ebb9767593069315bd495cd2bea5831affa1e06",
+      "build_sha256": "b054d5e0112410515b6d85029534492868d349ff4ef0b95bf95e5f78f51f051e"
+     }
+    ]
+   },
+   "family": "urban",
+   "case_type": "bug",
+   "binary": "/home/ec2-user/unreal-urban-ipc-20260919/packages/urban-c6f314070433/Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
+   "build_sha256": "142b172a2886d116e3777108cfa1cfbc90d2a47ef3183fa0077156434c346f28",
+   "aws_binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/urban-c6f314070433/Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
+   "aws_build_sha256": "f9f996a242c44117947427e35749f7c8f8fffe8004a3248f796645540e648e40",
+   "runtime_map": "/Game/Auditor/Migration/UE561/U015/R01/TaskMap_Candidate02",
+   "game_args": [
+    "-vulkan",
+    "-sm6",
+    "-PixelStreamingWebRTCMaxFps=30",
+    "-ExecCmds=t.MaxFPS 30,DisableAllScreenMessages",
+    "-PixelStreamingWebRTCMaxBitrate=3000000",
+    "-PixelStreamingWebRTCStartBitrate=1000000"
+   ],
+   "extra_args": [
+    "-AuditorExplorationTask=U015",
+    "-AuditorExplorationPolicy=/home/ec2-user/gemini-unreal-nomap-20260919/pinned-production/policies/e64cd8fdf5e4618587f7c0a41eecbc32f5257243c4d2431dc144d35671ecf6cb"
+   ],
+   "policy_version": "unreal-exploration-v3-20260917",
+   "policy_path": "/home/ec2-user/gemini-unreal-nomap-20260919/pinned-production/policies/e64cd8fdf5e4618587f7c0a41eecbc32f5257243c4d2431dc144d35671ecf6cb",
+   "policy": {
+    "id": "U015",
+    "family": "urban",
+    "map": "/Game/Auditor/Migration/UE561/U015/R01/TaskMap_Candidate02",
+    "case_type": "bug",
+    "focus": [
+     -74.54094202037118,
+     -930.3515137304659,
+     154.33809895897411
+    ],
+    "focus_source": "current map target actor",
+    "target": "StaticMeshActor_551",
+    "bounds_min": [
+     -5966.7295593006365,
+     -3664.1016151377544,
+     75.0
+    ],
+    "bounds_max": [
+     2866.7295593006365,
+     3264.1016151377544,
+     700.0
+    ],
+    "old_bounds_min": [
+     -4100.0,
+     -2200.0,
+     75.0
+    ],
+    "old_bounds_max": [
+     1000.0,
+     1800.0,
+     700.0
+    ],
+    "gain_cm": 1927.134906983571,
+    "grid_cm": 100,
+    "max_route_cm": 8000,
+    "old_region_spawn": [
+     -2000.0,
+     -850.0,
+     201.635
+    ],
+    "spawn": [
+     -3900,
+     -450,
+     193.4189514582439
+    ],
+    "yaw": 112.84299755654001,
+    "route_to_old_spawn": [
+     [
+      -3900,
+      -450,
+      193.4189514582439
+     ],
+     [
+      -3900,
+      -550,
+      193.41895145824196
+     ],
+     [
+      -3900,
+      -650,
+      193.4189514582401
+     ],
+     [
+      -3900,
+      -750,
+      193.41895145823815
+     ],
+     [
+      -3900,
+      -850,
+      193.41895145823628
+     ],
+     [
+      -3800,
+      -850,
+      193.83530254572122
+     ],
+     [
+      -3700,
+      -850,
+      193.83530254572122
+     ],
+     [
+      -3600,
+      -850,
+      193.83530254572122
+     ],
+     [
+      -3500,
+      -850,
+      193.83530254572122
+     ],
+     [
+      -3400,
+      -850,
+      193.83530254572122
+     ],
+     [
+      -3300,
+      -850,
+      193.83530254572122
+     ],
+     [
+      -3200,
+      -850,
+      193.83530254572122
+     ],
+     [
+      -3100,
+      -850,
+      193.83530254572122
+     ],
+     [
+      -3000,
+      -850,
+      193.83530274897976
+     ],
+     [
+      -2900,
+      -850,
+      193.83530311533767
+     ],
+     [
+      -2800,
+      -850,
+      193.83530348169558
+     ],
+     [
+      -2700,
+      -850,
+      193.83530392195692
+     ],
+     [
+      -2600,
+      -850,
+      193.83530400262836
+     ],
+     [
+      -2500,
+      -850,
+      193.83530362102158
+     ],
+     [
+      -2400,
+      -850,
+      193.83530323941488
+     ],
+     [
+      -2300,
+      -850,
+      193.8353028525853
+     ],
+     [
+      -2200,
+      -850,
+      193.83530245351318
+     ],
+     [
+      -2100,
+      -850,
+      193.835302054441
+     ],
+     [
+      -2000,
+      -850,
+      193.83530165536888
+     ]
+    ],
+    "requested_distance_cm": 3854.269813967142,
+    "revision_exception": null
+   },
+   "launch_map": "/Game/Auditor/Migration/UE561/U015/R01/TaskMap_Candidate02",
+   "remote_task": "U015"
+  },
+  "U017": {
+   "task": {
+    "id": "U017",
+    "revision": 2,
+    "case_id": "U017-R02-UE561-C02",
+    "case_type": "bug",
+    "family": "urban",
+    "environment": "urban-city / Service lane / 服务巷",
+    "scene_id": "service_lane",
+    "scene_i18n": {
+     "zh": "服务巷",
+     "en": "Service lane"
+    },
+    "title": "角度相关树冠消失",
+    "description": "同一棵树从一侧看有树冠，走到另一侧后主要叶片消失，返回后恢复；树干和枝条仍在。",
+    "description_i18n": {
+     "zh": "同一棵树从一侧看有树冠，走到另一侧后主要叶片消失，返回后恢复；树干和枝条仍在。",
+     "en": "The tree’s main foliage disappears when viewed from the opposite side and returns when you walk back; its trunk and branches remain visible."
+    },
+    "target": {
+     "actor_name": "StaticMeshActor_690",
+     "actor_label": "SM_Tree_B60",
+     "actor_guid": "ce149957-0287307e-ae99e55d-7d62a7dc",
+     "actor_class": "/Script/Engine.StaticMeshActor",
+     "asset": "/Game/NYCBuildingVolume2/Static_Meshes/Foliage/SM_Tree_B.SM_Tree_B",
+     "location_cm": [
+      -474.704862,
+      -5238.707422,
+      106.636065
+     ],
+     "role": "affected_object",
+     "description_i18n": {
+      "zh": "服务巷中需从南北两侧观察的树。",
+      "en": "The service-lane tree viewed from its south and north sides."
+     }
+    },
+    "related_objects": [],
+    "category": "visual",
+    "kind": "view_cull",
+    "trigger": "view_angle",
+    "effect": "visibility",
+    "source_taxonomy": {
+     "primary_category": "visual",
+     "kind": "view_cull",
+     "trigger": "view_angle",
+     "effect": "visibility",
+     "secondary_symptoms": []
+    },
+    "subcategory": "V1",
+    "taxonomy": {
+     "version": "user-2026-09-12-scene-semantics",
+     "category_id": "visual",
+     "category": {
+      "en": "Visual consistency",
+      "zh": "视觉一致性"
+     },
+     "code": "V1",
+     "subcategory_id": "visual.visibility",
+     "subcategory": {
+      "en": "View / distance-dependent visibility",
+      "zh": "视角／距离相关的可见性异常"
+     }
+    },
+    "taxonomy_label": "视觉一致性 · 可见性异常",
+    "taxonomy_mapping": {
+     "status": "service_category_mapping",
+     "notes": "",
+     "secondary_service_codes": []
+    },
+    "rubrics": "The tree’s main foliage disappears when viewed from the opposite side and returns when you walk back; its trunk and branches remain visible.\n同一棵树从一侧看有树冠，走到另一侧后主要叶片消失，返回后恢复；树干和枝条仍在。",
+    "rubrics_i18n": {
+     "zh": {
+      "criteria": "同一棵树从一侧看有树冠，走到另一侧后主要叶片消失，返回后恢复；树干和枝条仍在。",
+      "expected": "树冠应从两侧正常可见。",
+      "steps": "先从服务巷树木的南侧抬头观察树冠，沿树西侧走到北侧，再原路返回。"
+     },
+     "en": {
+      "criteria": "The tree’s main foliage disappears when viewed from the opposite side and returns when you walk back; its trunk and branches remain visible.",
+      "expected": "The foliage should remain visible from both sides.",
+      "steps": "Inspect the service-lane tree’s canopy from the south, walk along its west side to the north, then return."
+     }
+    },
+    "map": "/Game/Auditor/Migration/UE561/U017/R02/TaskMap_Candidate02",
+    "sha256": "d10c9c87d1de88f504c9c70ea24e41c527ab27c60ffd160598ec54b999de465d",
+    "case_path": "/?case=U017",
+    "build_sha256": "142b172a2886d116e3777108cfa1cfbc90d2a47ef3183fa0077156434c346f28",
+    "package_id": "202ed1c5db7a93bd303550944886785aa5fed01e7315327dd7fd3a04e850c6fb",
+    "package_archive_sha256": "7f26752180ff9b0f9a088ba562e4b7f63f178e79cebeb3795f272c75b08a0c88",
+    "engine_version": "5.6.1",
+    "runtime_switch": false,
+    "observation_protocol": {
+     "start": [
+      -900.0,
+      -5250.0,
+      201.219
+     ],
+     "bounds": {
+      "min": [
+       -1200.0,
+       -5700.0,
+       75.0
+      ],
+      "max": [
+       -220.0,
+       -4250.0,
+       700.0
+      ]
+     },
+     "required_actions": [
+      "View the tree canopy from the south side of the lane at A near[-900,-5500].",
+      "Walk north to B near[-900,-4950] and look toward the same tree: canopy disappears but trunk/branches remain.",
+      "Return to exactly A: canopy becomes visible again without a reset."
+     ],
+     "evidence_mode": "matched_lit_clean_variant_A_B_A_camera_azimuth_reversibility_with_preserved_material_graph",
+     "repetitions": 1
+    },
+    "task_configuration": {
+     "region_maps_override": {
+      "before": [
+       "/Game/Auditor/Migration/Core18_UE561/Baselines/RearLane_Cropped_Candidate03",
+       "/Game/Auditor/Migration/Core18_UE561/Baselines/ServiceLane_Cropped_Candidate03",
+       "/Game/Auditor/Migration/Core18_UE561/Baselines/Shopfront_Cropped_Candidate03",
+       "/Game/Auditor/Migration/Core18_UE561/Baselines/Junction_Cropped_Candidate03"
+      ],
+      "after": [
+       "/Game/Auditor/Migration/UE561/U017/R02/TaskMap_Candidate02"
+      ],
+      "reason": "isolate cooked task from clean and unrelated task routes"
+     }
+    },
+    "baseline_reference": {
+     "map": "/Game/Auditor/Migration/Core18_UE561/Baselines/ServiceLane_Cropped_Candidate03",
+     "sha256": "4dafea9ba15ad9967d4813fa7c1f19a1753b853392d669860e7ef9142270aebe",
+     "source_baseline": {
+      "map": "/Game/Auditor/Urban/Cropped/ServiceLane_Cropped",
+      "sha256": "902ae6ea940591cd1af937dd2f44eb491a01650c6042b17e8f67d236b7e7e565",
+      "acceptance_report": "project/NYC_Building_Volume2_Cropped/Saved/cropped-map-start-sync.json"
+     }
+    },
+    "verification": {
+     "map_reopen_passed": true,
+     "packaged_runtime_passed": true,
+     "evidence_root": "/home/ubuntu/unreal-auditor/builds/core18-ue561-20260911/audit",
+     "human_acceptance": false,
+     "guided_qa_passed": false
+    },
+    "metadata_provenance": {
+     "source_task_record": "repository/tasks/urban-city/U017/R02/task-private.json",
+     "source_task_record_sha256": "1a67c9cd219cb25b8306a9c14896eecd5c1b8422142bc50d7f47f617a59f5e8e",
+     "migration_receipt": "/home/ubuntu/unreal-auditor/builds/core18-ue561-20260911/audit/cases/U017/TaskMap_Candidate02/U017-receipt.json",
+     "migration_receipt_sha256": "d058bde7630269669647c2cde6c6587f20a22890bb27f62b8ee9b045c98ce2e6",
+     "map_identity_source": "/home/ubuntu/unreal-auditor/builds/core18-ue561-20260911/audit/artifact-manifest.json"
+    },
+    "review_mode": "informed_internal_review",
+    "metadata_schema_version": 1,
+    "exploration_revision": {
+     "version": "unreal-exploration-v3-20260917",
+     "policy_sha256": "e64cd8fdf5e4618587f7c0a41eecbc32f5257243c4d2431dc144d35671ecf6cb",
+     "previous_policy_sha256": "bac9dd9b5a47a7c71acf7d0f001dfe1b198a6f8c4e954894869e521766ca808d"
+    },
+    "review_compatible_versions": [
+     {
+      "revision": 2,
+      "sha256": "d10c9c87d1de88f504c9c70ea24e41c527ab27c60ffd160598ec54b999de465d",
+      "build_sha256": "b054d5e0112410515b6d85029534492868d349ff4ef0b95bf95e5f78f51f051e"
+     }
+    ]
+   },
+   "family": "urban",
+   "case_type": "bug",
+   "binary": "/home/ec2-user/unreal-urban-ipc-20260919/packages/urban-c6f314070433/Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
+   "build_sha256": "142b172a2886d116e3777108cfa1cfbc90d2a47ef3183fa0077156434c346f28",
+   "aws_binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/urban-c6f314070433/Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
+   "aws_build_sha256": "f9f996a242c44117947427e35749f7c8f8fffe8004a3248f796645540e648e40",
+   "runtime_map": "/Game/Auditor/Migration/UE561/U017/R02/TaskMap_Candidate02",
+   "game_args": [
+    "-vulkan",
+    "-sm6",
+    "-PixelStreamingWebRTCMaxFps=30",
+    "-ExecCmds=t.MaxFPS 30,DisableAllScreenMessages",
+    "-PixelStreamingWebRTCMaxBitrate=3000000",
+    "-PixelStreamingWebRTCStartBitrate=1000000"
+   ],
+   "extra_args": [
+    "-AuditorExplorationTask=U017",
+    "-AuditorExplorationPolicy=/home/ec2-user/gemini-unreal-nomap-20260919/pinned-production/policies/e64cd8fdf5e4618587f7c0a41eecbc32f5257243c4d2431dc144d35671ecf6cb"
+   ],
+   "policy_version": "unreal-exploration-v3-20260917",
+   "policy_path": "/home/ec2-user/gemini-unreal-nomap-20260919/pinned-production/policies/e64cd8fdf5e4618587f7c0a41eecbc32f5257243c4d2431dc144d35671ecf6cb",
+   "policy": {
+    "id": "U017",
+    "family": "urban",
+    "map": "/Game/Auditor/Migration/UE561/U017/R02/TaskMap_Candidate02",
+    "case_type": "bug",
+    "focus": [
+     -483.74196536759473,
+     -5261.686530766607,
+     506.50247446780156
+    ],
+    "focus_source": "current map target actor",
+    "target": "StaticMeshActor_690",
+    "bounds_min": [
+     -1558.70489570875,
+     -6230.736835487436,
+     75.0
+    ],
+    "bounds_max": [
+     138.70489570874986,
+     -3719.263164512564,
+     700.0
+    ],
+    "old_bounds_min": [
+     -1200.0,
+     -5700.0,
+     75.0
+    ],
+    "old_bounds_max": [
+     -220.0,
+     -4250.0,
+     700.0
+    ],
+    "gain_cm": 1004.5995347853534,
+    "grid_cm": 100,
+    "max_route_cm": 8000,
+    "old_region_spawn": [
+     -900.0,
+     -5250.0,
+     201.219
+    ],
+    "spawn": [
+     -700,
+     -3850,
+     193.41901327058974
+    ],
+    "yaw": 40.709503433530415,
+    "route_to_old_spawn": [
+     [
+      -700,
+      -3850,
+      193.41901327058974
+     ],
+     [
+      -700,
+      -3950,
+      193.41895769658953
+     ],
+     [
+      -700,
+      -4050,
+      193.4197133128036
+     ],
+     [
+      -700,
+      -4150,
+      193.41965773880338
+     ],
+     [
+      -700,
+      -4250,
+      193.41960216480322
+     ],
+     [
+      -700,
+      -4350,
+      193.41954659080295
+     ],
+     [
+      -700,
+      -4450,
+      193.4194910168028
+     ],
+     [
+      -700,
+      -4550,
+      193.41943544280252
+     ],
+     [
+      -700,
+      -4650,
+      193.41937986880237
+     ],
+     [
+      -700,
+      -4750,
+      193.41932429480215
+     ],
+     [
+      -700,
+      -4850,
+      193.41926872080194
+     ],
+     [
+      -700,
+      -4950,
+      193.41921314680172
+     ],
+     [
+      -700,
+      -5050,
+      193.4191575728015
+     ],
+     [
+      -700,
+      -5150,
+      193.4191019988013
+     ],
+     [
+      -700,
+      -5250,
+      193.41904642480108
+     ],
+     [
+      -800,
+      -5250,
+      193.41904642480108
+     ],
+     [
+      -900,
+      -5250,
+      193.41904642480108
+     ]
+    ],
+    "requested_distance_cm": 1421.0215879926632,
+    "revision_exception": null
+   },
+   "launch_map": "/Game/Auditor/Migration/UE561/U017/R02/TaskMap_Candidate02",
+   "remote_task": "U017"
+  },
+  "U018": {
+   "task": {
+    "id": "U018",
+    "revision": 3,
+    "case_id": "U018-R03-UE561",
+    "case_type": "bug",
+    "family": "urban",
+    "environment": "urban-city / Junction / 路口",
+    "scene_id": "junction",
+    "scene_i18n": {
+     "en": "Junction",
+     "zh": "路口"
+    },
+    "title": "金属桶材质缺失",
+    "description": "并排金属垃圾桶中靠北的一只失去了金属纹理，整个表面变成均匀的哑光紫红色。",
+    "description_i18n": {
+     "zh": "并排金属垃圾桶中靠北的一只失去了金属纹理，整个表面变成均匀的哑光紫红色。",
+     "en": "The northern of two adjacent metal wastebins has lost its metal texture and appears uniformly matte magenta."
+    },
+    "target": {
+     "actor_guid": "97435bb7-0071387c-a9f93b6e-9d163386",
+     "actor_name": "StaticMeshActor_568",
+     "actor_label": "SM_Metal_wastebin",
+     "actor_class": "/Script/Engine.StaticMeshActor",
+     "asset": "/Game/NYCBuildingVolume2/Static_Meshes/Props/SM_Metal_wastebin.SM_Metal_wastebin",
+     "location_cm": [
+      -512.902393,
+      -1942.553865,
+      104.684866
+     ],
+     "rotation_degrees": {
+      "pitch": 0.0,
+      "yaw": 0.0,
+      "roll": 0.0
+     },
+     "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+     },
+     "materials": [
+      "/Game/Auditor/Tasks/U018/R03/Assets/M_03.M_03"
+     ],
+     "role": "affected_object"
+    },
+    "related_objects": [
+     {
+      "actor_guid": "a71c703c-8534379b-a36cc240-3b1a4067",
+      "actor_name": "StaticMeshActor_576",
+      "actor_label": "SM_Metal_wastebin2",
+      "actor_class": "/Script/Engine.StaticMeshActor",
+      "asset": "/Game/NYCBuildingVolume2/Static_Meshes/Props/SM_Metal_wastebin.SM_Metal_wastebin",
+      "location_cm": [
+       -512.902393,
+       -2017.201239,
+       104.684865
+      ],
+      "rotation_degrees": {
+       "pitch": 0.0,
+       "yaw": -69.999999,
+       "roll": 0.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0,
+       "z": 1.0
+      },
+      "materials": [
+       "/Game/NYCBuildingVolume2/Materials/M_Metal_Wastebin.M_Metal_Wastebin"
+      ],
+      "role": "reference_or_support_object"
+     }
+    ],
+    "category": "visual",
+    "kind": "material_error",
+    "trigger": "static",
+    "effect": "material",
+    "source_taxonomy": {
+     "primary_category": "visual",
+     "kind": "material_error",
+     "trigger": "static",
+     "effect": "material",
+     "secondary_symptoms": []
+    },
+    "subcategory": "V4",
+    "taxonomy": {
+     "version": "user-2026-09-13-material",
+     "category_id": "visual",
+     "category": {
+      "en": "Visual consistency",
+      "zh": "视觉一致性"
+     },
+     "code": "V4",
+     "subcategory_id": "visual.material",
+     "subcategory": {
+      "zh": "材质异常",
+      "en": "Material anomalies"
+     }
+    },
+    "taxonomy_label": "视觉一致性 · 材质异常",
+    "taxonomy_mapping": {
+     "status": "service_category_mapping",
+     "notes": "Mapped from updated revision observable behavior; original task implementation replaced.",
+     "secondary_service_codes": []
+    },
+    "rubrics": "The northern of two adjacent metal wastebins has lost its metal texture and appears uniformly matte magenta.\n并排金属垃圾桶中靠北的一只失去了金属纹理，整个表面变成均匀的哑光紫红色。",
+    "rubrics_i18n": {
+     "zh": {
+      "criteria": "并排金属垃圾桶中靠北的一只失去了金属纹理，整个表面变成均匀的哑光紫红色。",
+      "expected": "金属垃圾桶应保留金属纹理和表面质感。",
+      "steps": "走到路口东南侧人行道上的两只垃圾桶旁，从东侧和东南侧查看靠北的一只，并与旁边仍有金属纹理的垃圾桶比较。"
+     },
+     "en": {
+      "criteria": "The northern of two adjacent metal wastebins has lost its metal texture and appears uniformly matte magenta.",
+      "expected": "The metal wastebin should retain its metal texture and surface appearance.",
+      "steps": "Approach the two bins on the southeast sidewalk of the junction. Inspect the northern bin from the east and southeast, comparing it with the textured metal bin beside it."
+     }
+    },
+    "map": "/Game/Auditor/Tasks/U018/R03/TaskMap",
+    "sha256": "97b97d3fea9e20712ffe1fb1810ed144cb16f3892fa0b833624d65b47543ff6e",
+    "case_path": "/?case=U018",
+    "build_sha256": "142b172a2886d116e3777108cfa1cfbc90d2a47ef3183fa0077156434c346f28",
+    "package_id": "eafd6e70447a7d1b96a142d343c8d7a2f9ab8092a9efd9c601c8909d05be0610",
+    "package_archive_sha256": "9a162c0dab5fc4735f1809d7fe865ea048b0b18ea0ad747941127506e5fa12c6",
+    "engine_version": "5.6.1",
+    "runtime_switch": false,
+    "observation_protocol": {
+     "start": [
+      -2000.0,
+      -850.0,
+      201.635
+     ],
+     "bounds": {
+      "min": [
+       -4100.0,
+       -2200.0,
+       75.0
+      ],
+      "max": [
+       1000.0,
+       1800.0,
+       700.0
+      ]
+     },
+     "required_actions": [
+      "Approach the two bins on the southeast sidewalk of the junction. Inspect the northern bin from the east and southeast, comparing it with the textured metal bin beside it."
+     ],
+     "evidence_mode": "paired_packaged_normal_player_lit_views",
+     "repetitions": 1,
+     "start_rotation": [
+      0.0,
+      15.0,
+      0.0
+     ]
+    },
+    "task_configuration": {
+     "region_maps_after": [
+      "/Game/Auditor/Tasks/U018/R03/TaskMap"
+     ],
+     "player_start": {
+      "class": "/Script/Engine.PlayerStart",
+      "label": "MigrationStart_Junction",
+      "transform": {
+       "location": {
+        "x": -2000.0,
+        "y": -850.0,
+        "z": 201.635
+       },
+       "rotation": {
+        "pitch": 0.0,
+        "yaw": 15.0,
+        "roll": -0.0
+       },
+       "scale": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0
+       }
+      },
+      "hidden_in_game": false,
+      "actor_collision": true,
+      "tags": []
+     },
+     "region": {
+      "name": "AuditorRegion_0",
+      "location": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "spawn_location": [
+       -2000.0,
+       -850.0,
+       201.635
+      ],
+      "spawn_rotation": [
+       0.0,
+       15.0,
+       0.0
+      ],
+      "bounds_min": [
+       -4100.0,
+       -2200.0,
+       75.0
+      ],
+      "bounds_max": [
+       1000.0,
+       1800.0,
+       700.0
+      ]
+     },
+     "game_mode": "/Script/AuditorRuntime.AuditorGameMode",
+     "identity_source": "/home/ubuntu/unreal-auditor/builds/urban-four-revisions-20260914/migration/evidence/U018/fresh-verify.json",
+     "reason": "Fresh UE5.6.1 saved invariants and isolated task navigation; not stale Mac start/bounds."
+    },
+    "baseline_reference": {
+     "map": "/Game/Auditor/Migration/Core18_UE561/Baselines/Junction_Cropped_Candidate03",
+     "sha256": "cc0e6b741203069fb17562a64e86953f94eaef083894c408fa24ada381e80e62",
+     "source_baseline": {
+      "map": "/Game/Auditor/Urban/Cropped/Junction_Cropped",
+      "sha256": "cb19018cf16d0e476710ba24f58720c10fb3276d0a242caa7055708bfb8d4c9c",
+      "acceptance_report": "project/NYC_Building_Volume2_Cropped/Saved/cropped-map-start-sync.json"
+     }
+    },
+    "verification": {
+     "map_reopen_passed": true,
+     "packaged_runtime_passed": true,
+     "human_acceptance": false,
+     "guided_qa_passed": false,
+     "fresh_verification": "/home/ubuntu/unreal-auditor/builds/urban-four-revisions-20260914/migration/evidence/U018/fresh-verify.json",
+     "runtime_summary": "/home/ubuntu/unreal-auditor/builds/urban-four-revisions-20260914/migration/runtime-evidence/summary.json",
+     "runtime_runs": 2,
+     "runtime_modes": [
+      {
+       "tag": "clean",
+       "mode": "visual",
+       "result": "/home/ubuntu/unreal-auditor/builds/urban-four-revisions-20260914/migration/runtime-evidence/U018/clean-visual/result.json",
+       "result_sha256": "fd470a7db9b451ae95d3f5014f0a485429e461fd23684abc3133672f64490778"
+      },
+      {
+       "tag": "variant",
+       "mode": "visual",
+       "result": "/home/ubuntu/unreal-auditor/builds/urban-four-revisions-20260914/migration/runtime-evidence/U018/variant-visual/result.json",
+       "result_sha256": "78208c42bc552fcd5b486e4b6db4054275dc17e2819a47de630ef02c3ce56e4e"
+      }
+     ],
+     "package_audit": "/home/ubuntu/unreal-auditor/builds/urban-four-revisions-20260914/audit/package-audit.json",
+     "baseline_binary_sha256": "b054d5e0112410515b6d85029534492868d349ff4ef0b95bf95e5f78f51f051e",
+     "evidence_root": "/home/ubuntu/unreal-auditor/builds/urban-four-revisions-20260914/migration/runtime-evidence"
+    },
+    "metadata_provenance": {
+     "source_task_record": "repository/out/urban-next-four-20260914/previews/U018/R03/preview-task.json",
+     "source_task_record_sha256": "ce3794888766e8d5432063cad6ee1df0f1df58917ddce260e40bda2c55be745b",
+     "source_record_snapshot": "/home/ubuntu/unreal-auditor/builds/urban-four-revisions-20260914/migration/source-records.json",
+     "source_record_snapshot_sha256": "b8e4c56da4c81c1846cf5a92cc216f2028997fd1a632f63304cc184d9904917e",
+     "source_record_canonical_sha256": "75fa24bb5cf7445674ae8b165f3a40aacbf7ee4c051ba6b9d44e0706037f88b8",
+     "source_record_provenance": "/home/ubuntu/unreal-auditor/builds/urban-four-revisions-20260914/source-record-provenance.json",
+     "source_record_provenance_sha256": "8831e264a90c2cfe77b01cb21d09e8f07da2738a34bb0475053d8c0b05c8c123",
+     "migration_receipt": "/home/ubuntu/unreal-auditor/builds/urban-four-revisions-20260914/migration/evidence/U018/receipt.json",
+     "migration_receipt_sha256": "b2f01cac71574e454832b11f699fcff50495badb326a5001441174e3598f8482",
+     "map_identity_source": "/home/ubuntu/unreal-auditor/builds/urban-four-revisions-20260914/migration/metadata-targets.json",
+     "map_identity_source_sha256": "2b7acef36adb27211263bda48b81da131d885eb4826550f12f8311463c4adb6a",
+     "fresh_verification_sha256": "a916fcb29c70f5e3594189c99836a4f01b4af2cd81b30e73631d40b59e2fbc6a",
+     "runtime_summary_sha256": "6d2017e11afc23c01b72472d887876048f1a80f65cee4093c74304859457088c",
+     "package_audit_sha256": "db3b5a14ecaea5cf9d67b01786c0feeae9c1672d5b3b44ecccf6a7a56ce8a5be",
+     "authored_text_source": "/home/ubuntu/unreal-auditor/builds/urban-four-revisions-20260914/metadata-draft.json",
+     "authored_text_sha256": "4656e30f818ed043a434ba14abc1fab9edb99ea06a9bc89a1dbc5cabcac9b4ca"
+    },
+    "review_mode": "informed_internal_review",
+    "metadata_schema_version": 1,
+    "working_reference": {
+     "map": "/Game/Auditor/Urban/Cropped/Junction_Cropped",
+     "sha256": "5134467da27553b5a7713eb728f5620afa5348d298247ef11f4679beae81fb23",
+     "isolated_project": "/Users/jiyi/Downloads/urban-city-source/repository/out/urban-next-four-20260914/author-project/NYC_Building_Volume2",
+     "original_frozen_hash_match": false,
+     "authorization": "User authorized isolated local preview despite unresolved original freeze mismatch; no formal promotion."
+    },
+    "working_reference_comparison": {
+     "source_note": "repository/out/urban-next-four-20260914/previews/U032/R03/working-reference-comparison.json",
+     "migration_source_reference": {
+      "map": "/Game/Auditor/Urban/Cropped/Junction_Cropped",
+      "sha256": "5134467da27553b5a7713eb728f5620afa5348d298247ef11f4679beae81fb23",
+      "isolated_project": "/Users/jiyi/Downloads/urban-city-source/repository/out/urban-next-four-20260914/author-project/NYC_Building_Volume2",
+      "original_frozen_hash_match": false,
+      "authorization": "User authorized isolated local preview despite unresolved original freeze mismatch; no formal promotion."
+     },
+     "caveat": "Local Junction working reference was user-authorized reconstruction; original frozen source hash was not restored. This Linux receipt reuses the preserved UE5.6.1 migrated baseline; do not claim formal original-freeze restoration."
+    },
+    "asset_inventory": [
+     {
+      "path": "/Game/Auditor/Tasks/U018/R03/Assets/M_03",
+      "sha256": "e3f3bc62960e764f0c0ddcfad59c712bdc5a942e9d87ea99e427b64dc259b8b6",
+      "roots": {
+       "MP_BASE_COLOR": {
+        "name": "MaterialExpressionConstant3Vector_0",
+        "class": "MaterialExpressionConstant3Vector",
+        "output": ""
+       },
+       "MP_NORMAL": {
+        "name": "MaterialExpressionConstant3Vector_1",
+        "class": "MaterialExpressionConstant3Vector",
+        "output": ""
+       },
+       "MP_ROUGHNESS": {
+        "name": "MaterialExpressionConstant_0",
+        "class": "MaterialExpressionConstant",
+        "output": ""
+       },
+       "MP_METALLIC": {
+        "name": "MaterialExpressionConstant_1",
+        "class": "MaterialExpressionConstant",
+        "output": ""
+       },
+       "MP_SPECULAR": {
+        "name": "MaterialExpressionConstant_3",
+        "class": "MaterialExpressionConstant",
+        "output": ""
+       },
+       "MP_EMISSIVE_COLOR": {
+        "name": "MaterialExpressionConstant_2",
+        "class": "MaterialExpressionConstant",
+        "output": ""
+       },
+       "MP_OPACITY": {
+        "name": null,
+        "class": null,
+        "output": ""
+       },
+       "MP_OPACITY_MASK": {
+        "name": null,
+        "class": null,
+        "output": ""
+       },
+       "MP_REFRACTION": {
+        "name": null,
+        "class": null,
+        "output": ""
+       }
+      }
+     }
+    ],
+    "content_update": {
+     "version": {
+      "revision": 3,
+      "sha256": "97b97d3fea9e20712ffe1fb1810ed144cb16f3892fa0b833624d65b47543ff6e",
+      "build_sha256": "b054d5e0112410515b6d85029534492868d349ff4ef0b95bf95e5f78f51f051e"
+     },
+     "published_on": "2026-09-14",
+     "timezone": "America/Los_Angeles",
+     "summary_i18n": {
+      "zh": "垃圾桶改用更明显的哑光紫红占位材质。",
+      "en": "The bin now has a more conspicuous matte magenta placeholder material."
+     },
+     "publication": "urban-revisions-four-20260914-v1"
+    },
+    "exploration_revision": {
+     "version": "unreal-exploration-v3-20260917",
+     "policy_sha256": "e64cd8fdf5e4618587f7c0a41eecbc32f5257243c4d2431dc144d35671ecf6cb",
+     "previous_policy_sha256": "bac9dd9b5a47a7c71acf7d0f001dfe1b198a6f8c4e954894869e521766ca808d"
+    },
+    "review_compatible_versions": [
+     {
+      "revision": 3,
+      "sha256": "97b97d3fea9e20712ffe1fb1810ed144cb16f3892fa0b833624d65b47543ff6e",
+      "build_sha256": "b054d5e0112410515b6d85029534492868d349ff4ef0b95bf95e5f78f51f051e"
+     }
+    ]
+   },
+   "family": "urban",
+   "case_type": "bug",
+   "binary": "/home/ec2-user/unreal-urban-ipc-20260919/packages/urban-e63d0c3c26bd/Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
+   "build_sha256": "142b172a2886d116e3777108cfa1cfbc90d2a47ef3183fa0077156434c346f28",
+   "aws_binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/urban-e63d0c3c26bd/Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
+   "aws_build_sha256": "f9f996a242c44117947427e35749f7c8f8fffe8004a3248f796645540e648e40",
+   "runtime_map": "/Game/Auditor/Tasks/U018/R03/TaskMap",
+   "game_args": [
+    "-vulkan",
+    "-sm6",
+    "-PixelStreamingWebRTCMaxFps=30",
+    "-ExecCmds=t.MaxFPS 30,DisableAllScreenMessages",
+    "-PixelStreamingWebRTCMaxBitrate=3000000",
+    "-PixelStreamingWebRTCStartBitrate=1000000"
+   ],
+   "extra_args": [
+    "-AuditorExplorationTask=U018",
+    "-AuditorExplorationPolicy=/home/ec2-user/gemini-unreal-nomap-20260919/pinned-production/policies/e64cd8fdf5e4618587f7c0a41eecbc32f5257243c4d2431dc144d35671ecf6cb"
+   ],
+   "policy_version": "unreal-exploration-v3-20260917",
+   "policy_path": "/home/ec2-user/gemini-unreal-nomap-20260919/pinned-production/policies/e64cd8fdf5e4618587f7c0a41eecbc32f5257243c4d2431dc144d35671ecf6cb",
+   "policy": {
+    "id": "U018",
+    "family": "urban",
+    "map": "/Game/Auditor/Tasks/U018/R03/TaskMap",
+    "case_type": "bug",
+    "focus": [
+     -512.9936044996541,
+     -1942.5988938746923,
+     162.45899345864152
+    ],
+    "focus_source": "current map target actor",
+    "target": "StaticMeshActor_568",
+    "bounds_min": [
+     -5966.7295593006365,
+     -3664.1016151377544,
+     75.0
+    ],
+    "bounds_max": [
+     2866.7295593006365,
+     3264.1016151377544,
+     700.0
+    ],
+    "old_bounds_min": [
+     -4100.0,
+     -2200.0,
+     75.0
+    ],
+    "old_bounds_max": [
+     1000.0,
+     1800.0,
+     700.0
+    ],
+    "gain_cm": 1845.253468538979,
+    "grid_cm": 100,
+    "max_route_cm": 8000,
+    "old_region_spawn": [
+     -2000.0,
+     -850.0,
+     201.635
+    ],
+    "spawn": [
+     -3900,
+     -450,
+     193.4189514582439
+    ],
+    "yaw": -146.78231096004754,
+    "route_to_old_spawn": [
+     [
+      -3900,
+      -450,
+      193.4189514582439
+     ],
+     [
+      -3900,
+      -550,
+      193.41895145824196
+     ],
+     [
+      -3900,
+      -650,
+      193.4189514582401
+     ],
+     [
+      -3900,
+      -750,
+      193.41895145823815
+     ],
+     [
+      -3900,
+      -850,
+      193.41895145823628
+     ],
+     [
+      -3800,
+      -850,
+      193.83530254572122
+     ],
+     [
+      -3700,
+      -850,
+      193.83530254572122
+     ],
+     [
+      -3600,
+      -850,
+      193.83530254572122
+     ],
+     [
+      -3500,
+      -850,
+      193.83530254572122
+     ],
+     [
+      -3400,
+      -850,
+      193.83530254572122
+     ],
+     [
+      -3300,
+      -850,
+      193.83530254572122
+     ],
+     [
+      -3200,
+      -850,
+      193.83530254572122
+     ],
+     [
+      -3100,
+      -850,
+      193.83530254572122
+     ],
+     [
+      -3000,
+      -850,
+      193.83530274897976
+     ],
+     [
+      -2900,
+      -850,
+      193.83530311533767
+     ],
+     [
+      -2800,
+      -850,
+      193.83530348169558
+     ],
+     [
+      -2700,
+      -850,
+      193.83530392195692
+     ],
+     [
+      -2600,
+      -850,
+      193.83530400262836
+     ],
+     [
+      -2500,
+      -850,
+      193.83530362102158
+     ],
+     [
+      -2400,
+      -850,
+      193.83530323941488
+     ],
+     [
+      -2300,
+      -850,
+      193.8353028525853
+     ],
+     [
+      -2200,
+      -850,
+      193.83530245351318
+     ],
+     [
+      -2100,
+      -850,
+      193.835302054441
+     ],
+     [
+      -2000,
+      -850,
+      193.83530165536888
+     ]
+    ],
+    "requested_distance_cm": 3690.506937077958,
+    "revision_exception": null
+   },
+   "launch_map": "/Game/Auditor/Tasks/U018/R03/TaskMap",
+   "remote_task": "U018"
+  },
+  "U020": {
+   "task": {
+    "id": "U020",
+    "revision": 4,
+    "case_id": "U020-R04-UE561-C02",
+    "case_type": "bug",
+    "family": "urban",
+    "environment": "urban-city / Junction / 路口",
+    "scene_id": "junction",
+    "scene_i18n": {
+     "zh": "路口",
+     "en": "Junction"
+    },
+    "title": "路面接缝照明截断",
+    "description": "连续路面上的阳光带在一条接缝处突然中断，形成没有对应遮挡物的明暗硬边。",
+    "description_i18n": {
+     "zh": "连续路面上的阳光带在一条接缝处突然中断，形成没有对应遮挡物的明暗硬边。",
+     "en": "A band of sunlight stops abruptly at a pavement seam, creating a hard lighting edge with no corresponding obstruction."
+    },
+    "target": {
+     "actor_name": "StaticMeshActor_92",
+     "actor_label": "SM_Road_junction4",
+     "actor_guid": "cb9b700b-a6173f2e-9319d704-fde94cf2",
+     "actor_class": "/Script/Engine.StaticMeshActor",
+     "asset": "/Game/NYCBuildingVolume2/Static_Meshes/Props/SM_Road_junction.SM_Road_junction",
+     "location_cm": [
+      -1663.001499,
+      -407.47939,
+      76.87661
+     ],
+     "role": "affected_object",
+     "description_i18n": {
+      "zh": "路口西侧橙色路障前的路面接缝。",
+      "en": "The pavement seam in front of the western orange barrier."
+     }
+    },
+    "related_objects": [],
+    "category": "visual",
+    "kind": "shadow_error",
+    "trigger": "static",
+    "effect": "lighting",
+    "source_taxonomy": {
+     "primary_category": "visual",
+     "kind": "shadow_error",
+     "trigger": "static",
+     "effect": "lighting",
+     "secondary_symptoms": []
+    },
+    "subcategory": "V3",
+    "taxonomy": {
+     "version": "user-2026-09-12-scene-semantics",
+     "category_id": "visual",
+     "category": {
+      "en": "Visual consistency",
+      "zh": "视觉一致性"
+     },
+     "code": "V3",
+     "subcategory_id": "visual.illumination",
+     "subcategory": {
+      "en": "Shadow / lighting anomalies",
+      "zh": "阴影／光照异常"
+     }
+    },
+    "taxonomy_label": "视觉一致性 · 阴影／光照异常",
+    "taxonomy_mapping": {
+     "status": "service_category_mapping",
+     "notes": "",
+     "secondary_service_codes": []
+    },
+    "rubrics": "A band of sunlight stops abruptly at a pavement seam, creating a hard lighting edge with no corresponding obstruction.\n连续路面上的阳光带在一条接缝处突然中断，形成没有对应遮挡物的明暗硬边。",
+    "rubrics_i18n": {
+     "zh": {
+      "criteria": "连续路面上的阳光带在一条接缝处突然中断，形成没有对应遮挡物的明暗硬边。",
+      "expected": "没有遮挡变化时，阳光应跨越路面接缝连续延伸。",
+      "steps": "沿路口向西走，观察西侧橙色路障前约一米半处的路面接缝，侧移比较接缝两侧的阳光。"
+     },
+     "en": {
+      "criteria": "A band of sunlight stops abruptly at a pavement seam, creating a hard lighting edge with no corresponding obstruction.",
+      "expected": "Sunlight should continue across pavement seams when there is no change in obstruction.",
+      "steps": "Walk west across the junction and inspect the pavement seam about one and a half metres in front of the western orange barrier. Sidestep to compare the sunlight on both sides."
+     }
+    },
+    "map": "/Game/Auditor/Migration/UE561/U020/R04/TaskMap_Candidate02",
+    "sha256": "7acd9f23f22de7dc0d5577409d7952d91275db7c806b1c6924da2821203456ab",
+    "case_path": "/?case=U020",
+    "build_sha256": "142b172a2886d116e3777108cfa1cfbc90d2a47ef3183fa0077156434c346f28",
+    "package_id": "202ed1c5db7a93bd303550944886785aa5fed01e7315327dd7fd3a04e850c6fb",
+    "package_archive_sha256": "7f26752180ff9b0f9a088ba562e4b7f63f178e79cebeb3795f272c75b08a0c88",
+    "engine_version": "5.6.1",
+    "runtime_switch": false,
+    "observation_protocol": {
+     "start": [
+      -2000,
+      -850,
+      201.635
+     ],
+     "bounds": {
+      "min": [
+       -4100,
+       -2200,
+       75
+      ],
+      "max": [
+       1000,
+       1800,
+       700
+      ]
+     },
+     "required_actions": [
+      "Walk west along the open junction roadway to approximately [-3350,-1000].",
+      "At normal eye height look west-northwest toward the road seam before the orange barriers. The sunlit stripe must continue across this road join; the candidate near side stops receiving direct sun."
+     ],
+     "evidence_mode": "fixed_view_lighting_seam_pair",
+     "repetitions": 2,
+     "observer_eye": [
+      -3350,
+      -1000,
+      257.635
+     ],
+     "observer_aim": [
+      -3890,
+      -800,
+      101.635
+     ],
+     "start_override": false
+    },
+    "task_configuration": {
+     "region_maps_override": {
+      "before": [
+       "/Game/Auditor/Migration/Core18_UE561/Baselines/RearLane_Cropped_Candidate03",
+       "/Game/Auditor/Migration/Core18_UE561/Baselines/ServiceLane_Cropped_Candidate03",
+       "/Game/Auditor/Migration/Core18_UE561/Baselines/Shopfront_Cropped_Candidate03",
+       "/Game/Auditor/Migration/Core18_UE561/Baselines/Junction_Cropped_Candidate03"
+      ],
+      "after": [
+       "/Game/Auditor/Migration/UE561/U020/R04/TaskMap_Candidate02"
+      ],
+      "reason": "isolate cooked task from clean and unrelated task routes"
+     }
+    },
+    "baseline_reference": {
+     "map": "/Game/Auditor/Migration/Core18_UE561/Baselines/Junction_Cropped_Candidate03",
+     "sha256": "cc0e6b741203069fb17562a64e86953f94eaef083894c408fa24ada381e80e62",
+     "source_baseline": {
+      "map": "/Game/Auditor/Urban/Cropped/Junction_Cropped",
+      "sha256": "cb19018cf16d0e476710ba24f58720c10fb3276d0a242caa7055708bfb8d4c9c",
+      "acceptance_report": "project/NYC_Building_Volume2_Cropped/Saved/cropped-map-start-sync.json"
+     }
+    },
+    "verification": {
+     "map_reopen_passed": true,
+     "packaged_runtime_passed": true,
+     "evidence_root": "/home/ubuntu/unreal-auditor/builds/core18-ue561-20260911/audit",
+     "human_acceptance": false,
+     "guided_qa_passed": false
+    },
+    "metadata_provenance": {
+     "source_task_record": "repository/tasks/urban-city/U020/R04/task-private.json",
+     "source_task_record_sha256": "05b9b9dd0f335794306b01735482613f55101c643c5a685c02d27508df02be80",
+     "migration_receipt": "/home/ubuntu/unreal-auditor/builds/core18-ue561-20260911/audit/cases/U020/TaskMap_Candidate02/U020-receipt.json",
+     "migration_receipt_sha256": "05d024a9ba1a6f2d62bc9f7750ad562ab650d1f51406529ce7eeceb1105ea0ef",
+     "map_identity_source": "/home/ubuntu/unreal-auditor/builds/core18-ue561-20260911/audit/artifact-manifest.json"
+    },
+    "review_mode": "informed_internal_review",
+    "metadata_schema_version": 1,
+    "exploration_revision": {
+     "version": "unreal-exploration-v3-20260917",
+     "policy_sha256": "e64cd8fdf5e4618587f7c0a41eecbc32f5257243c4d2431dc144d35671ecf6cb",
+     "previous_policy_sha256": "bac9dd9b5a47a7c71acf7d0f001dfe1b198a6f8c4e954894869e521766ca808d"
+    },
+    "review_compatible_versions": [
+     {
+      "revision": 4,
+      "sha256": "7acd9f23f22de7dc0d5577409d7952d91275db7c806b1c6924da2821203456ab",
+      "build_sha256": "b054d5e0112410515b6d85029534492868d349ff4ef0b95bf95e5f78f51f051e"
+     }
+    ]
+   },
+   "family": "urban",
+   "case_type": "bug",
+   "binary": "/home/ec2-user/unreal-urban-ipc-20260919/packages/urban-c6f314070433/Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
+   "build_sha256": "142b172a2886d116e3777108cfa1cfbc90d2a47ef3183fa0077156434c346f28",
+   "aws_binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/urban-c6f314070433/Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
+   "aws_build_sha256": "f9f996a242c44117947427e35749f7c8f8fffe8004a3248f796645540e648e40",
+   "runtime_map": "/Game/Auditor/Migration/UE561/U020/R04/TaskMap_Candidate02",
+   "game_args": [
+    "-vulkan",
+    "-sm6",
+    "-PixelStreamingWebRTCMaxFps=30",
+    "-ExecCmds=t.MaxFPS 30,DisableAllScreenMessages",
+    "-PixelStreamingWebRTCMaxBitrate=3000000",
+    "-PixelStreamingWebRTCStartBitrate=1000000"
+   ],
+   "extra_args": [
+    "-AuditorExplorationTask=U020",
+    "-AuditorExplorationPolicy=/home/ec2-user/gemini-unreal-nomap-20260919/pinned-production/policies/e64cd8fdf5e4618587f7c0a41eecbc32f5257243c4d2431dc144d35671ecf6cb"
+   ],
+   "policy_version": "unreal-exploration-v3-20260917",
+   "policy_path": "/home/ec2-user/gemini-unreal-nomap-20260919/pinned-production/policies/e64cd8fdf5e4618587f7c0a41eecbc32f5257243c4d2431dc144d35671ecf6cb",
+   "policy": {
+    "id": "U020",
+    "family": "urban",
+    "map": "/Game/Auditor/Migration/UE561/U020/R04/TaskMap_Candidate02",
+    "case_type": "bug",
+    "focus": [
+     -1645.7630954019387,
+     -379.89052250470104,
+     101.22342911142647
+    ],
+    "focus_source": "current map target actor",
+    "target": "StaticMeshActor_92",
+    "bounds_min": [
+     -5966.7295593006365,
+     -3664.1016151377544,
+     75.0
+    ],
+    "bounds_max": [
+     2866.7295593006365,
+     3264.1016151377544,
+     700.0
+    ],
+    "old_bounds_min": [
+     -4100.0,
+     -2200.0,
+     75.0
+    ],
+    "old_bounds_max": [
+     1000.0,
+     1800.0,
+     700.0
+    ],
+    "gain_cm": 1014.2390683161398,
+    "grid_cm": 100,
+    "max_route_cm": 8000,
+    "old_region_spawn": [
+     -2000.0,
+     -850.0,
+     201.635
+    ],
+    "spawn": [
+     -2000,
+     -1950,
+     193.8354793776143
+    ],
+    "yaw": 223.2861980936876,
+    "route_to_old_spawn": [
+     [
+      -2000,
+      -1950,
+      193.8354793776143
+     ],
+     [
+      -2000,
+      -1850,
+      193.83546392032588
+     ],
+     [
+      -2000,
+      -1750,
+      193.83544836431636
+     ],
+     [
+      -2000,
+      -1650,
+      193.83543250156987
+     ],
+     [
+      -2000,
+      -1550,
+      193.83541663882332
+     ],
+     [
+      -2000,
+      -1450,
+      193.8354007760768
+     ],
+     [
+      -2000,
+      -1350,
+      193.83538470115232
+     ],
+     [
+      -2000,
+      -1250,
+      193.835368068349
+     ],
+     [
+      -2000,
+      -1150,
+      193.83535143554565
+     ],
+     [
+      -2000,
+      -1050,
+      193.83533480274232
+     ],
+     [
+      -2000,
+      -950,
+      193.835318169939
+     ],
+     [
+      -2000,
+      -850,
+      193.83530165536888
+     ]
+    ],
+    "requested_distance_cm": 1602.8702817342858,
+    "revision_exception": null
+   },
+   "launch_map": "/Game/Auditor/Migration/UE561/U020/R04/TaskMap_Candidate02",
+   "remote_task": "U020"
+  },
+  "U021": {
+   "task": {
+    "id": "U021",
+    "revision": 4,
+    "case_id": "U021-R04-UE561-C02",
+    "case_type": "bug",
+    "family": "urban",
+    "environment": "urban-city / Shopfront / 店面街区",
+    "scene_id": "shopfront",
+    "scene_i18n": {
+     "zh": "店面街区",
+     "en": "Shopfront"
+    },
+    "title": "玻璃覆盖实体墙",
+    "description": "店面玻璃错误地覆盖在前方的实体窗框和墙面上，侧移时覆盖边界发生变化。",
+    "description_i18n": {
+     "zh": "店面玻璃错误地覆盖在前方的实体窗框和墙面上，侧移时覆盖边界发生变化。",
+     "en": "The shopfront glass appears over solid window frames and walls that should obscure it, with the overlap changing as you sidestep."
+    },
+    "target": {
+     "actor_name": "StaticMeshActor_142",
+     "actor_label": "SM_Building_A",
+     "actor_guid": "4d31d6fa-165c385c-9baecd7d-6c7a5c78",
+     "actor_class": "/Script/Engine.StaticMeshActor",
+     "asset": "/Game/NYCBuildingVolume2/Static_Meshes/Buildings/SM_Building_A.SM_Building_A",
+     "location_cm": [
+      439.217461,
+      -2277.328944,
+      97.39709
+     ],
+     "role": "affected_object",
+     "description_i18n": {
+      "zh": "西侧咖啡椅后方白色窗框处的店面玻璃。",
+      "en": "The shopfront glass at the white window frame behind the western café chairs."
+     }
+    },
+    "related_objects": [],
+    "category": "visual",
+    "kind": "occlusion_error",
+    "trigger": "view_angle",
+    "effect": "visibility",
+    "source_taxonomy": {
+     "primary_category": "visual",
+     "kind": "occlusion_error",
+     "trigger": "view_angle",
+     "effect": "visibility",
+     "secondary_symptoms": []
+    },
+    "subcategory": "V1",
+    "taxonomy": {
+     "version": "user-2026-09-12-scene-semantics",
+     "category_id": "visual",
+     "category": {
+      "en": "Visual consistency",
+      "zh": "视觉一致性"
+     },
+     "code": "V1",
+     "subcategory_id": "visual.visibility",
+     "subcategory": {
+      "en": "View / distance-dependent visibility",
+      "zh": "视角／距离相关的可见性异常"
+     }
+    },
+    "taxonomy_label": "视觉一致性 · 可见性异常",
+    "taxonomy_mapping": {
+     "status": "service_category_mapping",
+     "notes": "",
+     "secondary_service_codes": []
+    },
+    "rubrics": "The shopfront glass appears over solid window frames and walls that should obscure it, with the overlap changing as you sidestep.\n店面玻璃错误地覆盖在前方的实体窗框和墙面上，侧移时覆盖边界发生变化。",
+    "rubrics_i18n": {
+     "zh": {
+      "criteria": "店面玻璃错误地覆盖在前方的实体窗框和墙面上，侧移时覆盖边界发生变化。",
+      "expected": "前方的实体窗框和墙面应遮住后方玻璃。",
+      "steps": "走向店面西侧的咖啡桌椅，查看椅背后方白色窗框与玻璃的交界，再向侧面移动。"
+     },
+     "en": {
+      "criteria": "The shopfront glass appears over solid window frames and walls that should obscure it, with the overlap changing as you sidestep.",
+      "expected": "Solid frames and walls in front of the glass should obscure it.",
+      "steps": "Approach the café seating on the west side of the shopfront. Inspect the glass beside the white window frame behind the chairs, then sidestep."
+     }
+    },
+    "map": "/Game/Auditor/Migration/UE561/U021/R04/TaskMap_Candidate02",
+    "sha256": "25a8e7090245bd3ff707d848a5fab12360ab1554c64a7e3551a4e8cd6f143717",
+    "case_path": "/?case=U021",
+    "build_sha256": "142b172a2886d116e3777108cfa1cfbc90d2a47ef3183fa0077156434c346f28",
+    "package_id": "202ed1c5db7a93bd303550944886785aa5fed01e7315327dd7fd3a04e850c6fb",
+    "package_archive_sha256": "7f26752180ff9b0f9a088ba562e4b7f63f178e79cebeb3795f272c75b08a0c88",
+    "engine_version": "5.6.1",
+    "runtime_switch": false,
+    "observation_protocol": {
+     "start": [
+      1500.0,
+      -1100.0,
+      201.219
+     ],
+     "bounds": {
+      "min": [
+       600.0,
+       -1750.0,
+       75.0
+      ],
+      "max": [
+       3600.0,
+       850.0,
+       700.0
+      ]
+     },
+     "required_actions": [
+      "From unchanged baseline spawn, approach cafe frontage and face the white opaque window crossbars beside the west chairs.",
+      "Compare clean and candidate at [1660,-1400,265.219] and [1560,-1250,265.219], looking toward [1000,-1655,180]: glass incorrectly overlays opaque framing and adjacent wall along sharp projected boundaries.",
+      "Move sideways: overlay changes with glass projection; chair backs below the projection remain visible. The same material slot affects all shop glass panels on this single building."
+     ],
+     "evidence_mode": "matched_foreground_depth_occlusion_pair",
+     "repetitions": 2
+    },
+    "task_configuration": {
+     "region_maps_override": {
+      "before": [
+       "/Game/Auditor/Migration/Core18_UE561/Baselines/RearLane_Cropped_Candidate03",
+       "/Game/Auditor/Migration/Core18_UE561/Baselines/ServiceLane_Cropped_Candidate03",
+       "/Game/Auditor/Migration/Core18_UE561/Baselines/Shopfront_Cropped_Candidate03",
+       "/Game/Auditor/Migration/Core18_UE561/Baselines/Junction_Cropped_Candidate03"
+      ],
+      "after": [
+       "/Game/Auditor/Migration/UE561/U021/R04/TaskMap_Candidate02"
+      ],
+      "reason": "isolate cooked task from clean and unrelated task routes"
+     }
+    },
+    "baseline_reference": {
+     "map": "/Game/Auditor/Migration/Core18_UE561/Baselines/Shopfront_Cropped_Candidate03",
+     "sha256": "1a5a7ac42627f757e55dc076667d321aceb669b33966f00e11d4c640ea4b93c8",
+     "source_baseline": {
+      "map": "/Game/Auditor/Urban/Cropped/Shopfront_Cropped",
+      "sha256": "a2c8aed22ca3e0fcaf6aa622d9910dfb6ffb7fb6f49f555b7cc515fd3aaa70c7",
+      "acceptance_report": "project/NYC_Building_Volume2_Cropped/Saved/cropped-map-start-sync.json"
+     }
+    },
+    "verification": {
+     "map_reopen_passed": true,
+     "packaged_runtime_passed": true,
+     "evidence_root": "/home/ubuntu/unreal-auditor/builds/core18-ue561-20260911/audit",
+     "human_acceptance": false,
+     "guided_qa_passed": false
+    },
+    "metadata_provenance": {
+     "source_task_record": "repository/tasks/urban-city/U021/R04/task-private.json",
+     "source_task_record_sha256": "5ee37d500c632a691a78abe5e98fdcc1ff55ec2b8e8021b4032e33ffc0c2a206",
+     "migration_receipt": "/home/ubuntu/unreal-auditor/builds/core18-ue561-20260911/audit/cases/U021/TaskMap_Candidate02/U021-receipt.json",
+     "migration_receipt_sha256": "8a52b9f84e8ac5331d0fa23822faca5c6cd9d865bf8d9735a2ddfb1bc7ab075d",
+     "map_identity_source": "/home/ubuntu/unreal-auditor/builds/core18-ue561-20260911/audit/artifact-manifest.json"
+    },
+    "review_mode": "informed_internal_review",
+    "metadata_schema_version": 1,
+    "exploration_revision": {
+     "version": "unreal-exploration-v3-20260917",
+     "policy_sha256": "e64cd8fdf5e4618587f7c0a41eecbc32f5257243c4d2431dc144d35671ecf6cb",
+     "previous_policy_sha256": "bac9dd9b5a47a7c71acf7d0f001dfe1b198a6f8c4e954894869e521766ca808d"
+    },
+    "review_compatible_versions": [
+     {
+      "revision": 4,
+      "sha256": "25a8e7090245bd3ff707d848a5fab12360ab1554c64a7e3551a4e8cd6f143717",
+      "build_sha256": "b054d5e0112410515b6d85029534492868d349ff4ef0b95bf95e5f78f51f051e"
+     }
+    ]
+   },
+   "family": "urban",
+   "case_type": "bug",
+   "binary": "/home/ec2-user/unreal-urban-ipc-20260919/packages/urban-c6f314070433/Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
+   "build_sha256": "142b172a2886d116e3777108cfa1cfbc90d2a47ef3183fa0077156434c346f28",
+   "aws_binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/urban-c6f314070433/Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
+   "aws_build_sha256": "f9f996a242c44117947427e35749f7c8f8fffe8004a3248f796645540e648e40",
+   "runtime_map": "/Game/Auditor/Migration/UE561/U021/R04/TaskMap_Candidate02",
+   "game_args": [
+    "-vulkan",
+    "-sm6",
+    "-PixelStreamingWebRTCMaxFps=30",
+    "-ExecCmds=t.MaxFPS 30,DisableAllScreenMessages",
+    "-PixelStreamingWebRTCMaxBitrate=3000000",
+    "-PixelStreamingWebRTCStartBitrate=1000000"
+   ],
+   "extra_args": [
+    "-AuditorExplorationTask=U021",
+    "-AuditorExplorationPolicy=/home/ec2-user/gemini-unreal-nomap-20260919/pinned-production/policies/e64cd8fdf5e4618587f7c0a41eecbc32f5257243c4d2431dc144d35671ecf6cb"
+   ],
+   "policy_version": "unreal-exploration-v3-20260917",
+   "policy_path": "/home/ec2-user/gemini-unreal-nomap-20260919/pinned-production/policies/e64cd8fdf5e4618587f7c0a41eecbc32f5257243c4d2431dc144d35671ecf6cb",
+   "policy": {
+    "id": "U021",
+    "family": "urban",
+    "map": "/Game/Auditor/Migration/UE561/U021/R04/TaskMap_Candidate02",
+    "case_type": "bug",
+    "focus": [
+     508.42055595670297,
+     -2264.8049570506882,
+     1052.0233245744278
+    ],
+    "focus_source": "current map target actor",
+    "target": "StaticMeshActor_142",
+    "bounds_min": [
+     -498.076211353316,
+     -2701.6660498395404,
+     75.0
+    ],
+    "bounds_max": [
+     4698.0762113533165,
+     1801.6660498395404,
+     700.0
+    ],
+    "old_bounds_min": [
+     600.0,
+     -1750.0,
+     75.0
+    ],
+    "old_bounds_max": [
+     3600.0,
+     850.0,
+     700.0
+    ],
+    "gain_cm": 1529.7059788792974,
+    "grid_cm": 100,
+    "max_route_cm": 8000,
+    "old_region_spawn": [
+     1500.0,
+     -1100.0,
+     201.219
+    ],
+    "spawn": [
+     3300,
+     -1000,
+     193.41901580202023
+    ],
+    "yaw": -302.6257362117481,
+    "route_to_old_spawn": [
+     [
+      3300,
+      -1000,
+      193.41901580202023
+     ],
+     [
+      3300,
+      -1100,
+      193.41901580201835
+     ],
+     [
+      3200,
+      -1100,
+      193.41907137601663
+     ],
+     [
+      3100,
+      -1100,
+      193.4191269500149
+     ],
+     [
+      3000,
+      -1100,
+      193.41918252401325
+     ],
+     [
+      2900,
+      -1100,
+      193.41923809801153
+     ],
+     [
+      2800,
+      -1100,
+      193.41929367200987
+     ],
+     [
+      2700,
+      -1100,
+      193.41934924600815
+     ],
+     [
+      2600,
+      -1100,
+      193.4194048200065
+     ],
+     [
+      2500,
+      -1100,
+      193.41946039400477
+     ],
+     [
+      2400,
+      -1100,
+      193.4195159680031
+     ],
+     [
+      2300,
+      -1100,
+      193.4195715420014
+     ],
+     [
+      2200,
+      -1100,
+      193.41962711599967
+     ],
+     [
+      2100,
+      -1100,
+      193.419682689998
+     ],
+     [
+      2000,
+      -1100,
+      193.41892679601193
+     ],
+     [
+      1900,
+      -1100,
+      193.41898237001027
+     ],
+     [
+      1800,
+      -1100,
+      193.41903794400855
+     ],
+     [
+      1700,
+      -1100,
+      193.4190935180069
+     ],
+     [
+      1600,
+      -1100,
+      193.41914909200517
+     ],
+     [
+      1500,
+      -1100,
+      193.4192046660035
+     ]
+    ],
+    "requested_distance_cm": 3059.411957758595,
+    "revision_exception": null
+   },
+   "launch_map": "/Game/Auditor/Migration/UE561/U021/R04/TaskMap_Candidate02",
+   "remote_task": "U021"
+  },
+  "U023": {
+   "task": {
+    "id": "U023",
+    "revision": 2,
+    "case_id": "U023-R02-UE561-C02",
+    "case_type": "bug",
+    "family": "urban",
+    "environment": "urban-city / Junction / 路口",
+    "scene_id": "junction",
+    "scene_i18n": {
+     "zh": "路口",
+     "en": "Junction"
+    },
+    "title": "转开视线后椅子隐藏",
+    "description": "一把咖啡椅在转开视线后消失，再看回来也不恢复。",
+    "description_i18n": {
+     "zh": "一把咖啡椅在转开视线后消失，再看回来也不恢复。",
+     "en": "A café chair disappears after you look away and does not return when you look back."
+    },
+    "target": {
+     "actor_name": "StaticMeshActor_324",
+     "actor_label": "SM_Chair_A2",
+     "actor_guid": "b5f7961c-866630c3-9f025b42-fa81906a",
+     "actor_class": "/Script/Engine.StaticMeshActor",
+     "asset": "/Game/NYCBuildingVolume2/Static_Meshes/Props/SM_Chair_A.SM_Chair_A",
+     "location_cm": [
+      42.649223,
+      -1472.868339,
+      106.667134
+     ],
+     "role": "affected_object",
+     "description_i18n": {
+      "zh": "路口出生点前方咖啡区的目标椅子。",
+      "en": "The target chair in the café area ahead of the junction spawn."
+     }
+    },
+    "related_objects": [],
+    "category": "state",
+    "kind": "lookaway_hide",
+    "trigger": "view_angle",
+    "effect": "visibility",
+    "source_taxonomy": {
+     "primary_category": "state",
+     "kind": "lookaway_hide",
+     "trigger": "view_angle",
+     "effect": "visibility",
+     "secondary_symptoms": []
+    },
+    "subcategory": "T1",
+    "taxonomy": {
+     "version": "user-2026-09-12-scene-semantics",
+     "category_id": "state",
+     "category": {
+      "en": "Temporal consistency",
+      "zh": "时间一致性"
+     },
+     "code": "T1",
+     "subcategory_id": "state.existence",
+     "subcategory": {
+      "en": "Existence changes",
+      "zh": "存在性变化"
+     }
+    },
+    "taxonomy_label": "时间一致性 · 存在性变化",
+    "taxonomy_mapping": {
+     "status": "service_category_mapping",
+     "notes": "",
+     "secondary_service_codes": []
+    },
+    "rubrics": "A café chair disappears after you look away and does not return when you look back.\n一把咖啡椅在转开视线后消失，再看回来也不恢复。",
+    "rubrics_i18n": {
+     "zh": {
+      "criteria": "一把咖啡椅在转开视线后消失，再看回来也不恢复。",
+      "expected": "椅子应留在原处并保持可见。",
+      "steps": "先正面看清路口前方的目标咖啡椅，转身背向它，再看回来。重新加载案例可再次测试。"
+     },
+     "en": {
+      "criteria": "A café chair disappears after you look away and does not return when you look back.",
+      "expected": "The chair should remain in place and visible.",
+      "steps": "Look directly at the target café chair ahead in the junction, turn to face away, then look back. Reload the case to repeat."
+     }
+    },
+    "map": "/Game/Auditor/Migration/UE561/U023/R02/TaskMap_Candidate02",
+    "sha256": "09b7f97d8edd8115d2e8192738001d11993d36287bf21b8eb214e498057c207b",
+    "case_path": "/?case=U023",
+    "build_sha256": "142b172a2886d116e3777108cfa1cfbc90d2a47ef3183fa0077156434c346f28",
+    "package_id": "202ed1c5db7a93bd303550944886785aa5fed01e7315327dd7fd3a04e850c6fb",
+    "package_archive_sha256": "7f26752180ff9b0f9a088ba562e4b7f63f178e79cebeb3795f272c75b08a0c88",
+    "engine_version": "5.6.1",
+    "runtime_switch": false,
+    "observation_protocol": {
+     "start": [
+      43,
+      -1100,
+      201.635
+     ],
+     "bounds": {
+      "min": [
+       -4100.0,
+       -2200.0,
+       75.0
+      ],
+      "max": [
+       1000.0,
+       1800.0,
+       700.0
+      ]
+     },
+     "required_actions": [
+      "At the cafe approach start, directly observe the chair and its stable neighboring table and chairs before turning away.",
+      "Turn to look more than 90 degrees away from the chair, then look back. Observe the chair remains absent while its cafe peers remain.",
+      "Restart the map to restore the initial chair; repeat the action sequence three times for formal runtime evidence."
+     ],
+     "evidence_mode": "simulation_timestamped_seen_lookaway_lookback_visibility_collision_trace_and_frames",
+     "repetitions": 3
+    },
+    "task_configuration": {
+     "start_override": {
+      "location": [
+       43,
+       -1100,
+       201.635
+      ],
+      "rotation": [
+       -14,
+       -90,
+       0
+      ],
+      "reason": "Frame the cafe chair and its peers at 3.73 m before lookaway arming; avoids a distant first encounter and preserves normal street exploration."
+     },
+     "region_maps_override": {
+      "before": [
+       "/Game/Auditor/Migration/Core18_UE561/Baselines/RearLane_Cropped_Candidate03",
+       "/Game/Auditor/Migration/Core18_UE561/Baselines/ServiceLane_Cropped_Candidate03",
+       "/Game/Auditor/Migration/Core18_UE561/Baselines/Shopfront_Cropped_Candidate03",
+       "/Game/Auditor/Migration/Core18_UE561/Baselines/Junction_Cropped_Candidate03"
+      ],
+      "after": [
+       "/Game/Auditor/Migration/UE561/U023/R02/TaskMap_Candidate02"
+      ],
+      "reason": "isolate cooked task from clean and unrelated task routes"
+     }
+    },
+    "baseline_reference": {
+     "map": "/Game/Auditor/Migration/Core18_UE561/Baselines/Junction_Cropped_Candidate03",
+     "sha256": "cc0e6b741203069fb17562a64e86953f94eaef083894c408fa24ada381e80e62",
+     "source_baseline": {
+      "map": "/Game/Auditor/Urban/Cropped/Junction_Cropped",
+      "sha256": "cb19018cf16d0e476710ba24f58720c10fb3276d0a242caa7055708bfb8d4c9c",
+      "acceptance_report": "project/NYC_Building_Volume2_Cropped/Saved/cropped-map-start-sync.json"
+     }
+    },
+    "verification": {
+     "map_reopen_passed": true,
+     "packaged_runtime_passed": true,
+     "evidence_root": "/home/ubuntu/unreal-auditor/builds/core18-ue561-20260911/audit",
+     "human_acceptance": false,
+     "guided_qa_passed": false
+    },
+    "metadata_provenance": {
+     "source_task_record": "repository/tasks/urban-city/U023/R02/task-private.json",
+     "source_task_record_sha256": "de75795706bcd3f31b57889aef95a57709628a3abb467e9754972f43bc96a5bc",
+     "migration_receipt": "/home/ubuntu/unreal-auditor/builds/core18-ue561-20260911/audit/cases/U023/TaskMap_Candidate02/U023-receipt.json",
+     "migration_receipt_sha256": "32dbbe0cb76bde1e8632e0a68f036f6bf74da4b2560849ad001de94105e96aa4",
+     "map_identity_source": "/home/ubuntu/unreal-auditor/builds/core18-ue561-20260911/audit/artifact-manifest.json"
+    },
+    "review_mode": "informed_internal_review",
+    "metadata_schema_version": 1,
+    "exploration_revision": {
+     "version": "unreal-exploration-v3-20260917",
+     "policy_sha256": "e64cd8fdf5e4618587f7c0a41eecbc32f5257243c4d2431dc144d35671ecf6cb",
+     "previous_policy_sha256": "bac9dd9b5a47a7c71acf7d0f001dfe1b198a6f8c4e954894869e521766ca808d"
+    },
+    "review_compatible_versions": [
+     {
+      "revision": 2,
+      "sha256": "09b7f97d8edd8115d2e8192738001d11993d36287bf21b8eb214e498057c207b",
+      "build_sha256": "b054d5e0112410515b6d85029534492868d349ff4ef0b95bf95e5f78f51f051e"
+     }
+    ]
+   },
+   "family": "urban",
+   "case_type": "bug",
+   "binary": "/home/ec2-user/unreal-urban-ipc-20260919/packages/urban-c6f314070433/Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
+   "build_sha256": "142b172a2886d116e3777108cfa1cfbc90d2a47ef3183fa0077156434c346f28",
+   "aws_binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/urban-c6f314070433/Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
+   "aws_build_sha256": "f9f996a242c44117947427e35749f7c8f8fffe8004a3248f796645540e648e40",
+   "runtime_map": "/Game/Auditor/Migration/UE561/U023/R02/TaskMap_Candidate02",
+   "game_args": [
+    "-vulkan",
+    "-sm6",
+    "-PixelStreamingWebRTCMaxFps=30",
+    "-ExecCmds=t.MaxFPS 30,DisableAllScreenMessages",
+    "-PixelStreamingWebRTCMaxBitrate=3000000",
+    "-PixelStreamingWebRTCStartBitrate=1000000"
+   ],
+   "extra_args": [
+    "-AuditorExplorationTask=U023",
+    "-AuditorExplorationPolicy=/home/ec2-user/gemini-unreal-nomap-20260919/pinned-production/policies/e64cd8fdf5e4618587f7c0a41eecbc32f5257243c4d2431dc144d35671ecf6cb"
+   ],
+   "policy_version": "unreal-exploration-v3-20260917",
+   "policy_path": "/home/ec2-user/gemini-unreal-nomap-20260919/pinned-production/policies/e64cd8fdf5e4618587f7c0a41eecbc32f5257243c4d2431dc144d35671ecf6cb",
+   "policy": {
+    "id": "U023",
+    "family": "urban",
+    "map": "/Game/Auditor/Migration/UE561/U023/R02/TaskMap_Candidate02",
+    "case_type": "bug",
+    "focus": [
+     47.563016150325026,
+     -1472.868243324951,
+     170.72913451499116
+    ],
+    "focus_source": "current map target actor",
+    "target": "StaticMeshActor_324",
+    "bounds_min": [
+     -5966.7295593006365,
+     -3664.1016151377544,
+     75.0
+    ],
+    "bounds_max": [
+     2866.7295593006365,
+     3264.1016151377544,
+     700.0
+    ],
+    "old_bounds_min": [
+     -4100.0,
+     -2200.0,
+     75.0
+    ],
+    "old_bounds_max": [
+     1000.0,
+     1800.0,
+     700.0
+    ],
+    "gain_cm": 1005.8422656314635,
+    "grid_cm": 100,
+    "max_route_cm": 8000,
+    "old_region_spawn": [
+     43.0,
+     -1100.0,
+     201.635
+    ],
+    "spawn": [
+     243,
+     -100,
+     193.8350219143505
+    ],
+    "yaw": -247.10200022904726,
+    "route_to_old_spawn": [
+     [
+      243,
+      -100,
+      193.8350219143505
+     ],
+     [
+      243,
+      -200,
+      193.83509456338294
+     ],
+     [
+      243,
+      -300,
+      193.83516721241537
+     ],
+     [
+      243,
+      -400,
+      193.83522855842367
+     ],
+     [
+      243,
+      -500,
+      193.83524500004532
+     ],
+     [
+      243,
+      -600,
+      193.83526144166703
+     ],
+     [
+      243,
+      -700,
+      193.8352778832887
+     ],
+     [
+      243,
+      -800,
+      193.83529432491036
+     ],
+     [
+      243,
+      -900,
+      193.83531076653207
+     ],
+     [
+      243,
+      -1000,
+      193.83532720815376
+     ],
+     [
+      243,
+      -1100,
+      193.8353436497754
+     ],
+     [
+      143,
+      -1100,
+      193.8353436497754
+     ],
+     [
+      43,
+      -1100,
+      193.8353436497754
+     ]
+    ],
+    "requested_distance_cm": 1378.7384281172458,
+    "revision_exception": null
+   },
+   "launch_map": "/Game/Auditor/Migration/UE561/U023/R02/TaskMap_Candidate02",
+   "remote_task": "U023"
+  },
+  "U024": {
+   "task": {
+    "id": "U024",
+    "revision": 2,
+    "case_id": "U024-R02-UE561",
+    "case_type": "bug",
+    "family": "urban",
+    "environment": "urban-city / Rear lane courtyard / 后巷庭院",
+    "scene_id": "rear_lane",
+    "scene_i18n": {
+     "zh": "后巷庭院",
+     "en": "Rear lane courtyard"
+    },
+    "title": "返回时纸箱位移",
+    "description": "纸箱堆在离开再返回后，无人推动便移动了约四米。",
+    "description_i18n": {
+     "zh": "纸箱堆在离开再返回后，无人推动便移动了约四米。",
+     "en": "The stack of cardboard boxes moves about four metres after you walk away and return, without being touched."
+    },
+    "target": {
+     "actor_guid": "bdebfa5c-74b833f2-bf9f9956-819c537b",
+     "actor_name": "StaticMeshActor_3",
+     "actor_label": "RearCourt_Prop_2",
+     "actor_class": "/Script/Engine.StaticMeshActor",
+     "asset": "/Game/NYCBuildingVolume2/Static_Meshes/Props/SM_Cardboardboxes.SM_Cardboardboxes",
+     "location_cm": [
+      2920.0,
+      -4850.0,
+      100.053737
+     ],
+     "rotation_degrees": {
+      "pitch": 0.0,
+      "yaw": 20.0,
+      "roll": -0.0
+     },
+     "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+     },
+     "role": "affected_object"
+    },
+    "related_objects": [],
+    "category": "state",
+    "kind": "return_move",
+    "trigger": "leave_and_return",
+    "effect": "transform",
+    "source_taxonomy": {
+     "primary_category": "state",
+     "kind": "return_move",
+     "trigger": "leave_and_return",
+     "effect": "transform",
+     "secondary_symptoms": []
+    },
+    "subcategory": "T2",
+    "taxonomy": {
+     "version": "user-2026-09-12-scene-semantics",
+     "category_id": "state",
+     "category": {
+      "en": "Temporal consistency",
+      "zh": "时间一致性"
+     },
+     "code": "T2",
+     "subcategory_id": "state.static_attributes",
+     "subcategory": {
+      "en": "Static attribute changes",
+      "zh": "静态属性变化"
+     }
+    },
+    "taxonomy_label": "时间一致性 · 静态属性变化",
+    "taxonomy_mapping": {
+     "status": "service_category_mapping",
+     "notes": "",
+     "secondary_service_codes": []
+    },
+    "rubrics": "The stack of cardboard boxes moves about four metres after you walk away and return, without being touched.\n纸箱堆在离开再返回后，无人推动便移动了约四米。",
+    "rubrics_i18n": {
+     "zh": {
+      "criteria": "纸箱堆在离开再返回后，无人推动便移动了约四米。",
+      "expected": "无人推动时，纸箱堆应保持原位。",
+      "steps": "靠近后巷红色垃圾箱旁的纸箱堆至七米内并看清它，沿巷离开至八米以外，再返回七米内看向纸箱。比较纸箱与红色垃圾箱的位置；重新加载案例可再次测试。"
+     },
+     "en": {
+      "criteria": "The stack of cardboard boxes moves about four metres after you walk away and return, without being touched.",
+      "expected": "The boxes should remain in place when nobody moves them.",
+      "steps": "Look directly at the boxes beside the rear-lane red dumpster from within seven metres. Walk along the lane until more than eight metres away, then return within seven metres and look at the boxes. Compare their position with the dumpster; reload the case to repeat."
+     }
+    },
+    "map": "/Game/Auditor/Tasks/U024/R02/TaskMap",
+    "sha256": "864b835db9cd6898f275dc6d1f656b96bf9968c87a9c80adccd6c621e8129d9b",
+    "case_path": "/?case=U024",
+    "build_sha256": "142b172a2886d116e3777108cfa1cfbc90d2a47ef3183fa0077156434c346f28",
+    "package_id": "91eeaa37a0e2dc944513dd39b535e49c45b701e04cf7a36893a5ed9c7eda7c9c",
+    "package_archive_sha256": "b7756974a5f4765facce21cc8ad00e9746abf22664d879e923c427fd745b7f0d",
+    "engine_version": "5.6.1",
+    "runtime_switch": false,
+    "observation_protocol": {
+     "start": [
+      2050.0,
+      -3950.0,
+      200.0
+     ],
+     "bounds": {
+      "min": [
+       1600.0,
+       -6700.0,
+       75.0
+      ],
+      "max": [
+       3500.0,
+       -3300.0,
+       700.0
+      ]
+     },
+     "required_actions": [
+      "Observe the cardboard pile beside the red dumpster from within seven metres.",
+      "Walk more than eight metres from its original position, then return within seven metres.",
+      "Compare against the dumpster: the pile jumps four metres north while retaining its height and orientation. Reload to repeat."
+     ],
+     "evidence_mode": "simulation_timestamped_leave_return_transform_trace_with_support_measurements_and_frames",
+     "repetitions": 3,
+     "state_parameters": {
+      "near_distance_cm": 700,
+      "far_distance_cm": 800,
+      "facing_dot": 0.35,
+      "offset_cm": [
+       0,
+       400,
+       0
+      ]
+     }
+    },
+    "task_configuration": {
+     "region_maps_override": {
+      "before": [
+       "/Game/Auditor/Migration/Core18_UE561/Baselines/RearLane_Cropped_Candidate03",
+       "/Game/Auditor/Migration/Core18_UE561/Baselines/ServiceLane_Cropped_Candidate03",
+       "/Game/Auditor/Migration/Core18_UE561/Baselines/Shopfront_Cropped_Candidate03",
+       "/Game/Auditor/Migration/Core18_UE561/Baselines/Junction_Cropped_Candidate03"
+      ],
+      "after": [
+       "/Game/Auditor/Migration/UE561/U024/R01/TaskMap_Candidate02"
+      ],
+      "reason": "isolate cooked task from clean and unrelated task routes"
+     },
+     "region_maps_after": [
+      "/Game/Auditor/Tasks/U024/R02/TaskMap"
+     ]
+    },
+    "baseline_reference": {
+     "map": "/Game/Auditor/Migration/Core18_UE561/Baselines/RearLane_Cropped_Candidate03",
+     "sha256": "85f4619116fab5b8cea8c55af8aadcca20ad596ff7fc5faacd0a8352688d580d",
+     "source_baseline": {
+      "map": "/Game/Auditor/Urban/Cropped/RearLane_Cropped",
+      "sha256": "3076c3bea82578628d205e8eeb6097eb2cd541b8f4d1b00f47a810bb287174bd",
+      "acceptance_report": "project/NYC_Building_Volume2_Cropped/Saved/cropped-map-start-sync.json"
+     }
+    },
+    "verification": {
+     "map_reopen_passed": true,
+     "packaged_runtime_passed": true,
+     "human_acceptance": false,
+     "guided_qa_passed": false,
+     "evidence_root": "/home/ubuntu/unreal-auditor/builds/urban-revisions-20260914/audit",
+     "fresh_verification": "/home/ubuntu/unreal-auditor/builds/urban-revisions-20260914/migration/evidence/U024/fresh-verify.json",
+     "runtime_summary": "/home/ubuntu/unreal-auditor/builds/urban-revisions-20260914/migration/runtime-evidence/summary.json",
+     "runtime_runs": 4,
+     "runtime_method": "staged positions, actual scenario Tick; not navigation evidence",
+     "package_audit": "/home/ubuntu/unreal-auditor/builds/urban-revisions-20260914/audit/package-audit.json"
+    },
+    "metadata_provenance": {
+     "source_task_record": "repository/tasks/urban-city/U024/R02/task-private.json",
+     "source_task_record_sha256": "0ee49d122972e98dc032f00f97bee843dce58ab3994737d26b3e2cfd6d25b09a",
+     "source_record_snapshot": "/home/ubuntu/unreal-auditor/builds/urban-revisions-20260914/migration/source-records.json",
+     "source_record_canonical_sha256": "a0a628fb13e5e193f48bd6b000e9af96a1cc93766a6fb6ed903915d1e1e383e6",
+     "migration_receipt": "/home/ubuntu/unreal-auditor/builds/urban-revisions-20260914/migration/evidence/U024/receipt.json",
+     "migration_receipt_sha256": "20da6c5d6121ecccb391bd37eb96c6b6e764e739118cbeb4522bfd1fd76624f1",
+     "map_identity_source": "/home/ubuntu/unreal-auditor/builds/urban-revisions-20260914/migration/metadata-targets.json",
+     "map_identity_source_sha256": "8ee2a1274c295d7b9383a9559244c75208575b923508094f8b9a54ce501ad00d",
+     "fresh_verification_sha256": "d4c75a9683b5c98fc238042a4da3b3b62f92a3adc39d51c9b492d7a08bb0fecd",
+     "runtime_summary_sha256": "df20dd97ae849b76e592c818dcbacf221d16b6666ea64fe8d3a2517e9f5b30bc",
+     "package_audit_sha256": "facc10a4efd85c9a85ffe89493a59c36db2249ba032515268c8ed6a73114b916"
+    },
+    "review_mode": "informed_internal_review",
+    "metadata_schema_version": 1,
+    "content_update": {
+     "version": {
+      "revision": 2,
+      "sha256": "864b835db9cd6898f275dc6d1f656b96bf9968c87a9c80adccd6c621e8129d9b",
+      "build_sha256": "b054d5e0112410515b6d85029534492868d349ff4ef0b95bf95e5f78f51f051e"
+     },
+     "published_on": "2026-09-14",
+     "timezone": "America/Los_Angeles",
+     "summary_i18n": {
+      "zh": "纸箱在离开后返回时位移增至 4 米，并调整触发距离与观察角。",
+      "en": "The box now shifts 4 metres when you leave and return; trigger distances and viewing angles were adjusted."
+     },
+     "publication": "urban-revisions-20260914-v1"
+    },
+    "exploration_revision": {
+     "version": "unreal-exploration-v3-20260917",
+     "policy_sha256": "e64cd8fdf5e4618587f7c0a41eecbc32f5257243c4d2431dc144d35671ecf6cb",
+     "previous_policy_sha256": "bac9dd9b5a47a7c71acf7d0f001dfe1b198a6f8c4e954894869e521766ca808d"
+    },
+    "review_compatible_versions": [
+     {
+      "revision": 2,
+      "sha256": "864b835db9cd6898f275dc6d1f656b96bf9968c87a9c80adccd6c621e8129d9b",
+      "build_sha256": "b054d5e0112410515b6d85029534492868d349ff4ef0b95bf95e5f78f51f051e"
+     }
+    ]
+   },
+   "family": "urban",
+   "case_type": "bug",
+   "binary": "/home/ec2-user/unreal-urban-ipc-20260919/packages/urban-ec94cce5d64b/Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
+   "build_sha256": "142b172a2886d116e3777108cfa1cfbc90d2a47ef3183fa0077156434c346f28",
+   "aws_binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/urban-ec94cce5d64b/Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
+   "aws_build_sha256": "f9f996a242c44117947427e35749f7c8f8fffe8004a3248f796645540e648e40",
+   "runtime_map": "/Game/Auditor/Tasks/U024/R02/TaskMap",
+   "game_args": [
+    "-vulkan",
+    "-sm6",
+    "-PixelStreamingWebRTCMaxFps=30",
+    "-ExecCmds=t.MaxFPS 30,DisableAllScreenMessages",
+    "-PixelStreamingWebRTCMaxBitrate=3000000",
+    "-PixelStreamingWebRTCStartBitrate=1000000"
+   ],
+   "extra_args": [
+    "-AuditorExplorationTask=U024",
+    "-AuditorExplorationPolicy=/home/ec2-user/gemini-unreal-nomap-20260919/pinned-production/policies/e64cd8fdf5e4618587f7c0a41eecbc32f5257243c4d2431dc144d35671ecf6cb"
+   ],
+   "policy_version": "unreal-exploration-v3-20260917",
+   "policy_path": "/home/ec2-user/gemini-unreal-nomap-20260919/pinned-production/policies/e64cd8fdf5e4618587f7c0a41eecbc32f5257243c4d2431dc144d35671ecf6cb",
+   "policy": {
+    "id": "U024",
+    "family": "urban",
+    "map": "/Game/Auditor/Tasks/U024/R02/TaskMap",
+    "case_type": "bug",
+    "focus": [
+     2905.252692831032,
+     -4853.713827379745,
+     148.00358724258496
+    ],
+    "focus_source": "current map target actor",
+    "target": "StaticMeshActor_3",
+    "bounds_min": [
+     904.5517328095666,
+     -7944.486372867092,
+     75.0
+    ],
+    "bounds_max": [
+     4195.448267190433,
+     -2055.513627132909,
+     700.0
+    ],
+    "old_bounds_min": [
+     1600.0,
+     -6700.0,
+     75.0
+    ],
+    "old_bounds_max": [
+     3500.0,
+     -3300.0,
+     700.0
+    ],
+    "gain_cm": 1244.2491110674262,
+    "grid_cm": 100,
+    "max_route_cm": 8000,
+    "old_region_spawn": [
+     2050.0,
+     -3950.0,
+     200.0
+    ],
+    "spawn": [
+     1950,
+     -2550,
+     192.2000024172737
+    ],
+    "yaw": 82.52171747592303,
+    "route_to_old_spawn": [
+     [
+      1950,
+      -2550,
+      192.2000024172737
+     ],
+     [
+      1950,
+      -2650,
+      192.2000024172737
+     ],
+     [
+      1950,
+      -2750,
+      192.2000024172737
+     ],
+     [
+      1950,
+      -2850,
+      192.2000024172737
+     ],
+     [
+      1950,
+      -2950,
+      192.2000024172737
+     ],
+     [
+      1950,
+      -3050,
+      192.2000024172737
+     ],
+     [
+      1950,
+      -3150,
+      192.2000024172737
+     ],
+     [
+      1950,
+      -3250,
+      192.2000024172737
+     ],
+     [
+      1950,
+      -3350,
+      192.2000024172737
+     ],
+     [
+      1950,
+      -3450,
+      192.2000024172737
+     ],
+     [
+      1950,
+      -3550,
+      192.2000024172737
+     ],
+     [
+      1950,
+      -3650,
+      192.2000024172737
+     ],
+     [
+      1950,
+      -3750,
+      192.2000024172737
+     ],
+     [
+      1950,
+      -3850,
+      192.2000024172737
+     ],
+     [
+      1950,
+      -3950,
+      192.2000024172737
+     ],
+     [
+      2050,
+      -3950,
+      192.2000024172737
+     ]
+    ],
+    "requested_distance_cm": 2488.4982221348523,
+    "revision_exception": null
+   },
+   "launch_map": "/Game/Auditor/Tasks/U024/R02/TaskMap",
+   "remote_task": "U024"
+  },
+  "U028": {
+   "task": {
+    "id": "U028",
+    "revision": 1,
+    "case_id": "U028-R01-UE561-C02",
+    "case_type": "bug",
+    "family": "urban",
+    "environment": "urban-city / Shopfront / 店面街区",
+    "scene_id": "shopfront",
+    "scene_i18n": {
+     "zh": "店面街区",
+     "en": "Shopfront"
+    },
+    "title": "树木与护栏错位",
+    "description": "树木护栏偏离了树干，围住旁边一块空路面。",
+    "description_i18n": {
+     "zh": "树木护栏偏离了树干，围住旁边一块空路面。",
+     "en": "The tree guard is displaced from its tree and surrounds an empty patch of pavement."
+    },
+    "target": {
+     "actor_name": "StaticMeshActor_752",
+     "actor_label": "SM_Tree_Guard32",
+     "actor_guid": "1e12a02b-a2383e16-949c5ed7-6b86722f",
+     "actor_class": "/Script/Engine.StaticMeshActor",
+     "asset": "/Game/NYCBuildingVolume2/Static_Meshes/Props/SM_Tree_Guard.SM_Tree_Guard",
+     "location_cm": [
+      3324.301561,
+      -1509.241677,
+      102.329636
+     ],
+     "role": "affected_object",
+     "description_i18n": {
+      "zh": "店面街区东南侧树旁偏离位置的护栏。",
+      "en": "The displaced guard beside the tree in the southeast of the shopfront."
+     }
+    },
+    "related_objects": [],
+    "category": "semantic",
+    "kind": "wrong_relationship",
+    "trigger": "static",
+    "effect": "transform",
+    "source_taxonomy": {
+     "primary_category": "semantic",
+     "kind": "wrong_relationship",
+     "trigger": "static",
+     "effect": "transform",
+     "secondary_symptoms": []
+    },
+    "subcategory": "S2",
+    "taxonomy": {
+     "version": "user-2026-09-12-scene-semantics",
+     "category_id": "semantic",
+     "category": {
+      "en": "Scene semantic consistency",
+      "zh": "场景语义一致性"
+     },
+     "code": "S1",
+     "subcategory_id": "semantic.layout",
+     "subcategory": {
+      "en": "Layout conflict",
+      "zh": "布局冲突"
+     }
+    },
+    "taxonomy_label": "场景语义一致性 · 布局冲突",
+    "taxonomy_mapping": {
+     "status": "service_category_mapping",
+     "notes": "",
+     "secondary_service_codes": []
+    },
+    "rubrics": "The tree guard is displaced from its tree and surrounds an empty patch of pavement.\n树木护栏偏离了树干，围住旁边一块空路面。",
+    "rubrics_i18n": {
+     "zh": {
+      "criteria": "树木护栏偏离了树干，围住旁边一块空路面。",
+      "expected": "树木护栏应围住对应的树干。",
+      "steps": "沿店面南侧人行道向东走到最远的树，比较树干与护栏的位置。"
+     },
+     "en": {
+      "criteria": "The tree guard is displaced from its tree and surrounds an empty patch of pavement.",
+      "expected": "The guard should surround its tree.",
+      "steps": "Follow the southern shopfront sidewalk east to the farthest tree and compare the positions of its trunk and guard."
+     }
+    },
+    "map": "/Game/Auditor/Migration/UE561/U028/R01/TaskMap_Candidate02",
+    "sha256": "7f2ad360522ce630e06d3c0c9a04329e9c4dcb3b1293ffabaf98d19412c8249d",
+    "case_path": "/?case=U028",
+    "build_sha256": "142b172a2886d116e3777108cfa1cfbc90d2a47ef3183fa0077156434c346f28",
+    "package_id": "202ed1c5db7a93bd303550944886785aa5fed01e7315327dd7fd3a04e850c6fb",
+    "package_archive_sha256": "7f26752180ff9b0f9a088ba562e4b7f63f178e79cebeb3795f272c75b08a0c88",
+    "engine_version": "5.6.1",
+    "runtime_switch": false,
+    "observation_protocol": {
+     "start": [
+      1500.0,
+      -1100.0,
+      201.219
+     ],
+     "bounds": {
+      "min": [
+       600.0,
+       -1750.0,
+       75.0
+      ],
+      "max": [
+       3600.0,
+       850.0,
+       700.0
+      ]
+     },
+     "required_actions": [
+      "Follow the south shopfront sidewalk east toward the far tree at [3122,-1509].",
+      "Inspect its tree guard displaced to empty pavement about 2m east while the tree and shrub remain in place; compare other intact tree-guard pairs."
+     ],
+     "evidence_mode": "paired_player_views_tree_guard_relationship_support_collision_and_bounds_measurements",
+     "repetitions": 1
+    },
+    "task_configuration": {
+     "region_maps_before": [
+      "/Game/Auditor/Migration/Core18_UE561/Baselines/RearLane_Cropped_Candidate03",
+      "/Game/Auditor/Migration/Core18_UE561/Baselines/ServiceLane_Cropped_Candidate03",
+      "/Game/Auditor/Migration/Core18_UE561/Baselines/Shopfront_Cropped_Candidate03",
+      "/Game/Auditor/Migration/Core18_UE561/Baselines/Junction_Cropped_Candidate03"
+     ],
+     "region_maps_after": [
+      "/Game/Auditor/Migration/UE561/U028/R01/TaskMap_Candidate02"
+     ],
+     "reason": "Isolate candidate navigation; no baseline/review map references"
+    },
+    "baseline_reference": {
+     "map": "/Game/Auditor/Migration/Core18_UE561/Baselines/Shopfront_Cropped_Candidate03",
+     "sha256": "1a5a7ac42627f757e55dc076667d321aceb669b33966f00e11d4c640ea4b93c8"
+    },
+    "verification": {
+     "map_reopen_passed": true,
+     "packaged_runtime_passed": true,
+     "evidence_root": "/home/ubuntu/unreal-auditor/builds/core18-ue561-20260911/audit",
+     "human_acceptance": false,
+     "guided_qa_passed": false
+    },
+    "metadata_provenance": {
+     "source_task_record": "repository/tasks/urban-city/U028/R01/task-private.json",
+     "source_task_record_sha256": "3fa8e7f4952ffb6dfff04dbcdaf76849c8de933dc8277d2f920ff20cfb5c377d",
+     "migration_receipt": "/home/ubuntu/unreal-auditor/builds/core18-ue561-20260911/audit/cases/U028/TaskMap_Candidate02/receipt.json",
+     "migration_receipt_sha256": "d15f2830196465bc36409cafc247f37492fdb46165d570701782fab56f25200a",
+     "map_identity_source": "/home/ubuntu/unreal-auditor/builds/core18-ue561-20260911/audit/artifact-manifest.json"
+    },
+    "review_mode": "informed_internal_review",
+    "metadata_schema_version": 1,
+    "exploration_revision": {
+     "version": "unreal-exploration-v3-20260917",
+     "policy_sha256": "e64cd8fdf5e4618587f7c0a41eecbc32f5257243c4d2431dc144d35671ecf6cb",
+     "previous_policy_sha256": "bac9dd9b5a47a7c71acf7d0f001dfe1b198a6f8c4e954894869e521766ca808d"
+    },
+    "review_compatible_versions": [
+     {
+      "revision": 1,
+      "sha256": "7f2ad360522ce630e06d3c0c9a04329e9c4dcb3b1293ffabaf98d19412c8249d",
+      "build_sha256": "b054d5e0112410515b6d85029534492868d349ff4ef0b95bf95e5f78f51f051e"
+     }
+    ]
+   },
+   "family": "urban",
+   "case_type": "bug",
+   "binary": "/home/ec2-user/unreal-urban-ipc-20260919/packages/urban-c6f314070433/Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
+   "build_sha256": "142b172a2886d116e3777108cfa1cfbc90d2a47ef3183fa0077156434c346f28",
+   "aws_binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/urban-c6f314070433/Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
+   "aws_build_sha256": "f9f996a242c44117947427e35749f7c8f8fffe8004a3248f796645540e648e40",
+   "runtime_map": "/Game/Auditor/Migration/UE561/U028/R01/TaskMap_Candidate02",
+   "game_args": [
+    "-vulkan",
+    "-sm6",
+    "-PixelStreamingWebRTCMaxFps=30",
+    "-ExecCmds=t.MaxFPS 30,DisableAllScreenMessages",
+    "-PixelStreamingWebRTCMaxBitrate=3000000",
+    "-PixelStreamingWebRTCStartBitrate=1000000"
+   ],
+   "extra_args": [
+    "-AuditorExplorationTask=U028",
+    "-AuditorExplorationPolicy=/home/ec2-user/gemini-unreal-nomap-20260919/pinned-production/policies/e64cd8fdf5e4618587f7c0a41eecbc32f5257243c4d2431dc144d35671ecf6cb"
+   ],
+   "policy_version": "unreal-exploration-v3-20260917",
+   "policy_path": "/home/ec2-user/gemini-unreal-nomap-20260919/pinned-production/policies/e64cd8fdf5e4618587f7c0a41eecbc32f5257243c4d2431dc144d35671ecf6cb",
+   "policy": {
+    "id": "U028",
+    "family": "urban",
+    "map": "/Game/Auditor/Migration/UE561/U028/R01/TaskMap_Candidate02",
+    "case_type": "bug",
+    "focus": [
+     3324.301560573605,
+     -1509.2873122233893,
+     120.48378446316721
+    ],
+    "focus_source": "current map target actor",
+    "target": "StaticMeshActor_752",
+    "bounds_min": [
+     -498.076211353316,
+     -2701.6660498395404,
+     75.0
+    ],
+    "bounds_max": [
+     4698.0762113533165,
+     1801.6660498395404,
+     700.0
+    ],
+    "old_bounds_min": [
+     600.0,
+     -1750.0,
+     75.0
+    ],
+    "old_bounds_max": [
+     3600.0,
+     850.0,
+     700.0
+    ],
+    "gain_cm": 1869.6503116514427,
+    "grid_cm": 100,
+    "max_route_cm": 8000,
+    "old_region_spawn": [
+     1500.0,
+     -1100.0,
+     201.219
+    ],
+    "spawn": [
+     -400,
+     -1100,
+     193.83534425043644
+    ],
+    "yaw": 106.72856678550251,
+    "route_to_old_spawn": [
+     [
+      -400,
+      -1100,
+      193.83534425043644
+     ],
+     [
+      -400,
+      -1200,
+      193.83536069205812
+     ],
+     [
+      -400,
+      -1300,
+      193.83537690795052
+     ],
+     [
+      -300,
+      -1300,
+      193.83537676732183
+     ],
+     [
+      -200,
+      -1300,
+      193.8353765330188
+     ],
+     [
+      -100,
+      -1300,
+      193.8353765330188
+     ],
+     [
+      0,
+      -1300,
+      193.8353765330188
+     ],
+     [
+      0,
+      -1200,
+      193.83536009139712
+     ],
+     [
+      0,
+      -1100,
+      193.83534364977544
+     ],
+     [
+      100,
+      -1100,
+      193.83534364977544
+     ],
+     [
+      200,
+      -1100,
+      193.83534364977544
+     ],
+     [
+      300,
+      -1100,
+      193.83534364977544
+     ],
+     [
+      400,
+      -1100,
+      193.83534364977544
+     ],
+     [
+      500,
+      -1100,
+      193.83534364977544
+     ],
+     [
+      600,
+      -1100,
+      193.41970483198827
+     ],
+     [
+      700,
+      -1100,
+      193.41964925798993
+     ],
+     [
+      800,
+      -1100,
+      193.41959368399165
+     ],
+     [
+      900,
+      -1100,
+      193.4195381099933
+     ],
+     [
+      1000,
+      -1100,
+      193.41948253599503
+     ],
+     [
+      1100,
+      -1100,
+      193.4194269619967
+     ],
+     [
+      1200,
+      -1100,
+      193.4193713879984
+     ],
+     [
+      1300,
+      -1100,
+      193.41931581400013
+     ],
+     [
+      1400,
+      -1100,
+      193.4192602400018
+     ],
+     [
+      1500,
+      -1100,
+      193.4192046660035
+     ]
+    ],
+    "requested_distance_cm": 3739.3006233028855,
+    "revision_exception": null
+   },
+   "launch_map": "/Game/Auditor/Migration/UE561/U028/R01/TaskMap_Candidate02",
+   "remote_task": "U028"
+  },
+  "U032": {
+   "task": {
+    "id": "U032",
+    "revision": 3,
+    "case_id": "U032-R03-UE561",
+    "case_type": "bug",
+    "family": "urban",
+    "environment": "urban-city / Junction / 路口",
+    "scene_id": "junction",
+    "scene_i18n": {
+     "en": "Junction",
+     "zh": "路口"
+    },
+    "title": "整段围栏可穿过",
+    "description": "路口东侧整段施工围栏看起来完好，却可以直接穿过，包括橙色围栏及后面的金属护栏。",
+    "description_i18n": {
+     "zh": "路口东侧整段施工围栏看起来完好，却可以直接穿过，包括橙色围栏及后面的金属护栏。",
+     "en": "The entire construction fence on the east side of the junction looks intact, but you can walk straight through its orange panels and the metal barriers behind them."
+    },
+    "target": {
+     "actor_guid": "7d00cb0a-4a2332bf-b8aac9d3-b8f3a9b5",
+     "actor_name": "StaticMeshActor_559",
+     "actor_label": "SM_Road_Barricade_V12",
+     "actor_class": "/Script/Engine.StaticMeshActor",
+     "asset": "/Game/NYCBuildingVolume2/Static_Meshes/Props/SM_Road_Barricade_V2.SM_Road_Barricade_V2",
+     "location_cm": [
+      -68.837487,
+      175.441537,
+      101.426801
+     ],
+     "rotation_degrees": {
+      "pitch": 0.0,
+      "yaw": 89.999999,
+      "roll": -0.0
+     },
+     "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+     },
+     "materials": [
+      "/Game/NYCBuildingVolume2/Materials/M_Road_Barricade_V2.M_Road_Barricade_V2"
+     ],
+     "role": "affected_object"
+    },
+    "related_objects": [
+     {
+      "actor_guid": "e256dae1-8023321d-a9bb907d-49105b2c",
+      "actor_name": "StaticMeshActor_520",
+      "actor_label": "SM_Road_Barricade_V6",
+      "actor_class": "/Script/Engine.StaticMeshActor",
+      "asset": "/Game/NYCBuildingVolume2/Static_Meshes/Props/SM_Road_Barricade_V2.SM_Road_Barricade_V2",
+      "location_cm": [
+       -68.837487,
+       -1147.308742,
+       101.426799
+      ],
+      "rotation_degrees": {
+       "pitch": 0.0,
+       "yaw": 89.999999,
+       "roll": -0.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0,
+       "z": 1.0
+      },
+      "materials": [
+       "/Game/NYCBuildingVolume2/Materials/M_Road_Barricade_V2.M_Road_Barricade_V2"
+      ],
+      "role": "affected_group_member"
+     },
+     {
+      "actor_guid": "cf0fee09-67b83c88-af4dbf2c-1e609886",
+      "actor_name": "StaticMeshActor_551",
+      "actor_label": "SM_Road_Barricade_V7",
+      "actor_class": "/Script/Engine.StaticMeshActor",
+      "asset": "/Game/NYCBuildingVolume2/Static_Meshes/Props/SM_Road_Barricade_V2.SM_Road_Barricade_V2",
+      "location_cm": [
+       -68.837487,
+       -927.540715,
+       101.4268
+      ],
+      "rotation_degrees": {
+       "pitch": 0.0,
+       "yaw": 89.999999,
+       "roll": -0.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0,
+       "z": 1.0
+      },
+      "materials": [
+       "/Game/NYCBuildingVolume2/Materials/M_Road_Barricade_V2.M_Road_Barricade_V2"
+      ],
+      "role": "affected_group_member"
+     },
+     {
+      "actor_guid": "cdc52768-391a3e59-9a090602-643e96af",
+      "actor_name": "StaticMeshActor_555",
+      "actor_label": "SM_Road_Barricade_V8",
+      "actor_class": "/Script/Engine.StaticMeshActor",
+      "asset": "/Game/NYCBuildingVolume2/Static_Meshes/Props/SM_Road_Barricade_V2.SM_Road_Barricade_V2",
+      "location_cm": [
+       -68.837487,
+       -714.649603,
+       101.426799
+      ],
+      "rotation_degrees": {
+       "pitch": -0.0,
+       "yaw": 89.999999,
+       "roll": -10.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0,
+       "z": 1.0
+      },
+      "materials": [
+       "/Game/NYCBuildingVolume2/Materials/M_Road_Barricade_V2.M_Road_Barricade_V2"
+      ],
+      "role": "affected_group_member"
+     },
+     {
+      "actor_guid": "101fd5c3-dfc733c0-95912e19-8394c739",
+      "actor_name": "StaticMeshActor_556",
+      "actor_label": "SM_Road_Barricade_V9",
+      "actor_class": "/Script/Engine.StaticMeshActor",
+      "asset": "/Game/NYCBuildingVolume2/Static_Meshes/Props/SM_Road_Barricade_V2.SM_Road_Barricade_V2",
+      "location_cm": [
+       -68.837487,
+       -500.670835,
+       101.426802
+      ],
+      "rotation_degrees": {
+       "pitch": 0.0,
+       "yaw": 89.999999,
+       "roll": -0.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0,
+       "z": 1.0
+      },
+      "materials": [
+       "/Game/NYCBuildingVolume2/Materials/M_Road_Barricade_V2.M_Road_Barricade_V2"
+      ],
+      "role": "affected_group_member"
+     },
+     {
+      "actor_guid": "6c899fcc-774c32cc-af673dcf-aee49dec",
+      "actor_name": "StaticMeshActor_557",
+      "actor_label": "SM_Road_Barricade_V10",
+      "actor_class": "/Script/Engine.StaticMeshActor",
+      "asset": "/Game/NYCBuildingVolume2/Static_Meshes/Props/SM_Road_Barricade_V2.SM_Road_Barricade_V2",
+      "location_cm": [
+       -68.837487,
+       -294.944003,
+       101.426802
+      ],
+      "rotation_degrees": {
+       "pitch": 0.0,
+       "yaw": 99.999999,
+       "roll": -0.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0,
+       "z": 1.0
+      },
+      "materials": [
+       "/Game/NYCBuildingVolume2/Materials/M_Road_Barricade_V2.M_Road_Barricade_V2"
+      ],
+      "role": "affected_group_member"
+     },
+     {
+      "actor_guid": "5cf3a069-e6f13c9e-846124f5-bf039bec",
+      "actor_name": "StaticMeshActor_558",
+      "actor_label": "SM_Road_Barricade_V11",
+      "actor_class": "/Script/Engine.StaticMeshActor",
+      "asset": "/Game/NYCBuildingVolume2/Static_Meshes/Props/SM_Road_Barricade_V2.SM_Road_Barricade_V2",
+      "location_cm": [
+       -68.837487,
+       -78.465729,
+       101.426799
+      ],
+      "rotation_degrees": {
+       "pitch": 0.0,
+       "yaw": 79.999999,
+       "roll": -0.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0,
+       "z": 1.0
+      },
+      "materials": [
+       "/Game/NYCBuildingVolume2/Materials/M_Road_Barricade_V2.M_Road_Barricade_V2"
+      ],
+      "role": "affected_group_member"
+     },
+     {
+      "actor_guid": "f2c6b361-cfe9368d-81894cf3-f6c7ac27",
+      "actor_name": "StaticMeshActor_560",
+      "actor_label": "SM_Road_Barricade_V13",
+      "actor_class": "/Script/Engine.StaticMeshActor",
+      "asset": "/Game/NYCBuildingVolume2/Static_Meshes/Props/SM_Road_Barricade_V2.SM_Road_Barricade_V2",
+      "location_cm": [
+       -68.837487,
+       367.313884,
+       101.426805
+      ],
+      "rotation_degrees": {
+       "pitch": 0.0,
+       "yaw": 89.999999,
+       "roll": -0.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0,
+       "z": 1.0
+      },
+      "materials": [
+       "/Game/NYCBuildingVolume2/Materials/M_Road_Barricade_V2.M_Road_Barricade_V2"
+      ],
+      "role": "affected_group_member"
+     },
+     {
+      "actor_guid": "80b1c691-92ae3961-a07771aa-aa5eeb07",
+      "actor_name": "StaticMeshActor_562",
+      "actor_label": "SM_Road_Barrier_V1_LOD4",
+      "actor_class": "/Script/Engine.StaticMeshActor",
+      "asset": "/Game/NYCBuildingVolume2/Static_Meshes/Props/SM_Road_Barricade_V1.SM_Road_Barricade_V1",
+      "location_cm": [
+       53.983182,
+       -227.767459,
+       106.119642
+      ],
+      "rotation_degrees": {
+       "pitch": 0.0,
+       "yaw": -79.999999,
+       "roll": 0.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0,
+       "z": 1.0
+      },
+      "materials": [
+       "/Game/NYCBuildingVolume2/Materials/M_Road_Barricade_V1.M_Road_Barricade_V1"
+      ],
+      "role": "affected_group_member"
+     },
+     {
+      "actor_guid": "3c78d2db-d1ba3307-ae19fb41-9a249b36",
+      "actor_name": "StaticMeshActor_563",
+      "actor_label": "SM_Road_Barrier_V1_LOD5",
+      "actor_class": "/Script/Engine.StaticMeshActor",
+      "asset": "/Game/NYCBuildingVolume2/Static_Meshes/Props/SM_Road_Barricade_V1.SM_Road_Barricade_V1",
+      "location_cm": [
+       53.983182,
+       -35.406401,
+       106.119639
+      ],
+      "rotation_degrees": {
+       "pitch": 0.0,
+       "yaw": -79.999999,
+       "roll": 0.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0,
+       "z": 1.0
+      },
+      "materials": [
+       "/Game/NYCBuildingVolume2/Materials/M_Road_Barricade_V1.M_Road_Barricade_V1"
+      ],
+      "role": "affected_group_member"
+     },
+     {
+      "actor_guid": "6a634a91-e7243d79-8236b5f5-bc53b929",
+      "actor_name": "StaticMeshActor_564",
+      "actor_label": "SM_Road_Barrier_V1_LOD6",
+      "actor_class": "/Script/Engine.StaticMeshActor",
+      "asset": "/Game/NYCBuildingVolume2/Static_Meshes/Props/SM_Road_Barricade_V1.SM_Road_Barricade_V1",
+      "location_cm": [
+       53.983182,
+       164.265131,
+       106.119641
+      ],
+      "rotation_degrees": {
+       "pitch": 0.0,
+       "yaw": -109.999999,
+       "roll": 0.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0,
+       "z": 1.0
+      },
+      "materials": [
+       "/Game/NYCBuildingVolume2/Materials/M_Road_Barricade_V1.M_Road_Barricade_V1"
+      ],
+      "role": "affected_group_member"
+     }
+    ],
+    "category": "collision",
+    "kind": "missing_collision",
+    "trigger": "static",
+    "effect": "collision",
+    "source_taxonomy": {
+     "primary_category": "collision",
+     "kind": "missing_collision",
+     "trigger": "static",
+     "effect": "collision",
+     "secondary_symptoms": []
+    },
+    "subcategory": "C1",
+    "taxonomy": {
+     "version": "user-2026-09-13-material",
+     "category_id": "collision",
+     "category": {
+      "en": "Collision & physics",
+      "zh": "碰撞与物理"
+     },
+     "code": "C1",
+     "subcategory_id": "collision.missing",
+     "subcategory": {
+      "en": "Missing collision",
+      "zh": "应阻挡而发生穿透"
+     }
+    },
+    "taxonomy_label": "碰撞与物理 · 应阻挡而发生穿透",
+    "taxonomy_mapping": {
+     "status": "service_category_mapping",
+     "notes": "Mapped from updated revision observable behavior; original task implementation replaced.",
+     "secondary_service_codes": []
+    },
+    "rubrics": "The entire construction fence on the east side of the junction looks intact, but you can walk straight through its orange panels and the metal barriers behind them.\n路口东侧整段施工围栏看起来完好，却可以直接穿过，包括橙色围栏及后面的金属护栏。",
+    "rubrics_i18n": {
+     "zh": {
+      "criteria": "路口东侧整段施工围栏看起来完好，却可以直接穿过，包括橙色围栏及后面的金属护栏。",
+      "expected": "可见的施工围栏和金属护栏应阻挡玩家通行。",
+      "steps": "走到路口东侧长排施工围栏前，不跳跃，直接向围栏行走。在沿线不同位置及两端重复穿越，检查橙色围栏和后方金属护栏是否阻挡。"
+     },
+     "en": {
+      "criteria": "The entire construction fence on the east side of the junction looks intact, but you can walk straight through its orange panels and the metal barriers behind them.",
+      "expected": "The visible construction fence and metal barriers should block the player.",
+      "steps": "Approach the long construction fence on the east side of the junction. Walk directly into it without jumping. Repeat at several positions and near both ends, checking both the orange panels and the metal barriers behind them."
+     }
+    },
+    "map": "/Game/Auditor/Tasks/U032/R03/TaskMap",
+    "sha256": "e7eececfa73e1456bdd721a96ee7739dee38a320d15c6bbaa832d0d7c1c42da4",
+    "case_path": "/?case=U032",
+    "build_sha256": "142b172a2886d116e3777108cfa1cfbc90d2a47ef3183fa0077156434c346f28",
+    "package_id": "eafd6e70447a7d1b96a142d343c8d7a2f9ab8092a9efd9c601c8909d05be0610",
+    "package_archive_sha256": "9a162c0dab5fc4735f1809d7fe865ea048b0b18ea0ad747941127506e5fa12c6",
+    "engine_version": "5.6.1",
+    "runtime_switch": false,
+    "observation_protocol": {
+     "start": [
+      -2000.0,
+      -850.0,
+      201.635
+     ],
+     "bounds": {
+      "min": [
+       -4100.0,
+       -2200.0,
+       75.0
+      ],
+      "max": [
+       1000.0,
+       1800.0,
+       700.0
+      ]
+     },
+     "required_actions": [
+      "Approach the long construction fence on the east side of the junction. Walk directly into it without jumping. Repeat at several positions and near both ends, checking both the orange panels and the metal barriers behind them."
+     ],
+     "evidence_mode": "paired_actual_player_capsule_multi_point_sweep_and_rendered_visual_parity",
+     "repetitions": 3,
+     "start_rotation": [
+      0.0,
+      15.0,
+      0.0
+     ],
+     "affected_actor_count": 11,
+     "collision_route_count_per_run": 157
+    },
+    "task_configuration": {
+     "region_maps_after": [
+      "/Game/Auditor/Tasks/U032/R03/TaskMap"
+     ],
+     "player_start": {
+      "class": "/Script/Engine.PlayerStart",
+      "label": "MigrationStart_Junction",
+      "transform": {
+       "location": {
+        "x": -2000.0,
+        "y": -850.0,
+        "z": 201.635
+       },
+       "rotation": {
+        "pitch": 0.0,
+        "yaw": 15.0,
+        "roll": -0.0
+       },
+       "scale": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0
+       }
+      },
+      "hidden_in_game": false,
+      "actor_collision": true,
+      "tags": []
+     },
+     "region": {
+      "name": "AuditorRegion_0",
+      "location": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "spawn_location": [
+       -2000.0,
+       -850.0,
+       201.635
+      ],
+      "spawn_rotation": [
+       0.0,
+       15.0,
+       0.0
+      ],
+      "bounds_min": [
+       -4100.0,
+       -2200.0,
+       75.0
+      ],
+      "bounds_max": [
+       1000.0,
+       1800.0,
+       700.0
+      ]
+     },
+     "game_mode": "/Script/AuditorRuntime.AuditorGameMode",
+     "identity_source": "/home/ubuntu/unreal-auditor/builds/urban-four-revisions-20260914/migration/evidence/U032/fresh-verify.json",
+     "reason": "Fresh UE5.6.1 saved invariants and isolated task navigation; not stale Mac start/bounds."
+    },
+    "baseline_reference": {
+     "map": "/Game/Auditor/Migration/Core18_UE561/Baselines/Junction_Cropped_Candidate03",
+     "sha256": "cc0e6b741203069fb17562a64e86953f94eaef083894c408fa24ada381e80e62",
+     "source_baseline": {
+      "map": "/Game/Auditor/Urban/Cropped/Junction_Cropped",
+      "sha256": "cb19018cf16d0e476710ba24f58720c10fb3276d0a242caa7055708bfb8d4c9c",
+      "acceptance_report": "project/NYC_Building_Volume2_Cropped/Saved/cropped-map-start-sync.json"
+     }
+    },
+    "verification": {
+     "map_reopen_passed": true,
+     "packaged_runtime_passed": true,
+     "human_acceptance": false,
+     "guided_qa_passed": false,
+     "fresh_verification": "/home/ubuntu/unreal-auditor/builds/urban-four-revisions-20260914/migration/evidence/U032/fresh-verify.json",
+     "runtime_summary": "/home/ubuntu/unreal-auditor/builds/urban-four-revisions-20260914/migration/runtime-evidence/summary.json",
+     "runtime_runs": 4,
+     "runtime_modes": [
+      {
+       "tag": "clean",
+       "mode": "visual",
+       "result": "/home/ubuntu/unreal-auditor/builds/urban-four-revisions-20260914/migration/runtime-evidence/U032/clean-visual/result.json",
+       "result_sha256": "2894c131d5754428a84ae717785ba0cb3a7eb6f1b5af6af92f8f8e42ec7cfdf8"
+      },
+      {
+       "tag": "clean",
+       "mode": "collision",
+       "result": "/home/ubuntu/unreal-auditor/builds/urban-four-revisions-20260914/migration/runtime-evidence/U032/clean-collision/result.json",
+       "result_sha256": "c28f0aba4d15dfc28becd7aaaf1846b2b217757ef094520a3660091d70266711"
+      },
+      {
+       "tag": "variant",
+       "mode": "visual",
+       "result": "/home/ubuntu/unreal-auditor/builds/urban-four-revisions-20260914/migration/runtime-evidence/U032/variant-visual/result.json",
+       "result_sha256": "56574abf6686118879e1d3ca689a18b9c5b3e46a93b5d552bd36916526e34a49"
+      },
+      {
+       "tag": "variant",
+       "mode": "collision",
+       "result": "/home/ubuntu/unreal-auditor/builds/urban-four-revisions-20260914/migration/runtime-evidence/U032/variant-collision/result.json",
+       "result_sha256": "ce841231976fcf31da7805d02c3c8b3f3eeb0207a0a46abde9e9939c72c789e2"
+      }
+     ],
+     "package_audit": "/home/ubuntu/unreal-auditor/builds/urban-four-revisions-20260914/audit/package-audit.json",
+     "baseline_binary_sha256": "b054d5e0112410515b6d85029534492868d349ff4ef0b95bf95e5f78f51f051e",
+     "evidence_root": "/home/ubuntu/unreal-auditor/builds/urban-four-revisions-20260914/migration/runtime-evidence"
+    },
+    "metadata_provenance": {
+     "source_task_record": "repository/out/urban-next-four-20260914/previews/U032/R03/preview-task.json",
+     "source_task_record_sha256": "36e14048e399311a79abf745799c6e4b6c86507639992abd9f39eab7c04bacfa",
+     "source_record_snapshot": "/home/ubuntu/unreal-auditor/builds/urban-four-revisions-20260914/migration/source-records.json",
+     "source_record_snapshot_sha256": "b8e4c56da4c81c1846cf5a92cc216f2028997fd1a632f63304cc184d9904917e",
+     "source_record_canonical_sha256": "ffab254a799218f07285a181f65e0abdbb9b0374e79ee2110179edefa9c8a979",
+     "source_record_provenance": "/home/ubuntu/unreal-auditor/builds/urban-four-revisions-20260914/source-record-provenance.json",
+     "source_record_provenance_sha256": "8831e264a90c2cfe77b01cb21d09e8f07da2738a34bb0475053d8c0b05c8c123",
+     "migration_receipt": "/home/ubuntu/unreal-auditor/builds/urban-four-revisions-20260914/migration/evidence/U032/receipt.json",
+     "migration_receipt_sha256": "1cb3b386cea042e2f8d7f79b8fdbb7b56d46bcc0e8a647990fc393d70169ec4f",
+     "map_identity_source": "/home/ubuntu/unreal-auditor/builds/urban-four-revisions-20260914/migration/metadata-targets.json",
+     "map_identity_source_sha256": "2b7acef36adb27211263bda48b81da131d885eb4826550f12f8311463c4adb6a",
+     "fresh_verification_sha256": "4aa3cf7d617b7bec7f92bf0e239a0059476c3752ea76e3985d455de91646ee3a",
+     "runtime_summary_sha256": "6d2017e11afc23c01b72472d887876048f1a80f65cee4093c74304859457088c",
+     "package_audit_sha256": "db3b5a14ecaea5cf9d67b01786c0feeae9c1672d5b3b44ecccf6a7a56ce8a5be",
+     "authored_text_source": "/home/ubuntu/unreal-auditor/builds/urban-four-revisions-20260914/metadata-draft.json",
+     "authored_text_sha256": "4656e30f818ed043a434ba14abc1fab9edb99ea06a9bc89a1dbc5cabcac9b4ca"
+    },
+    "review_mode": "informed_internal_review",
+    "metadata_schema_version": 1,
+    "target_group": [
+     {
+      "actor_guid": "e256dae1-8023321d-a9bb907d-49105b2c",
+      "actor_name": "StaticMeshActor_520",
+      "actor_label": "SM_Road_Barricade_V6",
+      "actor_class": "/Script/Engine.StaticMeshActor",
+      "asset": "/Game/NYCBuildingVolume2/Static_Meshes/Props/SM_Road_Barricade_V2.SM_Road_Barricade_V2",
+      "location_cm": [
+       -68.837487,
+       -1147.308742,
+       101.426799
+      ],
+      "rotation_degrees": {
+       "pitch": 0.0,
+       "yaw": 89.999999,
+       "roll": -0.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0,
+       "z": 1.0
+      },
+      "materials": [
+       "/Game/NYCBuildingVolume2/Materials/M_Road_Barricade_V2.M_Road_Barricade_V2"
+      ],
+      "role": "affected_fence_group_member"
+     },
+     {
+      "actor_guid": "cf0fee09-67b83c88-af4dbf2c-1e609886",
+      "actor_name": "StaticMeshActor_551",
+      "actor_label": "SM_Road_Barricade_V7",
+      "actor_class": "/Script/Engine.StaticMeshActor",
+      "asset": "/Game/NYCBuildingVolume2/Static_Meshes/Props/SM_Road_Barricade_V2.SM_Road_Barricade_V2",
+      "location_cm": [
+       -68.837487,
+       -927.540715,
+       101.4268
+      ],
+      "rotation_degrees": {
+       "pitch": 0.0,
+       "yaw": 89.999999,
+       "roll": -0.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0,
+       "z": 1.0
+      },
+      "materials": [
+       "/Game/NYCBuildingVolume2/Materials/M_Road_Barricade_V2.M_Road_Barricade_V2"
+      ],
+      "role": "affected_fence_group_member"
+     },
+     {
+      "actor_guid": "cdc52768-391a3e59-9a090602-643e96af",
+      "actor_name": "StaticMeshActor_555",
+      "actor_label": "SM_Road_Barricade_V8",
+      "actor_class": "/Script/Engine.StaticMeshActor",
+      "asset": "/Game/NYCBuildingVolume2/Static_Meshes/Props/SM_Road_Barricade_V2.SM_Road_Barricade_V2",
+      "location_cm": [
+       -68.837487,
+       -714.649603,
+       101.426799
+      ],
+      "rotation_degrees": {
+       "pitch": -0.0,
+       "yaw": 89.999999,
+       "roll": -10.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0,
+       "z": 1.0
+      },
+      "materials": [
+       "/Game/NYCBuildingVolume2/Materials/M_Road_Barricade_V2.M_Road_Barricade_V2"
+      ],
+      "role": "affected_fence_group_member"
+     },
+     {
+      "actor_guid": "101fd5c3-dfc733c0-95912e19-8394c739",
+      "actor_name": "StaticMeshActor_556",
+      "actor_label": "SM_Road_Barricade_V9",
+      "actor_class": "/Script/Engine.StaticMeshActor",
+      "asset": "/Game/NYCBuildingVolume2/Static_Meshes/Props/SM_Road_Barricade_V2.SM_Road_Barricade_V2",
+      "location_cm": [
+       -68.837487,
+       -500.670835,
+       101.426802
+      ],
+      "rotation_degrees": {
+       "pitch": 0.0,
+       "yaw": 89.999999,
+       "roll": -0.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0,
+       "z": 1.0
+      },
+      "materials": [
+       "/Game/NYCBuildingVolume2/Materials/M_Road_Barricade_V2.M_Road_Barricade_V2"
+      ],
+      "role": "affected_fence_group_member"
+     },
+     {
+      "actor_guid": "6c899fcc-774c32cc-af673dcf-aee49dec",
+      "actor_name": "StaticMeshActor_557",
+      "actor_label": "SM_Road_Barricade_V10",
+      "actor_class": "/Script/Engine.StaticMeshActor",
+      "asset": "/Game/NYCBuildingVolume2/Static_Meshes/Props/SM_Road_Barricade_V2.SM_Road_Barricade_V2",
+      "location_cm": [
+       -68.837487,
+       -294.944003,
+       101.426802
+      ],
+      "rotation_degrees": {
+       "pitch": 0.0,
+       "yaw": 99.999999,
+       "roll": -0.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0,
+       "z": 1.0
+      },
+      "materials": [
+       "/Game/NYCBuildingVolume2/Materials/M_Road_Barricade_V2.M_Road_Barricade_V2"
+      ],
+      "role": "affected_fence_group_member"
+     },
+     {
+      "actor_guid": "5cf3a069-e6f13c9e-846124f5-bf039bec",
+      "actor_name": "StaticMeshActor_558",
+      "actor_label": "SM_Road_Barricade_V11",
+      "actor_class": "/Script/Engine.StaticMeshActor",
+      "asset": "/Game/NYCBuildingVolume2/Static_Meshes/Props/SM_Road_Barricade_V2.SM_Road_Barricade_V2",
+      "location_cm": [
+       -68.837487,
+       -78.465729,
+       101.426799
+      ],
+      "rotation_degrees": {
+       "pitch": 0.0,
+       "yaw": 79.999999,
+       "roll": -0.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0,
+       "z": 1.0
+      },
+      "materials": [
+       "/Game/NYCBuildingVolume2/Materials/M_Road_Barricade_V2.M_Road_Barricade_V2"
+      ],
+      "role": "affected_fence_group_member"
+     },
+     {
+      "actor_guid": "7d00cb0a-4a2332bf-b8aac9d3-b8f3a9b5",
+      "actor_name": "StaticMeshActor_559",
+      "actor_label": "SM_Road_Barricade_V12",
+      "actor_class": "/Script/Engine.StaticMeshActor",
+      "asset": "/Game/NYCBuildingVolume2/Static_Meshes/Props/SM_Road_Barricade_V2.SM_Road_Barricade_V2",
+      "location_cm": [
+       -68.837487,
+       175.441537,
+       101.426801
+      ],
+      "rotation_degrees": {
+       "pitch": 0.0,
+       "yaw": 89.999999,
+       "roll": -0.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0,
+       "z": 1.0
+      },
+      "materials": [
+       "/Game/NYCBuildingVolume2/Materials/M_Road_Barricade_V2.M_Road_Barricade_V2"
+      ],
+      "role": "affected_fence_group_member"
+     },
+     {
+      "actor_guid": "f2c6b361-cfe9368d-81894cf3-f6c7ac27",
+      "actor_name": "StaticMeshActor_560",
+      "actor_label": "SM_Road_Barricade_V13",
+      "actor_class": "/Script/Engine.StaticMeshActor",
+      "asset": "/Game/NYCBuildingVolume2/Static_Meshes/Props/SM_Road_Barricade_V2.SM_Road_Barricade_V2",
+      "location_cm": [
+       -68.837487,
+       367.313884,
+       101.426805
+      ],
+      "rotation_degrees": {
+       "pitch": 0.0,
+       "yaw": 89.999999,
+       "roll": -0.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0,
+       "z": 1.0
+      },
+      "materials": [
+       "/Game/NYCBuildingVolume2/Materials/M_Road_Barricade_V2.M_Road_Barricade_V2"
+      ],
+      "role": "affected_fence_group_member"
+     },
+     {
+      "actor_guid": "80b1c691-92ae3961-a07771aa-aa5eeb07",
+      "actor_name": "StaticMeshActor_562",
+      "actor_label": "SM_Road_Barrier_V1_LOD4",
+      "actor_class": "/Script/Engine.StaticMeshActor",
+      "asset": "/Game/NYCBuildingVolume2/Static_Meshes/Props/SM_Road_Barricade_V1.SM_Road_Barricade_V1",
+      "location_cm": [
+       53.983182,
+       -227.767459,
+       106.119642
+      ],
+      "rotation_degrees": {
+       "pitch": 0.0,
+       "yaw": -79.999999,
+       "roll": 0.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0,
+       "z": 1.0
+      },
+      "materials": [
+       "/Game/NYCBuildingVolume2/Materials/M_Road_Barricade_V1.M_Road_Barricade_V1"
+      ],
+      "role": "affected_fence_group_member"
+     },
+     {
+      "actor_guid": "3c78d2db-d1ba3307-ae19fb41-9a249b36",
+      "actor_name": "StaticMeshActor_563",
+      "actor_label": "SM_Road_Barrier_V1_LOD5",
+      "actor_class": "/Script/Engine.StaticMeshActor",
+      "asset": "/Game/NYCBuildingVolume2/Static_Meshes/Props/SM_Road_Barricade_V1.SM_Road_Barricade_V1",
+      "location_cm": [
+       53.983182,
+       -35.406401,
+       106.119639
+      ],
+      "rotation_degrees": {
+       "pitch": 0.0,
+       "yaw": -79.999999,
+       "roll": 0.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0,
+       "z": 1.0
+      },
+      "materials": [
+       "/Game/NYCBuildingVolume2/Materials/M_Road_Barricade_V1.M_Road_Barricade_V1"
+      ],
+      "role": "affected_fence_group_member"
+     },
+     {
+      "actor_guid": "6a634a91-e7243d79-8236b5f5-bc53b929",
+      "actor_name": "StaticMeshActor_564",
+      "actor_label": "SM_Road_Barrier_V1_LOD6",
+      "actor_class": "/Script/Engine.StaticMeshActor",
+      "asset": "/Game/NYCBuildingVolume2/Static_Meshes/Props/SM_Road_Barricade_V1.SM_Road_Barricade_V1",
+      "location_cm": [
+       53.983182,
+       164.265131,
+       106.119641
+      ],
+      "rotation_degrees": {
+       "pitch": 0.0,
+       "yaw": -109.999999,
+       "roll": 0.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0,
+       "z": 1.0
+      },
+      "materials": [
+       "/Game/NYCBuildingVolume2/Materials/M_Road_Barricade_V1.M_Road_Barricade_V1"
+      ],
+      "role": "affected_fence_group_member"
+     }
+    ],
+    "working_reference": {
+     "sha256": "5134467da27553b5a7713eb728f5620afa5348d298247ef11f4679beae81fb23",
+     "reference_kind": "user_authorized_reconstructed_working_reference_not_frozen_original",
+     "snapshot_matches_original": true,
+     "formal_frozen_hash_matches": false
+    },
+    "working_reference_comparison": {
+     "source_note": "repository/out/urban-next-four-20260914/previews/U032/R03/working-reference-comparison.json",
+     "migration_source_reference": {
+      "sha256": "5134467da27553b5a7713eb728f5620afa5348d298247ef11f4679beae81fb23",
+      "reference_kind": "user_authorized_reconstructed_working_reference_not_frozen_original",
+      "snapshot_matches_original": true,
+      "formal_frozen_hash_matches": false
+     },
+     "caveat": "Local Junction working reference was user-authorized reconstruction; original frozen source hash was not restored. This Linux receipt reuses the preserved UE5.6.1 migrated baseline; do not claim formal original-freeze restoration."
+    },
+    "asset_inventory": [],
+    "content_update": {
+     "version": {
+      "revision": 3,
+      "sha256": "e7eececfa73e1456bdd721a96ee7739dee38a320d15c6bbaa832d0d7c1c42da4",
+      "build_sha256": "b054d5e0112410515b6d85029534492868d349ff4ef0b95bf95e5f78f51f051e"
+     },
+     "published_on": "2026-09-14",
+     "timezone": "America/Los_Angeles",
+     "summary_i18n": {
+      "zh": "碰撞缺失扩大至整片围栏，共 11 个组成物件。",
+      "en": "Missing collision now covers the entire fence group of 11 objects."
+     },
+     "publication": "urban-revisions-four-20260914-v1"
+    },
+    "exploration_revision": {
+     "version": "unreal-exploration-v3-20260917",
+     "policy_sha256": "e64cd8fdf5e4618587f7c0a41eecbc32f5257243c4d2431dc144d35671ecf6cb",
+     "previous_policy_sha256": "bac9dd9b5a47a7c71acf7d0f001dfe1b198a6f8c4e954894869e521766ca808d"
+    },
+    "review_compatible_versions": [
+     {
+      "revision": 3,
+      "sha256": "e7eececfa73e1456bdd721a96ee7739dee38a320d15c6bbaa832d0d7c1c42da4",
+      "build_sha256": "b054d5e0112410515b6d85029534492868d349ff4ef0b95bf95e5f78f51f051e"
+     }
+    ]
+   },
+   "family": "urban",
+   "case_type": "bug",
+   "binary": "/home/ec2-user/unreal-urban-ipc-20260919/packages/urban-e63d0c3c26bd/Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
+   "build_sha256": "142b172a2886d116e3777108cfa1cfbc90d2a47ef3183fa0077156434c346f28",
+   "aws_binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/urban-e63d0c3c26bd/Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
+   "aws_build_sha256": "f9f996a242c44117947427e35749f7c8f8fffe8004a3248f796645540e648e40",
+   "runtime_map": "/Game/Auditor/Tasks/U032/R03/TaskMap",
+   "game_args": [
+    "-vulkan",
+    "-sm6",
+    "-PixelStreamingWebRTCMaxFps=30",
+    "-ExecCmds=t.MaxFPS 30,DisableAllScreenMessages",
+    "-PixelStreamingWebRTCMaxBitrate=3000000",
+    "-PixelStreamingWebRTCStartBitrate=1000000"
+   ],
+   "extra_args": [
+    "-AuditorExplorationTask=U032",
+    "-AuditorExplorationPolicy=/home/ec2-user/gemini-unreal-nomap-20260919/pinned-production/policies/e64cd8fdf5e4618587f7c0a41eecbc32f5257243c4d2431dc144d35671ecf6cb"
+   ],
+   "policy_version": "unreal-exploration-v3-20260917",
+   "policy_path": "/home/ec2-user/gemini-unreal-nomap-20260919/pinned-production/policies/e64cd8fdf5e4618587f7c0a41eecbc32f5257243c4d2431dc144d35671ecf6cb",
+   "policy": {
+    "id": "U032",
+    "family": "urban",
+    "map": "/Game/Auditor/Tasks/U032/R03/TaskMap",
+    "case_type": "bug",
+    "focus": [
+     -74.54094202416614,
+     172.63073818359987,
+     154.33810047211523
+    ],
+    "focus_source": "current map target actor",
+    "target": "StaticMeshActor_559",
+    "bounds_min": [
+     -5966.7295593006365,
+     -3664.1016151377544,
+     75.0
+    ],
+    "bounds_max": [
+     2866.7295593006365,
+     3264.1016151377544,
+     700.0
+    ],
+    "old_bounds_min": [
+     -4100.0,
+     -2200.0,
+     75.0
+    ],
+    "old_bounds_max": [
+     1000.0,
+     1800.0,
+     700.0
+    ],
+    "gain_cm": 2180.175729297783,
+    "grid_cm": 100,
+    "max_route_cm": 8720.702917191133,
+    "old_region_spawn": [
+     -2000.0,
+     -850.0,
+     201.635
+    ],
+    "spawn": [
+     -4400,
+     -450,
+     193.41922932823542
+    ],
+    "yaw": -129.80879105445538,
+    "route_to_old_spawn": [
+     [
+      -4400,
+      -450,
+      193.41922932823542
+     ],
+     [
+      -4400,
+      -550,
+      193.41922932823354
+     ],
+     [
+      -4400,
+      -650,
+      193.4192293282316
+     ],
+     [
+      -4300,
+      -650,
+      193.41917375423327
+     ],
+     [
+      -4200,
+      -650,
+      193.419118180235
+     ],
+     [
+      -4100,
+      -650,
+      193.41906260623665
+     ],
+     [
+      -4000,
+      -650,
+      193.41900703223837
+     ],
+     [
+      -4000,
+      -750,
+      193.4190070322365
+     ],
+     [
+      -3900,
+      -750,
+      193.41895145823815
+     ],
+     [
+      -3900,
+      -850,
+      193.41895145823628
+     ],
+     [
+      -3800,
+      -850,
+      193.83530254572122
+     ],
+     [
+      -3700,
+      -850,
+      193.83530254572122
+     ],
+     [
+      -3600,
+      -850,
+      193.83530254572122
+     ],
+     [
+      -3500,
+      -850,
+      193.83530254572122
+     ],
+     [
+      -3400,
+      -850,
+      193.83530254572122
+     ],
+     [
+      -3300,
+      -850,
+      193.83530254572122
+     ],
+     [
+      -3200,
+      -850,
+      193.83530254572122
+     ],
+     [
+      -3100,
+      -850,
+      193.83530254572122
+     ],
+     [
+      -3000,
+      -850,
+      193.83530274897976
+     ],
+     [
+      -2900,
+      -850,
+      193.83530311533767
+     ],
+     [
+      -2800,
+      -850,
+      193.83530348169558
+     ],
+     [
+      -2700,
+      -850,
+      193.83530392195692
+     ],
+     [
+      -2600,
+      -850,
+      193.83530400262836
+     ],
+     [
+      -2500,
+      -850,
+      193.83530362102158
+     ],
+     [
+      -2400,
+      -850,
+      193.83530323941488
+     ],
+     [
+      -2300,
+      -850,
+      193.8353028525853
+     ],
+     [
+      -2200,
+      -850,
+      193.83530245351318
+     ],
+     [
+      -2100,
+      -850,
+      193.835302054441
+     ],
+     [
+      -2000,
+      -850,
+      193.83530165536888
+     ]
+    ],
+    "requested_distance_cm": 4360.351458595566,
+    "revision_exception": null
+   },
+   "launch_map": "/Game/Auditor/Tasks/U032/R03/TaskMap",
+   "remote_task": "U032"
+  },
+  "U033": {
+   "task": {
+    "id": "U033",
+    "revision": 1,
+    "case_id": "U033-R01-UE561-C02",
+    "case_type": "bug",
+    "family": "urban",
+    "environment": "urban-city / Service lane / 服务巷",
+    "scene_id": "service_lane",
+    "scene_i18n": {
+     "zh": "服务巷",
+     "en": "Service lane"
+    },
+    "title": "空处头部阻挡",
+    "description": "服务巷看似空旷的通道被无形障碍挡住，侧移后可以绕过。",
+    "description_i18n": {
+     "zh": "服务巷看似空旷的通道被无形障碍挡住，侧移后可以绕过。",
+     "en": "An invisible obstacle blocks a seemingly clear passage in the service lane; stepping sideways lets you pass."
+    },
+    "target": {
+     "actor_name": "AuditorInvisibleBlocker_0",
+     "actor_label": "AUD_U033_R01_Blocker",
+     "actor_guid": null,
+     "actor_class": "/Script/AuditorRuntime.AuditorInvisibleBlocker",
+     "asset": null,
+     "location_cm": [
+      -980.0,
+      -5550.0,
+      270.0
+     ],
+     "role": "injected_object",
+     "description_i18n": {
+      "zh": "服务巷西侧向南行走时受阻的空通道。",
+      "en": "The clear passage on the west side of the service lane where southward movement is blocked."
+     }
+    },
+    "related_objects": [
+     {
+      "actor_name": "StaticMeshActor_691",
+      "actor_label": "SM_Tree_Guard8",
+      "actor_guid": "f5589bbc-b0093274-a051ecaa-04556c41",
+      "actor_class": "/Script/Engine.StaticMeshActor",
+      "asset": "/Game/NYCBuildingVolume2/Static_Meshes/Props/SM_Tree_Guard.SM_Tree_Guard",
+      "location_cm": [
+       -471.061231,
+       -5233.65768,
+       102.329719
+      ],
+      "role": "reference_or_support_object"
+     }
+    ],
+    "category": "collision",
+    "kind": "phantom_blocker",
+    "trigger": "static",
+    "effect": "collision",
+    "source_taxonomy": {
+     "primary_category": "collision",
+     "kind": "phantom_blocker",
+     "trigger": "static",
+     "effect": "collision",
+     "secondary_symptoms": []
+    },
+    "subcategory": "C2",
+    "taxonomy": {
+     "version": "user-2026-09-12-scene-semantics",
+     "category_id": "collision",
+     "category": {
+      "en": "Collision & physics",
+      "zh": "碰撞与物理"
+     },
+     "code": "C2",
+     "subcategory_id": "collision.unexpected",
+     "subcategory": {
+      "en": "Unexpected collision",
+      "zh": "不应阻挡却被阻挡"
+     }
+    },
+    "taxonomy_label": "碰撞与物理 · 不应阻挡却被阻挡",
+    "taxonomy_mapping": {
+     "status": "service_category_mapping",
+     "notes": "",
+     "secondary_service_codes": []
+    },
+    "rubrics": "An invisible obstacle blocks a seemingly clear passage in the service lane; stepping sideways lets you pass.\n服务巷看似空旷的通道被无形障碍挡住，侧移后可以绕过。",
+    "rubrics_i18n": {
+     "zh": {
+      "criteria": "服务巷看似空旷的通道被无形障碍挡住，侧移后可以绕过。",
+      "expected": "没有可见障碍的通道应允许人物通过。",
+      "steps": "沿服务巷西侧向南走，遇到阻挡后后退，向东横移约两米，再向南尝试通过。"
+     },
+     "en": {
+      "criteria": "An invisible obstacle blocks a seemingly clear passage in the service lane; stepping sideways lets you pass.",
+      "expected": "A passage with no visible obstruction should allow movement.",
+      "steps": "Walk south along the west side of the service lane. When blocked, step back, move about two metres east, then try walking south again."
+     }
+    },
+    "map": "/Game/Auditor/Migration/UE561/U033/R01/TaskMap_Candidate02",
+    "sha256": "6792f76ece2130b87674003ab0fd9557ac172e9fb101d220eff13ceb267db338",
+    "case_path": "/?case=U033",
+    "build_sha256": "142b172a2886d116e3777108cfa1cfbc90d2a47ef3183fa0077156434c346f28",
+    "package_id": "202ed1c5db7a93bd303550944886785aa5fed01e7315327dd7fd3a04e850c6fb",
+    "package_archive_sha256": "7f26752180ff9b0f9a088ba562e4b7f63f178e79cebeb3795f272c75b08a0c88",
+    "engine_version": "5.6.1",
+    "runtime_switch": false,
+    "observation_protocol": {
+     "start": [
+      -900.0,
+      -5250.0,
+      201.219
+     ],
+     "bounds": {
+      "min": [
+       -1200.0,
+       -5700.0,
+       75.0
+      ],
+      "max": [
+       -220.0,
+       -4250.0,
+       700.0
+      ]
+     },
+     "required_actions": [
+      "Walk south along the western side of the loading frontage.",
+      "Investigate unexpected head-height obstruction in an empty path, then move sideways to bypass it."
+     ],
+     "evidence_mode": "full_Pawn30_90_headheight_snag_paired_floor_side_and_lowerclearance_controls",
+     "repetitions": 1
+    },
+    "task_configuration": {
+     "region_maps_before": [
+      "/Game/Auditor/Migration/Core18_UE561/Baselines/RearLane_Cropped_Candidate03",
+      "/Game/Auditor/Migration/Core18_UE561/Baselines/ServiceLane_Cropped_Candidate03",
+      "/Game/Auditor/Migration/Core18_UE561/Baselines/Shopfront_Cropped_Candidate03",
+      "/Game/Auditor/Migration/Core18_UE561/Baselines/Junction_Cropped_Candidate03"
+     ],
+     "region_maps_after": [
+      "/Game/Auditor/Migration/UE561/U033/R01/TaskMap_Candidate02"
+     ],
+     "reason": "Isolate candidate navigation; no baseline/review map references"
+    },
+    "baseline_reference": {
+     "map": "/Game/Auditor/Migration/Core18_UE561/Baselines/ServiceLane_Cropped_Candidate03",
+     "sha256": "4dafea9ba15ad9967d4813fa7c1f19a1753b853392d669860e7ef9142270aebe"
+    },
+    "verification": {
+     "map_reopen_passed": true,
+     "packaged_runtime_passed": true,
+     "evidence_root": "/home/ubuntu/unreal-auditor/builds/core18-ue561-20260911/audit",
+     "human_acceptance": false,
+     "guided_qa_passed": false
+    },
+    "metadata_provenance": {
+     "source_task_record": "repository/tasks/urban-city/U033/R01/task-private.json",
+     "source_task_record_sha256": "6ccabae9fe50bc6f9a589681dbf0b3e4285833b32c56583f048e4f1fe83a6f4e",
+     "migration_receipt": "/home/ubuntu/unreal-auditor/builds/core18-ue561-20260911/audit/cases/U033/TaskMap_Candidate02/receipt.json",
+     "migration_receipt_sha256": "1126c779948c41790c3f82747e76bd2fc76dc22bfafdc48fa22e430a88d31c11",
+     "map_identity_source": "/home/ubuntu/unreal-auditor/builds/core18-ue561-20260911/audit/artifact-manifest.json"
+    },
+    "review_mode": "informed_internal_review",
+    "metadata_schema_version": 1,
+    "exploration_revision": {
+     "version": "unreal-exploration-v3-20260917",
+     "policy_sha256": "e64cd8fdf5e4618587f7c0a41eecbc32f5257243c4d2431dc144d35671ecf6cb",
+     "previous_policy_sha256": "bac9dd9b5a47a7c71acf7d0f001dfe1b198a6f8c4e954894869e521766ca808d"
+    },
+    "review_compatible_versions": [
+     {
+      "revision": 1,
+      "sha256": "6792f76ece2130b87674003ab0fd9557ac172e9fb101d220eff13ceb267db338",
+      "build_sha256": "b054d5e0112410515b6d85029534492868d349ff4ef0b95bf95e5f78f51f051e"
+     }
+    ]
+   },
+   "family": "urban",
+   "case_type": "bug",
+   "binary": "/home/ec2-user/unreal-urban-ipc-20260919/packages/urban-c6f314070433/Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
+   "build_sha256": "142b172a2886d116e3777108cfa1cfbc90d2a47ef3183fa0077156434c346f28",
+   "aws_binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/urban-c6f314070433/Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
+   "aws_build_sha256": "f9f996a242c44117947427e35749f7c8f8fffe8004a3248f796645540e648e40",
+   "runtime_map": "/Game/Auditor/Migration/UE561/U033/R01/TaskMap_Candidate02",
+   "game_args": [
+    "-vulkan",
+    "-sm6",
+    "-PixelStreamingWebRTCMaxFps=30",
+    "-ExecCmds=t.MaxFPS 30,DisableAllScreenMessages",
+    "-PixelStreamingWebRTCMaxBitrate=3000000",
+    "-PixelStreamingWebRTCStartBitrate=1000000"
+   ],
+   "extra_args": [
+    "-AuditorExplorationTask=U033",
+    "-AuditorExplorationPolicy=/home/ec2-user/gemini-unreal-nomap-20260919/pinned-production/policies/e64cd8fdf5e4618587f7c0a41eecbc32f5257243c4d2431dc144d35671ecf6cb"
+   ],
+   "policy_version": "unreal-exploration-v3-20260917",
+   "policy_path": "/home/ec2-user/gemini-unreal-nomap-20260919/pinned-production/policies/e64cd8fdf5e4618587f7c0a41eecbc32f5257243c4d2431dc144d35671ecf6cb",
+   "policy": {
+    "id": "U033",
+    "family": "urban",
+    "map": "/Game/Auditor/Migration/UE561/U033/R01/TaskMap_Candidate02",
+    "case_type": "bug",
+    "focus": [
+     -471.061231,
+     -5233.703315623072,
+     120.48386786389682
+    ],
+    "focus_source": "current map target actor",
+    "target": "StaticMeshActor_691",
+    "bounds_min": [
+     -1558.70489570875,
+     -6230.736835487436,
+     75.0
+    ],
+    "bounds_max": [
+     138.70489570874986,
+     -3719.263164512564,
+     700.0
+    ],
+    "old_bounds_min": [
+     -1200.0,
+     -5700.0,
+     75.0
+    ],
+    "old_bounds_max": [
+     -220.0,
+     -4250.0,
+     700.0
+    ],
+    "gain_cm": 1003.9058464784085,
+    "grid_cm": 100,
+    "max_route_cm": 8000,
+    "old_region_spawn": [
+     -900.0,
+     -5250.0,
+     201.219
+    ],
+    "spawn": [
+     -900,
+     -3850,
+     193.41901327058974
+    ],
+    "yaw": 66.22308641753544,
+    "route_to_old_spawn": [
+     [
+      -900,
+      -3850,
+      193.41901327058974
+     ],
+     [
+      -900,
+      -3950,
+      193.41895769658953
+     ],
+     [
+      -900,
+      -4050,
+      193.4197133128036
+     ],
+     [
+      -900,
+      -4150,
+      193.41965773880338
+     ],
+     [
+      -900,
+      -4250,
+      193.41960216480322
+     ],
+     [
+      -900,
+      -4350,
+      193.41954659080295
+     ],
+     [
+      -900,
+      -4450,
+      193.4194910168028
+     ],
+     [
+      -900,
+      -4550,
+      193.41943544280252
+     ],
+     [
+      -900,
+      -4650,
+      193.41937986880237
+     ],
+     [
+      -900,
+      -4750,
+      193.41932429480215
+     ],
+     [
+      -900,
+      -4850,
+      193.41926872080194
+     ],
+     [
+      -900,
+      -4950,
+      193.41921314680172
+     ],
+     [
+      -900,
+      -5050,
+      193.4191575728015
+     ],
+     [
+      -900,
+      -5150,
+      193.4191019988013
+     ],
+     [
+      -900,
+      -5250,
+      193.41904642480108
+     ]
+    ],
+    "requested_distance_cm": 1433.1540840670054,
+    "revision_exception": null
+   },
+   "launch_map": "/Game/Auditor/Migration/UE561/U033/R01/TaskMap_Candidate02",
+   "remote_task": "U033"
+  },
+  "U041": {
+   "task": {
+    "id": "U041",
+    "revision": 2,
+    "case_id": "U041-R02-UE561-C02",
+    "case_type": "bug",
+    "family": "urban",
+    "environment": "urban-city / Rear lane courtyard / 后巷庭院",
+    "scene_id": "rear_lane",
+    "scene_i18n": {
+     "zh": "后巷庭院",
+     "en": "Rear lane courtyard"
+    },
+    "title": "垃圾箱碰撞偏移",
+    "description": "垃圾箱一侧的实体可以穿入，另一侧旁边的空地却会挡住人物。",
+    "description_i18n": {
+     "zh": "垃圾箱一侧的实体可以穿入，另一侧旁边的空地却会挡住人物。",
+     "en": "You can walk into one side of the dumpster, while empty space beside the opposite side blocks your movement."
+    },
+    "target": {
+     "actor_name": "StaticMeshActor_1",
+     "actor_label": "RearCourt_Prop_0",
+     "actor_guid": "c30af21a-143a3a8f-b15d51c0-d621f6a6",
+     "actor_class": "/Script/Engine.StaticMeshActor",
+     "asset": "/Game/Auditor/Migration/UE561/U041/R02/Assets/TaskMap_Candidate02/SM_01.SM_01",
+     "location_cm": [
+      2960.0,
+      -5100.0,
+      100.0
+     ],
+     "role": "affected_object",
+     "description_i18n": {
+      "zh": "后巷院落东墙北侧的大垃圾箱及其西侧空地。",
+      "en": "The northern dumpster along the courtyard’s east wall and the empty space immediately west of it."
+     }
+    },
+    "related_objects": [],
+    "category": "collision",
+    "kind": "collision_shape_mismatch",
+    "trigger": "static",
+    "effect": "collision",
+    "source_taxonomy": {
+     "primary_category": "collision",
+     "kind": "collision_shape_mismatch",
+     "trigger": "static",
+     "effect": "collision",
+     "secondary_symptoms": []
+    },
+    "subcategory": "C1",
+    "taxonomy": {
+     "version": "user-2026-09-12-scene-semantics",
+     "category_id": "collision",
+     "category": {
+      "en": "Collision & physics",
+      "zh": "碰撞与物理"
+     },
+     "code": "C1",
+     "subcategory_id": "collision.missing",
+     "subcategory": {
+      "en": "Missing collision",
+      "zh": "应阻挡而发生穿透"
+     }
+    },
+    "taxonomy_label": "碰撞与物理 · 应阻挡而发生穿透",
+    "taxonomy_mapping": {
+     "status": "service_category_mapping",
+     "notes": "Shape offset produces both pass-through at the visible edge (C1) and blocking in empty space (C2); C1 is the primary service bucket, original collision_shape_mismatch retained.",
+     "secondary_service_codes": [
+      "C2"
+     ]
+    },
+    "rubrics": "You can walk into one side of the dumpster, while empty space beside the opposite side blocks your movement.\n垃圾箱一侧的实体可以穿入，另一侧旁边的空地却会挡住人物。",
+    "rubrics_i18n": {
+     "zh": {
+      "criteria": "垃圾箱一侧的实体可以穿入，另一侧旁边的空地却会挡住人物。",
+      "expected": "垃圾箱应在可见箱体范围内挡人，旁边空地应允许通过。",
+      "steps": "走近后巷院落东墙北侧的大垃圾箱，先尝试穿过箱体东侧边缘，再尝试通过紧邻箱体西侧的空地。"
+     },
+     "en": {
+      "criteria": "You can walk into one side of the dumpster, while empty space beside the opposite side blocks your movement.",
+      "expected": "The dumpster should block movement within its visible body, not in the surrounding empty space.",
+      "steps": "Approach the northern dumpster along the courtyard’s east wall. Try walking through its eastern edge, then through the open space immediately west of it."
+     }
+    },
+    "map": "/Game/Auditor/Migration/UE561/U041/R02/TaskMap_Candidate02",
+    "sha256": "7b39f91d792d24b0f1ffdaf7d466ca814ad78a6eaa7014ffcd0ad73512a6ca24",
+    "case_path": "/?case=U041",
+    "build_sha256": "142b172a2886d116e3777108cfa1cfbc90d2a47ef3183fa0077156434c346f28",
+    "package_id": "202ed1c5db7a93bd303550944886785aa5fed01e7315327dd7fd3a04e850c6fb",
+    "package_archive_sha256": "7f26752180ff9b0f9a088ba562e4b7f63f178e79cebeb3795f272c75b08a0c88",
+    "engine_version": "5.6.1",
+    "runtime_switch": false,
+    "observation_protocol": {
+     "start": [
+      2050.0,
+      -3950.0,
+      200.0
+     ],
+     "bounds": {
+      "min": [
+       1600.0,
+       -6700.0,
+       75.0
+      ],
+      "max": [
+       3500.0,
+       -3300.0,
+       700.0
+      ]
+     },
+     "required_actions": [
+      "Approach the northern east-wall dumpster from the south.",
+      "Compare crossing into its visible east edge against blockage in apparently empty space west of it."
+     ],
+     "evidence_mode": "paired_Pawn30_90_controls_exact_triangle_translation_render_parity",
+     "repetitions": 1
+    },
+    "task_configuration": {
+     "region_maps_before": [
+      "/Game/Auditor/Migration/Core18_UE561/Baselines/RearLane_Cropped_Candidate03",
+      "/Game/Auditor/Migration/Core18_UE561/Baselines/ServiceLane_Cropped_Candidate03",
+      "/Game/Auditor/Migration/Core18_UE561/Baselines/Shopfront_Cropped_Candidate03",
+      "/Game/Auditor/Migration/Core18_UE561/Baselines/Junction_Cropped_Candidate03"
+     ],
+     "region_maps_after": [
+      "/Game/Auditor/Migration/UE561/U041/R02/TaskMap_Candidate02"
+     ],
+     "reason": "Isolate candidate navigation; no baseline/review map references"
+    },
+    "baseline_reference": {
+     "map": "/Game/Auditor/Migration/Core18_UE561/Baselines/RearLane_Cropped_Candidate03",
+     "sha256": "85f4619116fab5b8cea8c55af8aadcca20ad596ff7fc5faacd0a8352688d580d"
+    },
+    "verification": {
+     "map_reopen_passed": true,
+     "packaged_runtime_passed": true,
+     "evidence_root": "/home/ubuntu/unreal-auditor/builds/core18-ue561-20260911/audit",
+     "human_acceptance": false,
+     "guided_qa_passed": false
+    },
+    "metadata_provenance": {
+     "source_task_record": "repository/tasks/urban-city/U041/R02/task-private.json",
+     "source_task_record_sha256": "afb74a122580c6f9d9a185a45f2e414a36706e3dd773e416a6f76014e39e0757",
+     "migration_receipt": "/home/ubuntu/unreal-auditor/builds/core18-ue561-20260911/audit/cases/U041/TaskMap_Candidate02/receipt.json",
+     "migration_receipt_sha256": "bb5403b0dd58b70939eb7135314b986c6103a57a32b1521294d2eb758a73b632",
+     "map_identity_source": "/home/ubuntu/unreal-auditor/builds/core18-ue561-20260911/audit/artifact-manifest.json"
+    },
+    "review_mode": "informed_internal_review",
+    "metadata_schema_version": 1,
+    "exploration_revision": {
+     "version": "unreal-exploration-v3-20260917",
+     "policy_sha256": "e64cd8fdf5e4618587f7c0a41eecbc32f5257243c4d2431dc144d35671ecf6cb",
+     "previous_policy_sha256": "bac9dd9b5a47a7c71acf7d0f001dfe1b198a6f8c4e954894869e521766ca808d"
+    },
+    "review_compatible_versions": [
+     {
+      "revision": 2,
+      "sha256": "7b39f91d792d24b0f1ffdaf7d466ca814ad78a6eaa7014ffcd0ad73512a6ca24",
+      "build_sha256": "b054d5e0112410515b6d85029534492868d349ff4ef0b95bf95e5f78f51f051e"
+     }
+    ]
+   },
+   "family": "urban",
+   "case_type": "bug",
+   "binary": "/home/ec2-user/unreal-urban-ipc-20260919/packages/urban-c6f314070433/Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
+   "build_sha256": "142b172a2886d116e3777108cfa1cfbc90d2a47ef3183fa0077156434c346f28",
+   "aws_binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/urban-c6f314070433/Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
+   "aws_build_sha256": "f9f996a242c44117947427e35749f7c8f8fffe8004a3248f796645540e648e40",
+   "runtime_map": "/Game/Auditor/Migration/UE561/U041/R02/TaskMap_Candidate02",
+   "game_args": [
+    "-vulkan",
+    "-sm6",
+    "-PixelStreamingWebRTCMaxFps=30",
+    "-ExecCmds=t.MaxFPS 30,DisableAllScreenMessages",
+    "-PixelStreamingWebRTCMaxBitrate=3000000",
+    "-PixelStreamingWebRTCStartBitrate=1000000"
+   ],
+   "extra_args": [
+    "-AuditorExplorationTask=U041",
+    "-AuditorExplorationPolicy=/home/ec2-user/gemini-unreal-nomap-20260919/pinned-production/policies/e64cd8fdf5e4618587f7c0a41eecbc32f5257243c4d2431dc144d35671ecf6cb"
+   ],
+   "policy_version": "unreal-exploration-v3-20260917",
+   "policy_path": "/home/ec2-user/gemini-unreal-nomap-20260919/pinned-production/policies/e64cd8fdf5e4618587f7c0a41eecbc32f5257243c4d2431dc144d35671ecf6cb",
+   "policy": {
+    "id": "U041",
+    "family": "urban",
+    "map": "/Game/Auditor/Migration/UE561/U041/R02/TaskMap_Candidate02",
+    "case_type": "bug",
+    "focus": [
+     2960.8604640960693,
+     -5099.999996185303,
+     169.7106548475267
+    ],
+    "focus_source": "current map target actor",
+    "target": "StaticMeshActor_1",
+    "bounds_min": [
+     904.5517328095666,
+     -7944.486372867092,
+     75.0
+    ],
+    "bounds_max": [
+     4195.448267190433,
+     -2055.513627132909,
+     700.0
+    ],
+    "old_bounds_min": [
+     1600.0,
+     -6700.0,
+     75.0
+    ],
+    "old_bounds_max": [
+     3500.0,
+     -3300.0,
+     700.0
+    ],
+    "gain_cm": 1467.026508376554,
+    "grid_cm": 100,
+    "max_route_cm": 8000,
+    "old_region_spawn": [
+     2050.0,
+     -3950.0,
+     200.0
+    ],
+    "spawn": [
+     2250,
+     -2250,
+     192.2000024172737
+    ],
+    "yaw": -202.99478270869537,
+    "route_to_old_spawn": [
+     [
+      2250,
+      -2250,
+      192.2000024172737
+     ],
+     [
+      2250,
+      -2350,
+      192.2000024172737
+     ],
+     [
+      2250,
+      -2450,
+      192.2000024172737
+     ],
+     [
+      2250,
+      -2550,
+      192.2000024172737
+     ],
+     [
+      2250,
+      -2650,
+      192.2000024172737
+     ],
+     [
+      2250,
+      -2750,
+      192.2000024172737
+     ],
+     [
+      2250,
+      -2850,
+      192.2000024172737
+     ],
+     [
+      2250,
+      -2950,
+      192.2000024172737
+     ],
+     [
+      2250,
+      -3050,
+      192.2000024172737
+     ],
+     [
+      2250,
+      -3150,
+      192.2000024172737
+     ],
+     [
+      2250,
+      -3250,
+      192.2000024172737
+     ],
+     [
+      2250,
+      -3350,
+      192.2000024172737
+     ],
+     [
+      2250,
+      -3450,
+      192.2000024172737
+     ],
+     [
+      2250,
+      -3550,
+      192.2000024172737
+     ],
+     [
+      2250,
+      -3650,
+      192.2000024172737
+     ],
+     [
+      2250,
+      -3750,
+      192.2000024172737
+     ],
+     [
+      2250,
+      -3850,
+      192.2000024172737
+     ],
+     [
+      2250,
+      -3950,
+      192.2000024172737
+     ],
+     [
+      2150,
+      -3950,
+      192.2000024172737
+     ],
+     [
+      2050,
+      -3950,
+      192.2000024172737
+     ]
+    ],
+    "requested_distance_cm": 2934.053016753108,
+    "revision_exception": null
+   },
+   "launch_map": "/Game/Auditor/Migration/UE561/U041/R02/TaskMap_Candidate02",
+   "remote_task": "U041"
+  },
+  "U043": {
+   "task": {
+    "id": "U043",
+    "revision": 3,
+    "case_id": "U043-R03-UE561-C02",
+    "case_type": "bug",
+    "family": "urban",
+    "environment": "urban-city / Rear lane courtyard / 后巷庭院",
+    "scene_id": "rear_lane",
+    "scene_i18n": {
+     "zh": "后巷庭院",
+     "en": "Rear lane courtyard"
+    },
+    "title": "返回后垃圾桶透明",
+    "description": "金属垃圾桶在离开再返回后变得透明，可以看到桶身后面的物体。",
+    "description_i18n": {
+     "zh": "金属垃圾桶在离开再返回后变得透明，可以看到桶身后面的物体。",
+     "en": "A metal wastebin becomes see-through after you walk away and return."
+    },
+    "target": {
+     "actor_name": "StaticMeshActor_5",
+     "actor_label": "RearCourt_Prop_4",
+     "actor_guid": "8a928395-5a583fde-a360a4a8-d096aa6d",
+     "actor_class": "/Script/Engine.StaticMeshActor",
+     "asset": "/Game/NYCBuildingVolume2/Static_Meshes/Props/SM_Metal_wastebin.SM_Metal_wastebin",
+     "location_cm": [
+      1820.0,
+      -5850.0,
+      100.062425
+     ],
+     "role": "affected_object",
+     "description_i18n": {
+      "zh": "后巷西侧小金属垃圾桶中的目标桶。",
+      "en": "The target small metal wastebin on the west side of the rear lane."
+     }
+    },
+    "related_objects": [],
+    "category": "state",
+    "kind": "state_material_change",
+    "trigger": "leave_and_return",
+    "effect": "material",
+    "source_taxonomy": {
+     "primary_category": "state",
+     "kind": "state_material_change",
+     "trigger": "leave_and_return",
+     "effect": "material",
+     "secondary_symptoms": []
+    },
+    "subcategory": "T2",
+    "taxonomy": {
+     "version": "user-2026-09-12-scene-semantics",
+     "category_id": "state",
+     "category": {
+      "en": "Temporal consistency",
+      "zh": "时间一致性"
+     },
+     "code": "T2",
+     "subcategory_id": "state.static_attributes",
+     "subcategory": {
+      "en": "Static attribute changes",
+      "zh": "静态属性变化"
+     }
+    },
+    "taxonomy_label": "时间一致性 · 静态属性变化",
+    "taxonomy_mapping": {
+     "status": "service_category_mapping",
+     "notes": "",
+     "secondary_service_codes": []
+    },
+    "rubrics": "A metal wastebin becomes see-through after you walk away and return.\n金属垃圾桶在离开再返回后变得透明，可以看到桶身后面的物体。",
+    "rubrics_i18n": {
+     "zh": {
+      "criteria": "金属垃圾桶在离开再返回后变得透明，可以看到桶身后面的物体。",
+      "expected": "金属垃圾桶应保持不透明。",
+      "steps": "从南侧靠近后巷目标垃圾桶至三米内并看清桶身，绕开桶走到至少九米外，再返回。重新加载案例可再次测试。"
+     },
+     "en": {
+      "criteria": "A metal wastebin becomes see-through after you walk away and return.",
+      "expected": "The metal bin should remain opaque.",
+      "steps": "Inspect the rear-lane bin from within three metres on its south side, walk around it to at least nine metres away, then return. Reload the case to repeat."
+     }
+    },
+    "map": "/Game/Auditor/Migration/UE561/U043/R03/TaskMap_Candidate02",
+    "sha256": "692a0a85fac086d957adfedcdc7394ff3b9c9c0f24062dd023834aa88b110dda",
+    "case_path": "/?case=U043",
+    "build_sha256": "142b172a2886d116e3777108cfa1cfbc90d2a47ef3183fa0077156434c346f28",
+    "package_id": "202ed1c5db7a93bd303550944886785aa5fed01e7315327dd7fd3a04e850c6fb",
+    "package_archive_sha256": "7f26752180ff9b0f9a088ba562e4b7f63f178e79cebeb3795f272c75b08a0c88",
+    "engine_version": "5.6.1",
+    "runtime_switch": false,
+    "observation_protocol": {
+     "start": [
+      2050.0,
+      -3950.0,
+      200.0
+     ],
+     "bounds": {
+      "min": [
+       1600.0,
+       -6700.0,
+       75.0
+      ],
+      "max": [
+       3500.0,
+       -3300.0,
+       700.0
+      ]
+     },
+     "required_actions": [
+      "Observe bin5 from[1820,-6100] within350cm facing its body; peer bin4 behind it remains normal.",
+      "Walk via[2100,-6000] to[2200,-4800] more than850cm away, then return to near view.",
+      "Bin5 becomes a visible translucent shell, revealing peer/background through its body. Reset and repeat three times during formal runtime QA; not claimed complete."
+     ],
+     "evidence_mode": "source_verified_leave_return_parameters_and_appearance_only_translucency_pair",
+     "repetitions": 3
+    },
+    "task_configuration": {
+     "region_maps_override": {
+      "before": [
+       "/Game/Auditor/Migration/Core18_UE561/Baselines/RearLane_Cropped_Candidate03",
+       "/Game/Auditor/Migration/Core18_UE561/Baselines/ServiceLane_Cropped_Candidate03",
+       "/Game/Auditor/Migration/Core18_UE561/Baselines/Shopfront_Cropped_Candidate03",
+       "/Game/Auditor/Migration/Core18_UE561/Baselines/Junction_Cropped_Candidate03"
+      ],
+      "after": [
+       "/Game/Auditor/Migration/UE561/U043/R03/TaskMap_Candidate02"
+      ],
+      "reason": "isolate cooked task from clean and unrelated task routes"
+     }
+    },
+    "baseline_reference": {
+     "map": "/Game/Auditor/Migration/Core18_UE561/Baselines/RearLane_Cropped_Candidate03",
+     "sha256": "85f4619116fab5b8cea8c55af8aadcca20ad596ff7fc5faacd0a8352688d580d",
+     "source_baseline": {
+      "map": "/Game/Auditor/Urban/Cropped/RearLane_Cropped",
+      "sha256": "3076c3bea82578628d205e8eeb6097eb2cd541b8f4d1b00f47a810bb287174bd",
+      "acceptance_report": "project/NYC_Building_Volume2_Cropped/Saved/cropped-map-start-sync.json"
+     }
+    },
+    "verification": {
+     "map_reopen_passed": true,
+     "packaged_runtime_passed": true,
+     "evidence_root": "/home/ubuntu/unreal-auditor/builds/core18-ue561-20260911/audit",
+     "human_acceptance": false,
+     "guided_qa_passed": false
+    },
+    "metadata_provenance": {
+     "source_task_record": "repository/tasks/urban-city/U043/R03/task-private.json",
+     "source_task_record_sha256": "144008896ea3156425689663ae28f5a76f4776179a6ee6000935b7299e4fc0e1",
+     "migration_receipt": "/home/ubuntu/unreal-auditor/builds/core18-ue561-20260911/audit/cases/U043/TaskMap_Candidate02/U043-receipt.json",
+     "migration_receipt_sha256": "bea055a1983c9588d3ccb77ddcb0ae8810243f807c8de08730a9788c6925053f",
+     "map_identity_source": "/home/ubuntu/unreal-auditor/builds/core18-ue561-20260911/audit/artifact-manifest.json"
+    },
+    "review_mode": "informed_internal_review",
+    "metadata_schema_version": 1,
+    "exploration_revision": {
+     "version": "unreal-exploration-v3-20260917",
+     "policy_sha256": "e64cd8fdf5e4618587f7c0a41eecbc32f5257243c4d2431dc144d35671ecf6cb",
+     "previous_policy_sha256": "bac9dd9b5a47a7c71acf7d0f001dfe1b198a6f8c4e954894869e521766ca808d"
+    },
+    "review_compatible_versions": [
+     {
+      "revision": 3,
+      "sha256": "692a0a85fac086d957adfedcdc7394ff3b9c9c0f24062dd023834aa88b110dda",
+      "build_sha256": "b054d5e0112410515b6d85029534492868d349ff4ef0b95bf95e5f78f51f051e"
+     }
+    ]
+   },
+   "family": "urban",
+   "case_type": "bug",
+   "binary": "/home/ec2-user/unreal-urban-ipc-20260919/packages/urban-c6f314070433/Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
+   "build_sha256": "142b172a2886d116e3777108cfa1cfbc90d2a47ef3183fa0077156434c346f28",
+   "aws_binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/urban-c6f314070433/Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
+   "aws_build_sha256": "f9f996a242c44117947427e35749f7c8f8fffe8004a3248f796645540e648e40",
+   "runtime_map": "/Game/Auditor/Migration/UE561/U043/R03/TaskMap_Candidate02",
+   "game_args": [
+    "-vulkan",
+    "-sm6",
+    "-PixelStreamingWebRTCMaxFps=30",
+    "-ExecCmds=t.MaxFPS 30,DisableAllScreenMessages",
+    "-PixelStreamingWebRTCMaxBitrate=3000000",
+    "-PixelStreamingWebRTCStartBitrate=1000000"
+   ],
+   "extra_args": [
+    "-AuditorExplorationTask=U043",
+    "-AuditorExplorationPolicy=/home/ec2-user/gemini-unreal-nomap-20260919/pinned-production/policies/e64cd8fdf5e4618587f7c0a41eecbc32f5257243c4d2431dc144d35671ecf6cb"
+   ],
+   "policy_version": "unreal-exploration-v3-20260917",
+   "policy_path": "/home/ec2-user/gemini-unreal-nomap-20260919/pinned-production/policies/e64cd8fdf5e4618587f7c0a41eecbc32f5257243c4d2431dc144d35671ecf6cb",
+   "policy": {
+    "id": "U043",
+    "family": "urban",
+    "map": "/Game/Auditor/Migration/UE561/U043/R03/TaskMap_Candidate02",
+    "case_type": "bug",
+    "focus": [
+     1819.9087886810303,
+     -5850.045028686523,
+     157.83655240886213
+    ],
+    "focus_source": "current map target actor",
+    "target": "StaticMeshActor_5",
+    "bounds_min": [
+     904.5517328095666,
+     -7944.486372867092,
+     75.0
+    ],
+    "bounds_max": [
+     4195.448267190433,
+     -2055.513627132909,
+     700.0
+    ],
+    "old_bounds_min": [
+     1600.0,
+     -6700.0,
+     75.0
+    ],
+    "old_bounds_max": [
+     3500.0,
+     -3300.0,
+     700.0
+    ],
+    "gain_cm": 1821.4735060062153,
+    "grid_cm": 50.0,
+    "max_route_cm": 8000,
+    "old_region_spawn": [
+     2050.0,
+     -3950.0,
+     200.0
+    ],
+    "spawn": [
+     2050,
+     -2100,
+     192.2000024172737
+    ],
+    "yaw": -222.5110909168036,
+    "route_to_old_spawn": [
+     [
+      2050,
+      -2100,
+      192.2000024172737
+     ],
+     [
+      2050,
+      -2150,
+      192.2000024172737
+     ],
+     [
+      2050,
+      -2200,
+      192.2000024172737
+     ],
+     [
+      2050,
+      -2250,
+      192.2000024172737
+     ],
+     [
+      2050,
+      -2300,
+      192.2000024172737
+     ],
+     [
+      2050,
+      -2350,
+      192.2000024172737
+     ],
+     [
+      2050,
+      -2400,
+      192.2000024172737
+     ],
+     [
+      2050,
+      -2450,
+      192.2000024172737
+     ],
+     [
+      2050,
+      -2500,
+      192.2000024172737
+     ],
+     [
+      2050,
+      -2550,
+      192.2000024172737
+     ],
+     [
+      2050,
+      -2600,
+      192.2000024172737
+     ],
+     [
+      2050,
+      -2650,
+      192.2000024172737
+     ],
+     [
+      2050,
+      -2700,
+      192.2000024172737
+     ],
+     [
+      2050,
+      -2750,
+      192.2000024172737
+     ],
+     [
+      2050,
+      -2800,
+      192.2000024172737
+     ],
+     [
+      2050,
+      -2850,
+      192.2000024172737
+     ],
+     [
+      2050,
+      -2900,
+      192.2000024172737
+     ],
+     [
+      2050,
+      -2950,
+      192.2000024172737
+     ],
+     [
+      2050,
+      -3000,
+      192.2000024172737
+     ],
+     [
+      2050,
+      -3050,
+      192.2000024172737
+     ],
+     [
+      2050,
+      -3100,
+      192.2000024172737
+     ],
+     [
+      2050,
+      -3150,
+      192.2000024172737
+     ],
+     [
+      2050,
+      -3200,
+      192.2000024172737
+     ],
+     [
+      2050,
+      -3250,
+      192.2000024172737
+     ],
+     [
+      2050,
+      -3300,
+      192.2000024172737
+     ],
+     [
+      2050,
+      -3350,
+      192.2000024172737
+     ],
+     [
+      2050,
+      -3400,
+      192.2000024172737
+     ],
+     [
+      2050,
+      -3450,
+      192.2000024172737
+     ],
+     [
+      2050,
+      -3500,
+      192.2000024172737
+     ],
+     [
+      2050,
+      -3550,
+      192.2000024172737
+     ],
+     [
+      2050,
+      -3600,
+      192.2000024172737
+     ],
+     [
+      2050,
+      -3650,
+      192.2000024172737
+     ],
+     [
+      2050,
+      -3700,
+      192.2000024172737
+     ],
+     [
+      2050,
+      -3750,
+      192.2000024172737
+     ],
+     [
+      2050,
+      -3800,
+      192.2000024172737
+     ],
+     [
+      2050,
+      -3850,
+      192.2000024172737
+     ],
+     [
+      2050,
+      -3900,
+      192.2000024172737
+     ],
+     [
+      2050,
+      -3950,
+      192.2000024172737
+     ]
+    ],
+    "requested_distance_cm": 3827.852179258025,
+    "revision_exception": "Connected collision search found a farther start below the desired distance; no claim of global geometric maximum."
+   },
+   "launch_map": "/Game/Auditor/Migration/UE561/U043/R03/TaskMap_Candidate02",
+   "remote_task": "U043"
+  },
+  "U046": {
+   "task": {
+    "id": "U046",
+    "revision": 1,
+    "case_id": "U046",
+    "case_path": "/?case=U046",
+    "case_type": "bug",
+    "family": "urban",
+    "environment": "urban-city / Shopfront / 店面街区",
+    "scene_id": "shopfront",
+    "scene_i18n": {
+     "en": "Shopfront",
+     "zh": "店面街区"
+    },
+    "review_mode": "informed_internal_review",
+    "title": "街边邮箱上下倒装",
+    "subcategory": "S2",
+    "map": "/Game/Auditor/Migration/UE561/U046/R01/TaskMap_Candidate02",
+    "sha256": "d5cec3182bd2809eb5511b3448f715084907496ca824be3967621bf63481e837",
+    "build_sha256": "142b172a2886d116e3777108cfa1cfbc90d2a47ef3183fa0077156434c346f28",
+    "runtime_switch": false,
+    "rubrics_i18n": {
+     "zh": {
+      "criteria": "街边邮箱上下倒装，箱门和投信口的方向颠倒。",
+      "expected": "邮箱应正向安装，箱门和投信口方向正确。",
+      "steps": "走到店面街区北侧的邮箱旁，从正面和侧面查看箱门、投信口和底部。"
+     },
+     "en": {
+      "criteria": "The street mailbox is installed upside down, inverting its door and posting opening.",
+      "expected": "The mailbox should be upright, with its door and posting opening correctly oriented.",
+      "steps": "Approach the mailbox on the north side of the shopfront and inspect its door, posting opening and base from the front and side."
+     }
+    },
+    "rubrics": "The street mailbox is installed upside down, inverting its door and posting opening.\n街边邮箱上下倒装，箱门和投信口的方向颠倒。",
+    "description": "街边邮箱上下倒装，箱门和投信口的方向颠倒。",
+    "description_i18n": {
+     "zh": "街边邮箱上下倒装，箱门和投信口的方向颠倒。",
+     "en": "The street mailbox is installed upside down, inverting its door and posting opening."
+    },
+    "exploration_revision": {
+     "version": "unreal-exploration-v3-20260917",
+     "policy_sha256": "e64cd8fdf5e4618587f7c0a41eecbc32f5257243c4d2431dc144d35671ecf6cb",
+     "previous_policy_sha256": "bac9dd9b5a47a7c71acf7d0f001dfe1b198a6f8c4e954894869e521766ca808d"
+    },
+    "review_compatible_versions": [
+     {
+      "revision": 1,
+      "sha256": "d5cec3182bd2809eb5511b3448f715084907496ca824be3967621bf63481e837",
+      "build_sha256": "b054d5e0112410515b6d85029534492868d349ff4ef0b95bf95e5f78f51f051e"
+     }
+    ]
+   },
+   "family": "urban",
+   "case_type": "bug",
+   "binary": "/home/ec2-user/unreal-urban-ipc-20260919/packages/urban-0bcf6af8a87a/Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
+   "build_sha256": "142b172a2886d116e3777108cfa1cfbc90d2a47ef3183fa0077156434c346f28",
+   "aws_binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/urban-0bcf6af8a87a/Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
+   "aws_build_sha256": "f9f996a242c44117947427e35749f7c8f8fffe8004a3248f796645540e648e40",
+   "runtime_map": "/Game/Auditor/Migration/UE561/U046/R01/TaskMap_Candidate02",
+   "game_args": [
+    "-vulkan",
+    "-sm6",
+    "-PixelStreamingWebRTCMaxFps=30",
+    "-ExecCmds=t.MaxFPS 30,DisableAllScreenMessages",
+    "-PixelStreamingWebRTCMaxBitrate=3000000",
+    "-PixelStreamingWebRTCStartBitrate=1000000"
+   ],
+   "extra_args": [
+    "-AuditorExplorationTask=U046",
+    "-AuditorExplorationPolicy=/home/ec2-user/gemini-unreal-nomap-20260919/pinned-production/policies/e64cd8fdf5e4618587f7c0a41eecbc32f5257243c4d2431dc144d35671ecf6cb"
+   ],
+   "policy_version": "unreal-exploration-v3-20260917",
+   "policy_path": "/home/ec2-user/gemini-unreal-nomap-20260919/pinned-production/policies/e64cd8fdf5e4618587f7c0a41eecbc32f5257243c4d2431dc144d35671ecf6cb",
+   "policy": {
+    "id": "U046",
+    "family": "urban",
+    "map": "/Game/Auditor/Migration/UE561/U046/R01/TaskMap_Candidate02",
+    "case_type": "bug",
+    "focus": [
+     1659.4603190342668,
+     717.9610373670255,
+     166.0964673112653
+    ],
+    "focus_source": "configuration_mailbox tagged actor",
+    "target": "StaticMeshActor_97",
+    "bounds_min": [
+     -498.076211353316,
+     -2701.6660498395404,
+     75.0
+    ],
+    "bounds_max": [
+     4698.0762113533165,
+     1801.6660498395404,
+     700.0
+    ],
+    "old_bounds_min": [
+     600.0,
+     -1750.0,
+     75.0
+    ],
+    "old_bounds_max": [
+     3600.0,
+     850.0,
+     700.0
+    ],
+    "gain_cm": 1824.9410748654602,
+    "grid_cm": 100,
+    "max_route_cm": 8000,
+    "old_region_spawn": [
+     1500.0,
+     -1100.0,
+     201.219
+    ],
+    "spawn": [
+     4600,
+     -1500,
+     196.67759755450095
+    ],
+    "yaw": 274.97384296230933,
+    "route_to_old_spawn": [
+     [
+      4600,
+      -1500,
+      196.67759755450095
+     ],
+     [
+      4600,
+      -1400,
+      215.61323379027698
+     ],
+     [
+      4600,
+      -1300,
+      193.41910481914567
+     ],
+     [
+      4600,
+      -1200,
+      193.4191048191476
+     ],
+     [
+      4600,
+      -1100,
+      193.41910481914948
+     ],
+     [
+      4500,
+      -1100,
+      193.41916039314782
+     ],
+     [
+      4400,
+      -1100,
+      193.4192159671461
+     ],
+     [
+      4300,
+      -1100,
+      193.41927154114444
+     ],
+     [
+      4200,
+      -1100,
+      193.41932711514272
+     ],
+     [
+      4100,
+      -1100,
+      193.419382689141
+     ],
+     [
+      4000,
+      -1100,
+      193.41943826313934
+     ],
+     [
+      3900,
+      -1100,
+      193.41949383713768
+     ],
+     [
+      3800,
+      -1100,
+      193.41954941113596
+     ],
+     [
+      3700,
+      -1100,
+      193.41960498513424
+     ],
+     [
+      3600,
+      -1100,
+      193.41966055913258
+     ],
+     [
+      3500,
+      -1100,
+      193.41971613313086
+     ],
+     [
+      3400,
+      -1100,
+      193.41896022802
+     ],
+     [
+      3300,
+      -1100,
+      193.41901580201835
+     ],
+     [
+      3200,
+      -1100,
+      193.41907137601663
+     ],
+     [
+      3100,
+      -1100,
+      193.4191269500149
+     ],
+     [
+      3000,
+      -1100,
+      193.41918252401325
+     ],
+     [
+      2900,
+      -1100,
+      193.41923809801153
+     ],
+     [
+      2800,
+      -1100,
+      193.41929367200987
+     ],
+     [
+      2700,
+      -1100,
+      193.41934924600815
+     ],
+     [
+      2600,
+      -1100,
+      193.4194048200065
+     ],
+     [
+      2500,
+      -1100,
+      193.41946039400477
+     ],
+     [
+      2400,
+      -1100,
+      193.4195159680031
+     ],
+     [
+      2300,
+      -1100,
+      193.4195715420014
+     ],
+     [
+      2200,
+      -1100,
+      193.41962711599967
+     ],
+     [
+      2100,
+      -1100,
+      193.419682689998
+     ],
+     [
+      2000,
+      -1100,
+      193.41892679601193
+     ],
+     [
+      1900,
+      -1100,
+      193.41898237001027
+     ],
+     [
+      1800,
+      -1100,
+      193.41903794400855
+     ],
+     [
+      1700,
+      -1100,
+      193.4190935180069
+     ],
+     [
+      1600,
+      -1100,
+      193.41914909200517
+     ],
+     [
+      1500,
+      -1100,
+      193.4192046660035
+     ]
+    ],
+    "requested_distance_cm": 3649.8821497309204,
+    "revision_exception": null
+   },
+   "launch_map": "/Game/Auditor/Migration/UE561/U046/R01/TaskMap_Candidate02",
+   "remote_task": "U046"
+  }
+ }
+}

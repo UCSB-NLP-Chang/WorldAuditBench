@@ -1,0 +1,12 @@
+[
+ {
+  "name": "trembling street lamp",
+  "where": "the street lamp east of the barrier row shakes / vibrates rapidly in place (physics jitter)",
+  "at": [
+   12,
+   17.3,
+   -18
+  ],
+  "category": "collision-physics"
+ }
+]

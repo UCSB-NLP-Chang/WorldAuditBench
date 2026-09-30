@@ -1,0 +1,49 @@
+{
+ "name": "tc08-extra-bug",
+ "meta": {
+  "title": "tc08-extra-bug",
+  "desc": "A portcullis appears out of nowhere in the Sponza walkway"
+ },
+ "seed": 5,
+ "scenes": [
+  {
+   "type": "gltf",
+   "id": "sponza",
+   "url": "/assets/sponza/Sponza.gltf"
+  }
+ ],
+ "spawn": {
+  "scene": "sponza",
+  "yawDeg": -90
+ },
+ "objects": [],
+ "bugs": [
+  {
+   "type": "extra_asset",
+   "object": {
+    "type": "portcullis",
+    "id": "odd_gate",
+    "at": {
+     "scene": "sponza",
+     "spawnOffset": [
+      5,
+      0
+     ],
+     "snap": true
+    },
+    "width": 3,
+    "height": 3
+   }
+  }
+ ],
+ "targets": {
+  "zone_tc": {
+   "scene": "sponza",
+   "spawnOffset": [
+    5,
+    0
+   ],
+   "snap": true
+  }
+ }
+}

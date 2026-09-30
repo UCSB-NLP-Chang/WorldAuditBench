@@ -1,0 +1,6 @@
+-r scripts/native-agents/requirements.txt
+numpy>=1.26,<3
+imageio>=2.34,<3
+imageio-ffmpeg>=0.5,<1
+matplotlib>=3.8,<4
+aiohttp>=3.10,<4

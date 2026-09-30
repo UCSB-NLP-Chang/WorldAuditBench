@@ -1,0 +1,15 @@
+[
+ {
+  "name": "wall trap",
+  "where": "stone pillar: the south face lets you slip inside; once inside you are stuck",
+  "at": {
+   "scene": "c",
+   "local": [
+    7,
+    0
+   ]
+  },
+  "bug": "wall_trap",
+  "level": "L2"
+ }
+]

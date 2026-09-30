@@ -1,0 +1,92 @@
+{
+ "webp": false,
+ "models": {
+  "barrel_03": {
+   "size": 512,
+   "height": 0.93
+  },
+  "concrete_road_barrier": {
+   "size": 1024,
+   "height": 0.835
+  },
+  "concrete_road_barrier_02": {
+   "size": 1024,
+   "height": 1.112
+  },
+  "fire_hydrant": {
+   "size": 1024,
+   "height": 0.799
+  },
+  "industrial_pastic_container": {
+   "size": 512,
+   "height": 0.423
+  },
+  "industrial_storage_cart": {
+   "size": 1024,
+   "height": 1.377
+  },
+  "metal_jerrycan_green": {
+   "size": 512,
+   "height": 0.501
+  },
+  "modular_chainlink_fence": {
+   "size": 1024,
+   "height": 2.523
+  },
+  "old_military_crate": {
+   "size": 1024,
+   "height": 0.301
+  },
+  "plastic_crate_01": {
+   "size": 512,
+   "height": 0.264
+  },
+  "plastic_crate_02": {
+   "size": 512,
+   "height": 0.254
+  },
+  "portable_generator": {
+   "size": 1024,
+   "height": 0.577
+  },
+  "propane_tank": {
+   "size": 512,
+   "height": 0.554
+  },
+  "street_lamp_01": {
+   "size": 1024,
+   "height": 3.871
+  },
+  "tool_cart": {
+   "size": 1024,
+   "height": 0.965
+  },
+  "wooden_crate_02": {
+   "size": 1024,
+   "height": 0.464
+  }
+ },
+ "textures": {
+  "aerial_grass_rock": {
+   "size": 1024
+  },
+  "concrete_floor_worn_001": {
+   "size": 1024
+  },
+  "concrete_slab_wall": {
+   "size": 1024
+  },
+  "concrete_wall_006": {
+   "size": 1024
+  },
+  "concrete_wall_008": {
+   "size": 1024
+  },
+  "gravel_road": {
+   "size": 1024
+  },
+  "plastered_wall_04": {
+   "size": 1024
+  }
+ }
+}

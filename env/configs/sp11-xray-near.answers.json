@@ -1,0 +1,15 @@
+[
+ {
+  "name": "x-ray pot",
+  "where": "a pot renders on top of everything, visible through columns",
+  "at": {
+   "scene": "sponza",
+   "spawnOffset": [
+    -1.47,
+    -1.49
+   ],
+   "snap": true
+  },
+  "category": "visual-consistency"
+ }
+]

@@ -1,0 +1,14 @@
+{
+  "binary": "/home/ubuntu/unreal-auditor/unreal-area-3x-20260918/AtmosphericResidentialHou",
+  "sha256": "09fa7b331005394cd71d087bf4c8374781c1c067ddea5ed4de052d11077dbf9b",
+  "command": [
+    "/opt/UnrealEngine_5.6/Engine/Build/BatchFiles/Linux/Build.sh",
+    "AtmosphericResidentialHou",
+    "Linux",
+    "Development",
+    "/home/ubuntu/unreal-auditor/indoor-workspace/project/AtmosphericResidentialHou.uproject",
+    "-WaitMutex",
+    "-MaxParallelActions=16",
+    "-NoUBA"
+  ]
+}

@@ -1,0 +1,160 @@
+{
+ "name": "sp15-spawnpile-near",
+ "meta": {
+  "title": "sp15-spawnpile",
+  "desc": "Clones of real scene props piled interpenetrating in the north-east aisle corner"
+ },
+ "seed": 5,
+ "scenes": [
+  {
+   "type": "gltf",
+   "id": "sponza",
+   "url": "/assets/sponza/Sponza.gltf"
+  }
+ ],
+ "spawn": {
+  "scene": "sponza",
+  "pos": {
+   "scene": "sponza",
+   "spawnOffset": [
+    6.48,
+    3.91
+   ],
+   "snap": true
+  },
+  "yawDeg": -102
+ },
+ "objects": [],
+ "bugs": [
+  {
+   "type": "mesh_pile",
+   "at": {
+    "scene": "sponza",
+    "spawnOffset": [
+     8.38,
+     4.31
+    ],
+    "snap": true
+   },
+   "groups": [
+    {
+     "meshes": [
+      "mesh_0_87",
+      "mesh_0_88"
+     ],
+     "off": [
+      -0.2,
+      0,
+      -0.1
+     ]
+    },
+    {
+     "meshes": [
+      "mesh_0_91",
+      "mesh_0_92"
+     ],
+     "off": [
+      0.25,
+      0.05,
+      0.2
+     ],
+     "rot": [
+      0,
+      0,
+      38
+     ]
+    },
+    {
+     "meshes": [
+      "mesh_0_89",
+      "mesh_0_90"
+     ],
+     "off": [
+      -0.05,
+      0.3,
+      0.05
+     ],
+     "rot": [
+      42,
+      0,
+      0
+     ]
+    },
+    {
+     "meshes": [
+      "mesh_0_85",
+      "mesh_0_86"
+     ],
+     "off": [
+      -0.45,
+      0.28,
+      0.3
+     ],
+     "rot": [
+      0,
+      0,
+      62
+     ]
+    },
+    {
+     "meshes": [
+      "mesh_0_93",
+      "mesh_0_94"
+     ],
+     "off": [
+      0.3,
+      0.32,
+      -0.25
+     ],
+     "rot": [
+      0,
+      0,
+      -115
+     ]
+    },
+    {
+     "meshes": [
+      "mesh_0_73",
+      "mesh_0_74"
+     ],
+     "off": [
+      0.1,
+      0.05,
+      -0.35
+     ],
+     "rot": [
+      78,
+      0,
+      0
+     ]
+    }
+   ]
+  }
+ ],
+ "targets": {
+  "zone_far": {
+   "scene": "sponza",
+   "spawnOffset": [
+    9.48,
+    0.01
+   ],
+   "snap": true
+  }
+ },
+ "views": [
+  [
+   6.4,
+   0.0,
+   2.6,
+   -2.322,
+   -0.492
+  ],
+  [
+   7.7,
+   0.0,
+   0.6,
+   -3.083,
+   -0.312
+  ]
+ ]
+}

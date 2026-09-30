@@ -1,0 +1,15 @@
+[
+ {
+  "name": "sunken pot",
+  "where": "one potted plant lies tipped over at about 65 degrees and HALF SUNK into the floor - the lower half of the pot, one side of its rim and part of the plant are below floor level, the other half sticks up out of the floor at an angle, while its identical siblings stand upright on the floor",
+  "at": {
+   "scene": "sponza",
+   "spawnOffset": [
+    7.15,
+    1.54
+   ],
+   "snap": true
+  },
+  "category": "geometry-space"
+ }
+]

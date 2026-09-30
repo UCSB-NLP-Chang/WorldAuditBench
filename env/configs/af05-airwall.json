@@ -1,0 +1,30 @@
+{
+ "page": "candidate_environments/03_sketchbook_airfield_constrained.html",
+ "spawn": {
+  "pos": [
+   0.0,
+   15.4,
+   -14.0
+  ],
+  "yawDeg": 0
+ },
+ "targets": {
+  "zone_far": [
+   0.0,
+   14.8,
+   -33.0
+  ]
+ },
+ "bounds": {
+  "minX": -20,
+  "maxX": 20,
+  "minZ": -36,
+  "maxZ": 38
+ },
+ "name": "af05-airwall",
+ "bug": "af05-airwall",
+ "meta": {
+  "title": "af05-airwall",
+  "desc": "an invisible barrier right across the tarmac about 8 m north of the north barrier row (about 16 m north of the start) stops you although nothing is visible there"
+ }
+}

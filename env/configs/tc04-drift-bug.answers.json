@@ -1,0 +1,16 @@
+[
+ {
+  "name": "self-drifting crate",
+  "where": "south crate slides back and forth on its own",
+  "at": {
+   "scene": "c",
+   "local": [
+    6,
+    -1
+   ]
+  },
+  "extent_x": 2,
+  "bug": "drift",
+  "level": "L3"
+ }
+]

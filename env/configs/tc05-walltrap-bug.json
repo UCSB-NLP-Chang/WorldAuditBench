@@ -1,0 +1,56 @@
+{
+ "name": "tc05-walltrap-bug",
+ "meta": {
+  "title": "tc05-walltrap-bug",
+  "desc": "Pillar with one enterable face that traps the player inside"
+ },
+ "seed": 5,
+ "scenes": [
+  {
+   "type": "corridor",
+   "id": "c",
+   "length": 16,
+   "width": 4,
+   "height": 3,
+   "partitions": [],
+   "lightsX": [
+    3,
+    6,
+    9,
+    12,
+    15
+   ]
+  }
+ ],
+ "spawn": {
+  "scene": "c",
+  "yawDeg": -90
+ },
+ "objects": [],
+ "bugs": [
+  {
+   "type": "wall_trap",
+   "at": {
+    "scene": "c",
+    "local": [
+     7,
+     0
+    ]
+   },
+   "size": [
+    1.2,
+    2.8,
+    1.2
+   ]
+  }
+ ],
+ "targets": {
+  "zone_tc": {
+   "scene": "c",
+   "local": [
+    7,
+    0
+   ]
+  }
+ }
+}

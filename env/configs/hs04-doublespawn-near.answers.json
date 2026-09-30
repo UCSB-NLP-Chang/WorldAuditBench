@@ -1,0 +1,12 @@
+[
+ {
+  "name": "double-spawned armchair",
+  "where": "the same armchair is spawned twice almost exactly on top of itself - doubled/shimmering surfaces (z-fighting)",
+  "at": [
+   -6.1,
+   0.0,
+   2.6
+  ],
+  "category": "geometry-space"
+ }
+]

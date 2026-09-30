@@ -1,0 +1,17 @@
+[Unit]
+Description=Three.js environment files with review login
+After=network.target urban-review-pilot.service
+[Service]
+User=ubuntu
+Group=ubuntu
+UMask=0077
+WorkingDirectory=/home/ubuntu/unreal-auditor/threejs/releases/envs-2026-09-16c
+ExecStart=/usr/bin/python3 /home/ubuntu/unreal-auditor/threejs/releases/envs-2026-09-16c/serve.py /home/ubuntu/unreal-auditor/threejs/releases/envs-2026-09-16c/site
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+[Install]
+WantedBy=multi-user.target

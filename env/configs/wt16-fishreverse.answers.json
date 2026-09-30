@@ -1,0 +1,13 @@
+[
+ {
+  "name": "fish swimming backwards",
+  "where": "the three big barramundi swim TAIL-FIRST - they move in the direction of their tails, heads pointing away from where they go",
+  "at": [
+   0,
+   -2.6,
+   0
+  ],
+  "category": "semantics-logic",
+  "global": true
+ }
+]

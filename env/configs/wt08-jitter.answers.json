@@ -1,0 +1,12 @@
+[
+ {
+  "name": "trembling coral",
+  "where": "a staghorn coral shakes / vibrates rapidly in place (physics jitter) instead of swaying gently like its neighbours",
+  "at": [
+   -7.1,
+   -6.55,
+   5.23
+  ],
+  "category": "collision-physics"
+ }
+]

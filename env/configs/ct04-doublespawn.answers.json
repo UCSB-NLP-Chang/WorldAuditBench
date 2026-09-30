@@ -1,0 +1,12 @@
+[
+ {
+  "name": "double-spawned bench",
+  "where": "the garden bench east of the stone picnic table in the west garden is spawned TWICE - a second identical bench sits shifted and turned into the first one, seat boards and legs passing through each other",
+  "at": [
+   -3.1,
+   0.4,
+   -1.6
+  ],
+  "category": "geometry-space"
+ }
+]

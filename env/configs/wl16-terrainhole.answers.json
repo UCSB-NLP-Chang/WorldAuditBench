@@ -1,0 +1,14 @@
+[
+ {
+  "name": "missing terrain patch",
+  "where": "a square patch of the ground east of the start is MISSING - a hole in the terrain mesh shows the void / the far hills through it, yet you can still walk across the gap on invisible ground",
+  "at": [
+   14,
+   5.55,
+   8
+  ],
+  "category": "visual-consistency",
+  "extent_x": 3.5,
+  "extent_z": 3.5
+ }
+]

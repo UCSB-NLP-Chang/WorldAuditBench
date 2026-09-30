@@ -1,0 +1,51 @@
+{
+ "name": "sp10-backcull-near",
+ "meta": {
+  "title": "sp10-backcull",
+  "desc": "Drape culled from the back side (viewpoint-dependent rendering)"
+ },
+ "seed": 5,
+ "scenes": [
+  {
+   "type": "gltf",
+   "id": "sponza",
+   "url": "/assets/sponza/Sponza.gltf"
+  }
+ ],
+ "spawn": {
+  "scene": "sponza",
+  "pos": {
+   "scene": "sponza",
+   "spawnOffset": [
+    -0.01,
+    -0.89
+   ],
+   "snap": true
+  },
+  "yawDeg": -180
+ },
+ "objects": [],
+ "bugs": [
+  {
+   "type": "mesh_sideview_cull",
+   "meshes": [
+    "mesh_0_63"
+   ],
+   "normal": [
+    0,
+    0,
+    1
+   ]
+  }
+ ],
+ "targets": {
+  "zone_far": {
+   "scene": "sponza",
+   "spawnOffset": [
+    9.48,
+    0.01
+   ],
+   "snap": true
+  }
+ }
+}

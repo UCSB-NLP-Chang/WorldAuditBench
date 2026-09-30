@@ -1,0 +1,13 @@
+[
+ {
+  "name": "x-ray fish school",
+  "where": "the school of small silver fish around the big rock north-east of the reef is drawn ON TOP of everything - the fish stay visible through the rock and the corals that should hide them",
+  "at": [
+   10,
+   -2.5,
+   -8
+  ],
+  "category": "visual-consistency",
+  "global": true
+ }
+]

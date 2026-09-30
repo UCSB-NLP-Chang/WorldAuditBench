@@ -1,0 +1,48 @@
+{
+ "name": "sp08-jitter-near",
+ "meta": {
+  "title": "sp08-jitter",
+  "desc": "One pot trembles in place (physics jitter)"
+ },
+ "seed": 5,
+ "scenes": [
+  {
+   "type": "gltf",
+   "id": "sponza",
+   "url": "/assets/sponza/Sponza.gltf"
+  }
+ ],
+ "spawn": {
+  "scene": "sponza",
+  "pos": {
+   "scene": "sponza",
+   "spawnOffset": [
+    -4.42,
+    0.11
+   ],
+   "snap": true
+  },
+  "yawDeg": -116
+ },
+ "objects": [],
+ "bugs": [
+  {
+   "type": "mesh_tremble",
+   "meshes": [
+    "mesh_0_85",
+    "mesh_0_86"
+   ],
+   "amp": 0.05
+  }
+ ],
+ "targets": {
+  "zone_far": {
+   "scene": "sponza",
+   "spawnOffset": [
+    9.48,
+    0.01
+   ],
+   "snap": true
+  }
+ }
+}

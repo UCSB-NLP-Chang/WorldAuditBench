@@ -1,0 +1,15 @@
+[
+ {
+  "name": "floating pot",
+  "where": "potted plant hovers ~0.5m above the floor",
+  "at": {
+   "scene": "sponza",
+   "spawnOffset": [
+    1.43,
+    1.54
+   ],
+   "snap": true
+  },
+  "category": "geometry-space"
+ }
+]

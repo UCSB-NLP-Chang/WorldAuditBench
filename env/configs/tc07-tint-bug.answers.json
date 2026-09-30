@@ -1,0 +1,16 @@
+[
+ {
+  "name": "screen tint",
+  "where": "the whole screen is polluted by a red color tint",
+  "at": {
+   "scene": "c",
+   "local": [
+    7,
+    0
+   ]
+  },
+  "bug": "corrupted_frame",
+  "level": "L1",
+  "global": true
+ }
+]

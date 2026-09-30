@@ -1,0 +1,44 @@
+runs/
+assets/
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+.DS_Store
+threejs_environment_starters.zip
+
+# built single-file environments and their v1 originals are distributed out-of-band (see candidate_environments/BUILDS.md)
+candidate_environments/*.html
+candidate_environments/src/*/orig_v1_*.bak
+# per-case reef catalogue PNGs (the stitched catalog.jpg is kept)
+reports/water-suite/catalog/
+
+# Native auditing clients: generated runtimes, runs and local credentials.
+out/
+.pytest_cache/
+.secrets/
+.private/
+*.pem
+.env
+.env.*
+!.env.example
+
+# Private deployment state and external resources (Hugging Face release pending).
+*.sqlite*
+*.db
+*.key
+*.p12
+*.pfx
+*.log
+state/
+checkpoints/
+*.uasset
+*.umap
+Binaries/
+Intermediate/
+DerivedDataCache/
+Saved/
+*.tar.gz
+*.zip
+output/icl-unreal-20260916/images/
+services/*/example-assets/images/

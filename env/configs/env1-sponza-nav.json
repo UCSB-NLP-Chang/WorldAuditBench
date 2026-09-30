@@ -1,0 +1,64 @@
+{
+ "name": "env1-sponza-nav",
+ "meta": {
+  "title": "env1 - Sponza navigation",
+  "desc": "Sponza only, no bugs. Three glowing target rings: cyan (ahead), purple (behind), orange (west aisle). S1 navigation probe."
+ },
+ "seed": 11,
+ "scenes": [
+  {
+   "type": "gltf",
+   "id": "sponza",
+   "url": "/assets/sponza/Sponza.gltf"
+  }
+ ],
+ "spawn": {
+  "scene": "sponza",
+  "yawDeg": -90
+ },
+ "objects": [
+  {
+   "type": "ring",
+   "id": "ring_cyan",
+   "at": {
+    "scene": "sponza",
+    "spawnOffset": [
+     9,
+     0
+    ],
+    "snap": true
+   },
+   "color": "#35e0ff",
+   "target": "ring_cyan"
+  },
+  {
+   "type": "ring",
+   "id": "ring_purple",
+   "at": {
+    "scene": "sponza",
+    "spawnOffset": [
+     -9,
+     0
+    ],
+    "snap": true
+   },
+   "color": "#c07dff",
+   "target": "ring_purple"
+  },
+  {
+   "type": "ring",
+   "id": "ring_orange",
+   "at": {
+    "scene": "sponza",
+    "spawnOffset": [
+     -6.5,
+     1.5
+    ],
+    "snap": true
+   },
+   "color": "#ff9a35",
+   "target": "ring_orange"
+  }
+ ],
+ "bugs": []
+}

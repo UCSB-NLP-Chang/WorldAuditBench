@@ -1,0 +1,688 @@
+{
+  "taxonomy_version": "user-2026-09-12-semantic-compatibility",
+  "tasks": [
+    {
+      "id": "MV01",
+      "region": "market",
+      "map": "/Game/Auditor/MedievalVillage/Market",
+      "kind": "offset",
+      "target": "Sacks",
+      "subcategory": "G1",
+      "title": "Unsupported grain sacks",
+      "probe": [
+        43800,
+        26900,
+        -3647.3370101284368
+      ],
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "装粮食的麻袋悬在地面上方，下方没有支撑。",
+          "expected": "正常情况下麻袋应落在地面上。",
+          "steps": "靠近目标并观察；按异常描述改变视角、距离或进行交互。"
+        },
+        "en": {
+          "criteria": "The grain sacks float above the ground without support.",
+          "expected": "They should rest on the ground.",
+          "steps": "Approach the target and observe; follow the described view, distance or interaction trigger."
+        }
+      },
+      "offset": [
+        0,
+        0,
+        85
+      ]
+    },
+    {
+      "id": "MV02",
+      "region": "market",
+      "map": "/Game/Auditor/MedievalVillage/Market",
+      "kind": "duplicate",
+      "target": "MarketCrates",
+      "subcategory": "G2",
+      "title": "Intersecting market crates",
+      "probe": [
+        43200,
+        26600,
+        -3647.3370101284368
+      ],
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "两组木箱相互穿插，实体表面重叠。",
+          "expected": "正常情况下木箱应各自占据独立空间。",
+          "steps": "靠近目标并观察；按异常描述改变视角、距离或进行交互。"
+        },
+        "en": {
+          "criteria": "Two sets of crates intersect with overlapping solid surfaces.",
+          "expected": "Each crate should occupy its own space.",
+          "steps": "Approach the target and observe; follow the described view, distance or interaction trigger."
+        }
+      },
+      "offset": [
+        50,
+        25,
+        0
+      ],
+      "yaw": 45
+    },
+    {
+      "id": "MV03",
+      "region": "market",
+      "map": "/Game/Auditor/MedievalVillage/Market",
+      "kind": "axis_scale",
+      "target": "MarketBarrel",
+      "subcategory": "G3",
+      "title": "Stretched market barrel",
+      "probe": [
+        43700,
+        27000,
+        -3647.3370101284368
+      ],
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "木桶被竖向拉长为原来的两倍半，高宽比例异常。",
+          "expected": "正常情况下它应保持与附近同类木桶一致的比例。",
+          "steps": "靠近目标并观察；按异常描述改变视角、距离或进行交互。"
+        },
+        "en": {
+          "criteria": "The barrel is stretched to two and a half times its height, distorting its proportions.",
+          "expected": "Its proportions should match nearby barrels of the same type.",
+          "steps": "Approach the target and observe; follow the described view, distance or interaction trigger."
+        }
+      },
+      "scale": [
+        1,
+        1,
+        2.5
+      ]
+    },
+    {
+      "id": "MV04",
+      "region": "market",
+      "map": "/Game/Auditor/MedievalVillage/Market",
+      "kind": "no_collision",
+      "target": "Bench",
+      "subcategory": "C1",
+      "title": "Walk through wooden bench",
+      "probe": [
+        43400,
+        26800,
+        -3647.3370101284368
+      ],
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "人物可以穿过可见的木长凳。",
+          "expected": "正常情况下实体长凳应阻挡人物。",
+          "steps": "靠近目标并观察；按异常描述改变视角、距离或进行交互。"
+        },
+        "en": {
+          "criteria": "The player can walk through the visible wooden bench.",
+          "expected": "A solid bench should block the player.",
+          "steps": "Approach the target and observe; follow the described view, distance or interaction trigger."
+        }
+      }
+    },
+    {
+      "id": "MV05",
+      "region": "market",
+      "map": "/Game/Auditor/MedievalVillage/Market",
+      "kind": "blocker",
+      "target": "",
+      "subcategory": "C2",
+      "title": "Invisible market barrier",
+      "probe": [
+        43500,
+        26600,
+        -3647.3370101284368
+      ],
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "市场空旷的通道出现空气墙，人物无法穿过。",
+          "expected": "正常情况下没有障碍物的通道应允许通行。",
+          "steps": "靠近目标并观察；按异常描述改变视角、距离或进行交互。"
+        },
+        "en": {
+          "criteria": "An invisible barrier blocks an open part of the market aisle.",
+          "expected": "An unobstructed aisle should allow passage.",
+          "steps": "Approach the target and observe; follow the described view, distance or interaction trigger."
+        }
+      },
+      "position": [
+        43800,
+        26700,
+        -3647.337
+      ],
+      "extent": [
+        10,
+        150,
+        95
+      ],
+      "review_aim": [
+        43800,
+        26700,
+        -3647.337
+      ]
+    },
+    {
+      "id": "MV06",
+      "region": "market",
+      "map": "/Game/Auditor/MedievalVillage/Market",
+      "kind": "basket_bounce",
+      "target": "InteractiveBasket",
+      "subcategory": "C3",
+      "title": "Basket repeatedly rebounds",
+      "probe": [
+        43400,
+        26500,
+        -3647.3370101284368
+      ],
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "靠近空地上的篮筐按 E 轻推后，篮筐持续反复向上弹跳。",
+          "expected": "正常情况下轻推应使它沿地面短距离移动并停下。",
+          "steps": "靠近目标并观察；按异常描述改变视角、距离或进行交互。"
+        },
+        "en": {
+          "criteria": "After an E-key push, the basket repeatedly bounces upward.",
+          "expected": "A gentle push should move it a short distance along the ground and let it settle.",
+          "steps": "Approach the target and observe; follow the described view, distance or interaction trigger."
+        }
+      }
+    },
+    {
+      "id": "MV07",
+      "region": "market",
+      "map": "/Game/Auditor/MedievalVillage/Market",
+      "kind": "distance_cull",
+      "target": "Chair",
+      "subcategory": "V1",
+      "title": "Chair vanishes with distance",
+      "probe": [
+        43500,
+        26600,
+        -3647.3370101284368
+      ],
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "后退几米时木椅突然消失，靠近后又出现。",
+          "expected": "正常情况下未被遮挡的近处木椅应持续可见。",
+          "steps": "靠近目标并观察；按异常描述改变视角、距离或进行交互。"
+        },
+        "en": {
+          "criteria": "The chair suddenly disappears a few metres away and returns on approach.",
+          "expected": "A nearby unobstructed chair should remain visible.",
+          "steps": "Approach the target and observe; follow the described view, distance or interaction trigger."
+        }
+      },
+      "threshold": 500,
+      "far_probe": [
+        43200,
+        27200,
+        -3647.3370101284368
+      ]
+    },
+    {
+      "id": "MV08",
+      "region": "market",
+      "map": "/Game/Auditor/MedievalVillage/Market",
+      "kind": "distance_scale",
+      "target": "EastBarrel",
+      "subcategory": "V2",
+      "title": "Barrel changes size with distance",
+      "probe": [
+        44000,
+        26600,
+        -3647.3359372284594
+      ],
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "后退几米时同一个木桶突然放大，靠近后恢复。",
+          "expected": "正常情况下观察距离不应改变木桶的实际尺寸。",
+          "steps": "靠近目标并观察；按异常描述改变视角、距离或进行交互。"
+        },
+        "en": {
+          "criteria": "The same barrel abruptly grows at a greater viewing distance and returns to normal nearby.",
+          "expected": "Viewing distance should not change its actual size.",
+          "steps": "Approach the target and observe; follow the described view, distance or interaction trigger."
+        }
+      },
+      "threshold": 550,
+      "factor": 2,
+      "far_probe": [
+        43600,
+        26900,
+        -3647.3370101284368
+      ]
+    },
+    {
+      "id": "MV09",
+      "region": "market",
+      "map": "/Game/Auditor/MedievalVillage/Market",
+      "kind": "shadow_offset",
+      "target": "Bench",
+      "subcategory": "V3",
+      "title": "Detached bench shadow",
+      "probe": [
+        43400,
+        26800,
+        -3647.3370101284368
+      ],
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "长凳位置正常，但阴影与长凳本体错开。",
+          "expected": "正常情况下阴影应与长凳的位置及日照方向一致。",
+          "steps": "靠近目标并观察；按异常描述改变视角、距离或进行交互。"
+        },
+        "en": {
+          "criteria": "The bench remains in place while its shadow is displaced.",
+          "expected": "Its shadow should agree with its position and the sunlight.",
+          "steps": "Approach the target and observe; follow the described view, distance or interaction trigger."
+        }
+      },
+      "offset": [
+        170,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "MV10",
+      "region": "market",
+      "map": "/Game/Auditor/MedievalVillage/Market",
+      "kind": "return_hide",
+      "target": "Bread",
+      "subcategory": "T1",
+      "title": "Bread disappears between visits",
+      "probe": [
+        43500,
+        26400,
+        -3647.3370101284368
+      ],
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "看清摊位上的面包，背向它走远再返回后，面包无原因地消失。",
+          "expected": "正常情况下未被取走的面包应仍在原处。",
+          "steps": "靠近目标并观察；按异常描述改变视角、距离或进行交互。"
+        },
+        "en": {
+          "criteria": "Observe the bread, walk away facing away, and return; it has disappeared without a cause.",
+          "expected": "Bread that nobody took should remain in place.",
+          "steps": "Approach the target and observe; follow the described view, distance or interaction trigger."
+        }
+      },
+      "near": 550,
+      "far": 800,
+      "far_probe": [
+        43000,
+        26600,
+        -3647.3370101284368
+      ]
+    },
+    {
+      "id": "MV11",
+      "region": "windmill",
+      "map": "/Game/Auditor/MedievalVillage/Windmill",
+      "kind": "offset",
+      "target": "MillCrates",
+      "subcategory": "G1",
+      "title": "Unsupported mill crates",
+      "probe": [
+        41000,
+        30800,
+        -3648.729477772427
+      ],
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "庭院里的木箱悬在地面上方，没有支撑。",
+          "expected": "正常情况下木箱应接触地面。",
+          "steps": "靠近目标并观察；按异常描述改变视角、距离或进行交互。"
+        },
+        "en": {
+          "criteria": "The courtyard crates float above the ground without support.",
+          "expected": "They should rest on the ground.",
+          "steps": "Approach the target and observe; follow the described view, distance or interaction trigger."
+        }
+      },
+      "offset": [
+        0,
+        0,
+        85
+      ]
+    },
+    {
+      "id": "MV12",
+      "region": "windmill",
+      "map": "/Game/Auditor/MedievalVillage/Windmill",
+      "kind": "duplicate",
+      "target": "Cart",
+      "subcategory": "G2",
+      "title": "Intersecting wooden carts",
+      "probe": [
+        41200,
+        30900,
+        -3650.5974023543777
+      ],
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "两辆木推车相互穿插，车轮和车架重叠。",
+          "expected": "正常情况下实体推车不应互相穿透。",
+          "steps": "靠近目标并观察；按异常描述改变视角、距离或进行交互。"
+        },
+        "en": {
+          "criteria": "Two wooden carts intersect, with overlapping wheels and frames.",
+          "expected": "Solid carts should not penetrate one another.",
+          "steps": "Approach the target and observe; follow the described view, distance or interaction trigger."
+        }
+      },
+      "offset": [
+        35,
+        20,
+        0
+      ],
+      "yaw": 25
+    },
+    {
+      "id": "MV13",
+      "region": "windmill",
+      "map": "/Game/Auditor/MedievalVillage/Windmill",
+      "kind": "return_move",
+      "target": "MillBarrel",
+      "subcategory": "T2",
+      "title": "Barrel moves between visits",
+      "probe": [
+        40600,
+        30200,
+        -3646.5391208186384
+      ],
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "看清木桶，背向它走远再返回后，木桶在无人搬动时换了位置。",
+          "expected": "正常情况下静止木桶应保持原来的位置。",
+          "steps": "靠近目标并观察；按异常描述改变视角、距离或进行交互。"
+        },
+        "en": {
+          "criteria": "Observe the barrel, walk away facing away, and return; it has moved without being touched.",
+          "expected": "A stationary barrel should retain its position.",
+          "steps": "Approach the target and observe; follow the described view, distance or interaction trigger."
+        }
+      },
+      "near": 550,
+      "far": 800,
+      "offset": [
+        100,
+        0,
+        0
+      ],
+      "far_probe": [
+        40100,
+        30100,
+        -3635.463746524732
+      ]
+    },
+    {
+      "id": "MV14",
+      "region": "windmill",
+      "map": "/Game/Auditor/MedievalVillage/Windmill",
+      "kind": "windmill_reverse",
+      "target": "",
+      "subcategory": "T3",
+      "title": "Windmill reverses after looking away",
+      "probe": [
+        39800,
+        30200,
+        -3605.1694363348024
+      ],
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "看清正在转动的风车叶片，转身再看时叶片无原因地反向转动。",
+          "expected": "正常情况下没有操作或风向变化时应保持原来的转动方向。",
+          "steps": "靠近目标并观察；按异常描述改变视角、距离或进行交互。"
+        },
+        "en": {
+          "criteria": "Observe the turning windmill, look away, and look back; the blades reverse without a cause.",
+          "expected": "Without an intervention or wind change, their direction should remain consistent.",
+          "steps": "Approach the target and observe; follow the described view, distance or interaction trigger."
+        }
+      },
+      "review_aim": [
+        40271.5,
+        29638.1,
+        -2738.9
+      ]
+    },
+    {
+      "id": "MV15",
+      "region": "windmill",
+      "map": "/Game/Auditor/MedievalVillage/Windmill",
+      "kind": "view_cull",
+      "target": "MillCrates",
+      "subcategory": "V1",
+      "title": "Crates disappear in central view",
+      "probe": [
+        41000,
+        30800,
+        -3648.729477772427
+      ],
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "把木箱移到视野中央时它们消失，偏转视角后又出现。",
+          "expected": "正常情况下未被遮挡的木箱不应随视角突然消失。",
+          "steps": "靠近目标并观察；按异常描述改变视角、距离或进行交互。"
+        },
+        "en": {
+          "criteria": "The crates disappear at the centre of view and return when the view shifts.",
+          "expected": "Unobstructed crates should not abruptly vanish with the viewing angle.",
+          "steps": "Approach the target and observe; follow the described view, distance or interaction trigger."
+        }
+      },
+      "threshold": 0.99
+    },
+    {
+      "id": "MV16",
+      "region": "windmill",
+      "map": "/Game/Auditor/MedievalVillage/Windmill",
+      "kind": "return_material",
+      "target": "Planks",
+      "subcategory": "T2",
+      "title": "Planks change material between visits",
+      "probe": [
+        41300,
+        30700,
+        -3649.38124177953
+      ],
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "看清木板，背向它们走远再返回后，同一组木板无原因地变成蓝色。",
+          "expected": "正常情况下无人修改的木板应保持原来的材质。",
+          "steps": "靠近目标并观察；按异常描述改变视角、距离或进行交互。"
+        },
+        "en": {
+          "criteria": "Observe the planks, walk away facing away, and return; the same planks have turned blue without a cause.",
+          "expected": "Their material should remain unchanged.",
+          "steps": "Approach the target and observe; follow the described view, distance or interaction trigger."
+        }
+      },
+      "near": 550,
+      "far": 800,
+      "far_probe": [
+        40800,
+        30700,
+        -3645.9689095784547
+      ]
+    },
+    {
+      "id": "MV17",
+      "region": "windmill",
+      "map": "/Game/Auditor/MedievalVillage/Windmill",
+      "kind": "windmill_configuration",
+      "target": "",
+      "subcategory": "S2",
+      "title": "Windmill rotor mounted horizontally",
+      "probe": [
+        39800,
+        30200,
+        -3605.1694363348024
+      ],
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "风车叶轮水平安装在塔顶，像旋翼一样在水平面内转动。",
+          "expected": "正常情况下，该风车的叶轮应安装在塔身侧面，在竖直面内转动。",
+          "steps": "从庭院观察风车塔顶和叶轮，连续观看转动方向，并与正常对照比较。"
+        },
+        "en": {
+          "criteria": "The windmill rotor is mounted horizontally on the roof and spins like a helicopter rotor.",
+          "expected": "This windmill should have its rotor mounted on the side of the tower, turning in a vertical plane.",
+          "steps": "Observe the roof and blades from the courtyard, watching their rotation and comparing with the baseline."
+        }
+      },
+      "yaw": 0,
+      "review_aim": [
+        40471,
+        29493,
+        -2200
+      ]
+    },
+    {
+      "id": "MV18",
+      "region": "windmill",
+      "map": "/Game/Auditor/MedievalVillage/Windmill",
+      "kind": "semantic_add",
+      "target": "ModernCar",
+      "subcategory": "S3",
+      "title": "Automobile parked beyond the medieval courtyard",
+      "position": [
+        41400,
+        30550,
+        -3740.0742626768215
+      ],
+      "yaw": 90,
+      "review_aim": [
+        41400,
+        30550,
+        -3668.577093480216
+      ],
+      "probe": [
+        40500,
+        30300,
+        -3642.1936234493455
+      ],
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "中世纪村庄庭院远处停着一辆现代汽车。",
+          "expected": "正常情况下这里的交通工具应符合中世纪的时代背景。",
+          "steps": "靠近并从不同角度观察物体。"
+        },
+        "en": {
+          "criteria": "A modern automobile is parked in the distance beyond the medieval courtyard.",
+          "expected": "Vehicles here should fit the medieval era.",
+          "steps": "Approach and inspect the object from different viewpoints."
+        }
+      }
+    },
+    {
+      "id": "MV19",
+      "region": "market",
+      "map": "/Game/Auditor/MedievalVillage/Market",
+      "kind": "semantic_replace",
+      "target": "MarketOilLamp",
+      "source": "ModernDeskLamp",
+      "subcategory": "S3",
+      "title": "Modern electric desk lamp in the medieval market",
+      "probe": [
+        43500,
+        26600,
+        -3647.3370101284368
+      ],
+      "review_aim": [
+        43236.12720922851,
+        26295.113656220994,
+        -3607.277834056314
+      ],
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "中世纪市场里出现了现代电台灯。",
+          "expected": "正常情况下照明器具应符合中世纪村庄的时代背景。",
+          "steps": "靠近并从不同角度观察物体。"
+        },
+        "en": {
+          "criteria": "A modern electric desk lamp stands in the medieval market.",
+          "expected": "Lighting equipment should fit the medieval setting.",
+          "steps": "Approach and inspect the object from different viewpoints."
+        }
+      }
+    },
+    {
+      "id": "MV20",
+      "region": "market",
+      "map": "/Game/Auditor/MedievalVillage/Market",
+      "kind": "semantic_add",
+      "target": "ModernExtinguisher",
+      "subcategory": "S3",
+      "title": "Modern fire extinguisher beside a medieval stall",
+      "position": [
+        44200,
+        26230,
+        -3738.7790534165088
+      ],
+      "yaw": -90,
+      "review_aim": [
+        44200,
+        26230,
+        -3713.2945606377307
+      ],
+      "probe": [
+        43800,
+        26400,
+        -3647.3370101284368
+      ],
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "中世纪市场的摊位旁出现带压力表和软管的现代灭火器。",
+          "expected": "正常情况下市场中的器具应符合中世纪的时代背景。",
+          "steps": "靠近并从不同角度观察物体。"
+        },
+        "en": {
+          "criteria": "A modern fire extinguisher with a pressure gauge and hose stands beside a medieval market stall.",
+          "expected": "Equipment in the market should fit its medieval era.",
+          "steps": "Approach and inspect the object from different viewpoints."
+        }
+      }
+    },
+    {
+      "id": "MV21",
+      "region": "windmill",
+      "map": "/Game/Auditor/MedievalVillage/Windmill",
+      "kind": "semantic_add",
+      "target": "ModernHouse",
+      "subcategory": "S3",
+      "title": "Modern apartment building in the medieval village",
+      "position": [
+        42700,
+        34000,
+        -3839.531241741437
+      ],
+      "yaw": 0,
+      "review_aim": [
+        42700,
+        34000,
+        -3210.7730059888545
+      ],
+      "probe": [
+        41600,
+        31500,
+        -3652.7668760161887
+      ],
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "中世纪村庄里出现了一栋带玻璃橱窗的现代住宅楼。",
+          "expected": "正常情况下建筑应符合中世纪村庄的时代背景。",
+          "steps": "靠近并从不同角度观察物体。"
+        },
+        "en": {
+          "criteria": "A modern apartment building with glass storefront windows stands in the medieval village.",
+          "expected": "Buildings should fit the medieval setting.",
+          "steps": "Approach and inspect the object from different viewpoints."
+        }
+      }
+    }
+  ]
+}

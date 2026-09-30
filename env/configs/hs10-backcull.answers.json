@@ -1,0 +1,12 @@
+[
+ {
+  "name": "sofa invisible from behind",
+  "where": "the living-room sofa looks normal from the TV side but is invisible when viewed from behind it - walk round the sofa into the gap between its back and the window wall (still inside the room) and it disappears; step back in front of it and it is there again",
+  "at": [
+   -3.2,
+   0.0,
+   2.35
+  ],
+  "category": "visual-consistency"
+ }
+]

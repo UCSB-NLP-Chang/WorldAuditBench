@@ -1,0 +1,39 @@
+{
+ "name": "sp00-clean",
+ "meta": {
+  "title": "sp00-clean",
+  "desc": "Original Sponza hall, untouched"
+ },
+ "seed": 5,
+ "scenes": [
+  {
+   "type": "gltf",
+   "id": "sponza",
+   "url": "/assets/sponza/Sponza.gltf"
+  }
+ ],
+ "spawn": {
+  "scene": "sponza",
+  "pos": {
+   "scene": "sponza",
+   "spawnOffset": [
+    -8.02,
+    0.01
+   ],
+   "snap": true
+  },
+  "yawDeg": -90
+ },
+ "objects": [],
+ "bugs": [],
+ "targets": {
+  "zone_far": {
+   "scene": "sponza",
+   "spawnOffset": [
+    9.48,
+    0.01
+   ],
+   "snap": true
+  }
+ }
+}

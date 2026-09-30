@@ -1,0 +1,30 @@
+{
+ "page": "candidate_environments/10_beautiful_water_clean_constrained.html",
+ "spawn": {
+  "pos": [
+   0.0,
+   -4.4,
+   11.5
+  ],
+  "yawDeg": 0
+ },
+ "targets": {
+  "zone_far": [
+   9.5,
+   -4.0,
+   -8.5
+  ]
+ },
+ "bounds": {
+  "minX": -27,
+  "maxX": 27,
+  "minZ": -27,
+  "maxZ": 27
+ },
+ "name": "wt16-fishreverse",
+ "bug": "wt16-fishreverse",
+ "meta": {
+  "title": "wt16-fishreverse",
+  "desc": "the three big barramundi swim TAIL-FIRST - they move in the direction of their tails, heads pointing away from where they go"
+ }
+}

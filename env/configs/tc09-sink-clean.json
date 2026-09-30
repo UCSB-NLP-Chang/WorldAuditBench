@@ -1,0 +1,77 @@
+{
+ "name": "tc09-sink-clean",
+ "meta": {
+  "title": "tc09-sink-clean",
+  "desc": "Three crates resting normally"
+ },
+ "seed": 5,
+ "scenes": [
+  {
+   "type": "corridor",
+   "id": "c",
+   "length": 16,
+   "width": 4,
+   "height": 3,
+   "partitions": [],
+   "lightsX": [
+    3,
+    6,
+    9,
+    12,
+    15
+   ]
+  }
+ ],
+ "spawn": {
+  "scene": "c",
+  "yawDeg": -90
+ },
+ "objects": [
+  {
+   "type": "crate",
+   "id": "k1",
+   "at": {
+    "scene": "c",
+    "local": [
+     5,
+     -1
+    ]
+   },
+   "solid": true
+  },
+  {
+   "type": "crate",
+   "id": "k2",
+   "at": {
+    "scene": "c",
+    "local": [
+     6.5,
+     0
+    ]
+   },
+   "solid": true
+  },
+  {
+   "type": "crate",
+   "id": "k3",
+   "at": {
+    "scene": "c",
+    "local": [
+     8,
+     1
+    ]
+   },
+   "solid": true
+  }
+ ],
+ "bugs": [],
+ "targets": {
+  "zone_tc": {
+   "scene": "c",
+   "local": [
+    6.5,
+    0
+   ]
+  }
+ }
+}

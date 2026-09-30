@@ -1,0 +1,538 @@
+{
+  "schema_version": 3,
+  "format": "provider-neutral multimodal few-shot messages; image paths must be resolved to attachments by the calling harness",
+  "language": "en",
+  "messages": [
+    {
+      "role": "user",
+      "content": [
+        {
+          "type": "text",
+          "text": "G1 — Missing support / floating\n\nCategory definition: Missing support / floating occurs when an object that should rest on the ground or another structure has an unexplained gap beneath its supporting parts.\n\nThe following figures demonstrate this category. Explain how they illustrate it, referring to figure numbers and action/viewpoint captions."
+        },
+        {
+          "type": "text",
+          "text": "Figure 1: Side view of the chair legs and the floor below."
+        },
+        {
+          "type": "image",
+          "path": "images/G1_01.png",
+          "media_type": "image/png"
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": [
+        {
+          "type": "text",
+          "text": "G1 — Missing support / floating. In Figure 1, the chair legs are clearly separated from the floor, with no structure supporting the chair; this demonstrates missing support."
+        }
+      ]
+    },
+    {
+      "role": "user",
+      "content": [
+        {
+          "type": "text",
+          "text": "G2 — Intersection / overlap / structural misalignment\n\nCategory definition: Intersection / overlap / structural misalignment occurs when solid objects penetrate each other, duplicate the same volume, or have incorrectly aligned parts. Multiple viewpoints help establish their spatial relationship.\n\nThe following figures demonstrate this category. Explain how they illustrate it, referring to figure numbers and action/viewpoint captions."
+        },
+        {
+          "type": "text",
+          "text": "Figure 1: Front view of the intersecting green dumpsters."
+        },
+        {
+          "type": "image",
+          "path": "images/G2_01.png",
+          "media_type": "image/png"
+        },
+        {
+          "type": "text",
+          "text": "Figure 2: Second angle showing the overlapping walls and rims."
+        },
+        {
+          "type": "image",
+          "path": "images/G2_02.png",
+          "media_type": "image/png"
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": [
+        {
+          "type": "text",
+          "text": "G2 — Intersection / overlap / structural misalignment. Figure 1 shows two green dumpsters overlapping at an angle; Figure 2 shows their walls and upper rims passing through each other from another viewpoint, confirming an intersection."
+        }
+      ]
+    },
+    {
+      "role": "user",
+      "content": [
+        {
+          "type": "text",
+          "text": "G3 — Scale / proportion mismatch\n\nCategory definition: Scale / proportion mismatch occurs when an object has an implausible size relative to scene references or distorted proportions between its dimensions.\n\nThe following figures demonstrate this category. Explain how they illustrate it, referring to figure numbers and action/viewpoint captions."
+        },
+        {
+          "type": "text",
+          "text": "Figure 1: Compare the narrow chair left of the table with the matching chairs."
+        },
+        {
+          "type": "image",
+          "path": "images/G3_01.png",
+          "media_type": "image/png"
+        },
+        {
+          "type": "text",
+          "text": "Figure 2: A second angle confirms its narrow width while the height is unchanged."
+        },
+        {
+          "type": "image",
+          "path": "images/G3_02.png",
+          "media_type": "image/png"
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": [
+        {
+          "type": "text",
+          "text": "G3 — Scale / proportion mismatch. In Figure 1, a chair left of the table is much narrower than the matching chairs; Figure 2 confirms that its seat, back and leg spacing are compressed sideways while its height remains normal."
+        }
+      ]
+    },
+    {
+      "role": "user",
+      "content": [
+        {
+          "type": "text",
+          "text": "C1 — Missing collision\n\nCategory definition: Missing collision occurs when a player or object passes through a solid surface that should block movement. Movement actions and before-and-after viewpoints are needed to establish the crossing.\n\nThe following figures demonstrate this category. Explain how they illustrate it, referring to figure numbers and action/viewpoint captions."
+        },
+        {
+          "type": "text",
+          "text": "Figure 1: Before moving, face the intact wire fence."
+        },
+        {
+          "type": "image",
+          "path": "images/C1_01.png",
+          "media_type": "image/png"
+        },
+        {
+          "type": "text",
+          "text": "Figure 2: Walk forward 3 m through the fence, with no turn or detour."
+        },
+        {
+          "type": "image",
+          "path": "images/C1_02.png",
+          "media_type": "image/png"
+        },
+        {
+          "type": "text",
+          "text": "Figure 3: After crossing, turn 135° in place to look back obliquely: the nearby fence and posts are now visible with the road on the other side."
+        },
+        {
+          "type": "image",
+          "path": "images/C1_03.png",
+          "media_type": "image/png"
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": [
+        {
+          "type": "text",
+          "text": "C1 — Missing collision. Figure 1 faces the wire fence; walking straight ahead for about 3 m reaches the tree in Figure 2. Figure 3 looks back obliquely from that same position and shows the fence with the road beyond it; together with the straight movement, this demonstrates passage through the fence."
+        }
+      ]
+    },
+    {
+      "role": "user",
+      "content": [
+        {
+          "type": "text",
+          "text": "C2 — Unexpected collision\n\nCategory definition: Unexpected collision occurs when an apparently traversable area blocks movement without a corresponding visible obstacle. Assess the movement command together with the before-and-after views.\n\nThe following figures demonstrate this category. Explain how they illustrate it, referring to figure numbers and action/viewpoint captions."
+        },
+        {
+          "type": "text",
+          "text": "Figure 1: After approaching 2 m, face the clear road ahead."
+        },
+        {
+          "type": "image",
+          "path": "images/C2_01.png",
+          "media_type": "image/png"
+        },
+        {
+          "type": "text",
+          "text": "Figure 2: Attempt another 2 m forward: only about 12 cm of movement occurs before stopping."
+        },
+        {
+          "type": "image",
+          "path": "images/C2_02.png",
+          "media_type": "image/png"
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": [
+        {
+          "type": "text",
+          "text": "C2 — Unexpected collision. Figure 1 shows no visible obstacle ahead, yet a 2 m forward attempt advances only about 12 cm before stopping in Figure 2. The movement command and actual displacement show an unexpected obstruction on the clear road."
+        }
+      ]
+    },
+    {
+      "role": "user",
+      "content": [
+        {
+          "type": "text",
+          "text": "C3 — Abnormal object trajectories after interaction\n\nCategory definition: Abnormal object trajectories after interaction are motions disproportionate to the applied contact and physical conditions, such as excessive overturning, launching or repeated bouncing. Assess the interaction together with the expected response under the same conditions.\n\nThe following figures demonstrate this category. Explain how they illustrate it, referring to figure numbers and action/viewpoint captions.\n\nComparison conditions: identical starting positions and forward walking contact, followed by stepping back. Figure 2 is the clean-control result and Figure 3 is the faulty result; they are not consecutive moments in one run."
+        },
+        {
+          "type": "text",
+          "text": "Figure 1: Before contact: the bin stands upright with its opening facing upward."
+        },
+        {
+          "type": "image",
+          "path": "images/C3_01.png",
+          "media_type": "image/png"
+        },
+        {
+          "type": "text",
+          "text": "Figure 2: Clean control: contact tips the bin about 90° onto its side, where it settles."
+        },
+        {
+          "type": "image",
+          "path": "images/C3_02.png",
+          "media_type": "image/png"
+        },
+        {
+          "type": "text",
+          "text": "Figure 3: Faulty result: the same contact produces an approximately 180° vertical overturn, leaving the bin upside down on its rim."
+        },
+        {
+          "type": "image",
+          "path": "images/C3_03.png",
+          "media_type": "image/png"
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": [
+        {
+          "type": "text",
+          "text": "C3 — Abnormal object trajectories after interaction. Figure 1 shows the upright bin before contact; under the same contact, the clean control in Figure 2 tips about 90° and settles on its side, while the faulty version in Figure 3 overturns vertically by about 180° and settles upside down on its rim. Figures 2 and 3 are separate runs from the same initial state."
+        }
+      ]
+    },
+    {
+      "role": "user",
+      "content": [
+        {
+          "type": "text",
+          "text": "V1 — Visibility anomalies\n\nCategory definition: Visibility anomalies occur when whether an object is visible contradicts the current viewpoint, distance or occlusion. Examples include unobstructed objects incorrectly disappearing or reappearing as the viewpoint or distance changes, and objects remaining visible through opaque occluders.\n\nThe following figures demonstrate this category. Explain how they illustrate it, referring to figure numbers and action/viewpoint captions."
+        },
+        {
+          "type": "text",
+          "text": "Figure 1: View the bench with the opaque column directly in front of it."
+        },
+        {
+          "type": "image",
+          "path": "images/V1_01.png",
+          "media_type": "image/png"
+        },
+        {
+          "type": "text",
+          "text": "Figure 2: Side view establishes the bench’s position behind the column."
+        },
+        {
+          "type": "image",
+          "path": "images/V1_02.png",
+          "media_type": "image/png"
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": [
+        {
+          "type": "text",
+          "text": "V1 — Visibility anomalies. In Figure 1, the bench seat and backrest appear through the column; Figure 2 shows the bench behind the column without intersecting it, identifying an occlusion error."
+        }
+      ]
+    },
+    {
+      "role": "user",
+      "content": [
+        {
+          "type": "text",
+          "text": "V2 — View / distance-dependent appearance\n\nCategory definition: View / distance-dependent appearance anomalies are changes in an object’s shape, size or appearance with viewpoint that normal perspective cannot explain. Returning to the original viewpoint can check whether the appearance is restored.\n\nThe following figures demonstrate this category. Explain how they illustrate it, referring to figure numbers and action/viewpoint captions."
+        },
+        {
+          "type": "text",
+          "text": "Figure 1: Observe the bumper at the near viewpoint."
+        },
+        {
+          "type": "image",
+          "path": "images/V2_01.png",
+          "media_type": "image/png"
+        },
+        {
+          "type": "text",
+          "text": "Figure 2: Observe from farther away and compare its width with the fixed column."
+        },
+        {
+          "type": "image",
+          "path": "images/V2_02.png",
+          "media_type": "image/png"
+        },
+        {
+          "type": "text",
+          "text": "Figure 3: Restore the original near viewpoint; its earlier proportions return."
+        },
+        {
+          "type": "image",
+          "path": "images/V2_03.png",
+          "media_type": "image/png"
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": [
+        {
+          "type": "text",
+          "text": "V2 — View / distance-dependent appearance. The yellow bumper is narrower than the column in the near view of Figure 1 but becomes disproportionately large relative to the column in the distant view of Figure 2; its original proportions return in Figure 3, supporting a distance-dependent appearance anomaly."
+        }
+      ]
+    },
+    {
+      "role": "user",
+      "content": [
+        {
+          "type": "text",
+          "text": "V3 — Shadow / lighting anomalies\n\nCategory definition: Shadow / lighting anomalies occur when shadows or illumination are inconsistent with object positions, shapes or scene lighting, such as displaced or detached shadows.\n\nThe following figures demonstrate this category. Explain how they illustrate it, referring to figure numbers and action/viewpoint captions."
+        },
+        {
+          "type": "text",
+          "text": "Figure 1: Observe the lion, its base and the displaced shadow together."
+        },
+        {
+          "type": "image",
+          "path": "images/V3_01.png",
+          "media_type": "image/png"
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": [
+        {
+          "type": "text",
+          "text": "V3 — Shadow / lighting anomalies. In Figure 1, the stone lion stands at the upper left, while its corresponding shadow appears on the open ground at the lower right, detached from the base and demonstrating shadow displacement."
+        }
+      ]
+    },
+    {
+      "role": "user",
+      "content": [
+        {
+          "type": "text",
+          "text": "V4 — Material anomalies\n\nCategory definition: Material anomalies occur when a surface has an inappropriate texture, transparency or other material property. Surface continuity and nearby matching surfaces provide useful references.\n\nThe following figures demonstrate this category. Explain how they illustrate it, referring to figure numbers and action/viewpoint captions."
+        },
+        {
+          "type": "text",
+          "text": "Figure 1: Compare the upper and lower halves of the middle window pane."
+        },
+        {
+          "type": "image",
+          "path": "images/V4_01.png",
+          "media_type": "image/png"
+        },
+        {
+          "type": "text",
+          "text": "Figure 2: A second angle shows the same persistent material mismatch."
+        },
+        {
+          "type": "image",
+          "path": "images/V4_02.png",
+          "media_type": "image/png"
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": [
+        {
+          "type": "text",
+          "text": "V4 — Material anomalies. In Figure 1, the upper half of the middle pane has opaque wood grain while its lower half and neighboring panes remain glass; Figure 2 preserves the same boundary from another angle, without a board or frame explaining it."
+        }
+      ]
+    },
+    {
+      "role": "user",
+      "content": [
+        {
+          "type": "text",
+          "text": "T1 — Existence changes\n\nCategory definition: Existence changes occur when an object disappears or appears without a reasonable cause over time or after leaving and returning. Compare similar observation positions to rule out ordinary viewpoint or occlusion differences.\n\nThe following figures demonstrate this category. Explain how they illustrate it, referring to figure numbers and action/viewpoint captions."
+        },
+        {
+          "type": "text",
+          "text": "Figure 1: Before leaving: observe the boulder beside the starting point and the shoreline."
+        },
+        {
+          "type": "image",
+          "path": "images/T1_01.png",
+          "media_type": "image/png"
+        },
+        {
+          "type": "text",
+          "text": "Figure 2: After leaving and returning: inspect the original location again."
+        },
+        {
+          "type": "image",
+          "path": "images/T1_02.png",
+          "media_type": "image/png"
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": [
+        {
+          "type": "text",
+          "text": "T1 — Existence changes. Figure 1 shows a large boulder beside the starting point; after leaving and returning as recorded, Figure 2 shows only grass at the same shoreline location, with the boulder missing."
+        }
+      ]
+    },
+    {
+      "role": "user",
+      "content": [
+        {
+          "type": "text",
+          "text": "T2 — Static attribute changes\n\nCategory definition: Static attribute changes occur when an object’s position, orientation, size, material or another normally stable property changes without a reasonable cause over time or after leaving and returning.\n\nThe following figures demonstrate this category. Explain how they illustrate it, referring to figure numbers and action/viewpoint captions."
+        },
+        {
+          "type": "text",
+          "text": "Figure 1: Before leaving: locate the pot relative to the column, red banner and floor tiles."
+        },
+        {
+          "type": "image",
+          "path": "images/T2_01.png",
+          "media_type": "image/png"
+        },
+        {
+          "type": "text",
+          "text": "Figure 2: After leaving and returning: compare the pot’s position relative to the fixed architecture."
+        },
+        {
+          "type": "image",
+          "path": "images/T2_02.png",
+          "media_type": "image/png"
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": [
+        {
+          "type": "text",
+          "text": "T2 — Static attribute changes. In Figure 1, the flowerpot stands beside the red banner on the left; after leaving and returning, Figure 2 places it on the right side of the aisle, leaving its original spot empty. Together with the supplied record, this demonstrates a position change without anyone moving it."
+        }
+      ]
+    },
+    {
+      "role": "user",
+      "content": [
+        {
+          "type": "text",
+          "text": "T3 — Operational state changes\n\nCategory definition: Operational state changes occur when a scene or object abruptly or inconsistently switches states that should follow an established process. Examples include discontinuous day–night changes or jumps in an ongoing animation.\n\nThe following figures demonstrate this category. Explain how they illustrate it, referring to figure numbers and action/viewpoint captions.\n\nObservation record: day and night alternate abruptly about once a second; the normal cycle is about half a minute with gradual transitions. This timing is reported in the supplied document."
+        },
+        {
+          "type": "text",
+          "text": "Figure 1: State A: brighter ambient lighting, with the streetlamps unlit."
+        },
+        {
+          "type": "image",
+          "path": "images/T3_01.png",
+          "media_type": "image/png"
+        },
+        {
+          "type": "text",
+          "text": "Figure 2: State B: scene illumination changes and the streetlamps are lit."
+        },
+        {
+          "type": "image",
+          "path": "images/T3_02.png",
+          "media_type": "image/png"
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": [
+        {
+          "type": "text",
+          "text": "T3 — Operational state changes. Figures 1 and 2 show two lighting states of the same scene, with the streetlamps switching from dark to lit. Combined with the document’s report of abrupt day–night alternation about once a second, the issue is a discontinuous state transition rather than a normal gradual cycle."
+        }
+      ]
+    },
+    {
+      "role": "user",
+      "content": [
+        {
+          "type": "text",
+          "text": "S2 — Improper configuration\n\nCategory definition: Improper configuration occurs when an object belongs in the era and scene, but its placement, orientation, combination or use conflicts with an established function or rule. Correcting its configuration resolves the conflict.\n\nThe following figures demonstrate this category. Explain how they illustrate it, referring to figure numbers and action/viewpoint captions."
+        },
+        {
+          "type": "text",
+          "text": "Figure 1: Compare the legs and orientation of the inverted mailbox on the right with the upright one on the left."
+        },
+        {
+          "type": "image",
+          "path": "images/S2_01.png",
+          "media_type": "image/png"
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": [
+        {
+          "type": "text",
+          "text": "S2 — Improper configuration. In Figure 1, the blue mailbox on the right is upside down with its legs pointing upward, unlike the upright mailbox beside it. This orientation conflicts with the mailbox’s normal standing position and posting function."
+        }
+      ]
+    },
+    {
+      "role": "user",
+      "content": [
+        {
+          "type": "text",
+          "text": "S3 — Historical incompatibility\n\nCategory definition: Historical incompatibility occurs when an object or technology conflicts with the scene’s established historical era, without an explanation such as time travel, alternate history or an exhibition.\n\nThe following figures demonstrate this category. Explain how they illustrate it, referring to figure numbers and action/viewpoint captions.\n\nScene context: an ancient tea house, with no time-travel, alternate-history or exhibition premise."
+        },
+        {
+          "type": "text",
+          "text": "Figure 1: Observe the three modern packaged cola bottles on the table and the surrounding tea house."
+        },
+        {
+          "type": "image",
+          "path": "images/S3_01.png",
+          "media_type": "image/png"
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": [
+        {
+          "type": "text",
+          "text": "S3 — Historical incompatibility. In Figure 1, three cola bottles with modern red brand labels sit on a wooden table in an ancient tea house. Their packaging is incompatible with the historical era established for the tea house."
+        }
+      ]
+    }
+  ]
+}

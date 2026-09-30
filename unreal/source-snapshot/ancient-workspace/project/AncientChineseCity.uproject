@@ -1,0 +1,35 @@
+{
+  "FileVersion": 3,
+  "EngineAssociation": "",
+  "Category": "",
+  "Description": "",
+  "Modules": [
+    {
+      "Name": "AncientChineseCity",
+      "Type": "Runtime",
+      "LoadingPhase": "Default"
+    }
+  ],
+  "Plugins": [
+    {
+      "Name": "PythonScriptPlugin",
+      "Enabled": true
+    },
+    {
+      "Name": "PCG",
+      "Enabled": true
+    },
+    {
+      "Name": "AuditorRuntime",
+      "Enabled": true
+    },
+    {
+      "Name": "PixelStreaming",
+      "Enabled": false
+    },
+    {
+      "Name": "PixelStreaming2",
+      "Enabled": true
+    }
+  ]
+}

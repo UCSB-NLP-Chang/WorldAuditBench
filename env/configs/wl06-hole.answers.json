@@ -1,0 +1,12 @@
+[
+ {
+  "name": "hole in the ground",
+  "where": "you fall straight through the solid-looking meadow at one spot north-east of the start and drop into darkness under the terrain, then respawn",
+  "at": [
+   9,
+   4.15,
+   -6
+  ],
+  "category": "collision-physics"
+ }
+]

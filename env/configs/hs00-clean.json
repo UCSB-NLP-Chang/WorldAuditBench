@@ -1,0 +1,53 @@
+{
+ "name": "hs00-clean",
+ "meta": {
+  "title": "hs00-clean",
+  "desc": "Family house, untouched"
+ },
+ "seed": 5,
+ "scenes": [
+  {
+   "type": "house",
+   "id": "house"
+  }
+ ],
+ "spawn": {
+  "scene": "house",
+  "pos": [
+   0.55,
+   0.0,
+   3.9
+  ],
+  "yawDeg": 0
+ },
+ "player": {
+  "radius": 0.22
+ },
+ "bounds": {
+  "minX": -6.6,
+  "maxX": 6.6,
+  "minZ": -4.6,
+  "maxZ": 4.6
+ },
+ "notice": [
+  {
+   "x": 0.0,
+   "z": 4.85,
+   "r": 0.8
+  },
+  {
+   "x": 0.7,
+   "z": -4.85,
+   "r": 0.8
+  }
+ ],
+ "objects": [],
+ "bugs": [],
+ "targets": {
+  "zone_far": [
+   4.4,
+   3.0,
+   3.2
+  ]
+ }
+}

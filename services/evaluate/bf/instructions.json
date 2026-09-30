@@ -1,0 +1,105 @@
+{
+  "version": "exploration-instructions-v2-prompt-aligned",
+  "zh": {
+    "title": "探索与 bug 报告说明",
+    "intro": "你的任务是在分配的环境中自由探索，识别能够用观察和证据支持的异常，并提交准确、可复核的报告。你看不到标准答案或评分 rubric。不要推测隐藏答案，也不要假设一定有 bug、只有一个 bug，或每种类型都有 bug。",
+    "sections": [
+      {
+        "title": "1. 进入与操作",
+        "items": [
+          "点击“进入环境”，等到实时视频出现后点击画面捕获鼠标。W/A/S/D 移动，鼠标调整观察方向；仅对支持交互的对象使用 E。并非所有物体都能交互。",
+          "按 F 或点击 Flag 保存当前画面的证据截图。按 Esc 释放鼠标并填写报告；再次点击画面继续探索。",
+          "LLM agent 应使用任务提供的观察和操作工具。若工具不支持某个动作，应注明限制；不要声称执行过未实际执行的操作。"
+        ]
+      },
+      {
+        "title": "2. 系统探索与验证",
+        "items": [
+          "先了解可到达区域、通路、物体和场景用途。按区域检查地面、接缝、支撑点、通行边界和可交互物体，避免只停留在初始视角。",
+          "对可疑现象改变观察角度、距离或接近方向；在安全可用的交互后比较状态，等待或离开再返回检查时间变化。尽量重复触发并记录操作顺序。",
+          "区分事实与推测：说明实际看到的现象、预期依据和仍不确定的部分。偶发网络卡顿、视频压缩、个人审美偏好，以及不明确的时代或场景假设，都不足以单独证明场景 bug。",
+          "只依据当前场景中可见的信息及任务明确提供的设定，不访问隐藏 rubric、私有评测数据或其他探索者答案。不要修改环境资产、注入代码或使用未提供的作弊／调试手段改变环境。"
+        ]
+      },
+      {
+        "title": "3. 选择 bug 类型",
+        "items": [
+          "选择最符合实际观察的一类。类别描述的是观察到的现象，不是对标准答案的猜测。下方五类名称和定义对应 game-auditing 的 agent system prompt；不另设子类型。",
+          "一个独立异常写一条报告；同一异常的多个视角使用多张证据，不要拆成重复报告。若符合多个类型，选择最主要的一种，并在描述中解释关联现象。",
+          "无法确定分类时选“不确定”；确有异常但不适合所列五类时选“其他”并解释。这两项是报告选项，不是额外的 taxonomy 类别。"
+        ]
+      },
+      {
+        "title": "4. 截图与描述",
+        "items": [
+          "每条 bug 报告至少关联一张已保存截图。截图应能辨认对象、位置和异常；必要时同时保留全景与近景。动态或碰撞问题尽量保存动作前后或不同位置的多张截图。",
+          "截图不能独立证明运动过程时，用文字补足动作顺序和观察结果，不要把未拍到的过程描述成截图已证明的事实。只引用本次实际保存的截图；LLM 不应编造截图 ID 或工具结果。",
+          "可以删除误拍的截图；删除会自动解除所有报告中的引用。如果一条报告因此没有证据，需要补拍并关联后再提交。描述和类别会自动保存，等待保存完成再离开。"
+        ]
+      },
+      {
+        "title": "5. 完成探索",
+        "items": [
+          "发现有证据支持的异常：选择“我发现了疑似 bug”，检查每条描述、类别及证据关联，再最终提交。没有充分依据时不要编造报告。",
+          "完成合理探索后未发现异常：选择“我没有发现 bug”。这表示未观察到异常，不代表证明环境绝对无 bug。",
+          "环境无法启动、持续黑屏或操作工具故障导致无法探索：选择“环境发生技术问题”，记录故障现象、尝试的恢复步骤及未完成的检查，不将其当作已发现的场景 bug。",
+          "提交前完成复核；最终提交后不能修改。本服务最多支持 20 条报告和 30 张截图，每条描述最多 10000 字符。"
+        ]
+      }
+    ],
+    "report_title": "每条报告的描述模板",
+    "template": "对象与位置：\n复现步骤：\n实际现象：\n预期表现及依据：\n重复验证结果／不确定性：\n证据截图及每张图说明：",
+    "agent_note": "使用网页时，将以上内容填入报告字段并关联 Flag 截图。如果调用方只要求文本答案，每条异常按此模板单独输出，并附上实际保存的证据标识和类别代码；遵循调用方要求的输出格式，不要声称文本输出等同于已在网页提交。"
+  },
+  "en": {
+    "title": "Exploration and bug reporting instructions",
+    "intro": "Freely explore the assigned environment, identify anomalies supported by observation and evidence, and submit accurate, reviewable reports. Ground-truth answers and scoring rubrics are hidden. Do not infer hidden answers or assume that a bug must exist, that there is exactly one bug, or that every category is represented.",
+    "sections": [
+      {
+        "title": "1. Enter and control the environment",
+        "items": [
+          "Select Enter environment (进入环境), wait for live video, then click the scene to capture the mouse. Use W/A/S/D to move and the mouse to look around. Use E only on objects that support interaction; not every object is interactive.",
+          "Press F or select Flag to save evidence of the currently displayed frame. Press Esc to release the mouse and write a report. Click the scene again to resume exploration.",
+          "An LLM agent must use the observation and action tools supplied for the task. If a tool cannot perform an action, state that limitation. Never claim to have performed an action that was not actually executed."
+        ]
+      },
+      {
+        "title": "2. Explore systematically and verify",
+        "items": [
+          "First identify accessible areas, routes, objects and scene functions. Inspect regions in turn, including floors, joints, support points, traversal boundaries and available interactions. Do not rely only on the initial view.",
+          "For a suspected anomaly, change viewing angle, distance or approach direction. Compare states before and after available interactions; wait or leave and return to check temporal changes. Repeat the trigger where feasible and record the action sequence.",
+          "Separate observations from inference. Explain what happened, why a different result is expected, and what remains uncertain. Network stalls, video compression, aesthetic preference, or unsupported assumptions about the era or scene do not independently establish a scene bug.",
+          "Use only visible scene information and context explicitly supplied for the task. Do not access hidden rubrics, private evaluation data or other explorers’ answers. Do not modify assets, inject code, or use unavailable cheat/debug methods to alter the environment."
+        ]
+      },
+      {
+        "title": "3. Choose a bug type",
+        "items": [
+          "Choose the category that best matches the observed phenomenon, rather than guessing a ground-truth label. The five names and definitions below reproduce the taxonomy in the game-auditing agent system prompt. There are no additional subtypes.",
+          "Write one report per distinct anomaly. Attach multiple views of the same issue to one report rather than creating duplicates. If more than one type applies, choose the primary type and explain related symptoms in the description.",
+          "Choose Unsure when classification is uncertain, or Other when an evidenced anomaly does not fit the five listed categories, and explain why. These are reporting options, not additional taxonomy categories."
+        ]
+      },
+      {
+        "title": "4. Capture evidence and describe the issue",
+        "items": [
+          "Associate at least one saved screenshot with every bug report. Make the object, location and anomaly identifiable; include both context and close-up views when needed. For motion or collision issues, capture before/after states or multiple positions when feasible.",
+          "A still image may not prove a motion sequence. Describe the actions and observations that supplement it, and do not claim that an image proves an uncaptured event. Reference only evidence actually saved in this attempt; never invent screenshot IDs or tool results.",
+          "Accidental screenshots may be deleted; deletion also removes their report associations. Replace and associate evidence before submitting any report left without a screenshot. Descriptions and categories save automatically; wait for saving to finish before leaving."
+        ]
+      },
+      {
+        "title": "5. Finish the attempt",
+        "items": [
+          "If you found supported anomalies, choose I found suspected bugs (我发现了疑似 bug), review every description, category and evidence association, then submit. Do not fabricate a report when evidence is insufficient.",
+          "If reasonable exploration reveals no anomaly, choose I found no bugs (我没有发现 bug). This records that none were observed; it does not prove that the environment is bug-free.",
+          "If startup failure, persistent black video or broken action tools prevent exploration, choose Technical problem (环境发生技术问题). Record symptoms, attempted recovery and checks that could not be completed; do not present this as a discovered scene bug.",
+          "Review before submitting: final submissions cannot be edited. This service supports up to 20 reports and 30 screenshots per attempt, and 10000 characters per description."
+        ]
+      }
+    ],
+    "report_title": "Description template for each report",
+    "template": "Object and location:\nReproduction steps:\nObserved behavior:\nExpected behavior and justification:\nRepeatability / uncertainty:\nEvidence references and what each image shows:",
+    "agent_note": "When using the webpage, enter this information in the report fields and associate the saved Flag images. If the caller requests a text-only answer, output one separate report per anomaly using this template, the category code and actual saved evidence references. Follow the caller’s required output format; do not claim that returning text has submitted the webpage form."
+  }
+}

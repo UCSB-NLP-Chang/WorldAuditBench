@@ -1,0 +1,535 @@
+{
+  "taxonomy_version": "user-2026-09-12-semantic-compatibility",
+  "tasks": [
+    {
+      "id": "R01",
+      "region": "road_bend",
+      "map": "/Game/Auditor/RuralAustralia/RoadBend",
+      "kind": "offset",
+      "target": "BendSign",
+      "subcategory": "G1",
+      "title": "Floating wildlife sign",
+      "probe": [
+        10449.55581017222,
+        10364.181821723032,
+        163.43203093667023
+      ],
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "袋鼠警示牌整体悬在地面上方，立柱下方没有支撑。正常情况下立柱应落地固定。"
+        },
+        "en": {
+          "criteria": "The wildlife sign floats above the ground without support. Its post should be anchored in the ground."
+        }
+      },
+      "offset": [
+        0,
+        0,
+        100
+      ]
+    },
+    {
+      "id": "R02",
+      "region": "road_bend",
+      "map": "/Game/Auditor/RuralAustralia/RoadBend",
+      "kind": "duplicate",
+      "target": "BendLog",
+      "subcategory": "G2",
+      "title": "Intersecting roadside logs",
+      "probe": [
+        10270.562140926337,
+        10457.772046622491,
+        152.44968297157027
+      ],
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "路边两根倒木相互穿插，木质表面交叉重叠。正常情况下实体倒木不应互相穿透。"
+        },
+        "en": {
+          "criteria": "Two roadside logs intersect, with overlapping wooden surfaces. Solid logs should not penetrate one another."
+        }
+      },
+      "offset": [
+        25,
+        0,
+        0
+      ],
+      "yaw": 40,
+      "review_aim": [
+        10290.754817895568,
+        10907.318769218504,
+        100.31098504742044
+      ]
+    },
+    {
+      "id": "R03",
+      "region": "road_bend",
+      "map": "/Game/Auditor/RuralAustralia/RoadBend",
+      "kind": "axis_scale",
+      "target": "BendSign",
+      "subcategory": "G3",
+      "title": "Stretched wildlife sign",
+      "probe": [
+        10449.55581017222,
+        10364.181821723032,
+        163.43203093667023
+      ],
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "警示牌被竖向拉长为三倍，牌面和立柱比例异常。正常情况下应与对面同类标牌的尺寸比例一致。"
+        },
+        "en": {
+          "criteria": "The sign is stretched to three times its height, distorting its panel and post. Its proportions should match the same type of sign across the road."
+        }
+      },
+      "scale": [
+        1,
+        1,
+        3
+      ]
+    },
+    {
+      "id": "R04",
+      "region": "road_bend",
+      "map": "/Game/Auditor/RuralAustralia/RoadBend",
+      "kind": "no_collision",
+      "target": "BendFence",
+      "subcategory": "C1",
+      "title": "Walk through wire fence",
+      "probe": [
+        10041.85349329361,
+        10278.486026932022,
+        145.50334165003028
+      ],
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "人物可以直接穿过道路两侧可见的铁丝网，走到围栏另一侧。正常情况下完整的铁丝网围栏应阻挡人物通行。"
+        },
+        "en": {
+          "criteria": "The player can walk through the visible wire fences on both sides of the road. Intact wire fencing should block passage."
+        }
+      },
+      "collision_center": [
+        9892.184125656899,
+        10478.733574710332,
+        140.09869782387568
+      ],
+      "review_aim": [
+        9892.184125656899,
+        10478.733574710332,
+        140.09869782387568
+      ]
+    },
+    {
+      "id": "R05",
+      "region": "road_bend",
+      "map": "/Game/Auditor/RuralAustralia/RoadBend",
+      "kind": "view_cull",
+      "target": "BendTree",
+      "subcategory": "V1",
+      "title": "Roadside tree disappears at center of view",
+      "probe": [
+        9971.093988280072,
+        10461.117304553527,
+        139.73480603347252
+      ],
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "把路边树木移到视野中央时，整棵树突然消失；偏转视角后又出现。正常情况下近处未被遮挡的树应持续可见。"
+        },
+        "en": {
+          "criteria": "The roadside tree disappears when centered in view and returns when the view shifts. A nearby unobstructed tree should remain visible."
+        }
+      },
+      "threshold": 0.99,
+      "review_aim": [
+        9738.19970703125,
+        10846.1630859375,
+        325.23613402044384
+      ]
+    },
+    {
+      "id": "R06",
+      "region": "road_bend",
+      "map": "/Game/Auditor/RuralAustralia/RoadBend",
+      "kind": "shadow_offset",
+      "target": "BendSign",
+      "subcategory": "V3",
+      "title": "Detached sign shadow",
+      "probe": [
+        10449.55581017222,
+        10364.181821723032,
+        163.43203093667023
+      ],
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "警示牌位置正常，但阴影偏移到不对应的位置。正常情况下阴影应与标牌和日照方向一致。"
+        },
+        "en": {
+          "criteria": "The sign remains in place while its shadow is displaced. Its shadow should agree with the sign position and sunlight."
+        }
+      },
+      "offset": [
+        180,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "R07",
+      "region": "roadside",
+      "map": "/Game/Auditor/RuralAustralia/Roadside",
+      "kind": "offset",
+      "target": "RoadLog",
+      "subcategory": "G1",
+      "title": "Floating roadside log",
+      "probe": [
+        324.282615861593,
+        -4115.706156462408,
+        99.9991774433509
+      ],
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "路边倒木悬在地面上方，没有接触地面。正常情况下倒木应由地面支撑。"
+        },
+        "en": {
+          "criteria": "The roadside log floats above the ground. A fallen log should rest on the ground."
+        }
+      },
+      "offset": [
+        0,
+        0,
+        100
+      ]
+    },
+    {
+      "id": "R08",
+      "region": "roadside",
+      "map": "/Game/Auditor/RuralAustralia/Roadside",
+      "kind": "no_collision",
+      "target": "RoadTree",
+      "subcategory": "C1",
+      "title": "Walk through tree trunk",
+      "probe": [
+        -1891.9017944335938,
+        -5525.68701171875,
+        133.4459958637243
+      ],
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "人物可以走进并穿过可见的树干。正常情况下实体树干应阻挡人物。"
+        },
+        "en": {
+          "criteria": "The player can walk into and through the visible tree trunk. A solid trunk should block the player."
+        }
+      },
+      "collision_center": [
+        -2177.630859375,
+        -5404.6298828125,
+        100
+      ],
+      "review_aim": [
+        -2177.63,
+        -5404.63,
+        150
+      ]
+    },
+    {
+      "id": "R09",
+      "region": "roadside",
+      "map": "/Game/Auditor/RuralAustralia/Roadside",
+      "kind": "blocker",
+      "target": "",
+      "subcategory": "C2",
+      "title": "Invisible road barrier",
+      "probe": [
+        -1700,
+        -5032,
+        109.12133240622542
+      ],
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "道路空旷处出现空气墙，人物无法穿过。正常情况下没有可见障碍的路面应允许通行。"
+        },
+        "en": {
+          "criteria": "An invisible barrier blocks a clear part of the road. The unobstructed road should allow passage."
+        }
+      },
+      "position": [
+        -1700,
+        -4782,
+        116.15446174463787
+      ],
+      "extent": [
+        200,
+        8,
+        105
+      ],
+      "review_aim": [
+        -1700,
+        -4782,
+        116.15446174463787
+      ]
+    },
+    {
+      "id": "R10",
+      "region": "roadside",
+      "map": "/Game/Auditor/RuralAustralia/Roadside",
+      "kind": "distance_scale",
+      "target": "RoadLog",
+      "subcategory": "V2",
+      "title": "Log changes size with distance",
+      "probe": [
+        324.282615861593,
+        -4115.706156462408,
+        99.9991774433509
+      ],
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "同一根倒木在后退几米后突然放大，靠近又恢复。正常情况下观察距离不应改变倒木的实际外形尺寸。"
+        },
+        "en": {
+          "criteria": "The same log suddenly grows when viewed from farther away and returns to normal nearby. Viewing distance should not change its physical dimensions."
+        }
+      },
+      "threshold": 550,
+      "factor": 2,
+      "far_probe": [
+        499.2826158615931,
+        -3206.3794824887477,
+        99.9991774433509
+      ]
+    },
+    {
+      "id": "R11",
+      "region": "roadside",
+      "map": "/Game/Auditor/RuralAustralia/Roadside",
+      "kind": "return_hide",
+      "target": "RoadSign",
+      "subcategory": "T1",
+      "title": "Road sign disappears between visits",
+      "probe": [
+        -1576.5149083137512,
+        -4381.580554962158,
+        99.99927281223773
+      ],
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "先看清警示牌，背向它走远后返回，标牌无原因地消失。正常情况下无人移除的标牌应仍在原处。"
+        },
+        "en": {
+          "criteria": "Observe the sign, walk away facing away, and return; the sign has disappeared. A sign that nobody removed should remain in place."
+        }
+      },
+      "near": 550,
+      "far": 750,
+      "far_probe": [
+        -876.5149083137512,
+        -4381.580554962158,
+        99.99927281223773
+      ]
+    },
+    {
+      "id": "R12",
+      "region": "roadside",
+      "map": "/Game/Auditor/RuralAustralia/Roadside",
+      "kind": "semantic_add",
+      "target": "RoadTree",
+      "subcategory": "S2",
+      "title": "Tree planted in road lane",
+      "probe": [
+        -1891.9017944335938,
+        -5525.68701171875,
+        133.4459958637243
+      ],
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "一棵树被布置在完好的道路车道中央，妨碍道路使用。正常情况下道路行车空间应保持畅通，树木应位于路侧。"
+        },
+        "en": {
+          "criteria": "A tree is placed in the middle of an intact road lane, obstructing its use. The roadway should remain clear, with trees at the roadside."
+        }
+      },
+      "position": [
+        -1600,
+        -4782,
+        19.72117317041912
+      ],
+      "yaw": 0,
+      "review_aim": [
+        -1600,
+        -4782,
+        216.15446174463787
+      ]
+    },
+    {
+      "id": "R13",
+      "region": "canyon",
+      "map": "/Game/Auditor/RuralAustralia/Canyon",
+      "kind": "offset",
+      "target": "CreekRock",
+      "subcategory": "G1",
+      "title": "Floating creek rock",
+      "probe": [
+        12182.30877587887,
+        -3060.264731911374,
+        317.57531795278777
+      ],
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "溪谷中的石块悬在地面上方，下方没有支撑。正常情况下石块应接触地面。"
+        },
+        "en": {
+          "criteria": "A creek rock floats above the ground without support. It should rest on the ground."
+        }
+      },
+      "offset": [
+        0,
+        0,
+        100
+      ]
+    },
+    {
+      "id": "R14",
+      "region": "canyon",
+      "map": "/Game/Auditor/RuralAustralia/Canyon",
+      "kind": "duplicate",
+      "target": "CreekLog",
+      "subcategory": "G2",
+      "title": "Intersecting fallen logs",
+      "probe": [
+        11862.268705476385,
+        -2772.1405001859293,
+        314.41470773127423
+      ],
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "两根倒木在同一位置相互穿入，木质表面交叉重叠。正常情况下实体倒木不应互相穿透。"
+        },
+        "en": {
+          "criteria": "Two fallen logs intersect at the same position, with overlapping wooden surfaces. Solid logs should not penetrate one another."
+        }
+      },
+      "offset": [
+        30,
+        0,
+        0
+      ],
+      "yaw": 35
+    },
+    {
+      "id": "R15",
+      "region": "canyon",
+      "map": "/Game/Auditor/RuralAustralia/Canyon",
+      "kind": "view_cull",
+      "target": "CreekRock",
+      "subcategory": "V1",
+      "title": "Creek rock disappears at center of view",
+      "probe": [
+        12182.30877587887,
+        -3060.264731911374,
+        317.57531795278777
+      ],
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "把溪边倒木旁的小石块移到视野中央时，它突然消失，偏转视角后又恢复。正常情况下近处未被遮挡的石块应持续可见。"
+        },
+        "en": {
+          "criteria": "The small rock beside the creek log disappears when centered in view and returns when the view shifts. A nearby unobstructed rock should remain visible."
+        }
+      },
+      "threshold": 0.99
+    },
+    {
+      "id": "R16",
+      "region": "canyon",
+      "map": "/Game/Auditor/RuralAustralia/Canyon",
+      "kind": "return_move",
+      "target": "CreekLog",
+      "subcategory": "T2",
+      "title": "Log moves between visits",
+      "probe": [
+        11862.268705476385,
+        -2772.1405001859293,
+        314.41470773127423
+      ],
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "观察倒木，背向它走远再返回后，倒木在无人搬动时平移。正常情况下静止倒木应保持原来的位置。"
+        },
+        "en": {
+          "criteria": "Observe the log, walk away facing away, and return; it has moved without being touched. A stationary log should retain its position."
+        }
+      },
+      "near": 550,
+      "far": 750,
+      "offset": [
+        80,
+        0,
+        0
+      ],
+      "far_probe": [
+        12512.268705476385,
+        -2772.1405001859293,
+        253.32696981829133
+      ]
+    },
+    {
+      "id": "R17",
+      "region": "canyon",
+      "map": "/Game/Auditor/RuralAustralia/Canyon",
+      "kind": "return_material",
+      "target": "CreekRock",
+      "subcategory": "T2",
+      "title": "Rock changes colour between visits",
+      "probe": [
+        12182.30877587887,
+        -3060.264731911374,
+        317.57531795278777
+      ],
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "观察石块，背向它走远再返回后，同一石块无原因地变成蓝色。正常情况下无人修改的石块应保持原有材质。"
+        },
+        "en": {
+          "criteria": "Observe the rock, walk away facing away, and return; the same rock has turned blue without a cause. Its material should remain unchanged."
+        }
+      },
+      "near": 550,
+      "far": 750,
+      "far_probe": [
+        11882.30877587887,
+        -2504.046949262267,
+        303.19338143947635
+      ]
+    },
+    {
+      "id": "R18",
+      "region": "canyon",
+      "map": "/Game/Auditor/RuralAustralia/Canyon",
+      "kind": "distance_cull",
+      "target": "CreekTree",
+      "subcategory": "V1",
+      "title": "Tree vanishes a few metres away",
+      "probe": [
+        12818.984176357962,
+        -2437.3782238380477,
+        170.12027054570854
+      ],
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "后退几米时眼前的树突然消失，靠近又出现。正常情况下近距离且未被遮挡的树应持续可见。"
+        },
+        "en": {
+          "criteria": "A nearby tree abruptly disappears when stepping back and returns on approach. A nearby, unobstructed tree should remain visible."
+        }
+      },
+      "threshold": 650,
+      "far_probe": [
+        13328.310850331623,
+        -1912.3782238380477,
+        60.65976509218058
+      ]
+    }
+  ]
+}

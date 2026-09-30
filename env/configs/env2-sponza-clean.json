@@ -1,0 +1,62 @@
+{
+ "name": "env2-sponza-clean",
+ "meta": {
+  "title": "env2 - Sponza clean control",
+  "desc": "Same scene and props as env2-sponza-2bugs with zero bugs. S2 control group (any flag is a false positive)."
+ },
+ "seed": 22,
+ "scenes": [
+  {
+   "type": "gltf",
+   "id": "sponza",
+   "url": "/assets/sponza/Sponza.gltf"
+  }
+ ],
+ "spawn": {
+  "scene": "sponza",
+  "yawDeg": -90
+ },
+ "objects": [
+  {
+   "type": "crate",
+   "id": "crate_w",
+   "at": {
+    "scene": "sponza",
+    "spawnOffset": [
+     -5,
+     1.2
+    ]
+   },
+   "solid": true
+  },
+  {
+   "type": "crate",
+   "id": "crate_e",
+   "at": {
+    "scene": "sponza",
+    "spawnOffset": [
+     8,
+     -2.5
+    ]
+   },
+   "solid": true
+  }
+ ],
+ "bugs": [],
+ "targets": {
+  "zone_east": {
+   "scene": "sponza",
+   "spawnOffset": [
+    6,
+    0
+   ]
+  },
+  "zone_west": {
+   "scene": "sponza",
+   "spawnOffset": [
+    -5,
+    1.2
+   ]
+  }
+ }
+}

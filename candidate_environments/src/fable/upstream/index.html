@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beyond Fable — Procedural Walking World</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <div id="app"></div>
+    <div id="hud">
+      <div id="hud-overlay">
+        <div id="hud-chrome" class="hidden">
+          <div id="hud-top-left">
+            <div id="fps">FPS: --</div>
+            <div id="seed">Seed: --</div>
+            <div id="quality">Quality: --</div>
+            <div id="status">--:--</div>
+          </div>
+          <div id="hud-controls">
+            WASD move &middot; Mouse look &middot; Shift sprint &middot; R shift atmosphere &middot; T show HUD &middot; ~ console &middot; E interact
+          </div>
+        </div>
+        <div id="interact-prompt"></div>
+        <div id="interact-message"></div>
+      </div>
+      <div id="underwater-overlay"></div>
+      <aside id="hack-menu" aria-label="World controls">
+        <div class="hack-header">
+          <div>
+            <span class="hack-kicker">LIVE WORLD EDITOR</span>
+            <h2>Atmosphere Console</h2>
+          </div>
+          <button id="hack-close" type="button" aria-label="Close atmosphere console">~</button>
+        </div>
+        <div class="hack-grid">
+          <label class="hack-control hack-wide">
+            <span>Time of day <output id="hack-time-value">12:00</output></span>
+            <input id="hack-time" type="range" min="0" max="1" step="0.001" />
+          </label>
+          <label class="hack-control">
+            <span>Day cycle speed <output id="hack-cycle-value">1.0x</output></span>
+            <input id="hack-cycle" type="range" min="0" max="8" step="0.1" />
+          </label>
+          <label class="hack-control">
+            <span>Weather</span>
+            <select id="hack-weather"></select>
+          </label>
+          <label class="hack-toggle">
+            <input id="hack-auto-weather" type="checkbox" />
+            <span>Automatic weather changes</span>
+          </label>
+          <label class="hack-control">
+            <span>Cloud cover <output id="hack-cloud-value"></output></span>
+            <input id="hack-cloud" type="range" min="0" max="1" step="0.01" />
+          </label>
+          <label class="hack-control">
+            <span>Cloud darkness <output id="hack-cloud-dark-value"></output></span>
+            <input id="hack-cloud-dark" type="range" min="0" max="1" step="0.01" />
+          </label>
+          <label class="hack-control">
+            <span>Rain <output id="hack-rain-value"></output></span>
+            <input id="hack-rain" type="range" min="0" max="1" step="0.01" />
+          </label>
+          <label class="hack-control">
+            <span>Wind strength <output id="hack-wind-value"></output></span>
+            <input id="hack-wind" type="range" min="0" max="2.5" step="0.01" />
+          </label>
+          <label class="hack-control">
+            <span>Wind direction <output id="hack-wind-dir-value"></output></span>
+            <input id="hack-wind-dir" type="range" min="0" max="360" step="1" />
+          </label>
+          <label class="hack-control">
+            <span>Fog density <output id="hack-fog-value"></output></span>
+            <input id="hack-fog" type="range" min="0.2" max="3" step="0.01" />
+          </label>
+          <label class="hack-control">
+            <span>World lighting <output id="hack-light-value"></output></span>
+            <input id="hack-light" type="range" min="0.35" max="2" step="0.01" />
+          </label>
+          <label class="hack-control">
+            <span>Exposure <output id="hack-exposure-value"></output></span>
+            <input id="hack-exposure" type="range" min="0.45" max="2" step="0.01" />
+          </label>
+          <div class="hack-section-title hack-wide">Ground cover</div>
+          <label class="hack-control">
+            <span>Grass density <output id="hack-grass-density-value"></output></span>
+            <input id="hack-grass-density" type="range" min="0.25" max="5" step="0.05" />
+          </label>
+          <label class="hack-control">
+            <span>Grass height <output id="hack-grass-height-value"></output></span>
+            <input id="hack-grass-height" type="range" min="0.4" max="2.5" step="0.05" />
+          </label>
+          <label class="hack-control">
+            <span>Grass width <output id="hack-grass-width-value"></output></span>
+            <input id="hack-grass-width" type="range" min="0.5" max="2.5" step="0.05" />
+          </label>
+          <label class="hack-control">
+            <span>Plain coverage <output id="hack-grass-coverage-value"></output></span>
+            <input id="hack-grass-coverage" type="range" min="0.2" max="0.98" step="0.01" />
+          </label>
+          <label class="hack-control">
+            <span>Edge-ring density <output id="hack-grass-edge-density-value"></output></span>
+            <input id="hack-grass-edge-density" type="range" min="0.1" max="1.5" step="0.05" />
+          </label>
+          <label class="hack-control">
+            <span>Undergrowth density <output id="hack-undergrowth-density-value"></output></span>
+            <input id="hack-undergrowth-density" type="range" min="0" max="3" step="0.05" />
+          </label>
+        </div>
+        <div class="hack-actions">
+          <button id="hack-randomize" type="button">Randomize atmosphere</button>
+          <button id="hack-reset" type="button">Reset modifiers</button>
+        </div>
+      </aside>
+      <div id="start-overlay" class="hidden">
+        <div id="start-box">
+          <h1>Beyond Fable</h1>
+          <p>The world rests, waiting.</p>
+          <p class="controls-hint">WASD &middot; Mouse &middot; Shift &middot; E &middot; ~ Console</p>
+          <p class="click-hint">Click to resume</p>
+        </div>
+      </div>
+    </div>
+    <div id="loading-screen">
+      <div class="ls-bg"></div>
+      <div class="ls-frame">
+        <div class="ls-emblem" aria-hidden="true"></div>
+        <h1 class="ls-title">Beyond Fable</h1>
+        <div class="ls-rule"></div>
+        <div class="ls-sub">An ever-shifting wilderness</div>
+        <div class="ls-bar"><span></span></div>
+        <div class="ls-tip">Forging the world&hellip;</div>
+        <div class="ls-enter">Click to enter</div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

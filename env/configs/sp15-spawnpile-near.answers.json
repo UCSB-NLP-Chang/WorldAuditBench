@@ -1,0 +1,15 @@
+[
+ {
+  "name": "prop pile in the aisle corner",
+  "where": "copies of the stone pots, a planter and a hanging brazier are dumped into ONE HEAP at the east end of the north side aisle, beside the octagonal stone basin and behind the last drape: pots tilted into and through each other, one lying on its side on top of the heap, the brazier on the floor with its chains - duplicated real props jammed together (failed spawns)",
+  "at": {
+   "scene": "sponza",
+   "spawnOffset": [
+    8.38,
+    4.31
+   ],
+   "snap": true
+  },
+  "category": "semantics-logic"
+ }
+]

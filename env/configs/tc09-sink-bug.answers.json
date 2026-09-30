@@ -1,0 +1,15 @@
+[
+ {
+  "name": "sunken crate",
+  "where": "the middle crate's lower half is buried in the floor",
+  "at": {
+   "scene": "c",
+   "local": [
+    6.5,
+    0
+   ]
+  },
+  "bug": "sink",
+  "level": "L1"
+ }
+]

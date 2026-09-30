@@ -1,0 +1,12 @@
+[
+ {
+  "name": "trembling shrub",
+  "where": "a bush up the slope north-east of the start (about 20 m away, just below the big boulder on that slope) shakes / vibrates rapidly in place (physics jitter) instead of swaying gently like the others",
+  "at": [
+   18.9,
+   10.25,
+   -12
+  ],
+  "category": "collision-physics"
+ }
+]

@@ -1,0 +1,21 @@
+.icl-example{margin:12px 0 18px;padding:14px;background:#f4f7f3;border:1px solid #dbe4d8;border-radius:10px;font-size:13px;line-height:1.55}
+.icl-example summary{cursor:pointer;font-weight:650;color:#31523d}
+.icl-example h4{margin:12px 0 6px;font-size:15px}
+.icl-example p{margin:8px 0}.example-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(135px,1fr));gap:10px;margin:12px 0}
+.example-gallery figure{margin:0;min-width:0}.example-gallery .image-button{width:100%;padding:0;overflow:hidden;border-radius:6px}.example-gallery img{display:block;width:100%;height:auto;aspect-ratio:auto;object-fit:contain;background:#17232a}
+.example-gallery figcaption{font-size:12px;line-height:1.45;margin-top:5px;color:#526057}.example-note{border-left:3px solid #91a88b;padding-left:9px}
+
+.example-image-wrap{position:relative;display:block;line-height:0}
+.example-box{position:absolute;display:block;box-sizing:border-box;border:3px solid #ffff00;border-radius:0;pointer-events:none;box-shadow:0 0 1px 1px rgba(0,0,0,.35)}
+.example-lightbox{color:#f5f5f5;max-width:94vw;max-height:94vh;text-align:center}
+.example-lightbox-image{line-height:0}.example-lightbox-image .example-image-wrap{display:inline-block}
+.example-lightbox-image img{width:auto;height:auto;max-width:88vw;max-height:72vh}
+.example-lightbox-image .example-box{border-width:4px}
+.example-lightbox>p{max-width:88vw;text-align:left;font-size:14px;line-height:1.5;margin:12px 0}
+.example-lightbox-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+.example-lightbox-actions button{display:inline-block;margin:0}.hide-example-boxes .example-box{display:none}
+
+.example-hover-preview{position:fixed;z-index:1000;pointer-events:none;padding:8px;background:#12241b;border:1px solid #688170;border-radius:10px;box-shadow:0 12px 40px #0007;color:white}
+.example-hover-preview img{display:block;width:100%;height:auto;aspect-ratio:auto;object-fit:contain}
+.example-hover-preview p{margin:8px 2px 2px;font-size:13px;line-height:1.5}
+.example-hover-preview .example-box{border-width:4px}

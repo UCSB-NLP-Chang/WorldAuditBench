@@ -1,0 +1,10 @@
+{
+  "FileVersion": 3,
+  "Version": 1,
+  "VersionName": "0.1.0",
+  "FriendlyName": "Auditor Runtime",
+  "Description": "First-person playtests with explicit task boundaries.",
+  "Category": "Simulation",
+  "CanContainContent": false,
+  "Modules": [{"Name": "AuditorRuntime", "Type": "Runtime", "LoadingPhase": "Default"}]
+}

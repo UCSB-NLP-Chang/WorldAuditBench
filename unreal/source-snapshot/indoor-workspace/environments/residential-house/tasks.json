@@ -1,0 +1,372 @@
+{
+  "schema_version": 2,
+  "taxonomy_version": "user-2026-09-12-semantic-compatibility",
+  "revision": "residential-taxonomy-v3.1",
+  "baseline": "baseline",
+  "tasks": [
+    {
+      "id": "H01",
+      "region": "living_room",
+      "category": "geometry",
+      "subcategory": "geometry.unsupported",
+      "title": "客厅单人沙发悬空",
+      "kind": "residential_floating",
+      "scenario": "floating",
+      "target": "StaticMeshActor_884",
+      "probe": [
+        -1100,
+        -520,
+        239
+      ],
+      "offset": [
+        0,
+        0,
+        45
+      ]
+    },
+    {
+      "id": "H02",
+      "region": "kitchen_dining",
+      "category": "geometry",
+      "subcategory": "geometry.intersection",
+      "title": "餐椅椅背穿出台面",
+      "kind": "residential_intersection",
+      "scenario": "intersection",
+      "target": "StaticMeshActor_954",
+      "probe": [
+        -215,
+        -715,
+        239
+      ],
+      "offset": [
+        0,
+        90,
+        0
+      ]
+    },
+    {
+      "id": "H03",
+      "region": "kitchen_dining",
+      "category": "geometry",
+      "subcategory": "geometry.scale",
+      "title": "灶上的锅过大，与炉位尺寸不匹配",
+      "kind": "residential_proportion",
+      "scenario": "proportion",
+      "target": "StaticMeshActor_299",
+      "probe": [
+        -65,
+        -1005,
+        239
+      ],
+      "scale": [
+        2.6,
+        2.6,
+        1.6
+      ],
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "灶上的锅相对于炉位过大，锅身超出单个炉位并侵占相邻炉位的使用空间。",
+          "expected": "正常情况下，锅的尺寸应与炉位匹配，留出相邻炉位的使用空间。",
+          "steps": "靠近灶台，从前方和侧前方比较锅底、炉位与灶台边缘的尺寸关系。"
+        },
+        "en": {
+          "criteria": "The pot is oversized for its stove burner, extending beyond one cooking position and into the space needed by the adjacent burner.",
+          "expected": "The pot should fit its burner and leave room to use the neighboring burner.",
+          "steps": "Approach the stove and compare the pot base with the cooking positions and stove edges from the front and an oblique view."
+        }
+      }
+    },
+    {
+      "id": "H04",
+      "region": "kitchen_dining",
+      "category": "collision",
+      "subcategory": "collision.missing",
+      "title": "人物可穿过冰箱",
+      "kind": "residential_penetration",
+      "scenario": "penetration",
+      "target": "StaticMeshActor_173",
+      "probe": [
+        -110,
+        -820,
+        239
+      ]
+    },
+    {
+      "id": "H05",
+      "region": "kitchen_dining",
+      "category": "collision",
+      "subcategory": "collision.unexpected",
+      "title": "开放通道中的空气墙",
+      "kind": "residential_obstruction",
+      "scenario": "obstruction",
+      "target": "",
+      "probe": [
+        -110,
+        -850,
+        239
+      ],
+      "position": [
+        -185,
+        -735,
+        235
+      ],
+      "extent": [
+        100,
+        8,
+        95
+      ],
+      "aim": [
+        -185,
+        -735,
+        230
+      ]
+    },
+    {
+      "id": "H06",
+      "region": "kitchen_dining",
+      "category": "collision",
+      "subcategory": "collision.contact_response",
+      "title": "杯子落到桌面后反复异常弹跳",
+      "kind": "residential_contact",
+      "scenario": "contact",
+      "target": "StaticMeshActor_1010",
+      "probe": [
+        -245,
+        -560,
+        239
+      ]
+    },
+    {
+      "id": "H07",
+      "region": "living_room",
+      "category": "visual",
+      "subcategory": "visual.visibility",
+      "title": "电视随观察角度消失和恢复",
+      "kind": "residential_visibility",
+      "scenario": "visibility",
+      "target": "StaticMeshActor_489",
+      "probe": [
+        -1090,
+        -820,
+        239
+      ]
+    },
+    {
+      "id": "H08",
+      "region": "kitchen_dining",
+      "category": "visual",
+      "subcategory": "visual.view_appearance",
+      "title": "锅的尺寸随观察距离突变",
+      "kind": "residential_view_appearance",
+      "scenario": "view_appearance",
+      "target": "StaticMeshActor_1005",
+      "probe": [
+        -245,
+        -500,
+        239
+      ],
+      "far_probe": [
+        -135,
+        -1090,
+        239
+      ],
+      "threshold": 260,
+      "factor": 2.5
+    },
+    {
+      "id": "H09",
+      "region": "living_room",
+      "category": "visual",
+      "subcategory": "visual.illumination",
+      "title": "柜上花瓶缺少投影",
+      "kind": "residential_existing_missing_shadow",
+      "scenario": "existing_missing_shadow",
+      "target": "StaticMeshActor_925",
+      "probe": [
+        -1430,
+        -1040,
+        239
+      ],
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "壁炉旁柜子上的花瓶及插花没有在柜面和身后墙面留下投影。",
+          "expected": "灯光照射下，花瓶及插花应在柜面和墙面投下相应的阴影。",
+          "steps": "走近壁炉旁的柜子，观察花瓶周围的柜面和身后墙面的投影。"
+        },
+        "en": {
+          "criteria": "The vase and foliage on the cabinet beside the fireplace cast no shadow onto the cabinet top or the wall behind them.",
+          "expected": "Under the room light, the vase and foliage should cast corresponding shadows onto the cabinet top and wall.",
+          "steps": "Approach the cabinet beside the fireplace and inspect the cabinet top and the wall behind the vase."
+        }
+      }
+    },
+    {
+      "id": "H10",
+      "region": "living_room",
+      "category": "state",
+      "subcategory": "state.existence",
+      "title": "离开再返回后落地盆栽消失",
+      "kind": "residential_revisit_disappear",
+      "scenario": "revisit_disappear",
+      "target": "StaticMeshActor_927",
+      "probe": [
+        -1090,
+        -710,
+        239
+      ],
+      "far_probe": [
+        -1090,
+        -1080,
+        239
+      ],
+      "near": 210,
+      "far": 310,
+      "start_at_observation": true,
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "离开并返回后，起点前方的落地盆栽消失。",
+          "expected": "无人操作时，盆栽应始终留在原处。",
+          "steps": "开始时已面向近处的盆栽；转身走到客厅另一端，再返回起点看向盆栽。"
+        },
+        "en": {
+          "criteria": "The floor plant in front of the starting position disappears after you leave and return.",
+          "expected": "The plant should remain in place when nobody moves it.",
+          "steps": "You start near and facing the plant. Turn away, walk to the other end of the living room, then return to the starting point and look at the plant."
+        }
+      }
+    },
+    {
+      "id": "H11",
+      "region": "kitchen_dining",
+      "category": "state",
+      "subcategory": "state.static_attributes",
+      "title": "离开再返回后杯子颜色改变",
+      "kind": "residential_revisit_color",
+      "scenario": "revisit_color",
+      "target": "StaticMeshActor_1010",
+      "probe": [
+        -245,
+        -560,
+        239
+      ],
+      "far_probe": [
+        -135,
+        -1090,
+        239
+      ],
+      "near": 210,
+      "far": 350
+    },
+    {
+      "id": "H12",
+      "region": "bedroom_suite",
+      "category": "state",
+      "subcategory": "state.operational_state",
+      "title": "进入浴室返回后风扇自行启动",
+      "kind": "residential_revisit_fan",
+      "scenario": "revisit_fan",
+      "target": "StaticMeshActor_500",
+      "probe": [
+        -1050,
+        -650,
+        541
+      ],
+      "far_probe": [
+        -1040,
+        -1090,
+        541
+      ],
+      "bathroom_y": -1020
+    },
+    {
+      "id": "H13",
+      "region": "kitchen_dining",
+      "category": "semantic",
+      "subcategory": "S2",
+      "title": "厨房冰箱上下倒置",
+      "kind": "residential_configuration_pose",
+      "target": "StaticMeshActor_173",
+      "probe": [
+        -90,
+        -820,
+        239
+      ],
+      "configuration_offset": [
+        0,
+        0,
+        0
+      ],
+      "scenario": "configuration_pose",
+      "configuration_rotation": [
+        180,
+        0,
+        0
+      ],
+      "configuration_seat": true,
+      "configuration_local_axis": [
+        0,
+        0,
+        1
+      ],
+      "configuration_axis_clean": [
+        1.9842096344226883e-15,
+        3.944304526105059e-31,
+        1.0
+      ],
+      "configuration_axis_bug": [
+        -1.9842096344226883e-15,
+        1.2246467991473495e-16,
+        -1.0
+      ],
+      "rubrics_i18n": {
+        "zh": {
+          "criteria": "厨房冰箱上下倒置，顶部贴地、底脚朝上。",
+          "expected": "正常情况下，冰箱应由底脚支撑，保持直立。",
+          "steps": "从厨房正面和侧面查看冰箱的底脚、门把手与地面关系。"
+        },
+        "en": {
+          "criteria": "The kitchen refrigerator is upside down, with its top on the floor and its feet pointing upwards.",
+          "expected": "The refrigerator should stand upright on its feet.",
+          "steps": "Inspect the refrigerator from the front and side, checking its feet, handles and floor contact."
+        }
+      }
+    },
+    {
+      "id": "H15",
+      "region": "bedroom_suite",
+      "title": "卧室门扇穿过挡路的收纳箱",
+      "kind": "residential_door_penetration",
+      "scenario": "door_penetration",
+      "target": "StaticMeshActor_105",
+      "probe": [
+        -1125,
+        -560,
+        541
+      ],
+      "box_position": [
+        -985,
+        -480,
+        441
+      ],
+      "box_scale": [
+        0.75,
+        1.2,
+        1.4
+      ],
+      "category": "collision",
+      "subcategory": "collision.missing",
+      "rubrics_i18n": {
+        "en": {
+          "criteria": "Opening the bedroom door makes the door leaf visibly pass through the storage box in its swing path. The box stays in place throughout the overlap.",
+          "expected": "The solid door should stop when it reaches the box; it should not pass through the box.",
+          "steps": "Approach the bedroom door and activate it. Watch the lower part of the door as it swings toward the box. Close and reopen the door if needed."
+        },
+        "zh": {
+          "criteria": "打开卧室门时，门扇明显穿过开门路径上的收纳箱，穿过过程中箱子保持原位。",
+          "expected": "实体门扇碰到箱子后应被挡住，不能直接穿过箱子。",
+          "steps": "走近卧室门并打开，观察门扇下部经过收纳箱的过程。需要时关门后再打开观察。"
+        }
+      }
+    }
+  ]
+}

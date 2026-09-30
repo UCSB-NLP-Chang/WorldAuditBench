@@ -1,0 +1,192 @@
+{
+  "source_map": "/Game/AncientChinese/map/Demomap",
+  "regions": [
+    {
+      "id": "market",
+      "name": "Market street",
+      "name_zh": "集市街道",
+      "map": "/Game/Auditor/AncientCity/Market",
+      "bounds_min": [
+        -1150,
+        4800,
+        -25
+      ],
+      "bounds_max": [
+        400,
+        6100,
+        650
+      ],
+      "spawn": [
+        -480,
+        5470,
+        88.0
+      ],
+      "yaw": 0,
+      "boundary_test_start": [
+        -80,
+        4920,
+        88.0
+      ],
+      "boundary_test_direction": [
+        0,
+        -1,
+        0
+      ],
+      "traversal_points": [
+        [
+          -480,
+          5470,
+          88.0
+        ],
+        [
+          -280,
+          5470,
+          88.0
+        ],
+        [
+          -280,
+          5870,
+          88.0
+        ],
+        [
+          -480,
+          5870,
+          88.0
+        ],
+        [
+          -480,
+          5470,
+          88.0
+        ]
+      ]
+    },
+    {
+      "id": "tea_house",
+      "name": "Tea house",
+      "name_zh": "茶馆",
+      "map": "/Game/Auditor/AncientCity/TeaHouse",
+      "bounds_min": [
+        -2300,
+        5050,
+        -25
+      ],
+      "bounds_max": [
+        -1300,
+        6250,
+        650
+      ],
+      "spawn": [
+        -1530,
+        5520,
+        120.12500001192092
+      ],
+      "yaw": 150,
+      "boundary_test_start": [
+        -1430,
+        6120,
+        88.0
+      ],
+      "boundary_test_direction": [
+        0,
+        1,
+        0
+      ],
+      "traversal_points": [
+        [
+          -1530,
+          5520,
+          120.12500001192092
+        ],
+        [
+          -1530,
+          5320,
+          120.12500001192092
+        ],
+        [
+          -1530,
+          5420,
+          120.12500001192092
+        ],
+        [
+          -1530,
+          5320,
+          120.12500001192092
+        ],
+        [
+          -1530,
+          5520,
+          120.12500001192092
+        ]
+      ]
+    },
+    {
+      "id": "courtyard",
+      "name": "Residence entrance",
+      "name_zh": "宅院入口",
+      "map": "/Game/Auditor/AncientCity/Courtyard",
+      "bounds_min": [
+        -150,
+        6400,
+        -25
+      ],
+      "bounds_max": [
+        1150,
+        7480,
+        700
+      ],
+      "spawn": [
+        520,
+        7045,
+        110.86483764648438
+      ],
+      "yaw": 90,
+      "boundary_test_start": [
+        520,
+        6520,
+        88.0
+      ],
+      "boundary_test_direction": [
+        0,
+        -1,
+        0
+      ],
+      "traversal_points": [
+        [
+          520,
+          7045,
+          110.86483764648438
+        ],
+        [
+          520,
+          6770,
+          88.0
+        ],
+        [
+          920,
+          6770,
+          88.0
+        ],
+        [
+          920,
+          6970,
+          88.0
+        ],
+        [
+          920,
+          6770,
+          88.0
+        ],
+        [
+          520,
+          6770,
+          88.0
+        ],
+        [
+          520,
+          7045,
+          110.86483764648438
+        ]
+      ]
+    }
+  ]
+}

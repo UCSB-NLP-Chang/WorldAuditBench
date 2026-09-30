@@ -1,0 +1,2180 @@
+{
+ "generated_from": "eval-task-sets-2026-09-17 (threejs) + task-subcategories/task-scenes + eval/judge_sem.GT as rubric placeholder",
+ "tasks": {
+  "af01-float": {
+   "task": {
+    "id": "JS_AF01",
+    "source_case": "af01-float",
+    "subcategory": "G1",
+    "title": "floating barrel",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "One of the three barrels east of the start FLOATS about 1.5 m above the tarmac with open air under it.",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "An airfield with parked cars, barriers, barrels, crates and workshop equipment. No interactive objects."
+    },
+    "revision": 1
+   },
+   "family": "airfield",
+   "case_type": "bug",
+   "recording_dir": "af01-float-s0",
+   "task_id": "JS_AF01",
+   "policy": {}
+  },
+  "af02-clip": {
+   "task": {
+    "id": "JS_AF02",
+    "source_case": "af02-clip",
+    "subcategory": "G2",
+    "title": "sunken tool cart",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "The tool cart by the generator is TIPPED OVER (about 45 degrees) and SUNK/CLIPPED into the tarmac - its lower half, wheels included, is under the ground and the tarmac cuts through its body.",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "An airfield with parked cars, barriers, barrels, crates and workshop equipment. No interactive objects."
+    },
+    "revision": 2
+   },
+   "family": "airfield",
+   "case_type": "bug",
+   "recording_dir": "af02-clip-s0",
+   "task_id": "JS_AF02",
+   "policy": {}
+  },
+  "af03-scale": {
+   "task": {
+    "id": "JS_AF03",
+    "source_case": "af03-scale",
+    "subcategory": "G3",
+    "title": "giant fire hydrant",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "The fire hydrant north-east of the start is abnormally OVERSIZED - about three times its normal size, a hydrant taller than a person.",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "An airfield with parked cars, barriers, barrels, crates and workshop equipment. No interactive objects."
+    },
+    "revision": 1
+   },
+   "family": "airfield",
+   "case_type": "bug",
+   "recording_dir": "af03-scale-s0",
+   "task_id": "JS_AF03",
+   "policy": {}
+  },
+  "af04-doublespawn": {
+   "task": {
+    "id": "JS_AF04",
+    "source_case": "af04-doublespawn",
+    "subcategory": "G2",
+    "title": "double-spawned crate",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "The military crate north-east of the start is DOUBLE-SPAWNED: two copies almost on top of each other, a slightly offset duplicate interpenetrating it, faces flicker / z-fight.",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "An airfield with parked cars, barriers, barrels, crates and workshop equipment. No interactive objects."
+    },
+    "revision": 1
+   },
+   "family": "airfield",
+   "case_type": "bug",
+   "recording_dir": "af04-doublespawn-s0",
+   "task_id": "JS_AF04",
+   "policy": {}
+  },
+  "af05-airwall": {
+   "task": {
+    "id": "JS_AF05",
+    "source_case": "af05-airwall",
+    "subcategory": "C2",
+    "title": "invisible wall",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "An INVISIBLE WALL right across the tarmac north of the north barrier row blocks the walker although nothing is visible there.",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "An airfield with parked cars, barriers, barrels, crates and workshop equipment. No interactive objects."
+    },
+    "revision": 2
+   },
+   "family": "airfield",
+   "case_type": "bug",
+   "recording_dir": "af05-airwall-s0",
+   "task_id": "JS_AF05",
+   "policy": {}
+  },
+  "af06-hole": {
+   "task": {
+    "id": "JS_AF06",
+    "source_case": "af06-hole",
+    "subcategory": "C1",
+    "title": "hole in the ground",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "A HOLE in the ground: the walker falls through the solid-looking tarmac at one spot about 20 m south of the start (centre line of the strip) and respawns.",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "An airfield with parked cars, barriers, barrels, crates and workshop equipment. No interactive objects."
+    },
+    "revision": 2
+   },
+   "family": "airfield",
+   "case_type": "bug",
+   "recording_dir": "af06-hole-s0",
+   "task_id": "JS_AF06",
+   "policy": {}
+  },
+  "af07-ghost": {
+   "task": {
+    "id": "JS_AF07",
+    "source_case": "af07-ghost",
+    "subcategory": "C1",
+    "title": "no-collision barrier",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "One concrete road barrier in the north row has NO COLLISION - the walker passes straight through it.",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "An airfield with parked cars, barriers, barrels, crates and workshop equipment. No interactive objects."
+    },
+    "revision": 1
+   },
+   "family": "airfield",
+   "case_type": "bug",
+   "recording_dir": "af07-ghost-s0",
+   "task_id": "JS_AF07",
+   "policy": {}
+  },
+  "af08-jitter": {
+   "task": {
+    "id": "JS_AF08",
+    "source_case": "af08-jitter",
+    "subcategory": "T2",
+    "title": "trembling street lamp",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "The street lamp east of the barrier row JITTERS / vibrates rapidly in place.",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "An airfield with parked cars, barriers, barrels, crates and workshop equipment. No interactive objects."
+    },
+    "revision": 1
+   },
+   "family": "airfield",
+   "case_type": "bug",
+   "recording_dir": "af08-jitter-s0",
+   "task_id": "JS_AF08",
+   "policy": {}
+  },
+  "af09-magenta": {
+   "task": {
+    "id": "JS_AF09",
+    "source_case": "af09-magenta",
+    "subcategory": "V4",
+    "title": "Material anomaly",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "The wooden crate in the north-east cluster renders flat bright MAGENTA (missing texture).",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "An airfield with parked cars, barriers, barrels, crates and workshop equipment. No interactive objects."
+    },
+    "revision": 1
+   },
+   "family": "airfield",
+   "case_type": "bug",
+   "recording_dir": "af09-magenta-s0",
+   "task_id": "JS_AF09",
+   "policy": {}
+  },
+  "af10-backcull": {
+   "task": {
+    "id": "JS_AF10",
+    "source_case": "af10-backcull",
+    "subcategory": "V1",
+    "title": "barrier invisible from behind",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "A road barrier in the north row is visible from the south but INVISIBLE from its north side (back-face culling).",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "An airfield with parked cars, barriers, barrels, crates and workshop equipment. No interactive objects."
+    },
+    "revision": 1
+   },
+   "family": "airfield",
+   "case_type": "bug",
+   "recording_dir": "af10-backcull-s0",
+   "task_id": "JS_AF10",
+   "policy": {}
+  },
+  "af11-xray": {
+   "task": {
+    "id": "JS_AF11",
+    "source_case": "af11-xray",
+    "subcategory": "V1",
+    "title": "x-ray car",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "The red car parked by the stone gate renders THROUGH other objects in front of it - visible through the gate pillars, barriers and crates (x-ray / no depth test).",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "An airfield with parked cars, barriers, barrels, crates and workshop equipment. No interactive objects."
+    },
+    "revision": 2
+   },
+   "family": "airfield",
+   "case_type": "bug",
+   "recording_dir": "af11-xray-s0",
+   "task_id": "JS_AF11",
+   "policy": {}
+  },
+  "af12-unload": {
+   "task": {
+    "id": "JS_AF12",
+    "source_case": "af12-unload",
+    "subcategory": "T1",
+    "title": "unloaded crate cluster",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "The crate cluster north-east of the start UNLOADS / disappears after being visited and left.",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "An airfield with parked cars, barriers, barrels, crates and workshop equipment. No interactive objects."
+    },
+    "revision": 1
+   },
+   "family": "airfield",
+   "case_type": "bug",
+   "recording_dir": "af12-unload-s0",
+   "task_id": "JS_AF12",
+   "policy": {}
+  },
+  "af13-statereset": {
+   "task": {
+    "id": "JS_AF13",
+    "source_case": "af13-statereset",
+    "subcategory": "T2",
+    "title": "barrel position resets",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "A barrel east of the start is at a DIFFERENT POSITION each time the walker comes back (state reset / jump of ~3 m).",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "An airfield with parked cars, barriers, barrels, crates and workshop equipment. No interactive objects."
+    },
+    "revision": 1
+   },
+   "family": "airfield",
+   "case_type": "bug",
+   "recording_dir": "af13-statereset-s0",
+   "task_id": "JS_AF13",
+   "policy": {}
+  },
+  "af14-lodpop": {
+   "task": {
+    "id": "JS_AF14",
+    "source_case": "af14-lodpop",
+    "subcategory": "V2",
+    "title": "prop LOD pop",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "The generator / tool cart / jerrycan group shows as crude grey BLOCKS from a few metres away and POPS into detailed props up close (LOD pop).",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "An airfield with parked cars, barriers, barrels, crates and workshop equipment. No interactive objects."
+    },
+    "revision": 1
+   },
+   "family": "airfield",
+   "case_type": "bug",
+   "recording_dir": "af14-lodpop-s0",
+   "task_id": "JS_AF14",
+   "policy": {}
+  },
+  "af15-spawnpile": {
+   "task": {
+    "id": "JS_AF15",
+    "source_case": "af15-spawnpile",
+    "subcategory": "G2",
+    "title": "prop pile",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "Nine barrels, crates and jerrycans are PILED on top of each other in one solid heap on the open tarmac south-east of the start (failed spawns).",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "An airfield with parked cars, barriers, barrels, crates and workshop equipment. No interactive objects."
+    },
+    "revision": 3
+   },
+   "family": "airfield",
+   "case_type": "bug",
+   "recording_dir": "af15-spawnpile-s0",
+   "task_id": "JS_AF15",
+   "policy": {}
+  },
+  "af16-misrotated": {
+   "task": {
+    "id": "JS_AF16",
+    "source_case": "af16-misrotated",
+    "subcategory": "G2",
+    "title": "upside-down barrier",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "One concrete road barrier in the north row is UPSIDE DOWN - flipped over, resting on its top, while the others stand normally.",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "An airfield with parked cars, barriers, barrels, crates and workshop equipment. No interactive objects."
+    },
+    "revision": 1
+   },
+   "family": "airfield",
+   "case_type": "bug",
+   "recording_dir": "af16-misrotated-s0",
+   "task_id": "JS_AF16",
+   "policy": {}
+  },
+  "af17-noshadow": {
+   "task": {
+    "id": "JS_AF17",
+    "source_case": "af17-noshadow",
+    "subcategory": "V3",
+    "title": "street lamp casts no shadow",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "The street lamp east of the start casts NO SHADOW at all while the matching west lamp and every other prop cast shadows.",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "An airfield with parked cars, barriers, barrels, crates and workshop equipment. No interactive objects."
+    },
+    "revision": 2
+   },
+   "family": "airfield",
+   "case_type": "bug",
+   "recording_dir": "af17-noshadow-s0",
+   "task_id": "JS_AF17",
+   "policy": {}
+  },
+  "af18-pushcar": {
+   "task": {
+    "id": "JS_AF18",
+    "source_case": "af18-pushcar",
+    "subcategory": "C3",
+    "title": "car pushed by the walker",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "The parked red car by the stone gate south of the start MOVES when the walker bumps into it - it rolls / slides away, a parked vehicle that a person can push around (every other vehicle stays put).",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "An airfield with parked cars, barriers, barrels, crates and workshop equipment. No interactive objects."
+    },
+    "revision": 1
+   },
+   "family": "airfield",
+   "case_type": "bug",
+   "recording_dir": "af18-pushcar-s0",
+   "task_id": "JS_AF18",
+   "policy": {}
+  },
+  "ct01-float": {
+   "task": {
+    "id": "JS_CT01",
+    "source_case": "ct01-float",
+    "subcategory": "G1",
+    "title": "floating tree",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "The big tree east of the front door FLOATS more than a metre above the ground - its roots hang in the air.",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "A woodland cottage with a pond, stone paths, trees and outdoor furniture. No interactive objects."
+    },
+    "revision": 1
+   },
+   "family": "cottage",
+   "case_type": "bug",
+   "recording_dir": "ct01-float-s0",
+   "task_id": "JS_CT01",
+   "policy": {}
+  },
+  "ct02-clip": {
+   "task": {
+    "id": "JS_CT02",
+    "source_case": "ct02-clip",
+    "subcategory": "G2",
+    "title": "sunken picnic table",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "The stone picnic table in the west garden is TIPPED OVER (about 40 degrees) and SUNK/CLIPPED into the lawn - one half of the table is under the grass, the other half sticks up in the air.",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "A woodland cottage with a pond, stone paths, trees and outdoor furniture. No interactive objects."
+    },
+    "revision": 2
+   },
+   "family": "cottage",
+   "case_type": "bug",
+   "recording_dir": "ct02-clip-s0",
+   "task_id": "JS_CT02",
+   "policy": {}
+  },
+  "ct03-scale": {
+   "task": {
+    "id": "JS_CT03",
+    "source_case": "ct03-scale",
+    "subcategory": "G3",
+    "title": "giant garden bench",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "One of the two identical garden benches in the west garden is abnormally OVERSIZED - more than twice the size of the other bench and the table.",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "A woodland cottage with a pond, stone paths, trees and outdoor furniture. No interactive objects."
+    },
+    "revision": 1
+   },
+   "family": "cottage",
+   "case_type": "bug",
+   "recording_dir": "ct03-scale-s0",
+   "task_id": "JS_CT03",
+   "policy": {}
+  },
+  "ct04-doublespawn": {
+   "task": {
+    "id": "JS_CT04",
+    "source_case": "ct04-doublespawn",
+    "subcategory": "G2",
+    "title": "double-spawned bench",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "The garden bench east of the picnic table is DOUBLE-SPAWNED: a second identical bench sits shifted and turned into the first one, seat boards and legs passing through each other.",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "A woodland cottage with a pond, stone paths, trees and outdoor furniture. No interactive objects."
+    },
+    "revision": 2
+   },
+   "family": "cottage",
+   "case_type": "bug",
+   "recording_dir": "ct04-doublespawn-s0",
+   "task_id": "JS_CT04",
+   "policy": {}
+  },
+  "ct05-airwall": {
+   "task": {
+    "id": "JS_CT05",
+    "source_case": "ct05-airwall",
+    "subcategory": "C2",
+    "title": "invisible wall",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "An INVISIBLE WALL across the front path, between the gate and the door, blocks the walker although nothing is visible there.",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "A woodland cottage with a pond, stone paths, trees and outdoor furniture. No interactive objects."
+    },
+    "revision": 1
+   },
+   "family": "cottage",
+   "case_type": "bug",
+   "recording_dir": "ct05-airwall-s0",
+   "task_id": "JS_CT05",
+   "policy": {}
+  },
+  "ct06-hole": {
+   "task": {
+    "id": "JS_CT06",
+    "source_case": "ct06-hole",
+    "subcategory": "C1",
+    "title": "hole in the path",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "A HOLE in the path: the walker falls through the solid-looking flagstones of the front path, drops below the garden and respawns at the start.",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "A woodland cottage with a pond, stone paths, trees and outdoor furniture. No interactive objects."
+    },
+    "revision": 1
+   },
+   "family": "cottage",
+   "case_type": "bug",
+   "recording_dir": "ct06-hole-s0",
+   "task_id": "JS_CT06",
+   "policy": {}
+  },
+  "ct07-ghost": {
+   "task": {
+    "id": "JS_CT07",
+    "source_case": "ct07-ghost",
+    "subcategory": "C1",
+    "title": "no-collision tree",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "The big tree east of the front door has NO COLLISION - the walker passes straight through its trunk while everything else is solid.",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "A woodland cottage with a pond, stone paths, trees and outdoor furniture. No interactive objects."
+    },
+    "revision": 1
+   },
+   "family": "cottage",
+   "case_type": "bug",
+   "recording_dir": "ct07-ghost-s0",
+   "task_id": "JS_CT07",
+   "policy": {}
+  },
+  "ct08-jitter": {
+   "task": {
+    "id": "JS_CT08",
+    "source_case": "ct08-jitter",
+    "subcategory": "T2",
+    "title": "trembling lantern post",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "The small lantern post west of the path (by the pond bank) JITTERS / trembles in place on its own.",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "A woodland cottage with a pond, stone paths, trees and outdoor furniture. No interactive objects."
+    },
+    "revision": 1
+   },
+   "family": "cottage",
+   "case_type": "bug",
+   "recording_dir": "ct08-jitter-s0",
+   "task_id": "JS_CT08",
+   "policy": {}
+  },
+  "ct09-magenta": {
+   "task": {
+    "id": "JS_CT09",
+    "source_case": "ct09-magenta",
+    "subcategory": "V4",
+    "title": "Material anomaly",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "The stone well on the hill to the west renders flat bright MAGENTA (missing texture placeholder).",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "A woodland cottage with a pond, stone paths, trees and outdoor furniture. No interactive objects."
+    },
+    "revision": 2
+   },
+   "family": "cottage",
+   "case_type": "bug",
+   "recording_dir": "ct09-magenta-s0",
+   "task_id": "JS_CT09",
+   "policy": {}
+  },
+  "ct10-backcull": {
+   "task": {
+    "id": "JS_CT10",
+    "source_case": "ct10-backcull",
+    "subcategory": "V1",
+    "title": "tree invisible from behind",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "The tree behind the cottage is visible from the south but INVISIBLE from its north side (back-face culling).",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "A woodland cottage with a pond, stone paths, trees and outdoor furniture. No interactive objects."
+    },
+    "revision": 1
+   },
+   "family": "cottage",
+   "case_type": "bug",
+   "recording_dir": "ct10-backcull-s0",
+   "task_id": "JS_CT10",
+   "policy": {}
+  },
+  "ct11-xray": {
+   "task": {
+    "id": "JS_CT11",
+    "source_case": "ct11-xray",
+    "subcategory": "V1",
+    "title": "x-ray picture frames",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "The picture frames inside the cottage show THROUGH the front wall - visible from outside, floating on the facade (x-ray / no depth test).",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "A woodland cottage with a pond, stone paths, trees and outdoor furniture. No interactive objects."
+    },
+    "revision": 1
+   },
+   "family": "cottage",
+   "case_type": "bug",
+   "recording_dir": "ct11-xray-s0",
+   "task_id": "JS_CT11",
+   "policy": {}
+  },
+  "ct12-unload": {
+   "task": {
+    "id": "JS_CT12",
+    "source_case": "ct12-unload",
+    "subcategory": "T1",
+    "title": "unloaded tree",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "The tree behind the cottage UNLOADS / disappears after being visited and left.",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "A woodland cottage with a pond, stone paths, trees and outdoor furniture. No interactive objects."
+    },
+    "revision": 1
+   },
+   "family": "cottage",
+   "case_type": "bug",
+   "recording_dir": "ct12-unload-s0",
+   "task_id": "JS_CT12",
+   "policy": {}
+  },
+  "ct13-statereset": {
+   "task": {
+    "id": "JS_CT13",
+    "source_case": "ct13-statereset",
+    "subcategory": "T2",
+    "title": "lamp post position resets",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "The tall lamp post standing in the pond west of the path is at a DIFFERENT POSITION each time the walker comes back (state reset / jump of ~2.5 m).",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "A woodland cottage with a pond, stone paths, trees and outdoor furniture. No interactive objects."
+    },
+    "revision": 1
+   },
+   "family": "cottage",
+   "case_type": "bug",
+   "recording_dir": "ct13-statereset-s0",
+   "task_id": "JS_CT13",
+   "policy": {}
+  },
+  "ct14-lodpop": {
+   "task": {
+    "id": "JS_CT14",
+    "source_case": "ct14-lodpop",
+    "subcategory": "V2",
+    "title": "tree LOD pop",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "The big tree east of the front door shows as a crude green CONE from a few metres away and POPS into a detailed tree up close (LOD pop).",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "A woodland cottage with a pond, stone paths, trees and outdoor furniture. No interactive objects."
+    },
+    "revision": 1
+   },
+   "family": "cottage",
+   "case_type": "bug",
+   "recording_dir": "ct14-lodpop-s0",
+   "task_id": "JS_CT14",
+   "policy": {}
+  },
+  "ct15-spawnpile": {
+   "task": {
+    "id": "JS_CT15",
+    "source_case": "ct15-spawnpile",
+    "subcategory": "G2",
+    "title": "table pile",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "Nine small stone tables are PILED on top of each other in one heap on the lawn east of the front path (failed spawns / duplicated objects).",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "A woodland cottage with a pond, stone paths, trees and outdoor furniture. No interactive objects."
+    },
+    "revision": 1
+   },
+   "family": "cottage",
+   "case_type": "bug",
+   "recording_dir": "ct15-spawnpile-s0",
+   "task_id": "JS_CT15",
+   "policy": {}
+  },
+  "hs01-float": {
+   "task": {
+    "id": "JS_HS01",
+    "source_case": "hs01-float",
+    "subcategory": "G1",
+    "title": "floating chair",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "A dining chair FLOATS in mid-air about half a meter above the floor (its identical sibling chairs stand on the floor).",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "A two-storey home with a kitchen, living room, dining room and upstairs bedrooms. No interactive objects."
+    },
+    "revision": 1
+   },
+   "family": "house",
+   "case_type": "bug",
+   "recording_dir": "hs01-float-s0",
+   "task_id": "JS_HS01",
+   "policy": {}
+  },
+  "hs02-clip": {
+   "task": {
+    "id": "JS_HS02",
+    "source_case": "hs02-clip",
+    "subcategory": "G2",
+    "title": "sunken bar stool",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "A kitchen bar stool is TIPPED OVER (about 35 degrees) and SUNK/CLIPPED into the floor - its legs are under the floor and only the tilted seat shows above it, while the stools next to it stand upright.",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "A two-storey home with a kitchen, living room, dining room and upstairs bedrooms. No interactive objects."
+    },
+    "revision": 2
+   },
+   "family": "house",
+   "case_type": "bug",
+   "recording_dir": "hs02-clip-s0",
+   "task_id": "JS_HS02",
+   "policy": {}
+  },
+  "hs03-scale": {
+   "task": {
+    "id": "JS_HS03",
+    "source_case": "hs03-scale",
+    "subcategory": "G3",
+    "title": "oversized chair",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "One chair upstairs (the desk chair in the kids room) is abnormally OVERSIZED - much bigger than a normal chair, taller than the desk it stands at.",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "A two-storey home with a kitchen, living room, dining room and upstairs bedrooms. No interactive objects."
+    },
+    "revision": 1
+   },
+   "family": "house",
+   "case_type": "bug",
+   "recording_dir": "hs03-scale-s0",
+   "task_id": "JS_HS03",
+   "policy": {}
+  },
+  "hs04-doublespawn": {
+   "task": {
+    "id": "JS_HS04",
+    "source_case": "hs04-doublespawn",
+    "subcategory": "G2",
+    "title": "double-spawned armchair",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "The same armchair is SPAWNED TWICE almost exactly on top of itself - a co-located duplicate: doubled/overlapping surfaces, flickering/z-fighting shell on that one armchair.",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "A two-storey home with a kitchen, living room, dining room and upstairs bedrooms. No interactive objects."
+    },
+    "revision": 1
+   },
+   "family": "house",
+   "case_type": "bug",
+   "recording_dir": "hs04-doublespawn-s0",
+   "task_id": "JS_HS04",
+   "policy": {}
+  },
+  "hs05-airwall": {
+   "task": {
+    "id": "JS_HS05",
+    "source_case": "hs05-airwall",
+    "subcategory": "C2",
+    "title": "air wall",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "An INVISIBLE barrier blocks the entrance hall - movement is stopped where nothing visible is in the way.",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "A two-storey home with a kitchen, living room, dining room and upstairs bedrooms. No interactive objects."
+    },
+    "revision": 1
+   },
+   "family": "house",
+   "case_type": "bug",
+   "recording_dir": "hs05-airwall-s0",
+   "task_id": "JS_HS05",
+   "policy": {}
+  },
+  "hs06-hole": {
+   "task": {
+    "id": "JS_HS06",
+    "source_case": "hs06-hole",
+    "subcategory": "C1",
+    "title": "floor without collision",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "A solid-looking floor area in the hall has no collision: walking onto it makes the player fall through / drop below the floor. From the player's point of view this manifests as suddenly being RESET/TELEPORTED BACK TO THE START when crossing that area.",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "A two-storey home with a kitchen, living room, dining room and upstairs bedrooms. No interactive objects."
+    },
+    "revision": 1
+   },
+   "family": "house",
+   "case_type": "bug",
+   "recording_dir": "hs06-hole-s0",
+   "task_id": "JS_HS06",
+   "policy": {}
+  },
+  "hs07-ghostisland": {
+   "task": {
+    "id": "JS_HS07",
+    "source_case": "hs07-ghostisland",
+    "subcategory": "C1",
+    "title": "no-collision island",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "The kitchen island/counter has NO COLLISION - the player can walk straight through it, while every other piece of furniture is solid. (Reports about some object FLOATING or lacking support are a DIFFERENT defect, not this one.)",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "A two-storey home with a kitchen, living room, dining room and upstairs bedrooms. No interactive objects."
+    },
+    "revision": 1
+   },
+   "family": "house",
+   "case_type": "bug",
+   "recording_dir": "hs07-ghostisland-s0",
+   "task_id": "JS_HS07",
+   "policy": {}
+  },
+  "hs08-jitter": {
+   "task": {
+    "id": "JS_HS08",
+    "source_case": "hs08-jitter",
+    "subcategory": "T2",
+    "title": "trembling floor lamp",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "A floor lamp TREMBLES/VIBRATES rapidly in place on its own (physics-solver jitter) - constant small shaking, not smooth movement.",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "A two-storey home with a kitchen, living room, dining room and upstairs bedrooms. No interactive objects."
+    },
+    "revision": 1
+   },
+   "family": "house",
+   "case_type": "bug",
+   "recording_dir": "hs08-jitter-s0",
+   "task_id": "JS_HS08",
+   "policy": {}
+  },
+  "hs09-magenta": {
+   "task": {
+    "id": "JS_HS09",
+    "source_case": "hs09-magenta",
+    "subcategory": "V4",
+    "title": "Material anomaly",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "The TV cabinet/console has a MISSING TEXTURE - it renders as abnormal flat solid magenta/pink (placeholder color, broken texture).",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "A two-storey home with a kitchen, living room, dining room and upstairs bedrooms. No interactive objects."
+    },
+    "revision": 1
+   },
+   "family": "house",
+   "case_type": "bug",
+   "recording_dir": "hs09-magenta-s0",
+   "task_id": "JS_HS09",
+   "policy": {}
+  },
+  "hs10-backcull": {
+   "task": {
+    "id": "JS_HS10",
+    "source_case": "hs10-backcull",
+    "subcategory": "V1",
+    "title": "sofa invisible from behind",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "The living-room SOFA looks normal from the front (TV side) but is INVISIBLE/missing when viewed from BEHIND (window side) - a viewpoint-dependent rendering (backface-culling-style) defect on that sofa.",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "A two-storey home with a kitchen, living room, dining room and upstairs bedrooms. No interactive objects."
+    },
+    "revision": 2
+   },
+   "family": "house",
+   "case_type": "bug",
+   "recording_dir": "hs10-backcull-s0",
+   "task_id": "JS_HS10",
+   "policy": {}
+  },
+  "hs11-xray": {
+   "task": {
+    "id": "JS_HS11",
+    "source_case": "hs11-xray",
+    "subcategory": "V1",
+    "title": "x-ray bed",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "The master BED upstairs RENDERS ON TOP of everything - it stays visible through the bedroom walls / furniture that should occlude it (seen from the landing or other rooms).",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "A two-storey home with a kitchen, living room, dining room and upstairs bedrooms. No interactive objects."
+    },
+    "revision": 1
+   },
+   "family": "house",
+   "case_type": "bug",
+   "recording_dir": "hs11-xray-s0",
+   "task_id": "JS_HS11",
+   "policy": {}
+  },
+  "hs12-unload": {
+   "task": {
+    "id": "JS_HS12",
+    "source_case": "hs12-unload",
+    "subcategory": "T1",
+    "title": "unloaded plant",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "A potted plant that was present in the living room DISAPPEARS after the player walks away, and is still gone on returning (object unloaded and never respawned - a streaming/persistence bug).",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "A two-storey home with a kitchen, living room, dining room and upstairs bedrooms. No interactive objects."
+    },
+    "revision": 1
+   },
+   "family": "house",
+   "case_type": "bug",
+   "recording_dir": "hs12-unload-s0",
+   "task_id": "JS_HS12",
+   "policy": {}
+  },
+  "hs13-statereset": {
+   "task": {
+    "id": "JS_HS13",
+    "source_case": "hs13-statereset",
+    "subcategory": "T2",
+    "title": "state-reset chair",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "After the player leaves the dining room and returns, a dining chair is AT A DIFFERENT POSITION than before (its state/position was not saved - resets/relocates on each revisit).",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "A two-storey home with a kitchen, living room, dining room and upstairs bedrooms. No interactive objects."
+    },
+    "revision": 1
+   },
+   "family": "house",
+   "case_type": "bug",
+   "recording_dir": "hs13-statereset-s0",
+   "task_id": "JS_HS13",
+   "policy": {}
+  },
+  "hs14-lodpop": {
+   "task": {
+    "id": "JS_HS14",
+    "source_case": "hs14-lodpop",
+    "subcategory": "V2",
+    "title": "LOD pop",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "The sofa in the upstairs lounge shows a geometry LOD POP: from more than a few metres away it is drawn as a crude flat grey BOX (a blocky placeholder) and abruptly pops into the real sofa when approached (or back to the box when walking away).",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "A two-storey home with a kitchen, living room, dining room and upstairs bedrooms. No interactive objects."
+    },
+    "revision": 1
+   },
+   "family": "house",
+   "case_type": "bug",
+   "recording_dir": "hs14-lodpop-s0",
+   "task_id": "JS_HS14",
+   "policy": {}
+  },
+  "hs15-spawnpile": {
+   "task": {
+    "id": "JS_HS15",
+    "source_case": "hs15-spawnpile",
+    "subcategory": "G2",
+    "title": "prop pile in the kids room",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "A PILE of duplicated furniture (copies of a dining chair, a bar stool, a nightstand and an armchair) sits jammed INTO EACH OTHER in a corner of the kids room upstairs - interpenetrating/overlapping objects where nothing should stand (failed spawns).",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "A two-storey home with a kitchen, living room, dining room and upstairs bedrooms. No interactive objects."
+    },
+    "revision": 1
+   },
+   "family": "house",
+   "case_type": "bug",
+   "recording_dir": "hs15-spawnpile-s0",
+   "task_id": "JS_HS15",
+   "policy": {}
+  },
+  "sp01-float": {
+   "task": {
+    "id": "JS_SP01",
+    "source_case": "sp01-float",
+    "subcategory": "G1",
+    "title": "floating pot",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "A potted plant FLOATS in mid-air about half a meter above the floor (its identical sibling pots sit on the ground).",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "An atrium with columns, drapes, stone planters and aisles. No interactive objects."
+    },
+    "revision": 1
+   },
+   "family": "sponza",
+   "case_type": "bug",
+   "recording_dir": "sp01-float-s0",
+   "task_id": "JS_SP01",
+   "policy": {}
+  },
+  "sp02-clip": {
+   "task": {
+    "id": "JS_SP02",
+    "source_case": "sp02-clip",
+    "subcategory": "G2",
+    "title": "sunken pot",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "One potted plant lies TIPPED OVER (about 65 degrees) and HALF SUNK/CLIPPED into the floor - the lower half of the pot, part of its rim and part of the plant are below floor level, the other half sticks out at an angle, while its identical siblings stand upright.",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "An atrium with columns, drapes, stone planters and aisles. No interactive objects."
+    },
+    "revision": 3
+   },
+   "family": "sponza",
+   "case_type": "bug",
+   "recording_dir": "sp02-clip-s0",
+   "task_id": "JS_SP02",
+   "policy": {}
+  },
+  "sp04-doublespawn": {
+   "task": {
+    "id": "JS_SP04",
+    "source_case": "sp04-doublespawn",
+    "subcategory": "G2",
+    "title": "double-spawned pot",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "The same potted plant is SPAWNED TWICE almost exactly on top of itself - a co-located duplicate: doubled/overlapping surfaces, doubled rim/base edges, abnormally dense foliage on that one pot.",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "An atrium with columns, drapes, stone planters and aisles. No interactive objects."
+    },
+    "revision": 1
+   },
+   "family": "sponza",
+   "case_type": "bug",
+   "recording_dir": "sp04-doublespawn-s0",
+   "task_id": "JS_SP04",
+   "policy": {}
+  },
+  "sp05-airwall": {
+   "task": {
+    "id": "JS_SP05",
+    "source_case": "sp05-airwall",
+    "subcategory": "C2",
+    "title": "air wall",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "An INVISIBLE barrier blocks the hall midway - movement is stopped where nothing visible is in the way.",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "An atrium with columns, drapes, stone planters and aisles. No interactive objects."
+    },
+    "revision": 1
+   },
+   "family": "sponza",
+   "case_type": "bug",
+   "recording_dir": "sp05-airwall-s0",
+   "task_id": "JS_SP05",
+   "policy": {}
+  },
+  "sp06-hole": {
+   "task": {
+    "id": "JS_SP06",
+    "source_case": "sp06-hole",
+    "subcategory": "C1",
+    "title": "floor without collision",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "A solid-looking floor area has no collision: walking onto it makes the player fall through / drop below the floor. From the player's point of view this manifests as suddenly being RESET/TELEPORTED BACK TO THE START when crossing that area.",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "An atrium with columns, drapes, stone planters and aisles. No interactive objects."
+    },
+    "revision": 1
+   },
+   "family": "sponza",
+   "case_type": "bug",
+   "recording_dir": "sp06-hole-s0",
+   "task_id": "JS_SP06",
+   "policy": {}
+  },
+  "sp07-ghostdrape": {
+   "task": {
+    "id": "JS_SP07",
+    "source_case": "sp07-ghostdrape",
+    "subcategory": "C1",
+    "title": "no-collision drape",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "One hanging DRAPE/CURTAIN (may be called a banner) has NO COLLISION - the player can walk straight through it (into the side aisle), while every other drape is a solid barrier that stops the player. (Reports about some object FLOATING or lacking support are a DIFFERENT defect, not this one.)",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "An atrium with columns, drapes, stone planters and aisles. No interactive objects."
+    },
+    "revision": 1
+   },
+   "family": "sponza",
+   "case_type": "bug",
+   "recording_dir": "sp07-ghostdrape-s0",
+   "task_id": "JS_SP07",
+   "policy": {}
+  },
+  "sp08-jitter": {
+   "task": {
+    "id": "JS_SP08",
+    "source_case": "sp08-jitter",
+    "subcategory": "T2",
+    "title": "trembling pot",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "A potted plant TREMBLES/VIBRATES rapidly in place on its own (physics-solver jitter) - constant small shaking, not smooth movement.",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "An atrium with columns, drapes, stone planters and aisles. No interactive objects."
+    },
+    "revision": 1
+   },
+   "family": "sponza",
+   "case_type": "bug",
+   "recording_dir": "sp08-jitter-s0",
+   "task_id": "JS_SP08",
+   "policy": {}
+  },
+  "sp09-magenta": {
+   "task": {
+    "id": "JS_SP09",
+    "source_case": "sp09-magenta",
+    "subcategory": "V4",
+    "title": "Material anomaly",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "One stone floor POT (potted plant) has a MISSING TEXTURE - it renders as abnormal flat solid magenta/pink (a placeholder colour, broken texture).",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "An atrium with columns, drapes, stone planters and aisles. No interactive objects."
+    },
+    "revision": 1
+   },
+   "family": "sponza",
+   "case_type": "bug",
+   "recording_dir": "sp09-magenta-s0",
+   "task_id": "JS_SP09",
+   "policy": {}
+  },
+  "sp10-backcull": {
+   "task": {
+    "id": "JS_SP10",
+    "source_case": "sp10-backcull",
+    "subcategory": "V1",
+    "title": "drape invisible from behind",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "A hanging DRAPE/CURTAIN (may be called a banner) looks normal from the main hall but is INVISIBLE/missing when viewed from BEHIND (from the side aisle), while the neighboring drapes remain visible from behind - a viewpoint-dependent rendering (backface-culling-style) defect on that one drape.",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "An atrium with columns, drapes, stone planters and aisles. No interactive objects."
+    },
+    "revision": 1
+   },
+   "family": "sponza",
+   "case_type": "bug",
+   "recording_dir": "sp10-backcull-s0",
+   "task_id": "JS_SP10",
+   "policy": {}
+  },
+  "sp11-xray": {
+   "task": {
+    "id": "JS_SP11",
+    "source_case": "sp11-xray",
+    "subcategory": "V1",
+    "title": "x-ray pot",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "A potted plant RENDERS ON TOP of everything - it stays visible through columns/objects that should occlude it.",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "An atrium with columns, drapes, stone planters and aisles. No interactive objects."
+    },
+    "revision": 1
+   },
+   "family": "sponza",
+   "case_type": "bug",
+   "recording_dir": "sp11-xray-s0",
+   "task_id": "JS_SP11",
+   "policy": {}
+  },
+  "sp12-unload": {
+   "task": {
+    "id": "JS_SP12",
+    "source_case": "sp12-unload",
+    "subcategory": "T1",
+    "title": "unloaded pot",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "A potted plant that was present DISAPPEARS after the player walks away from the area, and is still gone on returning (object unloaded and never respawned - a streaming/persistence bug).",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "An atrium with columns, drapes, stone planters and aisles. No interactive objects."
+    },
+    "revision": 1
+   },
+   "family": "sponza",
+   "case_type": "bug",
+   "recording_dir": "sp12-unload-s0",
+   "task_id": "JS_SP12",
+   "policy": {}
+  },
+  "sp14-lodpop": {
+   "task": {
+    "id": "JS_SP14",
+    "source_case": "sp14-lodpop",
+    "subcategory": "V2",
+    "title": "texture LOD pop",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "A drape/curtain (may be called a banner) shows a TEXTURE-LOD/streaming POP: from afar its texture is an abnormal blocky ultra-low-resolution version, and it abruptly pops to sharp when approached (or blurry when walking away).",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "An atrium with columns, drapes, stone planters and aisles. No interactive objects."
+    },
+    "revision": 1
+   },
+   "family": "sponza",
+   "case_type": "bug",
+   "recording_dir": "sp14-lodpop-s0",
+   "task_id": "JS_SP14",
+   "policy": {}
+  },
+  "sp15-spawnpile": {
+   "task": {
+    "id": "JS_SP15",
+    "source_case": "sp15-spawnpile",
+    "subcategory": "G2",
+    "title": "prop pile in the aisle corner",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "A PILE / HEAP of duplicated props (copies of the stone pots, a planter and a hanging brazier) jammed INTO EACH OTHER in the corner of a side aisle (north-east corner, behind the last drape) - pots tilted through one another, one lying on its side, a brazier on the floor (failed spawns).",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "An atrium with columns, drapes, stone planters and aisles. No interactive objects."
+    },
+    "revision": 2
+   },
+   "family": "sponza",
+   "case_type": "bug",
+   "recording_dir": "sp15-spawnpile-s0",
+   "task_id": "JS_SP15",
+   "policy": {}
+  },
+  "wl01-float": {
+   "task": {
+    "id": "JS_WL01",
+    "source_case": "wl01-float",
+    "subcategory": "G1",
+    "title": "floating boulder",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "The big boulder right next to the start FLOATS about 3 m above the meadow with open air under it.",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "Grassland with pine trees, shrubs and boulders."
+    },
+    "revision": 2
+   },
+   "family": "wilderness",
+   "case_type": "bug",
+   "recording_dir": "wl01-float-s0",
+   "task_id": "JS_WL01",
+   "policy": {}
+  },
+  "wl02-clip": {
+   "task": {
+    "id": "JS_WL02",
+    "source_case": "wl02-clip",
+    "subcategory": "G2",
+    "title": "sunken pine",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "The tall pine west of the start is TIPPED OVER (about 35 degrees) and SUNK into the ground - its trunk goes into the meadow and its lower branches stab through the grass (clipping into the terrain).",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "Grassland with pine trees, shrubs and boulders."
+    },
+    "revision": 2
+   },
+   "family": "wilderness",
+   "case_type": "bug",
+   "recording_dir": "wl02-clip-s0",
+   "task_id": "JS_WL02",
+   "policy": {}
+  },
+  "wl03-scale": {
+   "task": {
+    "id": "JS_WL03",
+    "source_case": "wl03-scale",
+    "subcategory": "G3",
+    "title": "giant grass patch",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "One square patch of the meadow south-west of the start has its GRASS rendered at about four times normal SCALE - blades taller than a person, the patch ending abruptly along straight edges (wrong-scale grass).",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "Grassland with pine trees, shrubs and boulders."
+    },
+    "revision": 1
+   },
+   "family": "wilderness",
+   "case_type": "bug",
+   "recording_dir": "wl03-scale-s0",
+   "task_id": "JS_WL03",
+   "policy": {}
+  },
+  "wl05-airwall": {
+   "task": {
+    "id": "JS_WL05",
+    "source_case": "wl05-airwall",
+    "subcategory": "C2",
+    "title": "invisible wall",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "An INVISIBLE WALL across the meadow north of the start blocks the walker although nothing is visible there.",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "Grassland with pine trees, shrubs and boulders."
+    },
+    "revision": 1
+   },
+   "family": "wilderness",
+   "case_type": "bug",
+   "recording_dir": "wl05-airwall-s0",
+   "task_id": "JS_WL05",
+   "policy": {}
+  },
+  "wl06-hole": {
+   "task": {
+    "id": "JS_WL06",
+    "source_case": "wl06-hole",
+    "subcategory": "C1",
+    "title": "hole in the ground",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "A HOLE in the ground: the walker falls through the solid-looking meadow north-east of the start and respawns.",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "Grassland with pine trees, shrubs and boulders."
+    },
+    "revision": 1
+   },
+   "family": "wilderness",
+   "case_type": "bug",
+   "recording_dir": "wl06-hole-s0",
+   "task_id": "JS_WL06",
+   "policy": {}
+  },
+  "wl07-ghost": {
+   "task": {
+    "id": "JS_WL07",
+    "source_case": "wl07-ghost",
+    "subcategory": "C1",
+    "title": "no-collision boulder",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "The big boulder next to the start has NO COLLISION - the walker passes straight through it.",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "Grassland with pine trees, shrubs and boulders."
+    },
+    "revision": 1
+   },
+   "family": "wilderness",
+   "case_type": "bug",
+   "recording_dir": "wl07-ghost-s0",
+   "task_id": "JS_WL07",
+   "policy": {}
+  },
+  "wl08-jitter": {
+   "task": {
+    "id": "JS_WL08",
+    "source_case": "wl08-jitter",
+    "subcategory": "T2",
+    "title": "trembling shrub",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "A bush north-east of the start JITTERS / vibrates rapidly in place.",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "Grassland with pine trees, shrubs and boulders."
+    },
+    "revision": 2
+   },
+   "family": "wilderness",
+   "case_type": "bug",
+   "recording_dir": "wl08-jitter-s0",
+   "task_id": "JS_WL08",
+   "policy": {}
+  },
+  "wl09-magenta": {
+   "task": {
+    "id": "JS_WL09",
+    "source_case": "wl09-magenta",
+    "subcategory": "V4",
+    "title": "Material anomaly",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "The boulder on the slope north-east of the start renders flat bright MAGENTA (missing texture placeholder).",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "Grassland with pine trees, shrubs and boulders."
+    },
+    "revision": 2
+   },
+   "family": "wilderness",
+   "case_type": "bug",
+   "recording_dir": "wl09-magenta-s0",
+   "task_id": "JS_WL09",
+   "policy": {}
+  },
+  "wl10-backcull": {
+   "task": {
+    "id": "JS_WL10",
+    "source_case": "wl10-backcull",
+    "subcategory": "V1",
+    "title": "boulder invisible from behind",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "The boulder on the north-east slope is visible from the south but INVISIBLE from its north side (back-face culling).",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "Grassland with pine trees, shrubs and boulders."
+    },
+    "revision": 2
+   },
+   "family": "wilderness",
+   "case_type": "bug",
+   "recording_dir": "wl10-backcull-s0",
+   "task_id": "JS_WL10",
+   "policy": {}
+  },
+  "wl11-xray": {
+   "task": {
+    "id": "JS_WL11",
+    "source_case": "wl11-xray",
+    "subcategory": "V1",
+    "title": "x-ray boulder",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "The boulder on the north-east slope renders THROUGH trees, bushes and the hillside in front of it (x-ray / no depth test).",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "Grassland with pine trees, shrubs and boulders."
+    },
+    "revision": 2
+   },
+   "family": "wilderness",
+   "case_type": "bug",
+   "recording_dir": "wl11-xray-s0",
+   "task_id": "JS_WL11",
+   "policy": {}
+  },
+  "wl14-lodpop": {
+   "task": {
+    "id": "JS_WL14",
+    "source_case": "wl14-lodpop",
+    "subcategory": "V2",
+    "title": "tree LOD pop",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "The tall pine west of the start shows as a crude flat-shaded CONE from more than ~15 m away and POPS into a detailed tree up close (LOD pop).",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "Grassland with pine trees, shrubs and boulders."
+    },
+    "revision": 2
+   },
+   "family": "wilderness",
+   "case_type": "bug",
+   "recording_dir": "wl14-lodpop-s0",
+   "task_id": "JS_WL14",
+   "policy": {}
+  },
+  "wl15-spawnpile": {
+   "task": {
+    "id": "JS_WL15",
+    "source_case": "wl15-spawnpile",
+    "subcategory": "G2",
+    "title": "boulder pile",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "Nine identical small boulders are JAMMED into one another in one tight heap on the open grass south-west of the start, near the water (failed spawns).",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "Grassland with pine trees, shrubs and boulders."
+    },
+    "revision": 2
+   },
+   "family": "wilderness",
+   "case_type": "bug",
+   "recording_dir": "wl15-spawnpile-s0",
+   "task_id": "JS_WL15",
+   "policy": {}
+  },
+  "wl16-terrainhole": {
+   "task": {
+    "id": "JS_WL16",
+    "source_case": "wl16-terrainhole",
+    "subcategory": "C2",
+    "title": "missing terrain patch",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "A square patch of the ground east of the start is MISSING - a hole in the terrain mesh showing the void / the distant hills through it, yet the walker can still cross the gap on invisible ground (missing terrain geometry).",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "Grassland with pine trees, shrubs and boulders."
+    },
+    "revision": 1
+   },
+   "family": "wilderness",
+   "case_type": "bug",
+   "recording_dir": "wl16-terrainhole-s0",
+   "task_id": "JS_WL16",
+   "policy": {}
+  },
+  "wl17-upsidedown": {
+   "task": {
+    "id": "JS_WL17",
+    "source_case": "wl17-upsidedown",
+    "subcategory": "G2",
+    "title": "upside-down tree",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "The big tree north-west of the start is UPSIDE DOWN - its round crown rests on the ground and its bare trunk points straight up into the sky.",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "Grassland with pine trees, shrubs and boulders."
+    },
+    "revision": 2
+   },
+   "family": "wilderness",
+   "case_type": "bug",
+   "recording_dir": "wl17-upsidedown-s0",
+   "task_id": "JS_WL17",
+   "policy": {}
+  },
+  "wt01-float": {
+   "task": {
+    "id": "JS_WT01",
+    "source_case": "wt01-float",
+    "subcategory": "G1",
+    "title": "floating boulder",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "A BOULDER FLOATS in mid-water about 1.6 m above the sand with open water underneath it (the other rocks rest on the seabed).",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "A shallow-water reef with rocks, coral and fish. No interactive objects."
+    },
+    "revision": 1
+   },
+   "family": "water",
+   "case_type": "bug",
+   "recording_dir": "wt01-float-s0",
+   "task_id": "JS_WT01",
+   "policy": {}
+  },
+  "wt02-clip": {
+   "task": {
+    "id": "JS_WT02",
+    "source_case": "wt02-clip",
+    "subcategory": "G2",
+    "title": "fish clipping into the seabed",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "A school of barramundi fish swims HALF-BURIED IN THE SAND of the open lane just north of the start - the fish bodies clip through the seabed, only backs and fins show above the sand (fish inside/through the ground).",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "A shallow-water reef with rocks, coral and fish. No interactive objects."
+    },
+    "revision": 1
+   },
+   "family": "water",
+   "case_type": "bug",
+   "recording_dir": "wt02-clip-s0",
+   "task_id": "JS_WT02",
+   "policy": {}
+  },
+  "wt05-airwall": {
+   "task": {
+    "id": "JS_WT05",
+    "source_case": "wt05-airwall",
+    "subcategory": "C2",
+    "title": "invisible wall",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "An INVISIBLE WALL / barrier right across the sandy lane a few metres north of the start blocks the diver although nothing is visible there.",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "A shallow-water reef with rocks, coral and fish. No interactive objects."
+    },
+    "revision": 2
+   },
+   "family": "water",
+   "case_type": "bug",
+   "recording_dir": "wt05-airwall-s0",
+   "task_id": "JS_WT05",
+   "policy": {}
+  },
+  "wt07-ghostrock": {
+   "task": {
+    "id": "JS_WT07",
+    "source_case": "wt07-ghostrock",
+    "subcategory": "C1",
+    "title": "no-collision rock",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "The tall boulder north-east of the start has NO COLLISION - the diver swims straight through it while every other rock is solid.",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "A shallow-water reef with rocks, coral and fish. No interactive objects."
+    },
+    "revision": 1
+   },
+   "family": "water",
+   "case_type": "bug",
+   "recording_dir": "wt07-ghostrock-s0",
+   "task_id": "JS_WT07",
+   "policy": {}
+  },
+  "wt08-jitter": {
+   "task": {
+    "id": "JS_WT08",
+    "source_case": "wt08-jitter",
+    "subcategory": "T2",
+    "title": "trembling coral",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "A staghorn coral SHAKES/VIBRATES rapidly in place (physics jitter) instead of swaying gently.",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "A shallow-water reef with rocks, coral and fish. No interactive objects."
+    },
+    "revision": 1
+   },
+   "family": "water",
+   "case_type": "bug",
+   "recording_dir": "wt08-jitter-s0",
+   "task_id": "JS_WT08",
+   "policy": {}
+  },
+  "wt09-magenta": {
+   "task": {
+    "id": "JS_WT09",
+    "source_case": "wt09-magenta",
+    "subcategory": "V4",
+    "title": "Material anomaly",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "A big rock face renders as flat bright MAGENTA/PINK (missing texture placeholder).",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "A shallow-water reef with rocks, coral and fish. No interactive objects."
+    },
+    "revision": 1
+   },
+   "family": "water",
+   "case_type": "bug",
+   "recording_dir": "wt09-magenta-s0",
+   "task_id": "JS_WT09",
+   "policy": {}
+  },
+  "wt11-xray": {
+   "task": {
+    "id": "JS_WT11",
+    "source_case": "wt11-xray",
+    "subcategory": "V1",
+    "title": "x-ray fish school",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "The school of small SILVER FISH around the big rock north-east of the reef RENDERS THROUGH the rock and corals - the fish stay visible through objects that should hide them (x-ray / no depth test).",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "A shallow-water reef with rocks, coral and fish. No interactive objects."
+    },
+    "revision": 1
+   },
+   "family": "water",
+   "case_type": "bug",
+   "recording_dir": "wt11-xray-s0",
+   "task_id": "JS_WT11",
+   "policy": {}
+  },
+  "wt12-unload": {
+   "task": {
+    "id": "JS_WT12",
+    "source_case": "wt12-unload",
+    "subcategory": "T1",
+    "title": "unloaded rock set",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "After you visit the big mossy rock set west of the start (with its corals) and swim away, the whole rock set and its corals are UNLOADED and GONE when you come back (an empty patch of sand where the rocks stood).",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "A shallow-water reef with rocks, coral and fish. No interactive objects."
+    },
+    "revision": 2
+   },
+   "family": "water",
+   "case_type": "bug",
+   "recording_dir": "wt12-unload-s0",
+   "task_id": "JS_WT12",
+   "policy": {}
+  },
+  "wt14-lodpop": {
+   "task": {
+    "id": "JS_WT14",
+    "source_case": "wt14-lodpop",
+    "subcategory": "V2",
+    "title": "coral LOD pop",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "A coral cluster shows as crude blocky BLOBS from a few metres away and POPS into detailed corals only when very close (LOD pop).",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "A shallow-water reef with rocks, coral and fish. No interactive objects."
+    },
+    "revision": 1
+   },
+   "family": "water",
+   "case_type": "bug",
+   "recording_dir": "wt14-lodpop-s0",
+   "task_id": "JS_WT14",
+   "policy": {}
+  },
+  "wt15-spawnpile": {
+   "task": {
+    "id": "JS_WT15",
+    "source_case": "wt15-spawnpile",
+    "subcategory": "G2",
+    "title": "coral pile",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "A PILE of nine IDENTICAL copies of the same staghorn coral, all facing the same way, stacked into one another in one heap on the open sand (failed spawns / duplicated objects).",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "A shallow-water reef with rocks, coral and fish. No interactive objects."
+    },
+    "revision": 2
+   },
+   "family": "water",
+   "case_type": "bug",
+   "recording_dir": "wt15-spawnpile-s0",
+   "task_id": "JS_WT15",
+   "policy": {}
+  },
+  "wt16-fishreverse": {
+   "task": {
+    "id": "JS_WT16",
+    "source_case": "wt16-fishreverse",
+    "subcategory": "S2",
+    "title": "fish swimming backwards",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "The three big barramundi swim BACKWARDS / TAIL-FIRST - they move in the direction of their tails, heads pointing away from where they go.",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "A shallow-water reef with rocks, coral and fish. No interactive objects."
+    },
+    "revision": 1
+   },
+   "family": "water",
+   "case_type": "bug",
+   "recording_dir": "wt16-fishreverse-s0",
+   "task_id": "JS_WT16",
+   "policy": {}
+  },
+  "wt17-fishupside": {
+   "task": {
+    "id": "JS_WT17",
+    "source_case": "wt17-fishupside",
+    "subcategory": "S2",
+    "title": "fish swimming upside down",
+    "rubrics_i18n": {
+     "en": {
+      "criteria": "A school of barramundi by the eastern ridge swims UPSIDE DOWN / belly-up (rolled 180 degrees).",
+      "expected": "",
+      "steps": "",
+      "source": "eval/judge_sem.GT placeholder; replace with the review site's rubric"
+     }
+    },
+    "scene_i18n": {
+     "en": "A shallow-water reef with rocks, coral and fish. No interactive objects."
+    },
+    "revision": 1
+   },
+   "family": "water",
+   "case_type": "bug",
+   "recording_dir": "wt17-fishupside-s0",
+   "task_id": "JS_WT17",
+   "policy": {}
+  }
+ }
+}

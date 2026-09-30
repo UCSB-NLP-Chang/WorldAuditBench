@@ -1,0 +1,16 @@
+{
+  "keep_actor_labels": {
+    "market": [
+      "AS_Standing_Arguing_01",
+      "Sitting_Talking_Retargeted2",
+      "Standing_Arguing_Retargeted"
+    ],
+    "tea_house": [
+      "Talking_Retargeted",
+      "AS_Sittting_Male_02",
+      "AS_Happy_Idle_Male_03"
+    ],
+    "courtyard": []
+  },
+  "description": "Sparse, fixed population shared by the baseline and every bug task of a scene. Original full-city Playtest is preserved."
+}

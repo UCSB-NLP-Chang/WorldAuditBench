@@ -1,0 +1,12 @@
+[
+ {
+  "name": "barrier invisible from behind",
+  "where": "the SECOND barrier from the west end of the north barrier row (the row 8 m north of the start) is visible from the south (start side) but vanishes completely when viewed from its north side",
+  "at": [
+   -6,
+   15.2,
+   -22
+  ],
+  "category": "visual-consistency"
+ }
+]

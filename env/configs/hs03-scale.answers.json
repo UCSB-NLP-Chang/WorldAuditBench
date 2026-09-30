@@ -1,0 +1,12 @@
+[
+ {
+  "name": "oversized chair",
+  "where": "the desk chair in the kids room upstairs is ~1.7x normal size - taller than the desk it stands at",
+  "at": [
+   4.0,
+   3.0,
+   -3.6
+  ],
+  "category": "geometry-space"
+ }
+]

@@ -1,0 +1,12 @@
+[
+ {
+  "name": "street lamp casts no shadow",
+  "where": "the street lamp east of the start (by the east end of the north barrier row) casts NO shadow on the tarmac at all, while the matching lamp on the west side of the strip and every other prop cast long shadows",
+  "at": [
+   12,
+   17.3,
+   -18
+  ],
+  "category": "visual-consistency"
+ }
+]

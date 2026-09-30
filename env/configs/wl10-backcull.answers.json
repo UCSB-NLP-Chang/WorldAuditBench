@@ -1,0 +1,12 @@
+[
+ {
+  "name": "boulder invisible from behind",
+  "where": "the big boulder up the slope north-east of the start (about 25 m away) is visible from the start side (south) but vanishes completely when viewed from its north (uphill) side",
+  "at": [
+   22.8,
+   15.83,
+   -8.9
+  ],
+  "category": "visual-consistency"
+ }
+]

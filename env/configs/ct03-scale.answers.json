@@ -1,0 +1,12 @@
+[
+ {
+  "name": "giant garden bench",
+  "where": "one of the two garden benches in the west garden is more than twice its normal size - the bench east of the table towers over the identical bench on the other side",
+  "at": [
+   -2.95,
+   0.4,
+   -1.6
+  ],
+  "category": "geometry-space"
+ }
+]

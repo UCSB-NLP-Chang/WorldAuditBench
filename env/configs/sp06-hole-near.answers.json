@@ -1,0 +1,17 @@
+[
+ {
+  "name": "floor without collision",
+  "where": "player falls through solid-looking floor here and respawns",
+  "at": {
+   "scene": "sponza",
+   "spawnOffset": [
+    -4.02,
+    0.01
+   ],
+   "snap": true
+  },
+  "category": "collision-physics",
+  "extent_x": 0.9,
+  "extent_z": 0.9
+ }
+]
