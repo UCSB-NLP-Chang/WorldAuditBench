@@ -310,22 +310,22 @@
       "family": "T",
       "title": "Operational state changes",
       "subtype": "Operational state changes",
-      "definition": "Operational state changes occur when a scene or object abruptly or inconsistently switches states that should follow an established process. Examples include discontinuous day\u2013night changes or jumps in an ongoing animation.",
-      "evidence": "Figures 1 and 2 show two lighting states of the same scene, with the streetlamps switching from dark to lit. Combined with the document\u2019s report of abrupt day\u2013night alternation about once a second, the issue is a discontinuous state transition rather than a normal gradual cycle.",
-      "note": "day and night alternate abruptly about once a second; the normal cycle is about half a minute with gradual transitions. This timing is reported in the supplied document.",
+      "definition": "Operational state changes occur when an object or scene abruptly switches states without a cause, such as an ongoing animation reversing after the observer looks away.",
+      "evidence": "The windmill blades rotate steadily. Look away and return: the same blades now rotate in the opposite direction, without any interaction or change in wind.",
+      "note": "",
       "frames": [
         {
-          "src": "media/T3_01.jpg",
-          "caption": "Figure 1: State A: brighter ambient lighting, with the streetlamps unlit."
-        },
-        {
-          "src": "media/T3_02.jpg",
-          "caption": "Figure 2: State B: scene illumination changes and the streetlamps are lit."
+          "src": "media/t3-windmill.jpg",
+          "caption": "MV14: windmill blades reverse direction after looking away and returning."
         }
       ],
-      "video": "videos/t3-highlighted.mp4",
+      "video": "videos/t3-windmill-highlighted.mp4",
       "captions": "",
-      "chartLabel": ["Operational", "state", "changes"]
+      "chartLabel": [
+        "Operational",
+        "state",
+        "changes"
+      ]
     },
     {
       "id": "S2",
