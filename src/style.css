@@ -1100,8 +1100,8 @@ select:focus-visible,
   font-size: 13px;
 }
 .results-section {
-  background: var(--dark);
-  color: #e8e8ef;
+  background: #eef4fc;
+  color: #25334a;
   position: relative;
   overflow: hidden;
 }
@@ -1110,16 +1110,16 @@ select:focus-visible,
   position: absolute;
   width: 700px;
   height: 500px;
-  background: radial-gradient(ellipse, #6e50a918, transparent 70%);
+  background: radial-gradient(ellipse, #a5c9ff25, transparent 70%);
   top: -100px;
   left: 0;
   pointer-events: none;
 }
 .results-section .section-title > span {
-  color: #9792b0;
+  color: #5c78a8;
 }
 .results-section .section-heading > p {
-  color: #8e91a3;
+  color: #566780;
   max-width: 380px;
 }
 .results-layout {
@@ -1129,8 +1129,8 @@ select:focus-visible,
   margin-top: 42px;
 }
 .result-chart {
-  background: #20232f;
-  border: 1px solid #333544;
+  background: #ffffff;
+  border: 1px solid #d9e3f1;
   border-radius: 12px;
   padding: 25px;
 }
@@ -1140,16 +1140,16 @@ select:focus-visible,
   gap: 15px;
   align-items: center;
 }
-.segmented.dark {
-  background: #151823;
+.segmented.results-toggle {
+  background: #edf2fa;
 }
-.segmented.dark button {
-  color: #8f92a7;
+.segmented.results-toggle button {
+  color: #536780;
   font-size: 13px;
 }
-.segmented.dark button.active {
-  background: #37324c;
-  color: #e1d6ff;
+.segmented.results-toggle button.active {
+  background: #dfe8ff;
+  color: #354dac;
   box-shadow: none;
 }
 .metric-select {
@@ -1160,8 +1160,8 @@ select:focus-visible,
 .metric-select > select {
   appearance: none;
   background: transparent;
-  color: #bbb5d1;
-  border: 1px solid #404052;
+  color: #405573;
+  border: 1px solid #d4deed;
   border-radius: 5px;
   padding: 10px 28px 10px 11px;
   font-size: 13px;
@@ -1172,11 +1172,11 @@ select:focus-visible,
   position: absolute;
   right: 10px;
   pointer-events: none;
-  color: #bab1d3;
+  color: #687d9e;
 }
 .metric-select option {
-  color: #fff;
-  background: #20232f;
+  color: #25334a;
+  background: #ffffff;
 }
 .chart-axis {
   display: flex;
@@ -1184,7 +1184,7 @@ select:focus-visible,
   margin: 26px 0 19px;
   font-size: 12px;
   letter-spacing: 1px;
-  color: #7f8195;
+  color: #637590;
 }
 .bar-row {
   display: grid;
@@ -1211,18 +1211,18 @@ select:focus-visible,
 }
 .bar-track {
   height: 13px;
-  background: #2a2d3a;
+  background: #edf1f8;
   border-radius: 3px;
   overflow: hidden;
 }
 .bar-fill {
   height: 100%;
-  background: #706189;
+  background: #9aace4;
   border-radius: 3px;
   transition: width 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .bar-fill.best {
-  background: linear-gradient(90deg, #8d76ed, #b4a3f8);
+  background: linear-gradient(90deg, #617ee7, #8d86ed);
 }
 .bar-row strong {
   text-align: right;
@@ -1232,33 +1232,33 @@ select:focus-visible,
 }
 .bar-row small {
   font-size: 12px;
-  color: #777b91;
+  color: #687995;
   margin-left: 2px;
 }
 .human .bar-fill {
-  background: #c1c9c0;
+  background: #5c9eaf;
 }
 .human {
-  color: #d6dcd2;
+  color: #2d5666;
 }
 .human-icon {
   display: inline-grid;
   place-items: center;
   width: 18px;
   height: 18px;
-  border: 1px solid #737f72;
+  border: 1px solid #77a7b3;
   border-radius: 50%;
   font-size: 12px;
 }
 .chart-divider {
   height: 1px;
-  background: #343542;
+  background: #dde5f0;
   margin: 11px 0;
 }
 .chart-note {
   font-size: 12px;
-  color: #717587;
-  border-top: 1px solid #343542;
+  color: #65758d;
+  border-top: 1px solid #dde5f0;
   padding-top: 17px;
   margin: 17px 0 0;
 }
@@ -1269,11 +1269,11 @@ select:focus-visible,
 }
 .findings article + article {
   margin-top: 27px;
-  border-top: 1px solid #353341;
+  border-top: 1px solid #d6e1ef;
   padding-top: 24px;
 }
 .finding-stat {
-  color: #c7b1f9;
+  color: #506dcb;
   font-size: 48px;
   letter-spacing: -2px;
   font-weight: 500;
@@ -1282,7 +1282,7 @@ select:focus-visible,
 .finding-stat > span {
   font-size: 21px;
   margin-left: 5px;
-  color: #85789d;
+  color: #7385a6;
   letter-spacing: 0;
 }
 .findings h3 {
@@ -1293,13 +1293,13 @@ select:focus-visible,
 }
 .findings p {
   font-size: 15px;
-  color: #8f90a1;
+  color: #566780;
   line-height: 1.9;
   margin: 0;
 }
 .findings > a {
   font-size: 13px;
-  color: #cbb9ee;
+  color: #435fbb;
   display: flex;
   align-items: center;
   gap: 13px;
@@ -1307,8 +1307,8 @@ select:focus-visible,
 }
 .full-results {
   margin-top: 36px;
-  border-top: 1px solid #363543;
-  border-bottom: 1px solid #363543;
+  border-top: 1px solid #d4dfed;
+  border-bottom: 1px solid #d4dfed;
 }
 .full-results summary {
   list-style: none;
@@ -1317,7 +1317,7 @@ select:focus-visible,
   justify-content: space-between;
   padding: 18px 0;
   font-size: 15px;
-  color: #b3b0c3;
+  color: #405573;
   cursor: pointer;
 }
 .full-results summary::-webkit-details-marker {
@@ -1336,30 +1336,30 @@ select:focus-visible,
 }
 .full-results caption {
   text-align: left;
-  color: #898697;
+  color: #61718b;
   margin: 8px 0 18px;
   font-size: 13px;
 }
 .full-results th,
 .full-results td {
   padding: 12px 9px;
-  border-bottom: 1px solid #343340;
+  border-bottom: 1px solid #dfe6f1;
   text-align: right;
 }
 .full-results th:first-child {
   text-align: left;
 }
 .full-results thead {
-  color: #9991af;
+  color: #405573;
 }
 .full-results tbody th {
   font-weight: 500;
-  color: #ccc7da;
+  color: #34445e;
 }
 .full-results .overall {
-  color: #d1b5fc;
+  color: #455fbd;
   font-weight: 700;
-  background: #9f7cdd08;
+  background: #e7edfc;
 }
 .environment-filters {
   display: flex;
@@ -1757,7 +1757,7 @@ footer {
   .chart-controls {
     gap: 8px;
   }
-  .segmented.dark button {
+  .segmented.results-toggle button {
     padding: 8px;
     font-size: 12px;
   }
@@ -2150,7 +2150,7 @@ footer {
   .chart-controls {
     gap: 7px;
   }
-  .segmented.dark button {
+  .segmented.results-toggle button {
     font-size: 12px;
     padding: 8px 9px;
   }
@@ -2721,4 +2721,44 @@ footer {
     justify-content: center;
     gap: 5px 24px;
   }
+}
+
+.results-section .eyebrow {
+  color: #526cca;
+}
+.result-chart {
+  box-shadow: 0 8px 24px #42669608;
+}
+.full-results thead {
+  background: #e4edf9;
+}
+.full-results tbody tr {
+  background: #fff;
+}
+.full-results tbody tr:nth-child(even) {
+  background: #f5f8fd;
+}
+.full-results tbody tr:hover {
+  background: #eaf0fc;
+}
+
+.authors a {
+  color: #4d5da2;
+  text-decoration: none;
+  text-underline-offset: 4px;
+}
+.authors a:hover,
+.authors a:focus-visible {
+  color: #384c9d;
+  text-decoration: underline;
+}
+.hero-actions .dataset-button {
+  color: #6b7285;
+  cursor: default;
+}
+.hero-actions .dataset-button:hover {
+  transform: none;
+}
+.citation {
+  border-top: 1px solid #e1e7f0;
 }

@@ -6,14 +6,14 @@ import "./style.css";
 const REPO = "https://github.com/UCSB-NLP-Chang/WorldAuditBench";
 const PAPER = "./assets/worldauditbench.pdf";
 const authors = [
-  ["Ziyan Jiang", "1,*"],
-  ["Jingbo Yang", "1,*"],
-  ["Jiabao Ji", "1,*"],
-  ["Yujian Liu", "1"],
-  ["Qiucheng Wu", "1"],
-  ["Tommi Jaakkola", "2"],
-  ["Yang Zhang", "3"],
-  ["Shiyu Chang", "1"],
+  ["Ziyan Jiang", "1,*", "https://xmhzz2018.github.io/"],
+  ["Jingbo Yang", "1,*", "https://kimperyang.github.io/"],
+  ["Jiabao Ji", "1,*", "https://question406.github.io/"],
+  ["Yujian Liu", "1", "https://yujianll.github.io/"],
+  ["Qiucheng Wu", "1", "https://wuqiuche.github.io/"],
+  ["Tommi Jaakkola", "2", "https://people.csail.mit.edu/tommi/"],
+  ["Yang Zhang", "3", "https://mitibm.mit.edu/people/yang-zhang/"],
+  ["Shiyu Chang", "1", "https://code-terminator.github.io/"],
 ];
 const scores = [
   {
@@ -225,9 +225,11 @@ function Hero() {
           in 13 interactive 3D environments.
         </p>
         <div className="authors">
-          {authors.map(([name, aff]) => (
+          {authors.map(([name, aff, url]) => (
             <span key={name}>
-              {name}
+              <a href={url} target="_blank" rel="noreferrer">
+                {name}
+              </a>
               <sup>{aff}</sup>
             </span>
           ))}
@@ -263,14 +265,16 @@ function Hero() {
             <BrandIcon name="github" />
             Code
           </a>
-          <a
-            className="button secondary"
-            href="#resources"
-            title="Dataset release on Hugging Face coming soon"
+          <button
+            className="button secondary dataset-button"
+            type="button"
+            aria-disabled="true"
+            aria-label="Dataset (coming soon on Hugging Face)"
+            title="Coming soon on Hugging Face"
           >
             <BrandIcon name="huggingface" />
             Dataset
-          </a>
+          </button>
           <a className="button secondary" href="#explore">
             <Icon name="play" />
             Demo
@@ -727,7 +731,7 @@ function Results() {
       <div className="wrap">
         <div className="section-heading">
           <div>
-            <Label light>THE RESULTS</Label>
+            <Label>THE RESULTS</Label>
             <h2 className="section-title">
               A wide gap.
               <br />
@@ -743,7 +747,10 @@ function Results() {
         <div className="results-layout">
           <div className="result-chart">
             <div className="chart-controls">
-              <div className="segmented dark" aria-label="Result paradigm">
+              <div
+                className="segmented results-toggle"
+                aria-label="Result paradigm"
+              >
                 <button
                   className={mode === "vlm" ? "active" : ""}
                   aria-pressed={mode === "vlm"}
@@ -964,48 +971,6 @@ function Environments() {
     </section>
   );
 }
-function Resources() {
-  return (
-    <section className="resource-section" id="resources">
-      <div className="wrap resource-inner">
-        <div>
-          <Label>BUILD ON WORLDAUDITBENCH</Label>
-          <h2>Take a closer look.</h2>
-          <p>
-            Read the paper, explore the code, and bring world auditing
-            <br className="desktop-break" /> to your own agents.
-          </p>
-        </div>
-        <div className="resource-links">
-          <a href={PAPER} target="_blank" rel="noreferrer">
-            <Icon name="paper" size={24} />
-            <span>
-              <strong>Research paper</strong>
-              <small>Full paper, experiments, and appendix · PDF</small>
-            </span>
-            <Icon name="external" />
-          </a>
-          <a href={REPO} target="_blank" rel="noreferrer">
-            <BrandIcon name="github" />
-            <span>
-              <strong>Code & task definitions</strong>
-              <small>Agent harness, evaluation, and benchmark splits</small>
-            </span>
-            <Icon name="external" />
-          </a>
-          <div className="resource-pending">
-            <BrandIcon name="huggingface" />
-            <span>
-              <strong>Dataset & environments</strong>
-              <small>Large resources will be released on Hugging Face.</small>
-            </span>
-            <span className="soon">Coming soon</span>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
 function Citation() {
   const [copied, setCopied] = useState(false),
     [error, setError] = useState(false);
@@ -1094,7 +1059,6 @@ function App() {
         <Methods onImage={setImage} />
         <Results />
         <Environments />
-        <Resources />
         <Citation />
       </main>
       <footer>
