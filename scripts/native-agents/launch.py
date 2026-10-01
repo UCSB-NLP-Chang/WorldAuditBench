@@ -17,7 +17,7 @@ sys.path.insert(0, str(ROOT))
 from auditor.mcp_agent.examples import ExamplePack
 
 BASE = ROOT / "out/native-agents"
-DEFAULT_ICL = ROOT / "output/icl-unreal-20260916"
+DEFAULT_ICL = ROOT / "examples/icl"
 DEFAULT_TASK_CATALOG = Path(__file__).with_name("task-subcategories.json")
 DEFAULT_SCENE_CATALOG = Path(__file__).with_name("task-scenes.json")
 MODELS = {"codex": "gpt-6-astra", "gemini": "gemini-3.8-flash", "claude": "claude-opus-5", "qwen": "qwen3.8-flash", "muse": "muse-spark-1.3",

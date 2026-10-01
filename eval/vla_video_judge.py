@@ -4,7 +4,7 @@
 For every episode under runs/<tag>/<config>-s0/ (frames every 0.5 s of simulated time), the model receives
   1. the agents' task instruction (scripts/native-agents/launch.py DEFAULT_INSTRUCTION),
   2. the task's public environment description (task-scenes.json, same as the agents' "Environment description"),
-  3. the ONE in-context example of the task's subcategory (output/icl-unreal-20260916: definition, 1-3 figures with
+  3. the ONE in-context example of the task's subcategory (examples/icl: definition, 1-3 figures with
      captions, reference answer - the agents read it through read_example), and
   4. the recording as timestamped frames (480x300, the agents' film-frame size),
 and must answer with the agents' report structure: a JSON list of bugs {description, category, status, evidence
@@ -161,7 +161,7 @@ def main():
     ap.add_argument("--episodes", default="exposed", help="exposed | all | comma-separated configs")
     ap.add_argument("--model", default="gemini-3.8-flash"); ap.add_argument("--judge-model", default=None)
     ap.add_argument("--thinking", default="medium"); ap.add_argument("--workers", type=int, default=8)
-    ap.add_argument("--icl-dir", default=str(ICLR / "output/icl-unreal-20260916"))
+    ap.add_argument("--icl-dir", default=str(ICLR / "examples/icl"))
     ap.add_argument("--limit", type=int, default=0); ap.add_argument("--dry-run", action="store_true"); ap.add_argument("--no-judge", action="store_true")
     ap.add_argument("--fallback-code", default="{}", help='JSON {config: code} for cases without a subcategory label')
     ap.add_argument("--env", default="threejs", choices=["threejs", "ue"], help="ue: Unreal episodes of harness/vla_ue.py (runs/<tag>/<TASK>/)")

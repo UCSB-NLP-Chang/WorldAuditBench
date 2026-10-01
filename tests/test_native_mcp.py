@@ -127,7 +127,7 @@ def test_schema_same_and_native_launchers_are_single_process(tmp_path):
 @pytest.mark.requires_icl
 def test_icl_real_stdio_images_order_gating_recall_and_evidence_separation(tmp_path):
     from auditor.mcp_agent.examples import ExamplePack
-    pack = ExamplePack(ROOT / "output/icl-unreal-20260916", code="C3").snapshot(tmp_path / "icl")
+    pack = ExamplePack(ROOT / "examples/icl", code="C3").snapshot(tmp_path / "icl")
     cfg = {**config(tmp_path), "subcategory": "C3", "icl": pack.manifest(), "icl_directory": str(pack.root)}
     path = tmp_path / "config.json"
     path.write_text(json.dumps(cfg))
@@ -179,7 +179,7 @@ def test_icl_real_stdio_images_order_gating_recall_and_evidence_separation(tmp_p
 @pytest.mark.requires_icl
 def test_icl_exclusion_aliases_snapshot_integrity_and_zero_shot(tmp_path):
     from auditor.mcp_agent.examples import ExamplePack
-    pack = ExamplePack(ROOT / "output/icl-unreal-20260916", code="G1")
+    pack = ExamplePack(ROOT / "examples/icl", code="G1")
     for task in ["S05", "s05", "U019", "A21", "JS_WL12"]:
         with pytest.raises(ValueError, match="ICL demonstration/alias"):
             pack.check_task(task)
@@ -238,7 +238,7 @@ def test_task_specific_icl_selection_unknown_and_conflicting_labels(tmp_path):
     assert launch.task_subcategory(args("unknown-task", "--subcategory", "V2")) == "V2"
     with pytest.raises(ValueError, match="No ICL example for subcategory S1"):
         launch.prepare(args("unknown-task", "--subcategory", "S1"))
-    library = ExamplePack(ROOT / "output/icl-unreal-20260916")
+    library = ExamplePack(ROOT / "examples/icl")
     for code in library.examples:
         selected = ExamplePack(library.root, code=code)
         assert list(selected.examples) == [code]
@@ -305,7 +305,7 @@ def test_gemini_credential_stays_in_child_environment(tmp_path):
 @pytest.mark.requires_icl
 def test_icl_restart_before_scene_does_not_reset_progress(tmp_path):
     from auditor.mcp_agent.examples import ExamplePack
-    pack = ExamplePack(ROOT / "output/icl-unreal-20260916", code="C3").snapshot(tmp_path / "icl")
+    pack = ExamplePack(ROOT / "examples/icl", code="C3").snapshot(tmp_path / "icl")
     cfg = {**config(tmp_path), "subcategory": "C3", "icl_directory": str(pack.root), "icl": pack.manifest()}
     e = Episode(cfg)
     try:

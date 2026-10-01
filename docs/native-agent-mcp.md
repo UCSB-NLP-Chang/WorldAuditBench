@@ -446,7 +446,8 @@ Prices are estimates, not invoices, and exclude infrastructure, taxes and credit
 requiring the report server. Correct task execution and target recall are separate:
 `completed` means MCP `done`; Found/Missed requires independent rubric grading.
 
-The checked-in ICL runtime pack contains `context.json`, `exclude_from_eval.json`
-and their 29 referenced images under `output/icl-unreal-20260916/`. These are input
-fixtures, not experiment outputs. Private review metadata, credentials, generated
+The checked-in ICL metadata contains `context.json` and `exclude_from_eval.json`
+under `examples/icl/`. The 29 referenced images are pending Hugging Face release
+and must be restored under `examples/icl/images/` before running with ICL. See
+[resource details](resources.md). Private review metadata, credentials, generated
 run directories and provider logs are excluded from this code snapshot.

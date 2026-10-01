@@ -1,8 +1,7 @@
 # External resources: pending Hugging Face release
 
 The current delivery contains code and metadata. Large resources remain pending,
-as requested. No Hugging Face repository, upload, or downloadable release has been
-created by this migration.
+with a Hugging Face release planned. Download links will be added when available.
 
 | Resource | Status |
 |---|---|
@@ -16,6 +15,9 @@ created by this migration.
 `../resources/manifest.json` records known file identities. Null sizes or archive
 hashes mean they have not yet been inventoried or packaged. A binary hash identifies
 an executable only; it does not validate the whole Unreal package.
+
+The agent demonstration pack belongs in `examples/icl/`; its images restore to
+`examples/icl/images/`. Text and exclusion metadata are already included.
 
 Once restored to the recorded relative paths, run:
 

@@ -46,5 +46,8 @@ suite and passing Explore contracts; it does not hide these other results.
   paper scores after relocating runtime resources.
 - Rebuilding every Unreal binary from the recovered source snapshot.
 - Hugging Face downloads; that release is pending.
-- A live GitHub Pages site: branch preservation succeeded, but GitHub returned
-  HTTP 422 because the private repository's current plan does not support Pages.
+
+## Website
+
+The initial migration could not enable Pages while the repository was private.
+The repository is now public and the project page is published from `gh-pages`.

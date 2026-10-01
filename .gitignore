@@ -40,5 +40,6 @@ DerivedDataCache/
 Saved/
 *.tar.gz
 *.zip
-output/icl-unreal-20260916/images/
+examples/icl/images/
+output/
 services/*/example-assets/images/

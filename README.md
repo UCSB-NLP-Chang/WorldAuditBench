@@ -16,7 +16,7 @@
 <p><sup>1</sup> UC Santa Barbara &nbsp; <sup>2</sup> MIT CSAIL &nbsp; <sup>3</sup> MIT-IBM Watson AI Lab<br><sup>*</sup> Equal contribution</p>
 
 <p>
-  <a href="https://ucsb-nlp-chang.github.io/WorldAuditBench/assets/worldauditbench.pdf"><img src="docs/figures/paper-badge.svg" alt="Paper PDF"></a>
+  <a href="https://arxiv.org/abs/2609.40325"><img src="docs/figures/paper-badge.svg" alt="Paper on arXiv"></a>
   <a href="https://ucsb-nlp-chang.github.io/WorldAuditBench/"><img src="docs/figures/project-badge.svg" alt="Project page"></a>
   <a href="#resources"><img src="docs/figures/dataset-badge.svg" alt="Dataset coming soon on Hugging Face"></a>
   <a href="https://ucsb-nlp-chang.github.io/WorldAuditBench/#explore"><img src="docs/figures/demo-badge.svg" alt="Explore demos"></a>
@@ -146,20 +146,28 @@ See [resource details](docs/resources.md) for the files required to run the benc
 
 ## Repository structure
 
+Start with the [documentation](docs/README.md) and [script entry points](scripts/README.md).
+The [repository map](docs/repository-layout.md) explains how the components fit together.
+
 ```text
 benchmark/              Task definitions, scene descriptions, and evaluation splits
+examples/icl/           In-context demonstrations and evaluation exclusions
 scripts/native-agents/  Native model clients and experiment launchers
 auditor/mcp_agent/      Shared auditing tools and environment connections
 agent/                  Tool-calling VLM agent and evidence memory
 harness/                VLA exploration and environment runners
 eval/                   Report judges and evaluation utilities
 candidate_environments/ Three.js environment source
-env/                    Environment adapters
+env/                    Browser runtime and anomaly configurations
 unreal/                 Unreal source, plugins, and runtime policies
 experiments/ablations/   Ablation implementations
 services/               Human exploration, review, and evaluation interfaces
+resources/              External resource manifest (Hugging Face release pending)
 docs/                   Setup, protocols, and resource documentation
 ```
+
+Earlier pilots and reruns are archived in [`scripts/legacy/`](scripts/legacy/);
+development plans and handoffs are in [`docs/history/`](docs/history/).
 
 ### Development checks
 
@@ -181,7 +189,10 @@ These checks cover code and interfaces; they do not launch the full benchmark. S
             Yujian Liu and Qiucheng Wu and Tommi Jaakkola and
             Yang Zhang and Shiyu Chang},
   year   = {2026},
-  url    = {https://ucsb-nlp-chang.github.io/WorldAuditBench/}
+  eprint = {2609.40325},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.AI},
+  url    = {https://arxiv.org/abs/2609.40325}
 }
 ```
 

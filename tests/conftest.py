@@ -9,7 +9,7 @@ ROOT = Path(__file__).resolve().parents[1]
 def pytest_collection_modifyitems(items):
     pack = json.loads((ROOT / "resources/manifest.json").read_text())
     images = [r for r in pack["resources"]
-              if r.get("path", "").startswith("output/icl-unreal-20260916/images/")]
+              if r.get("path", "").startswith("examples/icl/images/")]
     missing = any(not (ROOT / r["path"]).is_file() for r in images)
     runtime_missing = not (ROOT / "out/native-agents/venv/bin/python").is_file()
     if missing or runtime_missing:

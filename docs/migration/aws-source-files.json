@@ -5,7 +5,7 @@
       "source": "/home/ec2-user/game-auditing/.gitignore",
       "sha256": "5e32fb7b47491b1184770a80cb50217874dcd539989d6b3dda62ce55d59fa9c8",
       "bytes": 535,
-      "released_sha256": "411799b3faf74cf0ac63d9a82dc475aeabd778e85ba05b69f064048ef0a03483",
+      "released_sha256": "9802cb37d2ddd90f9c0dcf56be03242f605c014608685eeadd99ab7d915534af",
       "status": "adapted"
     },
     {
@@ -49,7 +49,7 @@
       "source": "/home/ec2-user/game-auditing/README.md",
       "sha256": "fe61de9f8793816513437ef9e2425bc96732048d23be98d9bc331d988378aacc",
       "bytes": 6309,
-      "released_sha256": "498c0c457d2e8e62ef6df991311186f593e87759db749b10eb2f0712ad507be0",
+      "released_sha256": "f9be4267b77a68bbcbaef1bfe2b7aec5f9a1665b91469f00097df65008690a97",
       "status": "adapted"
     },
     {
@@ -2345,24 +2345,26 @@
       "source": "/home/ec2-user/game-auditing/docs/native-agent-mcp.md",
       "sha256": "f0f1ac604994a2575d24fb9badabb77302d9f6b2d968c04831534a6c22031560",
       "bytes": 28287,
-      "released_sha256": "5d986a91d493b8b20090be11c417b70a8f5ab66ddcab5bfa74a3db8ae9dd0289",
+      "released_sha256": "939b6f320a62b140c8913c8c7f40920fedab149156974d855b61c3617ff7d5cb",
       "status": "adapted"
     },
     {
-      "path": "docs/vla-replay-gpt6-plan.md",
+      "path": "docs/history/vla-replay-gpt6-plan.md",
       "source": "/home/ec2-user/game-auditing/docs/vla-replay-gpt6-plan.md",
       "sha256": "9dbf65289bcaaaff85433cd037b6fb564a08f12155065295cd2474c43819787b",
       "bytes": 11103,
       "released_sha256": "9dbf65289bcaaaff85433cd037b6fb564a08f12155065295cd2474c43819787b",
-      "status": "unchanged"
+      "status": "unchanged",
+      "previous_release_path": "docs/vla-replay-gpt6-plan.md"
     },
     {
-      "path": "docs/vla-replay-handoff.md",
+      "path": "docs/history/vla-replay-handoff.md",
       "source": "/home/ec2-user/game-auditing/docs/vla-replay-handoff.md",
       "sha256": "23133e4ee31bc536cdd66c1adb7c38d41c0e74a735e6207109d702da0916c110",
       "bytes": 8809,
       "released_sha256": "23133e4ee31bc536cdd66c1adb7c38d41c0e74a735e6207109d702da0916c110",
-      "status": "unchanged"
+      "status": "unchanged",
+      "previous_release_path": "docs/vla-replay-handoff.md"
     },
     {
       "path": "env/agent.html",
@@ -4833,8 +4835,8 @@
       "source": "/home/ec2-user/game-auditing/eval/vla_video_judge.py",
       "sha256": "5753b9d4e881473350c7aff6bb45a1c4b004425fbd223a13bc58261ea0984243",
       "bytes": 17353,
-      "released_sha256": "5753b9d4e881473350c7aff6bb45a1c4b004425fbd223a13bc58261ea0984243",
-      "status": "unchanged"
+      "released_sha256": "502c7e0da97553556d3f0013b7cbecfba4430887a8bcce047ace5eca7bae1ee3",
+      "status": "adapted"
     },
     {
       "path": "eval/vqa_audit.py",
@@ -4997,223 +4999,254 @@
       "status": "unchanged"
     },
     {
-      "path": "output/icl-unreal-20260916/context.json",
+      "path": "examples/icl/context.json",
       "source": "/home/ec2-user/game-auditing/output/icl-unreal-20260916/context.json",
       "sha256": "3a50110c71336fe9648a9bf3cd168f6ccc998807982c83184efcae5273d1c81c",
       "bytes": 22528,
       "released_sha256": "3a50110c71336fe9648a9bf3cd168f6ccc998807982c83184efcae5273d1c81c",
-      "status": "unchanged"
+      "status": "unchanged",
+      "previous_release_path": "output/icl-unreal-20260916/context.json"
     },
     {
-      "path": "output/icl-unreal-20260916/exclude_from_eval.json",
+      "path": "examples/icl/exclude_from_eval.json",
       "source": "/home/ec2-user/game-auditing/output/icl-unreal-20260916/exclude_from_eval.json",
       "sha256": "cb2ca8b4c922e0566d8db8a44b7d501f921f526083766f269f053963bfe17021",
       "bytes": 439,
       "released_sha256": "cb2ca8b4c922e0566d8db8a44b7d501f921f526083766f269f053963bfe17021",
-      "status": "unchanged"
+      "status": "unchanged",
+      "previous_release_path": "output/icl-unreal-20260916/exclude_from_eval.json"
     },
     {
-      "path": "output/icl-unreal-20260916/images/C1_01.png",
+      "path": "examples/icl/images/C1_01.png",
       "source": "/home/ec2-user/game-auditing/output/icl-unreal-20260916/images/C1_01.png",
       "sha256": "c1508e78345320482bddf379fc78b70a8ee92c36ddd3a76dd80326b28b1c83fc",
       "bytes": 2084624,
-      "status": "pending_resource"
+      "status": "pending_resource",
+      "previous_release_path": "output/icl-unreal-20260916/images/C1_01.png"
     },
     {
-      "path": "output/icl-unreal-20260916/images/C1_02.png",
+      "path": "examples/icl/images/C1_02.png",
       "source": "/home/ec2-user/game-auditing/output/icl-unreal-20260916/images/C1_02.png",
       "sha256": "a415d6fcfcc52aad59514270d8d34e97eec8272cef488dc67074355b2757f309",
       "bytes": 2026322,
-      "status": "pending_resource"
+      "status": "pending_resource",
+      "previous_release_path": "output/icl-unreal-20260916/images/C1_02.png"
     },
     {
-      "path": "output/icl-unreal-20260916/images/C1_03.png",
+      "path": "examples/icl/images/C1_03.png",
       "source": "/home/ec2-user/game-auditing/output/icl-unreal-20260916/images/C1_03.png",
       "sha256": "b1c0250b02585284ebae1e7fd5a642c08b7d500a8bf6d4ac17b18b85f89e6ea0",
       "bytes": 2139535,
-      "status": "pending_resource"
+      "status": "pending_resource",
+      "previous_release_path": "output/icl-unreal-20260916/images/C1_03.png"
     },
     {
-      "path": "output/icl-unreal-20260916/images/C2_01.png",
+      "path": "examples/icl/images/C2_01.png",
       "source": "/home/ec2-user/game-auditing/output/icl-unreal-20260916/images/C2_01.png",
       "sha256": "1b731a38a3200df8d6134a4695e76492aaafd74db2b5cfddaa25f58b89be53e2",
       "bytes": 2215151,
-      "status": "pending_resource"
+      "status": "pending_resource",
+      "previous_release_path": "output/icl-unreal-20260916/images/C2_01.png"
     },
     {
-      "path": "output/icl-unreal-20260916/images/C2_02.png",
+      "path": "examples/icl/images/C2_02.png",
       "source": "/home/ec2-user/game-auditing/output/icl-unreal-20260916/images/C2_02.png",
       "sha256": "b7eab5046e557994c014da4833efd0e958051fb57c6b80a19116910f3e811d1c",
       "bytes": 2356819,
-      "status": "pending_resource"
+      "status": "pending_resource",
+      "previous_release_path": "output/icl-unreal-20260916/images/C2_02.png"
     },
     {
-      "path": "output/icl-unreal-20260916/images/C3_01.png",
+      "path": "examples/icl/images/C3_01.png",
       "source": "/home/ec2-user/game-auditing/output/icl-unreal-20260916/images/C3_01.png",
       "sha256": "ad8b3d6f3602f69e2dddda05fa59994adb1a75d03ad35216fdc32adde0a1bfc8",
       "bytes": 1581769,
-      "status": "pending_resource"
+      "status": "pending_resource",
+      "previous_release_path": "output/icl-unreal-20260916/images/C3_01.png"
     },
     {
-      "path": "output/icl-unreal-20260916/images/C3_02.png",
+      "path": "examples/icl/images/C3_02.png",
       "source": "/home/ec2-user/game-auditing/output/icl-unreal-20260916/images/C3_02.png",
       "sha256": "a79c9c6a8ce99e5e57455aa2c73d5233517baa9c5df11058087d372a31f9fa7b",
       "bytes": 1590615,
-      "status": "pending_resource"
+      "status": "pending_resource",
+      "previous_release_path": "output/icl-unreal-20260916/images/C3_02.png"
     },
     {
-      "path": "output/icl-unreal-20260916/images/C3_03.png",
+      "path": "examples/icl/images/C3_03.png",
       "source": "/home/ec2-user/game-auditing/output/icl-unreal-20260916/images/C3_03.png",
       "sha256": "fdaf902f13ad23f9dfc8d4cbecad2b305228a59ca890da413efedc3a3eb8b62c",
       "bytes": 1578482,
-      "status": "pending_resource"
+      "status": "pending_resource",
+      "previous_release_path": "output/icl-unreal-20260916/images/C3_03.png"
     },
     {
-      "path": "output/icl-unreal-20260916/images/G1_01.png",
+      "path": "examples/icl/images/G1_01.png",
       "source": "/home/ec2-user/game-auditing/output/icl-unreal-20260916/images/G1_01.png",
       "sha256": "0c6a2a0617f16bde0eaa69b27f1a53de9a86bb24074f84a758ec54264cd8089c",
       "bytes": 1664343,
-      "status": "pending_resource"
+      "status": "pending_resource",
+      "previous_release_path": "output/icl-unreal-20260916/images/G1_01.png"
     },
     {
-      "path": "output/icl-unreal-20260916/images/G2_01.png",
+      "path": "examples/icl/images/G2_01.png",
       "source": "/home/ec2-user/game-auditing/output/icl-unreal-20260916/images/G2_01.png",
       "sha256": "5d4076cb82c568250d461137daef0c6eb77a1ec0a07c18dc1b80522462bdc6e8",
       "bytes": 1645158,
-      "status": "pending_resource"
+      "status": "pending_resource",
+      "previous_release_path": "output/icl-unreal-20260916/images/G2_01.png"
     },
     {
-      "path": "output/icl-unreal-20260916/images/G2_02.png",
+      "path": "examples/icl/images/G2_02.png",
       "source": "/home/ec2-user/game-auditing/output/icl-unreal-20260916/images/G2_02.png",
       "sha256": "8370b83332a39e2733fbcd02106bf55f64cde5e00db156bf984b6770bff90e5e",
       "bytes": 1646451,
-      "status": "pending_resource"
+      "status": "pending_resource",
+      "previous_release_path": "output/icl-unreal-20260916/images/G2_02.png"
     },
     {
-      "path": "output/icl-unreal-20260916/images/G3_01.png",
+      "path": "examples/icl/images/G3_01.png",
       "source": "/home/ec2-user/game-auditing/output/icl-unreal-20260916/images/G3_01.png",
       "sha256": "4c2d0a9399556c9029e6ce8afcad6cc22cd7221d0ae7b3a1a754dfccf31e6771",
       "bytes": 1698213,
-      "status": "pending_resource"
+      "status": "pending_resource",
+      "previous_release_path": "output/icl-unreal-20260916/images/G3_01.png"
     },
     {
-      "path": "output/icl-unreal-20260916/images/G3_02.png",
+      "path": "examples/icl/images/G3_02.png",
       "source": "/home/ec2-user/game-auditing/output/icl-unreal-20260916/images/G3_02.png",
       "sha256": "53e4000655eb922e6a7f97e540de3382569cbe69a95460c84b5576d336c75318",
       "bytes": 1614930,
-      "status": "pending_resource"
+      "status": "pending_resource",
+      "previous_release_path": "output/icl-unreal-20260916/images/G3_02.png"
     },
     {
-      "path": "output/icl-unreal-20260916/images/S2_01.png",
+      "path": "examples/icl/images/S2_01.png",
       "source": "/home/ec2-user/game-auditing/output/icl-unreal-20260916/images/S2_01.png",
       "sha256": "7b64483aa909b621462e85646c8db6f5e8828d5205efb734e9eaa02005515f56",
       "bytes": 2388880,
-      "status": "pending_resource"
+      "status": "pending_resource",
+      "previous_release_path": "output/icl-unreal-20260916/images/S2_01.png"
     },
     {
-      "path": "output/icl-unreal-20260916/images/S3_01.png",
+      "path": "examples/icl/images/S3_01.png",
       "source": "/home/ec2-user/game-auditing/output/icl-unreal-20260916/images/S3_01.png",
       "sha256": "a25764203d2edce99049b05408b29bedb70e48c101c20094b3872380454358b8",
       "bytes": 2198540,
-      "status": "pending_resource"
+      "status": "pending_resource",
+      "previous_release_path": "output/icl-unreal-20260916/images/S3_01.png"
     },
     {
-      "path": "output/icl-unreal-20260916/images/T1_01.png",
+      "path": "examples/icl/images/T1_01.png",
       "source": "/home/ec2-user/game-auditing/output/icl-unreal-20260916/images/T1_01.png",
       "sha256": "aae6d341ce2151c2e15d3d509ae6fdfb35fb35868d2aac542ef2b6e69707a534",
       "bytes": 2633954,
-      "status": "pending_resource"
+      "status": "pending_resource",
+      "previous_release_path": "output/icl-unreal-20260916/images/T1_01.png"
     },
     {
-      "path": "output/icl-unreal-20260916/images/T1_02.png",
+      "path": "examples/icl/images/T1_02.png",
       "source": "/home/ec2-user/game-auditing/output/icl-unreal-20260916/images/T1_02.png",
       "sha256": "144173dc2935f2852c114ebe6bb07efc20d67e1825691fee62fc6a2b4c76ff92",
       "bytes": 2664567,
-      "status": "pending_resource"
+      "status": "pending_resource",
+      "previous_release_path": "output/icl-unreal-20260916/images/T1_02.png"
     },
     {
-      "path": "output/icl-unreal-20260916/images/T2_01.png",
+      "path": "examples/icl/images/T2_01.png",
       "source": "/home/ec2-user/game-auditing/output/icl-unreal-20260916/images/T2_01.png",
       "sha256": "1afbe3b49752d569f17860407b80fc6bf00f7b1b93af3af635d553a7797c0071",
       "bytes": 2797735,
-      "status": "pending_resource"
+      "status": "pending_resource",
+      "previous_release_path": "output/icl-unreal-20260916/images/T2_01.png"
     },
     {
-      "path": "output/icl-unreal-20260916/images/T2_02.png",
+      "path": "examples/icl/images/T2_02.png",
       "source": "/home/ec2-user/game-auditing/output/icl-unreal-20260916/images/T2_02.png",
       "sha256": "8aadb9c921f2b2b0ddea6c1a8f67f421fdc7dbd6d59e3dd8a7ff62fe5b64da89",
       "bytes": 2709637,
-      "status": "pending_resource"
+      "status": "pending_resource",
+      "previous_release_path": "output/icl-unreal-20260916/images/T2_02.png"
     },
     {
-      "path": "output/icl-unreal-20260916/images/T3_01.png",
+      "path": "examples/icl/images/T3_01.png",
       "source": "/home/ec2-user/game-auditing/output/icl-unreal-20260916/images/T3_01.png",
       "sha256": "22cb620999dbbd5c5d6866a10009bbb30a0c7fdc6444d1bd47a31582d8a7cdf2",
       "bytes": 1396766,
-      "status": "pending_resource"
+      "status": "pending_resource",
+      "previous_release_path": "output/icl-unreal-20260916/images/T3_01.png"
     },
     {
-      "path": "output/icl-unreal-20260916/images/T3_02.png",
+      "path": "examples/icl/images/T3_02.png",
       "source": "/home/ec2-user/game-auditing/output/icl-unreal-20260916/images/T3_02.png",
       "sha256": "90e2c39956efa089023a0784ec7c66789569dbb090227d08475a2f26da8fe9b3",
       "bytes": 1273410,
-      "status": "pending_resource"
+      "status": "pending_resource",
+      "previous_release_path": "output/icl-unreal-20260916/images/T3_02.png"
     },
     {
-      "path": "output/icl-unreal-20260916/images/V1_01.png",
+      "path": "examples/icl/images/V1_01.png",
       "source": "/home/ec2-user/game-auditing/output/icl-unreal-20260916/images/V1_01.png",
       "sha256": "935e93517fed68635f57b86dcd6c2aef81635de0a76e227e1d50bd9ba827a16f",
       "bytes": 1574258,
-      "status": "pending_resource"
+      "status": "pending_resource",
+      "previous_release_path": "output/icl-unreal-20260916/images/V1_01.png"
     },
     {
-      "path": "output/icl-unreal-20260916/images/V1_02.png",
+      "path": "examples/icl/images/V1_02.png",
       "source": "/home/ec2-user/game-auditing/output/icl-unreal-20260916/images/V1_02.png",
       "sha256": "b21f26bd39a6c07e5da9e008fba562cae4f26caf1be752ffeb02a0d4c225f6a3",
       "bytes": 1646804,
-      "status": "pending_resource"
+      "status": "pending_resource",
+      "previous_release_path": "output/icl-unreal-20260916/images/V1_02.png"
     },
     {
-      "path": "output/icl-unreal-20260916/images/V2_01.png",
+      "path": "examples/icl/images/V2_01.png",
       "source": "/home/ec2-user/game-auditing/output/icl-unreal-20260916/images/V2_01.png",
       "sha256": "c51855d277381ef2a0371b40941fe7e6631c172b7024160df9beda162f024280",
       "bytes": 1572493,
-      "status": "pending_resource"
+      "status": "pending_resource",
+      "previous_release_path": "output/icl-unreal-20260916/images/V2_01.png"
     },
     {
-      "path": "output/icl-unreal-20260916/images/V2_02.png",
+      "path": "examples/icl/images/V2_02.png",
       "source": "/home/ec2-user/game-auditing/output/icl-unreal-20260916/images/V2_02.png",
       "sha256": "d53d87f24ea5ac751688341f527fcc0922f47e35982fd1ba4c825999b1fe3051",
       "bytes": 1615088,
-      "status": "pending_resource"
+      "status": "pending_resource",
+      "previous_release_path": "output/icl-unreal-20260916/images/V2_02.png"
     },
     {
-      "path": "output/icl-unreal-20260916/images/V2_03.png",
+      "path": "examples/icl/images/V2_03.png",
       "source": "/home/ec2-user/game-auditing/output/icl-unreal-20260916/images/V2_03.png",
       "sha256": "f2115183fed11d2874ee656f06c9de6a9df55e92856b63a830b63a4cb1b3f52d",
       "bytes": 1654949,
-      "status": "pending_resource"
+      "status": "pending_resource",
+      "previous_release_path": "output/icl-unreal-20260916/images/V2_03.png"
     },
     {
-      "path": "output/icl-unreal-20260916/images/V3_01.png",
+      "path": "examples/icl/images/V3_01.png",
       "source": "/home/ec2-user/game-auditing/output/icl-unreal-20260916/images/V3_01.png",
       "sha256": "f751d27421f2d7329e6d4f740603e84d95dd95a0adc3ebcba55a23719200057e",
       "bytes": 1742623,
-      "status": "pending_resource"
+      "status": "pending_resource",
+      "previous_release_path": "output/icl-unreal-20260916/images/V3_01.png"
     },
     {
-      "path": "output/icl-unreal-20260916/images/V4_01.png",
+      "path": "examples/icl/images/V4_01.png",
       "source": "/home/ec2-user/game-auditing/output/icl-unreal-20260916/images/V4_01.png",
       "sha256": "0d19cbc633d2091c37fb16b11c63284297c799dc6655facbf51312786eb1da65",
       "bytes": 1552819,
-      "status": "pending_resource"
+      "status": "pending_resource",
+      "previous_release_path": "output/icl-unreal-20260916/images/V4_01.png"
     },
     {
-      "path": "output/icl-unreal-20260916/images/V4_02.png",
+      "path": "examples/icl/images/V4_02.png",
       "source": "/home/ec2-user/game-auditing/output/icl-unreal-20260916/images/V4_02.png",
       "sha256": "8bc949b693127f0fa60578ea28514b99391d5b0772d5a22f42b400105999bcb1",
       "bytes": 1557133,
-      "status": "pending_resource"
+      "status": "pending_resource",
+      "previous_release_path": "output/icl-unreal-20260916/images/V4_02.png"
     },
     {
       "path": "pytest.ini",
@@ -5240,20 +5273,22 @@
       "status": "unchanged"
     },
     {
-      "path": "scripts/fps90_takeover.sh",
+      "path": "scripts/legacy/fps90_takeover.sh",
       "source": "/home/ec2-user/game-auditing/scripts/fps90_takeover.sh",
       "sha256": "d3a1f9d4da11b5d75f2b7fe67c985df67cb1c5c771e16bddb66ee93549459f62",
       "bytes": 2394,
       "released_sha256": "d3a1f9d4da11b5d75f2b7fe67c985df67cb1c5c771e16bddb66ee93549459f62",
-      "status": "unchanged"
+      "status": "unchanged",
+      "previous_release_path": "scripts/fps90_takeover.sh"
     },
     {
-      "path": "scripts/fps_table.py",
+      "path": "scripts/legacy/fps_table.py",
       "source": "/home/ec2-user/game-auditing/scripts/fps_table.py",
       "sha256": "e93c8471137949a7c3f26aafd9275109e796b27b872ffad5e75b60c140c1b2ef",
       "bytes": 777,
       "released_sha256": "e93c8471137949a7c3f26aafd9275109e796b27b872ffad5e75b60c140c1b2ef",
-      "status": "unchanged"
+      "status": "unchanged",
+      "previous_release_path": "scripts/fps_table.py"
     },
     {
       "path": "scripts/gpu_wait.py",
@@ -5264,20 +5299,22 @@
       "status": "unchanged"
     },
     {
-      "path": "scripts/house_f2_summary.py",
+      "path": "scripts/legacy/house_f2_summary.py",
       "source": "/home/ec2-user/game-auditing/scripts/house_f2_summary.py",
       "sha256": "098aa759a25cbb312d6be04b50b16c423773d7219af4ce373db364666b5d6631",
       "bytes": 5856,
       "released_sha256": "098aa759a25cbb312d6be04b50b16c423773d7219af4ce373db364666b5d6631",
-      "status": "unchanged"
+      "status": "unchanged",
+      "previous_release_path": "scripts/house_f2_summary.py"
     },
     {
-      "path": "scripts/house_night_summary.py",
+      "path": "scripts/legacy/house_night_summary.py",
       "source": "/home/ec2-user/game-auditing/scripts/house_night_summary.py",
       "sha256": "d259f4251c6363a14f9fb990c05d360207859a0899bad9345f0d853a1277afa1",
       "bytes": 3553,
       "released_sha256": "d259f4251c6363a14f9fb990c05d360207859a0899bad9345f0d853a1277afa1",
-      "status": "unchanged"
+      "status": "unchanged",
+      "previous_release_path": "scripts/house_night_summary.py"
     },
     {
       "path": "scripts/native-agents/after_agent.py",
@@ -5308,7 +5345,7 @@
       "source": "/home/ec2-user/game-auditing/scripts/native-agents/launch.py",
       "sha256": "92a651d842036e2844b4c322bada89619c7cd3392a41cbecc591cd68f1faa9bf",
       "bytes": 40255,
-      "released_sha256": "9fadb8df466a5f622afd8fe7bd8115846716b383b40401484f0bed66afe43173",
+      "released_sha256": "a5741603e23d2a1113fb628cefd808ff65abf336abc5d1712f1b82636c1acd1a",
       "status": "adapted"
     },
     {
@@ -5416,60 +5453,67 @@
       "status": "adapted"
     },
     {
-      "path": "scripts/rejudge_ladder.sh",
+      "path": "scripts/legacy/rejudge_ladder.sh",
       "source": "/home/ec2-user/game-auditing/scripts/rejudge_ladder.sh",
       "sha256": "0211f30f148a894256a7e6b79468db51a0849723fcdd208ca68ee9050ffe313e",
       "bytes": 1096,
       "released_sha256": "0211f30f148a894256a7e6b79468db51a0849723fcdd208ca68ee9050ffe313e",
-      "status": "unchanged"
+      "status": "unchanged",
+      "previous_release_path": "scripts/rejudge_ladder.sh"
     },
     {
-      "path": "scripts/rerun_realism.sh",
+      "path": "scripts/legacy/rerun_realism.sh",
       "source": "/home/ec2-user/game-auditing/scripts/rerun_realism.sh",
       "sha256": "b7620a3419def4d6e88bd0264a462750492cb1aa140c4920e71b8ea400b166fb",
       "bytes": 4506,
       "released_sha256": "b7620a3419def4d6e88bd0264a462750492cb1aa140c4920e71b8ea400b166fb",
-      "status": "unchanged"
+      "status": "unchanged",
+      "previous_release_path": "scripts/rerun_realism.sh"
     },
     {
-      "path": "scripts/rerun_realism_fixup.sh",
+      "path": "scripts/legacy/rerun_realism_fixup.sh",
       "source": "/home/ec2-user/game-auditing/scripts/rerun_realism_fixup.sh",
       "sha256": "8f3cb0bd036f299588fd3cd4395f373ee4aff1448e906ed70ba0e11cadef68f2",
       "bytes": 3817,
       "released_sha256": "8f3cb0bd036f299588fd3cd4395f373ee4aff1448e906ed70ba0e11cadef68f2",
-      "status": "unchanged"
+      "status": "unchanged",
+      "previous_release_path": "scripts/rerun_realism_fixup.sh"
     },
     {
-      "path": "scripts/rerun_sp07.sh",
+      "path": "scripts/legacy/rerun_sp07.sh",
       "source": "/home/ec2-user/game-auditing/scripts/rerun_sp07.sh",
       "sha256": "e1b46f9daff9c0a09929bcb9d023e25d0f712f1b0b50bc6c0105612a26451fe4",
       "bytes": 3485,
       "released_sha256": "e1b46f9daff9c0a09929bcb9d023e25d0f712f1b0b50bc6c0105612a26451fe4",
-      "status": "unchanged"
+      "status": "unchanged",
+      "previous_release_path": "scripts/rerun_sp07.sh"
     },
     {
-      "path": "scripts/rerun_sp0710.sh",
+      "path": "scripts/legacy/rerun_sp0710.sh",
       "source": "/home/ec2-user/game-auditing/scripts/rerun_sp0710.sh",
       "sha256": "bb6d6baa70c88c3831e8076cd4a0c1727659d9e4e1d8aa81f899f912f96e158c",
       "bytes": 3758,
       "released_sha256": "bb6d6baa70c88c3831e8076cd4a0c1727659d9e4e1d8aa81f899f912f96e158c",
-      "status": "unchanged"
+      "status": "unchanged",
+      "previous_release_path": "scripts/rerun_sp0710.sh"
     },
     {
-      "path": "scripts/rerun_sp1213_and_tour.sh",
+      "path": "scripts/legacy/rerun_sp1213_and_tour.sh",
       "source": "/home/ec2-user/game-auditing/scripts/rerun_sp1213_and_tour.sh",
       "sha256": "dd4f49fd2d578a3772a19bb41b3946eaa822b8b79dcbb3379595ce70fd4c5214",
       "bytes": 4062,
       "released_sha256": "dd4f49fd2d578a3772a19bb41b3946eaa822b8b79dcbb3379595ce70fd4c5214",
-      "status": "unchanged"
+      "status": "unchanged",
+      "previous_release_path": "scripts/rerun_sp1213_and_tour.sh"
     },
     {
-      "path": "scripts/rerun_sp15.sh",
+      "path": "scripts/legacy/rerun_sp15.sh",
       "source": "/home/ec2-user/game-auditing/scripts/rerun_sp15.sh",
       "sha256": "c19c7eab1f79e15ff57a9edd2d4a4cfbe9d06eb96ce7b4921221e370383ef65e",
       "bytes": 4355,
       "released_sha256": "c19c7eab1f79e15ff57a9edd2d4a4cfbe9d06eb96ce7b4921221e370383ef65e",
-      "status": "unchanged"
+      "status": "unchanged",
+      "previous_release_path": "scripts/rerun_sp15.sh"
     },
     {
       "path": "scripts/run_agent.sh",
@@ -5480,260 +5524,292 @@
       "status": "unchanged"
     },
     {
-      "path": "scripts/run_house_f2_4b_after_8b.sh",
+      "path": "scripts/legacy/run_house_f2_4b_after_8b.sh",
       "source": "/home/ec2-user/game-auditing/scripts/run_house_f2_4b_after_8b.sh",
       "sha256": "7a6bfae88b9859f7a6772caf1af28af446d45504d2ceaecce015d9b73802bd59",
       "bytes": 269,
       "released_sha256": "7a6bfae88b9859f7a6772caf1af28af446d45504d2ceaecce015d9b73802bd59",
-      "status": "unchanged"
+      "status": "unchanged",
+      "previous_release_path": "scripts/run_house_f2_4b_after_8b.sh"
     },
     {
-      "path": "scripts/run_house_f2_4b_redo.sh",
+      "path": "scripts/legacy/run_house_f2_4b_redo.sh",
       "source": "/home/ec2-user/game-auditing/scripts/run_house_f2_4b_redo.sh",
       "sha256": "bf2df83ae0a2df1ca58c826bf64c15b4ee8d4aa790128cf5291fd29ad94b011c",
       "bytes": 1984,
       "released_sha256": "bf2df83ae0a2df1ca58c826bf64c15b4ee8d4aa790128cf5291fd29ad94b011c",
-      "status": "unchanged"
+      "status": "unchanged",
+      "previous_release_path": "scripts/run_house_f2_4b_redo.sh"
     },
     {
-      "path": "scripts/run_house_f2_8b_after_4b.sh",
+      "path": "scripts/legacy/run_house_f2_8b_after_4b.sh",
       "source": "/home/ec2-user/game-auditing/scripts/run_house_f2_8b_after_4b.sh",
       "sha256": "4d3b6dd05562089906a0405081b988eabaef2681c534e87cffecafe36805f691",
       "bytes": 1714,
       "released_sha256": "4d3b6dd05562089906a0405081b988eabaef2681c534e87cffecafe36805f691",
-      "status": "unchanged"
+      "status": "unchanged",
+      "previous_release_path": "scripts/run_house_f2_8b_after_4b.sh"
     },
     {
-      "path": "scripts/run_house_f2_all.sh",
+      "path": "scripts/legacy/run_house_f2_all.sh",
       "source": "/home/ec2-user/game-auditing/scripts/run_house_f2_all.sh",
       "sha256": "1a6e9ce45a585e871961bf74aa5ffa28ab703f31c18e93032b76646583e8b42d",
       "bytes": 2134,
       "released_sha256": "1a6e9ce45a585e871961bf74aa5ffa28ab703f31c18e93032b76646583e8b42d",
-      "status": "unchanged"
+      "status": "unchanged",
+      "previous_release_path": "scripts/run_house_f2_all.sh"
     },
     {
-      "path": "scripts/run_house_f2_big.sh",
+      "path": "scripts/legacy/run_house_f2_big.sh",
       "source": "/home/ec2-user/game-auditing/scripts/run_house_f2_big.sh",
       "sha256": "9e2a0a101896737e49fee6bb2f964215c91a9f76070bf610e1e2181436837276",
       "bytes": 3269,
       "released_sha256": "9e2a0a101896737e49fee6bb2f964215c91a9f76070bf610e1e2181436837276",
-      "status": "unchanged"
+      "status": "unchanged",
+      "previous_release_path": "scripts/run_house_f2_big.sh"
     },
     {
-      "path": "scripts/run_house_f2_model.sh",
+      "path": "scripts/legacy/run_house_f2_model.sh",
       "source": "/home/ec2-user/game-auditing/scripts/run_house_f2_model.sh",
       "sha256": "a7876a45c465f0b962b22d52fbf4711b07ada6b5875965cb88bf35854eb200d1",
       "bytes": 2495,
       "released_sha256": "a7876a45c465f0b962b22d52fbf4711b07ada6b5875965cb88bf35854eb200d1",
-      "status": "unchanged"
+      "status": "unchanged",
+      "previous_release_path": "scripts/run_house_f2_model.sh"
     },
     {
-      "path": "scripts/run_house_f2_orchestrate.sh",
+      "path": "scripts/legacy/run_house_f2_orchestrate.sh",
       "source": "/home/ec2-user/game-auditing/scripts/run_house_f2_orchestrate.sh",
       "sha256": "a537ad375d75b1aa3f7f249d42f97a1fdc3d4a01bf54c86c38a4623d236e2fb4",
       "bytes": 1628,
       "released_sha256": "a537ad375d75b1aa3f7f249d42f97a1fdc3d4a01bf54c86c38a4623d236e2fb4",
-      "status": "unchanged"
+      "status": "unchanged",
+      "previous_release_path": "scripts/run_house_f2_orchestrate.sh"
     },
     {
-      "path": "scripts/run_house_f2_small.sh",
+      "path": "scripts/legacy/run_house_f2_small.sh",
       "source": "/home/ec2-user/game-auditing/scripts/run_house_f2_small.sh",
       "sha256": "8d7856042ed4e1235166163c5a7e3019a696f1f5fed86b498a8ebf6ca344bdd4",
       "bytes": 2357,
       "released_sha256": "8d7856042ed4e1235166163c5a7e3019a696f1f5fed86b498a8ebf6ca344bdd4",
-      "status": "unchanged"
+      "status": "unchanged",
+      "previous_release_path": "scripts/run_house_f2_small.sh"
     },
     {
-      "path": "scripts/run_house_f2_small2.sh",
+      "path": "scripts/legacy/run_house_f2_small2.sh",
       "source": "/home/ec2-user/game-auditing/scripts/run_house_f2_small2.sh",
       "sha256": "f78049004aa8387a558e4ed6689f6d9bb03d5325f703fb267ed0a74c53bc0be8",
       "bytes": 1928,
       "released_sha256": "f78049004aa8387a558e4ed6689f6d9bb03d5325f703fb267ed0a74c53bc0be8",
-      "status": "unchanged"
+      "status": "unchanged",
+      "previous_release_path": "scripts/run_house_f2_small2.sh"
     },
     {
-      "path": "scripts/run_house_f2_split.sh",
+      "path": "scripts/legacy/run_house_f2_split.sh",
       "source": "/home/ec2-user/game-auditing/scripts/run_house_f2_split.sh",
       "sha256": "13745658aec65dfd6380fa1eb87ff333c1a9b4883042aa41d9d3fb6437274459",
       "bytes": 4563,
       "released_sha256": "13745658aec65dfd6380fa1eb87ff333c1a9b4883042aa41d9d3fb6437274459",
-      "status": "unchanged"
+      "status": "unchanged",
+      "previous_release_path": "scripts/run_house_f2_split.sh"
     },
     {
-      "path": "scripts/run_house_fps.sh",
+      "path": "scripts/legacy/run_house_fps.sh",
       "source": "/home/ec2-user/game-auditing/scripts/run_house_fps.sh",
       "sha256": "b01d02dc4e17b0aac4e9595ac74151e4c623522181f70306dd4e228eb90f2392",
       "bytes": 3615,
       "released_sha256": "b01d02dc4e17b0aac4e9595ac74151e4c623522181f70306dd4e228eb90f2392",
-      "status": "unchanged"
+      "status": "unchanged",
+      "previous_release_path": "scripts/run_house_fps.sh"
     },
     {
-      "path": "scripts/run_house_fps90.sh",
+      "path": "scripts/legacy/run_house_fps90.sh",
       "source": "/home/ec2-user/game-auditing/scripts/run_house_fps90.sh",
       "sha256": "7803b346915d710cb5005c7eede726dee6f0ec3f568f5179b90991c7d010b8d6",
       "bytes": 3593,
       "released_sha256": "7803b346915d710cb5005c7eede726dee6f0ec3f568f5179b90991c7d010b8d6",
-      "status": "unchanged"
+      "status": "unchanged",
+      "previous_release_path": "scripts/run_house_fps90.sh"
     },
     {
-      "path": "scripts/run_house_fps90b.sh",
+      "path": "scripts/legacy/run_house_fps90b.sh",
       "source": "/home/ec2-user/game-auditing/scripts/run_house_fps90b.sh",
       "sha256": "f873236110313c3d661cc8b6d113a5df71727b32000f73bb5017159bc8afa85c",
       "bytes": 2621,
       "released_sha256": "f873236110313c3d661cc8b6d113a5df71727b32000f73bb5017159bc8afa85c",
-      "status": "unchanged"
+      "status": "unchanged",
+      "previous_release_path": "scripts/run_house_fps90b.sh"
     },
     {
-      "path": "scripts/run_house_fps90c.sh",
+      "path": "scripts/legacy/run_house_fps90c.sh",
       "source": "/home/ec2-user/game-auditing/scripts/run_house_fps90c.sh",
       "sha256": "782dfef65c91c339b99dc1b6113db02b5a2027a37a3729fe75a2d9a34e395242",
       "bytes": 3586,
       "released_sha256": "782dfef65c91c339b99dc1b6113db02b5a2027a37a3729fe75a2d9a34e395242",
-      "status": "unchanged"
+      "status": "unchanged",
+      "previous_release_path": "scripts/run_house_fps90c.sh"
     },
     {
-      "path": "scripts/run_house_fps90d.sh",
+      "path": "scripts/legacy/run_house_fps90d.sh",
       "source": "/home/ec2-user/game-auditing/scripts/run_house_fps90d.sh",
       "sha256": "e71c77104b9f49661ab1bc6ca6f12bbab76d3848d3e4a0ae43f00c98f4f0819f",
       "bytes": 2144,
       "released_sha256": "e71c77104b9f49661ab1bc6ca6f12bbab76d3848d3e4a0ae43f00c98f4f0819f",
-      "status": "unchanged"
+      "status": "unchanged",
+      "previous_release_path": "scripts/run_house_fps90d.sh"
     },
     {
-      "path": "scripts/run_house_night.sh",
+      "path": "scripts/legacy/run_house_night.sh",
       "source": "/home/ec2-user/game-auditing/scripts/run_house_night.sh",
       "sha256": "551c5b4a1cd7ebd947ea2aa50259efc7223202be430af782e33939ba74353268",
       "bytes": 5673,
       "released_sha256": "551c5b4a1cd7ebd947ea2aa50259efc7223202be430af782e33939ba74353268",
-      "status": "unchanged"
+      "status": "unchanged",
+      "previous_release_path": "scripts/run_house_night.sh"
     },
     {
-      "path": "scripts/run_house_night2.sh",
+      "path": "scripts/legacy/run_house_night2.sh",
       "source": "/home/ec2-user/game-auditing/scripts/run_house_night2.sh",
       "sha256": "d67d15019fb023a11c0ad724718a42a2141d59b8317b8110e11e9760c36d49c0",
       "bytes": 4406,
       "released_sha256": "d67d15019fb023a11c0ad724718a42a2141d59b8317b8110e11e9760c36d49c0",
-      "status": "unchanged"
+      "status": "unchanged",
+      "previous_release_path": "scripts/run_house_night2.sh"
     },
     {
-      "path": "scripts/run_house_night3.sh",
+      "path": "scripts/legacy/run_house_night3.sh",
       "source": "/home/ec2-user/game-auditing/scripts/run_house_night3.sh",
       "sha256": "06a6b6f3016e9da5cbf695f11667d9cdd5ffefdcad4821bc1d2c3e421b91ca6e",
       "bytes": 3967,
       "released_sha256": "06a6b6f3016e9da5cbf695f11667d9cdd5ffefdcad4821bc1d2c3e421b91ca6e",
-      "status": "unchanged"
+      "status": "unchanged",
+      "previous_release_path": "scripts/run_house_night3.sh"
     },
     {
-      "path": "scripts/run_house_night4.sh",
+      "path": "scripts/legacy/run_house_night4.sh",
       "source": "/home/ec2-user/game-auditing/scripts/run_house_night4.sh",
       "sha256": "6d1455ffced7658456748151400a1d05f8bb279dcc51e85a39d38b72a59ca75a",
       "bytes": 1426,
       "released_sha256": "6d1455ffced7658456748151400a1d05f8bb279dcc51e85a39d38b72a59ca75a",
-      "status": "unchanged"
+      "status": "unchanged",
+      "previous_release_path": "scripts/run_house_night4.sh"
     },
     {
-      "path": "scripts/run_house_night4b.sh",
+      "path": "scripts/legacy/run_house_night4b.sh",
       "source": "/home/ec2-user/game-auditing/scripts/run_house_night4b.sh",
       "sha256": "177f492092d0895ab3fae05e4ba2b923b0b99723819ecddd6a9551fbf0d51b48",
       "bytes": 1611,
       "released_sha256": "177f492092d0895ab3fae05e4ba2b923b0b99723819ecddd6a9551fbf0d51b48",
-      "status": "unchanged"
+      "status": "unchanged",
+      "previous_release_path": "scripts/run_house_night4b.sh"
     },
     {
-      "path": "scripts/run_house_night5.sh",
+      "path": "scripts/legacy/run_house_night5.sh",
       "source": "/home/ec2-user/game-auditing/scripts/run_house_night5.sh",
       "sha256": "ba73ba05392cfbbfdcadf72cfc1431d916309b92bffc2757ff864d00ac7281a5",
       "bytes": 2297,
       "released_sha256": "ba73ba05392cfbbfdcadf72cfc1431d916309b92bffc2757ff864d00ac7281a5",
-      "status": "unchanged"
+      "status": "unchanged",
+      "previous_release_path": "scripts/run_house_night5.sh"
     },
     {
-      "path": "scripts/run_house_night6.sh",
+      "path": "scripts/legacy/run_house_night6.sh",
       "source": "/home/ec2-user/game-auditing/scripts/run_house_night6.sh",
       "sha256": "565d43c64dc3e36169781de4bb922442d77d62ee39dd3343dca869dc53c5dd4e",
       "bytes": 2118,
       "released_sha256": "565d43c64dc3e36169781de4bb922442d77d62ee39dd3343dca869dc53c5dd4e",
-      "status": "unchanged"
+      "status": "unchanged",
+      "previous_release_path": "scripts/run_house_night6.sh"
     },
     {
-      "path": "scripts/run_house_night7.sh",
+      "path": "scripts/legacy/run_house_night7.sh",
       "source": "/home/ec2-user/game-auditing/scripts/run_house_night7.sh",
       "sha256": "6ba10e961fe5339ff38973eee19baa79a97ef7da9919455b8daf296eee63411c",
       "bytes": 1814,
       "released_sha256": "6ba10e961fe5339ff38973eee19baa79a97ef7da9919455b8daf296eee63411c",
-      "status": "unchanged"
+      "status": "unchanged",
+      "previous_release_path": "scripts/run_house_night7.sh"
     },
     {
-      "path": "scripts/run_house_night8.sh",
+      "path": "scripts/legacy/run_house_night8.sh",
       "source": "/home/ec2-user/game-auditing/scripts/run_house_night8.sh",
       "sha256": "2dd7bf1500c787537e51af0ba14e0f1bcaf21e36a89b7803dbff4ccf8a7f860f",
       "bytes": 2130,
       "released_sha256": "2dd7bf1500c787537e51af0ba14e0f1bcaf21e36a89b7803dbff4ccf8a7f860f",
-      "status": "unchanged"
+      "status": "unchanged",
+      "previous_release_path": "scripts/run_house_night8.sh"
     },
     {
-      "path": "scripts/run_new_suites_pilot.sh",
+      "path": "scripts/legacy/run_new_suites_pilot.sh",
       "source": "/home/ec2-user/game-auditing/scripts/run_new_suites_pilot.sh",
       "sha256": "7dfc3f18ac952d5a6f2e0feef9fa0f228766059dd13c9d22e6a07c946ba9806b",
       "bytes": 1714,
       "released_sha256": "7dfc3f18ac952d5a6f2e0feef9fa0f228766059dd13c9d22e6a07c946ba9806b",
-      "status": "unchanged"
+      "status": "unchanged",
+      "previous_release_path": "scripts/run_new_suites_pilot.sh"
     },
     {
-      "path": "scripts/run_new_suites_pilot_b.sh",
+      "path": "scripts/legacy/run_new_suites_pilot_b.sh",
       "source": "/home/ec2-user/game-auditing/scripts/run_new_suites_pilot_b.sh",
       "sha256": "a85a093c8d8c5369b8527fad87664d3462bc70b903f5f97c012c15cb930ae048",
       "bytes": 1721,
       "released_sha256": "a85a093c8d8c5369b8527fad87664d3462bc70b903f5f97c012c15cb930ae048",
-      "status": "unchanged"
+      "status": "unchanged",
+      "previous_release_path": "scripts/run_new_suites_pilot_b.sh"
     },
     {
-      "path": "scripts/run_s1_film.sh",
+      "path": "scripts/legacy/run_s1_film.sh",
       "source": "/home/ec2-user/game-auditing/scripts/run_s1_film.sh",
       "sha256": "ecaf26b3db8258dd080a9fc3d3931e40510838bbfd142539a58697c9998693ba",
       "bytes": 3339,
       "released_sha256": "ecaf26b3db8258dd080a9fc3d3931e40510838bbfd142539a58697c9998693ba",
-      "status": "unchanged"
+      "status": "unchanged",
+      "previous_release_path": "scripts/run_s1_film.sh"
     },
     {
-      "path": "scripts/run_s1_ladder.sh",
+      "path": "scripts/legacy/run_s1_ladder.sh",
       "source": "/home/ec2-user/game-auditing/scripts/run_s1_ladder.sh",
       "sha256": "b9346c63601380e90f34c057319fa95ca6b1d4de4491917ea268200935d7c156",
       "bytes": 2540,
       "released_sha256": "b9346c63601380e90f34c057319fa95ca6b1d4de4491917ea268200935d7c156",
-      "status": "unchanged"
+      "status": "unchanged",
+      "previous_release_path": "scripts/run_s1_ladder.sh"
     },
     {
-      "path": "scripts/run_sp_suite.sh",
+      "path": "scripts/legacy/run_sp_suite.sh",
       "source": "/home/ec2-user/game-auditing/scripts/run_sp_suite.sh",
       "sha256": "05b6856b01a986b1742bbc66ea1f6185a0b60f75bed73540034757c97b6caa3a",
       "bytes": 3149,
       "released_sha256": "05b6856b01a986b1742bbc66ea1f6185a0b60f75bed73540034757c97b6caa3a",
-      "status": "unchanged"
+      "status": "unchanged",
+      "previous_release_path": "scripts/run_sp_suite.sh"
     },
     {
-      "path": "scripts/run_tc_night.sh",
+      "path": "scripts/legacy/run_tc_night.sh",
       "source": "/home/ec2-user/game-auditing/scripts/run_tc_night.sh",
       "sha256": "2819d27bfd7bddc8fd359aec0371aee346cedfb936cc11b249f78fde9de4a467",
       "bytes": 2252,
       "released_sha256": "2819d27bfd7bddc8fd359aec0371aee346cedfb936cc11b249f78fde9de4a467",
-      "status": "unchanged"
+      "status": "unchanged",
+      "previous_release_path": "scripts/run_tc_night.sh"
     },
     {
-      "path": "scripts/run_tour_audit.sh",
+      "path": "scripts/legacy/run_tour_audit.sh",
       "source": "/home/ec2-user/game-auditing/scripts/run_tour_audit.sh",
       "sha256": "fd7dacf373d0b99e84b81442eccdd338b84e950170ee39ae0d8a53981eae80a0",
       "bytes": 1791,
       "released_sha256": "fd7dacf373d0b99e84b81442eccdd338b84e950170ee39ae0d8a53981eae80a0",
-      "status": "unchanged"
+      "status": "unchanged",
+      "previous_release_path": "scripts/run_tour_audit.sh"
     },
     {
-      "path": "scripts/run_vla_suite.sh",
+      "path": "scripts/legacy/run_vla_suite.sh",
       "source": "/home/ec2-user/game-auditing/scripts/run_vla_suite.sh",
       "sha256": "3c08bb561aa62046c306bc1b9989a0c5b75998beac71741c384367a3bc19db9f",
       "bytes": 2382,
       "released_sha256": "3c08bb561aa62046c306bc1b9989a0c5b75998beac71741c384367a3bc19db9f",
-      "status": "unchanged"
+      "status": "unchanged",
+      "previous_release_path": "scripts/run_vla_suite.sh"
     },
     {
       "path": "scripts/run_vla_threejs.sh",
@@ -5752,12 +5828,13 @@
       "status": "unchanged"
     },
     {
-      "path": "scripts/run_water_pilot.sh",
+      "path": "scripts/legacy/run_water_pilot.sh",
       "source": "/home/ec2-user/game-auditing/scripts/run_water_pilot.sh",
       "sha256": "68fed35c500451c8de5b256cd96c9228d6cfac2749cfafcb7e82a246422e72e6",
       "bytes": 1313,
       "released_sha256": "68fed35c500451c8de5b256cd96c9228d6cfac2749cfafcb7e82a246422e72e6",
-      "status": "unchanged"
+      "status": "unchanged",
+      "previous_release_path": "scripts/run_water_pilot.sh"
     },
     {
       "path": "scripts/serve_model.sh",
@@ -5776,20 +5853,22 @@
       "status": "unchanged"
     },
     {
-      "path": "scripts/smoke_ladder.sh",
+      "path": "scripts/legacy/smoke_ladder.sh",
       "source": "/home/ec2-user/game-auditing/scripts/smoke_ladder.sh",
       "sha256": "197ad56b02cec5110d6f7bad3a689dd4222c6321dc634c187df31ec86b36dfd5",
       "bytes": 978,
       "released_sha256": "197ad56b02cec5110d6f7bad3a689dd4222c6321dc634c187df31ec86b36dfd5",
-      "status": "unchanged"
+      "status": "unchanged",
+      "previous_release_path": "scripts/smoke_ladder.sh"
     },
     {
-      "path": "scripts/sp15_tour_score.sh",
+      "path": "scripts/legacy/sp15_tour_score.sh",
       "source": "/home/ec2-user/game-auditing/scripts/sp15_tour_score.sh",
       "sha256": "9ea1e2a8d478fd55d3d429dd8906bb3b617dcef28027e95d6df0c4de5e17dd69",
       "bytes": 1089,
       "released_sha256": "9ea1e2a8d478fd55d3d429dd8906bb3b617dcef28027e95d6df0c4de5e17dd69",
-      "status": "unchanged"
+      "status": "unchanged",
+      "previous_release_path": "scripts/sp15_tour_score.sh"
     },
     {
       "path": "scripts/vla-lists/vla-threejs-list.txt",
@@ -5832,60 +5911,67 @@
       "status": "unchanged"
     },
     {
-      "path": "scripts/vla_run_all.sh",
+      "path": "scripts/legacy/vla_run_all.sh",
       "source": "/home/ec2-user/game-auditing/scripts/vla_run_all.sh",
       "sha256": "5d29c3673b4651c0773f664fedfa16173069e26e13f518eb567e501a4d544f77",
       "bytes": 1212,
       "released_sha256": "5d29c3673b4651c0773f664fedfa16173069e26e13f518eb567e501a4d544f77",
-      "status": "unchanged"
+      "status": "unchanged",
+      "previous_release_path": "scripts/vla_run_all.sh"
     },
     {
-      "path": "scripts/vla_run_parallel.sh",
+      "path": "scripts/legacy/vla_run_parallel.sh",
       "source": "/home/ec2-user/game-auditing/scripts/vla_run_parallel.sh",
       "sha256": "2d34f772838ee3c040085f2e43015b4a645397ddc9908dccd2b780c2fd5f8e61",
       "bytes": 1573,
       "released_sha256": "2d34f772838ee3c040085f2e43015b4a645397ddc9908dccd2b780c2fd5f8e61",
-      "status": "unchanged"
+      "status": "unchanged",
+      "previous_release_path": "scripts/vla_run_parallel.sh"
     },
     {
-      "path": "scripts/vla_threejs_driver.sh",
+      "path": "scripts/legacy/vla_threejs_driver.sh",
       "source": "/home/ec2-user/game-auditing/scripts/vla_threejs_driver.sh",
       "sha256": "8007f2341e5e62238c33f7f58baf00ffd276a554f373034f15ab9b08873112e7",
       "bytes": 688,
       "released_sha256": "8007f2341e5e62238c33f7f58baf00ffd276a554f373034f15ab9b08873112e7",
-      "status": "unchanged"
+      "status": "unchanged",
+      "previous_release_path": "scripts/vla_threejs_driver.sh"
     },
     {
-      "path": "scripts/vla_threejs_sweep.sh",
+      "path": "scripts/legacy/vla_threejs_sweep.sh",
       "source": "/home/ec2-user/game-auditing/scripts/vla_threejs_sweep.sh",
       "sha256": "99f11d8f8352e97b0ffe75821ece3a20b081a3731dd1cbc2cafc62b3b1fc23b6",
       "bytes": 721,
       "released_sha256": "99f11d8f8352e97b0ffe75821ece3a20b081a3731dd1cbc2cafc62b3b1fc23b6",
-      "status": "unchanged"
+      "status": "unchanged",
+      "previous_release_path": "scripts/vla_threejs_sweep.sh"
     },
     {
-      "path": "scripts/vla_ue_driver.sh",
+      "path": "scripts/legacy/vla_ue_driver.sh",
       "source": "/home/ec2-user/game-auditing/scripts/vla_ue_driver.sh",
       "sha256": "e91f34fbb7cfa940c27c2685638254d9c8aa1db0d52b2d032037489eb3283ec7",
       "bytes": 1147,
       "released_sha256": "e91f34fbb7cfa940c27c2685638254d9c8aa1db0d52b2d032037489eb3283ec7",
-      "status": "unchanged"
+      "status": "unchanged",
+      "previous_release_path": "scripts/vla_ue_driver.sh"
     },
     {
-      "path": "scripts/vla_ue_replace_driver.sh",
+      "path": "scripts/legacy/vla_ue_replace_driver.sh",
       "source": "/home/ec2-user/game-auditing/scripts/vla_ue_replace_driver.sh",
       "sha256": "b316b7f334e879cfd18d00fce1cc73f6e874cff0b80a14a9b64883abcdd1e452",
       "bytes": 1093,
       "released_sha256": "b316b7f334e879cfd18d00fce1cc73f6e874cff0b80a14a9b64883abcdd1e452",
-      "status": "unchanged"
+      "status": "unchanged",
+      "previous_release_path": "scripts/vla_ue_replace_driver.sh"
     },
     {
-      "path": "scripts/vla_ue_restart.sh",
+      "path": "scripts/legacy/vla_ue_restart.sh",
       "source": "/home/ec2-user/game-auditing/scripts/vla_ue_restart.sh",
       "sha256": "c53f71ad52fcfa7be6aecafd64d204a6713b2ca68ff45aed3fd1e950a22f3939",
       "bytes": 1495,
       "released_sha256": "c53f71ad52fcfa7be6aecafd64d204a6713b2ca68ff45aed3fd1e950a22f3939",
-      "status": "unchanged"
+      "status": "unchanged",
+      "previous_release_path": "scripts/vla_ue_restart.sh"
     },
     {
       "path": "services/evaluate/README.md",
@@ -8282,7 +8368,7 @@
       "source": "/home/ec2-user/game-auditing/tests/test_native_mcp.py",
       "sha256": "3a18212c8b1f60167ef1b83b635d00b0fefb0a6902f2a5bb0c464a5b57946f36",
       "bytes": 20873,
-      "released_sha256": "28ec797cc8987a47945f94b6e56eb87e43a088e6ef94370f568d6fe8496d25d8",
+      "released_sha256": "9b42eacda42dbc06c7d43808e8a89be4c0ab965b012d5045d303918a1909bc8a",
       "status": "adapted"
     },
     {

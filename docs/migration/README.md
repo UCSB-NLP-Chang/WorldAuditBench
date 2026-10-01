@@ -9,9 +9,9 @@ preserved intact on `gh-pages`, including all 15 videos. `main` continues from t
 commit with the website removed from its working tree and the paper code imported.
 No history rewrite or force push is required.
 
-GitHub Pages creation returned HTTP 422: the current plan does not support Pages
-for this private repository. Repository visibility was preserved. The branch can
-be selected as the root Pages source once hosting is available.
+The initial Pages setup returned HTTP 422 while the repository was private. The
+repository was subsequently made public and the project page is now published
+from `gh-pages` at https://ucsb-nlp-chang.github.io/WorldAuditBench/.
 
 ## Source selection
 
@@ -53,3 +53,15 @@ reviewer data, engine build, model job or source checkout was changed. Authentic
 files, participant records, databases, raw review submissions, engine installations,
 large runtime packages and experiment recordings are excluded from the Git commit.
 See `../validation.md` for tested behavior and inherited service failures.
+
+## Public repository organization
+
+On 2026-09-30, 53 historical pilot, rerun, scheduling, and summary scripts were
+moved to `scripts/legacy/`, and two experiment handoffs to `docs/history/`. Their
+contents were preserved. The in-context metadata moved from
+`output/icl-unreal-20260916/` to `examples/icl/`; current launcher defaults, tests,
+and resource restore paths were updated together.
+
+The manifest retains original AWS source paths and captured hashes. Moved rows
+record `previous_release_path`; `path` and `released_sha256` describe the current
+checkout. Pending images now restore under `examples/icl/images/`.
