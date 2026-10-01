@@ -32,9 +32,9 @@ WorldAuditBench evaluates whether multimodal agents can **explore a 3D world, in
 
 ## Demonstrations
 
-| Floating objects | Missing collisions | Objects that disappear |
-| :---: | :---: | :---: |
-| [![Floating object](docs/figures/floating-object.jpg)](https://ucsb-nlp-chang.github.io/WorldAuditBench/#explore) | [![Missing collision](docs/figures/missing-collision.jpg)](https://ucsb-nlp-chang.github.io/WorldAuditBench/#explore) | [![Existence change](docs/figures/existence-change.jpg)](https://ucsb-nlp-chang.github.io/WorldAuditBench/#explore) |
+[![Representative examples of the five anomaly families in WorldAuditBench, from the paper.](docs/figures/anomaly-taxonomy.webp)](https://ucsb-nlp-chang.github.io/WorldAuditBench/#explore)
+
+*Representative cases from the paper, covering static physics, interactive physics, spatial consistency, temporal consistency, and semantic consistency.*
 
 Watch the recorded demonstrations and explore all **15 anomaly types** on the [project page](https://ucsb-nlp-chang.github.io/WorldAuditBench/#explore).
 
