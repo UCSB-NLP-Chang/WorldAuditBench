@@ -1,68 +1,188 @@
-# WorldAuditBench
+<div align="center">
 
-Code for **WorldAuditBench: Interactive 3D World Auditing With Multimodal Agents**.
+<h1><img src="docs/figures/logo.png" width="42" alt=""> WorldAuditBench</h1>
+<h3>Interactive 3D World Auditing with Multimodal Agents</h3>
 
-WorldAuditBench evaluates whether multimodal agents can explore interactive 3D
-worlds and identify anomalies from visual evidence. The paper evaluates **213
-tasks across 13 environments**: 126 tasks in Unreal Engine 5 and 87 in Three.js.
+<p>
+  <a href="https://xmhzz2018.github.io/">Ziyan Jiang</a><sup>1,*</sup> ·
+  <a href="https://kimperyang.github.io/">Jingbo Yang</a><sup>1,*</sup> ·
+  <a href="https://question406.github.io/">Jiabao Ji</a><sup>1,*</sup> ·
+  <a href="https://yujianll.github.io/">Yujian Liu</a><sup>1</sup><br>
+  <a href="https://wuqiuche.github.io/">Qiucheng Wu</a><sup>1</sup> ·
+  <a href="https://people.csail.mit.edu/tommi/">Tommi Jaakkola</a><sup>2</sup> ·
+  <a href="https://mitibm.mit.edu/people/yang-zhang/">Yang Zhang</a><sup>3</sup> ·
+  <a href="https://code-terminator.github.io/">Shiyu Chang</a><sup>1</sup>
+</p>
+<p><sup>1</sup> UC Santa Barbara &nbsp; <sup>2</sup> MIT CSAIL &nbsp; <sup>3</sup> MIT-IBM Watson AI Lab<br><sup>*</sup> Equal contribution</p>
 
-- **`main`**: benchmark definitions, auditing agents, evaluation, and environment source.
-- **[`gh-pages`](https://github.com/UCSB-NLP-Chang/WorldAuditBench/tree/gh-pages)**: project page and demonstration videos.
-- **Resources**: packaged environments, editable scene assets, model weights, and
-  recording/example images are **pending a Hugging Face release**. See
-  [resource status](docs/resources.md). Source checks can run before those downloads.
+<p>
+  <a href="https://ucsb-nlp-chang.github.io/WorldAuditBench/assets/worldauditbench.pdf"><img src="docs/figures/paper-badge.svg" alt="Paper PDF"></a>
+  <a href="https://ucsb-nlp-chang.github.io/WorldAuditBench/"><img src="docs/figures/project-badge.svg" alt="Project page"></a>
+  <a href="#resources"><img src="docs/figures/dataset-badge.svg" alt="Dataset coming soon on Hugging Face"></a>
+  <a href="https://ucsb-nlp-chang.github.io/WorldAuditBench/#explore"><img src="docs/figures/demo-badge.svg" alt="Explore demos"></a>
+</p>
 
-## Setup
+**213 tasks · 13 environments · 5 anomaly families · 2 auditing paradigms**
 
-Use Python 3.11+ on Linux or macOS. Unreal execution requires a configured Linux
-GPU host and the external runtime packages; it is not part of the source-only setup.
+</div>
+
+WorldAuditBench evaluates whether multimodal agents can **explore a 3D world, investigate suspicious observations, and identify anomalies with visual evidence**. It covers both Unreal Engine 5 and Three.js environments, from furnished interiors to cities and open landscapes.
+
+**[Demonstrations](#demonstrations)** · **[Benchmark](#benchmark)** · **[Quick start](#quick-start)** · **[Evaluation](#evaluation)** · **[Resources](#resources)** · **[Citation](#citation)**
+
+## Demonstrations
+
+| Floating objects | Missing collisions | Objects that disappear |
+| :---: | :---: | :---: |
+| [![Floating object](docs/figures/floating-object.jpg)](https://ucsb-nlp-chang.github.io/WorldAuditBench/#explore) | [![Missing collision](docs/figures/missing-collision.jpg)](https://ucsb-nlp-chang.github.io/WorldAuditBench/#explore) | [![Existence change](docs/figures/existence-change.jpg)](https://ucsb-nlp-chang.github.io/WorldAuditBench/#explore) |
+
+Watch the recorded demonstrations and explore all **15 anomaly types** on the [project page](https://ucsb-nlp-chang.github.io/WorldAuditBench/#explore).
+
+## Benchmark
+
+Auditing requires more than recognizing an unusual image. An agent may need to approach an object, test a collision, change its viewpoint, or revisit a location to establish what is wrong.
+
+| Anomaly family | Examples | Tasks |
+| --- | --- | ---: |
+| Static physics | Floating objects, intersections, implausible scale | 59 |
+| Interactive physics | Missing or unexpected collisions, abnormal trajectories | 41 |
+| Spatial consistency | Visibility, viewpoint, lighting, and material inconsistencies | 51 |
+| Temporal consistency | Changes in existence, attributes, or operational state | 40 |
+| Semantic consistency | Improper configurations and historical incompatibilities | 22 |
+| **Total** | **126 Unreal Engine 5 + 87 Three.js tasks** | **213** |
+
+The paper compares two auditing paradigms:
+
+- **VLM agents:** reason during exploration and choose their next actions using observations and evidence memory, with a budget of **40 actions**.
+- **VLA + VLM:** a VLA explores for **60 simulated seconds**, then a VLM analyzes the recorded trajectory.
+
+<p align="center">
+  <img src="docs/figures/auditing-paradigms.webp" width="100%" alt="The two auditing paradigms: VLM reasoning during exploration, and VLA exploration followed by VLM analysis.">
+</p>
+
+The strongest evaluated agent reaches **42.3%** success, compared with **83.4%** for humans. See the [interactive results](https://ucsb-nlp-chang.github.io/WorldAuditBench/#results) and [paper](https://ucsb-nlp-chang.github.io/WorldAuditBench/assets/worldauditbench.pdf) for the full comparison.
+
+## Quick start
+
+### 1. Install
+
+Use **Python 3.11+** on Linux or macOS for the Python tools. Running Unreal environments requires a configured Linux GPU host and the environment packages listed under [Resources](#resources).
 
 ```bash
+git clone https://github.com/UCSB-NLP-Chang/WorldAuditBench.git
+cd WorldAuditBench
+
 python3 -m venv .venv
 source .venv/bin/activate
-pip install -r requirements-dev.txt
-python scripts/check_release.py
-python -m pytest -q -m 'not chromium and not live'
+python -m pip install -r requirements.txt
 ```
 
-Native model clients use a dedicated runtime:
+### 2. Explore the evaluation set
+
+Task definitions and splits are available in this repository. The following example runs without environment downloads or model credentials:
+
+```python
+import json
+from pathlib import Path
+
+benchmark = json.loads(Path("benchmark/paper-tasks.json").read_text())
+print(benchmark["counts"])  # {'total': 213, 'unreal': 126, 'threejs': 87}
+
+for task in benchmark["tasks"][:3]:
+    print(task["id"], task["environment"], task["title"])
+```
+
+Use [`benchmark/paper-tasks.json`](benchmark/paper-tasks.json) and [`benchmark/splits/`](benchmark/splits/) for paper experiments. The separate `benchmark/tasks.json` catalog also contains review and baseline entries and is not the paper evaluation split.
+
+### 3. Set up an auditor
+
+The paper's VLM auditors run through native model clients and a shared MCP tool interface. Prepare their Python runtime:
 
 ```bash
 python scripts/native-agents/setup.py
 python scripts/native-agents/launch.py --help
 ```
 
-Install and authenticate the native CLI for the model you use. The repository
-includes the shared MCP tools and agent implementation; setup does not require
-cloning a separate private code repository.
+Install and authenticate the native client you plan to use: Codex, Claude Code, Gemini CLI, OpenCode, or Qwen Code. See the [native-agent guide](docs/native-agent-mcp.md) for configuration and the [reproduction guide](docs/reproduction.md) for exact model and reasoning settings.
 
-## Paper experiments
+**Full auditing runs require the environment packages and demonstration assets, which are pending release on Hugging Face.** Once these resources are restored and an isolated Unreal bridge is running, an example episode is:
 
-| Component | Entry point |
-|---|---|
-| Exact 213-task evaluation set | [`benchmark/paper-tasks.json`](benchmark/paper-tasks.json), [`benchmark/splits/`](benchmark/splits/) |
-| VLM auditors: Codex, Claude Code, Gemini CLI, OpenCode, Qwen Code | [`scripts/native-agents/launch.py`](scripts/native-agents/launch.py) |
-| Shared auditing tools and evidence memory | [`auditor/mcp_agent/`](auditor/mcp_agent/), [`agent/`](agent/) |
-| VLA exploration: Open-P2P | [`harness/vla_ue.py`](harness/vla_ue.py), [`harness/vla_explore.py`](harness/vla_explore.py) |
-| VLM analysis of recorded VLA trajectories | [`scripts/native-agents/run_vla_replay.py`](scripts/native-agents/run_vla_replay.py) |
-| Binary report judge | [`eval/judge.py`](eval/judge.py), [`eval/judge_prompt.md`](eval/judge_prompt.md) |
-| Distance, budget, guidance, and multiple-anomaly ablations | [`experiments/ablations/`](experiments/ablations/) |
-| Three.js environment source | [`candidate_environments/src/`](candidate_environments/src/), [`env/`](env/) |
-| Unreal source, plugins, runtime policies | [`unreal/`](unreal/) |
-| Human review, exploration, and evaluation services | [`services/`](services/) |
+```bash
+python scripts/native-agents/launch.py gemini \
+  --environment unreal-http --env-url http://127.0.0.1:19100 \
+  --task S03 --model gemini-3.8-flash --gemini-thinking medium \
+  --max-actions 40 --max-tool-calls 400 --require-full-budget \
+  --observation on-demand --run-dir out/runs/gemini-S03
+```
 
-See [reproduction instructions](docs/reproduction.md) for protocol settings and
-[validation status](docs/validation.md) for the checks performed during migration.
-The online review catalog includes baselines and other administrative entries;
-use the paper split for reported results.
+For Three.js configuration, VLA exploration, trajectory replay, and ablations, follow the [reproduction guide](docs/reproduction.md).
 
-## Source and resources
+## Evaluation
 
-The code was collected from the active AWS deployment and experiment workspaces
-and checked against the arXiv manuscript on 2026-09-30. Source origins and file
-hashes are recorded in [the migration receipt](docs/migration/README.md).
-Unreal editor assets and runtime packages are distributed separately; recovered
-source snapshots alone do not reconstruct every published binary.
+Agents submit anomaly reports with supporting visual evidence. The judge evaluates each report against the task rubric and returns a binary success score with an explanation. The paper reports success over the fixed **213-task** evaluation set.
 
-Third-party environment code retains its source attribution and license files.
-See [third-party sources](THIRD_PARTY.md) before redistributing environment assets.
+| Workflow | Code / documentation |
+| --- | --- |
+| Interactive VLM auditing | [`scripts/native-agents/launch.py`](scripts/native-agents/launch.py) · [MCP tools](docs/native-agent-mcp.md) |
+| VLA exploration | [`harness/vla_ue.py`](harness/vla_ue.py) · [`harness/vla_explore.py`](harness/vla_explore.py) |
+| Analysis of VLA trajectories | [`scripts/native-agents/run_vla_replay.py`](scripts/native-agents/run_vla_replay.py) |
+| Report judging | [`eval/judge.py`](eval/judge.py) · [Judge protocol](docs/binary-judge.md) |
+| Ablation experiments | [`experiments/ablations/`](experiments/ablations/) · [Protocol settings](docs/reproduction.md#ablations) |
+
+## Resources
+
+Code, task definitions, and evaluation splits are available now. Larger resources will be released on **Hugging Face**.
+
+| Resource | Availability |
+| --- | --- |
+| Benchmark task definitions and splits | [Available](benchmark/) |
+| Auditing agents, evaluation, and environment source | Available in this repository |
+| Demonstration videos | [Project page](https://ucsb-nlp-chang.github.io/WorldAuditBench/#explore) |
+| Packaged environments and editable scene assets | Coming soon |
+| In-context demonstration images and VLA trajectories | Coming soon |
+| Open-P2P model setup and checkpoint instructions | Coming soon |
+
+See [resource details](docs/resources.md) for the files required to run the benchmark. Third-party environments and models retain their respective licenses; see [THIRD_PARTY.md](THIRD_PARTY.md).
+
+## Repository structure
+
+```text
+benchmark/              Task definitions, scene descriptions, and evaluation splits
+scripts/native-agents/  Native model clients and experiment launchers
+auditor/mcp_agent/      Shared auditing tools and environment connections
+agent/                  Tool-calling VLM agent and evidence memory
+harness/                VLA exploration and environment runners
+eval/                   Report judges and evaluation utilities
+candidate_environments/ Three.js environment source
+env/                    Environment adapters
+unreal/                 Unreal source, plugins, and runtime policies
+experiments/ablations/   Ablation implementations
+services/               Human exploration, review, and evaluation interfaces
+docs/                   Setup, protocols, and resource documentation
+```
+
+### Development checks
+
+```bash
+python -m pip install -r requirements-dev.txt
+python scripts/check_release.py
+python -m pytest -q -m 'not chromium and not live'
+```
+
+These checks cover code and interfaces; they do not launch the full benchmark. See [validation details](docs/validation.md) for resource-dependent checks.
+
+## Citation
+
+```bibtex
+@misc{jiang2026worldauditbench,
+  title  = {WorldAuditBench: Interactive 3D World Auditing
+            with Multimodal Agents},
+  author = {Ziyan Jiang and Jingbo Yang and Jiabao Ji and
+            Yujian Liu and Qiucheng Wu and Tommi Jaakkola and
+            Yang Zhang and Shiyu Chang},
+  year   = {2026},
+  url    = {https://ucsb-nlp-chang.github.io/WorldAuditBench/}
+}
+```
+
+For questions or bug reports, please [open an issue](https://github.com/UCSB-NLP-Chang/WorldAuditBench/issues).
