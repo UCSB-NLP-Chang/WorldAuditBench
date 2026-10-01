@@ -4,7 +4,7 @@ import data from "../content.json";
 import { RadialTaxonomy } from "./taxonomy";
 import "./style.css";
 const REPO = "https://github.com/UCSB-NLP-Chang/WorldAuditBench";
-const PAPER = "./assets/worldauditbench.pdf";
+const PAPER = "https://arxiv.org/pdf/2609.40325";
 const authors = [
   ["Ziyan Jiang", "1,*", "https://xmhzz2018.github.io/"],
   ["Jingbo Yang", "1,*", "https://kimperyang.github.io/"],
@@ -54,7 +54,10 @@ const bib = `@misc{jiang2026worldauditbench,
             Yujian Liu and Qiucheng Wu and Tommi Jaakkola and
             Yang Zhang and Shiyu Chang},
   year   = {2026},
-  url    = {https://ucsb-nlp-chang.github.io/WorldAuditBench/}
+  eprint = {2609.40325},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.AI},
+  url    = {https://arxiv.org/abs/2609.40325}
 }`;
 function Icon({ name, size = 18, ...props }) {
   const paths = {
