@@ -1,0 +1,16 @@
+{
+  "name": "worldauditbench-project-page",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build.cjs",
+    "start": "python3 -m http.server 4173 --bind 127.0.0.1"
+  },
+  "dependencies": {
+    "react": "19.2.6",
+    "react-dom": "19.2.6"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.0"
+  }
+}
