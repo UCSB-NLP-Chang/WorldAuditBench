@@ -423,8 +423,6 @@ function Overview() {
 function Explorer() {
   const [family, setFamily] = useState("All"),
     [selected, setSelected] = useState("G1"),
-    [frame, setFrame] = useState(0),
-    [mode, setMode] = useState("video"),
     [failed, setFailed] = useState(false);
   const example = data.examples.find((e) => e.id === selected);
   const group = data.families.find((f) => f.id === example.family);
@@ -435,14 +433,12 @@ function Explorer() {
   function choose(e) {
     setSelected(e.id);
     setFamily(e.family);
-    setFrame(0);
     setFailed(false);
   }
   function chooseFamily(id) {
     setFamily(id);
     if (id !== "All") {
       setSelected(data.examples.find((e) => e.family === id).id);
-      setFrame(0);
       setFailed(false);
     }
   }
@@ -455,7 +451,7 @@ function Explorer() {
     );
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
-  }, [selected, mode]);
+  }, [selected]);
   return (
     <section className="explorer-section section" id="explore">
       <div className="wrap">
@@ -504,25 +500,9 @@ function Explorer() {
             <div className="demo-top">
               <span className="demo-id">{selected}</span>
               <span>{group.name}</span>
-              <div className="segmented small" aria-label="Evidence format">
-                <button
-                  className={mode === "video" ? "active" : ""}
-                  aria-pressed={mode === "video"}
-                  onClick={() => setMode("video")}
-                >
-                  Video
-                </button>
-                <button
-                  className={mode === "images" ? "active" : ""}
-                  aria-pressed={mode === "images"}
-                  onClick={() => setMode("images")}
-                >
-                  Images
-                </button>
-              </div>
             </div>
             <div className="demo-media">
-              {mode === "video" && !failed ? (
+              {!failed ? (
                 <video
                   key={selected}
                   ref={ref}
@@ -543,8 +523,8 @@ function Explorer() {
                 </video>
               ) : (
                 <img
-                  src={"./" + example.frames[frame].src}
-                  alt={example.frames[frame].caption}
+                  src={"./" + example.frames[0].src}
+                  alt={example.frames[0].caption}
                 />
               )}
             </div>
@@ -552,20 +532,6 @@ function Explorer() {
               <p className="error-message" role="status">
                 Video unavailable. The reference image is shown instead.
               </p>
-            )}
-            {mode === "images" && example.frames.length > 1 && (
-              <div className="frame-buttons">
-                {example.frames.map((f, i) => (
-                  <button
-                    key={f.src}
-                    onClick={() => setFrame(i)}
-                    aria-pressed={frame === i}
-                    className={frame === i ? "active" : ""}
-                  >
-                    Frame {i + 1}
-                  </button>
-                ))}
-              </div>
             )}
             <div className="demo-copy" aria-live="polite">
               <h3>{example.title}</h3>
