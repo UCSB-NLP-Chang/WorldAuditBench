@@ -127,6 +127,16 @@ function Icon({ name, size = 18, ...props }) {
     </svg>
   );
 }
+function BrandIcon({ name }) {
+  return (
+    <img
+      className="brand-icon"
+      src={`./media/${name}.svg`}
+      alt=""
+      aria-hidden="true"
+    />
+  );
+}
 function Mark() {
   return <img className="mark" src="./media/worldaudit-logo.png" alt="" />;
 }
@@ -162,7 +172,7 @@ function Header() {
           ))}
         </nav>
         <a className="nav-code" href={REPO} target="_blank" rel="noreferrer">
-          <Icon name="code" /> Code <Icon name="external" size={13} />
+          <BrandIcon name="github" /> Code <Icon name="external" size={13} />
         </a>
         <button
           className="menu-toggle icon-button"
@@ -202,24 +212,17 @@ function Hero() {
       <div className="hero-grid" aria-hidden="true" />
       <div className="hero-glow" aria-hidden="true" />
       <div className="wrap hero-inner">
-        <div className="hero-badge">
-          <span className="status-dot" /> A BENCHMARK FOR INTERACTIVE WORLD
-          AUDITING <span className="badge-year">2026</span>
-        </div>
-        <h1>
-          <Mark />
-          WorldAudit<span>Bench</span>
+        <h1 className="paper-title">
+          <span className="title-line">
+            <Mark />
+            <span className="title-name">WorldAuditBench</span>:
+          </span>
+          <span className="title-line">Interactive 3D World Auditing</span>
+          <span className="title-line">with Multimodal Agents</span>
         </h1>
-        <h2>
-          Interactive 3D World Auditing
-          <br />
-          with Multimodal Agents
-        </h2>
         <p className="hero-description">
-          Can an agent discover what’s wrong with a world?
-          <br className="desktop-break" /> A benchmark for exploring,
-          investigating, and explaining anomalies in interactive 3D
-          environments.
+          A benchmark for discovering and explaining anomalies across 213 tasks
+          in 13 interactive 3D environments.
         </p>
         <div className="authors">
           {authors.map(([name, aff]) => (
@@ -248,8 +251,8 @@ function Hero() {
             target="_blank"
             rel="noreferrer"
           >
-            <Icon name="paper" /> Read the paper{" "}
-            <Icon name="external" size={14} />
+            <Icon name="paper" />
+            Paper
           </a>
           <a
             className="button secondary"
@@ -257,13 +260,20 @@ function Hero() {
             target="_blank"
             rel="noreferrer"
           >
-            <Icon name="code" /> Code
+            <BrandIcon name="github" />
+            Code
+          </a>
+          <a
+            className="button secondary"
+            href="#resources"
+            title="Dataset release on Hugging Face coming soon"
+          >
+            <BrandIcon name="huggingface" />
+            Dataset
           </a>
           <a className="button secondary" href="#explore">
-            <Icon name="play" /> Explore the benchmark
-          </a>
-          <a className="button text-button" href="#resources">
-            Dataset <span className="soon">Coming soon</span>
+            <Icon name="play" />
+            Demo
           </a>
         </div>
         <div className="hero-showcase">
@@ -326,8 +336,7 @@ function Hero() {
             <div className="showcase-aside">
               <Label light>LOOK CLOSER</Label>
               <h3>
-                A convincing world.
-                <br />
+                A convincing world. <br />
                 An unexpected flaw.
               </h3>
               <p>{item.evidence}</p>
@@ -977,7 +986,7 @@ function Resources() {
             <Icon name="external" />
           </a>
           <a href={REPO} target="_blank" rel="noreferrer">
-            <Icon name="code" size={24} />
+            <BrandIcon name="github" />
             <span>
               <strong>Code & task definitions</strong>
               <small>Agent harness, evaluation, and benchmark splits</small>
@@ -985,7 +994,7 @@ function Resources() {
             <Icon name="external" />
           </a>
           <div className="resource-pending">
-            <Icon name="globe" size={24} />
+            <BrandIcon name="huggingface" />
             <span>
               <strong>Dataset & environments</strong>
               <small>Large resources will be released on Hugging Face.</small>
@@ -1014,24 +1023,13 @@ function Citation() {
   }
   return (
     <section className="section wrap citation" id="citation">
-      <div>
-        <Label>CITATION</Label>
-        <h2 className="section-title">For your next paper.</h2>
-        <p>
-          If WorldAuditBench supports your research,
-          <br />
-          please consider citing our work.
-        </p>
-        <a href="mailto:ziyanjiang@ucsb.edu">
-          Get in touch <Icon name="arrow" size={16} />
-        </a>
-      </div>
+      <h2 className="section-title">Citation</h2>
       <div className="bib-card">
         <div className="bib-toolbar">
           <span>BibTeX</span>
-          <button onClick={copy}>
+          <button onClick={copy} aria-label="Copy citation">
             <Icon name={copied ? "check" : "copy"} size={15} />
-            {copied ? "Copied!" : "Copy citation"}
+            {copied ? "Copied!" : "Copy"}
           </button>
         </div>
         <pre>
@@ -1107,10 +1105,6 @@ function App() {
           </a>
           <p>UC Santa Barbara · MIT CSAIL · MIT-IBM Watson AI Lab</p>
           <a href="#top">Back to top ↑</a>
-        </div>
-        <div className="wrap acknowledgment">
-          <h2>Acknowledgments</h2>The UCSB team acknowledges support from the
-          National Science Foundation (NSF) Grant IIS-2338252.
         </div>
       </footer>
       <Lightbox image={image} onClose={() => setImage(null)} />

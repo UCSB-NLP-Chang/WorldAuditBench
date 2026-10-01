@@ -2524,3 +2524,201 @@ footer {
 .subtype-sector .sector-code {
   font-size: 14px;
 }
+
+/* Paper-style title hierarchy and concise research links. */
+.hero {
+  padding-top: 84px;
+}
+.hero-grid {
+  display: none;
+}
+.hero h1.paper-title {
+  display: block;
+  max-width: 1000px;
+  margin: 0 auto 24px;
+  font-size: 45px;
+  line-height: 1.25;
+  letter-spacing: -1.6px;
+  font-weight: 800;
+  white-space: normal;
+}
+.hero h1.paper-title > .title-line {
+  display: block;
+  color: var(--ink);
+}
+.hero h1.paper-title .title-name {
+  color: #7565dc;
+}
+.hero h1.paper-title .mark {
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  margin-right: 12px;
+  vertical-align: -0.12em;
+}
+.hero-description {
+  max-width: 740px;
+  font-size: 18px;
+  line-height: 1.7;
+  margin: 0 auto 30px;
+}
+.authors {
+  max-width: 880px;
+  font-size: 16px;
+  gap: 6px 18px;
+  font-weight: 600;
+}
+.affiliations {
+  font-size: 14px;
+  margin-top: 14px;
+}
+.equal {
+  font-size: 13px;
+}
+.hero-actions {
+  margin-top: 28px;
+  gap: 12px;
+}
+.hero-actions .button {
+  min-width: 114px;
+  min-height: 46px;
+  padding: 12px 22px;
+  font-size: 15px;
+  border-radius: 7px;
+}
+.brand-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+.hero-showcase {
+  margin-top: 56px;
+}
+.section-title {
+  font-size: 34px;
+  line-height: 1.25;
+  letter-spacing: -1px;
+}
+.citation {
+  display: block;
+  max-width: 1000px;
+  padding-block: 72px;
+}
+.citation > h2 {
+  text-align: center;
+  margin: 0 0 28px;
+  font-size: 32px;
+}
+.citation .bib-card {
+  background: #f3f4f7;
+  border: 1px solid #e1e3e8;
+  border-radius: 10px;
+  box-shadow: none;
+}
+.citation .bib-toolbar {
+  padding: 14px 24px;
+  border-bottom: 1px solid #e1e3e8;
+  color: #606575;
+  background: #fafbfc;
+  font-size: 13px;
+}
+.citation .bib-toolbar > button {
+  border: 1px solid #dadde5;
+  background: white;
+  padding: 7px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  color: #454b5a;
+}
+.citation .bib-toolbar > button:hover {
+  border-color: #9286d7;
+  color: var(--accent);
+}
+.citation .bib-card pre {
+  padding: 24px 28px;
+  font-size: 14px;
+  line-height: 1.8;
+  color: #384254;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 760px) {
+  .hero {
+    padding-top: 48px;
+  }
+  .hero h1.paper-title {
+    font-size: 30px;
+    line-height: 1.3;
+    letter-spacing: -0.9px;
+    margin-bottom: 20px;
+  }
+  .hero h1.paper-title .mark {
+    width: 30px;
+    height: 30px;
+    margin-right: 8px;
+  }
+  .hero-description {
+    font-size: 16px;
+    margin-bottom: 24px;
+  }
+  .authors {
+    font-size: 15px;
+    gap: 4px 13px;
+  }
+  .affiliations {
+    font-size: 13px;
+  }
+  .hero-actions {
+    max-width: 500px;
+    gap: 10px;
+  }
+  .hero-actions .button {
+    font-size: 14px;
+    min-width: 104px;
+    padding: 11px 16px;
+  }
+  .hero-showcase {
+    margin-top: 36px;
+  }
+  .section-title {
+    font-size: 30px;
+  }
+  .citation {
+    padding-block: 48px;
+  }
+  .citation > h2 {
+    font-size: 28px;
+    margin-bottom: 22px;
+  }
+  .citation .bib-toolbar {
+    padding: 12px 16px;
+  }
+  .citation .bib-card pre {
+    padding: 18px 16px;
+    font-size: 12px;
+    line-height: 1.8;
+  }
+}
+@media (max-width: 420px) {
+  .hero h1.paper-title {
+    font-size: 27px;
+  }
+  .hero-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 300px;
+  }
+}
+
+.hero h1.paper-title .title-line {
+  text-wrap: balance;
+}
+@media (min-width: 761px) {
+  .authors {
+    display: grid;
+    grid-template-columns: repeat(4, max-content);
+    justify-content: center;
+    gap: 5px 24px;
+  }
+}
