@@ -171,9 +171,6 @@ function Header() {
             </a>
           ))}
         </nav>
-        <a className="nav-code" href={REPO} target="_blank" rel="noreferrer">
-          <BrandIcon name="github" /> Code <Icon name="external" size={13} />
-        </a>
         <button
           className="menu-toggle icon-button"
           aria-label={open ? "Close menu" : "Open menu"}
