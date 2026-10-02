@@ -122,6 +122,42 @@ class RuntimeReleaseTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, 'Unsafe archive hard link'):
                 release.extract(root/'test.tar.gz', root/'output')
 
+    def test_rebuilt_package_profiles_use_verified_launch_manifest(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            directory = root / 'combined'
+            directory.mkdir()
+            entries = {
+                'S18': {'binary': 'runtime/platform/Game', 'binary_sha256': 'a' * 64,
+                        'launch_map': '/Game/Platform?Task=S18',
+                        'args': ['-AuditorExplorationTask=S18']},
+                'U033': {'binary': 'runtime/urban/Game', 'binary_sha256': 'b' * 64,
+                         'launch_map': '/Game/U033/TaskMap',
+                         'args': ['-AuditorExplorationTask=U033', '-AuditorRemoteTask=U033']}}
+            launch = directory / 'launch.json'
+            launch.write_text(json.dumps({'engine': 'unreal', 'tasks': entries}))
+            package = {'id': 'combined', 'group': 'unreal-runtime', 'tasks': list(entries),
+                       'launch_manifest': 'launch.json', 'launch_sha256': release.digest(launch),
+                       'variants': [{'id': task, 'tasks': [task], 'binary': entry['binary'],
+                                     'binary_sha256': entry['binary_sha256']}
+                                    for task, entry in entries.items()]}
+            (directory / '.worldauditbench-release.json').write_text(json.dumps(package))
+            release.write_profiles({'packages': [package]}, root)
+            profiles = json.loads((root / 'unreal-profiles.json').read_text())['tasks']
+            self.assertEqual(profiles['S18']['build_sha256'], 'a' * 64)
+            self.assertEqual(profiles['U033']['remote_task'], 'U033')
+            self.assertEqual(profiles['U033']['launch_map'], '/Game/U033/TaskMap')
+            self.assertNotIn('policy_path', profiles['S18'])
+            self.assertFalse(any('AuditorExplorationPolicy=' in a
+                                 for a in profiles['S18']['game_args']))
+            entries['S18']['binary_sha256'] = 'c' * 64
+            launch.write_text(json.dumps({'engine': 'unreal', 'tasks': entries}))
+            with self.assertRaisesRegex(ValueError, 'Launch manifest checksum mismatch'):
+                release.write_profiles({'packages': [package]}, root)
+            package['launch_sha256'] = release.digest(launch)
+            with self.assertRaisesRegex(ValueError, 'Launch executable differs'):
+                release.write_profiles({'packages': [package]}, root)
+
     def test_release_matches_all_experiment_builds(self):
         manifest=json.loads((ROOT/'data/resources/releases.json').read_text())
         profiles=json.loads((ROOT/'data/benchmark/profiles/ue-aws-profiles-20260918.json').read_text())['tasks']

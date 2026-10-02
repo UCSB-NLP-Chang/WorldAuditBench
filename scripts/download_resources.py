@@ -15,6 +15,7 @@ import urllib.request
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from environments.unreal_launch import without_hud
+from environments.package_profiles import load_profiles
 
 
 def digest(path):
@@ -132,6 +133,30 @@ def write_profiles(manifest, root):
         task_builds = {task: build for build in builds(package) for task in build['tasks']}
         if set(task_builds) != set(package['tasks']):
             raise ValueError('Variant task coverage differs: ' + package['id'])
+        if package.get('launch_manifest') == 'launch.json':
+            directory = root / package['id']
+            launch_path = directory / 'launch.json'
+            if digest(launch_path) != package['launch_sha256']:
+                raise ValueError('Launch manifest checksum mismatch: ' + package['id'])
+            entries = json.loads(launch_path.read_text())['tasks']
+            installed = load_profiles(directory)
+            if set(installed) != set(package['tasks']):
+                raise ValueError('Launch task coverage differs: ' + package['id'])
+            for task_id, profile in installed.items():
+                build = task_builds[task_id]
+                if (Path(profile['binary']) != (directory / build['binary']).resolve() or
+                        profile['build_sha256'] != build['binary_sha256']):
+                    raise ValueError('Launch executable differs from release: ' + task_id)
+                entry = entries[task_id]
+                profile['launch_map'] = entry['launch_map']
+                profile['runtime_map'] = entry.get('runtime_map', entry['launch_map'])
+                for arg in profile['game_args']:
+                    if arg.lower().startswith('-auditorremotetask='):
+                        profile['remote_task'] = arg.split('=', 1)[1]
+                profile['game_args'] = without_hud(profile['game_args'])
+                profile['hud'] = 'disabled-in-engine'
+                tasks[task_id] = profile
+            continue
         for task_id in package['tasks']:
             build = task_builds[task_id]
             profile = copy.deepcopy(original[task_id])
