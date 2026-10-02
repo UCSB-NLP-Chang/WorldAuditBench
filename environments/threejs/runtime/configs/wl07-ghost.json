@@ -1,0 +1,32 @@
+{
+ "page": "environments/threejs/scenes/13_beyond_fable_wilderness_constrained.html",
+ "worldSeed": 7,
+ "spawn": {
+  "pos": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "yawDeg": 0
+ },
+ "targets": {
+  "zone_far": [
+   0.0,
+   0.0,
+   -17.0
+  ]
+ },
+ "bounds": {
+  "minX": -24,
+  "maxX": 28,
+  "minZ": -20,
+  "maxZ": 15
+ },
+ "name": "wl07-ghost",
+ "bug": "wl07-ghost",
+ "meta": {
+  "title": "wl07-ghost",
+  "desc": "the big boulder next to the start has no collision - you walk straight through it while other rocks and trees are solid"
+ },
+ "view": null
+}

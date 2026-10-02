@@ -4,12 +4,12 @@ Attribution files, source comments and environment READMEs accompany third-party
 code and assets. Their original licenses apply.
 
 - Agent/harness code: `KimperYang/game-auditing`; dependency version recorded in
-  `scripts/native-agents/upstream.json`.
+  `agent/vlm/native/upstream.json`.
 - Unreal authoring source: recovered `XMHZZ2018/3d-world-auditor` snapshot
-  `fca8171a8478d04f9c19a38b22e0cb59cbe5af79`, plus patches in `unreal/runtime-patches/`.
+  `fca8171a8478d04f9c19a38b22e0cb59cbe5af79`, plus patches in `environments/unreal/runtime-patches/`.
 - Three.js scenes: source copies and attribution under
-  `candidate_environments/src/*/README.md` and their upstream directories.
-- Additional prop attribution: `services/review/static/*-prop-attributions.md`.
+  `environments/threejs/scenes/src/*/README.md` and their upstream directories.
+- Additional prop attribution: `demos/human/review/static/*-prop-attributions.md`.
 - Unreal Engine, UnrealCV, Pixel Streaming, Open-P2P, and model clients retain
   their respective upstream licenses. Engine source, weights, scene asset packs,
   and third-party runtime installations are not included here.

@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 import subprocess
-from eval import judge, judge_human_baseline as human
+from judge import judge, judge_human_baseline as human
 
 def test_prompt_isolation():
     original = judge.PROMPT_PATH

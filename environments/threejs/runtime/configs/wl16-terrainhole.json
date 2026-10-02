@@ -1,0 +1,38 @@
+{
+ "page": "environments/threejs/scenes/13_beyond_fable_wilderness_constrained.html",
+ "worldSeed": 7,
+ "spawn": {
+  "pos": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "yawDeg": 0
+ },
+ "targets": {
+  "zone_far": [
+   0.0,
+   0.0,
+   -17.0
+  ]
+ },
+ "bounds": {
+  "minX": -24,
+  "maxX": 28,
+  "minZ": -20,
+  "maxZ": 15
+ },
+ "name": "wl16-terrainhole",
+ "bug": "wl16-terrainhole",
+ "meta": {
+  "title": "wl16-terrainhole",
+  "desc": "a square patch of the ground east of the start is MISSING - a hole in the terrain mesh shows the void / the far hills through it, yet you can still walk across the gap on invisible ground"
+ },
+ "view": {
+  "cam": [
+   9.0,
+   0,
+   13.0
+  ]
+ }
+}

@@ -8,8 +8,8 @@ import pyarrow as pa
 import pyarrow.parquet as pq
 import pytest
 
-from auditor import task_dataset
-from eval import judge
+from data import tasks as task_dataset
+from judge import judge
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -35,7 +35,7 @@ def test_task_lookup_and_unknown_id(table):
 
 
 def test_launcher_uses_dataset_instruction_without_rubric(table, tmp_path, monkeypatch):
-    spec = importlib.util.spec_from_file_location('dataset_launcher', ROOT / 'scripts/native-agents/launch.py')
+    spec = importlib.util.spec_from_file_location('dataset_launcher', ROOT / 'agent/vlm/native/launch.py')
     launch = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(launch)
     base = tmp_path / 'native'
@@ -76,7 +76,7 @@ def test_duplicate_ids_rejected(table):
 
 def test_replay_loads_simplified_rubric(table, tmp_path):
     from types import SimpleNamespace
-    spec = importlib.util.spec_from_file_location('dataset_replay', ROOT / 'scripts/native-agents/run_vla_replay.py')
+    spec = importlib.util.spec_from_file_location('dataset_replay', ROOT / 'agent/vla/replay.py')
     replay = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(replay)
     rec = tmp_path / 'recordings/S01'
@@ -94,7 +94,7 @@ def test_replay_loads_simplified_rubric(table, tmp_path):
     {'case_type': 'bug', 'rubrics': {'expected': 'Supported.', 'steps': 'Inspect.', 'criteria': 'Floats.'}},
 ])
 def test_result_export_preserves_actual_rubric(tmp_path, rubric):
-    spec = importlib.util.spec_from_file_location('dataset_export', ROOT / 'scripts/native-agents/export_vla_results.py')
+    spec = importlib.util.spec_from_file_location('dataset_export', ROOT / 'scripts/experiments/export_vla_results.py')
     exporter = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(exporter)
     case, out = tmp_path / 'case', tmp_path / 'out'

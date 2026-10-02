@@ -1,0 +1,30 @@
+{
+ "page": "environments/threejs/scenes/03_sketchbook_airfield_constrained.html",
+ "spawn": {
+  "pos": [
+   0.0,
+   15.4,
+   -14.0
+  ],
+  "yawDeg": 0
+ },
+ "targets": {
+  "zone_far": [
+   0.0,
+   14.8,
+   -33.0
+  ]
+ },
+ "bounds": {
+  "minX": -20,
+  "maxX": 20,
+  "minZ": -36,
+  "maxZ": 38
+ },
+ "name": "af06-hole",
+ "bug": "af06-hole",
+ "meta": {
+  "title": "af06-hole",
+  "desc": "you fall straight through the solid-looking tarmac at one spot about 4 m straight ahead (north) of the start, on the centre line of the strip just before the north barrier row, and drop into darkness, then respawn"
+ }
+}

@@ -6,7 +6,7 @@ import sys
 
 import pytest
 
-RUNNER = Path(__file__).resolve().parents[1] / "scripts/native-agents/run_batch.py"
+RUNNER = Path(__file__).resolve().parents[1] / "scripts/experiments/run_batch.py"
 
 
 def invoke(tmp_path, tasks, excluded=(), extra=()):

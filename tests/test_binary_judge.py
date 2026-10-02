@@ -4,7 +4,7 @@ import subprocess
 
 import pytest
 
-from eval import judge
+from judge import judge
 
 
 @pytest.mark.parametrize("score", [0, 1])

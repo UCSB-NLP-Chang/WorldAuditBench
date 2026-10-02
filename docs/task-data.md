@@ -49,7 +49,7 @@ exclusion list and an `images/` directory beneath `icl/`.
 python scripts/download_dataset.py
 ```
 
-This downloads and verifies the versions pinned in `resources/dataset.json`.
+This downloads and verifies the versions pinned in `data/resources/dataset.json`.
 The cache lives under `out/dataset/`. Downloads are reused across tasks.
 
 The native launcher reads this task table by default and loads the shared
@@ -57,13 +57,13 @@ example for the assigned subcategory. Supply `--dataset /path/tasks.parquet` for
 a local table. `--no-icl` selects the zero-shot ablation.
 
 ```bash
-python -m eval.judge --task S01 --model-output agent_output.json
+python -m judge.judge --task S01 --model-output agent_output.json
 ```
 
 The judge obtains S01's English rubric from the table and uses the shared
-English instructions in `eval/judge_prompt.md`. Custom rubric files remain
+English instructions in `judge/judge_prompt.md`. Custom rubric files remain
 supported through `--rubrics`. Version pins and checksums live in GitHub's
-`resources/` configuration, outside the public task table.
+`data/resources/` configuration, outside the public task table.
 
 The model receives only the public input fields, the selected demonstration,
 tool instructions, budgets and observations during exploration. The launcher

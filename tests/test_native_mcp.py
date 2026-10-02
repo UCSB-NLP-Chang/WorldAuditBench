@@ -16,7 +16,7 @@ ROOT = Path(__file__).resolve().parents[1]
 UPSTREAM = ROOT
 sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(UPSTREAM))
-from auditor.mcp_agent.server import Episode
+from agent.vlm.mcp.server import Episode
 
 
 def config(tmp_path, mode="on-demand"):
@@ -40,7 +40,7 @@ def test_stdio_round_trip_archive_crop_budget_and_done(tmp_path):
 
     async def check():
         params = StdioServerParameters(command=sys.executable,
-                                        args=[str(ROOT / "auditor/mcp_agent/server.py"), "--config", str(path)])
+                                        args=[str(ROOT / "agent/vlm/mcp/server.py"), "--config", str(path)])
         async with stdio_client(params) as (read, write):
             async with ClientSession(read, write) as session:
                 await session.initialize()
@@ -93,7 +93,7 @@ def test_delivery_modes(tmp_path, mode, count):
 
 @pytest.mark.requires_icl
 def test_schema_same_and_native_launchers_are_single_process(tmp_path):
-    spec = importlib.util.spec_from_file_location("native_launch", ROOT / "scripts/native-agents/launch.py")
+    spec = importlib.util.spec_from_file_location("native_launch", ROOT / "agent/vlm/native/launch.py")
     launch = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(launch)
     runs = []
@@ -126,15 +126,15 @@ def test_schema_same_and_native_launchers_are_single_process(tmp_path):
 
 @pytest.mark.requires_icl
 def test_icl_real_stdio_images_order_gating_recall_and_evidence_separation(tmp_path):
-    from auditor.mcp_agent.examples import ExamplePack
-    pack = ExamplePack(ROOT / "examples/icl", code="C3").snapshot(tmp_path / "icl")
+    from agent.vlm.mcp.examples import ExamplePack
+    pack = ExamplePack(ROOT / "data/examples/icl", code="C3").snapshot(tmp_path / "icl")
     cfg = {**config(tmp_path), "subcategory": "C3", "icl": pack.manifest(), "icl_directory": str(pack.root)}
     path = tmp_path / "config.json"
     path.write_text(json.dumps(cfg))
 
     async def check():
         params = StdioServerParameters(command=sys.executable,
-                                        args=[str(ROOT / "auditor/mcp_agent/server.py"), "--config", str(path)])
+                                        args=[str(ROOT / "agent/vlm/mcp/server.py"), "--config", str(path)])
         async with stdio_client(params) as (read, write):
             async with ClientSession(read, write) as session:
                 await session.initialize()
@@ -178,8 +178,8 @@ def test_icl_real_stdio_images_order_gating_recall_and_evidence_separation(tmp_p
 
 @pytest.mark.requires_icl
 def test_icl_exclusion_aliases_snapshot_integrity_and_zero_shot(tmp_path):
-    from auditor.mcp_agent.examples import ExamplePack
-    pack = ExamplePack(ROOT / "examples/icl", code="G1")
+    from agent.vlm.mcp.examples import ExamplePack
+    pack = ExamplePack(ROOT / "data/examples/icl", code="G1")
     for task in ["S05", "s05", "U019", "A21", "JS_WL12"]:
         with pytest.raises(ValueError, match="ICL demonstration/alias"):
             pack.check_task(task)
@@ -206,7 +206,7 @@ def test_icl_exclusion_aliases_snapshot_integrity_and_zero_shot(tmp_path):
 
 @pytest.mark.requires_icl
 def test_icl_launcher_overlap_and_disable(tmp_path):
-    spec = importlib.util.spec_from_file_location("native_launch", ROOT / "scripts/native-agents/launch.py")
+    spec = importlib.util.spec_from_file_location("native_launch", ROOT / "agent/vlm/native/launch.py")
     launch = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(launch)
     base = ["codex", "--environment", "unreal-http", "--env-url", "http://127.0.0.1:19100",
@@ -223,8 +223,8 @@ def test_icl_launcher_overlap_and_disable(tmp_path):
 
 @pytest.mark.requires_icl
 def test_task_specific_icl_selection_unknown_and_conflicting_labels(tmp_path):
-    from auditor.mcp_agent.examples import ExamplePack
-    spec = importlib.util.spec_from_file_location("native_launch", ROOT / "scripts/native-agents/launch.py")
+    from agent.vlm.mcp.examples import ExamplePack
+    spec = importlib.util.spec_from_file_location("native_launch", ROOT / "agent/vlm/native/launch.py")
     launch = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(launch)
     def args(task, *extra):
@@ -238,7 +238,7 @@ def test_task_specific_icl_selection_unknown_and_conflicting_labels(tmp_path):
     assert launch.task_subcategory(args("unknown-task", "--subcategory", "V2")) == "V2"
     with pytest.raises(ValueError, match="No ICL example for subcategory S1"):
         launch.prepare(args("unknown-task", "--subcategory", "S1"))
-    library = ExamplePack(ROOT / "examples/icl")
+    library = ExamplePack(ROOT / "data/examples/icl")
     for code in library.examples:
         selected = ExamplePack(library.root, code=code)
         assert list(selected.examples) == [code]
@@ -248,7 +248,7 @@ def test_task_specific_icl_selection_unknown_and_conflicting_labels(tmp_path):
 
 @pytest.mark.requires_icl
 def test_scene_description_in_prompt_and_recalled_observation(tmp_path):
-    spec = importlib.util.spec_from_file_location("native_launch", ROOT / "scripts/native-agents/launch.py")
+    spec = importlib.util.spec_from_file_location("native_launch", ROOT / "agent/vlm/native/launch.py")
     launch = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(launch)
     manifests = []
@@ -285,7 +285,7 @@ def test_scene_description_in_prompt_and_recalled_observation(tmp_path):
 
 @pytest.mark.requires_icl
 def test_gemini_credential_stays_in_child_environment(tmp_path):
-    spec = importlib.util.spec_from_file_location("native_launch", ROOT / "scripts/native-agents/launch.py")
+    spec = importlib.util.spec_from_file_location("native_launch", ROOT / "agent/vlm/native/launch.py")
     launch = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(launch)
     credential = tmp_path / "key"
@@ -304,8 +304,8 @@ def test_gemini_credential_stays_in_child_environment(tmp_path):
 
 @pytest.mark.requires_icl
 def test_icl_restart_before_scene_does_not_reset_progress(tmp_path):
-    from auditor.mcp_agent.examples import ExamplePack
-    pack = ExamplePack(ROOT / "examples/icl", code="C3").snapshot(tmp_path / "icl")
+    from agent.vlm.mcp.examples import ExamplePack
+    pack = ExamplePack(ROOT / "data/examples/icl", code="C3").snapshot(tmp_path / "icl")
     cfg = {**config(tmp_path), "subcategory": "C3", "icl_directory": str(pack.root), "icl": pack.manifest()}
     e = Episode(cfg)
     try:
@@ -337,8 +337,8 @@ def test_invalid_crop_and_numbers_do_not_advance(tmp_path):
 
 
 def test_unreal_adapter_units_timestamps_and_fail_closed():
-    from auditor.mcp_agent.unreal_http import UnrealHTTP
-    from agent.types import ObsConfig, Action
+    from agent.vlm.mcp.unreal_http import UnrealHTTP
+    from agent.vlm.types import ObsConfig, Action
     buffer = io.BytesIO()
     Image.new("RGB", (64, 64), "blue").save(buffer, "PNG")
     rgb = {"base64": base64.b64encode(buffer.getvalue()).decode()}
@@ -377,7 +377,7 @@ def test_unreal_adapter_units_timestamps_and_fail_closed():
 
 
 def test_full_budget_done_guard_and_native_completion_hook(tmp_path):
-    spec = importlib.util.spec_from_file_location("after_agent", ROOT / "scripts/native-agents/after_agent.py")
+    spec = importlib.util.spec_from_file_location("after_agent", ROOT / "agent/vlm/native/after_agent.py")
     hook = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(hook)
     cfg = {**config(tmp_path), "require_full_budget": True}

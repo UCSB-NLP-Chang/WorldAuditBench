@@ -1,0 +1,38 @@
+{
+ "page": "environments/threejs/scenes/01_mistwood_cottage_constrained.html",
+ "spawn": {
+  "pos": [
+   -0.6,
+   0.0,
+   5.0
+  ],
+  "yawDeg": 0
+ },
+ "targets": {
+  "zone_far": [
+   -8.5,
+   2.5,
+   -5.5
+  ]
+ },
+ "bounds": {
+  "minX": -12,
+  "maxX": 7.5,
+  "minZ": -10.5,
+  "maxZ": 8.5
+ },
+ "exclude": [],
+ "name": "ct13-statereset",
+ "bug": "ct13-statereset",
+ "meta": {
+  "title": "ct13-statereset",
+  "desc": "the tall lamp post standing in the pond west of the path is at a different spot each time you come back after walking away (its position resets / jumps about 2.5 m)"
+ },
+ "view": {
+  "cam": [
+   -1.2,
+   0,
+   4.6
+  ]
+ }
+}

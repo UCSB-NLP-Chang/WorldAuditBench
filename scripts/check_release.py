@@ -23,7 +23,7 @@ def main():
     parser.add_argument("--resources", action="store_true", help="also require and hash the external files with known restore paths")
     parser.add_argument("--runtime-root", type=Path, default=ROOT / "out/runtime")
     args = parser.parse_args()
-    cohort = json.loads((ROOT / "benchmark/paper-tasks.json").read_text())
+    cohort = json.loads((ROOT / "data/benchmark/paper-tasks.json").read_text())
     tasks = cohort["tasks"]
     errors = []
     ids = {t["id"] for t in tasks}
@@ -37,13 +37,13 @@ def main():
     if Counter(t["paper_family"] for t in tasks) != expected:
         errors.append("Family counts differ from paper")
     for split in ("all", "unreal", "threejs"):
-        actual = (ROOT / f"benchmark/splits/{split}.txt").read_text().splitlines()
+        actual = (ROOT / f"data/benchmark/splits/{split}.txt").read_text().splitlines()
         wanted = {t["id"] for t in tasks if split == "all" or
                   ("threejs" if t["family"].startswith("threejs_") else "unreal") == split}
         if set(actual) != wanted or len(actual) != len(wanted):
             errors.append(f"Invalid split: {split}")
-    resources = json.loads((ROOT / "resources/manifest.json").read_text())
-    release = json.loads((ROOT / 'resources/releases.json').read_text())
+    resources = json.loads((ROOT / "data/resources/manifest.json").read_text())
+    release = json.loads((ROOT / 'data/resources/releases.json').read_text())
     runtime_ids = []
     browser_ids = []
     for package in release['packages']:
@@ -59,11 +59,11 @@ def main():
                     errors.append('Variant task coverage differs: ' + package['id'])
         if package['group'] == 'threejs-runtime':
             browser_ids.extend(package['tasks'])
-    expected_unreal = set((ROOT / 'benchmark/splits/unreal.txt').read_text().splitlines())
+    expected_unreal = set((ROOT / 'data/benchmark/splits/unreal.txt').read_text().splitlines())
     if set(runtime_ids) != expected_unreal or len(runtime_ids) != len(expected_unreal):
         errors.append('Runtime packages must cover each Unreal paper task exactly once')
     if browser_ids:
-        expected_browser = set((ROOT / 'benchmark/splits/threejs.txt').read_text().splitlines())
+        expected_browser = set((ROOT / 'data/benchmark/splits/threejs.txt').read_text().splitlines())
         if set(browser_ids) != expected_browser or len(browser_ids) != len(expected_browser):
             errors.append('Runtime packages must cover each Three.js paper task exactly once')
     if args.resources:
@@ -98,7 +98,7 @@ def main():
         print("\n".join(errors), file=sys.stderr)
         return 1
     print("Verified 213 paper tasks (126 Unreal, 87 Three.js), 5 family counts, splits and package coverage.")
-    print("External resources: " + resources["status"] + " (see resources/manifest.json).")
+    print("External resources: " + resources["status"] + " (see data/resources/manifest.json).")
     return 0
 
 

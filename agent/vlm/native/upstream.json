@@ -1,0 +1,25 @@
+{
+  "repository": "https://github.com/KimperYang/game-auditing.git",
+  "revision": "d59b663ddb210414bc0cd5ce66cab0f0fd04f76a",
+  "branch_at_selection": "agent-harness",
+  "role": "Historical source provenance; runtime imports the bundled agent/vlm/ package.",
+  "bundled_files": {
+    "agent/vlm/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "agent/vlm/archive.py": "82b6fbd97488c691ce61b2612fd09bdd61e8393f28a10ad1d251e9e0f94f7556",
+    "agent/vlm/context.py": "620ced27d6b4049a3b863d37822041f1c7db6b261565f79d89e8cbe1901316e5",
+    "agent/vlm/dashboard.py": "7e1544a71bcf7d76021ae29219e494aaedc84cd12d773e67300671ccc90c9446",
+    "agent/vlm/env/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "agent/vlm/env/base.py": "567c7fe8831277cedc6b49a65f2dca74c8407ec513cfed5462a1904da6d3455f",
+    "agent/vlm/env/fake.py": "2318c5276f1ebdf8fe2e0113c8d5e5a0b2a67e0f8c00abfce657258f5b1d597c",
+    "agent/vlm/env/threejs.py": "5fd18f6cfef4623269a3afa106abfd424b758358e96a07012ac51560aa2e185a",
+    "agent/vlm/env/ue.py": "96699efa4af5cf8fa49352fe0289dbd6b90d0aa598e96c494b32b3cf02b11951",
+    "agent/vlm/ledger.py": "99d71f0d656813aafc74baffac4cfb88eef126986036b66635c66359dd7ff93b",
+    "agent/vlm/llm.py": "0de7a112287c71f3a3a11e05642b10e51207225b386f253095c4cfe6b5773451",
+    "agent/vlm/loop.py": "f69aed9e0c712ad4ef1ecefb163d22da1e3a95eaa34e3c15bdf7dcc989dc4b57",
+    "agent/vlm/notes.py": "7371556d72e3bf8beb4a93ea9b2a8e08bc52435edd7ce382c19703ef5c6a9952",
+    "agent/vlm/prompts.py": "986ac5f464663c12c2c6ff5a670a1e662938d276269e66dd9baadfffe748632f",
+    "agent/vlm/runner.py": "1ba5be2db52a50629c3cbfde573671d6f19b4296e43a3f97a859aba0fede665a",
+    "agent/vlm/tools.py": "23bd9476c91519b701b35fb252d09de54dafd38bfcf201e8bcdc20308eaf884e",
+    "agent/vlm/types.py": "f23c23a5b426b7ffa786595df8490199ecd8361ea860c65044b101e39eef6f05"
+  }
+}

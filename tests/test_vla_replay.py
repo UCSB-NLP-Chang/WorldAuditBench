@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 UPSTREAM = ROOT
 sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(UPSTREAM))
-pytestmark = pytest.mark.skipif(not (UPSTREAM / "agent/tools.py").exists(), reason="pinned upstream not installed")
+pytestmark = pytest.mark.skipif(not (UPSTREAM / "agent/vlm/tools.py").exists(), reason="pinned upstream not installed")
 
 
 def make_recording(root, engine="ue", ticks=1200, dt_ms=50, every=10):
@@ -52,8 +52,8 @@ def images(result):
 
 
 def test_replay_env_frames_poses_and_segments(tmp_path):
-    from auditor.mcp_agent.replay import ReplayEnv
-    from agent.types import Action, ObsConfig
+    from agent.vlm.mcp.replay import ReplayEnv
+    from agent.vlm.types import Action, ObsConfig
     env = ReplayEnv(make_recording(tmp_path / "rec"))
     assert env.last_t == 59.5 and env.frame_dt == 0.5
     first = env.reset("T1", 0, ObsConfig(mode="film", film_dt=0.5, film_max=8))
@@ -81,8 +81,8 @@ def test_replay_env_frames_poses_and_segments(tmp_path):
 
 
 def test_threejs_recording_pose_axes(tmp_path):
-    from auditor.mcp_agent.replay import ReplayEnv
-    from agent.types import Action, ObsConfig
+    from agent.vlm.mcp.replay import ReplayEnv
+    from agent.vlm.types import Action, ObsConfig
     env = ReplayEnv(make_recording(tmp_path / "rec", engine="threejs"))
     env.reset("T1", 0, ObsConfig())
     env.seek(12.0)
@@ -92,7 +92,7 @@ def test_threejs_recording_pose_axes(tmp_path):
 
 
 def test_mcp_episode_play_tool_and_budget(tmp_path):
-    from auditor.mcp_agent.server import Episode
+    from agent.vlm.mcp.server import Episode
     rec = make_recording(tmp_path / "rec")
     episode = Episode(config(tmp_path, rec))
     try:
@@ -140,7 +140,7 @@ def test_launcher_prepares_replay_run(tmp_path):
     scene = tmp_path / "scene.txt"
     scene.write_text("A test scene.\n")
     run = tmp_path / "run"
-    cmd = [sys.executable, str(ROOT / "scripts/native-agents/launch.py"), "gemini", "--environment", "vla-replay",
+    cmd = [sys.executable, str(ROOT / "agent/vlm/native/launch.py"), "gemini", "--environment", "vla-replay",
            "--replay-dir", str(rec), "--task", "T1", "--legacy-task-files", "--subcategory", "C2", "--scene-description-file", str(scene),
            "--gemini-auth", "gemini-api-key", "--run-dir", str(run), "--dry-run", "--max-actions", "40"]
     subprocess.run(cmd, check=True, capture_output=True, text=True, cwd=ROOT)
@@ -158,7 +158,7 @@ def test_launcher_prepares_replay_run(tmp_path):
 
 def test_mcp_episode_all_frames_mode(tmp_path):
     import importlib.util
-    from auditor.mcp_agent.server import Episode
+    from agent.vlm.mcp.server import Episode
     rec = make_recording(tmp_path / "rec")
     cfg = config(tmp_path, rec, replay_mode="all", max_actions=0, preview_every=0.5)
     episode = Episode(cfg)
@@ -179,7 +179,7 @@ def test_mcp_episode_all_frames_mode(tmp_path):
         assert not episode.invoke("done", {"summary": "ok"}).isError
         meta = json.loads((tmp_path / "episode/meta.json").read_text())
         assert meta["status"] == "completed" and meta["actions_used"] == 0 and meta["backend"]["mode"] == "all" and meta["max_actions"] == 0
-        spec = importlib.util.spec_from_file_location("after_agent", ROOT / "scripts/native-agents/after_agent.py")
+        spec = importlib.util.spec_from_file_location("after_agent", ROOT / "agent/vlm/native/after_agent.py")
         hook = importlib.util.module_from_spec(spec); spec.loader.exec_module(hook)
         result, _ = hook.decide(cfg, {"actions_used": 0, "tool_calls": 3}, {})
         assert result["decision"] == "block" and "done now" in result["reason"]
@@ -192,7 +192,7 @@ def test_mcp_episode_all_frames_mode(tmp_path):
 def test_launcher_all_mode_requires_zero_actions(tmp_path):
     rec = make_recording(tmp_path / "rec")
     scene = tmp_path / "scene.txt"; scene.write_text("A test scene.\n")
-    base = [sys.executable, str(ROOT / "scripts/native-agents/launch.py"), "gemini", "--environment", "vla-replay", "--replay-dir", str(rec),
+    base = [sys.executable, str(ROOT / "agent/vlm/native/launch.py"), "gemini", "--environment", "vla-replay", "--replay-dir", str(rec),
             "--task", "T1", "--legacy-task-files", "--subcategory", "C2", "--scene-description-file", str(scene), "--gemini-auth", "gemini-api-key", "--dry-run",
             "--replay-mode", "all"]
     bad = subprocess.run(base + ["--run-dir", str(tmp_path / "bad"), "--max-actions", "40"], capture_output=True, text=True, cwd=ROOT)
@@ -206,7 +206,7 @@ def test_launcher_all_mode_requires_zero_actions(tmp_path):
 
 
 def test_all_mode_sparse_inline_keeps_every_frame_archived(tmp_path):
-    from auditor.mcp_agent.server import Episode
+    from agent.vlm.mcp.server import Episode
     rec = make_recording(tmp_path / "rec")
     episode = Episode(config(tmp_path, rec, replay_mode="all", max_actions=0, preview_every=2.0))
     try:
@@ -220,7 +220,7 @@ def test_all_mode_sparse_inline_keeps_every_frame_archived(tmp_path):
 
 
 def test_inspect_budget_and_no_inspect_tool(tmp_path):
-    from auditor.mcp_agent.server import Episode
+    from agent.vlm.mcp.server import Episode
     rec = make_recording(tmp_path / "rec")
     episode = Episode(config(tmp_path, rec, replay_mode="all", max_actions=0, preview_every=1.0, inspect_budget=0))
     try:
@@ -246,7 +246,7 @@ def test_inspect_budget_and_no_inspect_tool(tmp_path):
 
 
 def test_inline_size_fits_byte_budget(tmp_path):
-    from auditor.mcp_agent.replay import ReplayEnv
+    from agent.vlm.mcp.replay import ReplayEnv
     env = ReplayEnv(make_recording(tmp_path / "rec"), preview_every=0.5, mode="all")
     assert env.inline_size((960, 576), budget_bytes=10 ** 9) == (960, 576)
     assert env.inline_size((960, 576), budget_bytes=1) == (480, 288)
@@ -256,7 +256,7 @@ def test_inline_size_fits_byte_budget(tmp_path):
 
 def test_vqa_mode_single_report(tmp_path):
     import importlib.util
-    from auditor.mcp_agent.server import Episode
+    from agent.vlm.mcp.server import Episode
     rec = make_recording(tmp_path / "rec")
     cfg = config(tmp_path, rec, replay_mode="vqa", max_actions=0)
     episode = Episode(cfg)
@@ -285,7 +285,7 @@ def test_vqa_mode_single_report(tmp_path):
         assert episode.invoke("report", {"bugs": [], "summary": "again"}).isError
         calls = [json.loads(l) for l in (tmp_path / "b/episode/mcp-calls.jsonl").read_text().splitlines()]
         assert [c["tool"] for c in calls] == ["observe", "flag_bug", "report", "report"]
-        spec = importlib.util.spec_from_file_location("after_agent", ROOT / "scripts/native-agents/after_agent.py")
+        spec = importlib.util.spec_from_file_location("after_agent", ROOT / "agent/vlm/native/after_agent.py")
         hook = importlib.util.module_from_spec(spec); spec.loader.exec_module(hook)
         assert "report now" in hook.decide({**config(tmp_path, rec, replay_mode="vqa", max_actions=0)}, {"actions_used": 0, "tool_calls": 2}, {})[0]["reason"]
     finally:

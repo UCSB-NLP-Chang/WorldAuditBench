@@ -14,7 +14,7 @@ scoring, environment interfaces and archive integrity.
 CI also runs the Explore service tests:
 
 ```bash
-cd services/explore
+cd demos/human/explore
 PYTHONPATH=. python -m unittest discover -s tests
 ```
 

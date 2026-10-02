@@ -1,0 +1,38 @@
+{
+ "page": "environments/threejs/scenes/01_mistwood_cottage_constrained.html",
+ "spawn": {
+  "pos": [
+   -0.6,
+   0.0,
+   5.0
+  ],
+  "yawDeg": 0
+ },
+ "targets": {
+  "zone_far": [
+   -8.5,
+   2.5,
+   -5.5
+  ]
+ },
+ "bounds": {
+  "minX": -12,
+  "maxX": 7.5,
+  "minZ": -10.5,
+  "maxZ": 8.5
+ },
+ "exclude": [],
+ "name": "ct09-magenta",
+ "bug": "ct09-magenta",
+ "meta": {
+  "title": "ct09-magenta",
+  "desc": "the stone well on the hill to the west renders as flat bright MAGENTA (missing texture placeholder)"
+ },
+ "view": {
+  "cam": [
+   -7.0,
+   0,
+   -3.6
+  ]
+ }
+}

@@ -1,0 +1,167 @@
+<!doctype html>
+<!--
+Offline single-file playable benchmark build: shallow-water reef with a first-person diver.
+Ocean/sky/buoy/light rays: "Beautiful Water" by Victor Zakharov (MIT, https://github.com/VictorZakharov/beautiful-water),
+WebGL pipeline.  Seabed, reef, corals, fish and the diver controller: environments/threejs/scenes/src/water (build.py).
+Assets: Poly Haven CC0 rocks and sand textures; Khronos glTF sample "BarramundiFish" (CC0).  three.js r185 (MIT).
+No benchmark bugs injected.
+-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#071b2b" />
+    <meta name="description" content="A playable shallow-water reef with a first-person diver, fish, corals, rocks and a procedural ocean rendered with Three.js." />
+    <title>Reef Dive · Constrained Benchmark</title>
+    <style>
+      html, body, #app { width: 100%; height: 100%; margin: 0; overflow: hidden; background: #04131f; }
+      #app { position: relative; }
+      #ocean-canvas { opacity: 0; }
+      .loader { position: fixed; inset: 0; z-index: 100; background: #04131f; }
+      .fps, .renderer-toggle { display: none !important; }
+    </style>
+    <style>/*__CSS__*/</style>
+  </head>
+  <body>
+    <main id="app">
+      <canvas id="ocean-canvas" aria-label="Shallow-water reef with a floating navigation buoy"></canvas>
+      <div class="vignette" aria-hidden="true"></div>
+      <section class="clean-dive-ui" data-clean-dive-ui aria-label="Diver control panel">
+        <div class="clean-dive-panel">
+          <div class="clean-dive-copy">
+            <strong>Reef dive · realistic shallow water</strong>
+            <span data-clean-dive-status>Observer mode · press “Dive” to take control</span>
+          </div>
+          <div class="clean-dive-actions">
+            <button type="button" data-clean-dive-start>Dive</button>
+            <button type="button" data-clean-dive-resume>Resume</button>
+            <button type="button" data-clean-dive-reset>Back to start</button>
+            <button type="button" data-clean-dive-exit>Leave the water</button>
+          </div>
+          <div class="clean-dive-controls" aria-label="Controls">
+            <span><kbd>WASD</kbd> swim</span>
+            <span><kbd>Mouse</kbd> look</span>
+            <span><kbd>Shift</kbd> faster</span>
+          </div>
+        </div>
+        <span class="clean-dive-crosshair" aria-hidden="true"></span>
+      </section>
+      <div class="loader" role="status" aria-live="polite" aria-label="Loading ocean simulation">
+        <div class="loader__visual" aria-hidden="true">
+          <span class="loader__sun"></span>
+          <div class="loader__horizon">
+            <span class="loader__wave"></span>
+            <span class="loader__wave"></span>
+            <span class="loader__wave"></span>
+          </div>
+          <span class="loader__buoy"></span>
+        </div>
+        <strong class="loader__title">Reef Dive</strong>
+        <span class="loader__status">Preparing simulation</span>
+        <span class="loader__progress" aria-hidden="true">
+          <span class="loader__progress-bar"></span>
+        </span>
+      </div>
+      <noscript>This scene needs JavaScript and WebGL 2 enabled.</noscript>
+    </main>
+<script>/*__PACK__*/</script>
+<script>/*__PICKER__*/</script>
+<script>
+(async () => {
+  'use strict';
+  const P = window.__PACK;
+  const bytes = s => fetch('data:application/octet-stream;base64,' + s).then(r => r.arrayBuffer());
+  const gunzip = buf => new Response(new Blob([buf]).stream().pipeThrough(new DecompressionStream('gzip'))).arrayBuffer();
+  const text = async s => new TextDecoder().decode(await gunzip(await bytes(s)));
+  window.__RT = { bytes, gunzip };
+  const urls = {};
+  const resolve = (spec, fromPath) => {
+    if (spec === 'three') return 'vendor/three.module.js';
+    if (spec.startsWith('three/addons/')) return 'vendor/addons/' + spec.slice(13);
+    if (spec.startsWith('.')) {
+      const parts = fromPath.split('/'); parts.pop();
+      for (const seg of spec.split('/')) { if (seg === '.') continue; if (seg === '..') parts.pop(); else parts.push(seg); }
+      return parts.join('/');
+    }
+    return spec;
+  };
+  const RE = /(from\s*|import\s*\(\s*|^\s*import\s+)(['"])([^'"]+)\2/gm;
+  try {
+    for (const path of P.order) {
+      const src = (await text(P.js[path])).replace(RE, (m, pre, q, spec) => {
+        const target = resolve(spec, path);
+        return urls[target] ? pre + q + urls[target] + q : m;
+      });
+      urls[path] = URL.createObjectURL(new Blob([src], { type: 'text/javascript' }));
+    }
+    await import(urls[P.entry]);
+  } catch (err) {
+    console.error(err);
+    window.__initError = String(err && err.stack || err);
+    const st = document.querySelector('.loader__status'); if (st) st.textContent = 'Failed: ' + err;
+  }
+})();
+</script>
+<!-- CONSTRAINED_BENCHMARK_BEGIN -->
+<style id="benchmark-boundary-style">
+  #benchmark-boundary-warning{position:fixed;left:50%;top:50%;z-index:2147483647;display:grid;gap:7px;min-width:min(560px,calc(100vw - 36px));max-width:calc(100vw - 36px);padding:17px 26px 16px;transform:translate(-50%,-50%) scale(.97);border:1px solid rgba(255,82,82,.72);border-radius:14px;background:rgba(52,4,8,.9);box-shadow:0 18px 60px rgba(0,0,0,.48),0 0 34px rgba(255,42,42,.2);color:#fff4f4;text-align:center;font-family:Inter,"Noto Sans SC","Microsoft YaHei",system-ui,sans-serif;pointer-events:none;opacity:0;visibility:hidden;transition:opacity .18s ease,transform .18s ease,visibility 0s linear .18s}
+  #benchmark-boundary-warning.is-visible{opacity:1;visibility:visible;transform:translate(-50%,-50%) scale(1);transition-delay:0s}
+  #benchmark-boundary-warning strong{color:#ff5d62;font-size:clamp(24px,3vw,40px);font-weight:850;line-height:1.1;letter-spacing:.05em;text-shadow:0 2px 16px rgba(255,22,35,.42)}
+  #benchmark-boundary-warning span{color:rgba(255,235,235,.84);font-size:clamp(13px,1.25vw,17px);font-weight:650;letter-spacing:.06em}
+  #benchmark-boundary-badge{position:fixed;right:14px;bottom:14px;z-index:2147483646;padding:7px 10px;border:1px solid rgba(255,255,255,.18);border-radius:999px;background:rgba(5,9,16,.66);color:rgba(255,255,255,.72);font:700 10px/1.1 Inter,"Noto Sans SC",system-ui,sans-serif;letter-spacing:.1em;text-transform:uppercase;pointer-events:none;backdrop-filter:blur(8px)}
+</style>
+<div id="benchmark-boundary-warning" role="status" aria-live="assertive" aria-atomic="true"><strong>Edge of the explorable area</strong><span>Turn around and keep exploring inside the scene</span></div>
+<div id="benchmark-boundary-badge">Constrained area · WASD boundary</div>
+<script id="benchmark-boundary-script">
+(() => {
+  'use strict';
+  const config = {"id":"10_beautiful_water_clean_constrained","title":"Reef Dive","kind":"benchmark","halfX":26.5,"halfZ":26.5,"center":[0,0,0],"warningMs":1500,"touchEpsilon":0.08,"releaseMargin":0.45,"keyboardMove":false,"keyboardSpeed":0};
+  const warning = document.getElementById('benchmark-boundary-warning');
+  const keys = new Set();
+  let adapter = null;
+  let center = config.center ? {x:config.center[0],y:config.center[1],z:config.center[2]} : null;
+  let inContact = false;
+  let hideTimer = 0;
+  let lastFrame = performance.now();
+  addEventListener('keydown', event => { if (/^Key[WASD]$/.test(event.code)) keys.add(event.code); }, true);
+  addEventListener('keyup', event => { keys.delete(event.code); }, true);
+  addEventListener('blur', () => keys.clear());
+  const copy = p => ({x:Number(p.x)||0,y:Number(p.y)||0,z:Number(p.z)||0});
+  function resolveAdapter(){
+    const world=window.BenchmarkWorld;
+    if(!world)return null;
+    if(world.player?.getState&&world.player?.setPosition)return {get(){const p=world.player.getState()?.position;return p?{x:p[0],y:p[1],z:p[2]}:null;},set(next){world.player.setPosition([next.x,next.y,next.z]);}};
+    return null;
+  }
+  function showWarning(){ warning.classList.add('is-visible'); clearTimeout(hideTimer); hideTimer=setTimeout(()=>warning.classList.remove('is-visible'),config.warningMs); }
+  function isMoving(){return keys.size>0;}
+  function step(now){
+    requestAnimationFrame(step);
+    if(!adapter)adapter=resolveAdapter();
+    if(!adapter)return;
+    let p=adapter.get();
+    if(!p)return;
+    if(!center)center=copy(p);
+    lastFrame=now;
+    const minX=center.x-config.halfX,maxX=center.x+config.halfX,minZ=center.z-config.halfZ,maxZ=center.z+config.halfZ;
+    const outside=p.x<minX||p.x>maxX||p.z<minZ||p.z>maxZ;
+    const touching=isMoving()&&(p.x<=minX+config.touchEpsilon||p.x>=maxX-config.touchEpsilon||p.z<=minZ+config.touchEpsilon||p.z>=maxZ-config.touchEpsilon);
+    const hit=outside||touching;
+    if(outside){p.x=Math.max(minX,Math.min(maxX,p.x));p.z=Math.max(minZ,Math.min(maxZ,p.z));adapter.set(p);}
+    if(hit&&!inContact){inContact=true;showWarning();}
+    if(!isMoving()||(!hit&&p.x>minX+config.releaseMargin&&p.x<maxX-config.releaseMargin&&p.z>minZ+config.releaseMargin&&p.z<maxZ-config.releaseMargin))inContact=false;
+  }
+  window.BenchmarkBoundary={
+    version:1,config,
+    get center(){return center&&{...center};},
+    get bounds(){return center&&{minX:center.x-config.halfX,maxX:center.x+config.halfX,minZ:center.z-config.halfZ,maxZ:center.z+config.halfZ};},
+    getPosition(){return adapter?.get()||null;},
+    showWarning,
+    checkNow(){const p=adapter?.get();if(!p||!center)return false;const b=this.bounds;const hit=p.x<b.minX||p.x>b.maxX||p.z<b.minZ||p.z>b.maxZ;if(hit){p.x=Math.max(b.minX,Math.min(b.maxX,p.x));p.z=Math.max(b.minZ,Math.min(b.maxZ,p.z));adapter.set(p);showWarning();}return hit;}
+  };
+  requestAnimationFrame(step);
+})();
+</script>
+<!-- CONSTRAINED_BENCHMARK_END -->
+  </body>
+</html>

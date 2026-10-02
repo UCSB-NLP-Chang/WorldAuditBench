@@ -1,11 +1,11 @@
 # Human baseline 专用二元 judge
 
-入口 `eval.judge_human_baseline` 使用 `eval/judge_human_baseline_prompt.md`。
-原始 `eval/judge.py` 和 `eval/judge_prompt.md` 保持不变。入口在独立模块实例中加载原 judge，仅选择专用 prompt，复用相同 CLI 参数、模型调用、图片处理、二元 JSON schema 和用量记录。
+入口 `judge.judge_human_baseline` 使用 `judge/judge_human_baseline_prompt.md`。
+原始 `judge/judge.py` 和 `judge/judge_prompt.md` 保持不变。入口在独立模块实例中加载原 judge，仅选择专用 prompt，复用相同 CLI 参数、模型调用、图片处理、二元 JSON schema 和用量记录。
 
 ```sh
 cd /home/ec2-user/game-auditing
-.venv/bin/python -m eval.judge_human_baseline \
+.venv/bin/python -m judge.judge_human_baseline \
   --rubrics /path/to/rubric.json \
   --model-output /path/to/judge-input.json \
   --images /path/to/evidence.png \

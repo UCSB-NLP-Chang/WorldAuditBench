@@ -1,0 +1,193 @@
+{
+  "version": "game-auditing-d59b663-taxonomy",
+  "source": {
+    "repository": "https://github.com/KimperYang/game-auditing",
+    "commit": "d59b663ddb210414bc0cd5ce66cab0f0fd04f76a",
+    "path": "agent/vlm/prompts.py",
+    "symbol": "TAXONOMY"
+  },
+  "intro": {
+    "en": "Standard game-bug TYPES to check for:",
+    "zh": "需要检查的标准游戏 bug 类型："
+  },
+  "categories": [
+    {
+      "id": "geometry",
+      "number": 1,
+      "name": {
+        "en": "GEOMETRY & SPACE",
+        "zh": "几何与空间"
+      },
+      "description": {
+        "en": "objects clipping into each other or into floors/walls; objects floating in mid-air; abnormal scale vs identical siblings; duplicated/overlapping objects; implausible layout.",
+        "zh": "物体相互穿插，或穿入地板／墙体；物体悬浮在空中；相对于其他相同物体，尺度异常；物体重复／重叠；不合理的布局。"
+      }
+    },
+    {
+      "id": "collision",
+      "number": 2,
+      "name": {
+        "en": "COLLISION & PHYSICS",
+        "zh": "碰撞与物理"
+      },
+      "description": {
+        "en": "walking through solid-looking objects; invisible blockers where nothing is visible; falling through the floor; objects moving on their own with no cause.",
+        "zh": "穿过看起来是实体的物体；看不到任何物体的位置存在不可见阻挡；穿过地板并坠落；物体没有原因地自行移动。"
+      }
+    },
+    {
+      "id": "visual",
+      "number": 3,
+      "name": {
+        "en": "VISUAL CONSISTENCY",
+        "zh": "视觉一致性"
+      },
+      "description": {
+        "en": "missing textures (flat unnatural colors); objects invisible from some viewpoints yet present from others; objects rendering through walls/occluders; wrong materials; shadow/light anomalies.",
+        "zh": "纹理缺失（平坦、不自然的颜色）；物体从某些视角不可见，从其他视角却可见；物体穿透墙壁／遮挡物被渲染出来；材质错误；阴影／光照异常。"
+      }
+    },
+    {
+      "id": "state",
+      "number": 4,
+      "name": {
+        "en": "SPATIOTEMPORAL & STATE CONSISTENCY",
+        "zh": "时空与状态一致性"
+      },
+      "description": {
+        "en": "an object that is gone (or elsewhere) when you look back at it; abrupt state changes over time; things reverting by themselves. Re-checking a spot you saw earlier is a valid and useful test.",
+        "zh": "回头再看时，物体消失或出现在其他位置；状态随时间发生突然变化；物体或状态自行恢复。重新检查之前观察过的位置，是有效且有用的测试方法。"
+      }
+    },
+    {
+      "id": "semantic",
+      "number": 5,
+      "name": {
+        "en": "SEMANTICS & WORLD LOGIC",
+        "zh": "语义与世界逻辑"
+      },
+      "description": {
+        "en": "assets that do not belong in the scene; objects placed where they make no sense; impossible spatial connections.",
+        "zh": "不属于当前场景的资产；物体被放置在不合理的位置；不可能成立的空间连接关系。"
+      }
+    }
+  ],
+  "principle": {
+    "en": "Normal scene content (plants, curtains, banners, pillars, furniture, decorations) is NOT a bug by itself: judge against the scene's own consistency - identical elements should look and behave identically.",
+    "zh": "正常场景内容（植物、窗帘、旗帜、柱子、家具、装饰物）本身不构成 bug：应依据场景自身的一致性判断——相同元素应具有一致的外观和行为。"
+  },
+  "legacy": {
+    "G1": {
+      "group": "geometry",
+      "name": {
+        "en": "Missing support / floating",
+        "zh": "缺少支撑／悬空"
+      }
+    },
+    "G2": {
+      "group": "geometry",
+      "name": {
+        "en": "Intersection / overlap / structural misalignment",
+        "zh": "穿插／重叠／结构错位"
+      }
+    },
+    "G3": {
+      "group": "geometry",
+      "name": {
+        "en": "Scale / proportion mismatch",
+        "zh": "尺度／比例失调"
+      }
+    },
+    "C1": {
+      "group": "collision",
+      "name": {
+        "en": "Missing collision",
+        "zh": "应阻挡而发生穿透"
+      }
+    },
+    "C2": {
+      "group": "collision",
+      "name": {
+        "en": "Unexpected collision",
+        "zh": "不应阻挡却被阻挡"
+      }
+    },
+    "C3": {
+      "group": "collision",
+      "name": {
+        "en": "Abnormal object trajectories after interaction",
+        "zh": "交互后物体运动轨迹异常"
+      }
+    },
+    "V1": {
+      "group": "visual",
+      "name": {
+        "en": "Visibility anomalies",
+        "zh": "可见性异常"
+      }
+    },
+    "V2": {
+      "group": "visual",
+      "name": {
+        "en": "View / distance-dependent appearance",
+        "zh": "视角／距离相关的外观异常"
+      }
+    },
+    "V3": {
+      "group": "visual",
+      "name": {
+        "en": "Shadow / lighting anomalies",
+        "zh": "阴影／光照异常"
+      }
+    },
+    "V4": {
+      "group": "visual",
+      "name": {
+        "zh": "材质异常",
+        "en": "Material anomalies"
+      }
+    },
+    "T1": {
+      "group": "state",
+      "name": {
+        "en": "Existence changes",
+        "zh": "存在性变化"
+      }
+    },
+    "T2": {
+      "group": "state",
+      "name": {
+        "en": "Static attribute changes",
+        "zh": "静态属性变化"
+      }
+    },
+    "T3": {
+      "group": "state",
+      "name": {
+        "en": "Operational state changes",
+        "zh": "动态／运行状态变化"
+      }
+    },
+    "S1": {
+      "group": "semantic",
+      "name": {
+        "zh": "场景不相容",
+        "en": "Scene incompatibility"
+      }
+    },
+    "S2": {
+      "group": "semantic",
+      "name": {
+        "zh": "配置不合理",
+        "en": "Improper configuration"
+      }
+    },
+    "S3": {
+      "group": "semantic",
+      "name": {
+        "zh": "时代不相容",
+        "en": "Historical incompatibility"
+      }
+    }
+  }
+}

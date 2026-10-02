@@ -1,0 +1,775 @@
+{
+  "schema_version": 1,
+  "status": "runtime-release",
+  "destination": "Hugging Face",
+  "repository": "ziyjiang/WorldAuditBench",
+  "revision": "8581dfdda3a690a5b397588167ddedbfdbe1afef",
+  "resources": [
+    {
+      "path": "data/examples/icl/images/C1_01.png",
+      "bytes": 2084624,
+      "sha256": "c1508e78345320482bddf379fc78b70a8ee92c36ddd3a76dd80326b28b1c83fc",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "data/examples/icl/images/C1_02.png",
+      "bytes": 2026322,
+      "sha256": "a415d6fcfcc52aad59514270d8d34e97eec8272cef488dc67074355b2757f309",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "data/examples/icl/images/C1_03.png",
+      "bytes": 2139535,
+      "sha256": "b1c0250b02585284ebae1e7fd5a642c08b7d500a8bf6d4ac17b18b85f89e6ea0",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "data/examples/icl/images/C2_01.png",
+      "bytes": 2215151,
+      "sha256": "1b731a38a3200df8d6134a4695e76492aaafd74db2b5cfddaa25f58b89be53e2",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "data/examples/icl/images/C2_02.png",
+      "bytes": 2356819,
+      "sha256": "b7eab5046e557994c014da4833efd0e958051fb57c6b80a19116910f3e811d1c",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "data/examples/icl/images/C3_01.png",
+      "bytes": 1581769,
+      "sha256": "ad8b3d6f3602f69e2dddda05fa59994adb1a75d03ad35216fdc32adde0a1bfc8",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "data/examples/icl/images/C3_02.png",
+      "bytes": 1590615,
+      "sha256": "a79c9c6a8ce99e5e57455aa2c73d5233517baa9c5df11058087d372a31f9fa7b",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "data/examples/icl/images/C3_03.png",
+      "bytes": 1578482,
+      "sha256": "fdaf902f13ad23f9dfc8d4cbecad2b305228a59ca890da413efedc3a3eb8b62c",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "data/examples/icl/images/G1_01.png",
+      "bytes": 1664343,
+      "sha256": "0c6a2a0617f16bde0eaa69b27f1a53de9a86bb24074f84a758ec54264cd8089c",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "data/examples/icl/images/G2_01.png",
+      "bytes": 1645158,
+      "sha256": "5d4076cb82c568250d461137daef0c6eb77a1ec0a07c18dc1b80522462bdc6e8",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "data/examples/icl/images/G2_02.png",
+      "bytes": 1646451,
+      "sha256": "8370b83332a39e2733fbcd02106bf55f64cde5e00db156bf984b6770bff90e5e",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "data/examples/icl/images/G3_01.png",
+      "bytes": 1698213,
+      "sha256": "4c2d0a9399556c9029e6ce8afcad6cc22cd7221d0ae7b3a1a754dfccf31e6771",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "data/examples/icl/images/G3_02.png",
+      "bytes": 1614930,
+      "sha256": "53e4000655eb922e6a7f97e540de3382569cbe69a95460c84b5576d336c75318",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "data/examples/icl/images/S2_01.png",
+      "bytes": 2388880,
+      "sha256": "7b64483aa909b621462e85646c8db6f5e8828d5205efb734e9eaa02005515f56",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "data/examples/icl/images/S3_01.png",
+      "bytes": 2198540,
+      "sha256": "a25764203d2edce99049b05408b29bedb70e48c101c20094b3872380454358b8",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "data/examples/icl/images/T1_01.png",
+      "bytes": 2633954,
+      "sha256": "aae6d341ce2151c2e15d3d509ae6fdfb35fb35868d2aac542ef2b6e69707a534",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "data/examples/icl/images/T1_02.png",
+      "bytes": 2664567,
+      "sha256": "144173dc2935f2852c114ebe6bb07efc20d67e1825691fee62fc6a2b4c76ff92",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "data/examples/icl/images/T2_01.png",
+      "bytes": 2797735,
+      "sha256": "1afbe3b49752d569f17860407b80fc6bf00f7b1b93af3af635d553a7797c0071",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "data/examples/icl/images/T2_02.png",
+      "bytes": 2709637,
+      "sha256": "8aadb9c921f2b2b0ddea6c1a8f67f421fdc7dbd6d59e3dd8a7ff62fe5b64da89",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "data/examples/icl/images/T3_01.png",
+      "bytes": 1396766,
+      "sha256": "22cb620999dbbd5c5d6866a10009bbb30a0c7fdc6444d1bd47a31582d8a7cdf2",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "data/examples/icl/images/T3_02.png",
+      "bytes": 1273410,
+      "sha256": "90e2c39956efa089023a0784ec7c66789569dbb090227d08475a2f26da8fe9b3",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "data/examples/icl/images/V1_01.png",
+      "bytes": 1574258,
+      "sha256": "935e93517fed68635f57b86dcd6c2aef81635de0a76e227e1d50bd9ba827a16f",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "data/examples/icl/images/V1_02.png",
+      "bytes": 1646804,
+      "sha256": "b21f26bd39a6c07e5da9e008fba562cae4f26caf1be752ffeb02a0d4c225f6a3",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "data/examples/icl/images/V2_01.png",
+      "bytes": 1572493,
+      "sha256": "c51855d277381ef2a0371b40941fe7e6631c172b7024160df9beda162f024280",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "data/examples/icl/images/V2_02.png",
+      "bytes": 1615088,
+      "sha256": "d53d87f24ea5ac751688341f527fcc0922f47e35982fd1ba4c825999b1fe3051",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "data/examples/icl/images/V2_03.png",
+      "bytes": 1654949,
+      "sha256": "f2115183fed11d2874ee656f06c9de6a9df55e92856b63a830b63a4cb1b3f52d",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "data/examples/icl/images/V3_01.png",
+      "bytes": 1742623,
+      "sha256": "f751d27421f2d7329e6d4f740603e84d95dd95a0adc3ebcba55a23719200057e",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "data/examples/icl/images/V4_01.png",
+      "bytes": 1552819,
+      "sha256": "0d19cbc633d2091c37fb16b11c63284297c799dc6655facbf51312786eb1da65",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "data/examples/icl/images/V4_02.png",
+      "bytes": 1557133,
+      "sha256": "8bc949b693127f0fa60578ea28514b99391d5b0772d5a22f42b400105999bcb1",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "demos/human/evaluate/example-assets/images/C1_01.png",
+      "bytes": 2084624,
+      "sha256": "c1508e78345320482bddf379fc78b70a8ee92c36ddd3a76dd80326b28b1c83fc",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "demos/human/evaluate/example-assets/images/C1_02.png",
+      "bytes": 2026322,
+      "sha256": "a415d6fcfcc52aad59514270d8d34e97eec8272cef488dc67074355b2757f309",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "demos/human/evaluate/example-assets/images/C1_03.png",
+      "bytes": 2139535,
+      "sha256": "b1c0250b02585284ebae1e7fd5a642c08b7d500a8bf6d4ac17b18b85f89e6ea0",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "demos/human/evaluate/example-assets/images/C2_01.png",
+      "bytes": 2215151,
+      "sha256": "1b731a38a3200df8d6134a4695e76492aaafd74db2b5cfddaa25f58b89be53e2",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "demos/human/evaluate/example-assets/images/C2_02.png",
+      "bytes": 2356819,
+      "sha256": "b7eab5046e557994c014da4833efd0e958051fb57c6b80a19116910f3e811d1c",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "demos/human/evaluate/example-assets/images/C3_01.png",
+      "bytes": 1581769,
+      "sha256": "ad8b3d6f3602f69e2dddda05fa59994adb1a75d03ad35216fdc32adde0a1bfc8",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "demos/human/evaluate/example-assets/images/C3_02.png",
+      "bytes": 1590615,
+      "sha256": "a79c9c6a8ce99e5e57455aa2c73d5233517baa9c5df11058087d372a31f9fa7b",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "demos/human/evaluate/example-assets/images/C3_03.png",
+      "bytes": 1578482,
+      "sha256": "fdaf902f13ad23f9dfc8d4cbecad2b305228a59ca890da413efedc3a3eb8b62c",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "demos/human/evaluate/example-assets/images/G1_01.png",
+      "bytes": 1664343,
+      "sha256": "0c6a2a0617f16bde0eaa69b27f1a53de9a86bb24074f84a758ec54264cd8089c",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "demos/human/evaluate/example-assets/images/G2_01.png",
+      "bytes": 1645158,
+      "sha256": "5d4076cb82c568250d461137daef0c6eb77a1ec0a07c18dc1b80522462bdc6e8",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "demos/human/evaluate/example-assets/images/G2_02.png",
+      "bytes": 1646451,
+      "sha256": "8370b83332a39e2733fbcd02106bf55f64cde5e00db156bf984b6770bff90e5e",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "demos/human/evaluate/example-assets/images/G3_01.png",
+      "bytes": 1698213,
+      "sha256": "4c2d0a9399556c9029e6ce8afcad6cc22cd7221d0ae7b3a1a754dfccf31e6771",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "demos/human/evaluate/example-assets/images/G3_02.png",
+      "bytes": 1614930,
+      "sha256": "53e4000655eb922e6a7f97e540de3382569cbe69a95460c84b5576d336c75318",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "demos/human/evaluate/example-assets/images/S2_01.png",
+      "bytes": 2388880,
+      "sha256": "7b64483aa909b621462e85646c8db6f5e8828d5205efb734e9eaa02005515f56",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "demos/human/evaluate/example-assets/images/S3_01.png",
+      "bytes": 2198540,
+      "sha256": "a25764203d2edce99049b05408b29bedb70e48c101c20094b3872380454358b8",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "demos/human/evaluate/example-assets/images/T1_01.png",
+      "bytes": 2633954,
+      "sha256": "aae6d341ce2151c2e15d3d509ae6fdfb35fb35868d2aac542ef2b6e69707a534",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "demos/human/evaluate/example-assets/images/T1_02.png",
+      "bytes": 2664567,
+      "sha256": "144173dc2935f2852c114ebe6bb07efc20d67e1825691fee62fc6a2b4c76ff92",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "demos/human/evaluate/example-assets/images/T2_01.png",
+      "bytes": 2797735,
+      "sha256": "1afbe3b49752d569f17860407b80fc6bf00f7b1b93af3af635d553a7797c0071",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "demos/human/evaluate/example-assets/images/T2_02.png",
+      "bytes": 2709637,
+      "sha256": "8aadb9c921f2b2b0ddea6c1a8f67f421fdc7dbd6d59e3dd8a7ff62fe5b64da89",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "demos/human/evaluate/example-assets/images/T3_01.png",
+      "bytes": 1396766,
+      "sha256": "22cb620999dbbd5c5d6866a10009bbb30a0c7fdc6444d1bd47a31582d8a7cdf2",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "demos/human/evaluate/example-assets/images/T3_02.png",
+      "bytes": 1273410,
+      "sha256": "90e2c39956efa089023a0784ec7c66789569dbb090227d08475a2f26da8fe9b3",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "demos/human/evaluate/example-assets/images/V1_01.png",
+      "bytes": 1574258,
+      "sha256": "935e93517fed68635f57b86dcd6c2aef81635de0a76e227e1d50bd9ba827a16f",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "demos/human/evaluate/example-assets/images/V1_02.png",
+      "bytes": 1646804,
+      "sha256": "b21f26bd39a6c07e5da9e008fba562cae4f26caf1be752ffeb02a0d4c225f6a3",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "demos/human/evaluate/example-assets/images/V2_01.png",
+      "bytes": 1572493,
+      "sha256": "c51855d277381ef2a0371b40941fe7e6631c172b7024160df9beda162f024280",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "demos/human/evaluate/example-assets/images/V2_02.png",
+      "bytes": 1615088,
+      "sha256": "d53d87f24ea5ac751688341f527fcc0922f47e35982fd1ba4c825999b1fe3051",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "demos/human/evaluate/example-assets/images/V2_03.png",
+      "bytes": 1654949,
+      "sha256": "f2115183fed11d2874ee656f06c9de6a9df55e92856b63a830b63a4cb1b3f52d",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "demos/human/evaluate/example-assets/images/V3_01.png",
+      "bytes": 1742623,
+      "sha256": "f751d27421f2d7329e6d4f740603e84d95dd95a0adc3ebcba55a23719200057e",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "demos/human/evaluate/example-assets/images/V4_01.png",
+      "bytes": 1552819,
+      "sha256": "0d19cbc633d2091c37fb16b11c63284297c799dc6655facbf51312786eb1da65",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "demos/human/evaluate/example-assets/images/V4_02.png",
+      "bytes": 1557133,
+      "sha256": "8bc949b693127f0fa60578ea28514b99391d5b0772d5a22f42b400105999bcb1",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "demos/human/explore/example-assets/images/C1_01.png",
+      "bytes": 2084624,
+      "sha256": "c1508e78345320482bddf379fc78b70a8ee92c36ddd3a76dd80326b28b1c83fc",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "demos/human/explore/example-assets/images/C1_02.png",
+      "bytes": 2026322,
+      "sha256": "a415d6fcfcc52aad59514270d8d34e97eec8272cef488dc67074355b2757f309",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "demos/human/explore/example-assets/images/C1_03.png",
+      "bytes": 2139535,
+      "sha256": "b1c0250b02585284ebae1e7fd5a642c08b7d500a8bf6d4ac17b18b85f89e6ea0",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "demos/human/explore/example-assets/images/C2_01.png",
+      "bytes": 2215151,
+      "sha256": "1b731a38a3200df8d6134a4695e76492aaafd74db2b5cfddaa25f58b89be53e2",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "demos/human/explore/example-assets/images/C2_02.png",
+      "bytes": 2356819,
+      "sha256": "b7eab5046e557994c014da4833efd0e958051fb57c6b80a19116910f3e811d1c",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "demos/human/explore/example-assets/images/C3_01.png",
+      "bytes": 1581769,
+      "sha256": "ad8b3d6f3602f69e2dddda05fa59994adb1a75d03ad35216fdc32adde0a1bfc8",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "demos/human/explore/example-assets/images/C3_02.png",
+      "bytes": 1590615,
+      "sha256": "a79c9c6a8ce99e5e57455aa2c73d5233517baa9c5df11058087d372a31f9fa7b",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "demos/human/explore/example-assets/images/C3_03.png",
+      "bytes": 1578482,
+      "sha256": "fdaf902f13ad23f9dfc8d4cbecad2b305228a59ca890da413efedc3a3eb8b62c",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "demos/human/explore/example-assets/images/G1_01.png",
+      "bytes": 1664343,
+      "sha256": "0c6a2a0617f16bde0eaa69b27f1a53de9a86bb24074f84a758ec54264cd8089c",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "demos/human/explore/example-assets/images/G2_01.png",
+      "bytes": 1645158,
+      "sha256": "5d4076cb82c568250d461137daef0c6eb77a1ec0a07c18dc1b80522462bdc6e8",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "demos/human/explore/example-assets/images/G2_02.png",
+      "bytes": 1646451,
+      "sha256": "8370b83332a39e2733fbcd02106bf55f64cde5e00db156bf984b6770bff90e5e",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "demos/human/explore/example-assets/images/G3_01.png",
+      "bytes": 1698213,
+      "sha256": "4c2d0a9399556c9029e6ce8afcad6cc22cd7221d0ae7b3a1a754dfccf31e6771",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "demos/human/explore/example-assets/images/G3_02.png",
+      "bytes": 1614930,
+      "sha256": "53e4000655eb922e6a7f97e540de3382569cbe69a95460c84b5576d336c75318",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "demos/human/explore/example-assets/images/S2_01.png",
+      "bytes": 2388880,
+      "sha256": "7b64483aa909b621462e85646c8db6f5e8828d5205efb734e9eaa02005515f56",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "demos/human/explore/example-assets/images/S3_01.png",
+      "bytes": 2198540,
+      "sha256": "a25764203d2edce99049b05408b29bedb70e48c101c20094b3872380454358b8",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "demos/human/explore/example-assets/images/T1_01.png",
+      "bytes": 2633954,
+      "sha256": "aae6d341ce2151c2e15d3d509ae6fdfb35fb35868d2aac542ef2b6e69707a534",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "demos/human/explore/example-assets/images/T1_02.png",
+      "bytes": 2664567,
+      "sha256": "144173dc2935f2852c114ebe6bb07efc20d67e1825691fee62fc6a2b4c76ff92",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "demos/human/explore/example-assets/images/T2_01.png",
+      "bytes": 2797735,
+      "sha256": "1afbe3b49752d569f17860407b80fc6bf00f7b1b93af3af635d553a7797c0071",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "demos/human/explore/example-assets/images/T2_02.png",
+      "bytes": 2709637,
+      "sha256": "8aadb9c921f2b2b0ddea6c1a8f67f421fdc7dbd6d59e3dd8a7ff62fe5b64da89",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "demos/human/explore/example-assets/images/T3_01.png",
+      "bytes": 1396766,
+      "sha256": "22cb620999dbbd5c5d6866a10009bbb30a0c7fdc6444d1bd47a31582d8a7cdf2",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "demos/human/explore/example-assets/images/T3_02.png",
+      "bytes": 1273410,
+      "sha256": "90e2c39956efa089023a0784ec7c66789569dbb090227d08475a2f26da8fe9b3",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "demos/human/explore/example-assets/images/V1_01.png",
+      "bytes": 1574258,
+      "sha256": "935e93517fed68635f57b86dcd6c2aef81635de0a76e227e1d50bd9ba827a16f",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "demos/human/explore/example-assets/images/V1_02.png",
+      "bytes": 1646804,
+      "sha256": "b21f26bd39a6c07e5da9e008fba562cae4f26caf1be752ffeb02a0d4c225f6a3",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "demos/human/explore/example-assets/images/V2_01.png",
+      "bytes": 1572493,
+      "sha256": "c51855d277381ef2a0371b40941fe7e6631c172b7024160df9beda162f024280",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "demos/human/explore/example-assets/images/V2_02.png",
+      "bytes": 1615088,
+      "sha256": "d53d87f24ea5ac751688341f527fcc0922f47e35982fd1ba4c825999b1fe3051",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "demos/human/explore/example-assets/images/V2_03.png",
+      "bytes": 1654949,
+      "sha256": "f2115183fed11d2874ee656f06c9de6a9df55e92856b63a830b63a4cb1b3f52d",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "demos/human/explore/example-assets/images/V3_01.png",
+      "bytes": 1742623,
+      "sha256": "f751d27421f2d7329e6d4f740603e84d95dd95a0adc3ebcba55a23719200057e",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "demos/human/explore/example-assets/images/V4_01.png",
+      "bytes": 1552819,
+      "sha256": "0d19cbc633d2091c37fb16b11c63284297c799dc6655facbf51312786eb1da65",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "demos/human/explore/example-assets/images/V4_02.png",
+      "bytes": 1557133,
+      "sha256": "8bc949b693127f0fa60578ea28514b99391d5b0772d5a22f42b400105999bcb1",
+      "status": "available",
+      "group": "icl-examples"
+    },
+    {
+      "path": "out/runtime/threejs-builds/00_sponza_constrained.html",
+      "bytes": 70843335,
+      "sha256": "53b81a10954b43b49187c82eefcc288edc547a34768f8b50f1edc22a66fb2e46",
+      "status": "available",
+      "group": "threejs-builds",
+      "source_release": "envs-2026-09-16c",
+      "previous_restore_path": "out/native-agents/browser-release/00_sponza_constrained.html"
+    },
+    {
+      "path": "out/runtime/threejs-builds/01_mistwood_cottage_constrained.html",
+      "bytes": 33546731,
+      "sha256": "03905f31914bc72538ee5a1278c4c592b69cfc9f7967965cd02ef8796d02afe5",
+      "status": "available",
+      "group": "threejs-builds",
+      "source_release": "envs-2026-09-16c",
+      "previous_restore_path": "out/native-agents/browser-release/01_mistwood_cottage_constrained.html"
+    },
+    {
+      "path": "out/runtime/threejs-builds/03_sketchbook_airfield_constrained.html",
+      "bytes": 58145278,
+      "sha256": "28d9307e103c505e6cad4c56f90e0694878aba80426747f3b19389af20694db1",
+      "status": "available",
+      "group": "threejs-builds",
+      "source_release": "envs-2026-09-16c",
+      "previous_restore_path": "out/native-agents/browser-release/03_sketchbook_airfield_constrained.html"
+    },
+    {
+      "path": "out/runtime/threejs-builds/09_sims_house_builder_constrained.html",
+      "bytes": 26669989,
+      "sha256": "060a64d55ed9b23f6730a028f7db490da34a9727506883c6b2f6b2d25bfcb89b",
+      "status": "available",
+      "group": "threejs-builds",
+      "source_release": "envs-2026-09-16c",
+      "previous_restore_path": "out/native-agents/browser-release/09_sims_house_builder_constrained.html"
+    },
+    {
+      "path": "out/runtime/threejs-builds/10_beautiful_water_clean_constrained.html",
+      "bytes": 11739030,
+      "sha256": "ecc243d6f32b3166c23604c7516d23b97abfe5c97e85c3e3ab7e23f102ea67df",
+      "status": "available",
+      "group": "threejs-builds",
+      "source_release": "envs-2026-09-16c",
+      "previous_restore_path": "out/native-agents/browser-release/10_beautiful_water_clean_constrained.html"
+    },
+    {
+      "path": "out/runtime/threejs-builds/13_beyond_fable_wilderness_constrained.html",
+      "bytes": 5795912,
+      "sha256": "a889c2b6605b26781dae2bc0bc1cf51b37d2042f56a0c9323c6597fbf92bea0f",
+      "status": "available",
+      "group": "threejs-builds",
+      "source_release": "envs-2026-09-16c",
+      "previous_restore_path": "out/native-agents/browser-release/13_beyond_fable_wilderness_constrained.html"
+    },
+    {
+      "group": "unreal-editor-assets",
+      "status": "not-distributed",
+      "archive_sha256": null,
+      "bytes": null,
+      "reason": "Editable third-party scene assets are outside the runtime release scope."
+    },
+    {
+      "group": "open-p2p-1200m-weights",
+      "status": "pending",
+      "archive_sha256": null,
+      "bytes": null
+    },
+    {
+      "group": "vla-recordings",
+      "status": "pending",
+      "archive_sha256": null,
+      "bytes": null
+    },
+    {
+      "group": "frozen-ablation-inputs",
+      "status": "pending",
+      "archive_sha256": null,
+      "bytes": null
+    },
+    {
+      "group": "unreal-runtime",
+      "status": "available",
+      "package_id": "ancient",
+      "source_binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/ancient-74e7762ddff9/Linux/AncientChineseCity/Binaries/Linux/AncientChineseCity",
+      "binary_sha256": "6f26bd852961369058e1fb048ad26159f491740c5394ec9e530719032c3d25d1",
+      "archive_sha256": "c49330d148fcdda8cbf8b166521c0d4a4b86cd1ce9ff962046c2c7657f23384a",
+      "bytes": 2194487103
+    },
+    {
+      "group": "unreal-runtime",
+      "status": "available",
+      "package_id": "concourse",
+      "source_binary": "/home/ec2-user/unreal-review-releases/concourse-cleanup-20260918/package-v2/Linux/Subway/Binaries/Linux/Subway",
+      "binary_sha256": "ffa7b3efdc7e4a03d8e97bb3c3b6c2f5a5d592b3e2188463567bb3b4a72d44f8",
+      "archive_sha256": "7b545bc6db791735b88d49376a7d8fa63c2fa01971c0c1e35b6cb7bf20c350ca",
+      "bytes": 809202178
+    },
+    {
+      "group": "unreal-runtime",
+      "status": "available",
+      "package_id": "industrial",
+      "source_binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/industrial-90f7e645b0df/Linux/FactoryEnvironmentCollect/Binaries/Linux/FactoryEnvironmentCollect",
+      "binary_sha256": "6aaf25aa9350624835ceca8ee7eccd79a8a2b4e253d424b1e46f2b168b7baa87",
+      "archive_sha256": "969b74553bae8b71290b391ca39c3e3f859cd252493655a894d069bf5692cf78",
+      "bytes": 1915017817
+    },
+    {
+      "group": "unreal-runtime",
+      "status": "available",
+      "package_id": "rural",
+      "source_binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/rural-f8c406483da2/Linux/RuralAustralia/Binaries/Linux/RuralAustralia",
+      "binary_sha256": "ab452c63fd4e5b1a13f93e6516d04fe6bf682617b942fbee3152f41b8e40957e",
+      "archive_sha256": "bbda928cd50c360e76ee2fc4439337b9c4c8eee858719fb579d9880875c4aa4f",
+      "bytes": 1578633371
+    },
+    {
+      "group": "unreal-runtime",
+      "status": "available",
+      "package_id": "subway",
+      "source_binary": "/home/ec2-user/unreal-review-releases/exploration-v2-preview-20260917/packages/subway-b63b15524674/Linux/Subway/Binaries/Linux/Subway",
+      "binary_sha256": "cc7b5a1be4916d343ba3b05448a4714a205103c157cd2e360414a9ff89b130ca",
+      "archive_sha256": "30a1db058760442abb865b1111d7078014e635c07f24435089be703dd5907f4b",
+      "bytes": 808834834
+    },
+    {
+      "group": "unreal-runtime",
+      "status": "available",
+      "package_id": "medieval",
+      "source_binary": "/home/ec2-user/unreal-review-releases/exploration-v2-medieval-20260917/package-092c5babf747/Linux/MedievalVillage/Binaries/Linux/MedievalVillage",
+      "binary_sha256": "166acf2fcb8c8179de9913f53086fa8998d36eda77309ff962206b3c932e7efa",
+      "archive_sha256": "fc99f462d3b9cdbabd601801869c9663cf29aaa5b0ab01b0c4e336f3963e37ee",
+      "bytes": 2044660315
+    },
+    {
+      "group": "unreal-runtime",
+      "status": "available",
+      "package_id": "indoor",
+      "source_binary": "/home/ec2-user/unreal-review-releases/unreal-area-3x-20260918/package/Linux/AtmosphericResidentialHou/Binaries/Linux/AtmosphericResidentialHou",
+      "binary_sha256": "09fa7b331005394cd71d087bf4c8374781c1c067ddea5ed4de052d11077dbf9b",
+      "archive_sha256": "8c9eff9993a644491809dc612e49dd2630de5da7d1ee89b54261fc052c80b359",
+      "bytes": 1980984614
+    },
+    {
+      "group": "unreal-runtime",
+      "status": "available",
+      "package_id": "urban",
+      "source_binaries": [
+        "/home/ec2-user/unreal-urban-ipc-20260919/packages/urban-0bcf6af8a87a/Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
+        "/home/ec2-user/unreal-urban-ipc-20260919/packages/urban-c6f314070433/Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
+        "/home/ec2-user/unreal-urban-ipc-20260919/packages/urban-e63d0c3c26bd/Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
+        "/home/ec2-user/unreal-urban-ipc-20260919/packages/urban-ec94cce5d64b/Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2"
+      ],
+      "binary_sha256": "142b172a2886d116e3777108cfa1cfbc90d2a47ef3183fa0077156434c346f28",
+      "archive_sha256": "fae9adcd012cb29777f57ac7f1a13908c1c3ed7819e1e582973e439faa95f2ca",
+      "bytes": 3377912168
+    }
+  ],
+  "installer_manifest": "data/resources/releases.json"
+}

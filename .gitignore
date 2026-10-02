@@ -7,9 +7,9 @@ __pycache__/
 .DS_Store
 threejs_environment_starters.zip
 
-# built single-file environments and their v1 originals are distributed out-of-band (see candidate_environments/BUILDS.md)
-candidate_environments/*.html
-candidate_environments/src/*/orig_v1_*.bak
+# built single-file environments and their v1 originals are distributed out-of-band (see environments/threejs/scenes/BUILDS.md)
+environments/threejs/scenes/*.html
+environments/threejs/scenes/src/*/orig_v1_*.bak
 # per-case reef catalogue PNGs (the stitched catalog.jpg is kept)
 reports/water-suite/catalog/
 
@@ -40,6 +40,6 @@ DerivedDataCache/
 Saved/
 *.tar.gz
 *.zip
-examples/icl/images/
+data/examples/icl/images/
 output/
-services/*/example-assets/images/
+demos/human/*/example-assets/images/

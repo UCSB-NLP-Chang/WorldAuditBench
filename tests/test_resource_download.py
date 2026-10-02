@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 spec = importlib.util.spec_from_file_location('download_resources', ROOT / 'scripts/download_resources.py')
 release = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(release)
-from auditor.unreal_launch import without_hud
+from environments.unreal_launch import without_hud
 
 class RuntimeReleaseTests(unittest.TestCase):
     def test_hud_disabled_after_merging_console_commands(self):
@@ -27,10 +27,10 @@ class RuntimeReleaseTests(unittest.TestCase):
         self.assertEqual(without_hud(result), result)
 
     def test_every_unreal_task_uses_expanded_frozen_policy(self):
-        profiles = json.loads((ROOT/'benchmark/profiles/ue-aws-profiles-20260918.json').read_text())
+        profiles = json.loads((ROOT/'data/benchmark/profiles/ue-aws-profiles-20260918.json').read_text())
         policies = {release.digest(p): json.loads(p.read_text())
-                    for p in (ROOT/'benchmark/policies').glob('*/policy.json')}
-        for task in (ROOT/'benchmark/splits/unreal.txt').read_text().splitlines():
+                    for p in (ROOT/'data/benchmark/policies').glob('*/policy.json')}
+        for task in (ROOT/'data/benchmark/splits/unreal.txt').read_text().splitlines():
             profile = profiles['tasks'][task]
             checksum = profiles['policies'][profile['policy_version']]['sha256']
             policy = policies[checksum]
@@ -123,10 +123,10 @@ class RuntimeReleaseTests(unittest.TestCase):
                 release.extract(root/'test.tar.gz', root/'output')
 
     def test_release_matches_all_experiment_builds(self):
-        manifest=json.loads((ROOT/'resources/releases.json').read_text())
-        profiles=json.loads((ROOT/'benchmark/profiles/ue-aws-profiles-20260918.json').read_text())['tasks']
-        profiles.update(json.loads((ROOT/'benchmark/profiles/ue-urban-ipc-profiles-20260920.json').read_text())['tasks'])
-        assigned=set((ROOT/'benchmark/splits/unreal.txt').read_text().splitlines())
+        manifest=json.loads((ROOT/'data/resources/releases.json').read_text())
+        profiles=json.loads((ROOT/'data/benchmark/profiles/ue-aws-profiles-20260918.json').read_text())['tasks']
+        profiles.update(json.loads((ROOT/'data/benchmark/profiles/ue-urban-ipc-profiles-20260920.json').read_text())['tasks'])
+        assigned=set((ROOT/'data/benchmark/splits/unreal.txt').read_text().splitlines())
         seen=[]
         for package in manifest['packages']:
             if package['group']!='unreal-runtime':continue

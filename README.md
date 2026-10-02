@@ -77,14 +77,14 @@ python -m pip install -r requirements.txt
 
 ### 2. Explore the evaluation set
 
-The [Hugging Face dataset](https://huggingface.co/datasets/ziyjiang/WorldAuditBench) contains one row per task: inputs, categories, rubrics and maps. Shared in-context examples are stored once in `examples/`.
+The [Hugging Face dataset](https://huggingface.co/datasets/ziyjiang/WorldAuditBench) contains one row per task: inputs, categories, rubrics and maps. In-context examples are included in the dataset.
 
 ```bash
 python scripts/download_dataset.py
 ```
 
 ```python
-from auditor.task_dataset import load_task
+from data.tasks import load_task
 
 task = load_task("S01")
 print(task["input"])
@@ -98,8 +98,8 @@ See [Task data](docs/task-data.md) for the schema.
 The paper's VLM auditors run through native model clients and a shared MCP tool interface. Prepare their Python runtime:
 
 ```bash
-python scripts/native-agents/setup.py
-python scripts/native-agents/launch.py --help
+python agent/vlm/native/setup.py
+python agent/vlm/native/launch.py --help
 ```
 
 Install and authenticate the native client you plan to use: Codex, Claude Code, Gemini CLI, OpenCode, or Qwen Code. See the [native-agent guide](docs/native-agent-mcp.md) for configuration and the [reproduction guide](docs/reproduction.md) for exact model and reasoning settings.
@@ -114,7 +114,7 @@ python scripts/serve_unreal.py --task S03 --gpu 0 --port 19100
 In a second terminal, run an auditing episode:
 
 ```bash
-python scripts/native-agents/launch.py gemini \
+python agent/vlm/native/launch.py gemini \
   --environment unreal-http --env-url http://127.0.0.1:19100 \
   --task S03 --model gemini-3.8-flash --gemini-thinking medium \
   --max-actions 40 --max-tool-calls 400 --require-full-budget \
@@ -129,11 +129,11 @@ Agents submit anomaly reports with supporting visual evidence. The judge evaluat
 
 | Workflow | Code / documentation |
 | --- | --- |
-| Interactive VLM auditing | [`scripts/native-agents/launch.py`](scripts/native-agents/launch.py) · [MCP tools](docs/native-agent-mcp.md) |
-| VLA exploration | [`harness/vla_ue.py`](harness/vla_ue.py) · [`harness/vla_explore.py`](harness/vla_explore.py) |
-| Analysis of VLA trajectories | [`scripts/native-agents/run_vla_replay.py`](scripts/native-agents/run_vla_replay.py) |
-| Report judging | [`eval/judge.py`](eval/judge.py) · [Judge protocol](docs/binary-judge.md) |
-| Ablation experiments | [`experiments/ablations/`](experiments/ablations/) · [Protocol settings](docs/reproduction.md#ablations) |
+| Interactive VLM auditing | [`agent/vlm/native/launch.py`](agent/vlm/native/launch.py) · [MCP tools](docs/native-agent-mcp.md) |
+| VLA exploration | [`agent/vla/vla_ue.py`](agent/vla/vla_ue.py) · [`agent/vla/vla_explore.py`](agent/vla/vla_explore.py) |
+| Analysis of VLA trajectories | [`agent/vla/replay.py`](agent/vla/replay.py) |
+| Report judging | [`judge/judge.py`](judge/judge.py) · [Judge protocol](docs/binary-judge.md) |
+| Ablation experiments | [`scripts/experiments/ablations/`](scripts/experiments/ablations) · [Protocol settings](docs/reproduction.md#ablations) |
 
 ## Resources
 
@@ -146,24 +146,19 @@ Agents submit anomaly reports with supporting visual evidence. The judge evaluat
 
 ## Repository structure
 
-Start with the [documentation](docs/README.md) and [script entry points](scripts/README.md).
-The [repository map](docs/repository-layout.md) explains how the components fit together.
-
 ```text
-benchmark/              Task definitions, scene descriptions, and evaluation splits
-examples/icl/           In-context demonstrations and evaluation exclusions
-scripts/native-agents/  Native model clients and experiment launchers
-auditor/mcp_agent/      Shared auditing tools and environment connections
-agent/                  Tool-calling VLM agent and evidence memory
-harness/                VLA exploration and environment runners
-eval/                   Report judges and evaluation utilities
-candidate_environments/ Three.js environment source
-env/                    Browser runtime and anomaly configurations
-unreal/                 Unreal source, plugins, and runtime policies
-experiments/ablations/   Ablation implementations
-services/               Human exploration, review, and evaluation interfaces
-resources/              Pinned runtime downloads and resource manifests
-docs/                   Setup, protocols, and resource documentation
+agent/
+  vlm/                 VLM agents and tools
+  vla/                 VLA exploration and trajectory analysis
+judge/                 Report scoring
+scripts/
+  experiments/         Batch runs and ablations
+  tools/               Environment utilities
+environments/          Unreal and Three.js integration
+data/                  Task definitions and download manifests
+demos/                 Interactive demo and human evaluation
+docs/                  Usage guides
+tests/                 Automated tests
 ```
 
 ### Development checks

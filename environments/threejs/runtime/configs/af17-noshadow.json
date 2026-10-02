@@ -1,0 +1,30 @@
+{
+ "page": "environments/threejs/scenes/03_sketchbook_airfield_constrained.html",
+ "spawn": {
+  "pos": [
+   0.0,
+   15.4,
+   -14.0
+  ],
+  "yawDeg": 0
+ },
+ "targets": {
+  "zone_far": [
+   0.0,
+   14.8,
+   -33.0
+  ]
+ },
+ "bounds": {
+  "minX": -20,
+  "maxX": 20,
+  "minZ": -36,
+  "maxZ": 38
+ },
+ "name": "af17-noshadow",
+ "bug": "af17-noshadow",
+ "meta": {
+  "title": "af17-noshadow",
+  "desc": "the street lamp east of the start (by the east end of the north barrier row) casts NO shadow on the tarmac at all, while the matching lamp on the west side of the strip and every other prop cast long shadows"
+ }
+}

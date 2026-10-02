@@ -1,5 +1,5 @@
 #!/bin/bash
-# vLLM serving for the tool-calling agent harness (agent/): tool calling + prompt-token details +
+# vLLM serving for the tool-calling agent harness (agent/vlm/): tool calling + prompt-token details +
 # multimodal prefix caching sized for 64k-token image-heavy contexts.
 # Usage: bash scripts/serve_model_tools.sh <qwen8b|qwen30b|qwen32b> [GPU list, e.g. 3,4]
 # Env: PORT (default 8010), MAX_LEN (default 98304), MM_CACHE_GB (default 16), PARALLEL_EPISODES (info only)

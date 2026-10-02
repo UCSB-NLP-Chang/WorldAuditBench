@@ -4,8 +4,8 @@ Two starters use the same `world_audit` stdio MCP server:
 
 | Starter | Native agent client | Exact default model | Authentication |
 |---|---|---|---|
-| `scripts/native-agents/start_gpt6.sh` | Codex CLI | `gpt-6-astra` | Existing ChatGPT login; API fallback disabled |
-| `scripts/native-agents/start_gemini.sh` | Gemini CLI | `gemini-3.8-flash` | Google login by default; explicit Gemini API-key option available |
+| `agent/vlm/native/start_gpt6.sh` | Codex CLI | `gpt-6-astra` | Existing ChatGPT login; API fallback disabled |
+| `agent/vlm/native/start_gemini.sh` | Gemini CLI | `gemini-3.8-flash` | Google login by default; explicit Gemini API-key option available |
 | `launch.py claude ...` | Claude Code (`claude -p`, strict MCP config, built-in tools off, Stop hook = completion guard) | `claude-opus-5` | Existing claude.ai login; API key removed from the child environment |
 | `launch.py qwen ...` | Qwen Code (`qwen --auth-type openai`, OpenAI-compatible endpoint from `--qwen-base-url`, built-in tools off, Stop hook) | `qwen3.8-flash` | API key file (`--qwen-api-key-file`), Token Plan endpoint by default |
 | `launch.py opencode ...` | OpenCode (`opencode run --format json --pure --auto`, private `opencode.json`: OpenRouter provider, only the world_audit MCP server, built-in tools off) | `openrouter/meta/muse-spark-1.3-contributor` | `OPENROUTER_API_KEY` from `--opencode-api-key-file`; never written to disk |
@@ -22,7 +22,7 @@ reasoning and compaction; this evaluates model + native harness.
 From the repository root:
 
 ```sh
-python3 scripts/native-agents/setup.py
+python3 agent/vlm/native/setup.py
 codex login status
 gemini
 ```
@@ -36,13 +36,13 @@ Codex shell, image-file, web and delegation tools are disabled; its remaining na
 bookkeeping is client-managed. The task prompt requires all environment access via MCP.
 
 The setup installs a local Python environment. Shared `Dispatcher`, `FrameArchive`,
-`BugLedger`, `Notes`, and tool schemas are included in this repository's `agent/`
+`BugLedger`, `Notes`, and tool schemas are included in this repository's `agent/vlm/`
 package; a separate private upstream clone is no longer required. The imported
 agent Python files were checked byte-for-byte against the AWS pinned dependency.
 `upstream.json` preserves its historical source revision. Run manifests record
 the bundled code digest, and the launcher verifies every agent source file against
 `upstream.json` before running an episode.
-It does not run `agent.loop`. Installed versions are recorded in
+It does not run `agent.vlm.loop`. Installed versions are recorded in
 `out/native-agents/installed-requirements.txt`.
 
 Model names are passed verbatim. Gemini API-key access was verified in this
@@ -59,7 +59,7 @@ changes production configuration nor writes annotations to production databases.
 In terminal A:
 
 ```sh
-python3 scripts/native-agents/connect_unreal.py \
+python3 agent/vlm/native/connect_unreal.py \
   --host ec2-user@98.84.22.147 \
   --identity /path/to/a10_4.pem \
   --task S05 --gpu 2 --local-port 19100 --remote-port 49100
@@ -83,12 +83,12 @@ loopback and is reached through SSH; no new public firewall rule or TURN is need
 When it prints `Ready`, use terminal B for **one** of:
 
 ```sh
-bash scripts/native-agents/start_gpt6.sh \
+bash agent/vlm/native/start_gpt6.sh \
   --environment unreal-http --env-url http://127.0.0.1:19100 \
   --task S05 --max-actions 40 --observation on-demand --allow-icl-overlap
 
 # Run this only after stopping/restarting terminal A for a fresh S05 episode:
-bash scripts/native-agents/start_gemini.sh \
+bash agent/vlm/native/start_gemini.sh \
   --environment unreal-http --env-url http://127.0.0.1:19100 \
   --task S05 --max-actions 40 --observation on-demand --allow-icl-overlap
 ```
@@ -122,7 +122,7 @@ This is not a claim that every task/build has been tested with the agent interfa
 
 `read_example` and `observe` are the added demonstration/lifecycle tools; it starts only the operator-assigned
 task. Models cannot reset into another task, read rubrics or list private ground truth.
-Discovery (`tools/list`) never starts a game. Every run exports `episode/tools.json`
+Discovery (`scripts/tools/list`) never starts a game. Every run exports `episode/tools.json`
 and its hash, allowing the two clients' exact schemas to be compared.
 
 - Default **40 environment actions**; enforced in MCP, independent of the client.
@@ -163,7 +163,7 @@ The initial user prompt includes an `Environment description` section before the
 MCP workflow instructions. `observe` also returns it alongside notes and the bug
 ledger, so it remains retrievable after native context compaction.
 
-`scripts/native-agents/task-scenes.json` contains a snapshot of the public AWS review
+`agent/vlm/native/task-scenes.json` contains a snapshot of the public AWS review
 page's scene descriptions, with `task.scene_i18n` as its fallback. It covers all 250
 catalog tasks and their case aliases. Only scene setting, public object/context text
 and normal interactions are copied; task bug descriptions and private rubrics are
@@ -188,7 +188,7 @@ a G1 task gets only the G1 example. The library contains 15 examples / 29 images
 but the other examples are not copied into that run or exposed through MCP.
 
 The launcher resolves the task's subcategory from
-`scripts/native-agents/task-subcategories.json`, a snapshot of AWS task IDs,
+`agent/vlm/native/task-subcategories.json`, a snapshot of AWS task IDs,
 case aliases and subcategory labels. No rubrics, bug locations or task answers are
 included in this map. Known task labels must agree with any explicit override.
 For new tasks, supply `--subcategory C3` or `--task-catalog /path/to/map.json`.
@@ -228,9 +228,9 @@ these are separate from scene frames and cannot be used as current bug evidence.
 Examples (configuration only, no model or game started):
 
 ```sh
-bash scripts/native-agents/start_gpt6.sh --environment fake --task smoke --subcategory C3 --dry-run
-bash scripts/native-agents/start_gemini.sh --environment fake --task smoke --subcategory C3 --dry-run
-bash scripts/native-agents/start_gpt6.sh --environment fake --task smoke --no-icl --dry-run
+bash agent/vlm/native/start_gpt6.sh --environment fake --task smoke --subcategory C3 --dry-run
+bash agent/vlm/native/start_gemini.sh --environment fake --task smoke --subcategory C3 --dry-run
+bash agent/vlm/native/start_gpt6.sh --environment fake --task smoke --no-icl --dry-run
 ```
 
 ## Preparation and smoke tests
@@ -238,14 +238,14 @@ bash scripts/native-agents/start_gpt6.sh --environment fake --task smoke --no-ic
 Write all configs without starting a model/game:
 
 ```sh
-bash scripts/native-agents/start_gpt6.sh --environment fake --task smoke --subcategory C3 --dry-run
-bash scripts/native-agents/start_gemini.sh --environment fake --task smoke --subcategory C3 --dry-run
+bash agent/vlm/native/start_gpt6.sh --environment fake --task smoke --subcategory C3 --dry-run
+bash agent/vlm/native/start_gemini.sh --environment fake --task smoke --subcategory C3 --dry-run
 ```
 
 Explicit synthetic model smoke test (not a benchmark result):
 
 ```sh
-bash scripts/native-agents/start_gpt6.sh --environment fake --task smoke --subcategory C3 \
+bash agent/vlm/native/start_gpt6.sh --environment fake --task smoke --subcategory C3 \
   --max-actions 2 --max-tool-calls 20 \
   --instruction 'Synthetic transport test: observe, wait 0.5 seconds, inspect a0 and a1, then done. Do not flag bugs.'
 ```
@@ -295,8 +295,8 @@ and the requested level is recorded in `launch.json`. ICL is enabled by default 
 
 The VLA arm's audit stage runs the SAME native client, prompt, ICL example, observation mode, action budget, tool
 budget and judge as the embodied batches, on a recording of the Open-P2P explorer (`runs/<tag>/<TASK>/` from
-`harness/vla_ue.py` or `harness/vla_explore.py`: `meta.json`, `poses.jsonl`, one frame every 0.5 s; frames can be
-restored from `video.mp4` with `tools/vla_frames_from_video.py`).  The adapter is `auditor/mcp_agent/replay.py`.
+`agent/vla/vla_ue.py` or `agent/vla/vla_explore.py`: `meta.json`, `poses.jsonl`, one frame every 0.5 s; frames can be
+restored from `video.mp4` with `scripts/tools/vla_frames_from_video.py`).  The adapter is `agent/vlm/mcp/replay.py`.
 
 | Embodied episode | Recording episode |
 |---|---|
@@ -332,13 +332,13 @@ sentences with review sentences (`Episode.replay_instructions`).  Evidence refs 
 input rule of the embodied batches applies unchanged.
 
 ```sh
-out/native-agents/venv/bin/python scripts/native-agents/run_vla_replay.py --recordings runs/vla-ue-v1 \
+out/native-agents/venv/bin/python agent/vla/replay.py --recordings runs/vla-ue-v1 \
   --batch out/native-agents/batches/<name> --tasks A05,I13 --key-file <gemini api key file> \
   --cli <gemini cli> --node-bin <node bin dir> --workers 4 [--stage agent|judge|all] [--resume] [--dry-run]
 ```
 
 The runner writes `cases/<ID>/run/` (a normal launcher run directory), then grades each completed episode with
-`eval.judge` (gpt-6-astra, medium; rubric = the task's `rubrics_i18n.en` from the mirrored AWS catalog, model output =
+`judge.judge` (gpt-6-astra, medium; rubric = the task's `rubrics_i18n.en` from the mirrored AWS catalog, model output =
 final ledger + done summary, images = the ledger's evidence frames in chronological order, else the first and last
 view) into `cases/<ID>/judge.json`, and summarises `results.json` / `results.md`.  Tasks missing from the public
 subcategory catalog (S22) take the catalog entry's subcategory and the public scene text of their map.  Protocol tests:
@@ -447,7 +447,7 @@ requiring the report server. Correct task execution and target recall are separa
 `completed` means MCP `done`; Found/Missed requires independent rubric grading.
 
 The checked-in ICL metadata contains `context.json` and `exclude_from_eval.json`
-under `examples/icl/`. The 29 referenced images are pending Hugging Face release
-and must be restored under `examples/icl/images/` before running with ICL. See
+under `data/examples/icl/`. The 29 referenced images are pending Hugging Face release
+and must be restored under `data/examples/icl/images/` before running with ICL. See
 [resource details](resources.md). Private review metadata, credentials, generated
 run directories and provider logs are excluded from this code snapshot.

@@ -53,7 +53,7 @@ original horizontal area. Stop the server and start a fresh one for each episode
 In another terminal, connect an authenticated native model client:
 
 ```bash
-python scripts/native-agents/launch.py gemini \
+python agent/vlm/native/launch.py gemini \
   --environment unreal-http --env-url http://127.0.0.1:19100 \
   --task H01 --model gemini-3.8-flash --gemini-thinking medium \
   --max-actions 40 --max-tool-calls 400 --require-full-budget \
@@ -70,7 +70,7 @@ The IPC-fixed experiment executables and cooked files are preserved byte for byt
 ```bash
 python scripts/download_dataset.py
 python scripts/download_resources.py --package threejs-airfield
-python scripts/native-agents/launch.py gemini \
+python agent/vlm/native/launch.py gemini \
   --environment threejs --task JS_AF01 --seed 5 \
   --browser-config out/runtime/browser-profiles/JS_AF01.json \
   --model gemini-3.8-flash --gemini-thinking medium \
@@ -104,7 +104,7 @@ that every native scene defect has been removed.
 | Open-P2P 1.2B weights | Use upstream distribution and license; setup guide pending |
 | Original VLA recordings and frozen ablation inputs | Pending |
 
-`resources/releases.json` is the installer manifest. `resources/manifest.json`
+`data/resources/releases.json` is the installer manifest. `data/resources/manifest.json`
 retains the per-file identities and remaining optional resources. Model access,
 VLA checkpoint setup and unpublished original experiment outputs are separate
 from installing the runnable environments. Third-party terms and attribution

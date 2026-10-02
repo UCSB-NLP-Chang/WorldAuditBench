@@ -2,8 +2,8 @@ import json
 import subprocess
 from pathlib import Path
 
-from eval.codex_metrics import usage_from_events
-from eval import judge
+from judge.codex_metrics import usage_from_events
+from judge import judge
 
 
 def test_sum_turns_preserves_missing_and_does_not_double_count_cache():

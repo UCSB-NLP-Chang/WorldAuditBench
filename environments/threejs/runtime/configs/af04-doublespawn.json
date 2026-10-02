@@ -1,0 +1,30 @@
+{
+ "page": "environments/threejs/scenes/03_sketchbook_airfield_constrained.html",
+ "spawn": {
+  "pos": [
+   0.0,
+   15.4,
+   -14.0
+  ],
+  "yawDeg": 0
+ },
+ "targets": {
+  "zone_far": [
+   0.0,
+   14.8,
+   -33.0
+  ]
+ },
+ "bounds": {
+  "minX": -20,
+  "maxX": 20,
+  "minZ": -36,
+  "maxZ": 38
+ },
+ "name": "af04-doublespawn",
+ "bug": "af04-doublespawn",
+ "meta": {
+  "title": "af04-doublespawn",
+  "desc": "the military crate north-east of the start is spawned twice almost on top of itself - a doubled, slightly offset copy interpenetrates it with flickering faces"
+ }
+}

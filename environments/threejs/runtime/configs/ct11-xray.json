@@ -1,0 +1,38 @@
+{
+ "page": "environments/threejs/scenes/01_mistwood_cottage_constrained.html",
+ "spawn": {
+  "pos": [
+   -0.6,
+   0.0,
+   5.0
+  ],
+  "yawDeg": 0
+ },
+ "targets": {
+  "zone_far": [
+   -8.5,
+   2.5,
+   -5.5
+  ]
+ },
+ "bounds": {
+  "minX": -12,
+  "maxX": 7.5,
+  "minZ": -10.5,
+  "maxZ": 8.5
+ },
+ "exclude": [],
+ "name": "ct11-xray",
+ "bug": "ct11-xray",
+ "meta": {
+  "title": "ct11-xray",
+  "desc": "the picture frames hanging inside the cottage show through the front wall - from outside you see them floating on the facade"
+ },
+ "view": {
+  "cam": [
+   -0.4,
+   0,
+   4.4
+  ]
+ }
+}

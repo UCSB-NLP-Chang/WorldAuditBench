@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def package(pages, metadata, output):
-    tasks = json.loads((ROOT / 'benchmark/paper-tasks.json').read_text())['tasks']
+    tasks = json.loads((ROOT / 'data/benchmark/paper-tasks.json').read_text())['tasks']
     results = []
     for directory in sorted((metadata / 'three.js').iterdir()):
         if not directory.is_dir():
@@ -29,7 +29,7 @@ def package(pages, metadata, output):
         notices = directory / 'attribution'
         notices.mkdir(exist_ok=True)
         shutil.copyfile(ROOT / 'THIRD_PARTY.md', notices / 'THIRD_PARTY.md')
-        for path in (ROOT / 'candidate_environments/src').rglob('*'):
+        for path in (ROOT / 'environments/threejs/scenes/src').rglob('*'):
             if path.is_file() and (path.name.lower().startswith(('license', 'copying', 'notice'))
                                    or path.name == 'README.md'):
                 destination = notices / path.relative_to(ROOT)

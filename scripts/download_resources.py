@@ -14,7 +14,7 @@ import urllib.request
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from auditor.unreal_launch import without_hud
+from environments.unreal_launch import without_hud
 
 
 def digest(path):
@@ -119,12 +119,12 @@ def restore(package, root, cache, local_archives=None, keep=False):
 
 
 def write_profiles(manifest, root):
-    reference = json.loads((ROOT / 'benchmark/profiles/ue-aws-profiles-20260918.json').read_text())
+    reference = json.loads((ROOT / 'data/benchmark/profiles/ue-aws-profiles-20260918.json').read_text())
     original = reference['tasks']
-    original.update(json.loads((ROOT / 'benchmark/profiles/ue-urban-ipc-profiles-20260920.json').read_text())['tasks'])
+    original.update(json.loads((ROOT / 'data/benchmark/profiles/ue-urban-ipc-profiles-20260920.json').read_text())['tasks'])
     tasks = {}
     policies = {}
-    for path in (ROOT / 'benchmark/policies').glob('*/policy.json'):
+    for path in (ROOT / 'data/benchmark/policies').glob('*/policy.json'):
         policies[digest(path)] = path.resolve()
     for package in manifest['packages']:
         if package['group'] != 'unreal-runtime' or not (root / package['id'] / '.worldauditbench-release.json').is_file():
@@ -159,7 +159,7 @@ def restore_examples(root):
         images = root / 'icl-examples/icl/images'
     if not images.is_dir():
         return
-    for entry in json.loads((ROOT / 'resources/manifest.json').read_text())['resources']:
+    for entry in json.loads((ROOT / 'data/resources/manifest.json').read_text())['resources']:
         if entry['group'] != 'icl-examples':
             continue
         source = images / Path(entry['path']).name
@@ -171,15 +171,15 @@ def restore_examples(root):
         target.parent.mkdir(parents=True, exist_ok=True)
         if not target.exists():
             shutil.copyfile(source, target)
-    print('Restored ICL images to examples/icl/images and service example directories.', flush=True)
+    print('Restored ICL images to data/examples/icl/images and service example directories.', flush=True)
 
 
 def write_browser_profiles(root, manifest=None):
-    manifest = manifest or json.loads((ROOT / 'resources/releases.json').read_text())
+    manifest = manifest or json.loads((ROOT / 'data/resources/releases.json').read_text())
     standalone = [p for p in manifest['packages'] if p['group'] == 'threejs-runtime'
                   and (root / p['id'] / '.worldauditbench-release.json').is_file()]
     if standalone:
-        catalog = {t['id']: t for t in json.loads((ROOT / 'benchmark/paper-tasks.json').read_text())['tasks']}
+        catalog = {t['id']: t for t in json.loads((ROOT / 'data/benchmark/paper-tasks.json').read_text())['tasks']}
         from urllib.parse import urlparse
         output = root / 'browser-profiles'
         output.mkdir(exist_ok=True)
@@ -205,11 +205,11 @@ def write_browser_profiles(root, manifest=None):
     if not (pages / '.worldauditbench-release.json').is_file():
         return
     from urllib.parse import urlparse
-    assigned = set((ROOT / 'benchmark/splits/threejs.txt').read_text().splitlines())
+    assigned = set((ROOT / 'data/benchmark/splits/threejs.txt').read_text().splitlines())
     output = root / 'browser-profiles'
     output.mkdir(exist_ok=True)
     checked = set()
-    for task in json.loads((ROOT / 'benchmark/tasks.json').read_text())['tasks']:
+    for task in json.loads((ROOT / 'data/benchmark/tasks.json').read_text())['tasks']:
         if task['id'] not in assigned:
             continue
         filename = Path(urlparse(task['map']).path).name
@@ -226,7 +226,7 @@ def write_browser_profiles(root, manifest=None):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--manifest', type=Path, default=ROOT / 'resources/releases.json')
+    parser.add_argument('--manifest', type=Path, default=ROOT / 'data/resources/releases.json')
     parser.add_argument('--root', type=Path, default=ROOT / 'out/runtime')
     parser.add_argument('--package', action='append', help='Select a package; repeat for multiple packages.')
     parser.add_argument('--list', action='store_true')

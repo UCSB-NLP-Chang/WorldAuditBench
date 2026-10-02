@@ -9,7 +9,7 @@ import re
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from auditor.mcp_agent.examples import ExamplePack
+from agent.vlm.mcp.examples import ExamplePack
 from export_environment_metadata import instruction
 
 
@@ -17,10 +17,10 @@ def export(destination):
     from datasets import Dataset, Features, Value
     import pyarrow.parquet as pq
 
-    tasks = json.loads((ROOT / 'benchmark/paper-tasks.json').read_text())['tasks']
-    scenes = json.loads((ROOT / 'scripts/native-agents/task-scenes.json').read_text())['scenes']
-    categories = json.loads((ROOT / 'scripts/native-agents/task-subcategories.json').read_text())['task_subcategories']
-    packs = {code: ExamplePack(ROOT / 'examples/icl', code=code)
+    tasks = json.loads((ROOT / 'data/benchmark/paper-tasks.json').read_text())['tasks']
+    scenes = json.loads((ROOT / 'agent/vlm/native/task-scenes.json').read_text())['scenes']
+    categories = json.loads((ROOT / 'agent/vlm/native/task-subcategories.json').read_text())['task_subcategories']
+    packs = {code: ExamplePack(ROOT / 'data/examples/icl', code=code)
              for code in {t['paper_subcategory'] for t in tasks}}
     rows = []
     for task in tasks:

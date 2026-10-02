@@ -19,5 +19,5 @@ jobs:
       - run: python scripts/check_release.py
       - run: python -m pytest -q -m 'not chromium and not live'
       - name: Explore service contracts
-        working-directory: services/explore
+        working-directory: demos/human/explore
         run: PYTHONPATH=. python -m unittest discover -s tests

@@ -1,0 +1,38 @@
+{
+ "page": "environments/threejs/scenes/13_beyond_fable_wilderness_constrained.html",
+ "worldSeed": 7,
+ "spawn": {
+  "pos": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "yawDeg": 0
+ },
+ "targets": {
+  "zone_far": [
+   0.0,
+   0.0,
+   -17.0
+  ]
+ },
+ "bounds": {
+  "minX": -24,
+  "maxX": 28,
+  "minZ": -20,
+  "maxZ": 15
+ },
+ "name": "wl01-float",
+ "bug": "wl01-float",
+ "meta": {
+  "title": "wl01-float",
+  "desc": "the big boulder right next to the start (turn round at the start: it is behind you, a few metres to the right) hovers about 3 m above the meadow with open air under it"
+ },
+ "view": {
+  "cam": [
+   -4.0,
+   0,
+   9.0
+  ]
+ }
+}

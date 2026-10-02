@@ -1,0 +1,38 @@
+{
+ "page": "environments/threejs/scenes/13_beyond_fable_wilderness_constrained.html",
+ "worldSeed": 7,
+ "spawn": {
+  "pos": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "yawDeg": 0
+ },
+ "targets": {
+  "zone_far": [
+   0.0,
+   0.0,
+   -17.0
+  ]
+ },
+ "bounds": {
+  "minX": -24,
+  "maxX": 28,
+  "minZ": -20,
+  "maxZ": 15
+ },
+ "name": "wl15-spawnpile",
+ "bug": "wl15-spawnpile",
+ "meta": {
+  "title": "wl15-spawnpile",
+  "desc": "nine identical small boulders are jammed into one another in one tight heap on the open grass south-west of the start, near the water (failed spawns)"
+ },
+ "view": {
+  "cam": [
+   -1.0,
+   0,
+   4.0
+  ]
+ }
+}

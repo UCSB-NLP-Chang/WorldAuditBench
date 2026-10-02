@@ -14,8 +14,8 @@ import time
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from auditor.environment_server import APIError, Environment, UnrealBackend, serve
-from auditor.unreal_launch import without_hud
+from environments.server import APIError, Environment, UnrealBackend, serve
+from environments.unreal_launch import without_hud
 
 
 class ReleasedBackend(UnrealBackend):

@@ -16,7 +16,7 @@ def write_json(path, value):
 
 
 def instruction():
-    tree = ast.parse((ROOT / 'scripts/native-agents/launch.py').read_text())
+    tree = ast.parse((ROOT / 'agent/vlm/native/launch.py').read_text())
     for node in tree.body:
         if isinstance(node, ast.Assign) and any(isinstance(t, ast.Name) and
                                                t.id == 'DEFAULT_INSTRUCTION' for t in node.targets):
@@ -25,7 +25,7 @@ def instruction():
 
 
 def export(output):
-    tasks = json.loads((ROOT / 'benchmark/paper-tasks.json').read_text())['tasks']
+    tasks = json.loads((ROOT / 'data/benchmark/paper-tasks.json').read_text())['tasks']
     groups = defaultdict(list)
     for task in tasks:
         family = task['family']

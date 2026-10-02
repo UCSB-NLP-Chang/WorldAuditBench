@@ -9,13 +9,13 @@ ablation inputs remain pending.
 
 ## Evaluation set
 
-Use `benchmark/paper-tasks.json` or the lists under `benchmark/splits/`.
+Use `data/benchmark/paper-tasks.json` or the lists under `data/benchmark/splits/`.
 The 213 assigned tasks comprise 126 Unreal and 87 Three.js cases. Counts by paper
 family are 59 static physics, 41 interactive physics, 51 spatial consistency,
 40 temporal consistency, and 22 semantic consistency.
 
-`benchmark/tasks.json` is the separate 239-entry live review catalog, including
-baselines. `services/review/tasks.json` is a 250-entry older fixture shipped with
+`data/benchmark/tasks.json` is the separate 239-entry live review catalog, including
+baselines. `demos/human/review/tasks.json` is a 250-entry older fixture shipped with
 that service. Neither is the evaluation split.
 
 `paper_subcategory` and `paper_family` are aggregation labels. JS_WT16 and JS_WT17
@@ -48,7 +48,7 @@ Install `subway` and `icl-examples` with `scripts/download_resources.py`, then r
 In another terminal:
 
 ```bash
-python scripts/native-agents/launch.py gemini \
+python agent/vlm/native/launch.py gemini \
   --environment unreal-http --env-url http://127.0.0.1:19100 \
   --task S03 --model gemini-3.8-flash --gemini-thinking medium \
   --max-actions 40 --max-tool-calls 400 --require-full-budget \
@@ -59,7 +59,7 @@ For Three.js, install `threejs-builds` and use
 `--environment threejs --task JS_AF01 --seed 5
 --browser-config out/runtime/browser-profiles/JS_AF01.json`.
 The config contains `browser_root`, `browser_page`, `browser_case`, and
-`page_sha256`, as consumed by `auditor/mcp_agent/browser.py`. Use the original
+`page_sha256`, as consumed by `agent/vlm/mcp/browser.py`. Use the original
 seed and minimap masking configuration recorded for the experiment. Keep rubrics
 and runtime profiles on the operator side of the MCP boundary.
 
@@ -74,39 +74,39 @@ VLM backbones. Runtime builds are available. Checkpoint setup instructions and o
 trajectories remain pending.
 
 ```bash
-python -m harness.vla_ue --tasks @benchmark/splits/unreal.txt \
+python -m agent.vla.vla_ue --tasks @data/benchmark/splits/unreal.txt \
   --profiles out/runtime/unreal-profiles.json \
   --ticks 1200 --dt-ms 50 --record-every 10 --size 1200M --tag vla-unreal
 ```
 
-`harness/vla_explore.py` provides the Three.js explorer. Restore and remap the
-profile snapshots in `benchmark/profiles/`, including the separate Urban IPC
+`agent/vla/vla_explore.py` provides the Three.js explorer. Restore and remap the
+profile snapshots in `data/benchmark/profiles/`, including the separate Urban IPC
 profiles. These retain their original machine paths as provenance.
 
 For recorded-trajectory analysis, the paper's single-report setting is
 `--replay-mode vqa --max-actions 0`. The older interactive `play` replay mode is a
-different protocol. `scripts/native-agents/run_vla_replay.py` coordinates analysis
+different protocol. `agent/vla/replay.py` coordinates analysis
 and judging; `launch.py` also exposes replay for individual episodes.
 
 ## Judging
 
-`eval/judge.py` scores the target anomaly using the report, cited evidence, and
+`judge/judge.py` scores the target anomaly using the report, cited evidence, and
 English rubric. It returns a binary score and reason. Keep the assigned 213-task
 denominator: unsuccessful executions count as failures.
 
 ```bash
-python -m eval.judge --rubrics rubric.json --model-output report.json \
+python -m judge.judge --rubrics rubric.json --model-output report.json \
   --images evidence.png --output judge.json \
   --model gpt-6-astra --reasoning-effort medium
 ```
 
 This command calls an authenticated model and is not part of offline tests.
-`eval/judge_human_baseline.py` contains the human-baseline grading adapter;
+`judge/judge_human_baseline.py` contains the human-baseline grading adapter;
 participant submissions and identities are not distributed in the code repository.
 
 ## Ablations
 
-AWS reference implementations are under `experiments/ablations/`. They preserve
+AWS reference implementations are under `scripts/experiments/ablations/`. They preserve
 original experiment logic and source paths; they are not a portable deployment
 installer. Some load frozen source batches or recordings that will accompany the
 resource release.

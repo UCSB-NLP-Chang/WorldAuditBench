@@ -36,7 +36,7 @@ esac
 TAG=""; for ((i=0; i<${#ARGS[@]}; i++)); do [[ ${ARGS[$i]} == --tag ]] && TAG=${ARGS[$((i+1))]}; done
 mkdir -p runs
 if [[ -n $TAG ]]; then
-  .venv/bin/python -u -m agent.runner "${ARGS[@]}" 2>&1 | tee -a "runs/$TAG.log"
+  .venv/bin/python -u -m agent.vlm.runner "${ARGS[@]}" 2>&1 | tee -a "runs/$TAG.log"
 else
-  .venv/bin/python -u -m agent.runner "${ARGS[@]}"
+  .venv/bin/python -u -m agent.vlm.runner "${ARGS[@]}"
 fi

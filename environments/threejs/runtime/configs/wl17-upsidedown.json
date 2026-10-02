@@ -1,0 +1,38 @@
+{
+ "page": "environments/threejs/scenes/13_beyond_fable_wilderness_constrained.html",
+ "worldSeed": 7,
+ "spawn": {
+  "pos": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "yawDeg": 0
+ },
+ "targets": {
+  "zone_far": [
+   0.0,
+   0.0,
+   -17.0
+  ]
+ },
+ "bounds": {
+  "minX": -24,
+  "maxX": 28,
+  "minZ": -20,
+  "maxZ": 15
+ },
+ "name": "wl17-upsidedown",
+ "bug": "wl17-upsidedown",
+ "meta": {
+  "title": "wl17-upsidedown",
+  "desc": "the big round-crowned tree north-west of the start (about 20 m away, up the slope) is UPSIDE DOWN - its leafy crown rests on the ground and its bare trunk sticks straight up out of the top of the crown into the sky"
+ },
+ "view": {
+  "cam": [
+   -6.0,
+   0,
+   -2.0
+  ]
+ }
+}

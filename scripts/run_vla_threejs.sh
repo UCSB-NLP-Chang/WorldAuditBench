@@ -10,7 +10,7 @@ NUDGE=${NUDGE:-40}
 which=${1:-both}
 start () {  # list-letter
   local L=$1
-  nohup .venv/bin/python -m harness.vla_explore --configs "$(cat scripts/vla-lists/vla-threejs-list$L.txt)" --seeds 1 --ticks 1200 \
+  nohup .venv/bin/python -m agent.vla.vla_explore --configs "$(cat scripts/vla-lists/vla-threejs-list$L.txt)" --seeds 1 --ticks 1200 \
       --tag "$TAG" --idle-nudge "$NUDGE" --eager --gpu 0 --skip-done > "runs/$TAG-driver$L.log" 2>&1 &
   echo "driver $L started (pid $!), log runs/$TAG-driver$L.log"
 }
