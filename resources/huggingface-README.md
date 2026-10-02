@@ -19,21 +19,14 @@ configs:
     path: dataset/tasks.parquet
 ---
 
-<div align="center">
+# WorldAuditBench
 
-<h1 align="center"><img src="https://raw.githubusercontent.com/UCSB-NLP-Chang/WorldAuditBench/main/docs/figures/logo.png" width="38" alt=""> WorldAuditBench</h1>
-<h3 align="center">Interactive 3D World Auditing with Multimodal Agents</h3>
+**Interactive 3D World Auditing with Multimodal Agents**
 
-<a href="https://arxiv.org/pdf/2609.40325"><img src="https://img.shields.io/badge/Paper-arXiv-B31B1B?style=flat-square" alt="Paper"></a>
-<a href="https://github.com/UCSB-NLP-Chang/WorldAuditBench"><img src="https://img.shields.io/badge/Code-GitHub-24292F?style=flat-square&logo=github" alt="Code"></a>
-<a href="https://ucsb-nlp-chang.github.io/WorldAuditBench/"><img src="https://img.shields.io/badge/Project-Website-2563EB?style=flat-square" alt="Project page"></a>
-<a href="https://huggingface.co/spaces/ziyjiang/WorldAuditBench"><img src="https://img.shields.io/badge/Demo-Hugging_Face-F9AB00?style=flat-square" alt="Demo Space"></a>
+[![Paper](https://img.shields.io/badge/Paper-arXiv-B31B1B?style=flat-square)](https://arxiv.org/pdf/2609.40325) [![Code](https://img.shields.io/badge/Code-GitHub-24292F?style=flat-square)](https://github.com/UCSB-NLP-Chang/WorldAuditBench) [![Project page](https://img.shields.io/badge/Project-Website-2563EB?style=flat-square)](https://ucsb-nlp-chang.github.io/WorldAuditBench/) [![Demo Space](https://img.shields.io/badge/Demo-Hugging_Face-F9AB00?style=flat-square)](https://huggingface.co/spaces/ziyjiang/WorldAuditBench)
 
-**213 tasks · 13 environments · 5 anomaly families**
-
+213 tasks · 13 environments · 5 anomaly families  
 UC Santa Barbara · MIT CSAIL · MIT–IBM Watson AI Lab
-
-</div>
 
 WorldAuditBench evaluates whether multimodal agents can **explore a 3D world, investigate suspicious observations, and identify anomalies with visual evidence**. An agent may need to approach an object, test a collision, change its viewpoint, or revisit a location to establish what is wrong.
 
