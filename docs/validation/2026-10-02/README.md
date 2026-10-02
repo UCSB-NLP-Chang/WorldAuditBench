@@ -13,13 +13,20 @@ static-mesh target, but the authored poster is a Blueprint actor. Its
 `timed_poster_hide` behavior is missing from that source snapshot. The existing
 production executable starts S16 at the correct position with the same cooked map.
 The recovered source also lacks S22's `fountain_backface` handler; its original
-material and backing patches have been located and are being rebuilt separately.
+material and backing patches were restored in a separate candidate. It compiled
+and passed S22 startup checks, including execution of the restored handler. Full
+visual and behavioral equivalence remains pending.
 Other task kinds and temporal trigger options are undergoing a source and behavior
 audit. A missing source literal is a review lead, not by itself a failed task.
 
 The rebuilt candidates have not replaced the published packages. Existing
 production artifacts and experimental data are retained. Dynamic captures and
-recovery work remain in the private AWS release workspace.
+recovery work remain in the private AWS release workspace. Nine new routes were
+captured and their 162 sampled screenshots reviewed. U024's ground seams and
+U041's facade penetration were reproduced; U033's window reflections remain
+unresolved. Ancient and Medieval startup textures sharpen during idle. The S01
+stairs stayed visible on the sampled route, which does not clear the original
+report. Sampled screenshots cannot establish the absence of flicker.
 
 ## Earlier production-package checks
 
