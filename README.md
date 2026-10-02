@@ -127,9 +127,24 @@ python scripts/view_task.py --download
 python scripts/view_task.py JS_AF01 --download
 ```
 
-The command opens a task browser with environment and taxonomy filters, input
-prompts, rubrics and interactive exploration. Use `--no-browser` on a remote host
-and forward the printed loopback port to your local browser.
+The viewer lets you filter all 213 tasks, read the scene instructions and explore
+with keyboard and mouse. It includes reset, stop and full-screen controls; anomaly
+answers are collapsed until you choose to reveal them. No annotation accounts or
+review database are needed.
+
+Three.js scenes run directly in your browser. For Unreal, run the viewer on a
+Linux NVIDIA GPU host and install the UE 5.6 Pixel Streaming player once
+(Node.js 22+ and npm required):
+
+```bash
+python scripts/setup_pixel_streaming.py
+python scripts/view_task.py S01 --download --no-browser
+```
+
+Unreal runs continuously on the GPU host and streams live video to the browser.
+For a remote host, forward the viewer's loopback port over SSH; configure
+STUN/TURN when WebRTC cannot reach the GPU host directly. See the
+[viewer setup guide](docs/viewer.md) for connection commands and options.
 
 ### VLA exploration
 

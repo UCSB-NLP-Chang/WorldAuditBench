@@ -2,6 +2,7 @@
 
 - [Setup and reproduction](reproduction.md)
 - [Environment downloads](resources.md)
+- [Interactive viewer and Pixel Streaming](viewer.md)
 - [Task data](task-data.md)
 - [Run agents](native-agent-mcp.md)
 - [Score reports](binary-judge.md)

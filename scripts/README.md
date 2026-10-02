@@ -4,6 +4,7 @@
 |---|---|
 | `experiments/run.py --agent gemini --tasks S01 --download` | Run an agent on one or more tasks |
 | `view_task.py S01 --download` | View and explore a task |
+| `setup_pixel_streaming.py` | Build the UE 5.6 player and signalling server for the viewer |
 | `download_dataset.py` | Download task data and shared examples |
 | `download_resources.py --package subway` | Download an environment |
 | `serve_unreal.py --task S01` | Start an Unreal environment endpoint |
@@ -12,3 +13,5 @@
 Use `python <command> --help` for options. Run commands from the repository root.
 `experiments/agents.json` contains the model presets. The export and package-check
 scripts support maintaining the Hugging Face release.
+
+See [Viewer setup](../docs/viewer.md) for local Three.js and remote GPU streaming.
