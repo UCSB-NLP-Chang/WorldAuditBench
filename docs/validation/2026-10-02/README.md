@@ -1,6 +1,6 @@
 # Runtime validation — 2026-10-02
 
-## Rebuilt candidates — 2026-10-02 14:00 UTC
+## Rebuilt candidates — 2026-10-02 14:45 UTC
 
 The new executables are **not ready for publication**. All seven environments
 compiled. Of the 126 tasks, 125 passed initial-frame, turn, spawn and bundled-boundary
@@ -8,16 +8,28 @@ checks. The 125 captured initial views were visually reviewed: no minimap or bla
 minimap background was visible. These checks do not establish anomaly equivalence
 or clear the native scene issues below.
 
-S16 fails in the rebuilt Subway executable: the recovered source searches for a
-static-mesh target, but the authored poster is a Blueprint actor. Its
-`timed_poster_hide` behavior is missing from that source snapshot. The existing
-production executable starts S16 at the correct position with the same cooked map.
-The recovered source also lacks S22's `fountain_backface` handler; its original
-material and backing patches were restored in a separate candidate. It compiled
-and passed S22 startup checks, including execution of the restored handler. Full
-visual and behavioral equivalence remains pending.
-Other task kinds and temporal trigger options are undergoing a source and behavior
-audit. A missing source literal is a review lead, not by itself a failed task.
+The first rebuilt Subway executable failed S16 because it treated the authored
+Blueprint poster as a static-mesh actor and lacked `timed_poster_hide`. A separate
+candidate now restores the target actor, the fixed poster materials and the
+15-second disappearance. All 15 checkpoints on a walking and waiting route match
+the existing production executable in actor-state digest, position and simulated
+time. Before/after screenshots confirm the correct posters and disappearance.
+S16 and S22 both pass spawn, bundled-policy, boundary and changed-frame checks with
+this candidate. S22's original fountain material and backing patches were also
+restored; broader visual acceptance remains pending.
+
+The Ancient rebuild also omitted A19's repositioned lion and A25's opposite door
+swing. Their original runtime patches were recovered. Both now match production
+actor states at all 12 checkpoints on a sampled look, wait and return route;
+reviewed screenshots confirm the lion and initial door configuration. Close-range
+interaction checks are still running, so these comparisons do not yet establish
+complete task equivalence.
+
+Broader paired checks of production and rebuilt programs are running. They compare
+identical action sequences and record executable hashes. A matching actor-state
+digest does not cover materials, component state or every trigger; screenshots and
+actual interaction results must also be reviewed. Source-literal searches are
+review leads, not by themselves failed tasks.
 
 The rebuilt candidates have not replaced the published packages. Existing
 production artifacts and experimental data are retained. Dynamic captures and
