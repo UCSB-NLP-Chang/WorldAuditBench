@@ -1,7 +1,31 @@
 # Runtime validation — 2026-10-02
 
-Task identity, exploration bounds and HUD checks pass. Visual acceptance remains
-open: the checks below do not certify the absence of native scene defects.
+## Rebuilt candidates — 2026-10-02 14:00 UTC
+
+The new executables are **not ready for publication**. All seven environments
+compiled. Of the 126 tasks, 125 passed initial-frame, turn, spawn and bundled-boundary
+checks. The 125 captured initial views were visually reviewed: no minimap or black
+minimap background was visible. These checks do not establish anomaly equivalence
+or clear the native scene issues below.
+
+S16 fails in the rebuilt Subway executable: the recovered source searches for a
+static-mesh target, but the authored poster is a Blueprint actor. Its
+`timed_poster_hide` behavior is missing from that source snapshot. The existing
+production executable starts S16 at the correct position with the same cooked map.
+The recovered source also lacks S22's `fountain_backface` handler; its original
+material and backing patches have been located and are being rebuilt separately.
+Other task kinds and temporal trigger options are undergoing a source and behavior
+audit. A missing source literal is a review lead, not by itself a failed task.
+
+The rebuilt candidates have not replaced the published packages. Existing
+production artifacts and experimental data are retained. Dynamic captures and
+recovery work remain in the private AWS release workspace.
+
+## Earlier production-package checks
+
+The checks in this section apply to the earlier production binaries and documented
+launcher, **not to the new rebuild candidates above**. Visual acceptance remains
+open; these checks do not certify the absence of native scene defects.
 
 ## Verified
 
