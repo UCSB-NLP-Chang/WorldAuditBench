@@ -86,13 +86,6 @@ hashes and creates a configuration for each task in the selected environment. Us
 `threejs-sponza` and `threejs-wilderness` individually. These configs
 contain only the browser launch fields, not the task answers.
 
-## Visual validation
-
-Task identity, expanded bounds and HUD checks are recorded in the
-[October 2 validation report](validation/2026-10-02/README.md). Visual acceptance
-remains open for the listed scene issues; the runtime download is not a claim
-that every native scene defect has been removed.
-
 ## Release boundaries
 
 | Resource | Status |

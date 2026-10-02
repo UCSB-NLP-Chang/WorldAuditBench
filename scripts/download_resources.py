@@ -209,7 +209,7 @@ def write_browser_profiles(root, manifest=None):
     output = root / 'browser-profiles'
     output.mkdir(exist_ok=True)
     checked = set()
-    for task in json.loads((ROOT / 'data/benchmark/tasks.json').read_text())['tasks']:
+    for task in json.loads((ROOT / 'data/benchmark/paper-tasks.json').read_text())['tasks']:
         if task['id'] not in assigned:
             continue
         filename = Path(urlparse(task['map']).path).name

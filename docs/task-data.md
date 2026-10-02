@@ -9,9 +9,8 @@ unreal/                    Compiled Unreal environments, one archive per environ
 three.js/                  Built Three.js environments, one archive per environment
 ```
 
-The task table and shared examples are available now. Environment archives are
-being migrated to the last two directories; see the [resource guide](resources.md)
-for currently supported installation commands and validation status.
+The task table, shared examples and compiled environments are available. See the
+[resource guide](resources.md) for installation commands and release coverage.
 
 ## Load the data
 
@@ -75,10 +74,15 @@ are omitted; conditions necessary to identify a dynamic anomaly remain in
 records retain their original prompts and rubrics (including reproduction
 steps); the reported paper scores have not been recomputed with this format.
 
-## Source records and archival experiments
+## Updating task descriptions
 
-The JSON catalogs in GitHub preserve the authored task definitions and earlier
-experiment records. `scripts/export_hf_dataset.py` builds the public task table
-from those sources. Regular benchmark runs use the pinned HF table; pass
-`--legacy-task-files` to the native or VLA replay launcher only when reproducing
-archival tasks outside the paper evaluation split.
+`agent/vlm/native/task-scenes.json` is the shared description source. Tasks in the
+same scene use one description of the scene and its accessible areas, independent
+of their starting positions. `data/benchmark/paper-tasks.json` contains the task
+identifiers, categories, launch metadata and authored rubrics used by
+`scripts/export_hf_dataset.py`.
+
+After editing descriptions, export and publish `dataset/tasks.parquet` to Hugging
+Face, then update its commit, size and SHA-256 in `data/resources/dataset.json`.
+The launchers and viewer use this pinned table by default. `--dataset` selects a
+local table for validation before publication.

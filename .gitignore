@@ -36,3 +36,8 @@ Saved/
 *.zip
 data/examples/icl/images/
 output/
+
+# Internal repair and validation records belong in the private AWS archive.
+native/patches/
+docs/validation/
+docs/runtime-validation.json

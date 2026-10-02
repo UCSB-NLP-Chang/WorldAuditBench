@@ -6,8 +6,12 @@
 - `scripts/experiments/`: agent presets and experiment commands.
 - `scripts/view_task.py`: interactive task viewing.
 - `environments/`: environment connections.
-- `data/`: dataset loading and pinned download manifests.
+- `data/`: dataset loading, task definitions, evaluation splits and pinned download manifests.
 - `tests/`: automated checks.
 
 Task data, examples and compiled environments are hosted on
 [Hugging Face](https://huggingface.co/datasets/ziyjiang/WorldAuditBench).
+
+Internal repair patches, deployment snapshots, validation logs and screenshots
+are kept in the private AWS archive. Generated local outputs belong under `out/`
+or `runs/` and are excluded from version control.

@@ -11,13 +11,14 @@ The release check verifies the 213 task IDs, evaluation splits, anomaly-family
 counts and environment package coverage. Tests cover agents, task inputs,
 scoring, environment interfaces and archive integrity.
 
-## Environment checks
+## Installed environments
 
-See [environment validation](validation/2026-10-02/README.md) for task coverage,
-rendering checks and unresolved visual issues.
+```bash
+python scripts/check_release.py --resources
+```
 
-The [2026-10-01 checks](runtime-validation.json) cover startup and camera movement
-in the earlier compiled packages. They do not establish that every scene is free
-of native rendering or collision defects.
+This verifies installed files against the published release checksums. Use
+`--runtime-root /path/to/runtime` for a custom installation directory.
 
-Automated source tests do not run paid model evaluations or reproduce paper scores.
+Source tests and file checks do not establish visual correctness or reproduce
+paper scores. Rendering and collision behavior require running the environments.
