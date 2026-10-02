@@ -1,0 +1,7 @@
+.venv
+node_modules
+__pycache__
+runtime
+runtime.json
+*.log
+test_*.py

@@ -1,0 +1,197 @@
+#!/usr/bin/env python3
+"""Restore the published runtime packages and generate local launch profiles."""
+import argparse
+import copy
+import hashlib
+import json
+from pathlib import Path
+import shutil
+import ssl
+import tarfile
+import tempfile
+import urllib.request
+
+ROOT = Path(__file__).resolve().parents[1]
+
+
+def digest(path):
+    h = hashlib.sha256()
+    with Path(path).open('rb') as stream:
+        for block in iter(lambda: stream.read(8 * 1024 * 1024), b''):
+            h.update(block)
+    return h.hexdigest()
+
+
+def extract(archive, destination):
+    """Only restore directories and regular files; never follow archive links."""
+    with tarfile.open(archive, 'r:gz') as bundle:
+        for member in bundle:
+            path = Path(member.name)
+            if path.is_absolute() or '..' in path.parts:
+                raise ValueError('Unsafe archive path: ' + member.name)
+            target = destination / path
+            if member.isdir():
+                target.mkdir(parents=True, exist_ok=True)
+            elif member.isfile() or member.islnk():
+                target.parent.mkdir(parents=True, exist_ok=True)
+                # extractfile reads hard-link contents from the archive itself.
+                with bundle.extractfile(member) as source, target.open('wb') as output:
+                    shutil.copyfileobj(source, output, 1024 * 1024)
+                target.chmod(member.mode & 0o777)
+            else:
+                raise ValueError('Unsupported archive member: ' + member.name)
+
+
+def download(package, cache, local_archives=None):
+    name = package['filename']
+    path = (local_archives or cache) / name
+    if path.exists() and digest(path) == package['sha256']:
+        return path
+    if local_archives:
+        raise ValueError('Missing or mismatched local archive: ' + str(path))
+    cache.mkdir(parents=True, exist_ok=True)
+    url = (f"https://huggingface.co/datasets/{package['repository']}/resolve/"
+           f"{package['revision']}/{name}")
+    context = ssl.create_default_context()
+    try:
+        import certifi
+        context.load_verify_locations(certifi.where())
+    except ImportError:
+        pass
+    partial = path.with_suffix(path.suffix + '.part')
+    print(f"Downloading {name} ({package['bytes'] / 1e9:.2f} GB)", flush=True)
+    with urllib.request.urlopen(url, context=context, timeout=120) as source, partial.open('wb') as output:
+        shutil.copyfileobj(source, output, 8 * 1024 * 1024)
+    if partial.stat().st_size != package['bytes'] or digest(partial) != package['sha256']:
+        raise ValueError('Download checksum mismatch: ' + name)
+    partial.replace(path)
+    return path
+
+
+def restore(package, root, cache, local_archives=None, keep=False):
+    destination = root / package['id']
+    marker = destination / '.worldauditbench-release.json'
+    if marker.exists() and json.loads(marker.read_text())['sha256'] == package['sha256']:
+        if package.get('binary') and digest(destination / package['binary']) != package['binary_sha256']:
+            raise ValueError('Installed executable was modified: ' + package['id'])
+        print('Already restored: ' + package['id'], flush=True)
+        return
+    if destination.exists():
+        raise ValueError('Destination already exists without a matching release: ' + str(destination))
+    archive = download(package, cache, local_archives)
+    root.mkdir(parents=True, exist_ok=True)
+    staging = Path(tempfile.mkdtemp(prefix='.restore-', dir=root))
+    try:
+        extract(archive, staging)
+        if package.get('binary') and digest(staging / package['binary']) != package['binary_sha256']:
+            raise ValueError('Executable checksum mismatch: ' + package['id'])
+        (staging / '.worldauditbench-release.json').write_text(json.dumps(package, indent=2) + '\n')
+        staging.rename(destination)
+    finally:
+        if staging.exists():
+            shutil.rmtree(staging)
+    if not keep and not local_archives:
+        archive.unlink()
+    print('Restored: ' + package['id'], flush=True)
+
+
+def write_profiles(manifest, root):
+    reference = json.loads((ROOT / 'benchmark/profiles/ue-aws-profiles-20260918.json').read_text())
+    original = reference['tasks']
+    original.update(json.loads((ROOT / 'benchmark/profiles/ue-urban-ipc-profiles-20260920.json').read_text())['tasks'])
+    tasks = {}
+    policies = {}
+    for path in (ROOT / 'benchmark/policies').glob('*/policy.json'):
+        policies[digest(path)] = path.resolve()
+    for package in manifest['packages']:
+        if package['group'] != 'unreal-runtime' or not (root / package['id'] / '.worldauditbench-release.json').is_file():
+            continue
+        for task_id in package['tasks']:
+            profile = copy.deepcopy(original[task_id])
+            if profile['build_sha256'] != package['binary_sha256']:
+                raise ValueError('Release differs from experiment build: ' + task_id)
+            profile['binary'] = str(root / package['id'] / package['binary'])
+            expected = reference['policies'][profile['policy_version']]['sha256']
+            policy = policies.get(expected)
+            if policy is None:
+                raise ValueError('Missing or modified exploration policy: ' + profile['policy_version'])
+            profile['policy_path'] = str(policy)
+            profile['policy_sha256'] = expected
+            profile['extra_args'] = [('-AuditorExplorationPolicy=' + str(policy)) if arg.lower().startswith('-auditorexplorationpolicy=') else arg for arg in profile.get('extra_args', [])]
+            tasks[task_id] = profile
+    path = root / 'unreal-profiles.json'
+    path.write_text(json.dumps({'tasks': tasks}, indent=2) + '\n')
+    print(f'Wrote {len(tasks)} task profiles: {path}', flush=True)
+
+
+def restore_examples(root):
+    images = root / 'icl-examples/examples/icl/images'
+    if not images.is_dir():
+        return
+    for entry in json.loads((ROOT / 'resources/manifest.json').read_text())['resources']:
+        if entry['group'] != 'icl-examples':
+            continue
+        source = images / Path(entry['path']).name
+        target = ROOT / entry['path']
+        if digest(source) != entry['sha256']:
+            raise ValueError('Example image checksum mismatch: ' + source.name)
+        if target.exists() and digest(target) != entry['sha256']:
+            raise ValueError('Refusing to overwrite a different image: ' + str(target))
+        target.parent.mkdir(parents=True, exist_ok=True)
+        if not target.exists():
+            shutil.copyfile(source, target)
+    print('Restored ICL images to examples/icl/images and service example directories.', flush=True)
+
+
+def write_browser_profiles(root):
+    pages = root / 'threejs-builds'
+    if not (pages / '.worldauditbench-release.json').is_file():
+        return
+    from urllib.parse import urlparse
+    assigned = set((ROOT / 'benchmark/splits/threejs.txt').read_text().splitlines())
+    output = root / 'browser-profiles'
+    output.mkdir(exist_ok=True)
+    checked = set()
+    for task in json.loads((ROOT / 'benchmark/tasks.json').read_text())['tasks']:
+        if task['id'] not in assigned:
+            continue
+        filename = Path(urlparse(task['map']).path).name
+        identity = (filename, task['page_sha256'])
+        if identity not in checked:
+            if digest(pages / filename) != task['page_sha256']:
+                raise ValueError('Browser page checksum mismatch: ' + filename)
+            checked.add(identity)
+        config = {'task': task['id'], 'browser_root': str(pages), 'browser_page': filename,
+                  'browser_case': task['source_case'], 'page_sha256': task['page_sha256']}
+        (output / (task['id'] + '.json')).write_text(json.dumps(config, indent=2) + '\n')
+    print(f'Wrote {len(assigned)} browser task configurations: {output}', flush=True)
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--manifest', type=Path, default=ROOT / 'resources/releases.json')
+    parser.add_argument('--root', type=Path, default=ROOT / 'out/runtime')
+    parser.add_argument('--package', action='append', help='Select a package; repeat for multiple packages.')
+    parser.add_argument('--list', action='store_true')
+    parser.add_argument('--keep-archives', action='store_true')
+    parser.add_argument('--local-archives', type=Path, help='Restore already downloaded archives.')
+    args = parser.parse_args()
+    manifest = json.loads(args.manifest.read_text())
+    selected = [p for p in manifest['packages'] if not args.package or p['id'] in args.package]
+    unknown = set(args.package or []) - {p['id'] for p in selected}
+    if unknown:
+        parser.error('Unknown packages: ' + ', '.join(sorted(unknown)))
+    if args.list:
+        for package in selected:
+            print(f"{package['id']:24} {package['bytes'] / 1e9:5.2f} GB  {package['group']}")
+        return
+    root = args.root.expanduser().resolve()
+    for package in selected:
+        restore(package, root, root / '.downloads', args.local_archives, args.keep_archives)
+    write_profiles(manifest, root)
+    restore_examples(root)
+    write_browser_profiles(root)
+
+
+if __name__ == '__main__':
+    main()

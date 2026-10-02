@@ -2,8 +2,10 @@
 
 This release is aligned with the **arXiv preprint** in Overleaf revision
 `c808f5f8e87dee47d4de9fb44c467edd5e287bb7`, inspected on 2026-09-30.
-External resources are pending Hugging Face publication. Source-only checks are
-available now; full environment and model runs require those resources and model access.
+Compiled environments and ICL images are available through the
+[resource installer](resources.md). Source checks need no GPU; full model runs
+require compatible hardware and model access. Original VLA recordings and frozen
+ablation inputs remain pending.
 
 ## Evaluation set
 
@@ -41,7 +43,9 @@ authentication, and model availability must be supplied by the operator.
 The paper uses medium reasoning settings; specify them explicitly because older
 launcher defaults differ.
 
-After restoring resources and starting an isolated Unreal bridge:
+Install `subway` and `icl-examples` with `scripts/download_resources.py`, then run
+`python scripts/serve_unreal.py --task S03 --port 19100` on your Linux GPU host.
+In another terminal:
 
 ```bash
 python scripts/native-agents/launch.py gemini \
@@ -51,7 +55,9 @@ python scripts/native-agents/launch.py gemini \
   --observation on-demand --run-dir out/runs/gemini-S03
 ```
 
-For Three.js, use `--environment threejs --browser-config /path/to/browser.json`.
+For Three.js, install `threejs-builds` and use
+`--environment threejs --task JS_AF01 --seed 5
+--browser-config out/runtime/browser-profiles/JS_AF01.json`.
 The config contains `browser_root`, `browser_page`, `browser_case`, and
 `page_sha256`, as consumed by `auditor/mcp_agent/browser.py`. Use the original
 seed and minimap masking configuration recorded for the experiment. Keep rubrics
@@ -64,12 +70,12 @@ paths in imported scripts and profile snapshots require a local deployment mappi
 
 Open-P2P 1.2B explores for 60 simulated seconds: 1,200 ticks at 50 ms, with a frame
 recorded every 10 ticks (0.5 seconds). The resulting trajectories are shared across
-VLM backbones. Checkpoints, runtime builds and original trajectories are pending
-external release.
+VLM backbones. Runtime builds are available. Checkpoint setup instructions and original
+trajectories remain pending.
 
 ```bash
 python -m harness.vla_ue --tasks @benchmark/splits/unreal.txt \
-  --profiles /path/to/restored-unreal-profiles.json \
+  --profiles out/runtime/unreal-profiles.json \
   --ticks 1200 --dt-ms 50 --record-every 10 --size 1200M --tag vla-unreal
 ```
 

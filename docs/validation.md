@@ -51,3 +51,22 @@ suite and passing Explore contracts; it does not hide these other results.
 
 The initial migration could not enable Pages while the repository was private.
 The repository is now public and the project page is published from `gh-pages`.
+
+## Runtime release validation — 2026-10-01
+
+- The installer maps all 126 Unreal paper tasks to the exact executable hashes in
+  the experiment profiles, including the later residential and Urban IPC builds.
+- Four resource-installer tests cover archive/executable checksums, idempotent
+  restoration, traversal/link rejection, and complete task-to-build mapping.
+- Source suite after adding the resource installer: **177 passed, 13 skipped**.
+  After restoring the ICL images through the public HF download: **187 passed,
+  3 skipped**.
+- All ten newly packaged Unreal archives were extracted and launched through
+  `scripts/serve_unreal.py` on AWS A10G. One assigned task per archive returned a
+  PNG on reset and a changed image after a 30-degree turn. See
+  [runtime-validation.json](runtime-validation.json) for the exact tasks.
+- Restoring the residential archive completes all 126 local Unreal task profiles.
+- The separate HF Space passed rendering and movement checks for H01, H06, H07,
+  H12 and H13 at 1920×1080 on T4. Its eight session/API/stream tests passed.
+- These checks do not re-run the paper's paid model evaluations or establish that
+  the archived editor source can reproduce every binary.

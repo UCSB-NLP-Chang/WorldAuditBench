@@ -21,6 +21,7 @@ def digest(path):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--resources", action="store_true", help="also require and hash the external files with known restore paths")
+    parser.add_argument("--runtime-root", type=Path, default=ROOT / "out/runtime")
     args = parser.parse_args()
     cohort = json.loads((ROOT / "benchmark/paper-tasks.json").read_text())
     tasks = cohort["tasks"]
@@ -51,14 +52,38 @@ def main():
             errors.append(f"Source hash mismatch: {row['path']}")
         checked += 1
     resources = json.loads((ROOT / "resources/manifest.json").read_text())
+    release = json.loads((ROOT / 'resources/releases.json').read_text())
+    runtime_ids = []
+    for package in release['packages']:
+        if len(package['revision']) != 40 or any(c not in '0123456789abcdef' for c in package['revision']):
+            errors.append('Unpinned resource revision: ' + package['id'])
+        if len(package['sha256']) != 64 or package['bytes'] <= 0:
+            errors.append('Invalid resource identity: ' + package['id'])
+        if package['group'] == 'unreal-runtime':
+            runtime_ids.extend(package['tasks'])
+    expected_unreal = set((ROOT / 'benchmark/splits/unreal.txt').read_text().splitlines())
+    if set(runtime_ids) != expected_unreal or len(runtime_ids) != len(expected_unreal):
+        errors.append('Runtime packages must cover each Unreal paper task exactly once')
     if args.resources:
         for row in resources["resources"]:
-            if "path" not in row:
-                errors.append(f"Resource packaging pending: {row['group']}")
+            if row['status'] != 'available' or 'path' not in row:
                 continue
-            p = ROOT / row["path"]
+            p = ((args.runtime_root / 'threejs-builds' / Path(row['path']).name)
+                 if row['group'] == 'threejs-builds' else ROOT / row["path"])
             if not p.is_file() or digest(p) != row["sha256"]:
                 errors.append(f"Missing or mismatched resource: {row['path']}")
+        for package in release['packages']:
+            directory = args.runtime_root / package['id']
+            marker = directory / '.worldauditbench-release.json'
+            try:
+                if json.loads(marker.read_text())['sha256'] != package['sha256']:
+                    errors.append('Installed release differs: ' + package['id'])
+            except (OSError, ValueError, KeyError):
+                errors.append('Missing installed release: ' + package['id'])
+            if package.get('binary'):
+                binary = directory / package['binary']
+                if not binary.is_file() or digest(binary) != package['binary_sha256']:
+                    errors.append('Missing or mismatched executable: ' + package['id'])
     if errors:
         print("\n".join(errors), file=sys.stderr)
         return 1

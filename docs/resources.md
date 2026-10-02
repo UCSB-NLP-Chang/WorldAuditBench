@@ -1,34 +1,106 @@
-# External resources: pending Hugging Face release
+# Download and run the environments
 
-The current delivery contains code and metadata. Large resources remain pending,
-with a Hugging Face release planned. Download links will be added when available.
+Compiled Linux x86_64 Unreal packages and the six standalone Three.js builds are
+published on [Hugging Face](https://huggingface.co/datasets/ziyjiang/WorldAuditBench-runtime).
+The residential build is reused from the
+[demo runtime repository](https://huggingface.co/datasets/ziyjiang/WorldAuditBench-demo-runtime).
+The release covers the 126 Unreal and 87 Three.js tasks in the paper split.
+Editable third-party scene projects and original model/texture assets are outside
+this release's scope.
+
+## Install
+
+Run from the source repository with Python 3.11+. List package sizes before downloading:
+
+```bash
+python scripts/download_resources.py --list
+python scripts/download_resources.py --package indoor --package icl-examples
+```
+
+The complete download is about **16.0 GB**, including the residential package.
+Omit `--package` to install all released packages. Repeat it to select several.
+The installer pins each download to a Hugging Face commit, verifies the archive
+SHA-256 and executable SHA-256, and generates local profiles under `out/runtime/`.
+It deletes its downloaded archive after successful extraction; use `--keep-archives`
+to keep it. Keep enough free disk space for the archive and extracted environment.
+`--root /path/to/runtime` selects another installation directory.
+
+ICL installation restores the 29 images under `examples/icl/images/` and the
+recorded copies needed by the human-service code. No model credentials are needed
+for resource downloads.
+
+## Run an Unreal task
+
+Use a Linux x86_64 GPU host with NVIDIA drivers, Vulkan and the runtime libraries
+needed by Unreal Engine 5.6. The published packages have been tested on A10G and
+the residential demo on HF T4. A CPU-only machine cannot render these environments.
+
+```bash
+python scripts/serve_unreal.py --task H01 --gpu 0 --port 19100
+```
+
+The server verifies the executable before launching it, listens on loopback, and
+uses a private state directory for each episode. Choose an available GPU. Use
+`--profiles /path/to/runtime/unreal-profiles.json` after installing to a custom root.
+Stop the server and start a fresh one for each benchmark episode.
+
+In another terminal, connect an authenticated native model client:
+
+```bash
+python scripts/native-agents/launch.py gemini \
+  --environment unreal-http --env-url http://127.0.0.1:19100 \
+  --task H01 --model gemini-3.8-flash --gemini-thinking medium \
+  --max-actions 40 --max-tool-calls 400 --require-full-budget \
+  --observation on-demand --run-dir out/runs/gemini-H01
+```
+
+For a remote GPU host, forward the server's loopback port with SSH and use the
+forwarded local URL. No public server port is required. Urban packages use the
+IPC-fixed experiment executables. The installer merges those profiles with the
+other Unreal task profiles and remaps the exploration policies automatically.
+
+## Run a Three.js task
+
+```bash
+python scripts/download_resources.py --package threejs-builds --package icl-examples
+python scripts/native-agents/launch.py gemini \
+  --environment threejs --task JS_AF01 --seed 5 \
+  --browser-config out/runtime/browser-profiles/JS_AF01.json \
+  --model gemini-3.8-flash --gemini-thinking medium \
+  --max-actions 40 --max-tool-calls 400 --require-full-budget \
+  --observation on-demand --run-dir out/runs/gemini-JS_AF01
+```
+
+Install the browser and native-client dependencies described in
+[native-agent-mcp.md](native-agent-mcp.md). The installer verifies all six page
+hashes and creates a configuration for each of the 87 paper tasks. These configs
+contain only the browser launch fields, not the task answers.
+
+## Release boundaries
 
 | Resource | Status |
 |---|---|
-| Unreal packaged Linux environments | Pending |
-| Editable Unreal scene assets (`.uasset`, `.umap`) | Pending; completeness must be checked against the recovered source |
-| Six built Three.js environments | Pending; deployed filenames, sizes and SHA-256 recorded |
-| ICL demonstration images | Pending; all 29 original images and their service copies have file hashes |
-| Open-P2P 1.2B weights | Pending; use the upstream distribution/license |
-| VLA trajectories and frozen ablation inputs | Pending |
+| Compiled Unreal Linux environments | Published; 11 packages, 126 paper tasks |
+| Six built Three.js environments | Published; 87 paper tasks |
+| 29 ICL demonstration images | Published, with SHA-256 checks |
+| Editable Unreal scene assets | Not distributed |
+| Open-P2P 1.2B weights | Use upstream distribution and license; setup guide pending |
+| Original VLA recordings and frozen ablation inputs | Pending |
 
-`../resources/manifest.json` records known file identities. Null sizes or archive
-hashes mean they have not yet been inventoried or packaged. A binary hash identifies
-an executable only; it does not validate the whole Unreal package.
+`resources/releases.json` is the installer manifest. `resources/manifest.json`
+retains the per-file identities and remaining optional resources. Model access,
+VLA checkpoint setup and unpublished original experiment outputs are separate
+from installing the runnable environments. Third-party terms and attribution
+remain applicable; see [THIRD_PARTY.md](../THIRD_PARTY.md).
 
-The agent demonstration pack belongs in `examples/icl/`; its images restore to
-`examples/icl/images/`. Text and exclusion metadata are already included.
-
-Once restored to the recorded relative paths, run:
+The resource and source checks are:
 
 ```bash
+python scripts/check_release.py
 python scripts/check_release.py --resources
 ```
 
-That command fails explicitly while any listed resource is missing or awaiting
-packaging. The source-only check omits `--resources`. The 10 ICL-dependent tests
-are skipped in a source-only checkout and become available after restoring images
-and running `scripts/native-agents/setup.py`.
-
-The project-page videos already present in `gh-pages` are retained there. They are
-independent of the benchmark runtime/resource release.
+The second check requires all published packages installed at the default root
+(or the directory passed with `--runtime-root`). It does not require resources
+marked pending or excluded from the release. These checks do not reproduce the
+paper's model scores.

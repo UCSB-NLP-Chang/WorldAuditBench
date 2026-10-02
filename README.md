@@ -18,7 +18,7 @@
 <p>
   <a href="https://arxiv.org/abs/2609.40325"><img src="docs/figures/paper-badge.svg" alt="Paper on arXiv"></a>
   <a href="https://ucsb-nlp-chang.github.io/WorldAuditBench/"><img src="docs/figures/project-badge.svg" alt="Project page"></a>
-  <a href="#resources"><img src="docs/figures/dataset-badge.svg" alt="Dataset coming soon on Hugging Face"></a>
+  <a href="https://huggingface.co/datasets/ziyjiang/WorldAuditBench-runtime"><img src="docs/figures/dataset-badge.svg" alt="Runtime packages on Hugging Face"></a>
   <a href="https://ucsb-nlp-chang.github.io/WorldAuditBench/#explore"><img src="docs/figures/demo-badge.svg" alt="Explore demos"></a>
 </p>
 
@@ -60,7 +60,7 @@ The paper compares two auditing paradigms:
   <img src="docs/figures/auditing-paradigms.webp" width="100%" alt="The two auditing paradigms: VLM reasoning during exploration, and VLA exploration followed by VLM analysis.">
 </p>
 
-The strongest evaluated agent reaches **42.3%** success, compared with **83.4%** for humans. See the [interactive results](https://ucsb-nlp-chang.github.io/WorldAuditBench/#results) and [paper](https://ucsb-nlp-chang.github.io/WorldAuditBench/assets/worldauditbench.pdf) for the full comparison.
+The strongest evaluated agent reaches **42.3%** success, compared with **83.4%** for humans. See the [interactive results](https://ucsb-nlp-chang.github.io/WorldAuditBench/#results) and [paper](https://arxiv.org/pdf/2609.40325) for the full comparison.
 
 ## Quick start
 
@@ -105,7 +105,14 @@ python scripts/native-agents/launch.py --help
 
 Install and authenticate the native client you plan to use: Codex, Claude Code, Gemini CLI, OpenCode, or Qwen Code. See the [native-agent guide](docs/native-agent-mcp.md) for configuration and the [reproduction guide](docs/reproduction.md) for exact model and reasoning settings.
 
-**Full auditing runs require the environment packages and demonstration assets, which are pending release on Hugging Face.** Once these resources are restored and an isolated Unreal bridge is running, an example episode is:
+Download a compiled environment and the demonstration images, then start its local service on a Linux GPU host:
+
+```bash
+python scripts/download_resources.py --package subway --package icl-examples
+python scripts/serve_unreal.py --task S03 --gpu 0 --port 19100
+```
+
+In a second terminal, run an auditing episode:
 
 ```bash
 python scripts/native-agents/launch.py gemini \
@@ -131,15 +138,17 @@ Agents submit anomaly reports with supporting visual evidence. The judge evaluat
 
 ## Resources
 
-Code, task definitions, and evaluation splits are available now. Larger resources will be released on **Hugging Face**.
+Code, task definitions, and evaluation splits are available here. Compiled environments and demonstration images are distributed on [Hugging Face](https://huggingface.co/datasets/ziyjiang/WorldAuditBench-runtime).
 
 | Resource | Availability |
 | --- | --- |
 | Benchmark task definitions and splits | [Available](benchmark/) |
 | Auditing agents, evaluation, and environment source | Available in this repository |
 | Demonstration videos | [Project page](https://ucsb-nlp-chang.github.io/WorldAuditBench/#explore) |
-| Packaged environments and editable scene assets | Coming soon |
-| In-context demonstration images and VLA trajectories | Coming soon |
+| Compiled Unreal and Three.js environments | [Download and run](docs/resources.md) |
+| In-context demonstration images | [Available on Hugging Face](https://huggingface.co/datasets/ziyjiang/WorldAuditBench-runtime) |
+| Interactive five-family demo | [Hugging Face Space](https://huggingface.co/spaces/ziyjiang/WorldAuditBench) · requires running GPU hardware |
+| VLA trajectories and frozen ablation inputs | Pending |
 | Open-P2P model setup and checkpoint instructions | Coming soon |
 
 See [resource details](docs/resources.md) for the files required to run the benchmark. Third-party environments and models retain their respective licenses; see [THIRD_PARTY.md](THIRD_PARTY.md).
@@ -162,7 +171,7 @@ env/                    Browser runtime and anomaly configurations
 unreal/                 Unreal source, plugins, and runtime policies
 experiments/ablations/   Ablation implementations
 services/               Human exploration, review, and evaluation interfaces
-resources/              External resource manifest (Hugging Face release pending)
+resources/              Pinned runtime downloads and resource manifests
 docs/                   Setup, protocols, and resource documentation
 ```
 

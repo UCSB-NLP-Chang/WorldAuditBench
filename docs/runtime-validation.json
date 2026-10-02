@@ -1,0 +1,89 @@
+{
+  "date": "2026-10-01",
+  "hardware": "AWS NVIDIA A10G",
+  "procedure": "Restore archive, verify executable, launch through scripts/serve_unreal.py, reset to one assigned task, capture PNG, turn 30 degrees, require image change.",
+  "packages": [
+    {
+      "package": "ancient",
+      "task": "A01",
+      "reset": true,
+      "turn": true,
+      "png_bytes": 836986,
+      "status": "passed"
+    },
+    {
+      "package": "concourse",
+      "task": "S01",
+      "reset": true,
+      "turn": true,
+      "png_bytes": 1022404,
+      "status": "passed"
+    },
+    {
+      "package": "industrial",
+      "task": "I02",
+      "reset": true,
+      "turn": true,
+      "png_bytes": 966049,
+      "status": "passed"
+    },
+    {
+      "package": "rural",
+      "task": "R01",
+      "reset": true,
+      "turn": true,
+      "png_bytes": 1150366,
+      "status": "passed"
+    },
+    {
+      "package": "subway",
+      "task": "S02",
+      "reset": true,
+      "turn": true,
+      "png_bytes": 700481,
+      "status": "passed"
+    },
+    {
+      "package": "urban-0bcf6af8a87a",
+      "task": "U046",
+      "reset": true,
+      "turn": true,
+      "png_bytes": 763515,
+      "status": "passed"
+    },
+    {
+      "package": "urban-c6f314070433",
+      "task": "U014",
+      "reset": true,
+      "turn": true,
+      "png_bytes": 915403,
+      "status": "passed"
+    },
+    {
+      "package": "urban-e63d0c3c26bd",
+      "task": "U018",
+      "reset": true,
+      "turn": true,
+      "png_bytes": 1003568,
+      "status": "passed"
+    },
+    {
+      "package": "urban-ec94cce5d64b",
+      "task": "U011",
+      "reset": true,
+      "turn": true,
+      "png_bytes": 648792,
+      "status": "passed"
+    },
+    {
+      "package": "medieval",
+      "task": "MV01",
+      "reset": true,
+      "turn": true,
+      "png_bytes": 857324,
+      "status": "passed"
+    }
+  ],
+  "residential": "Existing HF Space validation: H01, H06, H07, H12, H13 at 1920x1080 on T4.",
+  "limits": "Representative task per package; not an exhaustive replay of 213 tasks or paper model scores."
+}

@@ -6,7 +6,8 @@ auditing agents:
 - `context.json`: category definitions, example conversations, and relative image paths.
 - `exclude_from_eval.json`: demonstration tasks and aliases excluded from evaluation.
 
-The **29 demonstration images are pending release on Hugging Face**. Their
+The **29 demonstration images are available on Hugging Face**. Restore them with
+`python scripts/download_resources.py --package icl-examples`. Their
 expected locations and hashes are recorded in
 [`resources/manifest.json`](../resources/manifest.json), under `examples/icl/images/`.
 The native launcher uses `examples/icl/` by default; `--icl-dir` can select a

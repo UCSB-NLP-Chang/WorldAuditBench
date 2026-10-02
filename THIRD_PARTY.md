@@ -18,5 +18,7 @@ assigned to third-party content by this migration.
   their respective upstream licenses. Engine source, weights, scene asset packs,
   and third-party runtime installations are not included here.
 
-Hugging Face asset packaging is pending. Preserve each asset's attribution and
-redistribution terms when assembling that release.
+Compiled runtime packages on Hugging Face retain their upstream terms and
+attribution. They do not grant rights to extract or separately redistribute
+third-party source assets. The medieval prop attribution records a CC BY-NC-SA
+4.0 asset; no blanket code license applies to the compiled environment contents.

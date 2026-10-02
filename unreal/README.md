@@ -14,5 +14,7 @@ file is traced to its original location in `../docs/migration/aws-source-files.j
 These sources do not include Unreal Engine or editable `.uasset`/`.umap` content.
 The 2026-09-14 recovery was explicitly recorded as an incomplete editor-asset
 recovery; it must not be represented as a verified rebuild of every later binary.
-Runtime packages and editable assets are pending Hugging Face packaging. Original
+Compiled runtime packages are distributed on Hugging Face; see
+[`../docs/resources.md`](../docs/resources.md). Editable third-party scene assets
+are outside the public release scope. Original
 workflow files may describe superseded deployment paths and release procedures.

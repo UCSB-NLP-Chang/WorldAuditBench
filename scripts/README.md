@@ -5,6 +5,8 @@ from the repository root.
 
 | Entry point | Purpose |
 | --- | --- |
+| [`download_resources.py`](download_resources.py) | Download verified environment packages and images; generate local profiles |
+| [`serve_unreal.py`](serve_unreal.py) | Start one installed Unreal task on a Linux GPU host |
 | [`native-agents/setup.py`](native-agents/setup.py) | Install the native-client Python runtime |
 | [`native-agents/launch.py`](native-agents/launch.py) | Run one VLM auditing episode |
 | [`native-agents/run_batch.py`](native-agents/run_batch.py) | Run a batch of auditing episodes |
