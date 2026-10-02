@@ -90,7 +90,7 @@ from auditor.task_dataset import load_task
 
 task = load_task("S01")
 print(task["input"])
-print(task["rubric"]["en"])
+print(task["rubric"])
 ```
 
 See the [task data guide](docs/task-data.md) for the schema and input/evaluation boundary. The download is pinned by revision and checksum; subsequent runs reuse the local cache.
