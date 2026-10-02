@@ -7,7 +7,7 @@ in the current viewer candidate. Paired captures and live video checks are in th
 [indoor window repair record](indoor-window-glass.md). This does not publish the
 rebuilt packages or clear the other scene findings below.
 
-## Rebuilt candidates — 2026-10-02 15:42 UTC
+## Rebuilt candidates — 2026-10-02 16:16 UTC
 
 The new executables are **not ready for publication**. All seven environments
 compiled. Of the 126 tasks, 125 passed initial-frame, turn, spawn and bundled-boundary
@@ -33,10 +33,14 @@ interaction selector was also restored after A09 and A17 exposed an
 incorrect interaction range. Paired approach routes now match for A09, A17 and
 A25. A09 additionally matches both rejected distant interactions and two successful
 nearby basket pushes, including the recorded post-push actor states and reviewed
-screenshots. Additional trigger coverage remains pending.
+screenshots. A25 also matches one successful door-close interaction and its
+post-interaction view; both leaves have not yet been exercised through a complete
+close/reopen cycle. Additional trigger coverage remains pending.
 
-Broader paired checks of production and rebuilt programs are running. They compare
-identical action sequences and record executable hashes. A matching actor-state
+All 126 tasks completed the paired look, wait and short departure/return checks
+with matching sampled actor states, positions and simulated times. These runs
+record executable hashes; Urban used the earlier rebuild before the facade and
+ground repairs. Paired Urban checks are being repeated with those repairs. A matching actor-state
 digest does not cover materials, component state or every trigger; screenshots and
 actual interaction results must also be reviewed. Source-literal searches are
 review leads, not by themselves failed tasks.
@@ -71,7 +75,15 @@ U024's rear-ground material repeats the complete road texture atlas using world
 coordinates. The decoded cooked atlas contains the same triangular padding and
 stretched strips visible in the ground screenshots. Forcing the highest landscape
 LOD did not change the defect; hiding the landscape removed the ground entirely.
-A candidate material repair is being tested. This issue is not yet marked fixed.
+The new candidate samples a valid paving region into separate runtime textures
+with mipmaps, leaving the original road atlas and other materials unchanged.
+Reviewed views show continuous paving without the triangular or stretched strips.
+A walking comparison also triggered U024's cardboard-box displacement in both
+programs, with matching sampled states and reviewed before/after images.
+
+The repair is enabled by default in a separate candidate. All 15 Urban tasks
+pass startup, spawn, bundled-boundary and changed-frame checks. The other visual
+issues below still block publication.
 
 ## Earlier production-package checks
 
@@ -121,8 +133,8 @@ stationary observation. This covers selected routes, not every reachable positio
 | Finding | Evidence and status |
 |---|---|
 | Subway exterior stairs disappearing with distance | A 148-observation S01 route, repeated with the HUD disabled, approached, descended, climbed and looked back at the exterior stairs. The reported disappearance was not reproduced on that route. A separate run increased view distance and disabled occlusion for comparison. No global culling change was adopted. The original report remains open. |
-| Urban rear-lane ground | Stretched pavement patterns and triangular seams are visible in the U024 walk. This is outside the cardboard-box movement anomaly and remains open. |
-| Urban storefront reflections | Repeated tree/sky reflections and abrupt-looking window changes are visible in U033 and neighboring shopfronts. Material-level review remains open. |
+| Urban rear-lane ground | Fixed in the new candidate on reviewed U024 views and walking routes: the rear-ground material no longer repeats the atlas padding. The intended cardboard-box displacement still triggers and matches production. Further Urban comparisons are running. |
+| Urban storefront reflections | Repeated tree/sky reflections and abrupt-looking window changes remain open. Diagnostics at a neighboring shopfront isolate the image to Lumen reflections; disabling reflection captures alone leaves it unchanged. Turning off Lumen reflections removes it but changes the glass appearance, so no global disabling change has been adopted. |
 | Urban facade collision | Fixed on the recorded U041 route in the new candidate: double-sided facade collision prevents entry, and a repeat walk returns outside. Street and sampled dumpster collision controls are preserved. All 15 Urban startup checks pass; broader scene review remains open. |
 | Lighting changes | Several maps gradually settle in brightness after startup or a turn. Stationary frame differences decrease over time, consistent with exposure adaptation; this alone does not establish random light flicker. S01 uses fixed exposure. Reflection shimmer and lighting during movement are not exhaustively cleared. |
 | Initial texture detail | Some Ancient scene surfaces have low detail at the first observation and resolve after additional frames. Texture-streaming startup remains part of the visual review. |
