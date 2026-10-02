@@ -118,10 +118,9 @@
     },
     {
       "id": "rural",
-      "filename": "rural-linux-x86_64.tar.gz",
-      "bytes": 1578633371,
-      "sha256": "bbda928cd50c360e76ee2fc4439337b9c4c8eee858719fb579d9880875c4aa4f",
-      "binary_sha256": "ab452c63fd4e5b1a13f93e6516d04fe6bf682617b942fbee3152f41b8e40957e",
+      "filename": "unreal/rural.tar.gz",
+      "bytes": 1590425624,
+      "sha256": "5f7e8175c15b7dc9db3e66b8c4560211bc55aa3dab694be0d0da07f93ebea1a2",
       "tasks": [
         "R01",
         "R02",
@@ -140,10 +139,36 @@
         "R17",
         "R18"
       ],
-      "binary": "Linux/RuralAustralia/Binaries/Linux/RuralAustralia",
       "group": "unreal-runtime",
       "repository": "ziyjiang/WorldAuditBench",
-      "revision": "0761f78a79e99f93391906901442089d363d6bd5"
+      "launch_manifest": "launch.json",
+      "launch_sha256": "fe0d63233dd252e214328f7674ae5dc64a5edfe54f1e09a2dc05ebcc651af07b",
+      "variants": [
+        {
+          "id": "rural-scene-1",
+          "binary": "runtime/scene-1/Linux/RuralAustralia/Binaries/Linux/RuralAustralia",
+          "binary_sha256": "f21d0dea04a1a3e2a4ccca46c329253e4361b1dee6b83aa5c82b746b9b041b83",
+          "tasks": [
+            "R01",
+            "R02",
+            "R03",
+            "R05",
+            "R06",
+            "R07",
+            "R08",
+            "R10",
+            "R11",
+            "R12",
+            "R13",
+            "R14",
+            "R15",
+            "R16",
+            "R17",
+            "R18"
+          ]
+        }
+      ],
+      "revision": "abeeeec9826b1598975699add0d69119a9f5f0d8"
     },
     {
       "id": "subway",
