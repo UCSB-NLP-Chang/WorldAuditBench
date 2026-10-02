@@ -49,7 +49,7 @@
       "source": "/home/ec2-user/game-auditing/README.md",
       "sha256": "fe61de9f8793816513437ef9e2425bc96732048d23be98d9bc331d988378aacc",
       "bytes": 6309,
-      "released_sha256": "230adb0a6b0d129f30415191fb991e07cc1bfe62ecd076d98beb575b8f3a6234",
+      "released_sha256": "c65c1e70f5d6eb7b7b93c24564ab8270f8b6217280d7e5536ad9a08af3cecef4",
       "status": "adapted"
     },
     {
@@ -4715,7 +4715,7 @@
       "source": "/home/ec2-user/game-auditing/eval/judge.py",
       "sha256": "1d61f4d470eee7560406574888a8990b05d05b9633e8a61b3836809b93291cc6",
       "bytes": 9600,
-      "released_sha256": "851880ab34c0fdf1e72ea73a5fdf967cf8e29068aa1191d220c3b7ea92524805",
+      "released_sha256": "7bf281290c4d394859fc42c2b02f23c5b376bad13598bf7a03796e92c9f8d601",
       "status": "adapted"
     },
     {
@@ -4739,8 +4739,8 @@
       "source": "/home/ec2-user/game-auditing/eval/judge_prompt.md",
       "sha256": "266b30a586e765d46c30daf8b086b4c9e0e78caddf4eb24a51db61700ae21e09",
       "bytes": 2987,
-      "released_sha256": "266b30a586e765d46c30daf8b086b4c9e0e78caddf4eb24a51db61700ae21e09",
-      "status": "unchanged"
+      "released_sha256": "8290021073dbc78ecfc0ac8250a98c657630b6db863f23ac6119b8ace15e0d24",
+      "status": "adapted"
     },
     {
       "path": "eval/judge_sem.py",
@@ -5345,7 +5345,7 @@
       "source": "/home/ec2-user/game-auditing/scripts/native-agents/launch.py",
       "sha256": "92a651d842036e2844b4c322bada89619c7cd3392a41cbecc591cd68f1faa9bf",
       "bytes": 40255,
-      "released_sha256": "a2aeff84f47c95002e86648e43112c2816d67cc4820c22dea839faf2f20e2f0b",
+      "released_sha256": "1ea8ddb1bdb50a1d645644f73c21d38c2a2e3335c140179ae66af9dc7df3a42f",
       "status": "adapted"
     },
     {
@@ -5393,7 +5393,7 @@
       "source": "/home/ec2-user/game-auditing/scripts/native-agents/run_vla_replay.py",
       "sha256": "6cdbb79920691319b1a7e9c50c05eece44d293a73d71414d86af496bc27aa599",
       "bytes": 26367,
-      "released_sha256": "8be46d544000a3031d9353343d162cad1fdcb33a2593b8a76cfe70f6357b9ace",
+      "released_sha256": "2e077d43b930725261046dfb4050da4ee9b2ad16793d2e79ba6b50317532d1ad",
       "status": "adapted"
     },
     {

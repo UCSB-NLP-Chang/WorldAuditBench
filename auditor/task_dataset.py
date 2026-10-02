@@ -49,6 +49,10 @@ def download_file(pin, destination):
     return destination
 
 
+def example_checksum(subcategory):
+    return json.loads(PIN.read_text())['examples']['category_checksums'][subcategory]
+
+
 def ensure_examples():
     pin = json.loads(PIN.read_text())['examples']
     marker = DEFAULT_EXAMPLES / '.release-sha256'
@@ -82,7 +86,7 @@ def ensure_examples():
 def _catalog(path, modified_ns, size):
     import pyarrow.parquet as pq
     columns = ['task_id', 'engine', 'environment', 'category', 'subcategory',
-               'input', 'rubric', 'judge_prompt', 'runtime', 'provenance']
+               'map', 'input', 'rubric']
     rows = pq.read_table(path, columns=columns).to_pylist()
     catalog = {r['task_id'].casefold(): r for r in rows}
     if len(catalog) != len(rows):

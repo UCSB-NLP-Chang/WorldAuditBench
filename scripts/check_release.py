@@ -54,6 +54,7 @@ def main():
     resources = json.loads((ROOT / "resources/manifest.json").read_text())
     release = json.loads((ROOT / 'resources/releases.json').read_text())
     runtime_ids = []
+    browser_ids = []
     for package in release['packages']:
         if len(package['revision']) != 40 or any(c not in '0123456789abcdef' for c in package['revision']):
             errors.append('Unpinned resource revision: ' + package['id'])
@@ -65,15 +66,29 @@ def main():
                 variant_tasks = [t for v in package['variants'] for t in v['tasks']]
                 if sorted(variant_tasks) != sorted(package['tasks']):
                     errors.append('Variant task coverage differs: ' + package['id'])
+        if package['group'] == 'threejs-runtime':
+            browser_ids.extend(package['tasks'])
     expected_unreal = set((ROOT / 'benchmark/splits/unreal.txt').read_text().splitlines())
     if set(runtime_ids) != expected_unreal or len(runtime_ids) != len(expected_unreal):
         errors.append('Runtime packages must cover each Unreal paper task exactly once')
+    if browser_ids:
+        expected_browser = set((ROOT / 'benchmark/splits/threejs.txt').read_text().splitlines())
+        if set(browser_ids) != expected_browser or len(browser_ids) != len(expected_browser):
+            errors.append('Runtime packages must cover each Three.js paper task exactly once')
     if args.resources:
         for row in resources["resources"]:
             if row['status'] != 'available' or 'path' not in row:
                 continue
             p = ((args.runtime_root / 'threejs-builds' / Path(row['path']).name)
                  if row['group'] == 'threejs-builds' else ROOT / row["path"])
+            if row['group'] == 'threejs-builds' and browser_ids:
+                matches = [package for package in release['packages']
+                           if package['group'] == 'threejs-runtime' and package['page'] == Path(row['path']).name]
+                if len(matches) != 1:
+                    errors.append('Ambiguous browser resource: ' + row['path'])
+                    continue
+                package = matches[0]
+                p = args.runtime_root / package['id'] / package['runtime_root'] / package['page']
             if not p.is_file() or digest(p) != row["sha256"]:
                 errors.append(f"Missing or mismatched resource: {row['path']}")
         for package in release['packages']:

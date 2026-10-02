@@ -4,8 +4,8 @@ import argparse
 import hashlib
 import json
 from pathlib import Path
-import subprocess
 import sys
+import re
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
@@ -20,8 +20,6 @@ def export(destination):
     tasks = json.loads((ROOT / 'benchmark/paper-tasks.json').read_text())['tasks']
     scenes = json.loads((ROOT / 'scripts/native-agents/task-scenes.json').read_text())['scenes']
     categories = json.loads((ROOT / 'scripts/native-agents/task-subcategories.json').read_text())['task_subcategories']
-    judge_prompt = (ROOT / 'eval/judge_prompt.md').read_text()
-    source_commit = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip()
     packs = {code: ExamplePack(ROOT / 'examples/icl', code=code)
              for code in {t['paper_subcategory'] for t in tasks}}
     rows = []
@@ -38,27 +36,21 @@ def export(destination):
             'category': task['paper_family'], 'subcategory': code,
             'input': {'instruction': instruction(), 'scene_description': descriptions[0],
                       'subcategory': code},
-            'rubric': {'text': task['rubrics'], **task['rubrics_i18n']},
-            'judge_prompt': judge_prompt,
-            'runtime': {'map': task['map'], 'source_case': task.get('source_case'),
-                        'revision': task['revision']},
-            'provenance': {'source_commit': source_commit, 'task_sha256': task.get('sha256'),
-                           'paper_binary_sha256': task.get('build_sha256'),
-                           'page_sha256': task.get('page_sha256'),
-                           'policy_sha256': task.get('policy_sha256'),
-                           'icl_sha256': packs[code].sha256},
+            'map': task['map'],
+            'rubric': {'expected_behavior': task['rubrics_i18n']['en']['expected'],
+                       'reproduction_steps': task['rubrics_i18n']['en']['steps'],
+                       'success_criteria': task['rubrics_i18n']['en']['criteria']},
         })
     text = Value('string')
-    rubric_language = {'expected': text, 'steps': text, 'criteria': text}
     features = Features({
         'task_id': text, 'engine': text, 'environment': text, 'category': text, 'subcategory': text,
+        'map': text,
         'input': {'instruction': text, 'scene_description': text, 'subcategory': text},
-        'rubric': {'text': text, 'en': rubric_language, 'zh': rubric_language},
-        'judge_prompt': text,
-        'runtime': {'map': text, 'source_case': text, 'revision': Value('int64')},
-        'provenance': {key: text for key in ['source_commit', 'task_sha256', 'paper_binary_sha256',
-                                            'page_sha256', 'policy_sha256', 'icl_sha256']},
+        'rubric': {'expected_behavior': text, 'reproduction_steps': text, 'success_criteria': text},
     })
+    for row in rows:
+        if re.search(r'[\u3400-\u4dbf\u4e00-\u9fff]', json.dumps(row, ensure_ascii=False)):
+            raise ValueError(f"Non-English text remains in task {row['task_id']}")
     dataset = Dataset.from_list(rows, features=features)
     destination.parent.mkdir(parents=True, exist_ok=True)
     pq.write_table(dataset.data.table, destination, row_group_size=213, compression='zstd',

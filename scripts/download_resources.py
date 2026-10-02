@@ -174,7 +174,33 @@ def restore_examples(root):
     print('Restored ICL images to examples/icl/images and service example directories.', flush=True)
 
 
-def write_browser_profiles(root):
+def write_browser_profiles(root, manifest=None):
+    manifest = manifest or json.loads((ROOT / 'resources/releases.json').read_text())
+    standalone = [p for p in manifest['packages'] if p['group'] == 'threejs-runtime'
+                  and (root / p['id'] / '.worldauditbench-release.json').is_file()]
+    if standalone:
+        catalog = {t['id']: t for t in json.loads((ROOT / 'benchmark/paper-tasks.json').read_text())['tasks']}
+        from urllib.parse import urlparse
+        output = root / 'browser-profiles'
+        output.mkdir(exist_ok=True)
+        count = 0
+        for package in standalone:
+            pages = root / package['id'] / package['runtime_root']
+            checked = set()
+            for task_id in package['tasks']:
+                row = catalog[task_id]
+                filename = Path(urlparse(row['map']).path).name
+                checksum = row['page_sha256']
+                if filename not in checked:
+                    if digest(pages / filename) != checksum:
+                        raise ValueError('Browser page checksum mismatch: ' + filename)
+                    checked.add(filename)
+                config = {'task': task_id, 'browser_root': str(pages), 'browser_page': filename,
+                          'browser_case': row['source_case'], 'page_sha256': checksum}
+                (output / (task_id + '.json')).write_text(json.dumps(config, indent=2) + '\n')
+                count += 1
+        print(f'Wrote {count} browser task configurations: {output}', flush=True)
+        return
     pages = root / 'threejs-builds'
     if not (pages / '.worldauditbench-release.json').is_file():
         return
@@ -208,8 +234,12 @@ def main():
     parser.add_argument('--local-archives', type=Path, help='Restore already downloaded archives.')
     args = parser.parse_args()
     manifest = json.loads(args.manifest.read_text())
-    selected = [p for p in manifest['packages'] if not args.package or p['id'] in args.package]
-    unknown = set(args.package or []) - {p['id'] for p in selected}
+    requested = set(args.package or [])
+    if 'threejs-builds' in requested and any(p['group'] == 'threejs-runtime' for p in manifest['packages']):
+        requested.remove('threejs-builds')
+        requested.update(p['id'] for p in manifest['packages'] if p['group'] == 'threejs-runtime')
+    selected = [p for p in manifest['packages'] if not requested or p['id'] in requested]
+    unknown = requested - {p['id'] for p in selected}
     if unknown:
         parser.error('Unknown packages: ' + ', '.join(sorted(unknown)))
     if args.list:
@@ -221,7 +251,7 @@ def main():
         restore(package, root, root / '.downloads', args.local_archives, args.keep_archives)
     write_profiles(manifest, root)
     restore_examples(root)
-    write_browser_profiles(root)
+    write_browser_profiles(root, manifest)
 
 
 if __name__ == '__main__':

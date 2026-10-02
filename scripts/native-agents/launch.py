@@ -15,7 +15,7 @@ import uuid
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
 from auditor.mcp_agent.examples import ExamplePack
-from auditor.task_dataset import load_task, ensure_examples
+from auditor.task_dataset import example_checksum, load_task, ensure_examples
 
 BASE = ROOT / "out/native-agents"
 DEFAULT_ICL = ROOT / "examples/icl"
@@ -202,7 +202,7 @@ def prepare(args):
     row = unified_task(args)
     if row is not None and not args.no_icl:
         examples = ExamplePack(ensure_examples() if args.icl_dir == DEFAULT_ICL else args.icl_dir, code=subcategory)
-        if examples.sha256 != row['provenance']['icl_sha256']:
+        if examples.sha256 != example_checksum(subcategory):
             raise ValueError('Shared examples differ from the dataset release')
     else:
         examples = None if args.no_icl else ExamplePack(args.icl_dir, code=subcategory)

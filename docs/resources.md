@@ -68,7 +68,8 @@ The IPC-fixed experiment executables and cooked files are preserved byte for byt
 ## Run a Three.js task
 
 ```bash
-python scripts/download_resources.py --package threejs-builds --package icl-examples
+python scripts/download_dataset.py
+python scripts/download_resources.py --package threejs-airfield
 python scripts/native-agents/launch.py gemini \
   --environment threejs --task JS_AF01 --seed 5 \
   --browser-config out/runtime/browser-profiles/JS_AF01.json \
@@ -79,7 +80,10 @@ python scripts/native-agents/launch.py gemini \
 
 Install the browser and native-client dependencies described in
 [native-agent-mcp.md](native-agent-mcp.md). The installer verifies all six page
-hashes and creates a configuration for each of the 87 paper tasks. These configs
+hashes and creates a configuration for each task in the selected environment. Use
+`--package threejs-builds` to install all six environments, or select
+`threejs-airfield`, `threejs-cottage`, `threejs-house`, `threejs-reef`,
+`threejs-sponza` and `threejs-wilderness` individually. These configs
 contain only the browser launch fields, not the task answers.
 
 ## Visual validation

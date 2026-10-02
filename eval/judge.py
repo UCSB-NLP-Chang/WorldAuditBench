@@ -176,7 +176,7 @@ def main(argv=None):
         if args.task:
             from auditor.task_dataset import load_task
             task = load_task(args.task, args.dataset)
-            rubrics, instructions = task['rubric']['text'], task['judge_prompt']
+            rubrics = json.dumps(task['rubric'], ensure_ascii=False, indent=2)
         else:
             rubrics = args.rubrics.read_text(encoding="utf-8")
         result = judge(rubrics,

@@ -20,11 +20,10 @@ def table(tmp_path):
            'category': 'Static physics', 'subcategory': 'G1',
            'input': {'instruction': 'Inspect this public scene.',
                      'scene_description': 'A station concourse.', 'subcategory': 'G1'},
-           'rubric': {'text': 'HIDDEN_RUBRIC_ANSWER: floating bench',
-                      'en': {'criteria': 'Bench floats'}, 'zh': {'criteria': '长椅悬空'}},
-           'judge_prompt': 'Dataset-specific judge instructions.',
-           'runtime': {'map': '/Game/Test', 'revision': 1, 'source_case': None},
-           'provenance': {'source_commit': 'synthetic-test', 'icl_sha256': 'unused'}}
+           'map': '/Game/Test?Task=S01',
+           'rubric': {'expected_behavior': 'The bench rests on the floor.',
+                      'reproduction_steps': 'Inspect the bench.',
+                      'success_criteria': 'HIDDEN_RUBRIC_ANSWER: floating bench'}}
     path = tmp_path / 'tasks.parquet'
     pq.write_table(pa.Table.from_pylist([row]), path)
     return path
@@ -60,8 +59,8 @@ def test_judge_reads_same_task_and_prompt(table, tmp_path, monkeypatch):
     report = tmp_path / 'report.txt'
     report.write_text('A bench floats above the floor.')
     def fake_judge(rubric, model_output, images, **kwargs):
-        assert rubric == 'HIDDEN_RUBRIC_ANSWER: floating bench'
-        assert kwargs['instructions'] == 'Dataset-specific judge instructions.'
+        assert json.loads(rubric)['success_criteria'] == 'HIDDEN_RUBRIC_ANSWER: floating bench'
+        assert kwargs['instructions'] is None  # Use the shared English judge instructions.
         return {'reason': 'Test comparison', 'score': 1}
     monkeypatch.setattr(judge, 'judge', fake_judge)
     assert judge.main(['--task', 'S01', '--dataset', str(table), '--model-output', str(report)]) == 0

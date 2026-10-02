@@ -79,7 +79,7 @@ python -m pip install -r requirements.txt
 
 ### 2. Explore the evaluation set
 
-The [Hugging Face dataset](https://huggingface.co/datasets/ziyjiang/WorldAuditBench) contains one row per task: public inputs, categories, bilingual rubrics and runtime identifiers. Shared in-context examples are stored once in `examples/`.
+The [Hugging Face dataset](https://huggingface.co/datasets/ziyjiang/WorldAuditBench) contains one row per task: public inputs, categories, English rubrics and map identifiers. Shared in-context examples are stored once in `examples/`.
 
 ```bash
 python scripts/download_dataset.py

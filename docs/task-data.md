@@ -21,7 +21,7 @@ from datasets import load_dataset
 tasks = load_dataset("ziyjiang/WorldAuditBench", split="test")
 task = next(t for t in tasks if t["task_id"] == "S01")
 print(task["input"])
-print(task["rubric"]["en"])
+print(task["rubric"])
 ```
 
 The **213 rows** cover **126 Unreal and 87 Three.js tasks**, across 13 environments.
@@ -31,10 +31,8 @@ The **213 rows** cover **126 Unreal and 87 Three.js tasks**, across 13 environme
 | `task_id`, `engine`, `environment` | Stable task ID and environment |
 | `category`, `subcategory` | Anomaly family and type |
 | `input` | Auditing instruction, public scene description and assigned subcategory |
-| `rubric` | English and Chinese expected behavior, reproduction steps and acceptance criteria; also the original rubric text |
-| `runtime` | Map, source case and task revision |
-| `provenance` | Source revision and reference hashes, including the selected ICL demonstration hash |
-| `judge_prompt` | Instructions for evaluating the final report |
+| `rubric` | Expected behavior, reproduction steps and success criteria, in English |
+| `map` | Map path or scene URL used to load this task |
 
 In-context demonstrations are shared. The `subcategory` selects the matching
 example in `examples/`; their text and image bytes are not duplicated in task
@@ -58,8 +56,10 @@ a local table. `--no-icl` selects the zero-shot ablation.
 python -m eval.judge --task S01 --model-output agent_output.json
 ```
 
-The judge obtains S01's rubric and judge prompt from the same table. Custom
-rubric files remain supported through `--rubrics`.
+The judge obtains S01's English rubric from the table and uses the shared
+English instructions in `eval/judge_prompt.md`. Custom rubric files remain
+supported through `--rubrics`. Version pins and checksums live in GitHub's
+`resources/` configuration, outside the public task table.
 
 The model receives only the public input fields, the selected demonstration,
 tool instructions, budgets and observations during exploration. The launcher

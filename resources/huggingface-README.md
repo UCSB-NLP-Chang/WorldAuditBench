@@ -4,7 +4,6 @@ task_categories:
 - other
 language:
 - en
-- zh
 size_categories:
 - n<1K
 tags:
@@ -61,16 +60,15 @@ The evaluation set spans **126 Unreal Engine tasks** and **87 Three.js tasks**, 
 
 ## Data
 
-**One task per row.** [`dataset/tasks.parquet`](https://huggingface.co/datasets/ziyjiang/WorldAuditBench/tree/main/dataset) contains all 213 tasks, including public model inputs, categories, bilingual evaluation rubrics and runtime identifiers.
+**One task per row.** [`dataset/tasks.parquet`](https://huggingface.co/datasets/ziyjiang/WorldAuditBench/tree/main/dataset) contains all 213 tasks, including public model inputs, categories, English evaluation rubrics and map identifiers.
 
 | Field | Contents |
 | --- | --- |
 | `task_id`, `engine`, `environment` | Task and environment identifiers |
 | `category`, `subcategory` | Anomaly family and type |
 | `input` | Auditing instruction, public scene description and assigned subcategory |
-| `rubric` | Expected behavior, reproduction steps and acceptance criteria in English and Chinese |
-| `runtime`, `provenance` | Map, task revision and reference checksums |
-| `judge_prompt` | Instructions used to score the final report |
+| `rubric` | Expected behavior, reproduction steps and success criteria, in English |
+| `map` | Map path or scene URL used to load this task |
 
 The shared **in-context examples are stored once**, in [`examples/`](https://huggingface.co/datasets/ziyjiang/WorldAuditBench/tree/main/examples). The task's subcategory selects its demonstration. Rubrics are evaluation answers and are kept separate from model inputs.
 

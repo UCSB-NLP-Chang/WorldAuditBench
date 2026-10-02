@@ -118,12 +118,15 @@ def load_tasks(args):
             if not (rec / 'meta.json').exists():
                 raise SystemExit(f'{tid}: no recording under {rec}')
             prof.update(case_type='bug', family=row['environment'])
-            prof['task'] = {**prof.get('task', {}), 'rubrics_i18n': row['rubric']}
+            prof['task'] = {**prof.get('task', {}), 'rubrics_i18n': {'en': {
+                'expected': row['rubric']['expected_behavior'],
+                'steps': row['rubric']['reproduction_steps'],
+                'criteria': row['rubric']['success_criteria']}}}
             tasks.append({'id': tid, 'task_id': native, 'recording': str(rec.resolve()),
                           'family': row['environment'], 'subcategory': row['subcategory'],
                           'label_source': 'dataset', 'scene_source': 'dataset',
                           'scene': row['input']['scene_description'], 'case_type': 'bug',
-                          'has_rubric': bool(row['rubric']['en'])})
+                          'has_rubric': bool(row['rubric']['success_criteria'])})
         return tasks, profiles
     scenes = json.loads(args.scene_catalog.read_text())["scenes"]
     scene_of = {t: s["description"]["en"].strip() for s in scenes for t in s["task_ids"]}

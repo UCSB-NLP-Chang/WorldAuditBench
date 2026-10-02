@@ -1,14 +1,31 @@
 {
   "repository": "ziyjiang/WorldAuditBench",
-  "revision": "42a5358da80edb15d2fedc22ec69c240537b0878",
+  "revision": "732ad23c752baff3105b34fb33aef16d8289ccec",
   "filename": "dataset/tasks.parquet",
-  "bytes": 96757,
-  "sha256": "b344b6198d72543d82b4a3dceb1040343164d63eba7a51847bee355ac5acbcd6",
+  "bytes": 28430,
+  "sha256": "333d2a0cb736c6c8ba32982dba5f29f2605bd263cb25972856291dadc24b57ff",
   "examples": {
     "repository": "ziyjiang/WorldAuditBench",
     "revision": "42a5358da80edb15d2fedc22ec69c240537b0878",
     "filename": "examples/icl-examples.tar.gz",
     "bytes": 54839796,
-    "sha256": "94465af32135e8d500bcada9237a25092689b0d30e92599cf09a9fc6c2b10286"
+    "sha256": "94465af32135e8d500bcada9237a25092689b0d30e92599cf09a9fc6c2b10286",
+    "category_checksums": {
+      "C1": "2433db11bf062217d65b46f8a6e14aa0e82f6957968332b2e72583bd20d4c157",
+      "C2": "69e08517ca6eaa7242f28c10dca7d24925fff64d8f5696c71c6a7cdc5062a7a2",
+      "C3": "c0970b8ba6f9c07e3c5bf6c7a30143a32ae5b5ec25114bb5be01bc62e8b432fd",
+      "G1": "fd8716690d75f15315ce09e7fcf455f7ce53d9ad897d7a727c1af0f231aff354",
+      "G2": "0dae377f969764a48285b45ec097ce349150342a3b5856222402a796c1fefecc",
+      "G3": "f2b49881ed874f3f01ac305fd54802bcbc87f780d2f4f23e444db2cae235c939",
+      "S2": "a0415620080ac3d1a569f21025c74690e49e9f3ea48df5c1de88912e53148fad",
+      "S3": "475a97c267f86a928106cad623ead50071b4a3b9a0693340525bf1545bdff637",
+      "T1": "881f5e6e7534218e496114c5a0028282ca319ce451152fc37803c005c578aa2d",
+      "T2": "e9090a92ff8cc5e2b5d13c1ea9ce42b80d104980ebf3c045f570532ae2ced1ae",
+      "T3": "0f458e10e13e3851dd133805021682cbe476cdb0e79a32b524f122955a33e8eb",
+      "V1": "4565d7d13e0b1a83f1120159a5ab88a11b1590ec76f4fa04967708a240df0128",
+      "V2": "87a2b6a00cfbfd0c79ec0b473ec0f06b6ad5dd42197f4fe13e568ecbc6529760",
+      "V3": "c791fa601a3af31fe254f4abc3c372efa3b4f1be2b413981d744c6b343159f51",
+      "V4": "2de123adcbc80138cd8d4aadac9d6cc6ed0dec73c22154009ee019ac2259229d"
+    }
   }
 }
