@@ -2,15 +2,15 @@
 
 Usage (library):
     from agent.vla.bridge import Bridge
-    with Bridge(gpu="gl-egl") as br:
-        meta = br.open_env("env0-corridor", seed=1)
+    with Bridge(gpu="gl-egl", serve_dir="out/runtime") as br:
+        meta = br.open_env("JS_AF01", seed=5)
         res = br.act({"action": "forward", "dist": 1.5})
 
-Usage (GPU self-check):
-    python -m agent.vla.bridge --check-gpu
 """
 import argparse
 import functools
+import hashlib
+from urllib.parse import urlencode
 import http.server
 import json
 import threading
@@ -53,8 +53,9 @@ class _StaticServer(http.server.ThreadingHTTPServer):
 
 
 class Bridge:
-    def __init__(self, gpu="gl-egl", headless=True, size=(960, 600), serve_dir=REPO):
-        self.gpu, self.headless, self.size, self.serve_dir = gpu, headless, size, Path(serve_dir)
+    def __init__(self, gpu="gl-egl", headless=True, size=(960, 600), serve_dir=REPO, profiles=None):
+        self.gpu, self.headless, self.size, self.serve_dir = gpu, headless, size, Path(serve_dir).resolve()
+        self.profiles = Path(profiles) if profiles else REPO / "out/runtime/browser-profiles"
         # headless_shell (headless=True) cannot use the GPU; "native" launches full Chromium with --headless=new instead
         self.launch_headless = headless and gpu != "native"
         self.console = []       # (type, text)
@@ -94,21 +95,14 @@ class Bridge:
 
     # ── env ──
     def open_env(self, config, seed=None, agent=True, timeout=240_000, extra=None):
-        entry = "agent" if agent else "human"
-        url = f"http://127.0.0.1:{self.port}/environments/threejs/runtime/{entry}.html?config={config}"
-        # standalone page environments (e.g. the reef): the config names the page; it implements window.__env itself
-        cfg_path = self.serve_dir / "environments/threejs/runtime" / "configs" / f"{config}.json"
-        if cfg_path.exists():
-            try:
-                page = json.loads(cfg_path.read_text()).get("page")
-            except Exception:
-                page = None
-            if page:
-                url = f"http://127.0.0.1:{self.port}/{page}?harness=1&config={config}"
-        if seed is not None:
-            url += f"&seed={seed}"
-        for k, v in (extra or {}).items():
-            url += f"&{k}={v}"
+        profile = json.loads((self.profiles / f"{config}.json").read_text())
+        page = Path(profile["browser_root"]) / profile["browser_page"]
+        if hashlib.sha256(page.read_bytes()).hexdigest() != profile["page_sha256"]:
+            raise ValueError("Environment page checksum mismatch")
+        relative = page.resolve().relative_to(self.serve_dir).as_posix()
+        query = {"bug": profile["browser_case"], "config": profile["browser_case"],
+                 "harness": 1, "noui": 1, "seed": 5 if seed is None else seed, **(extra or {})}
+        url = f"http://127.0.0.1:{self.port}/{relative}?{urlencode(query)}"
         t0 = time.time()
         self.page.goto(url)
         self.page.wait_for_function(
@@ -151,30 +145,3 @@ class Bridge:
                  };
                  requestAnimationFrame(tick);
                })""", seconds)
-
-
-def check_gpu():
-    print(f"{'mode':<12} {'renderer':<60} {'env0 load':<10} fps")
-    best = None
-    for mode in GPU_FLAGSETS:
-        try:
-            with Bridge(gpu=mode) as br:
-                meta = br.open_env("env0-corridor", seed=1)
-                fps = br.measure_fps(1.5)
-                soft = ("SwiftShader" in meta["renderer"]) or ("llvmpipe" in meta["renderer"])
-                print(f"{mode:<12} {meta['renderer']:<60} {meta['load_time_s']:<10} {fps}"
-                      + ("   [software]" if soft else "   [real GPU]"))
-                if not soft and best is None:
-                    best = mode
-        except Exception as e:
-            print(f"{mode:<12} FAILED: {str(e).splitlines()[0][:90]}")
-    print(f"\nsuggested --gpu {best or 'swiftshader'}"
-          + (" (no real GPU; software rendering works - VLM inference is the bottleneck - but it is recorded in run logs)" if best is None else ""))
-
-
-if __name__ == "__main__":
-    ap = argparse.ArgumentParser()
-    ap.add_argument("--check-gpu", action="store_true")
-    args = ap.parse_args()
-    if args.check_gpu:
-        check_gpu()

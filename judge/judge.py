@@ -11,7 +11,25 @@ import sys
 import tempfile
 import time
 
-from judge.codex_metrics import usage_from_events
+def usage_from_events(text):
+    turns = []
+    for line in text.splitlines():
+        try:
+            event = json.loads(line)
+        except (ValueError, TypeError):
+            continue
+        if isinstance(event, dict) and event.get("type") == "turn.completed" and isinstance(event.get("usage"), dict):
+            turns.append(event["usage"])
+    fields = ("input_tokens", "cached_input_tokens", "cache_write_input_tokens",
+              "output_tokens", "reasoning_output_tokens")
+    usage = {k: sum(t[k] for t in turns) if turns and all(type(t.get(k)) is int for t in turns) else None
+             for k in fields}
+    usage["total_tokens"] = (usage["input_tokens"] + usage["output_tokens"]
+                             if usage["input_tokens"] is not None and usage["output_tokens"] is not None else None)
+    return {"usage": usage, "completed_turns": len(turns),
+            "usage_complete": bool(turns) and all(usage[k] is not None for k in ("input_tokens", "output_tokens")),
+            "usage_source": "native Codex turn.completed events; cached tokens are included in input tokens"}
+
 
 PROMPT_PATH = Path(__file__).with_name("judge_prompt.md")
 SCHEMA = {
@@ -162,6 +180,7 @@ def main(argv=None):
     parser.add_argument("--model-output", type=Path, required=True, help="UTF-8 model output file")
     parser.add_argument("--images", type=Path, nargs="+", action="extend", default=[],
                         help="Optional screenshots, in supplied order; repeatable")
+    parser.add_argument("--evidence", type=Path, help="JSON list of evidence image paths exported by the experiment runner")
     parser.add_argument("--output", type=Path, help="Also save the JSON result to this file")
     parser.add_argument("--model", default="gpt-6-astra", help="Exact judge model; no substitution")
     parser.add_argument("--reasoning-effort", choices=["low", "medium", "high", "xhigh"], default="medium")
@@ -169,7 +188,12 @@ def main(argv=None):
     parser.add_argument("--codex-bin", default="codex", help="Codex CLI executable")
     args = parser.parse_args(argv)
     try:
-        inputs = [args.rubrics, args.dataset, args.model_output, *args.images]
+        if args.evidence:
+            paths = json.loads(args.evidence.read_text())
+            if not isinstance(paths, list) or not all(isinstance(p, str) for p in paths):
+                raise ValueError("Evidence must be a JSON list of image paths")
+            args.images.extend(Path(p) if Path(p).is_absolute() else args.evidence.parent / p for p in paths)
+        inputs = [args.rubrics, args.dataset, args.model_output, args.evidence, *args.images]
         if args.output and args.output.resolve() in {p.resolve() for p in inputs if p is not None}:
             raise ValueError("Output path must not overwrite an input file")
         instructions = None

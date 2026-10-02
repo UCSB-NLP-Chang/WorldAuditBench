@@ -4,22 +4,12 @@
 
 ```bash
 python scripts/check_release.py
-python -m pytest -q -m 'not chromium and not live'
+python -m pytest -q
 ```
 
 The release check verifies the 213 task IDs, evaluation splits, anomaly-family
 counts and environment package coverage. Tests cover agents, task inputs,
 scoring, environment interfaces and archive integrity.
-
-CI also runs the Explore service tests:
-
-```bash
-cd demos/human/explore
-PYTHONPATH=. python -m unittest discover -s tests
-```
-
-The older Review and Evaluate service suites require updates for retired task
-IDs, private profiles and changed judgment payloads. They are not part of CI.
 
 ## Environment checks
 

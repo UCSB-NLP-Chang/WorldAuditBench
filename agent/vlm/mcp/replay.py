@@ -53,7 +53,7 @@ class ReplayEnv:
         self.frames = list(self.recording["frames"])
         missing = [f for f in self.frames if not (self.dir / f).exists()]
         if missing:
-            raise ValueError(f"{len(missing)} recorded frames missing (restore them with scripts/tools/vla_frames_from_video.py)")
+            raise ValueError(f"{len(missing)} recorded frames missing (restore the original recording frames)")
         self.poses = [json.loads(l) for l in (self.dir / "poses.jsonl").read_text().splitlines() if l.strip()]
         self.by_tick = {p["t"]: p for p in self.poses}
         self.last_t = round((len(self.frames) - 1) * self.frame_dt, 3)   # 59.5 s for 120 frames

@@ -7,6 +7,5 @@
 - [Score reports](binary-judge.md)
 - [VLA and batch commands](../scripts/README.md)
 - [Environment HTTP API](environment-http-api.md)
-- [Human baseline judging](human-baseline-judge.md)
 - [Repository structure](repository-layout.md)
 - [Validation](validation.md)

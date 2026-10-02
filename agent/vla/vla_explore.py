@@ -1,13 +1,13 @@
 """Setting 2, stage 1: a low-cost VLA game model (Open-P2P) explores the world; we record
-what it saw. The recording is later audited by a strong VLM (judge/vqa_audit.py).
+what it saw. The recording is later audited by a strong VLM (agent/vla/replay.py).
 
 The explorer knows nothing about bugs - it just plays. Sim time advances in fixed 50ms ticks
 (20Hz), only while the explorer acts (same paused-world principle as Setting 1).
 
 Usage:
-  .venv/bin/python -m agent.vla.vla_explore --configs sp00-clean,sp01-float --seeds 2 \
-      --ticks 1800 --tag vla-p2p1200
-Outputs per episode: runs/<tag>/<config>-s<seed>/ frames (every N ticks, full res),
+  .venv/bin/python -m agent.vla.vla_explore --tasks JS_SP01,JS_SP02 \
+      --ticks 1200 --tag vla-p2p1200
+Outputs per episode: runs/<tag>/<task>/ frames (every N ticks, full res),
 poses.jsonl, meta.json (incl. bug-manifestation events), video.mp4.
 """
 import argparse
@@ -22,7 +22,7 @@ from pathlib import Path
 from PIL import Image
 
 from agent.vla.bridge import Bridge
-from agent.vla.runner import REPO
+REPO = Path(__file__).resolve().parents[2]
 
 P2P_ROOT = os.environ.get("P2P_ROOT", "/home/ubuntu/tools/open-p2p")     # open-p2p checkout with .venv (uv sync) + checkpoints/<size>/
 P2P_PY = os.environ.get("P2P_PY", f"{P2P_ROOT}/.venv/bin/python")
@@ -164,7 +164,7 @@ def run_episode(br, p2p, config, seed, ticks, dt_ms, record_every, text, out_dir
 
     probe = br.probe()
     (out_dir / "poses.jsonl").write_text("\n".join(json.dumps(p) for p in poses))
-    meta = dict(task=f"vla_{config}", config=config, seed=seed, kind="vla_explore",
+    meta = dict(task=config, config=config, seed=seed, kind="vla_explore",
                 model="open-p2p", ticks=ticks, dt_ms=dt_ms, record_every=record_every,
                 text=text, bug_events=probe.get("bugEvents", []),
                 n_recoveries=n_recoveries, n_nudges=n_nudges, idle_nudge=idle_nudge,
@@ -187,44 +187,45 @@ def run_episode(br, p2p, config, seed, ticks, dt_ms, record_every, text, out_dir
 
 
 def main():
-    ap = argparse.ArgumentParser()
-    ap.add_argument("--configs", required=True, help="comma-separated env config names")
-    ap.add_argument("--seeds", type=int, default=1)
-    ap.add_argument("--ticks", type=int, default=1800)
+    from scripts.runtime import DEFAULT_RUNTIME, ensure_environment
+    from scripts.experiments.run import task_ids
+    ap = argparse.ArgumentParser(description="Record Open-P2P exploration of Three.js tasks")
+    ap.add_argument("--tasks", required=True, help="Comma-separated IDs or @split.txt")
+    ap.add_argument("--runtime-root", type=Path, default=DEFAULT_RUNTIME)
+    ap.add_argument("--download", action="store_true")
+    ap.add_argument("--ticks", type=int, default=1200)
     ap.add_argument("--dt-ms", type=int, default=50)
     ap.add_argument("--record-every", type=int, default=10)
     ap.add_argument("--text", default="Explore this place. Walk around and look at everything.")
     ap.add_argument("--no-text", action="store_true")
-    ap.add_argument("--tag", default="vla-p2p")
-    ap.add_argument("--skip-done", action="store_true", help="skip episodes whose meta.json already exists (resume a batch)")
-    ap.add_argument("--claim", action="store_true", help="several drivers over the same list: claim an episode atomically (runs/<tag>/<ep>.claim) before running it")
+    ap.add_argument("--tag", default="vla-threejs")
+    ap.add_argument("--skip-done", action="store_true")
     ap.add_argument("--size", default="1200M")
     ap.add_argument("--gpu", default="0")
+    ap.add_argument("--browser-gpu", choices=["native", "gl-egl", "vulkan", "swiftshader"], default="native")
     ap.add_argument("--eager", action="store_true")
-    ap.add_argument("--p2p-host", default=None, help="run the P2P server on this ssh host (remote inference)")
-    ap.add_argument("--idle-nudge", type=int, default=0, help="scripted look-around after this many idle ticks (0 = off)")
-    ap.add_argument("--no-recover", action="store_true",
-                    help="disable the stuck-recovery wrapper")
+    ap.add_argument("--p2p-host", default=None)
+    ap.add_argument("--idle-nudge", type=int, default=0)
+    ap.add_argument("--no-recover", action="store_true")
     args = ap.parse_args()
-    text = None if args.no_text else args.text
-
+    tasks = task_ids(args.tasks)
+    if any(not t.startswith("JS_") for t in tasks):
+        ap.error("Use agent.vla.vla_ue for Unreal tasks")
+    runtime = args.runtime_root.expanduser().resolve()
+    for task in tasks:
+        ensure_environment(task, runtime, args.download)
     p2p = P2PClient(gpu=args.gpu, size=args.size, eager=args.eager, host=args.p2p_host)
     try:
-        with Bridge() as br:
-            for config in args.configs.split(","):
-                for s in range(args.seeds):
-                    out_dir = REPO / "runs" / args.tag / f"{config}-s{s}"
-                    if args.skip_done and (out_dir / "meta.json").exists():
-                        print(f"{out_dir.name}: done, skipped"); continue
-                    if args.claim:
-                        claim = out_dir.parent / (out_dir.name + ".claim"); out_dir.parent.mkdir(parents=True, exist_ok=True)
-                        try: os.close(os.open(claim, os.O_CREAT | os.O_EXCL | os.O_WRONLY))
-                        except FileExistsError: print(f"{out_dir.name}: claimed by another driver, skipped"); continue
-                    t_ep = time.time()
-                    run_episode(br, p2p, config, 5, args.ticks, args.dt_ms,
-                                args.record_every, text, out_dir,
-                                recover=not args.no_recover, idle_nudge=args.idle_nudge)
-                    print(f"{out_dir.name}: {time.time() - t_ep:.0f} s wall", flush=True)
+        with Bridge(gpu=args.browser_gpu, serve_dir=runtime, profiles=runtime / "browser-profiles") as br:
+            for task in tasks:
+                out_dir = REPO / "runs" / args.tag / task
+                if (out_dir / "meta.json").exists() and args.skip_done:
+                    continue
+                if out_dir.exists():
+                    raise ValueError("Recording already exists; choose a new --tag: " + str(out_dir))
+                run_episode(br, p2p, task, 5, args.ticks, args.dt_ms, args.record_every,
+                            None if args.no_text else args.text, out_dir,
+                            recover=not args.no_recover, idle_nudge=args.idle_nudge)
     finally:
         p2p.close()
 

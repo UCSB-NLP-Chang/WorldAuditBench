@@ -1,0 +1,7 @@
+{
+  "codex": {"client": "codex", "model": "gpt-6-astra", "args": ["--reasoning-effort", "medium"]},
+  "claude": {"client": "claude", "model": "claude-opus-5", "args": ["--claude-effort", "medium"]},
+  "gemini": {"client": "gemini", "model": "gemini-3.8-flash", "args": ["--gemini-thinking", "medium"]},
+  "qwen": {"client": "qwen", "model": "qwen3.8-flash", "args": ["--qwen-effort", "medium"]},
+  "muse": {"client": "opencode", "model": "openrouter/meta/muse-spark-1.3-contributor", "args": ["--opencode-effort", "medium"]}
+}

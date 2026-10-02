@@ -7,12 +7,6 @@ __pycache__/
 .DS_Store
 threejs_environment_starters.zip
 
-# built single-file environments and their v1 originals are distributed out-of-band (see environments/threejs/scenes/BUILDS.md)
-environments/threejs/scenes/*.html
-environments/threejs/scenes/src/*/orig_v1_*.bak
-# per-case reef catalogue PNGs (the stitched catalog.jpg is kept)
-reports/water-suite/catalog/
-
 # Native auditing clients: generated runtimes, runs and local credentials.
 out/
 .pytest_cache/
@@ -23,7 +17,7 @@ out/
 .env.*
 !.env.example
 
-# Private deployment state and external resources (Hugging Face release pending).
+# Private deployment state and external resources .
 *.sqlite*
 *.db
 *.key
@@ -42,4 +36,3 @@ Saved/
 *.zip
 data/examples/icl/images/
 output/
-demos/human/*/example-assets/images/

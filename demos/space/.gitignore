@@ -1,8 +1,0 @@
-node_modules/
-static/player.js
-.venv/
-__pycache__/
-runtime.json
-runtime/
-*.log
-indoor-demo.tar.gz

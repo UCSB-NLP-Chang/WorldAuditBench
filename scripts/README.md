@@ -1,24 +1,14 @@
-# Running WorldAuditBench
+# Commands
 
-Start with the [paper reproduction guide](../docs/reproduction.md). Run commands
-from the repository root.
+| Command | Purpose |
+|---|---|
+| `experiments/run.py --agent gemini --tasks S01 --download` | Run an agent on one or more tasks |
+| `view_task.py S01 --download` | View and explore a task |
+| `download_dataset.py` | Download task data and shared examples |
+| `download_resources.py --package subway` | Download an environment |
+| `serve_unreal.py --task S01` | Start an Unreal environment endpoint |
+| `check_release.py` | Check task and package coverage |
 
-| Entry point | Purpose |
-| --- | --- |
-| [`download_dataset.py`](download_dataset.py) | Download the unified task table and shared ICL examples |
-| [`download_resources.py`](download_resources.py) | Download verified environment packages and images; generate local profiles |
-| [`serve_unreal.py`](serve_unreal.py) | Start one installed Unreal task on a Linux GPU host |
-| [`agent/vlm/native/setup.py`](../agent/vlm/native/setup.py) | Install the native-client Python runtime |
-| [`agent/vlm/native/launch.py`](../agent/vlm/native/launch.py) | Run one VLM auditing episode |
-| [`scripts/experiments/run_batch.py`](experiments/run_batch.py) | Run a batch of auditing episodes |
-| [`agent/vla/replay.py`](../agent/vla/replay.py) | Analyze and judge VLA recordings |
-| [`check_release.py`](check_release.py) | Check task splits and environment package coverage |
-| [`run_vla_threejs.sh`](run_vla_threejs.sh), [`run_vla_ue.sh`](run_vla_ue.sh) | Original VLA collection wrappers; configure local resources and cache paths before use |
-
-`run_agent.sh` launches the tool-calling agent described in [`agent/vlm/README.md`](../agent/vlm/README.md).
-`check_gpu.sh`, `fetch_assets.sh`, `gpu_wait.py`, and `serve_model*.sh` support that
-workflow. The model-serving scripts retain the original machine's vLLM and cache
-paths; adapt these before running them on another host.
-
-[`vla-lists/`](vla-lists) contains collection lists. The paper evaluation split
-is defined by [`data/benchmark/splits/`](../data/benchmark/splits).
+Use `python <command> --help` for options. Run commands from the repository root.
+`experiments/agents.json` contains the model presets. The export and package-check
+scripts support maintaining the Hugging Face release.

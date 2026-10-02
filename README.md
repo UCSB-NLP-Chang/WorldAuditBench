@@ -28,7 +28,7 @@
 
 WorldAuditBench evaluates whether multimodal agents can **explore a 3D world, investigate suspicious observations, and identify anomalies with visual evidence**. It covers both Unreal Engine 5 and Three.js environments, from furnished interiors to cities and open landscapes.
 
-**[Demonstrations](#demonstrations)** · **[Benchmark](#benchmark)** · **[Quick start](#quick-start)** · **[Evaluation](#evaluation)** · **[Resources](#resources)** · **[Citation](#citation)**
+**[Demonstrations](#demonstrations)** · **[Benchmark](#benchmark)** · **[Quick start](#quick-start)** · **[Resources](#resources)** · **[Citation](#citation)**
 
 ## Demonstrations
 
@@ -62,114 +62,105 @@ The strongest evaluated agent reaches **42.3%** success, compared with **83.4%**
 
 ## Quick start
 
-### 1. Install
-
-Use **Python 3.11+** on Linux or macOS for the Python tools. Running Unreal environments requires a configured Linux GPU host and the environment packages listed under [Resources](#resources).
+Python 3.11+. Unreal environments require Linux and an NVIDIA GPU.
+Three.js environments run in Chromium on Linux or macOS.
 
 ```bash
 git clone https://github.com/UCSB-NLP-Chang/WorldAuditBench.git
 cd WorldAuditBench
-
 python3 -m venv .venv
 source .venv/bin/activate
-python -m pip install -r requirements.txt
-```
-
-### 2. Explore the evaluation set
-
-The [Hugging Face dataset](https://huggingface.co/datasets/ziyjiang/WorldAuditBench) contains one row per task: inputs, categories, rubrics and maps. In-context examples are included in the dataset.
-
-```bash
-python scripts/download_dataset.py
-```
-
-```python
-from data.tasks import load_task
-
-task = load_task("S01")
-print(task["input"])
-print(task["rubric"])
-```
-
-See [Task data](docs/task-data.md) for the schema.
-
-### 3. Set up an auditor
-
-The paper's VLM auditors run through native model clients and a shared MCP tool interface. Prepare their Python runtime:
-
-```bash
+pip install -r requirements.txt
+python -m playwright install chromium
 python agent/vlm/native/setup.py
-python agent/vlm/native/launch.py --help
 ```
 
-Install and authenticate the native client you plan to use: Codex, Claude Code, Gemini CLI, OpenCode, or Qwen Code. See the [native-agent guide](docs/native-agent-mcp.md) for configuration and the [reproduction guide](docs/reproduction.md) for exact model and reasoning settings.
+Install and authenticate the model client you want to use: Codex, Claude Code,
+Gemini CLI, Qwen Code or OpenCode. See the [agent guide](docs/native-agent-mcp.md).
 
-Download a compiled environment and the demonstration images, then start its local service on a Linux GPU host:
+### Run an agent
 
 ```bash
-python scripts/download_resources.py --package subway
-python scripts/serve_unreal.py --task S03 --gpu 0 --port 19100
+python scripts/experiments/run.py --agent gemini --tasks S01 --download
 ```
 
-In a second terminal, run an auditing episode:
+Use `codex`, `claude`, `gemini`, `qwen` or `muse` for `--agent`.
+Model IDs and reasoning settings are in
+[`agents.json`](scripts/experiments/agents.json). `--download` installs the selected
+environment from Hugging Face; existing verified downloads are reused.
 
 ```bash
-python agent/vlm/native/launch.py gemini \
-  --environment unreal-http --env-url http://127.0.0.1:19100 \
-  --task S03 --model gemini-3.8-flash --gemini-thinking medium \
-  --max-actions 40 --max-tool-calls 400 --require-full-budget \
-  --observation on-demand --run-dir out/runs/gemini-S03
+# Three.js task
+python scripts/experiments/run.py --agent codex --tasks JS_AF01 --download
+
+# A batch of tasks
+python scripts/experiments/run.py --agent gemini \
+  --tasks @data/benchmark/splits/unreal.txt --download --output out/gemini-unreal
+
+# Budget and example settings
+python scripts/experiments/run.py --agent claude --tasks S01 \
+  --max-actions 20 --no-icl --output out/claude-20-noicl
 ```
 
-For Three.js configuration, VLA exploration, trajectory replay, and ablations, follow the [reproduction guide](docs/reproduction.md).
+Each task produces `report.json`, `evidence.json` and its recording under the
+output directory. `--dry-run` prints the commands without running an environment
+or calling a model. Additional client options can be passed after `--`.
 
-## Evaluation
+### Run the judge
 
-Agents submit anomaly reports with supporting visual evidence. The judge evaluates each report against the task rubric and returns a binary success score with an explanation. The paper reports success over the fixed **213-task** evaluation set.
+```bash
+python -m judge.judge --task S01 \
+  --model-output out/runs/gemini/S01/report.json \
+  --evidence out/runs/gemini/S01/evidence.json \
+  --output out/runs/gemini/S01/judge.json
+```
 
-| Workflow | Code / documentation |
-| --- | --- |
-| Interactive VLM auditing | [`agent/vlm/native/launch.py`](agent/vlm/native/launch.py) · [MCP tools](docs/native-agent-mcp.md) |
-| VLA exploration | [`agent/vla/vla_ue.py`](agent/vla/vla_ue.py) · [`agent/vla/vla_explore.py`](agent/vla/vla_explore.py) |
-| Analysis of VLA trajectories | [`agent/vla/replay.py`](agent/vla/replay.py) |
-| Report judging | [`judge/judge.py`](judge/judge.py) · [Judge protocol](docs/binary-judge.md) |
-| Ablation experiments | [`scripts/experiments/ablations/`](scripts/experiments/ablations) · [Protocol settings](docs/reproduction.md#ablations) |
+The judge loads the task rubric and returns `score` (0 or 1) and `reason`.
+It uses GPT-6 Astra with medium reasoning through an authenticated Codex CLI.
+See [judge options](docs/binary-judge.md).
+
+### View a task
+
+```bash
+python scripts/view_task.py --download
+# Or preselect a task:
+python scripts/view_task.py JS_AF01 --download
+```
+
+The command opens a task browser with environment and taxonomy filters, input
+prompts, rubrics and interactive exploration. Use `--no-browser` on a remote host
+and forward the printed loopback port to your local browser.
+
+### VLA exploration
+
+Open-P2P records exploration, then a VLM analyzes the recording.
+See [VLA setup and commands](docs/reproduction.md#vla-exploration).
 
 ## Resources
 
-| Resource | Link |
-| --- | --- |
-| Task data | [Dataset](https://huggingface.co/datasets/ziyjiang/WorldAuditBench/tree/main/dataset) |
-| In-context examples | [Examples](https://huggingface.co/datasets/ziyjiang/WorldAuditBench/tree/main/examples) |
-| Environments | [Download and run](docs/resources.md) |
-| Interactive demo | [Hugging Face Space](https://huggingface.co/spaces/ziyjiang/WorldAuditBench) |
+[Hugging Face](https://huggingface.co/datasets/ziyjiang/WorldAuditBench) hosts the
+213-task table, shared in-context examples and compiled environments.
+[Task schema](docs/task-data.md) · [Download options](docs/resources.md)
 
 ## Repository structure
 
 ```text
-agent/
-  vlm/                 VLM agents and tools
-  vla/                 VLA exploration and trajectory analysis
-judge/                 Report scoring
-scripts/
-  experiments/         Batch runs and ablations
-  tools/               Environment utilities
-environments/          Unreal and Three.js integration
-data/                  Task definitions and download manifests
-demos/                 Interactive demo and human evaluation
-docs/                  Usage guides
-tests/                 Automated tests
+agent/vlm/             VLM clients and auditing tools
+agent/vla/             VLA exploration and recording analysis
+judge/                 GPT-6 judge and prompt
+scripts/experiments/    Agent presets and experiment launcher
+scripts/view_task.py    Interactive task viewer
+scripts/               Downloads and environment launchers
+environments/          Environment connections
+data/                  Dataset loading and release manifests
+tests/                 Automated checks
 ```
-
-### Development checks
 
 ```bash
-python -m pip install -r requirements-dev.txt
+pip install -r requirements-dev.txt
 python scripts/check_release.py
-python -m pytest -q -m 'not chromium and not live'
+python -m pytest -q
 ```
-
-These checks cover code and interfaces; they do not launch the full benchmark. See [validation details](docs/validation.md) for resource-dependent checks.
 
 ## Citation
 

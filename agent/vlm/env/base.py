@@ -32,7 +32,7 @@ class Env(Protocol):
 
 
 def is_blocked(action: Action, obs: Observation) -> bool:
-    """Environment-agnostic obstruction rule (the audit rule from agent/vla/runner.py): a move
+    """Environment-agnostic obstruction rule: a move
     that falls short of its commanded distance by more than max(0.25 m, 10 %) was obstructed,
     unless the shortfall came from a teleport/respawn."""
     if action.kind != "move" or obs.events.get("teleported") or obs.events.get("respawned"):

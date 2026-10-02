@@ -1,3 +1,0 @@
-import sys,json;sys.path.insert(0,'/mnt/auditor-build/experiment-runs/gemini-unreal-multibug-20260922');import plan_addition_routes as q;refs={t['id']:t for t in json.loads((q.B/'reference-provenance.json').read_text())['tasks']}
-for tid,label in [('U014','B'),('U032','B'),('U032','C')]:
- target=next(t for t in json.loads((q.B/'draft-compositions'/tid/'targets.json').read_text())['additions'] if t['label']==label);q.plan(refs[tid],target,grid=100)

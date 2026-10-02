@@ -2,7 +2,7 @@ import json
 import subprocess
 from pathlib import Path
 
-from judge.codex_metrics import usage_from_events
+from judge.judge import usage_from_events
 from judge import judge
 
 

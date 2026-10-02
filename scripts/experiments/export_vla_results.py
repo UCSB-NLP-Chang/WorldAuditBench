@@ -15,7 +15,7 @@ import argparse, csv, json, pathlib, shutil, sys
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
-from judge.codex_metrics import usage_from_events
+from judge.judge import usage_from_events
 
 
 def export_rubric(case, out, profile):

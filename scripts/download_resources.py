@@ -171,7 +171,7 @@ def restore_examples(root):
         target.parent.mkdir(parents=True, exist_ok=True)
         if not target.exists():
             shutil.copyfile(source, target)
-    print('Restored ICL images to data/examples/icl/images and service example directories.', flush=True)
+    print('Restored ICL images to data/examples/icl/images.', flush=True)
 
 
 def write_browser_profiles(root, manifest=None):

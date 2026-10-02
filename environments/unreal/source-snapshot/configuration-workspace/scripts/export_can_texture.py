@@ -1,2 +1,0 @@
-import unreal
-tex=unreal.load_asset('/Game/GameReady3D/AtmosphericFarmhouse/Textures/Cleaned/Props_4/T_Props_4_BaseColor');task=unreal.AssetExportTask();task.object=tex;task.filename='/home/ubuntu/unreal-auditor/configuration-workspace/out/can-texture.tga';task.automated=True;task.prompt=False;task.replace_identical=True;task.exporter=unreal.TextureExporterTGA();assert unreal.Exporter.run_asset_export_task(task)

@@ -9,7 +9,6 @@ from pathlib import Path
 from typing import Dict, Iterable, List, Optional, Tuple
 
 from agent.vlm.archive import FrameArchive
-from agent.vlm.context import Conversation
 from agent.vlm.env.base import is_blocked
 from agent.vlm.ledger import CATEGORIES, BugLedger
 from agent.vlm.notes import Notes
@@ -134,7 +133,7 @@ def _parse_action(name: str, args: dict) -> Action:
 
 
 class Dispatcher:
-    def __init__(self, env, archive: FrameArchive, ledger: BugLedger, notes: Notes, conv: Conversation,
+    def __init__(self, env, archive: FrameArchive, ledger: BugLedger, notes: Notes, conv,
                  obs: ObsConfig, run_dir, max_actions: int, proprio: bool = True, blocked_hint: bool = False,
                  decision: str = "macro", tick: float = 0.5, max_sim_seconds: Optional[float] = None):
         self.env, self.archive, self.ledger, self.notes, self.conv = env, archive, ledger, notes, conv
