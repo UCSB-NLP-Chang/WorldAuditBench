@@ -3,11 +3,13 @@ import hashlib
 import json
 import os
 from pathlib import Path
+import re
 import secrets
 import signal
 import socket
 import subprocess
 import tempfile
+import threading
 import time
 
 from environments.unreal_launch import without_hud
@@ -39,7 +41,7 @@ def launch_command(profile, streamer_port, directory, gpu):
             '-DefaultViewportMouseCaptureMode=NoCapture',
             '-ini:Input:[/Script/Engine.InputSettings]:bCaptureMouseOnLaunch=False',
             '-ini:Input:[/Script/Engine.InputSettings]:DefaultViewportMouseLockMode=DoNotLock',
-            '-ForceRes', '-ResX=1280', '-ResY=720', '-Unattended', '-AudioMixer',
+            '-ForceRes', '-ResX=1280', '-ResY=720', '-Unattended', '-AudioMixer', '-ForceLogFlush',
             f'-PixelStreamingConnectionURL=ws://127.0.0.1:{streamer_port}',
             '-PixelStreamingID=DefaultStreamer', '-PixelStreamingEncoderCodec=H264',
             '-PixelStreamingWebRTCFps=30', '-PixelStreamingWebRTCMaxFps=30',
@@ -62,6 +64,10 @@ class PixelStreaming:
         self.session_id = None
         self.player_port = None
         self.directory = None
+        self.boundary_lock = threading.Lock()
+        self.boundary_offset = 0
+        self.boundary_partial = b''
+        self.boundary_state = None
 
     def validate(self, profile):
         for relative in ['SignallingWebServer/dist/index.js', 'SignallingWebServer/www/player.html']:
@@ -123,6 +129,30 @@ class PixelStreaming:
     def alive(self):
         return len(self.processes) == 2 and all(p.poll() is None for p in self.processes)
 
+    def boundary(self):
+        """Read native boundary transitions without enabling the engine HUD."""
+        with self.boundary_lock:
+            if not self.alive() or self.directory is None:
+                return None
+            try:
+                with (self.directory / 'unreal.log').open('rb') as source:
+                    if source.seek(0, 2) < self.boundary_offset:
+                        self.boundary_offset = 0
+                        self.boundary_partial = b''
+                        self.boundary_state = None
+                    source.seek(self.boundary_offset)
+                    chunk = source.read(256 * 1024)
+                    self.boundary_offset = source.tell()
+            except OSError:
+                return None
+            lines = (self.boundary_partial + chunk).split(b'\n')
+            self.boundary_partial = lines.pop()[-4096:]
+            for line in lines:
+                match = re.search(rb'AUDITOR_BOUNDARY state=([012])\s', line)
+                if match:
+                    self.boundary_state = int(match[1])
+            return self.boundary_state
+
     def close(self):
         self.session_id = None
         for process in reversed(self.processes):
@@ -142,3 +172,7 @@ class PixelStreaming:
             log.close()
         self.logs.clear()
         self.player_port = None
+        with self.boundary_lock:
+            self.boundary_offset = 0
+            self.boundary_partial = b''
+            self.boundary_state = None

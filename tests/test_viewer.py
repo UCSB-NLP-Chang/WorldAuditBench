@@ -131,3 +131,43 @@ def test_partial_stream_start_is_cleaned_up(tmp_path, monkeypatch):
     with pytest.raises(OSError, match='node missing'):
         stream.start({'binary': '/not-used'})
     assert stream.session_id is None and stream.player_port is None
+
+
+def test_native_boundary_transitions_partial_lines_and_reset(tmp_path, monkeypatch):
+    stream = PixelStreaming(tmp_path, tmp_path / 'state')
+    stream.directory = tmp_path
+    monkeypatch.setattr(stream, 'alive', lambda: True)
+    log = tmp_path / 'unreal.log'
+    assert stream.boundary() is None
+    log.write_bytes(b'LogTemp: AUDITOR_BOUNDARY state=0 clearance_cm=500\n')
+    assert stream.boundary() == 0
+    with log.open('ab') as f:
+        f.write(b'LogTemp: AUDITOR_BOUNDARY state=2 clear')
+    assert stream.boundary() == 0  # An incomplete write must not change the state.
+    with log.open('ab') as f:
+        f.write(b'ance_cm=0.2\n')
+    assert stream.boundary() == 2
+    with log.open('ab') as f:
+        f.write(b'Unrelated log\n' * 1000)
+    assert stream.boundary() == 2  # Standing still must retain the warning.
+    with log.open('ab') as f:
+        f.write(b'LogTemp: AUDITOR_BOUNDARY state=1 clearance_cm=10\n')
+    assert stream.boundary() == 1
+    stream.close()
+    log.write_bytes(b'New session\n')
+    assert stream.boundary() is None
+    with log.open('ab') as f:
+        f.write(b'AUDITOR_BOUNDARY state=2 clearance_cm=0\n')
+    assert stream.boundary() == 2
+    log.write_bytes(b'Truncated\n')
+    assert stream.boundary() is None
+
+
+def test_status_exposes_boundary_only_for_a_running_scene(viewer_server, monkeypatch):
+    viewer, base = viewer_server
+    viewer.task = 'UE_TEST'
+    monkeypatch.setattr(viewer.streaming, 'alive', lambda: True)
+    monkeypatch.setattr(viewer.streaming, 'boundary', lambda: 2)
+    assert json.loads(request(base, '/api/status')[1])['boundary_state'] == 2
+    monkeypatch.setattr(viewer.streaming, 'alive', lambda: False)
+    assert json.loads(request(base, '/api/status')[1])['boundary_state'] is None

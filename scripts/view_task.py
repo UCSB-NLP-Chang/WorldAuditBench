@@ -103,6 +103,7 @@ class Viewer:
         running = self.task is not None and (self.static is not None or self.streaming.alive())
         return {'task_id': self.task, 'running': running,
                 'unreal_available': sys.platform == 'linux',
+                'boundary_state': self.streaming.boundary() if running else None,
                 'transport': 'pixel-streaming' if self.streaming.session_id else None}
 
     def request(self, path, data=None):

@@ -23,6 +23,11 @@ Selecting another task changes the description; **Open environment** switches
 the running scene. **Reset environment** starts that task again, and **Stop**
 releases its runtime. The label below the scene always identifies the active task.
 
+In Unreal, reaching the task perimeter displays **Task boundary reached** over
+the player, including in full screen. It disappears when you move away. The viewer
+reads the running game's native boundary events, so the warning works while the
+engine HUD and minimap are hidden. It does not change the task's movement limits.
+
 ## Unreal on a Linux NVIDIA GPU host
 
 Install the repository's Python requirements, Node.js 22+ and npm on the host.

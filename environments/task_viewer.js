@@ -1,5 +1,6 @@
 const $ = id => document.getElementById(id);
 let rows = [], selected = null, active = null, busy = false;
+let sceneVersion = 0, polling = false;
 
 function status(message, error = false) {
   $('status').textContent = message;
@@ -77,6 +78,8 @@ async function post(path, body) {
   return data;
 }
 function clearScene() {
+  sceneVersion++;
+  $('boundary').hidden = true;
   active = null;
   $('browser').hidden = true; $('browser').src = 'about:blank';
   $('placeholder').hidden = false; $('active-task').textContent = 'No environment running';
@@ -123,17 +126,27 @@ $('search').oninput = filter;
 
 // A crashed GPU process must not leave the page claiming its environment is live.
 setInterval(async () => {
-  if (!active || busy) return;
+  if (!active || busy || polling) return;
+  polling = true;
+  const version = sceneVersion;
   try {
     const response = await fetch('/api/status');
     if (!response.ok) throw Error();
     const state = await response.json();
+    if (version !== sceneVersion || busy) return;
     if (!state.running || state.task_id !== active) {
       clearScene(); setBusy(false);
       status('The environment stopped or was changed in another tab. Open it again to reconnect.', true);
+    } else {
+      $('boundary').hidden = state.boundary_state !== 2;
     }
-  } catch { status('Cannot reach the viewer server. Check that it is still running.', true); }
-}, 5000);
+  } catch {
+    if (version === sceneVersion && !busy) {
+      $('boundary').hidden = true;
+      status('Cannot reach the viewer server. Check that it is still running.', true);
+    }
+  } finally { polling = false; }
+}, 500);
 
 (async () => {
   try {
