@@ -5,6 +5,7 @@ import hashlib
 import json
 import os
 from pathlib import Path
+import re
 import signal
 import subprocess
 import sys
@@ -14,6 +15,7 @@ import time
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from auditor.environment_server import APIError, Environment, UnrealBackend, serve
+from auditor.unreal_launch import without_hud
 
 
 class ReleasedBackend(UnrealBackend):
@@ -27,6 +29,7 @@ class ReleasedBackend(UnrealBackend):
         launch = profile.get('launch_map', self.map_name) if remote else self.map_name + '?Task=' + task_id
         args = [a for a in profile.get('game_args', []) + profile.get('extra_args', [])
                 if not a.lower().startswith(('-pixelstreaming', '-graphicsadapter', '-auditoripc', '-abslog'))]
+        args = without_hud(args)
         command = [profile['binary'], launch, '-RenderOffscreen', '-windowed',
                    '-ResX=960', '-ResY=540', '-unattended', '-nosound', '-AuditorServe',
                    '-AuditorIPC=' + str(self.root), '-abslog=' + str(self.root / 'native.log'),
@@ -57,6 +60,11 @@ class ReleasedBackend(UnrealBackend):
                     raise APIError(503, 'Unreal did not load the assigned paused task')
                 if state.get('map') != self.map_name.rsplit('/', 1)[-1]:
                     raise APIError(503, 'Unreal loaded an unexpected map')
+                native_log = self.root / 'native.log'
+                log_text = native_log.read_text(errors='replace') if native_log.exists() else ''
+                if not re.search(r'\.bShowHUD = False\b', log_text):
+                    time.sleep(0.1)
+                    continue
                 self.consumed = True
                 return state
             time.sleep(0.1)
@@ -96,7 +104,8 @@ def main():
     class IdentifiedEnvironment(Environment):
         def health(self):
             return {**super().health(), 'task_id': args.task, 'build_sha256': actual,
-                    'sampling_interval_seconds': 0.5, 'startup_rng_seeded': False}
+                    'sampling_interval_seconds': 0.5, 'startup_rng_seeded': False,
+                    'hud': 'disabled-in-engine'}
     environment = IdentifiedEnvironment(backend, {'regions': [{'id': 'scene', 'map': backend.map_name}]},
                                        {'tasks': [{'id': args.task, 'region': 'scene'}]})
     def stop(*unused):

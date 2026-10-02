@@ -358,15 +358,18 @@ def test_unreal_adapter_units_timestamps_and_fail_closed():
             if url.endswith("/reset"): return Response(initial)
             if json["action"]["name"] == "done": return Response({"done": True})
             return Response({**initial, "simulation_time": 11.0, "actual_distance_cm": 100,
+                             "boundary_clearance_cm": 0,
                              "frames": [{"simulation_time": 10.5, "rgb": rgb}]})
         def close(self): pass
     env = UnrealHTTP("http://localhost:9100")
     env.session = Session()
     obs = env.reset("S05", 0, ObsConfig(mode="film"))
     assert (obs.pose.x, obs.pose.y, obs.pose.z) == (1, 2, 3)
+    assert "Task boundary reached" not in obs.events["env_note"]
     later = env.step(Action("move", {"distance_m": 1.25, "direction": "back"}))
     assert calls[-1][1]["action"] == {"name": "move_down", "distance": 125}
     assert later.frames[0].t_sim == .5 and later.sim_elapsed == 1
+    assert "Task boundary reached" in later.events["env_note"]
     assert env.meta()["build_sha256"] == "test-build"
     env.close()
     assert calls[-1][1]["episode_id"] == "owned" and calls[-1][1]["action"]["name"] == "done"

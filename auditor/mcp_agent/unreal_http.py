@@ -82,9 +82,13 @@ class UnrealHTTP:
             raise ValueError("Invalid position in observation")
         pose = Pose(*(float(v) / 100 for v in pos), float(data["yaw_degree"]),
                     float(data["look_degree"]), raw={"position_cm": pos})
+        note = data.get("result", "")
+        clearance = data.get("boundary_clearance_cm")
+        if clearance is not None and float(clearance) < 3:
+            note += "; Task boundary reached: movement is limited to the exploration area."
         return Observation(0 if initial else -1, frames, pose,
                            float(data.get("actual_distance_cm", 0)) / 100, elapsed,
-                           {"env_note": data.get("result", "")})
+                           {"env_note": note})
 
     def step(self, action):
         if self.failed or self.finished:

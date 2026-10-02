@@ -61,6 +61,10 @@ def main():
             errors.append('Invalid resource identity: ' + package['id'])
         if package['group'] == 'unreal-runtime':
             runtime_ids.extend(package['tasks'])
+            if 'variants' in package:
+                variant_tasks = [t for v in package['variants'] for t in v['tasks']]
+                if sorted(variant_tasks) != sorted(package['tasks']):
+                    errors.append('Variant task coverage differs: ' + package['id'])
     expected_unreal = set((ROOT / 'benchmark/splits/unreal.txt').read_text().splitlines())
     if set(runtime_ids) != expected_unreal or len(runtime_ids) != len(expected_unreal):
         errors.append('Runtime packages must cover each Unreal paper task exactly once')
@@ -80,10 +84,10 @@ def main():
                     errors.append('Installed release differs: ' + package['id'])
             except (OSError, ValueError, KeyError):
                 errors.append('Missing installed release: ' + package['id'])
-            if package.get('binary'):
-                binary = directory / package['binary']
-                if not binary.is_file() or digest(binary) != package['binary_sha256']:
-                    errors.append('Missing or mismatched executable: ' + package['id'])
+            for build in package.get('variants', [package] if package.get('binary') else []):
+                binary = directory / build['binary']
+                if not binary.is_file() or digest(binary) != build['binary_sha256']:
+                    errors.append('Missing or mismatched executable: ' + build['id'])
     if errors:
         print("\n".join(errors), file=sys.stderr)
         return 1

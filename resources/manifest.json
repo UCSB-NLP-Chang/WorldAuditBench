@@ -3,7 +3,7 @@
   "status": "runtime-release",
   "destination": "Hugging Face",
   "repository": "ziyjiang/WorldAuditBench-runtime",
-  "revision": "0761f78a79e99f93391906901442089d363d6bd5",
+  "revision": "8581dfdda3a690a5b397588167ddedbfdbe1afef",
   "resources": [
     {
       "path": "examples/icl/images/C1_01.png",
@@ -741,42 +741,6 @@
     {
       "group": "unreal-runtime",
       "status": "available",
-      "package_id": "urban-0bcf6af8a87a",
-      "source_binary": "/home/ec2-user/unreal-urban-ipc-20260919/packages/urban-0bcf6af8a87a/Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
-      "binary_sha256": "142b172a2886d116e3777108cfa1cfbc90d2a47ef3183fa0077156434c346f28",
-      "archive_sha256": "c00d8fbe9894a904434e612eadac255cf6759fc01e295fb49665ac1aaa65af1f",
-      "bytes": 1127577202
-    },
-    {
-      "group": "unreal-runtime",
-      "status": "available",
-      "package_id": "urban-c6f314070433",
-      "source_binary": "/home/ec2-user/unreal-urban-ipc-20260919/packages/urban-c6f314070433/Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
-      "binary_sha256": "142b172a2886d116e3777108cfa1cfbc90d2a47ef3183fa0077156434c346f28",
-      "archive_sha256": "599960da3bbf7c36e61f251e43f788a59867bcaf944ea789f6ab3f23651a3eb1",
-      "bytes": 1130310621
-    },
-    {
-      "group": "unreal-runtime",
-      "status": "available",
-      "package_id": "urban-e63d0c3c26bd",
-      "source_binary": "/home/ec2-user/unreal-urban-ipc-20260919/packages/urban-e63d0c3c26bd/Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
-      "binary_sha256": "142b172a2886d116e3777108cfa1cfbc90d2a47ef3183fa0077156434c346f28",
-      "archive_sha256": "2d65f11a2784693115599057e870c94cec2096c3fa8aa0044ee3f3a0f3af8371",
-      "bytes": 1129629650
-    },
-    {
-      "group": "unreal-runtime",
-      "status": "available",
-      "package_id": "urban-ec94cce5d64b",
-      "source_binary": "/home/ec2-user/unreal-urban-ipc-20260919/packages/urban-ec94cce5d64b/Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
-      "binary_sha256": "142b172a2886d116e3777108cfa1cfbc90d2a47ef3183fa0077156434c346f28",
-      "archive_sha256": "902927d025552a2a89e1908ed9028dcc115feb70a8dbc7afe25df304542ab141",
-      "bytes": 1098668695
-    },
-    {
-      "group": "unreal-runtime",
-      "status": "available",
       "package_id": "medieval",
       "source_binary": "/home/ec2-user/unreal-review-releases/exploration-v2-medieval-20260917/package-092c5babf747/Linux/MedievalVillage/Binaries/Linux/MedievalVillage",
       "binary_sha256": "166acf2fcb8c8179de9913f53086fa8998d36eda77309ff962206b3c932e7efa",
@@ -791,6 +755,20 @@
       "binary_sha256": "09fa7b331005394cd71d087bf4c8374781c1c067ddea5ed4de052d11077dbf9b",
       "archive_sha256": "8c9eff9993a644491809dc612e49dd2630de5da7d1ee89b54261fc052c80b359",
       "bytes": 1980984614
+    },
+    {
+      "group": "unreal-runtime",
+      "status": "available",
+      "package_id": "urban",
+      "source_binaries": [
+        "/home/ec2-user/unreal-urban-ipc-20260919/packages/urban-0bcf6af8a87a/Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
+        "/home/ec2-user/unreal-urban-ipc-20260919/packages/urban-c6f314070433/Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
+        "/home/ec2-user/unreal-urban-ipc-20260919/packages/urban-e63d0c3c26bd/Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
+        "/home/ec2-user/unreal-urban-ipc-20260919/packages/urban-ec94cce5d64b/Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2"
+      ],
+      "binary_sha256": "142b172a2886d116e3777108cfa1cfbc90d2a47ef3183fa0077156434c346f28",
+      "archive_sha256": "fae9adcd012cb29777f57ac7f1a13908c1c3ed7819e1e582973e439faa95f2ca",
+      "bytes": 3377912168
     }
   ],
   "installer_manifest": "resources/releases.json"

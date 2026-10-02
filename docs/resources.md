@@ -17,7 +17,7 @@ python scripts/download_resources.py --list
 python scripts/download_resources.py --package indoor --package icl-examples
 ```
 
-The complete download is about **16.0 GB**, including the residential package.
+The complete download is about **14.9 GB**, including the residential package.
 Omit `--package` to install all released packages. Repeat it to select several.
 The installer pins each download to a Hugging Face commit, verifies the archive
 SHA-256 and executable SHA-256, and generates local profiles under `out/runtime/`.
@@ -42,7 +42,11 @@ python scripts/serve_unreal.py --task H01 --gpu 0 --port 19100
 The server verifies the executable before launching it, listens on loopback, and
 uses a private state directory for each episode. Choose an available GPU. Use
 `--profiles /path/to/runtime/unreal-profiles.json` after installing to a custom root.
-Stop the server and start a fresh one for each benchmark episode.
+The launcher disables the Unreal HUD before the first observation, including the
+minimap and its background. It leaves the scene pixels intact. Use this launcher
+rather than starting a packaged executable without its task and exploration arguments.
+All 126 Unreal task profiles retain the frozen exploration bounds with 3× the
+original horizontal area. Stop the server and start a fresh one for each episode.
 
 In another terminal, connect an authenticated native model client:
 
@@ -55,9 +59,9 @@ python scripts/native-agents/launch.py gemini \
 ```
 
 For a remote GPU host, forward the server's loopback port with SSH and use the
-forwarded local URL. No public server port is required. Urban packages use the
-IPC-fixed experiment executables. The installer merges those profiles with the
-other Unreal task profiles and remaps the exploration policies automatically.
+forwarded local URL. No public server port is required. Urban uses one download
+(`--package urban`) containing the four cooked scene builds needed by its 15 tasks.
+The IPC-fixed experiment executables and cooked files are preserved byte for byte. The installer merges those profiles with the other Unreal task profiles and remaps the exploration policies automatically.
 
 ## Run a Three.js task
 
@@ -76,11 +80,18 @@ Install the browser and native-client dependencies described in
 hashes and creates a configuration for each of the 87 paper tasks. These configs
 contain only the browser launch fields, not the task answers.
 
+## Visual validation
+
+Task identity, expanded bounds and HUD checks are recorded in the
+[October 2 validation report](validation/2026-10-02/README.md). Visual acceptance
+remains open for the listed scene issues; the runtime download is not a claim
+that every native scene defect has been removed.
+
 ## Release boundaries
 
 | Resource | Status |
 |---|---|
-| Compiled Unreal Linux environments | Published; 11 packages, 126 paper tasks |
+| Compiled Unreal Linux environments | Published; 8 downloads, 126 paper tasks |
 | Six built Three.js environments | Published; 87 paper tasks |
 | 29 ICL demonstration images | Published, with SHA-256 checks |
 | Editable Unreal scene assets | Not distributed |

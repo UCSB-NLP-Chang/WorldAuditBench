@@ -49,7 +49,7 @@ class UnrealRuntime:
                 '-PixelStreamingWebRTCMaxBitrate=12000000', '-PixelStreamingWebRTCStartBitrate=5000000',
                 '-PixelStreamingAllowPixelStreamingCommands=false',
                 '-PixelStreamingKeyFilter="M,One,Two,Three,Four,Tilde"',
-                '-ExecCmds=t.MaxFPS 30', '-SaveToUserDir', f'-UserDir={folder}/user/',
+                '-ExecCmds=t.MaxFPS 30,set HUD bShowHUD false', '-SaveToUserDir', f'-UserDir={folder}/user/',
                 f'-AuditorReviewIPC={folder}/ipc', '-log', f'-abslog={folder}/unreal.log']
         policy = self.config.get('policy')
         if policy:

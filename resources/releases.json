@@ -142,26 +142,16 @@
       "revision": "0761f78a79e99f93391906901442089d363d6bd5"
     },
     {
-      "id": "urban-0bcf6af8a87a",
-      "filename": "urban-0bcf6af8a87a-linux-x86_64.tar.gz",
-      "bytes": 1127577202,
-      "sha256": "c00d8fbe9894a904434e612eadac255cf6759fc01e295fb49665ac1aaa65af1f",
-      "binary_sha256": "142b172a2886d116e3777108cfa1cfbc90d2a47ef3183fa0077156434c346f28",
-      "tasks": [
-        "U046"
-      ],
-      "binary": "Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
+      "id": "urban",
+      "filename": "urban-linux-x86_64.tar.gz",
+      "bytes": 3377912168,
+      "sha256": "fae9adcd012cb29777f57ac7f1a13908c1c3ed7819e1e582973e439faa95f2ca",
       "group": "unreal-runtime",
       "repository": "ziyjiang/WorldAuditBench-runtime",
-      "revision": "0761f78a79e99f93391906901442089d363d6bd5"
-    },
-    {
-      "id": "urban-c6f314070433",
-      "filename": "urban-c6f314070433-linux-x86_64.tar.gz",
-      "bytes": 1130310621,
-      "sha256": "599960da3bbf7c36e61f251e43f788a59867bcaf944ea789f6ab3f23651a3eb1",
+      "revision": "8581dfdda3a690a5b397588167ddedbfdbe1afef",
       "binary_sha256": "142b172a2886d116e3777108cfa1cfbc90d2a47ef3183fa0077156434c346f28",
       "tasks": [
+        "U046",
         "U014",
         "U015",
         "U017",
@@ -171,42 +161,57 @@
         "U028",
         "U033",
         "U041",
-        "U043"
-      ],
-      "binary": "Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
-      "group": "unreal-runtime",
-      "repository": "ziyjiang/WorldAuditBench-runtime",
-      "revision": "0761f78a79e99f93391906901442089d363d6bd5"
-    },
-    {
-      "id": "urban-e63d0c3c26bd",
-      "filename": "urban-e63d0c3c26bd-linux-x86_64.tar.gz",
-      "bytes": 1129629650,
-      "sha256": "2d65f11a2784693115599057e870c94cec2096c3fa8aa0044ee3f3a0f3af8371",
-      "binary_sha256": "142b172a2886d116e3777108cfa1cfbc90d2a47ef3183fa0077156434c346f28",
-      "tasks": [
+        "U043",
         "U018",
-        "U032"
-      ],
-      "binary": "Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
-      "group": "unreal-runtime",
-      "repository": "ziyjiang/WorldAuditBench-runtime",
-      "revision": "0761f78a79e99f93391906901442089d363d6bd5"
-    },
-    {
-      "id": "urban-ec94cce5d64b",
-      "filename": "urban-ec94cce5d64b-linux-x86_64.tar.gz",
-      "bytes": 1098668695,
-      "sha256": "902927d025552a2a89e1908ed9028dcc115feb70a8dbc7afe25df304542ab141",
-      "binary_sha256": "142b172a2886d116e3777108cfa1cfbc90d2a47ef3183fa0077156434c346f28",
-      "tasks": [
+        "U032",
         "U011",
         "U024"
       ],
-      "binary": "Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
-      "group": "unreal-runtime",
-      "repository": "ziyjiang/WorldAuditBench-runtime",
-      "revision": "0761f78a79e99f93391906901442089d363d6bd5"
+      "variants": [
+        {
+          "id": "urban-0bcf6af8a87a",
+          "binary": "urban-0bcf6af8a87a/Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
+          "binary_sha256": "142b172a2886d116e3777108cfa1cfbc90d2a47ef3183fa0077156434c346f28",
+          "tasks": [
+            "U046"
+          ]
+        },
+        {
+          "id": "urban-c6f314070433",
+          "binary": "urban-c6f314070433/Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
+          "binary_sha256": "142b172a2886d116e3777108cfa1cfbc90d2a47ef3183fa0077156434c346f28",
+          "tasks": [
+            "U014",
+            "U015",
+            "U017",
+            "U020",
+            "U021",
+            "U023",
+            "U028",
+            "U033",
+            "U041",
+            "U043"
+          ]
+        },
+        {
+          "id": "urban-e63d0c3c26bd",
+          "binary": "urban-e63d0c3c26bd/Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
+          "binary_sha256": "142b172a2886d116e3777108cfa1cfbc90d2a47ef3183fa0077156434c346f28",
+          "tasks": [
+            "U018",
+            "U032"
+          ]
+        },
+        {
+          "id": "urban-ec94cce5d64b",
+          "binary": "urban-ec94cce5d64b/Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
+          "binary_sha256": "142b172a2886d116e3777108cfa1cfbc90d2a47ef3183fa0077156434c346f28",
+          "tasks": [
+            "U011",
+            "U024"
+          ]
+        }
+      ]
     },
     {
       "id": "medieval",

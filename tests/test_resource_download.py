@@ -11,8 +11,37 @@ ROOT = Path(__file__).resolve().parents[1]
 spec = importlib.util.spec_from_file_location('download_resources', ROOT / 'scripts/download_resources.py')
 release = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(release)
+from auditor.unreal_launch import without_hud
 
 class RuntimeReleaseTests(unittest.TestCase):
+    def test_hud_disabled_after_merging_console_commands(self):
+        args = ['-vulkan', '-ExecCmds=t.MaxFPS 30,showhud',
+                '-AuditorExplorationTask=U014', '-ExecCmds=r.SSR.Quality 3']
+        result = without_hud(args)
+        commands = [a for a in result if a.startswith('-ExecCmds=')]
+        self.assertEqual(len(commands), 1)
+        self.assertIn('t.MaxFPS 30', commands[0])
+        self.assertIn('r.SSR.Quality 3', commands[0])
+        self.assertTrue(commands[0].endswith('set HUD bShowHUD false,getall HUD bShowHUD'))
+        self.assertIn('-AuditorExplorationTask=U014', result)
+        self.assertEqual(without_hud(result), result)
+
+    def test_every_unreal_task_uses_expanded_frozen_policy(self):
+        profiles = json.loads((ROOT/'benchmark/profiles/ue-aws-profiles-20260918.json').read_text())
+        policies = {release.digest(p): json.loads(p.read_text())
+                    for p in (ROOT/'benchmark/policies').glob('*/policy.json')}
+        for task in (ROOT/'benchmark/splits/unreal.txt').read_text().splitlines():
+            profile = profiles['tasks'][task]
+            checksum = profiles['policies'][profile['policy_version']]['sha256']
+            policy = policies[checksum]
+            self.assertTrue(policy['frozen'])
+            spec = policy['tasks'][task]
+            for field in ('bounds_min', 'bounds_max', 'spawn', 'yaw'):
+                self.assertEqual(spec[field], profile['policy'][field], (task, field))
+            area = (spec['bounds_max'][0]-spec['bounds_min'][0]) * (spec['bounds_max'][1]-spec['bounds_min'][1])
+            old = (spec['old_bounds_max'][0]-spec['old_bounds_min'][0]) * (spec['old_bounds_max'][1]-spec['old_bounds_min'][1])
+            self.assertAlmostEqual(area/old, 3, places=5, msg=task)
+
     def archive(self, path, name='Linux/game', kind=tarfile.REGTYPE):
         with tarfile.open(path, 'w:gz') as tar:
             member = tarfile.TarInfo(name)
@@ -60,6 +89,39 @@ class RuntimeReleaseTests(unittest.TestCase):
                         release.extract(root/'test.tar.gz',root/'output')
             self.assertFalse((root/'escape').exists())
 
+    def test_bundle_restores_shared_files_and_checks_every_variant(self):
+        import hashlib
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            archive = root / 'urban.tar.gz'
+            with tarfile.open(archive, 'w:gz') as tar:
+                first = tarfile.TarInfo('first/Linux/game')
+                first.size, first.mode = 4, 0o755
+                tar.addfile(first, io.BytesIO(b'game'))
+                second = tarfile.TarInfo('second/Linux/game')
+                second.type, second.linkname, second.mode = tarfile.LNKTYPE, first.name, 0o755
+                tar.addfile(second)
+            checksum = hashlib.sha256(b'game').hexdigest()
+            package = {'id': 'urban', 'filename': archive.name, 'sha256': release.digest(archive),
+                       'variants': [{'id': v, 'binary': v + '/Linux/game', 'binary_sha256': checksum}
+                                    for v in ('first', 'second')]}
+            release.restore(package, root/'installed', root/'cache', root)
+            first = root/'installed/urban/first/Linux/game'
+            second = root/'installed/urban/second/Linux/game'
+            self.assertEqual(first.read_bytes(), second.read_bytes())
+            self.assertTrue(second.stat().st_mode & 0o100)
+            second.write_bytes(b'modified')
+            self.assertEqual(first.read_bytes(), b'game')
+            with self.assertRaisesRegex(ValueError, 'modified: second'):
+                release.restore(package, root/'installed', root/'cache', root)
+
+    def test_rejects_hard_links_outside_preceding_archive_files(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.archive(root/'test.tar.gz', 'link', tarfile.LNKTYPE)
+            with self.assertRaisesRegex(ValueError, 'Unsafe archive hard link'):
+                release.extract(root/'test.tar.gz', root/'output')
+
     def test_release_matches_all_experiment_builds(self):
         manifest=json.loads((ROOT/'resources/releases.json').read_text())
         profiles=json.loads((ROOT/'benchmark/profiles/ue-aws-profiles-20260918.json').read_text())['tasks']
@@ -68,9 +130,10 @@ class RuntimeReleaseTests(unittest.TestCase):
         seen=[]
         for package in manifest['packages']:
             if package['group']!='unreal-runtime':continue
-            for task in package['tasks']:
-                self.assertEqual(profiles[task]['build_sha256'],package['binary_sha256'],task)
-                seen.append(task)
+            for build in release.builds(package):
+                for task in build['tasks']:
+                    self.assertEqual(profiles[task]['build_sha256'],build['binary_sha256'],task)
+                    seen.append(task)
         self.assertEqual(set(seen),assigned)
         self.assertEqual(len(seen),126)
 

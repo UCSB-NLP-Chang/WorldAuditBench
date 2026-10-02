@@ -7,11 +7,14 @@ import json
 from pathlib import Path
 import shutil
 import ssl
+import sys
 import tarfile
 import tempfile
 import urllib.request
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+from auditor.unreal_launch import without_hud
 
 
 def digest(path):
@@ -24,6 +27,7 @@ def digest(path):
 
 def extract(archive, destination):
     """Only restore directories and regular files; never follow archive links."""
+    restored = set()
     with tarfile.open(archive, 'r:gz') as bundle:
         for member in bundle:
             path = Path(member.name)
@@ -32,14 +36,35 @@ def extract(archive, destination):
             target = destination / path
             if member.isdir():
                 target.mkdir(parents=True, exist_ok=True)
-            elif member.isfile() or member.islnk():
+            elif member.isfile():
                 target.parent.mkdir(parents=True, exist_ok=True)
-                # extractfile reads hard-link contents from the archive itself.
                 with bundle.extractfile(member) as source, target.open('wb') as output:
                     shutil.copyfileobj(source, output, 1024 * 1024)
                 target.chmod(member.mode & 0o777)
+                restored.add(path)
+            elif member.islnk():
+                source = Path(member.linkname)
+                if source.is_absolute() or '..' in source.parts or source not in restored or source == path:
+                    raise ValueError('Unsafe archive hard link: ' + member.name)
+                target.parent.mkdir(parents=True, exist_ok=True)
+                # Reuse verified archive contents without seeking backward through gzip.
+                shutil.copyfile(destination / source, target)
+                target.chmod(member.mode & 0o777)
+                restored.add(path)
             else:
                 raise ValueError('Unsupported archive member: ' + member.name)
+
+
+def builds(package):
+    """A download can contain several preserved scene builds."""
+    return package.get('variants', [package] if package.get('binary') else [])
+
+
+def verify_binaries(package, directory, installed=False):
+    for build in builds(package):
+        if digest(directory / build['binary']) != build['binary_sha256']:
+            detail = 'Installed executable was modified' if installed else 'Executable checksum mismatch'
+            raise ValueError(detail + ': ' + build['id'])
 
 
 def download(package, cache, local_archives=None):
@@ -72,8 +97,7 @@ def restore(package, root, cache, local_archives=None, keep=False):
     destination = root / package['id']
     marker = destination / '.worldauditbench-release.json'
     if marker.exists() and json.loads(marker.read_text())['sha256'] == package['sha256']:
-        if package.get('binary') and digest(destination / package['binary']) != package['binary_sha256']:
-            raise ValueError('Installed executable was modified: ' + package['id'])
+        verify_binaries(package, destination, installed=True)
         print('Already restored: ' + package['id'], flush=True)
         return
     if destination.exists():
@@ -83,8 +107,7 @@ def restore(package, root, cache, local_archives=None, keep=False):
     staging = Path(tempfile.mkdtemp(prefix='.restore-', dir=root))
     try:
         extract(archive, staging)
-        if package.get('binary') and digest(staging / package['binary']) != package['binary_sha256']:
-            raise ValueError('Executable checksum mismatch: ' + package['id'])
+        verify_binaries(package, staging)
         (staging / '.worldauditbench-release.json').write_text(json.dumps(package, indent=2) + '\n')
         staging.rename(destination)
     finally:
@@ -106,11 +129,15 @@ def write_profiles(manifest, root):
     for package in manifest['packages']:
         if package['group'] != 'unreal-runtime' or not (root / package['id'] / '.worldauditbench-release.json').is_file():
             continue
+        task_builds = {task: build for build in builds(package) for task in build['tasks']}
+        if set(task_builds) != set(package['tasks']):
+            raise ValueError('Variant task coverage differs: ' + package['id'])
         for task_id in package['tasks']:
+            build = task_builds[task_id]
             profile = copy.deepcopy(original[task_id])
-            if profile['build_sha256'] != package['binary_sha256']:
+            if profile['build_sha256'] != build['binary_sha256']:
                 raise ValueError('Release differs from experiment build: ' + task_id)
-            profile['binary'] = str(root / package['id'] / package['binary'])
+            profile['binary'] = str(root / package['id'] / build['binary'])
             expected = reference['policies'][profile['policy_version']]['sha256']
             policy = policies.get(expected)
             if policy is None:
@@ -118,6 +145,8 @@ def write_profiles(manifest, root):
             profile['policy_path'] = str(policy)
             profile['policy_sha256'] = expected
             profile['extra_args'] = [('-AuditorExplorationPolicy=' + str(policy)) if arg.lower().startswith('-auditorexplorationpolicy=') else arg for arg in profile.get('extra_args', [])]
+            profile['game_args'] = without_hud(profile.get('game_args', []))
+            profile['hud'] = 'disabled-in-engine'
             tasks[task_id] = profile
     path = root / 'unreal-profiles.json'
     path.write_text(json.dumps({'tasks': tasks}, indent=2) + '\n')
