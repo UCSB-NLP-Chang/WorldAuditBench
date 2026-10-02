@@ -19,6 +19,7 @@ sys.path.insert(0, str(ROOT))
 from data.tasks import ensure_dataset, load_task
 from scripts.runtime import DEFAULT_RUNTIME, ensure_environment, task_catalog
 from environments.pixel_streaming import PixelStreaming
+from environments.package_profiles import load_profiles as load_package_profiles
 from environments.stream_proxy import proxy as proxy_stream
 
 
@@ -30,13 +31,15 @@ def load_rows(dataset=None):
 class Viewer:
     def __init__(self, rows, runtime, download=False, gpu=0, *,
                  streaming_root=ROOT / 'out/pixel-streaming', profiles=None,
-                 node='node', peer_options=None):
+                 node='node', peer_options=None, packages=None):
         self.rows = rows
         self.tasks = {row['task_id']: row for row in rows}
         self.runtime, self.download, self.gpu = runtime, download, gpu
         self.static = None
         self.streaming = PixelStreaming(streaming_root, ROOT / 'out/viewer', gpu, node, peer_options)
         self.profiles = profiles
+        self.packages = packages
+        self.build = None
         self.port = None
         self.task = None
         self.lock = threading.Lock()
@@ -49,6 +52,7 @@ class Viewer:
             self.static = None
         self.task = None
         self.port = None
+        self.build = None
 
     def open(self, task):
         if task not in self.tasks:
@@ -60,11 +64,12 @@ class Viewer:
             browser = row['engine'] in {'threejs', 'three.js'}
             if not browser and sys.platform != 'linux':
                 raise ValueError('Unreal requires a Linux GPU host. You can browse its task details here.')
-            if browser or self.profiles is None:
+            if browser or (self.profiles is None and self.packages is None):
                 package = ensure_environment(task, self.runtime, self.download)
             if not browser:
-                profiles = self.profiles or self.runtime / 'unreal-profiles.json'
-                profile = json.loads(Path(profiles).read_text())['tasks'].get(task)
+                profiles = (load_package_profiles(self.packages) if self.packages else
+                            json.loads(Path(self.profiles or self.runtime / 'unreal-profiles.json').read_text())['tasks'])
+                profile = profiles.get(task)
                 if profile is None:
                     raise ValueError('Task is not installed in the Unreal profiles: ' + task)
                 self.streaming.validate(profile)
@@ -83,6 +88,7 @@ class Viewer:
                 return {'engine':'threejs','url':f'/environment/{package["page"]}?{query}'}
             result = self.streaming.start(profile)
             self.task = task
+            self.build = result.get('build')
             return result
         except Exception:
             self.close()
@@ -104,6 +110,7 @@ class Viewer:
         return {'task_id': self.task, 'running': running,
                 'unreal_available': sys.platform == 'linux',
                 'boundary_state': self.streaming.boundary() if running else None,
+                'build': self.build if running else None,
                 'transport': 'pixel-streaming' if self.streaming.session_id else None}
 
     def request(self, path, data=None):
@@ -191,7 +198,9 @@ def main(argv=None):
     parser.add_argument('--no-browser',action='store_true')
     parser.add_argument('--pixel-streaming-root',type=Path,default=ROOT/'out/pixel-streaming',
                         help='Built Epic UE 5.6 PixelStreamingInfrastructure checkout')
-    parser.add_argument('--unreal-profiles',type=Path,help='Use existing verified Unreal launch profiles')
+    native = parser.add_mutually_exclusive_group()
+    native.add_argument('--unreal-profiles',type=Path,help='Use existing verified Unreal launch profiles')
+    native.add_argument('--unreal-packages',type=Path,help='A self-contained environment package or directory of packages with launch.json')
     parser.add_argument('--node',default='node',help='Node.js 22+ executable')
     parser.add_argument('--ice-config',type=Path,help='Private JSON RTCConfiguration with STUN/TURN iceServers')
     args=parser.parse_args(argv)
@@ -211,7 +220,7 @@ def main(argv=None):
         parser.error('--ice-config must contain a JSON object with an iceServers array')
     viewer=Viewer(load_rows(args.dataset),args.runtime_root.expanduser().resolve(),args.download,args.gpu,
                   streaming_root=args.pixel_streaming_root, profiles=args.unreal_profiles,
-                  node=args.node, peer_options=peer_options)
+                  node=args.node, peer_options=peer_options, packages=args.unreal_packages)
     server=http.server.ThreadingHTTPServer(('127.0.0.1',args.port),make_handler(viewer))
     url=f'http://127.0.0.1:{server.server_port}/'+('?' + urlencode({'task':args.task}) if args.task else '')
     print(url,flush=True)

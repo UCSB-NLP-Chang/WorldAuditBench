@@ -112,6 +112,8 @@ class PixelStreaming:
                     capture_output=True, timeout=7)
                 if result.returncode == 0:
                     return {'engine': 'unreal', 'transport': 'pixel-streaming',
+                            'build': {'label': profile.get('build_label', 'Installed build'),
+                                      'sha256': profile['build_sha256']},
                             'url': f'/stream/{self.session_id}/player.html'}
                 time.sleep(.5)
             raise TimeoutError('Unreal did not connect to Pixel Streaming; inspect ' + str(self.directory))

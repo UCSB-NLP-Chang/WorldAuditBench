@@ -9,6 +9,7 @@ import urllib.request
 import pytest
 
 from environments.pixel_streaming import PixelStreaming, launch_command
+from environments.package_profiles import load_profiles
 from scripts import view_task
 
 
@@ -171,3 +172,46 @@ def test_status_exposes_boundary_only_for_a_running_scene(viewer_server, monkeyp
     assert json.loads(request(base, '/api/status')[1])['boundary_state'] == 2
     monkeypatch.setattr(viewer.streaming, 'alive', lambda: False)
     assert json.loads(request(base, '/api/status')[1])['boundary_state'] is None
+
+
+def test_self_contained_package_opens_without_old_release_profiles(viewer_server, tmp_path, monkeypatch):
+    viewer, base = viewer_server
+    package = tmp_path / 'packages/indoor'
+    package.mkdir(parents=True)
+    manifest = {'engine': 'unreal', 'build_label': '2026-10-02 candidate', 'tasks': {'UE_TEST': {
+        'binary': 'runtime/Scene', 'binary_sha256': 'a' * 64,
+        'launch_map': '/Game/Scene?Task=UE_TEST',
+        'args': ['-AuditorExplorationTask=UE_TEST']}}}
+    (package / 'launch.json').write_text(json.dumps(manifest))
+    viewer.packages = package.parent
+    monkeypatch.setattr(view_task.sys, 'platform', 'linux')
+    monkeypatch.setattr(view_task, 'ensure_environment', lambda *a: pytest.fail('Used old release installer'))
+    seen = []
+    monkeypatch.setattr(viewer.streaming, 'validate', lambda p: seen.append(p))
+    build = {'label': manifest['build_label'], 'sha256': 'a' * 64}
+    monkeypatch.setattr(viewer.streaming, 'start', lambda p: {
+        'engine': 'unreal', 'transport': 'pixel-streaming', 'url': '/stream/test/player.html', 'build': build})
+    code, body = request(base, '/api/open', {'task_id': 'UE_TEST'})
+    assert code == 200 and json.loads(body)['build'] == build
+    assert seen[0]['binary'] == str(package / 'runtime/Scene')
+    assert seen[0]['runtime_map'] == '/Game/Scene?Task=UE_TEST'
+    assert seen[0]['game_args'] == ['-AuditorExplorationTask=UE_TEST']
+    assert viewer.build == build
+    assert load_profiles(package) == load_profiles(package.parent)
+    request(base, '/api/stop', {})
+    assert viewer.build is None
+
+
+def test_package_rejects_duplicate_tasks_and_escaping_binary(tmp_path):
+    manifest = {'engine': 'unreal', 'tasks': {'TASK': {
+        'binary': 'runtime/Game', 'binary_sha256': 'b' * 64, 'launch_map': '/Game/Scene'}}}
+    for name in ['first', 'second']:
+        path = tmp_path / name
+        path.mkdir()
+        (path / 'launch.json').write_text(json.dumps(manifest))
+    with pytest.raises(ValueError, match='more than one package'):
+        load_profiles(tmp_path)
+    manifest['tasks']['TASK']['binary'] = '../outside/Game'
+    (tmp_path / 'first/launch.json').write_text(json.dumps(manifest))
+    with pytest.raises(ValueError, match='outside'):
+        load_profiles(tmp_path / 'first')

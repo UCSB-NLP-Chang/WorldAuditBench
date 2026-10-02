@@ -95,11 +95,25 @@ starts, check TURN reachability/credentials and the GPU host's media networking.
 
 ## Runtime options
 
+For self-contained environment packages that include `launch.json`, point the
+viewer at one extracted package or their parent directory:
+
+```bash
+python scripts/view_task.py H07 --unreal-packages /path/to/unreal --no-browser
+```
+
+The viewer reads the packaged task list, executable checksum, map and arguments.
+Bundled exploration policies remain in the package. The active scene label shows
+the build label and checksum prefix, so a rebuilt candidate can be distinguished
+from an earlier installed release. An optional `build_label` in `launch.json`
+names that build; setting a label does not validate or publish the package.
+
 | Option | Purpose |
 | --- | --- |
 | `--runtime-root PATH` | Downloaded environments and generated launch profiles |
 | `--pixel-streaming-root PATH` | Built UE 5.6 infrastructure checkout |
 | `--unreal-profiles PATH` | Reuse existing launch profiles, with executable hash verification |
+| `--unreal-packages PATH` | Load self-contained packages with `launch.json`; alternative to `--unreal-profiles` |
 | `--node PATH` | Node.js executable for signalling and readiness checks |
 | `--gpu N` | Unreal graphics adapter index |
 | `--ice-config PATH` | Private WebRTC STUN/TURN configuration |

@@ -101,6 +101,8 @@ $('open').onclick = async () => {
     active = task;
     $('browser').src = url.href; $('browser').hidden = false; $('placeholder').hidden = true;
     $('active-task').textContent = task + ' · ' + (result.engine === 'unreal' ? 'Live stream' : 'Interactive scene');
+    if (result.build)
+      $('active-task').textContent += ' · ' + result.build.label + ' · ' + result.build.sha256.slice(0, 8);
     status(result.engine === 'unreal'
       ? 'Click inside the live player to explore. Use WASD, mouse and E; Esc releases the mouse.'
       : 'Click inside the scene to explore. Use WASD and mouse; Esc releases the mouse.');
