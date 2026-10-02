@@ -1,6 +1,6 @@
 # Runtime validation — 2026-10-02
 
-## Rebuilt candidates — 2026-10-02 14:45 UTC
+## Rebuilt candidates — 2026-10-02 15:42 UTC
 
 The new executables are **not ready for publication**. All seven environments
 compiled. Of the 126 tasks, 125 passed initial-frame, turn, spawn and bundled-boundary
@@ -21,9 +21,12 @@ restored; broader visual acceptance remains pending.
 The Ancient rebuild also omitted A19's repositioned lion and A25's opposite door
 swing. Their original runtime patches were recovered. Both now match production
 actor states at all 12 checkpoints on a sampled look, wait and return route;
-reviewed screenshots confirm the lion and initial door configuration. Close-range
-interaction checks are still running, so these comparisons do not yet establish
-complete task equivalence.
+reviewed screenshots confirm the lion and initial door configuration. The later
+interaction selector was also restored after A09 and A17 exposed an
+incorrect interaction range. Paired approach routes now match for A09, A17 and
+A25. A09 additionally matches both rejected distant interactions and two successful
+nearby basket pushes, including the recorded post-push actor states and reviewed
+screenshots. Additional trigger coverage remains pending.
 
 Broader paired checks of production and rebuilt programs are running. They compare
 identical action sequences and record executable hashes. A matching actor-state
@@ -35,10 +38,33 @@ The rebuilt candidates have not replaced the published packages. Existing
 production artifacts and experimental data are retained. Dynamic captures and
 recovery work remain in the private AWS release workspace. Nine new routes were
 captured and their 162 sampled screenshots reviewed. U024's ground seams and
-U041's facade penetration were reproduced; U033's window reflections remain
+U041's facade penetration were reproduced. The facade
+repair below now addresses the recorded U041 route; U033's reflections remain
 unresolved. Ancient and Medieval startup textures sharpen during idle. The S01
 stairs stayed visible on the sampled route, which does not clear the original
 report. Sampled screenshots cannot establish the absence of flicker.
+
+### Native facade repair in the new candidate
+
+U041's building facade used single-sided complex collision. Enabling both collision
+sides for that building mesh stops the real character capsule on the previously
+penetrable approach. A repeat walk now slides along the facade and returns outside.
+The street control remains traversable, and the tested cross-dumpster collision
+matches the previous candidate in hit object and stopping position. The dumpster's
+intended anomaly is an offset collider, not a completely non-colliding object.
+
+The repair is now enabled by default in a separate Urban candidate. All 15 Urban
+tasks pass spawn, bundled-boundary, initial-frame and turn checks with this binary.
+This establishes a targeted facade repair, not clearance of the whole scene; the
+package remains unpublished while other visual issues and task checks continue.
+
+### Ground material diagnosis
+
+U024's rear-ground material repeats the complete road texture atlas using world
+coordinates. The decoded cooked atlas contains the same triangular padding and
+stretched strips visible in the ground screenshots. Forcing the highest landscape
+LOD did not change the defect; hiding the landscape removed the ground entirely.
+A candidate material repair is being tested. This issue is not yet marked fixed.
 
 ## Earlier production-package checks
 
@@ -90,16 +116,16 @@ stationary observation. This covers selected routes, not every reachable positio
 | Subway exterior stairs disappearing with distance | A 148-observation S01 route, repeated with the HUD disabled, approached, descended, climbed and looked back at the exterior stairs. The reported disappearance was not reproduced on that route. A separate run increased view distance and disabled occlusion for comparison. No global culling change was adopted. The original report remains open. |
 | Urban rear-lane ground | Stretched pavement patterns and triangular seams are visible in the U024 walk. This is outside the cardboard-box movement anomaly and remains open. |
 | Urban storefront reflections | Repeated tree/sky reflections and abrupt-looking window changes are visible in U033 and neighboring shopfronts. Material-level review remains open. |
-| Urban facade collision | In the U041 walk, forward movement reached the back side of the shop facade. U041's intended anomaly concerns the dumpster collision, so this route requires separate collision review. |
+| Urban facade collision | Fixed on the recorded U041 route in the new candidate: double-sided facade collision prevents entry, and a repeat walk returns outside. Street and sampled dumpster collision controls are preserved. All 15 Urban startup checks pass; broader scene review remains open. |
 | Lighting changes | Several maps gradually settle in brightness after startup or a turn. Stationary frame differences decrease over time, consistent with exposure adaptation; this alone does not establish random light flicker. S01 uses fixed exposure. Reflection shimmer and lighting during movement are not exhaustively cleared. |
 | Initial texture detail | Some Ancient scene surfaces have low detail at the first observation and resolve after additional frames. Texture-streaming startup remains part of the visual review. |
 
 The current AWS machine contains the compiled releases and recovered C++ source.
 The September 14 authoring recovery lacks the matching editable map/material
 content; the older September 7 Urban content is not the same scene revision.
-A verified recook of the affected later maps needs that matching authoring content
-and an editor build. The archive consolidation and HUD change do not repair these
-outstanding material or geometry findings.
+The facade collision was repaired using existing cooked geometry. Remaining
+material and geometry issues are still under diagnosis; an asset recook would
+require matching authoring content and an editor build.
 
 ### Review images
 
