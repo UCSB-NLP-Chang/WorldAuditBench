@@ -2,7 +2,7 @@
   "schema_version": 1,
   "status": "runtime-release",
   "destination": "Hugging Face",
-  "repository": "ziyjiang/WorldAuditBench-runtime",
+  "repository": "ziyjiang/WorldAuditBench",
   "revision": "8581dfdda3a690a5b397588167ddedbfdbe1afef",
   "resources": [
     {

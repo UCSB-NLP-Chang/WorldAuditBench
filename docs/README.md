@@ -9,6 +9,7 @@
 
 ## Understand the code
 
+- [Task rubrics and model inputs](task-data.md): where task answers, public inputs, demonstrations and assembled prompts live.
 - [Repository map](repository-layout.md): where to find each component and why there are separate agent and environment directories.
 - [Script entry points](../scripts/README.md): episode, batch, and VLA launchers.
 - [Environment HTTP API](environment-http-api.md): the Unreal bridge interface.

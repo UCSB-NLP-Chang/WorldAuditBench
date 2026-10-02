@@ -34,7 +34,7 @@
       ],
       "binary": "Linux/AncientChineseCity/Binaries/Linux/AncientChineseCity",
       "group": "unreal-runtime",
-      "repository": "ziyjiang/WorldAuditBench-runtime",
+      "repository": "ziyjiang/WorldAuditBench",
       "revision": "0761f78a79e99f93391906901442089d363d6bd5"
     },
     {
@@ -53,7 +53,7 @@
       ],
       "binary": "Linux/Subway/Binaries/Linux/Subway",
       "group": "unreal-runtime",
-      "repository": "ziyjiang/WorldAuditBench-runtime",
+      "repository": "ziyjiang/WorldAuditBench",
       "revision": "0761f78a79e99f93391906901442089d363d6bd5"
     },
     {
@@ -85,7 +85,7 @@
       ],
       "binary": "Linux/FactoryEnvironmentCollect/Binaries/Linux/FactoryEnvironmentCollect",
       "group": "unreal-runtime",
-      "repository": "ziyjiang/WorldAuditBench-runtime",
+      "repository": "ziyjiang/WorldAuditBench",
       "revision": "0761f78a79e99f93391906901442089d363d6bd5"
     },
     {
@@ -114,7 +114,7 @@
       ],
       "binary": "Linux/RuralAustralia/Binaries/Linux/RuralAustralia",
       "group": "unreal-runtime",
-      "repository": "ziyjiang/WorldAuditBench-runtime",
+      "repository": "ziyjiang/WorldAuditBench",
       "revision": "0761f78a79e99f93391906901442089d363d6bd5"
     },
     {
@@ -138,7 +138,7 @@
       ],
       "binary": "Linux/Subway/Binaries/Linux/Subway",
       "group": "unreal-runtime",
-      "repository": "ziyjiang/WorldAuditBench-runtime",
+      "repository": "ziyjiang/WorldAuditBench",
       "revision": "0761f78a79e99f93391906901442089d363d6bd5"
     },
     {
@@ -147,7 +147,7 @@
       "bytes": 3377912168,
       "sha256": "fae9adcd012cb29777f57ac7f1a13908c1c3ed7819e1e582973e439faa95f2ca",
       "group": "unreal-runtime",
-      "repository": "ziyjiang/WorldAuditBench-runtime",
+      "repository": "ziyjiang/WorldAuditBench",
       "revision": "8581dfdda3a690a5b397588167ddedbfdbe1afef",
       "binary_sha256": "142b172a2886d116e3777108cfa1cfbc90d2a47ef3183fa0077156434c346f28",
       "tasks": [
@@ -245,7 +245,7 @@
       ],
       "binary": "Linux/MedievalVillage/Binaries/Linux/MedievalVillage",
       "group": "unreal-runtime",
-      "repository": "ziyjiang/WorldAuditBench-runtime",
+      "repository": "ziyjiang/WorldAuditBench",
       "revision": "0761f78a79e99f93391906901442089d363d6bd5"
     },
     {
@@ -281,7 +281,7 @@
       "filename": "icl-examples.tar.gz",
       "bytes": 54839163,
       "sha256": "861a3df499f7b6605c6f4d3ea70e3f70d9dcbdba76a97978121e36ae4beb11bc",
-      "repository": "ziyjiang/WorldAuditBench-runtime",
+      "repository": "ziyjiang/WorldAuditBench",
       "revision": "0761f78a79e99f93391906901442089d363d6bd5"
     },
     {
@@ -290,7 +290,7 @@
       "filename": "threejs-builds.tar.gz",
       "bytes": 145228438,
       "sha256": "661b9ea5243ee37472bc3159eaed54f11a726b17280fffe90a15c65b5a1c2230",
-      "repository": "ziyjiang/WorldAuditBench-runtime",
+      "repository": "ziyjiang/WorldAuditBench",
       "revision": "0761f78a79e99f93391906901442089d363d6bd5"
     }
   ]

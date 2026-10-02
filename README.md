@@ -18,7 +18,7 @@
 <p>
   <a href="https://arxiv.org/abs/2609.40325"><img src="docs/figures/paper-badge.svg" alt="Paper on arXiv"></a>
   <a href="https://ucsb-nlp-chang.github.io/WorldAuditBench/"><img src="docs/figures/project-badge.svg" alt="Project page"></a>
-  <a href="https://huggingface.co/datasets/ziyjiang/WorldAuditBench-runtime"><img src="docs/figures/dataset-badge.svg" alt="Runtime packages on Hugging Face"></a>
+  <a href="https://huggingface.co/datasets/ziyjiang/WorldAuditBench"><img src="docs/figures/dataset-badge.svg" alt="Runtime packages on Hugging Face"></a>
   <a href="https://ucsb-nlp-chang.github.io/WorldAuditBench/#explore"><img src="docs/figures/demo-badge.svg" alt="Explore demos"></a>
 </p>
 
@@ -94,6 +94,9 @@ for task in benchmark["tasks"][:3]:
 
 Use [`benchmark/paper-tasks.json`](benchmark/paper-tasks.json) and [`benchmark/splits/`](benchmark/splits/) for paper experiments. The separate `benchmark/tasks.json` catalog also contains review and baseline entries and is not the paper evaluation split.
 
+For each task's **rubric, model input, demonstrations and judge prompt**, see
+the [task data guide](docs/task-data.md).
+
 ### 3. Set up an auditor
 
 The paper's VLM auditors run through native model clients and a shared MCP tool interface. Prepare their Python runtime:
@@ -138,7 +141,7 @@ Agents submit anomaly reports with supporting visual evidence. The judge evaluat
 
 ## Resources
 
-Code, task definitions, and evaluation splits are available here. Compiled environments and demonstration images are distributed on [Hugging Face](https://huggingface.co/datasets/ziyjiang/WorldAuditBench-runtime).
+Code, task definitions, and evaluation splits are available here. Compiled environments and demonstration images are distributed on [Hugging Face](https://huggingface.co/datasets/ziyjiang/WorldAuditBench).
 
 | Resource | Availability |
 | --- | --- |
@@ -146,7 +149,7 @@ Code, task definitions, and evaluation splits are available here. Compiled envir
 | Auditing agents, evaluation, and environment source | Available in this repository |
 | Demonstration videos | [Project page](https://ucsb-nlp-chang.github.io/WorldAuditBench/#explore) |
 | Compiled Unreal and Three.js environments | [Download and run](docs/resources.md) |
-| In-context demonstration images | [Available on Hugging Face](https://huggingface.co/datasets/ziyjiang/WorldAuditBench-runtime) |
+| In-context demonstration images | [Available on Hugging Face](https://huggingface.co/datasets/ziyjiang/WorldAuditBench) |
 | Interactive five-family demo | [Hugging Face Space](https://huggingface.co/spaces/ziyjiang/WorldAuditBench) · requires running GPU hardware |
 | VLA trajectories and frozen ablation inputs | Pending |
 | Open-P2P model setup and checkpoint instructions | Coming soon |

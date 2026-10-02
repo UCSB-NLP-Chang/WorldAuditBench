@@ -1,7 +1,7 @@
 # Download and run the environments
 
 Compiled Linux x86_64 Unreal packages and the six standalone Three.js builds are
-published on [Hugging Face](https://huggingface.co/datasets/ziyjiang/WorldAuditBench-runtime).
+published on [Hugging Face](https://huggingface.co/datasets/ziyjiang/WorldAuditBench).
 The residential build is reused from the
 [demo runtime repository](https://huggingface.co/datasets/ziyjiang/WorldAuditBench-demo-runtime).
 The release covers the 126 Unreal and 87 Three.js tasks in the paper split.
