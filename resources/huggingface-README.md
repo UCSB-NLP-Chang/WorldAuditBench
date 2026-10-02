@@ -59,8 +59,8 @@ The evaluation set spans **126 Unreal Engine tasks** and **87 Three.js tasks**, 
 | --- | --- |
 | `task_id`, `engine`, `environment` | Task and environment identifiers |
 | `category`, `subcategory` | Anomaly family and type |
-| `input` | Auditing instruction, public scene description and assigned subcategory |
-| `rubric` | Expected behavior, reproduction steps and success criteria, in English |
+| `input` | Auditing instruction and public scene description |
+| `rubric` | `anomaly`: the target anomaly and any necessary trigger conditions; `expected`: normal behavior (both in English) |
 | `map` | Map path or scene URL used to load this task |
 
 The shared **in-context examples are stored once**, in [`examples/`](https://huggingface.co/datasets/ziyjiang/WorldAuditBench/tree/main/examples). The task's subcategory selects its demonstration. Rubrics are evaluation answers and are kept separate from model inputs.

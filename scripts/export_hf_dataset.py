@@ -34,19 +34,17 @@ def export(destination):
             'engine': 'three.js' if task['family'].startswith('threejs_') else 'unreal',
             'environment': task['family'].removeprefix('threejs_'),
             'category': task['paper_family'], 'subcategory': code,
-            'input': {'instruction': instruction(), 'scene_description': descriptions[0],
-                      'subcategory': code},
+            'input': {'instruction': instruction(), 'scene_description': descriptions[0]},
             'map': task['map'],
-            'rubric': {'expected_behavior': task['rubrics_i18n']['en']['expected'],
-                       'reproduction_steps': task['rubrics_i18n']['en']['steps'],
-                       'success_criteria': task['rubrics_i18n']['en']['criteria']},
+            'rubric': {'anomaly': task['rubrics_i18n']['en']['criteria'],
+                       'expected': task['rubrics_i18n']['en']['expected']},
         })
     text = Value('string')
     features = Features({
         'task_id': text, 'engine': text, 'environment': text, 'category': text, 'subcategory': text,
         'map': text,
-        'input': {'instruction': text, 'scene_description': text, 'subcategory': text},
-        'rubric': {'expected_behavior': text, 'reproduction_steps': text, 'success_criteria': text},
+        'input': {'instruction': text, 'scene_description': text},
+        'rubric': {'anomaly': text, 'expected': text},
     })
     for row in rows:
         if re.search(r'[\u3400-\u4dbf\u4e00-\u9fff]', json.dumps(row, ensure_ascii=False)):

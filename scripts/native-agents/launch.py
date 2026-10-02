@@ -31,9 +31,8 @@ REPLAY_ALL_TOOLS = ["read_example", "observe", "inspect", "history", "write_note
 NO_INSPECT_TOOLS = ["read_example", "observe", "history", "write_notes", "flag_bug", "update_bug", "list_bugs", "done"]
 VQA_TOOLS = ["read_example", "observe", "report"]
 DEFAULT_INSTRUCTION = (
-    "Inspect the assigned 3D environment for bugs. Explore and gather visual evidence. "
-    "Report each distinct bug with a clear description, category, and evidence frame refs. "
-    "Do not assume every unusual object is a bug. Finish with done."
+    "Inspect the assigned 3D environment for anomalies. Explore and gather visual evidence. "
+    "Report each distinct anomaly with a clear description and evidence frame references."
 )
 
 

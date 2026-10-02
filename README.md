@@ -18,7 +18,7 @@
 <p>
   <a href="https://arxiv.org/abs/2609.40325"><img src="docs/figures/paper-badge.svg" alt="Paper on arXiv"></a>
   <a href="https://ucsb-nlp-chang.github.io/WorldAuditBench/"><img src="docs/figures/project-badge.svg" alt="Project page"></a>
-  <a href="https://huggingface.co/datasets/ziyjiang/WorldAuditBench"><img src="docs/figures/dataset-badge.svg" alt="Runtime packages on Hugging Face"></a>
+  <a href="https://huggingface.co/datasets/ziyjiang/WorldAuditBench"><img src="docs/figures/dataset-badge.svg" alt="Dataset on Hugging Face"></a>
   <a href="https://ucsb-nlp-chang.github.io/WorldAuditBench/#explore"><img src="docs/figures/demo-badge.svg" alt="Explore demos"></a>
 </p>
 

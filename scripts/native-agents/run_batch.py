@@ -131,11 +131,11 @@ def main():
                     else:
                         update(tid, status="running", environment_ready_at=time.time(), renderer_host="local")
                     instruction = (
-                        "Inspect the assigned 3D environment for bugs. Explore and gather visual evidence. "
-                        "Report each distinct bug with a clear description, category, and evidence frame refs. "
-                        f"Do not assume every unusual object is a bug. Use the full {selection['max_actions']}-action budget for "
-                        "exploration and verification, even after finding an initial bug. Finish earlier "
-                        "only if the environment fails. Finish with done."
+                        "Inspect the assigned 3D environment for anomalies. Explore and gather visual evidence. "
+                        "Report each distinct anomaly with a clear description and evidence frame references. "
+                        f"Use the full {selection['max_actions']}-action budget for "
+                        "exploration and verification, even after finding an initial anomaly. Finish earlier "
+                        "only if the environment fails."
                     )
                     command = [sys.executable, str(SCRIPTS / "launch.py"), "gemini",
                                "--environment", environment, "--task", tid,

@@ -30,9 +30,13 @@ The **213 rows** cover **126 Unreal and 87 Three.js tasks**, across 13 environme
 | --- | --- |
 | `task_id`, `engine`, `environment` | Stable task ID and environment |
 | `category`, `subcategory` | Anomaly family and type |
-| `input` | Auditing instruction, public scene description and assigned subcategory |
-| `rubric` | Expected behavior, reproduction steps and success criteria, in English |
+| `input` | Auditing instruction and public scene description |
+| `rubric` | `anomaly`: the target anomaly and any necessary trigger conditions; `expected`: normal behavior (both in English) |
 | `map` | Map path or scene URL used to load this task |
+
+The category and subcategory are stored only at the top level. The launcher
+uses them to supply the assigned type; the input does not repeat them or ask
+the model to classify its report. Tool instructions specify how to finish an episode.
 
 In-context demonstrations are shared. The `subcategory` selects the matching
 example in `examples/`; their text and image bytes are not duplicated in task
@@ -63,8 +67,13 @@ supported through `--rubrics`. Version pins and checksums live in GitHub's
 
 The model receives only the public input fields, the selected demonstration,
 tool instructions, budgets and observations during exploration. The launcher
-saves its assembled initial prompt as `<run-dir>/prompt.txt`. **Rubrics and
-reproduction steps are evaluation answers, not model input.**
+saves its assembled initial prompt as `<run-dir>/prompt.txt`. **Rubrics are evaluation answers and are never included in model input.**
+
+The public rubric contains only `anomaly` and `expected`. Reproduction routes
+are omitted; conditions necessary to identify a dynamic anomaly remain in
+`anomaly`. This is a simplified format for new runs. Published experiment
+records retain their original prompts and rubrics (including reproduction
+steps); the reported paper scores have not been recomputed with this format.
 
 ## Source records and archival experiments
 

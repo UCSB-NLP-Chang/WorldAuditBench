@@ -1,9 +1,9 @@
 {
   "repository": "ziyjiang/WorldAuditBench",
-  "revision": "732ad23c752baff3105b34fb33aef16d8289ccec",
+  "revision": "6bd944b08ddb9c4abc9fcfbbb38dac5a13e5ceb9",
   "filename": "dataset/tasks.parquet",
-  "bytes": 28430,
-  "sha256": "333d2a0cb736c6c8ba32982dba5f29f2605bd263cb25972856291dadc24b57ff",
+  "bytes": 22868,
+  "sha256": "0a75e67b90421422c3b02fdf1d782a59b624722971acb3a2d2a2dbf52a95325b",
   "examples": {
     "repository": "ziyjiang/WorldAuditBench",
     "revision": "42a5358da80edb15d2fedc22ec69c240537b0878",

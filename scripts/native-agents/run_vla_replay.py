@@ -27,22 +27,19 @@ SCRIPTS = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT))
 from auditor.task_dataset import load_task
 ALL_INSTRUCTION = (
-    "Inspect the assigned 3D environment for bugs by reviewing the explorer's recording. Go through the recorded frames and inspect "
-    "the ones that matter at full resolution to gather visual evidence. Report each distinct bug with a clear description, category, "
-    "and evidence frame refs. Do not assume every unusual object is a bug. Report bugs through flag_bug/update_bug and finish with done. "
-    "If you find no bug, say so explicitly in done.")
-ALL_INSTRUCTION = ALL_INSTRUCTION.replace("Go through the recorded frames and inspect the ones that matter at full resolution to gather visual evidence.",
-                                          "Go through the recorded frames to gather visual evidence; inspect only to zoom in or to view a frame that is not shown.")
+    "Inspect the assigned 3D environment for anomalies by reviewing the explorer's recording. "
+    "Go through the recorded frames to gather visual evidence; inspect only to zoom in or to view a frame that is not shown. "
+    "Report each distinct anomaly with a clear description and evidence frame references.")
 VQA_INSTRUCTION = (
-    "Inspect the assigned 3D environment for bugs by reviewing the explorer's recording. Report each distinct bug with a clear "
-    "description, category, and evidence frame refs. Do not assume every unusual object is a bug. Answer with one report call; "
-    "if you find no bug, report an empty list and say so in the summary.")
+    "Inspect the assigned 3D environment for anomalies by reviewing the explorer's recording. "
+    "Report each distinct anomaly with a clear description and evidence frame references. "
+    "If you find no anomaly, report an empty list and say so in the summary.")
 DEFAULT_INSTRUCTION = (
-    "Inspect the assigned 3D environment for bugs by reviewing the explorer's recording. Play and inspect the recording "
-    "to gather visual evidence. Report each distinct bug with a clear description, category, and evidence frame refs. "
-    "Do not assume every unusual object is a bug. Use the full 40-play budget to review and verify, even after finding an "
-    "initial bug. Finish earlier only if the environment fails. Report bugs through flag_bug/update_bug and finish with done. "
-    "If you find no bug, say so explicitly in done.")
+    "Inspect the assigned 3D environment for anomalies by reviewing the explorer's recording. "
+    "Play and inspect the recording to gather visual evidence. "
+    "Report each distinct anomaly with a clear description and evidence frame references. "
+    "Use the full 40-play budget to review and verify, even after finding an initial anomaly. "
+    "Finish earlier only if the environment fails.")
 
 
 def cli():
@@ -118,15 +115,12 @@ def load_tasks(args):
             if not (rec / 'meta.json').exists():
                 raise SystemExit(f'{tid}: no recording under {rec}')
             prof.update(case_type='bug', family=row['environment'])
-            prof['task'] = {**prof.get('task', {}), 'rubrics_i18n': {'en': {
-                'expected': row['rubric']['expected_behavior'],
-                'steps': row['rubric']['reproduction_steps'],
-                'criteria': row['rubric']['success_criteria']}}}
+            prof['task'] = {**prof.get('task', {}), 'rubric': row['rubric']}
             tasks.append({'id': tid, 'task_id': native, 'recording': str(rec.resolve()),
                           'family': row['environment'], 'subcategory': row['subcategory'],
                           'label_source': 'dataset', 'scene_source': 'dataset',
                           'scene': row['input']['scene_description'], 'case_type': 'bug',
-                          'has_rubric': bool(row['rubric']['success_criteria'])})
+                          'has_rubric': bool(row['rubric']['anomaly'])})
         return tasks, profiles
     scenes = json.loads(args.scene_catalog.read_text())["scenes"]
     scene_of = {t: s["description"]["en"].strip() for s in scenes for t in s["task_ids"]}
@@ -182,6 +176,8 @@ class Batch:
         tid = task["id"]
         job = self.base / "cases" / tid
         job.mkdir(parents=True)
+        if not a.legacy_task_files:
+            write_json(job / 'rubric.json', load_task(task.get('task_id', tid), a.dataset)['rubric'])
         scene_file = job / "scene.txt"
         scene_file.write_text(task["scene"] + "\n")
         cmd = [sys.executable, str(SCRIPTS / "launch.py"), a.client, "--environment", "vla-replay", "--replay-dir", task["recording"],
@@ -287,11 +283,12 @@ class Batch:
         refs.sort(key=lambda r: (index[r]["action"], index[r].get("t_sim", 0), r))
         output["attached_evidence"] = [{"image": i + 1, "ref": r, "file": index[r]["file"]} for i, r in enumerate(refs)]
         write_json(job / "judge-input.json", output)
-        rubric = {"case_type": profiles[tid]["case_type"], "rubrics": prof["rubrics_i18n"]["en"]}
-        write_json(job / "rubric.json", rubric)
-        source_args = ['--rubrics', str(job / 'rubric.json')] if a.legacy_task_files else ['--task', task.get('task_id', tid)]
-        if a.dataset and not a.legacy_task_files:
-            source_args += ['--dataset', str(a.dataset.resolve())]
+        # Preserve the rubric captured for this run, including archival protocols.
+        if not (job / "rubric.json").exists():
+            rubric = ({"case_type": profiles[tid]["case_type"], "rubrics": prof["rubrics_i18n"]["en"]}
+                      if a.legacy_task_files else prof['rubric'])
+            write_json(job / "rubric.json", rubric)
+        source_args = ['--rubrics', str(job / 'rubric.json')]
         cmd = [str(a.judge_python), "-m", "eval.judge", *source_args, "--model-output", str(job / "judge-input.json"),
                "--model", a.judge_model, "--reasoning-effort", a.judge_effort, "--timeout", "600", "--output", str(job / "judge.json")]
         if refs:

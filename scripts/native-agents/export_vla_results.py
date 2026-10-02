@@ -5,7 +5,7 @@ eval/judge.py, run elsewhere): one folder per VLM, one case per task, the same j
 <out>/<name>/
   README.md, selection.json, results.json, results.md, estimate-gemini-judge.{json,md} (if present), costs.csv
   cases/<TASK>/judge-input.json   {bugs: final active ledger, summary: done summary, attached_evidence: [{image, ref, file}]}
-               rubric.json        {case_type, rubrics: the task's rubrics_i18n.en}   (for the judge only)
+               rubric.json        the rubric captured for this run (for the judge only)
                frames/<file>      the evidence frames listed in attached_evidence (evidence refs in chronological order;
                                   if the ledger cites none, the first and last view)
                meta.json, mcp-calls.jsonl, launch.json, episode-config.json, prompt.txt, cost.json, native-stderr.log
@@ -16,6 +16,20 @@ import argparse, csv, json, pathlib, shutil, sys
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
 from eval.codex_metrics import usage_from_events
+
+
+def export_rubric(case, out, profile):
+    if (case / 'rubric.json').exists():
+        shutil.copyfile(case / 'rubric.json', out / 'rubric.json')
+        return
+    # Older, ungraded batches did not snapshot their rubrics.
+    if profile is None:
+        raise ValueError(f"No saved rubric or archival profile for {case.name}")
+    task = profile['task']
+    (out / 'rubric.json').write_text(json.dumps({
+        'case_type': profile['case_type'], 'rubrics': task['rubrics_i18n']['en'],
+        'title': task.get('title'), 'subcategory': task.get('subcategory')},
+        ensure_ascii=False, indent=2) + '\n')
 
 
 def episode_cost(run, price):
@@ -92,7 +106,7 @@ def main():
     ap.add_argument("--name", required=True, help="folder name for this VLM/setting, e.g. gemini-3.8-flash-medium-vqa")
     ap.add_argument("--profiles", type=pathlib.Path, default=ROOT / "reports/ue-aws-profiles-20260918.json")
     a = ap.parse_args()
-    prof = json.loads(a.profiles.read_text())["tasks"]
+    prof = json.loads(a.profiles.read_text())["tasks"] if a.profiles.exists() else {}
     price = json.loads((ROOT / "scripts/native-agents/pricing.json").read_text())["models"]
     dst = a.out / a.name
     (dst / "cases").mkdir(parents=True, exist_ok=True)
@@ -147,9 +161,7 @@ def main():
         for r in refs:
             shutil.copyfile(ep / "frames" / index[r]["file"], out / "frames" / index[r]["file"])
         (out / "judge-input.json").write_text(json.dumps(output, ensure_ascii=False, indent=2) + "\n")
-        t = prof[tid]
-        (out / "rubric.json").write_text(json.dumps({"case_type": t["case_type"], "rubrics": t["task"]["rubrics_i18n"]["en"],
-                                                     "title": t["task"].get("title"), "subcategory": t["task"].get("subcategory")}, ensure_ascii=False, indent=2) + "\n")
+        export_rubric(case, out, prof.get(tid))
         for f in ["meta.json", "mcp-calls.jsonl", "tools.json", "bugs.jsonl"]:
             if (ep / f).exists():
                 shutil.copyfile(ep / f, out / f)

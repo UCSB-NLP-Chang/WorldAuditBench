@@ -49,7 +49,7 @@
       "source": "/home/ec2-user/game-auditing/README.md",
       "sha256": "fe61de9f8793816513437ef9e2425bc96732048d23be98d9bc331d988378aacc",
       "bytes": 6309,
-      "released_sha256": "c65c1e70f5d6eb7b7b93c24564ab8270f8b6217280d7e5536ad9a08af3cecef4",
+      "released_sha256": "5b36fb912676b9e2eb058786e9756f39b922f3deb7f2a7bd028dda40300d68f5",
       "status": "adapted"
     },
     {
@@ -2321,7 +2321,7 @@
       "source": "/home/ec2-user/game-auditing/docs/binary-judge.md",
       "sha256": "4f0a69c0398f33cfa99048c9bfcef132dc80bd75541e99c6107ba2747b211ab5",
       "bytes": 3642,
-      "released_sha256": "e245bce83611160607eea05c0f3e804cbb3b97bbb34e122e820f3e9cd4fbddfd",
+      "released_sha256": "9b5e7099ea16fbd3f1ae8809102e282fa7b456355773996dde7d1cefedd3b40a",
       "status": "adapted"
     },
     {
@@ -5337,15 +5337,15 @@
       "source": "/home/ec2-user/game-auditing/scripts/native-agents/export_vla_results.py",
       "sha256": "9eb7489fb688e4bb95308f8f6b8fab0984e0d33f2746a796fd42c6e4395f4d49",
       "bytes": 16533,
-      "released_sha256": "9eb7489fb688e4bb95308f8f6b8fab0984e0d33f2746a796fd42c6e4395f4d49",
-      "status": "unchanged"
+      "released_sha256": "a92af4e2dc1b2645b8dab17f02aaacf406a3d9e9b7bd5205304bf0fb9d83fc5f",
+      "status": "adapted"
     },
     {
       "path": "scripts/native-agents/launch.py",
       "source": "/home/ec2-user/game-auditing/scripts/native-agents/launch.py",
       "sha256": "92a651d842036e2844b4c322bada89619c7cd3392a41cbecc591cd68f1faa9bf",
       "bytes": 40255,
-      "released_sha256": "1ea8ddb1bdb50a1d645644f73c21d38c2a2e3335c140179ae66af9dc7df3a42f",
+      "released_sha256": "bfe149e935c975bde02f89a2e8a0c13f2450a027f1841a78eb7a7a097a3ca994",
       "status": "adapted"
     },
     {
@@ -5385,15 +5385,15 @@
       "source": "/home/ec2-user/game-auditing/scripts/native-agents/run_batch.py",
       "sha256": "033a00e9e24cf2e4e542085e5f7c41d84d0677818281547f3794404694830088",
       "bytes": 10719,
-      "released_sha256": "033a00e9e24cf2e4e542085e5f7c41d84d0677818281547f3794404694830088",
-      "status": "unchanged"
+      "released_sha256": "c8ae79d85fc98b96f49ca369fa0c209abd0b3b2d12f6f1da0754a013a81c7334",
+      "status": "adapted"
     },
     {
       "path": "scripts/native-agents/run_vla_replay.py",
       "source": "/home/ec2-user/game-auditing/scripts/native-agents/run_vla_replay.py",
       "sha256": "6cdbb79920691319b1a7e9c50c05eece44d293a73d71414d86af496bc27aa599",
       "bytes": 26367,
-      "released_sha256": "2e077d43b930725261046dfb4050da4ee9b2ad16793d2e79ba6b50317532d1ad",
+      "released_sha256": "9ae6b2d7334ec8eaa6e1594c05e46f43a0fa1a8a4bdf346e1cd87671a925040b",
       "status": "adapted"
     },
     {
