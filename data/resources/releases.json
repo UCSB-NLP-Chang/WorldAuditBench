@@ -58,10 +58,9 @@
     },
     {
       "id": "industrial",
-      "filename": "industrial-linux-x86_64.tar.gz",
-      "bytes": 1915017817,
-      "sha256": "969b74553bae8b71290b391ca39c3e3f859cd252493655a894d069bf5692cf78",
-      "binary_sha256": "6aaf25aa9350624835ceca8ee7eccd79a8a2b4e253d424b1e46f2b168b7baa87",
+      "filename": "unreal/industrial.tar.gz",
+      "bytes": 1926774267,
+      "sha256": "b4ed72f39c9d533a12546183769054435b12d6d001d9c48738029536b2040b97",
       "tasks": [
         "I02",
         "I03",
@@ -83,10 +82,39 @@
         "I20",
         "I21"
       ],
-      "binary": "Linux/FactoryEnvironmentCollect/Binaries/Linux/FactoryEnvironmentCollect",
       "group": "unreal-runtime",
       "repository": "ziyjiang/WorldAuditBench",
-      "revision": "0761f78a79e99f93391906901442089d363d6bd5"
+      "launch_manifest": "launch.json",
+      "launch_sha256": "687a68d4147f4366fdfd2e1a39b93d7fa64f5d5958b29b3f327b97dcf5155014",
+      "variants": [
+        {
+          "id": "industrial-scene-1",
+          "binary": "runtime/scene-1/Linux/FactoryEnvironmentCollect/Binaries/Linux/FactoryEnvironmentCollect",
+          "binary_sha256": "b1e3ea4cb5691d5312afaf57c8d76efe9aebf34ee68ce96b9628bc26150d4a37",
+          "tasks": [
+            "I02",
+            "I03",
+            "I04",
+            "I05",
+            "I06",
+            "I07",
+            "I08",
+            "I10",
+            "I11",
+            "I12",
+            "I13",
+            "I14",
+            "I15",
+            "I16",
+            "I17",
+            "I18",
+            "I19",
+            "I20",
+            "I21"
+          ]
+        }
+      ],
+      "revision": "3addd6a537d1cb514c3a27dbd9fc44da16b127d8"
     },
     {
       "id": "rural",

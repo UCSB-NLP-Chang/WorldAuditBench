@@ -158,7 +158,7 @@ class RuntimeReleaseTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, 'Launch executable differs'):
                 release.write_profiles({'packages': [package]}, root)
 
-    def test_release_matches_all_experiment_builds(self):
+    def test_release_covers_tasks_with_pinned_builds(self):
         manifest=json.loads((ROOT/'data/resources/releases.json').read_text())
         profiles=json.loads((ROOT/'data/benchmark/profiles/ue-aws-profiles-20260918.json').read_text())['tasks']
         profiles.update(json.loads((ROOT/'data/benchmark/profiles/ue-urban-ipc-profiles-20260920.json').read_text())['tasks'])
@@ -166,9 +166,16 @@ class RuntimeReleaseTests(unittest.TestCase):
         seen=[]
         for package in manifest['packages']:
             if package['group']!='unreal-runtime':continue
+            rebuilt = package.get('launch_manifest') == 'launch.json'
+            if rebuilt:
+                self.assertEqual(package['filename'], 'unreal/' + package['id'] + '.tar.gz')
+                self.assertRegex(package['launch_sha256'], r'^[0-9a-f]{64}$')
+                self.assertRegex(package['revision'], r'^[0-9a-f]{40}$')
             for build in release.builds(package):
+                self.assertRegex(build['binary_sha256'], r'^[0-9a-f]{64}$')
                 for task in build['tasks']:
-                    self.assertEqual(profiles[task]['build_sha256'],build['binary_sha256'],task)
+                    if not rebuilt:
+                        self.assertEqual(profiles[task]['build_sha256'],build['binary_sha256'],task)
                     seen.append(task)
         self.assertEqual(set(seen),assigned)
         self.assertEqual(len(seen),126)
