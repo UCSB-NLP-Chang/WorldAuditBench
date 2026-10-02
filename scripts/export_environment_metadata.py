@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
-"""Export per-environment task inputs and evaluation data for release packages."""
+"""Export runnable task catalogs referencing the shared Hugging Face dataset."""
 import argparse
 import ast
 from collections import defaultdict
 import hashlib
 import json
 from pathlib import Path
-import shutil
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -27,8 +26,6 @@ def instruction():
 
 def export(output):
     tasks = json.loads((ROOT / 'benchmark/paper-tasks.json').read_text())['tasks']
-    scenes = json.loads((ROOT / 'scripts/native-agents/task-scenes.json').read_text())['scenes']
-    categories = json.loads((ROOT / 'scripts/native-agents/task-subcategories.json').read_text())['task_subcategories']
     groups = defaultdict(list)
     for task in tasks:
         family = task['family']
@@ -37,53 +34,25 @@ def export(output):
     inventory = []
     for (engine, name), rows in sorted(groups.items()):
         directory = output / engine / name
-        inputs = []
-        for task in sorted(rows, key=lambda t: t['id']):
-            matching = [s['description'] for s in scenes if task['id'] in s['task_ids']]
-            if len(matching) != 1:
-                raise ValueError(f"Expected one scene description for {task['id']}")
-            inputs.append({'id': task['id'], 'scene_description': matching[0],
-                           'subcategory': categories[task['id']]})
-        write_json(directory / 'input/tasks.json', {'tasks': inputs})
-        (directory / 'input/instruction.txt').write_text(instruction() + '\n')
-        shutil.copyfile(ROOT / 'benchmark/taxonomy.json', directory / 'input/taxonomy.json')
-        for rel in ['context.json', 'exclude_from_eval.json']:
-            destination = directory / 'input/icl' / rel
-            destination.parent.mkdir(parents=True, exist_ok=True)
-            shutil.copyfile(ROOT / 'examples/icl' / rel, destination)
-        shutil.copytree(ROOT / 'examples/icl/images', directory / 'input/icl/images', dirs_exist_ok=True)
-        write_json(directory / 'evaluation/rubrics.json', {'tasks': rows})
-        shutil.copyfile(ROOT / 'eval/judge_prompt.md', directory / 'evaluation/judge_prompt.md')
+        directory.mkdir(parents=True, exist_ok=True)
         write_json(directory / 'tasks.json', {'environment': name, 'engine': engine,
                    'tasks': [{'id': t['id'], 'map': t['map'], 'revision': t['revision'],
                               'subcategory': t['paper_subcategory']} for t in rows]})
-        (directory / 'DATA.md').write_text('''# Task data
+        (directory / 'DATA.md').write_text("""# Task data
 
-`tasks.json` lists this environment's paper tasks and map identifiers.
+This archive contains the runnable environment and its task identifiers.
 
-## Model input
+The shared task table, model inputs and evaluation rubrics are published at:
+https://huggingface.co/datasets/ziyjiang/WorldAuditBench/tree/main/dataset
 
-- `input/instruction.txt`: the native agent's default auditing instruction.
-- `input/tasks.json`: scene description and assigned subcategory for each task.
-- `input/taxonomy.json`: category definitions.
-- `input/icl/`: demonstration text, reference answers and images. The standard
-  category-ICL protocol supplies only the assigned subcategory's demonstration.
+In-context demonstrations are stored once at:
+https://huggingface.co/datasets/ziyjiang/WorldAuditBench/tree/main/examples
 
-The model also receives tool instructions, action budgets and observations from
-the running environment. The native launcher saves the complete assembled prompt
-as `prompt.txt` in each run directory. Static inputs are not an episode recording.
-
-## Evaluation
-
-`evaluation/rubrics.json` contains the benchmark task records, including expected
-behavior, reproduction steps and acceptance criteria. These are scoring answers;
-do not include them in the tested model's input. `evaluation/judge_prompt.md` is
-the scoring prompt. The scoring implementation is in the source repository's
-`eval/` directory.
-''')
+Use the task ID to join the environment with the task table. The GitHub launchers
+load the pinned dataset and shared examples automatically. Rubrics are scoring
+answers and must not be included in the tested model's input.
+""")
         data_files = [directory / 'tasks.json', directory / 'DATA.md']
-        for section in ['input', 'evaluation']:
-            data_files.extend(p for p in (directory / section).rglob('*') if p.is_file())
         files = {str(p.relative_to(directory)): hashlib.sha256(p.read_bytes()).hexdigest()
                  for p in sorted(data_files)}
         write_json(directory / 'data-checksums.json', files)

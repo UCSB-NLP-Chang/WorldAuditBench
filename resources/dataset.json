@@ -1,0 +1,14 @@
+{
+  "repository": "ziyjiang/WorldAuditBench",
+  "revision": "42a5358da80edb15d2fedc22ec69c240537b0878",
+  "filename": "dataset/tasks.parquet",
+  "bytes": 96757,
+  "sha256": "b344b6198d72543d82b4a3dceb1040343164d63eba7a51847bee355ac5acbcd6",
+  "examples": {
+    "repository": "ziyjiang/WorldAuditBench",
+    "revision": "42a5358da80edb15d2fedc22ec69c240537b0878",
+    "filename": "examples/icl-examples.tar.gz",
+    "bytes": 54839796,
+    "sha256": "94465af32135e8d500bcada9237a25092689b0d30e92599cf09a9fc6c2b10286"
+  }
+}

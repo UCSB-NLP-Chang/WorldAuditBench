@@ -27,11 +27,10 @@ def check(archive):
         manifest = json.loads((package / 'launch.json').read_text())
         assert manifest['engine'] == 'three.js'
         tasks = manifest['tasks']
-        inputs = json.loads((package / 'input/tasks.json').read_text())['tasks']
-        rubrics = json.loads((package / 'evaluation/rubrics.json').read_text())['tasks']
-        assert set(tasks) == {t['id'] for t in inputs} == {t['id'] for t in rubrics}
-        for task in inputs:
-            assert set(task) == {'id', 'scene_description', 'subcategory'}
+        catalog = json.loads((package / 'tasks.json').read_text())['tasks']
+        assert set(tasks) == {t['id'] for t in catalog}
+        assert not (package / 'input').exists(), 'Inputs belong in the shared task dataset'
+        assert not (package / 'evaluation').exists(), 'Rubrics belong in the shared task dataset'
         for name, expected in json.loads((package / 'data-checksums.json').read_text()).items():
             assert hashlib.sha256((package / name).read_bytes()).hexdigest() == expected, name
         listed = subprocess.check_output([sys.executable, str(package / 'run.py'), '--list'], text=True)

@@ -3,3 +3,4 @@ pillow>=10,<13
 requests>=2.32,<3
 jsonschema>=4,<5
 playwright>=1.50,<2
+pyarrow>=19,<24

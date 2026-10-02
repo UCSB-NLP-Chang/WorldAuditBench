@@ -1,8 +1,16 @@
 # GPT-6 二元 Judge CLI
 
-输入 **rubric + 模型输出 + 可选截图**，输出只有 `reason` 和 `score`（整数 0/1）。每次调用评分一个任务。默认使用项目已有的 Codex 登录方式及 `gpt-6-astra`，推理设置为 `medium`；不启动游戏、不读取 task catalog，也不替换指定模型。
+输入 **rubric + 模型输出 + 可选截图**，输出只有 `reason` 和 `score`（整数 0/1）。每次调用评分一个任务。默认使用项目已有的 Codex 登录方式及 `gpt-6-astra`，推理设置为 `medium`；不启动游戏，也不替换指定模型。可按 task ID 从统一 Hugging Face 数据集中读取 rubric 和 judge prompt。
 
 ## 使用
+
+使用统一任务数据评分，无需另存 rubric 文件：
+
+```bash
+python3 -m eval.judge --task S01 --model-output agent_output.json
+```
+
+首次自动下载固定版本的数据表，之后复用缓存。`--dataset` 可指定本地 Parquet。下面的 `--rubrics` 入口保留给自定义数据和历史实验。
 
 先安装 Codex CLI 并完成 `codex login`。带图时还需要 `python3 -m pip install pillow`。
 

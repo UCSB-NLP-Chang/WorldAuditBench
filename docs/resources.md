@@ -14,7 +14,8 @@ Run from the source repository with Python 3.11+. List package sizes before down
 
 ```bash
 python scripts/download_resources.py --list
-python scripts/download_resources.py --package indoor --package icl-examples
+python scripts/download_dataset.py
+python scripts/download_resources.py --package indoor
 ```
 
 The complete download is about **14.9 GB**, including the residential package.
@@ -25,9 +26,10 @@ It deletes its downloaded archive after successful extraction; use `--keep-archi
 to keep it. Keep enough free disk space for the archive and extracted environment.
 `--root /path/to/runtime` selects another installation directory.
 
-ICL installation restores the 29 images under `examples/icl/images/` and the
-recorded copies needed by the human-service code. No model credentials are needed
-for resource downloads.
+`download_dataset.py` caches the unified task table and shared demonstrations under
+`out/dataset/`. Native launchers read this cache by default. The optional
+`--package icl-examples` resource entry restores the archival image layout for
+older human-service tools. No model credentials are needed for downloads.
 
 ## Run an Unreal task
 

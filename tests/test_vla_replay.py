@@ -141,7 +141,7 @@ def test_launcher_prepares_replay_run(tmp_path):
     scene.write_text("A test scene.\n")
     run = tmp_path / "run"
     cmd = [sys.executable, str(ROOT / "scripts/native-agents/launch.py"), "gemini", "--environment", "vla-replay",
-           "--replay-dir", str(rec), "--task", "T1", "--subcategory", "C2", "--scene-description-file", str(scene),
+           "--replay-dir", str(rec), "--task", "T1", "--legacy-task-files", "--subcategory", "C2", "--scene-description-file", str(scene),
            "--gemini-auth", "gemini-api-key", "--run-dir", str(run), "--dry-run", "--max-actions", "40"]
     subprocess.run(cmd, check=True, capture_output=True, text=True, cwd=ROOT)
     launch = json.loads((run / "launch.json").read_text())
@@ -193,7 +193,7 @@ def test_launcher_all_mode_requires_zero_actions(tmp_path):
     rec = make_recording(tmp_path / "rec")
     scene = tmp_path / "scene.txt"; scene.write_text("A test scene.\n")
     base = [sys.executable, str(ROOT / "scripts/native-agents/launch.py"), "gemini", "--environment", "vla-replay", "--replay-dir", str(rec),
-            "--task", "T1", "--subcategory", "C2", "--scene-description-file", str(scene), "--gemini-auth", "gemini-api-key", "--dry-run",
+            "--task", "T1", "--legacy-task-files", "--subcategory", "C2", "--scene-description-file", str(scene), "--gemini-auth", "gemini-api-key", "--dry-run",
             "--replay-mode", "all"]
     bad = subprocess.run(base + ["--run-dir", str(tmp_path / "bad"), "--max-actions", "40"], capture_output=True, text=True, cwd=ROOT)
     assert bad.returncode and "max-actions 0" in bad.stdout + bad.stderr

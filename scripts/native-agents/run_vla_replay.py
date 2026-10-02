@@ -24,6 +24,8 @@ import time
 
 ROOT = Path(__file__).resolve().parents[2]
 SCRIPTS = Path(__file__).resolve().parent
+sys.path.insert(0, str(ROOT))
+from auditor.task_dataset import load_task
 ALL_INSTRUCTION = (
     "Inspect the assigned 3D environment for bugs by reviewing the explorer's recording. Go through the recorded frames and inspect "
     "the ones that matter at full resolution to gather visual evidence. Report each distinct bug with a clear description, category, "
@@ -52,6 +54,8 @@ def cli():
                    help="mirrored AWS catalog: rubrics (judge only), subcategory fallback, map for the scene fallback")
     p.add_argument("--scene-catalog", type=Path, default=SCRIPTS / "task-scenes.json")
     p.add_argument("--task-catalog", type=Path, default=SCRIPTS / "task-subcategories.json")
+    p.add_argument("--dataset", type=Path, help="Unified HF task table; downloads the pinned release by default")
+    p.add_argument("--legacy-task-files", action="store_true", help="Use archival task catalogs and profile rubrics")
     p.add_argument("--client", choices=["gemini", "codex", "claude", "qwen", "muse", "opencode"], default="gemini")
     p.add_argument("--qwen-effort", default="medium", choices=["low", "medium", "high"])
     p.add_argument("--qwen-api-key-file", type=Path, default=Path.home() / ".config/keys/qwen-api")
@@ -104,6 +108,23 @@ def load_tasks(args):
     else:
         ids = [t.strip() for t in args.tasks.split(",") if t.strip()]
     profiles = json.loads(args.profiles.read_text())["tasks"] if args.profiles.exists() else {}
+    if not args.legacy_task_files:
+        tasks = []
+        for tid in ids:
+            prof = profiles.setdefault(tid, {})
+            native = prof.get('task_id', tid)
+            row = load_task(native, args.dataset)
+            rec = args.recordings / prof.get('recording_dir', tid)
+            if not (rec / 'meta.json').exists():
+                raise SystemExit(f'{tid}: no recording under {rec}')
+            prof.update(case_type='bug', family=row['environment'])
+            prof['task'] = {**prof.get('task', {}), 'rubrics_i18n': row['rubric']}
+            tasks.append({'id': tid, 'task_id': native, 'recording': str(rec.resolve()),
+                          'family': row['environment'], 'subcategory': row['subcategory'],
+                          'label_source': 'dataset', 'scene_source': 'dataset',
+                          'scene': row['input']['scene_description'], 'case_type': 'bug',
+                          'has_rubric': bool(row['rubric']['en'])})
+        return tasks, profiles
     scenes = json.loads(args.scene_catalog.read_text())["scenes"]
     scene_of = {t: s["description"]["en"].strip() for s in scenes for t in s["task_ids"]}
     labels = json.loads(args.task_catalog.read_text())["task_subcategories"]
@@ -165,6 +186,10 @@ class Batch:
                "--max-actions", str(0 if a.replay_mode in ("all", "vqa") else a.max_actions), "--max-tool-calls", str(a.max_tool_calls),
                "--observation", a.observation, "--preview-every", str(a.preview_every), "--replay-mode", a.replay_mode,
                "--instruction", a.instruction, "--run-dir", str(job / "run")]
+        if a.dataset:
+            cmd += ['--dataset', str(a.dataset.resolve())]
+        if a.legacy_task_files:
+            cmd += ['--legacy-task-files']
         if a.replay_mode == "play":
             cmd += ["--require-full-budget"]
         if a.inline_low_res:
@@ -261,7 +286,10 @@ class Batch:
         write_json(job / "judge-input.json", output)
         rubric = {"case_type": profiles[tid]["case_type"], "rubrics": prof["rubrics_i18n"]["en"]}
         write_json(job / "rubric.json", rubric)
-        cmd = [str(a.judge_python), "-m", "eval.judge", "--rubrics", str(job / "rubric.json"), "--model-output", str(job / "judge-input.json"),
+        source_args = ['--rubrics', str(job / 'rubric.json')] if a.legacy_task_files else ['--task', task.get('task_id', tid)]
+        if a.dataset and not a.legacy_task_files:
+            source_args += ['--dataset', str(a.dataset.resolve())]
+        cmd = [str(a.judge_python), "-m", "eval.judge", *source_args, "--model-output", str(job / "judge-input.json"),
                "--model", a.judge_model, "--reasoning-effort", a.judge_effort, "--timeout", "600", "--output", str(job / "judge.json")]
         if refs:
             cmd += ["--images", *[str(ep / "frames" / index[r]["file"]) for r in refs]]

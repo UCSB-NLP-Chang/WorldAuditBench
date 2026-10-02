@@ -1,66 +1,75 @@
-# Task rubrics and model inputs
+# Task data
 
-The paper evaluation set contains **213 tasks: 126 Unreal and 87 Three.js**.
-Use task IDs to join the files below.
-
-| Content | Location | Purpose |
-| --- | --- | --- |
-| Task definitions and answers | [`benchmark/paper-tasks.json`](../benchmark/paper-tasks.json) | The `tasks` array contains each task's ID, map, revision, category and rubric. |
-| Rubric text | `rubrics` and `rubrics_i18n` in each task record | Expected behavior, reproduction steps and acceptance criteria, including English and Chinese versions. These are evaluation answers. |
-| Evaluation split | [`benchmark/splits/`](../benchmark/splits/) | The fixed paper evaluation task lists. |
-| Public scene description | [`scripts/native-agents/task-scenes.json`](../scripts/native-agents/task-scenes.json) | The native launcher selects the description whose `task_ids` contains the requested task. |
-| Assigned anomaly subcategory | [`scripts/native-agents/task-subcategories.json`](../scripts/native-agents/task-subcategories.json) | Selects the subcategory and its demonstration in the category-ICL protocol. |
-| Auditing instruction and prompt assembly | [`scripts/native-agents/launch.py`](../scripts/native-agents/launch.py) | `DEFAULT_INSTRUCTION`, tool guidance, action budgets and protocol options. |
-| In-context demonstrations | [`examples/icl/context.json`](../examples/icl/context.json) | Demonstration text and image references; download the associated images using the resource instructions. |
-| Judge prompt and implementation | [`eval/judge_prompt.md`](../eval/judge_prompt.md), [`eval/judge.py`](../eval/judge.py) | Scores the agent report against the task rubric. |
-
-`benchmark/tasks.json` also contains baseline and review entries. Use
-`benchmark/paper-tasks.json` for the 213-task paper evaluation set.
-
-## Inspect a task
-
-Run this from the repository root:
-
-```python
-import json
-from pathlib import Path
-
-task_id = "S01"
-tasks = json.loads(Path("benchmark/paper-tasks.json").read_text())["tasks"]
-task = next(t for t in tasks if t["id"] == task_id)
-print(task["map"])
-print(task["rubrics_i18n"]["en"])
-```
-
-## What the tested model receives
-
-The default native-agent launcher combines the auditing instruction, a public
-scene description, the selected category demonstration, tool instructions and
-budgets. The environment supplies observations during exploration. The launcher
-saves the assembled initial prompt as `<run-dir>/prompt.txt`; command-line
-overrides and ablation settings can change that prompt.
-
-Task titles, rubrics, reproduction steps and acceptance criteria describe the
-target anomaly. Keep them out of the tested model's input. Demonstration answers
-belong to the ICL protocol and concern separate example tasks.
-
-## Per-environment release data
-
-`scripts/export_environment_metadata.py` exports the following structure for
-each of the 13 environment packages:
+The public data lives in **[WorldAuditBench on Hugging Face](https://huggingface.co/datasets/ziyjiang/WorldAuditBench)**.
 
 ```text
-tasks.json                 Task IDs, maps, revisions and subcategories
-input/instruction.txt      Default auditing instruction
-input/tasks.json           Public scene description and subcategory per task
-input/taxonomy.json         Category definitions
-input/icl/                 Demonstration text and images
-evaluation/rubrics.json    Corresponding task records and answers
-evaluation/judge_prompt.md Judge prompt
-DATA.md                    Input and evaluation usage notes
-data-checksums.json         Checksums of the exported task data
+dataset/tasks.parquet       One row per task: inputs, categories, rubrics and identifiers
+examples/icl-examples.tar.gz Shared demonstration text and 29 images, stored once
+unreal/                    Compiled Unreal environments, one archive per environment
+three.js/                  Built Three.js environments, one archive per environment
 ```
 
-These files are being incorporated into the reorganized environment archives.
-The existing flat Hugging Face archives predate this layout; use the GitHub
-paths above until the replacement archives are published.
+The task table and shared examples are available now. Environment archives are
+being migrated to the last two directories; see the [resource guide](resources.md)
+for currently supported installation commands and validation status.
+
+## Load the data
+
+```python
+from datasets import load_dataset
+
+tasks = load_dataset("ziyjiang/WorldAuditBench", split="test")
+task = next(t for t in tasks if t["task_id"] == "S01")
+print(task["input"])
+print(task["rubric"]["en"])
+```
+
+The **213 rows** cover **126 Unreal and 87 Three.js tasks**, across 13 environments.
+
+| Field | Meaning |
+| --- | --- |
+| `task_id`, `engine`, `environment` | Stable task ID and environment |
+| `category`, `subcategory` | Anomaly family and type |
+| `input` | Auditing instruction, public scene description and assigned subcategory |
+| `rubric` | English and Chinese expected behavior, reproduction steps and acceptance criteria; also the original rubric text |
+| `runtime` | Map, source case and task revision |
+| `provenance` | Source revision and reference hashes, including the selected ICL demonstration hash |
+| `judge_prompt` | Instructions for evaluating the final report |
+
+In-context demonstrations are shared. The `subcategory` selects the matching
+example in `examples/`; their text and image bytes are not duplicated in task
+rows or environment packages. The archive includes `context.json`, an evaluation
+exclusion list and an `images/` directory beneath `icl/`.
+
+## Use the GitHub runners
+
+```bash
+python scripts/download_dataset.py
+```
+
+This downloads and verifies the versions pinned in `resources/dataset.json`.
+The cache lives under `out/dataset/`. Downloads are reused across tasks.
+
+The native launcher reads this task table by default and loads the shared
+example for the assigned subcategory. Supply `--dataset /path/tasks.parquet` for
+a local table. `--no-icl` selects the zero-shot ablation.
+
+```bash
+python -m eval.judge --task S01 --model-output agent_output.json
+```
+
+The judge obtains S01's rubric and judge prompt from the same table. Custom
+rubric files remain supported through `--rubrics`.
+
+The model receives only the public input fields, the selected demonstration,
+tool instructions, budgets and observations during exploration. The launcher
+saves its assembled initial prompt as `<run-dir>/prompt.txt`. **Rubrics and
+reproduction steps are evaluation answers, not model input.**
+
+## Source records and archival experiments
+
+The JSON catalogs in GitHub preserve the authored task definitions and earlier
+experiment records. `scripts/export_hf_dataset.py` builds the public task table
+from those sources. Regular benchmark runs use the pinned HF table; pass
+`--legacy-task-files` to the native or VLA replay launcher only when reproducing
+archival tasks outside the paper evaluation split.

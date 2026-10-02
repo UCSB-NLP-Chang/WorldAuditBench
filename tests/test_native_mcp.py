@@ -210,7 +210,7 @@ def test_icl_launcher_overlap_and_disable(tmp_path):
     launch = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(launch)
     base = ["codex", "--environment", "unreal-http", "--env-url", "http://127.0.0.1:19100",
-            "--task", "S05", "--dry-run"]
+            "--task", "S05", "--legacy-task-files", "--dry-run"]
     with pytest.raises(ValueError, match="ICL demonstration/alias"):
         launch.prepare(launch.cli_parser().parse_args(base))
     _, _, _, _, manifest = launch.prepare(launch.cli_parser().parse_args(
@@ -255,7 +255,7 @@ def test_scene_description_in_prompt_and_recalled_observation(tmp_path):
     for client in ["codex", "gemini"]:
         args = launch.cli_parser().parse_args([
             client, "--environment", "unreal-http", "--env-url", "http://127.0.0.1:19100",
-            "--task", "A09", "--dry-run", "--run-dir", str(tmp_path / client)])
+            "--task", "A09", "--legacy-task-files", "--dry-run", "--run-dir", str(tmp_path / client)])
         run, _, _, prompt, manifest = launch.prepare(args)
         scene = launch.scene_description(args)
         assert "ancient Chinese city" in scene and "wicker basket" in scene

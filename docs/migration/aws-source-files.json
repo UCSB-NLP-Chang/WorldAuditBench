@@ -49,7 +49,7 @@
       "source": "/home/ec2-user/game-auditing/README.md",
       "sha256": "fe61de9f8793816513437ef9e2425bc96732048d23be98d9bc331d988378aacc",
       "bytes": 6309,
-      "released_sha256": "b26c1bbbd05149ebbdf2de67c7871b3e3ec21587897601d6efe6299c886bac40",
+      "released_sha256": "230adb0a6b0d129f30415191fb991e07cc1bfe62ecd076d98beb575b8f3a6234",
       "status": "adapted"
     },
     {
@@ -2321,8 +2321,8 @@
       "source": "/home/ec2-user/game-auditing/docs/binary-judge.md",
       "sha256": "4f0a69c0398f33cfa99048c9bfcef132dc80bd75541e99c6107ba2747b211ab5",
       "bytes": 3642,
-      "released_sha256": "4f0a69c0398f33cfa99048c9bfcef132dc80bd75541e99c6107ba2747b211ab5",
-      "status": "unchanged"
+      "released_sha256": "e245bce83611160607eea05c0f3e804cbb3b97bbb34e122e820f3e9cd4fbddfd",
+      "status": "adapted"
     },
     {
       "path": "docs/environment-http-api.md",
@@ -4715,8 +4715,8 @@
       "source": "/home/ec2-user/game-auditing/eval/judge.py",
       "sha256": "1d61f4d470eee7560406574888a8990b05d05b9633e8a61b3836809b93291cc6",
       "bytes": 9600,
-      "released_sha256": "1d61f4d470eee7560406574888a8990b05d05b9633e8a61b3836809b93291cc6",
-      "status": "unchanged"
+      "released_sha256": "851880ab34c0fdf1e72ea73a5fdf967cf8e29068aa1191d220c3b7ea92524805",
+      "status": "adapted"
     },
     {
       "path": "eval/judge_human_baseline.py",
@@ -5345,7 +5345,7 @@
       "source": "/home/ec2-user/game-auditing/scripts/native-agents/launch.py",
       "sha256": "92a651d842036e2844b4c322bada89619c7cd3392a41cbecc591cd68f1faa9bf",
       "bytes": 40255,
-      "released_sha256": "a5741603e23d2a1113fb628cefd808ff65abf336abc5d1712f1b82636c1acd1a",
+      "released_sha256": "a2aeff84f47c95002e86648e43112c2816d67cc4820c22dea839faf2f20e2f0b",
       "status": "adapted"
     },
     {
@@ -5377,8 +5377,8 @@
       "source": "/home/ec2-user/game-auditing/scripts/native-agents/requirements.txt",
       "sha256": "2230db7ed43cc73fd3de859db7bc46d16b84a4f78292245bd9a070426f6032bf",
       "bytes": 83,
-      "released_sha256": "2230db7ed43cc73fd3de859db7bc46d16b84a4f78292245bd9a070426f6032bf",
-      "status": "unchanged"
+      "released_sha256": "5e6b13191b1e70ade7087f478b11fb525ba69472cdbcc65a7c36b3d38a6a313b",
+      "status": "adapted"
     },
     {
       "path": "scripts/native-agents/run_batch.py",
@@ -5393,8 +5393,8 @@
       "source": "/home/ec2-user/game-auditing/scripts/native-agents/run_vla_replay.py",
       "sha256": "6cdbb79920691319b1a7e9c50c05eece44d293a73d71414d86af496bc27aa599",
       "bytes": 26367,
-      "released_sha256": "6cdbb79920691319b1a7e9c50c05eece44d293a73d71414d86af496bc27aa599",
-      "status": "unchanged"
+      "released_sha256": "8be46d544000a3031d9353343d162cad1fdcb33a2593b8a76cfe70f6357b9ace",
+      "status": "adapted"
     },
     {
       "path": "scripts/native-agents/setup.py",
@@ -8368,7 +8368,7 @@
       "source": "/home/ec2-user/game-auditing/tests/test_native_mcp.py",
       "sha256": "3a18212c8b1f60167ef1b83b635d00b0fefb0a6902f2a5bb0c464a5b57946f36",
       "bytes": 20873,
-      "released_sha256": "d0d837856cee53547f9d8774812a005beb7a58c7d0d5efc8a2b875b8d7b5c087",
+      "released_sha256": "a6b4a92fc547c8ca9d2f0282cde988498638b33ffa845d6ed785f6f46fc31812",
       "status": "adapted"
     },
     {
@@ -8376,7 +8376,7 @@
       "source": "/home/ec2-user/game-auditing/tests/test_vla_replay.py",
       "sha256": "b1346ed3bd808d34418eac7139066122f80424534daaf41bdd948918592956f9",
       "bytes": 18177,
-      "released_sha256": "68c94d7d40dc4be6508aac238e52617382288a2318dc4941bfc469ae2bafff7c",
+      "released_sha256": "0564d455e24df4e1c48508a30f4e7d6f3af24053315cc7675d97571b1851fe53",
       "status": "adapted"
     },
     {

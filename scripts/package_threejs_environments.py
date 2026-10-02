@@ -55,7 +55,7 @@ explore. The benchmark overlay is hidden by default. Press Ctrl+C in the termina
 to stop the local server. `--no-browser` prints the URL without opening a browser;
 `--port 8766` selects another port.
 
-See `DATA.md` for task inputs, demonstrations and evaluation rubrics. `runtime/`
+See `DATA.md` for the shared task dataset and in-context demonstrations. `runtime/`
 contains the pinned standalone page used by the benchmark.
 ''')
         archive = output / 'three.js' / (directory.name + '.tar.gz')

@@ -79,23 +79,21 @@ python -m pip install -r requirements.txt
 
 ### 2. Explore the evaluation set
 
-Task definitions and splits are available in this repository. The following example runs without environment downloads or model credentials:
+The [Hugging Face dataset](https://huggingface.co/datasets/ziyjiang/WorldAuditBench) contains one row per task: public inputs, categories, bilingual rubrics and runtime identifiers. Shared in-context examples are stored once in `examples/`.
 
-```python
-import json
-from pathlib import Path
-
-benchmark = json.loads(Path("benchmark/paper-tasks.json").read_text())
-print(benchmark["counts"])  # {'total': 213, 'unreal': 126, 'threejs': 87}
-
-for task in benchmark["tasks"][:3]:
-    print(task["id"], task["environment"], task["title"])
+```bash
+python scripts/download_dataset.py
 ```
 
-Use [`benchmark/paper-tasks.json`](benchmark/paper-tasks.json) and [`benchmark/splits/`](benchmark/splits/) for paper experiments. The separate `benchmark/tasks.json` catalog also contains review and baseline entries and is not the paper evaluation split.
+```python
+from auditor.task_dataset import load_task
 
-For each task's **rubric, model input, demonstrations and judge prompt**, see
-the [task data guide](docs/task-data.md).
+task = load_task("S01")
+print(task["input"])
+print(task["rubric"]["en"])
+```
+
+See the [task data guide](docs/task-data.md) for the schema and input/evaluation boundary. The download is pinned by revision and checksum; subsequent runs reuse the local cache.
 
 ### 3. Set up an auditor
 
@@ -111,7 +109,7 @@ Install and authenticate the native client you plan to use: Codex, Claude Code, 
 Download a compiled environment and the demonstration images, then start its local service on a Linux GPU host:
 
 ```bash
-python scripts/download_resources.py --package subway --package icl-examples
+python scripts/download_resources.py --package subway
 python scripts/serve_unreal.py --task S03 --gpu 0 --port 19100
 ```
 
@@ -141,11 +139,11 @@ Agents submit anomaly reports with supporting visual evidence. The judge evaluat
 
 ## Resources
 
-Code, task definitions, and evaluation splits are available here. Compiled environments and demonstration images are distributed on [Hugging Face](https://huggingface.co/datasets/ziyjiang/WorldAuditBench).
+Code and reproducibility records are available here. The unified task dataset, shared demonstrations and compiled environments are distributed on [Hugging Face](https://huggingface.co/datasets/ziyjiang/WorldAuditBench).
 
 | Resource | Availability |
 | --- | --- |
-| Benchmark task definitions and splits | [Available](benchmark/) |
+| Task inputs and evaluation rubrics | [Hugging Face dataset](https://huggingface.co/datasets/ziyjiang/WorldAuditBench/tree/main/dataset) |
 | Auditing agents, evaluation, and environment source | Available in this repository |
 | Demonstration videos | [Project page](https://ucsb-nlp-chang.github.io/WorldAuditBench/#explore) |
 | Compiled Unreal and Three.js environments | [Download and run](docs/resources.md) |

@@ -74,7 +74,7 @@ def download(package, cache, local_archives=None):
         return path
     if local_archives:
         raise ValueError('Missing or mismatched local archive: ' + str(path))
-    cache.mkdir(parents=True, exist_ok=True)
+    path.parent.mkdir(parents=True, exist_ok=True)
     url = (f"https://huggingface.co/datasets/{package['repository']}/resolve/"
            f"{package['revision']}/{name}")
     context = ssl.create_default_context()
@@ -155,6 +155,8 @@ def write_profiles(manifest, root):
 
 def restore_examples(root):
     images = root / 'icl-examples/examples/icl/images'
+    if not images.is_dir():
+        images = root / 'icl-examples/icl/images'
     if not images.is_dir():
         return
     for entry in json.loads((ROOT / 'resources/manifest.json').read_text())['resources']:

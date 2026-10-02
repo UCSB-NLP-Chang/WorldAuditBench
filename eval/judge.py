@@ -63,7 +63,8 @@ def read_images(paths):
 
 
 def judge(rubrics, model_output, images=(), *, model="gpt-6-astra",
-          reasoning_effort="medium", timeout=300, codex="codex", metrics_dir=None):
+          reasoning_effort="medium", timeout=300, codex="codex", metrics_dir=None,
+          instructions=None):
     if not rubrics.strip():
         raise ValueError("Rubrics must not be empty")
     if not math.isfinite(timeout) or timeout <= 0:
@@ -71,7 +72,7 @@ def judge(rubrics, model_output, images=(), *, model="gpt-6-astra",
     binary = shutil.which(codex)
     if not binary:
         raise ValueError("Codex CLI not found; install/login or supply --codex-bin")
-    instructions = PROMPT_PATH.read_text(encoding="utf-8")
+    instructions = PROMPT_PATH.read_text(encoding="utf-8") if instructions is None else instructions
     payload = {
         "rubrics": rubrics,
         "model_output": model_output,
@@ -154,7 +155,10 @@ def judge(rubrics, model_output, images=(), *, model="gpt-6-astra",
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--rubrics", type=Path, required=True, help="UTF-8 rubric file (txt/md/json)")
+    source = parser.add_mutually_exclusive_group(required=True)
+    source.add_argument("--task", help="Task ID from the unified Hugging Face dataset")
+    source.add_argument("--rubrics", type=Path, help="Explicit UTF-8 rubric file for custom or archival evaluation")
+    parser.add_argument("--dataset", type=Path, help="Local task Parquet; default uses the pinned HF release")
     parser.add_argument("--model-output", type=Path, required=True, help="UTF-8 model output file")
     parser.add_argument("--images", type=Path, nargs="+", action="extend", default=[],
                         help="Optional screenshots, in supplied order; repeatable")
@@ -165,15 +169,22 @@ def main(argv=None):
     parser.add_argument("--codex-bin", default="codex", help="Codex CLI executable")
     args = parser.parse_args(argv)
     try:
-        if args.output and args.output.resolve() in {
-            p.resolve() for p in [args.rubrics, args.model_output, *args.images]
-        }:
+        inputs = [args.rubrics, args.dataset, args.model_output, *args.images]
+        if args.output and args.output.resolve() in {p.resolve() for p in inputs if p is not None}:
             raise ValueError("Output path must not overwrite an input file")
-        result = judge(args.rubrics.read_text(encoding="utf-8"),
+        instructions = None
+        if args.task:
+            from auditor.task_dataset import load_task
+            task = load_task(args.task, args.dataset)
+            rubrics, instructions = task['rubric']['text'], task['judge_prompt']
+        else:
+            rubrics = args.rubrics.read_text(encoding="utf-8")
+        result = judge(rubrics,
                        args.model_output.read_text(encoding="utf-8"), read_images(args.images),
                        model=args.model, reasoning_effort=args.reasoning_effort,
                        timeout=args.timeout, codex=args.codex_bin,
-                       metrics_dir=args.output.parent if args.output else None)
+                       metrics_dir=args.output.parent if args.output else None,
+                       instructions=instructions)
         text = json.dumps(result, ensure_ascii=False, indent=2) + "\n"
         if args.output:
             args.output.parent.mkdir(parents=True, exist_ok=True)

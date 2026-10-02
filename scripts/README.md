@@ -5,6 +5,7 @@ from the repository root.
 
 | Entry point | Purpose |
 | --- | --- |
+| [`download_dataset.py`](download_dataset.py) | Download the unified task table and shared ICL examples |
 | [`download_resources.py`](download_resources.py) | Download verified environment packages and images; generate local profiles |
 | [`serve_unreal.py`](serve_unreal.py) | Start one installed Unreal task on a Linux GPU host |
 | [`native-agents/setup.py`](native-agents/setup.py) | Install the native-client Python runtime |

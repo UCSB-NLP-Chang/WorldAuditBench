@@ -13,6 +13,6 @@ def test_all_paper_tasks_resolve_without_manual_input_overrides():
     tasks = json.loads((ROOT / 'benchmark/paper-tasks.json').read_text())['tasks']
     for task in tasks:
         engine = 'threejs' if task['family'].startswith('threejs_') else 'unreal-http'
-        args = launch.cli_parser().parse_args(['codex', '--environment', engine, '--task', task['id']])
+        args = launch.cli_parser().parse_args(['codex', '--environment', engine, '--task', task['id'], '--legacy-task-files'])
         assert launch.task_subcategory(args) == task['paper_subcategory'], task['id']
         assert launch.scene_description(args).strip(), task['id']

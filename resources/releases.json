@@ -278,11 +278,11 @@
     {
       "id": "icl-examples",
       "group": "icl-examples",
-      "filename": "icl-examples.tar.gz",
-      "bytes": 54839163,
-      "sha256": "861a3df499f7b6605c6f4d3ea70e3f70d9dcbdba76a97978121e36ae4beb11bc",
+      "filename": "examples/icl-examples.tar.gz",
+      "bytes": 54839796,
+      "sha256": "94465af32135e8d500bcada9237a25092689b0d30e92599cf09a9fc6c2b10286",
       "repository": "ziyjiang/WorldAuditBench",
-      "revision": "0761f78a79e99f93391906901442089d363d6bd5"
+      "revision": "42a5358da80edb15d2fedc22ec69c240537b0878"
     },
     {
       "id": "threejs-builds",

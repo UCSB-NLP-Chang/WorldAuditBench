@@ -15,6 +15,7 @@ import uuid
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
 from auditor.mcp_agent.examples import ExamplePack
+from auditor.task_dataset import load_task, ensure_examples
 
 BASE = ROOT / "out/native-agents"
 DEFAULT_ICL = ROOT / "examples/icl"
@@ -51,6 +52,8 @@ def cli_parser():
     p.add_argument("--browser-config", type=Path, help="Operator-only pinned page configuration")
     p.add_argument("--env-url", help="Dedicated /reset /step environment endpoint, usually over an SSH tunnel")
     p.add_argument("--task", required=True, help="Backend task ID (not rubric or bug description)")
+    p.add_argument("--dataset", type=Path, help="Local unified task Parquet; default downloads the pinned HF release once")
+    p.add_argument("--legacy-task-files", action="store_true", help="Use archived JSON catalogs and external ICL images")
     p.add_argument("--instruction", default=DEFAULT_INSTRUCTION)
     p.add_argument("--prompt-file", type=Path, help="Task instruction text; no hidden labels")
     p.add_argument("--scene-catalog", type=Path, default=DEFAULT_SCENE_CATALOG,
@@ -120,6 +123,12 @@ def toml_inline(value):
 def task_subcategory(args):
     """Use the operator's task metadata, never ask the model to guess its category."""
     requested = args.subcategory.strip().upper() if args.subcategory else None
+    row = unified_task(args)
+    if row is not None:
+        known = row['subcategory']
+        if requested and requested != known:
+            raise ValueError(f"Task {args.task} is {known} in the dataset, not {requested}")
+        return known
     mapping = {}
     if args.task_catalog.exists():
         mapping = json.loads(args.task_catalog.read_text())["task_subcategories"]
@@ -141,6 +150,8 @@ def scene_description(args):
         description = args.scene_description_file.read_text().strip()
     elif args.environment == "fake":
         description = "A synthetic test environment used only to verify the agent/tool interface; not a real game scene."
+    elif unified_task(args) is not None:
+        description = unified_task(args)['input']['scene_description']
     else:
         scenes = json.loads(args.scene_catalog.read_text())["scenes"]
         matches = {s["description"]["en"].strip() for s in scenes
@@ -151,6 +162,16 @@ def scene_description(args):
     if not description:
         raise ValueError(f"Missing environment description for {args.task}; provide --scene-description-file or update --scene-catalog")
     return description
+
+
+def unified_task(args):
+    if args.legacy_task_files or (args.environment == 'fake' and args.dataset is None):
+        return None
+    key = (args.task, args.dataset)
+    if getattr(args, '_dataset_key', None) != key:
+        args._dataset_row = load_task(args.task, args.dataset)
+        args._dataset_key = key
+    return args._dataset_row
 
 
 def prepare(args):
@@ -178,7 +199,13 @@ def prepare(args):
         if not 0.5 <= args.preview_every <= 60:
             raise ValueError("--preview-every must be between 0.5 and 60 seconds")
     subcategory = None if args.no_icl else task_subcategory(args)
-    examples = None if args.no_icl else ExamplePack(args.icl_dir, code=subcategory)
+    row = unified_task(args)
+    if row is not None and not args.no_icl:
+        examples = ExamplePack(ensure_examples() if args.icl_dir == DEFAULT_ICL else args.icl_dir, code=subcategory)
+        if examples.sha256 != row['provenance']['icl_sha256']:
+            raise ValueError('Shared examples differ from the dataset release')
+    else:
+        examples = None if args.no_icl else ExamplePack(args.icl_dir, code=subcategory)
     if examples:
         examples.check_task(args.task, args.allow_icl_overlap)
         if args.max_tool_calls < len(examples.examples) + 2:
@@ -210,6 +237,8 @@ def prepare(args):
     episode_dir = run / "episode"
     model = args.model or MODELS[args.client]
     instruction = args.prompt_file.read_text() if args.prompt_file else args.instruction
+    if row is not None and not args.prompt_file and args.instruction == DEFAULT_INSTRUCTION:
+        instruction = row['input']['instruction']
     episode = {"upstream": str(upstream), "run_dir": str(episode_dir), "environment": args.environment,
                "environment_url": args.env_url, "task": args.task, "instruction": instruction,
                "max_actions": args.max_actions, "max_tool_calls": args.max_tool_calls,
