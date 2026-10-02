@@ -1,0 +1,129 @@
+{
+  "binary_sha256": "2ea49098a467519e3749beecec714bae527d37c9de37991292b3d815ad1d5e90",
+  "reference_mode": "same binary with -AuditorOriginalWindowGlass",
+  "resolution": [
+    1280,
+    720
+  ],
+  "rgb_range": [
+    0,
+    255
+  ],
+  "pairs": {
+    "h01": {
+      "task": "H01",
+      "frames_each": 160,
+      "simulation_time": 26.00000135600567,
+      "position": [
+        -790,
+        -210,
+        231.77059510695898
+      ],
+      "yaw": -24.0260099698163,
+      "actor_state_match": true,
+      "pose_and_time_match": true,
+      "window_roi_xyxy": [
+        827,
+        318,
+        850,
+        457
+      ],
+      "original": {
+        "mean_pixel_temporal_std": 10.25749683380127,
+        "p95_pixel_temporal_std": 43.6712760925293,
+        "roi_mean_brightness_range": 22.786468505859375,
+        "roi_mean_brightness": 83.0556869506836
+      },
+      "repaired": {
+        "mean_pixel_temporal_std": 2.1817736625671387,
+        "p95_pixel_temporal_std": 4.973363399505615,
+        "roi_mean_brightness_range": 2.6280899047851562,
+        "roi_mean_brightness": 74.066162109375
+      }
+    },
+    "oblique": {
+      "task": "H01",
+      "frames_each": 120,
+      "simulation_time": 28.133334800601006,
+      "position": [
+        -620.7885676895596,
+        -261.678853980094,
+        231.69108793098872
+      ],
+      "yaw": -39.0260099698163,
+      "actor_state_match": true,
+      "pose_and_time_match": true,
+      "window_roi_xyxy": [
+        1095,
+        320,
+        1125,
+        505
+      ],
+      "original": {
+        "mean_pixel_temporal_std": 3.2587080001831055,
+        "p95_pixel_temporal_std": 16.052270889282227,
+        "roi_mean_brightness_range": 6.0287628173828125,
+        "roi_mean_brightness": 86.20068359375
+      },
+      "repaired": {
+        "mean_pixel_temporal_std": 1.5963727235794067,
+        "p95_pixel_temporal_std": 3.3691930770874023,
+        "roi_mean_brightness_range": 1.9296722412109375,
+        "roi_mean_brightness": 82.83128356933594
+      }
+    },
+    "h02": {
+      "task": "H02",
+      "frames_each": 4,
+      "simulation_time": 10.400000542402267,
+      "position": [
+        -260,
+        -1085,
+        231.27937410890692
+      ],
+      "yaw": -43.09971254222428,
+      "actor_state_match": true,
+      "pose_and_time_match": true
+    },
+    "h11": {
+      "task": "H11",
+      "frames_each": 4,
+      "simulation_time": 10.400000542402267,
+      "position": [
+        -425,
+        -360,
+        231.27939477895137
+      ],
+      "yaw": -172.92407649363938,
+      "actor_state_match": true,
+      "pose_and_time_match": true
+    },
+    "h12": {
+      "task": "H12",
+      "frames_each": 4,
+      "simulation_time": 10.400000542402267,
+      "position": [
+        -725,
+        -1050,
+        533.1174978603201
+      ],
+      "yaw": 289.2390502629647,
+      "actor_state_match": true,
+      "pose_and_time_match": true
+    }
+  },
+  "pixel_streaming": {
+    "width": 1280,
+    "height": 720,
+    "samples": 240,
+    "brightnessRange": 2.213637785423842,
+    "meanBrightness": 74.29784216105375,
+    "videoElapsed": 25.906818,
+    "uniqueTimes": 240,
+    "build": {
+      "label": "2026-10-02 candidate \u00b7 window glass fix",
+      "sha256": "2ea49098a467519e3749beecec714bae527d37c9de37991292b3d815ad1d5e90"
+    },
+    "page_errors": []
+  }
+}

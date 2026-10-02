@@ -1,5 +1,12 @@
 # Runtime validation — 2026-10-02
 
+## Indoor window repair — viewer candidate
+
+A native material repair now removes the reproduced porch-window white flashes
+in the current viewer candidate. Paired captures and live video checks are in the
+[indoor window repair record](indoor-window-glass.md). This does not publish the
+rebuilt packages or clear the other scene findings below.
+
 ## Rebuilt candidates — 2026-10-02 15:42 UTC
 
 The new executables are **not ready for publication**. All seven environments
