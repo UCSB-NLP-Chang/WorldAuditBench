@@ -28,7 +28,6 @@ def package(pages, metadata, output):
         shutil.copyfile(source, directory / 'runtime' / filename)
         notices = directory / 'attribution'
         notices.mkdir(exist_ok=True)
-        shutil.copyfile(ROOT / 'THIRD_PARTY.md', notices / 'THIRD_PARTY.md')
         for path in (ROOT / 'environments/threejs/scenes/src').rglob('*'):
             if path.is_file() and (path.name.lower().startswith(('license', 'copying', 'notice'))
                                    or path.name == 'README.md'):

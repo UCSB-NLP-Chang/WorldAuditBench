@@ -108,7 +108,7 @@ that every native scene defect has been removed.
 retains the per-file identities and remaining optional resources. Model access,
 VLA checkpoint setup and unpublished original experiment outputs are separate
 from installing the runnable environments. Third-party terms and attribution
-remain applicable; see [THIRD_PARTY.md](../THIRD_PARTY.md).
+remain in the accompanying environment files.
 
 The resource and source checks are:
 
