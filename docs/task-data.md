@@ -30,8 +30,8 @@ The **213 rows** cover **126 Unreal and 87 Three.js tasks**, across 13 environme
 | --- | --- |
 | `task_id`, `engine`, `environment` | Stable task ID and environment |
 | `category`, `subcategory` | Anomaly family and type |
-| `input` | Auditing instruction and public scene description |
-| `rubric` | `anomaly`: the target anomaly and any necessary trigger conditions; `expected`: normal behavior (both in English) |
+| `input` | Instruction and scene description |
+| `rubric` | `anomaly`: anomaly description; `expected`: expected behavior |
 | `map` | Map path or scene URL used to load this task |
 
 The category and subcategory are stored only at the top level. The launcher

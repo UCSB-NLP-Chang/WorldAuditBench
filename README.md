@@ -16,10 +16,10 @@
 <p><sup>1</sup> UC Santa Barbara &nbsp; <sup>2</sup> MIT CSAIL &nbsp; <sup>3</sup> MIT-IBM Watson AI Lab<br><sup>*</sup> Equal contribution</p>
 
 <p>
-  <a href="https://arxiv.org/abs/2609.40325"><img src="docs/figures/paper-badge.svg" alt="Paper on arXiv"></a>
+  <a href="https://arxiv.org/pdf/2609.40325"><img src="docs/figures/paper-badge.svg" alt="Paper on arXiv"></a>
   <a href="https://ucsb-nlp-chang.github.io/WorldAuditBench/"><img src="docs/figures/project-badge.svg" alt="Project page"></a>
   <a href="https://huggingface.co/datasets/ziyjiang/WorldAuditBench"><img src="docs/figures/dataset-badge.svg" alt="Dataset on Hugging Face"></a>
-  <a href="https://ucsb-nlp-chang.github.io/WorldAuditBench/#explore"><img src="docs/figures/demo-badge.svg" alt="Explore demos"></a>
+  <a href="https://huggingface.co/spaces/ziyjiang/WorldAuditBench"><img src="docs/figures/demo-badge.svg" alt="Demo on Hugging Face"></a>
 </p>
 
 **213 tasks · 13 environments · 5 anomaly families · 2 auditing paradigms**
@@ -35,8 +35,6 @@ WorldAuditBench evaluates whether multimodal agents can **explore a 3D world, in
 [![Representative examples of the five anomaly families in WorldAuditBench, from the paper.](docs/figures/anomaly-taxonomy.webp)](https://ucsb-nlp-chang.github.io/WorldAuditBench/#explore)
 
 *Representative cases from the paper, covering static physics, interactive physics, spatial consistency, temporal consistency, and semantic consistency.*
-
-Watch the recorded demonstrations and explore all **15 anomaly types** on the [project page](https://ucsb-nlp-chang.github.io/WorldAuditBench/#explore).
 
 ## Benchmark
 
@@ -60,7 +58,7 @@ The paper compares two auditing paradigms:
   <img src="docs/figures/auditing-paradigms.webp" width="100%" alt="The two auditing paradigms: VLM reasoning during exploration, and VLA exploration followed by VLM analysis.">
 </p>
 
-The strongest evaluated agent reaches **42.3%** success, compared with **83.4%** for humans. See the [interactive results](https://ucsb-nlp-chang.github.io/WorldAuditBench/#results) and [paper](https://arxiv.org/pdf/2609.40325) for the full comparison.
+The strongest evaluated agent reaches **42.3%** success, compared with **83.4%** for humans.
 
 ## Quick start
 
@@ -79,7 +77,7 @@ python -m pip install -r requirements.txt
 
 ### 2. Explore the evaluation set
 
-The [Hugging Face dataset](https://huggingface.co/datasets/ziyjiang/WorldAuditBench) contains one row per task: public inputs, categories, English rubrics and map identifiers. Shared in-context examples are stored once in `examples/`.
+The [Hugging Face dataset](https://huggingface.co/datasets/ziyjiang/WorldAuditBench) contains one row per task: inputs, categories, rubrics and maps. Shared in-context examples are stored once in `examples/`.
 
 ```bash
 python scripts/download_dataset.py
@@ -93,7 +91,7 @@ print(task["input"])
 print(task["rubric"])
 ```
 
-See the [task data guide](docs/task-data.md) for the schema and input/evaluation boundary. The download is pinned by revision and checksum; subsequent runs reuse the local cache.
+See [Task data](docs/task-data.md) for the schema.
 
 ### 3. Set up an auditor
 
@@ -139,20 +137,12 @@ Agents submit anomaly reports with supporting visual evidence. The judge evaluat
 
 ## Resources
 
-Code and reproducibility records are available here. The unified task dataset, shared demonstrations and compiled environments are distributed on [Hugging Face](https://huggingface.co/datasets/ziyjiang/WorldAuditBench).
-
-| Resource | Availability |
+| Resource | Link |
 | --- | --- |
-| Task inputs and evaluation rubrics | [Hugging Face dataset](https://huggingface.co/datasets/ziyjiang/WorldAuditBench/tree/main/dataset) |
-| Auditing agents, evaluation, and environment source | Available in this repository |
-| Demonstration videos | [Project page](https://ucsb-nlp-chang.github.io/WorldAuditBench/#explore) |
-| Compiled Unreal and Three.js environments | [Download and run](docs/resources.md) |
-| In-context demonstration images | [Available on Hugging Face](https://huggingface.co/datasets/ziyjiang/WorldAuditBench) |
-| Interactive five-family demo | [Hugging Face Space](https://huggingface.co/spaces/ziyjiang/WorldAuditBench) · requires running GPU hardware |
-| VLA trajectories and frozen ablation inputs | Pending |
-| Open-P2P model setup and checkpoint instructions | Coming soon |
-
-See [resource details](docs/resources.md) for the files required to run the benchmark. Third-party environments and models retain their respective licenses; see [THIRD_PARTY.md](THIRD_PARTY.md).
+| Task data | [Dataset](https://huggingface.co/datasets/ziyjiang/WorldAuditBench/tree/main/dataset) |
+| In-context examples | [Examples](https://huggingface.co/datasets/ziyjiang/WorldAuditBench/tree/main/examples) |
+| Environments | [Download and run](docs/resources.md) |
+| Interactive demo | [Hugging Face Space](https://huggingface.co/spaces/ziyjiang/WorldAuditBench) |
 
 ## Repository structure
 
@@ -175,9 +165,6 @@ services/               Human exploration, review, and evaluation interfaces
 resources/              Pinned runtime downloads and resource manifests
 docs/                   Setup, protocols, and resource documentation
 ```
-
-Earlier pilots and reruns are archived in [`scripts/legacy/`](scripts/legacy/);
-development plans and handoffs are in [`docs/history/`](docs/history/).
 
 ### Development checks
 

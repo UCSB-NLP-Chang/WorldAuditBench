@@ -53,17 +53,17 @@ The evaluation set spans **126 Unreal Engine tasks** and **87 Three.js tasks**, 
 
 ## Data
 
-**One task per row.** [`dataset/tasks.parquet`](https://huggingface.co/datasets/ziyjiang/WorldAuditBench/tree/main/dataset) contains all 213 tasks, including public model inputs, categories, English evaluation rubrics and map identifiers.
+**One task per row.** [`dataset/tasks.parquet`](https://huggingface.co/datasets/ziyjiang/WorldAuditBench/tree/main/dataset) contains all 213 tasks, including inputs, categories, rubrics and maps.
 
 | Field | Contents |
 | --- | --- |
 | `task_id`, `engine`, `environment` | Task and environment identifiers |
 | `category`, `subcategory` | Anomaly family and type |
-| `input` | Auditing instruction and public scene description |
-| `rubric` | `anomaly`: the target anomaly and any necessary trigger conditions; `expected`: normal behavior (both in English) |
-| `map` | Map path or scene URL used to load this task |
+| `input` | Instruction and scene description |
+| `rubric` | `anomaly`: anomaly description; `expected`: expected behavior |
+| `map` | Map path or scene URL |
 
-The shared **in-context examples are stored once**, in [`examples/`](https://huggingface.co/datasets/ziyjiang/WorldAuditBench/tree/main/examples). The task's subcategory selects its demonstration. Rubrics are evaluation answers and are kept separate from model inputs.
+[In-context examples](https://huggingface.co/datasets/ziyjiang/WorldAuditBench/tree/main/examples) are grouped by subcategory.
 
 ```python
 from datasets import load_dataset
@@ -73,15 +73,13 @@ task = benchmark[0]
 print(task["task_id"], task["input"])
 ```
 
-For running agents and evaluation, the [GitHub code](https://github.com/UCSB-NLP-Chang/WorldAuditBench) downloads a pinned version of the task table and shared examples. See the [data guide](https://github.com/UCSB-NLP-Chang/WorldAuditBench/blob/main/docs/task-data.md) and [environment setup](https://github.com/UCSB-NLP-Chang/WorldAuditBench/blob/main/docs/resources.md).
-
 ## Auditing paradigms
 
 ![VLM agents and VLA exploration followed by VLM analysis](https://raw.githubusercontent.com/UCSB-NLP-Chang/WorldAuditBench/main/docs/figures/auditing-paradigms.webp)
 
 **VLM agents** reason during exploration and choose their next actions from observations and evidence, with a budget of 40 actions. **VLA + VLM** separates exploration from analysis: a VLA explores for 60 simulated seconds, then a VLM examines the recorded trajectory.
 
-The strongest evaluated agent reaches **42.3%** success, compared with **83.4%** for humans. Explore the [results and recorded demonstrations](https://ucsb-nlp-chang.github.io/WorldAuditBench/#results), or visit the [interactive Space](https://huggingface.co/spaces/ziyjiang/WorldAuditBench).
+The strongest evaluated agent reaches **42.3%** success, compared with **83.4%** for humans.
 
 ## Citation
 
@@ -93,7 +91,3 @@ The strongest evaluated agent reaches **42.3%** success, compared with **83.4%**
   year={2026}
 }
 ```
-
-Compiled environment downloads are being reorganized into `unreal/` and `three.js/`. See [runtime validation and known issues](https://github.com/UCSB-NLP-Chang/WorldAuditBench/tree/main/docs/validation/2026-10-02) for their current status. The demo Space is currently paused.
-
-Third-party environments and assets retain their respective licenses. See [attribution and terms](https://github.com/UCSB-NLP-Chang/WorldAuditBench/blob/main/THIRD_PARTY.md).

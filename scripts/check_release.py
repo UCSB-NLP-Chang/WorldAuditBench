@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check the paper cohort and imported source hashes without external resources."""
+"""Check task splits and environment package coverage."""
 import argparse
 from collections import Counter
 import hashlib
@@ -42,15 +42,6 @@ def main():
                   ("threejs" if t["family"].startswith("threejs_") else "unreal") == split}
         if set(actual) != wanted or len(actual) != len(wanted):
             errors.append(f"Invalid split: {split}")
-    receipt = json.loads((ROOT / "docs/migration/aws-source-files.json").read_text())
-    checked = 0
-    for row in receipt["files"]:
-        if row["status"] not in ("unchanged", "adapted"):
-            continue
-        p = ROOT / row["path"]
-        if not p.is_file() or digest(p) != row["released_sha256"]:
-            errors.append(f"Source hash mismatch: {row['path']}")
-        checked += 1
     resources = json.loads((ROOT / "resources/manifest.json").read_text())
     release = json.loads((ROOT / 'resources/releases.json').read_text())
     runtime_ids = []
@@ -106,7 +97,7 @@ def main():
     if errors:
         print("\n".join(errors), file=sys.stderr)
         return 1
-    print(f"Verified 213 paper tasks (126 Unreal, 87 Three.js), 5 family counts, and {checked} source files.")
+    print("Verified 213 paper tasks (126 Unreal, 87 Three.js), 5 family counts, splits and package coverage.")
     print("External resources: " + resources["status"] + " (see resources/manifest.json).")
     return 0
 

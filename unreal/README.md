@@ -8,8 +8,7 @@
 - `urban-ipc/`: the AWS Urban IPC build source and related tools from 2026-09-20.
 - `deployed-bridge/`: the latest dated bridge copy found in the AWS deployment.
 
-Current runtime profile and policy snapshots are in `../benchmark/`. Each imported
-file is traced to its original location in `../docs/migration/aws-source-files.json`.
+Task profiles and policies are in `../benchmark/`.
 
 These sources do not include Unreal Engine or editable `.uasset`/`.umap` content.
 The 2026-09-14 recovery was explicitly recorded as an incomplete editor-asset
