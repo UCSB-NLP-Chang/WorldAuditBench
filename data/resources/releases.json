@@ -3,10 +3,9 @@
   "packages": [
     {
       "id": "ancient",
-      "filename": "ancient-linux-x86_64.tar.gz",
-      "bytes": 2194487103,
-      "sha256": "c49330d148fcdda8cbf8b166521c0d4a4b86cd1ce9ff962046c2c7657f23384a",
-      "binary_sha256": "6f26bd852961369058e1fb048ad26159f491740c5394ec9e530719032c3d25d1",
+      "filename": "unreal/ancient.tar.gz",
+      "bytes": 2206268592,
+      "sha256": "1ccab1b5bdb2ff2b9d15f80d4e2f8dccf1a38ec24cbb7169ca19d63008f43f6b",
       "tasks": [
         "A01",
         "A02",
@@ -32,29 +31,93 @@
         "A24",
         "A25"
       ],
-      "binary": "Linux/AncientChineseCity/Binaries/Linux/AncientChineseCity",
       "group": "unreal-runtime",
       "repository": "ziyjiang/WorldAuditBench",
-      "revision": "0761f78a79e99f93391906901442089d363d6bd5"
+      "launch_manifest": "launch.json",
+      "launch_sha256": "0c44252a7793babca2e9da93181b06802aea68b4a27e5807f448c3b45e563e9e",
+      "variants": [
+        {
+          "id": "ancient-scene-1",
+          "binary": "runtime/scene-1/Linux/AncientChineseCity/Binaries/Linux/AncientChineseCity",
+          "binary_sha256": "7ddb0e41d8b134b9399686419e8bbec53908e635933c8962fea73f6c53f64e43",
+          "tasks": [
+            "A01",
+            "A02",
+            "A03",
+            "A04",
+            "A05",
+            "A06",
+            "A07",
+            "A08",
+            "A09",
+            "A10",
+            "A11",
+            "A12",
+            "A14",
+            "A15",
+            "A16",
+            "A17",
+            "A18",
+            "A19",
+            "A20",
+            "A22",
+            "A23",
+            "A24",
+            "A25"
+          ]
+        }
+      ],
+      "revision": "586f076f088d12de447af5d710b0dc2e3d3088e8"
     },
     {
-      "id": "concourse",
-      "filename": "concourse-linux-x86_64.tar.gz",
-      "bytes": 809202178,
-      "sha256": "7b545bc6db791735b88d49376a7d8fa63c2fa01971c0c1e35b6cb7bf20c350ca",
-      "binary_sha256": "ffa7b3efdc7e4a03d8e97bb3c3b6c2f5a5d592b3e2188463567bb3b4a72d44f8",
+      "id": "indoor",
+      "filename": "unreal/indoor.tar.gz",
+      "bytes": 2028393449,
+      "sha256": "df53431b5c98145491af9df580103fa7ddf55465c4f778501927c8bafa8178b0",
       "tasks": [
-        "S01",
-        "S07",
-        "S09",
-        "S12",
-        "S14",
-        "S22"
+        "H01",
+        "H02",
+        "H03",
+        "H04",
+        "H05",
+        "H06",
+        "H07",
+        "H08",
+        "H09",
+        "H10",
+        "H11",
+        "H12",
+        "H13",
+        "H15"
       ],
-      "binary": "Linux/Subway/Binaries/Linux/Subway",
       "group": "unreal-runtime",
       "repository": "ziyjiang/WorldAuditBench",
-      "revision": "0761f78a79e99f93391906901442089d363d6bd5"
+      "launch_manifest": "launch.json",
+      "launch_sha256": "c94b038c4dc48987df2f1fca4d4005e332ec059ad532b61aa5e1f4a522e2473f",
+      "variants": [
+        {
+          "id": "indoor-scene-1",
+          "binary": "runtime/scene-1/Linux/AtmosphericResidentialHou/Binaries/Linux/AtmosphericResidentialHou",
+          "binary_sha256": "d37ca90dcd113e6a4c83901b0cc73b6991a90afac75229d63a01756eb4da5f39",
+          "tasks": [
+            "H01",
+            "H02",
+            "H03",
+            "H04",
+            "H05",
+            "H06",
+            "H07",
+            "H08",
+            "H09",
+            "H10",
+            "H11",
+            "H12",
+            "H13",
+            "H15"
+          ]
+        }
+      ],
+      "revision": "4f65fababce93a19c6b6f0ffab76542b3c38fed5"
     },
     {
       "id": "industrial",
@@ -117,6 +180,72 @@
       "revision": "3addd6a537d1cb514c3a27dbd9fc44da16b127d8"
     },
     {
+      "id": "medieval",
+      "filename": "unreal/medieval.tar.gz",
+      "bytes": 2056458382,
+      "sha256": "e6f0c395857d53eb06c8e2724c010d0ef5f249c81283f657387928595c3e508e",
+      "tasks": [
+        "MV01",
+        "MV02",
+        "MV03",
+        "MV04",
+        "MV05",
+        "MV06",
+        "MV07",
+        "MV08",
+        "MV09",
+        "MV10",
+        "MV11",
+        "MV12",
+        "MV13",
+        "MV14",
+        "MV15",
+        "MV16",
+        "MV17",
+        "MV18",
+        "MV19",
+        "MV20",
+        "MV21",
+        "MV22"
+      ],
+      "group": "unreal-runtime",
+      "repository": "ziyjiang/WorldAuditBench",
+      "launch_manifest": "launch.json",
+      "launch_sha256": "28328a157e9b6d68be26df06d97201040ae641c7647b1ed8f23bb63675ea20a5",
+      "variants": [
+        {
+          "id": "medieval-scene-1",
+          "binary": "runtime/scene-1/Linux/MedievalVillage/Binaries/Linux/MedievalVillage",
+          "binary_sha256": "9a552e0d49674bc0e33d0f4ad24e6bece389aea6318b67cf73c4620847ac879a",
+          "tasks": [
+            "MV01",
+            "MV02",
+            "MV03",
+            "MV04",
+            "MV05",
+            "MV06",
+            "MV07",
+            "MV08",
+            "MV09",
+            "MV10",
+            "MV11",
+            "MV12",
+            "MV13",
+            "MV14",
+            "MV15",
+            "MV16",
+            "MV17",
+            "MV18",
+            "MV19",
+            "MV20",
+            "MV21",
+            "MV22"
+          ]
+        }
+      ],
+      "revision": "4505c74b4ef9421c5053c17c22ef6145a61c4d00"
+    },
+    {
       "id": "rural",
       "filename": "unreal/rural.tar.gz",
       "bytes": 1590425624,
@@ -172,67 +301,106 @@
     },
     {
       "id": "subway",
-      "filename": "subway-linux-x86_64.tar.gz",
-      "bytes": 808834834,
-      "sha256": "30a1db058760442abb865b1111d7078014e635c07f24435089be703dd5907f4b",
-      "binary_sha256": "cc7b5a1be4916d343ba3b05448a4714a205103c157cd2e360414a9ff89b130ca",
+      "filename": "unreal/subway.tar.gz",
+      "bytes": 1629729624,
+      "sha256": "542848a53a5f0a1b3317163fc988bfe64555c8bd321d6408f4df34e995cbfdf3",
       "tasks": [
+        "S01",
         "S02",
         "S03",
         "S04",
         "S06",
+        "S07",
         "S08",
+        "S09",
         "S10",
         "S11",
+        "S12",
         "S13",
+        "S14",
         "S16",
         "S18",
-        "S19"
+        "S19",
+        "S22"
       ],
-      "binary": "Linux/Subway/Binaries/Linux/Subway",
       "group": "unreal-runtime",
       "repository": "ziyjiang/WorldAuditBench",
-      "revision": "0761f78a79e99f93391906901442089d363d6bd5"
+      "launch_manifest": "launch.json",
+      "launch_sha256": "1864041c812c22685f034888d88823110f083e113e178f6331c2fa6a9e32b327",
+      "variants": [
+        {
+          "id": "subway-scene-1",
+          "binary": "runtime/scene-1/Linux/Subway/Binaries/Linux/Subway",
+          "binary_sha256": "ebdbc192d686acc7643e245661ee5275969e7def32fbab9256717592ddfd6276",
+          "tasks": [
+            "S01",
+            "S07",
+            "S09",
+            "S12",
+            "S14",
+            "S22"
+          ]
+        },
+        {
+          "id": "subway-scene-2",
+          "binary": "runtime/scene-2/Linux/Subway/Binaries/Linux/Subway",
+          "binary_sha256": "ebdbc192d686acc7643e245661ee5275969e7def32fbab9256717592ddfd6276",
+          "tasks": [
+            "S02",
+            "S03",
+            "S04",
+            "S06",
+            "S08",
+            "S10",
+            "S11",
+            "S13",
+            "S16",
+            "S18",
+            "S19"
+          ]
+        }
+      ],
+      "revision": "438ac297c33df0d87d85a8a7f1ad4b9b32d55925"
     },
     {
       "id": "urban",
-      "filename": "urban-linux-x86_64.tar.gz",
-      "bytes": 3377912168,
-      "sha256": "fae9adcd012cb29777f57ac7f1a13908c1c3ed7819e1e582973e439faa95f2ca",
-      "group": "unreal-runtime",
-      "repository": "ziyjiang/WorldAuditBench",
-      "revision": "8581dfdda3a690a5b397588167ddedbfdbe1afef",
-      "binary_sha256": "142b172a2886d116e3777108cfa1cfbc90d2a47ef3183fa0077156434c346f28",
+      "filename": "unreal/urban.tar.gz",
+      "bytes": 4497741861,
+      "sha256": "9e0d6cf6db9762c231a12d3667ff8a847ea496127dcd564be3d97be7b176837a",
       "tasks": [
-        "U046",
+        "U011",
         "U014",
         "U015",
         "U017",
+        "U018",
         "U020",
         "U021",
         "U023",
+        "U024",
         "U028",
+        "U032",
         "U033",
         "U041",
         "U043",
-        "U018",
-        "U032",
-        "U011",
-        "U024"
+        "U046"
       ],
+      "group": "unreal-runtime",
+      "repository": "ziyjiang/WorldAuditBench",
+      "launch_manifest": "launch.json",
+      "launch_sha256": "d6d1a55d78301c6b0032d6b9667f5f0d71c3f40040d5e4131872d21104fb14e1",
       "variants": [
         {
-          "id": "urban-0bcf6af8a87a",
-          "binary": "urban-0bcf6af8a87a/Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
-          "binary_sha256": "142b172a2886d116e3777108cfa1cfbc90d2a47ef3183fa0077156434c346f28",
+          "id": "urban-scene-1",
+          "binary": "runtime/scene-1/Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
+          "binary_sha256": "55a7fdce76d86b61409e63547daec080fe5d7405de2ffcefeb30bffa3ca640a6",
           "tasks": [
             "U046"
           ]
         },
         {
-          "id": "urban-c6f314070433",
-          "binary": "urban-c6f314070433/Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
-          "binary_sha256": "142b172a2886d116e3777108cfa1cfbc90d2a47ef3183fa0077156434c346f28",
+          "id": "urban-scene-2",
+          "binary": "runtime/scene-2/Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
+          "binary_sha256": "55a7fdce76d86b61409e63547daec080fe5d7405de2ffcefeb30bffa3ca640a6",
           "tasks": [
             "U014",
             "U015",
@@ -247,86 +415,25 @@
           ]
         },
         {
-          "id": "urban-e63d0c3c26bd",
-          "binary": "urban-e63d0c3c26bd/Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
-          "binary_sha256": "142b172a2886d116e3777108cfa1cfbc90d2a47ef3183fa0077156434c346f28",
+          "id": "urban-scene-3",
+          "binary": "runtime/scene-3/Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
+          "binary_sha256": "55a7fdce76d86b61409e63547daec080fe5d7405de2ffcefeb30bffa3ca640a6",
           "tasks": [
             "U018",
             "U032"
           ]
         },
         {
-          "id": "urban-ec94cce5d64b",
-          "binary": "urban-ec94cce5d64b/Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
-          "binary_sha256": "142b172a2886d116e3777108cfa1cfbc90d2a47ef3183fa0077156434c346f28",
+          "id": "urban-scene-4",
+          "binary": "runtime/scene-4/Linux/NYC_Building_Volume2/Binaries/Linux/NYC_Building_Volume2",
+          "binary_sha256": "55a7fdce76d86b61409e63547daec080fe5d7405de2ffcefeb30bffa3ca640a6",
           "tasks": [
             "U011",
             "U024"
           ]
         }
-      ]
-    },
-    {
-      "id": "medieval",
-      "filename": "medieval-linux-x86_64.tar.gz",
-      "bytes": 2044660315,
-      "sha256": "fc99f462d3b9cdbabd601801869c9663cf29aaa5b0ab01b0c4e336f3963e37ee",
-      "binary_sha256": "166acf2fcb8c8179de9913f53086fa8998d36eda77309ff962206b3c932e7efa",
-      "tasks": [
-        "MV01",
-        "MV02",
-        "MV03",
-        "MV04",
-        "MV05",
-        "MV06",
-        "MV07",
-        "MV08",
-        "MV09",
-        "MV10",
-        "MV11",
-        "MV12",
-        "MV13",
-        "MV14",
-        "MV15",
-        "MV16",
-        "MV17",
-        "MV18",
-        "MV19",
-        "MV20",
-        "MV21",
-        "MV22"
       ],
-      "binary": "Linux/MedievalVillage/Binaries/Linux/MedievalVillage",
-      "group": "unreal-runtime",
-      "repository": "ziyjiang/WorldAuditBench",
-      "revision": "0761f78a79e99f93391906901442089d363d6bd5"
-    },
-    {
-      "id": "indoor",
-      "group": "unreal-runtime",
-      "filename": "indoor-demo.tar.gz",
-      "bytes": 1980984614,
-      "sha256": "8c9eff9993a644491809dc612e49dd2630de5da7d1ee89b54261fc052c80b359",
-      "binary": "Linux/AtmosphericResidentialHou/Binaries/Linux/AtmosphericResidentialHou",
-      "binary_sha256": "09fa7b331005394cd71d087bf4c8374781c1c067ddea5ed4de052d11077dbf9b",
-      "tasks": [
-        "H01",
-        "H02",
-        "H03",
-        "H04",
-        "H05",
-        "H06",
-        "H07",
-        "H08",
-        "H09",
-        "H10",
-        "H11",
-        "H12",
-        "H13",
-        "H15"
-      ],
-      "repository": "ziyjiang/WorldAuditBench-demo-runtime",
-      "revision": "b82493a8dd3eae7e6530879f464a51f7045cc51b"
+      "revision": "29ce1993b52cc0b362b191398c71beb82efe93c9"
     },
     {
       "id": "icl-examples",

@@ -2,8 +2,8 @@
 
 Compiled Linux x86_64 Unreal packages and the six standalone Three.js builds are
 published on [Hugging Face](https://huggingface.co/datasets/ziyjiang/WorldAuditBench).
-The residential build is reused from the
-[demo runtime repository](https://huggingface.co/datasets/ziyjiang/WorldAuditBench-demo-runtime).
+Each Unreal environment has one archive under `unreal/`; Subway includes the
+concourse, and Urban includes its four scene versions.
 The release covers the 126 Unreal and 87 Three.js tasks in the paper split.
 Editable third-party scene projects and original model/texture assets are outside
 this release's scope.
@@ -18,7 +18,7 @@ python scripts/download_dataset.py
 python scripts/download_resources.py --package indoor
 ```
 
-The complete download is about **14.9 GB**, including the residential package.
+The complete download is about **16.1 GB**, including the shared ICL images.
 Omit `--package` to install all released packages. Repeat it to select several.
 The installer pins each download to a Hugging Face commit, verifies the archive
 SHA-256 and executable SHA-256, and generates local profiles under `out/runtime/`.
@@ -34,8 +34,8 @@ older human-service tools. No model credentials are needed for downloads.
 ## Run an Unreal task
 
 Use a Linux x86_64 GPU host with NVIDIA drivers, Vulkan and the runtime libraries
-needed by Unreal Engine 5.6. The published packages have been tested on A10G and
-the residential demo on HF T4. A CPU-only machine cannot render these environments.
+needed by Unreal Engine 5.6. The published packages have been tested on A10G.
+A CPU-only machine cannot render these environments.
 
 ```bash
 python scripts/serve_unreal.py --task H01 --gpu 0 --port 19100
@@ -63,7 +63,8 @@ python agent/vlm/native/launch.py gemini \
 For a remote GPU host, forward the server's loopback port with SSH and use the
 forwarded local URL. No public server port is required. Urban uses one download
 (`--package urban`) containing the four cooked scene builds needed by its 15 tasks.
-The IPC-fixed experiment executables and cooked files are preserved byte for byte. The installer merges those profiles with the other Unreal task profiles and remaps the exploration policies automatically.
+The installer reads each package's verified launch settings and generates the
+task profiles automatically.
 
 ## Run a Three.js task
 
@@ -90,7 +91,7 @@ contain only the browser launch fields, not the task answers.
 
 | Resource | Status |
 |---|---|
-| Compiled Unreal Linux environments | Published; 8 downloads, 126 paper tasks |
+| Compiled Unreal Linux environments | Published; 7 downloads, 126 paper tasks |
 | Six built Three.js environments | Published; 87 paper tasks |
 | 29 ICL demonstration images | Published, with SHA-256 checks |
 | Editable Unreal scene assets | Not distributed |
